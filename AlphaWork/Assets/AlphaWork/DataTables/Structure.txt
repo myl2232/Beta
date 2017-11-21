@@ -1,0 +1,7 @@
+#	������			
+#	Id		MaxHP	replace material
+#	int		int	
+#	����	�߻���ע	��������	
+	90000	����	1000	
+	90001	Cube	1000	Assets\AlphaWork\Textures\part_flash_dff.tif
+	90004	����3	1000	Assets\AlphaWork\Textures\part_flash_dff.tif

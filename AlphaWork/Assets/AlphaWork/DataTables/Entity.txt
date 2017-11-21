@@ -1,0 +1,25 @@
+#	ʵ����		
+#	Id		AssetName
+#	int		string
+#	ʵ������	�߻���ע	��Դ����
+	10000	����ս��	BallPrefab
+	10001	����ս��	BallPrefab
+	20000	�����ƽ���	PlayerEngine
+	20001	�����ƽ���	EnemyEngine
+	30000	Ĭ������	DefaultWeapon
+	40000	Ĭ��װ��	DefaultArmor
+	50000	�����ӵ�	Enemy
+	50001	�����ӵ�	HellephantPrefab
+	50002	�����ӵ�	ZomBearPrefab
+	50003	�����ӵ�	ZombunnyPrefab
+	60000	С����	Asteroid01
+	60001	С����	Asteroid02
+	60002	С����	Asteroid03
+	70000	����������Ч	PlayerEpxlosion
+	70001	����������Ч	EnemyExplosion
+	70002	С����������Ч	AsteroidExplosion
+	80000	����	Ethan
+	80001	����	cmPrefab
+	90000	���	CubePrefab
+	90001	Cube	CubePrefab
+	90004	Block	StructureBlock

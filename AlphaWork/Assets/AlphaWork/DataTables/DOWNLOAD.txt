@@ -1,0 +1,5 @@
+src	dest
+http://localhost:81/WWW/ARAlpha/Assets/UnityARKitPlugin/Examples/Common/Textures/PlayerDiffuse.png	Common/Textures/PlayerDiffuse.png
+http://localhost:81/WWW/ARAlpha/Assets/UnityARKitPlugin/Examples/Common/Prefabs/ParticlePrefab.prefab	Common/Prefabs/ParticlePrefab.prefab
+http://localhost:81/WWW/ARAlpha/Assets/UnityARKitPlugin/Examples/Common/Models/Characters/Player.fbx	Common/Models/Characters/Player.fbx
+http://localhost:81/WWW/ARAlpha/Assets/UnityARKitPlugin/Examples/Common/Shaders/InstancedSurfaceShader.shader	Common/Shaders/InstancedSurfaceShader.shader
