@@ -26,19 +26,31 @@ namespace AlphaWork
                     Position = hit.point,//new Vector3(26, 2, 20),
                 });
 
-                for (int i = 0; i < 5; ++i)
+                //test for Efficiency
+                RaycastHit hitInfo;
+                Physics.Raycast(mainPos, Vector3.down, out hitInfo, 1000);
+                Vector3 sPt = new Vector3(UnityEngine.Random.Range(hitInfo.point.x - 10, hitInfo.point.x + 10), 
+                    1.5f, UnityEngine.Random.Range(hitInfo.point.z - 10, hitInfo.point.x + 10));
+                GameEntry.Entity.ShowAvatar(new AvatarData(GameEntry.Entity.GenerateSerialId(), 80002, CampType.Player)
                 {
-                    RaycastHit hitInfo;
-                    Vector3 startPt = new Vector3(UnityEngine.Random.Range(mainPos.x + 10, mainPos.x + 50), 100f,
-                        UnityEngine.Random.Range(mainPos.z + 10, mainPos.x + 50));
+                    Position = new Vector3(120, 1.5f, 120)/*sPt*/,
+                    Rotation = Quaternion.AngleAxis(90, Vector3.left),
 
-                    Physics.Raycast(startPt,
-                        Vector3.down, out hitInfo, 1000);
-
-                    GameEntry.Entity.ShowEnemy(new NPCData(GameEntry.Entity.GenerateSerialId(), 50001, CampType.Enemy)
-                    {
-                        Position = hitInfo.point,
-                    });
+                });
+                for (int i = 0; i < 40; ++i)
+                {
+//                     sPt += new Vector3(UnityEngine.Random.Range(sPt.x - 0.9f, sPt.x + 0.9f), 0,
+//                         UnityEngine.Random.Range(sPt.z - 0.9f, sPt.z + 0.9f));
+//                     GameEntry.Entity.ShowAvatar(new AvatarData(GameEntry.Entity.GenerateSerialId(), 80002, 
+//                         CampType.Player)
+//                     {
+//                         Position = sPt,
+//                         Rotation = Quaternion.AngleAxis(90, Vector3.left),
+//                     });
+                    //                     GameEntry.Entity.ShowEnemy(new NPCData(GameEntry.Entity.GenerateSerialId(), 80002, CampType.Enemy)
+                    //                     {
+                    //                         Position = sPt,
+                    //                     });
                 }
             }
         }

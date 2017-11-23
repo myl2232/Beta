@@ -1,6 +1,7 @@
 ﻿using GameFramework;
 using GameFramework.DataTable;
 using System;
+using System.Collections.Generic;
 using UnityGameFramework.Runtime;
 
 namespace AlphaWork
@@ -51,6 +52,26 @@ namespace AlphaWork
         public static void ShowStructure(this EntityComponent entityComponent, StructureData data)
         {
             entityComponent.ShowEntity(typeof(Structure), "Structure", data);
+        }
+
+        public static void ShowAvatar(this EntityComponent entityComponent, AvatarData data)
+        {
+            if (data == null)
+            {
+                Log.Warning("Data is invalid.");
+                return;
+            }
+
+            IDataTable<DRAvatar> dtEntity = GameEntry.DataTable.GetDataTable<DRAvatar>();
+            DRAvatar drEntity = dtEntity.GetDataRow(data.TypeId);
+            if (drEntity == null)
+            {
+                Log.Warning("Can not load entity id '{0}' from data table.", data.TypeId.ToString());
+                return;
+            }
+            data.Skeleton = drEntity.Data.Skeleton;
+            data.Parts = drEntity.Data.Parts;
+            entityComponent.ShowEntity(data.Id, typeof(AvatarEntity), drEntity.Data.Skeleton, "Avatar", data);
         }
 
         private static void ShowEntity(this EntityComponent entityComponent, Type logicType, string entityGroup, EntityData data)

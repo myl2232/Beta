@@ -15,6 +15,7 @@ namespace AlphaWork
     public partial class SurviveGame : GameBase
     {
         protected LevelManager m_levelManager = new LevelManager();
+        protected AvatarManager m_avatarManager = new AvatarManager();
         private float m_ElapseSeconds = 0f;
         public Transform m_MainEthanTransform;
         //protected Alpha Alib = new Alpha();

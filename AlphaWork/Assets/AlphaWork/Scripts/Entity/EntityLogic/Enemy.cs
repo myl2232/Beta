@@ -67,10 +67,12 @@ namespace AlphaWork
             MoveToTargetEventArgs mvArgs = e as MoveToTargetEventArgs;
             //start move new position
             MoveTarget ctl = GetComponentInParent<MoveTarget>();
-            ctl.Move(gb.transform.position, mvArgs.MovePos);
+            if(ctl)
+                ctl.Move(gb.transform.position, mvArgs.MovePos);
             //start move state
             Animator animator = GetComponentInParent<Animator>();
-            animator.SetBool("Move", true);
+            if(animator)
+                animator.SetBool("Move", true);
         }
 
     }
