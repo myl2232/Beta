@@ -24,6 +24,7 @@ namespace AlphaWork
                 GameEntry.Entity.ShowEthan(new EthanData(GameEntry.Entity.GenerateSerialId(), 80000, CampType.Player)
                 {
                     Position = hit.point,//new Vector3(26, 2, 20),
+                    Scale = new Vector3(5.0f, 5.0f, 5.0f),
                 });
 
                 //test for Efficiency
@@ -31,27 +32,34 @@ namespace AlphaWork
                 Physics.Raycast(mainPos, Vector3.down, out hitInfo, 1000);
                 Vector3 sPt = new Vector3(UnityEngine.Random.Range(hitInfo.point.x - 10, hitInfo.point.x + 10), 
                     1.5f, UnityEngine.Random.Range(hitInfo.point.z - 10, hitInfo.point.x + 10));
-                GameEntry.Entity.ShowAvatar(new AvatarData(GameEntry.Entity.GenerateSerialId(), 80002, CampType.Player)
-                {
-                    Position = new Vector3(120, 1.5f, 120)/*sPt*/,
-                    Rotation = Quaternion.AngleAxis(90, Vector3.left),
+                //                 GameEntry.Entity.ShowAvatar(new AvatarData(GameEntry.Entity.GenerateSerialId(), 80002, CampType.Player)
+                //                 {
+                //                     Position = new Vector3(120, 1.5f, 120)/*sPt*/,
+                //                     Rotation = Quaternion.AngleAxis(90, Vector3.left),
+                // 
+                //                 });
 
-                });
-                for (int i = 0; i < 40; ++i)
+                for (int i = 0; i < 10; ++i)
                 {
-//                     sPt += new Vector3(UnityEngine.Random.Range(sPt.x - 0.9f, sPt.x + 0.9f), 0,
-//                         UnityEngine.Random.Range(sPt.z - 0.9f, sPt.z + 0.9f));
-//                     GameEntry.Entity.ShowAvatar(new AvatarData(GameEntry.Entity.GenerateSerialId(), 80002, 
-//                         CampType.Player)
-//                     {
-//                         Position = sPt,
-//                         Rotation = Quaternion.AngleAxis(90, Vector3.left),
-//                     });
+                    for (int j = 0; j < 4; ++j)
+                    {
+                        sPt = new Vector3(128 + i * 2, 0.5f, 128 + j * 2);
+                        GameEntry.Entity.ShowAvatar(new AvatarData(GameEntry.Entity.GenerateSerialId(), 80003,
+                            CampType.Player)
+                        {
+                            Position = sPt,
+//                             Rotation = Quaternion.AngleAxis(90, Vector3.left),
+                             Scale = new Vector3(5.0f, 5.0f, 5.0f),//80002->300
+                        });
+                    }
+                    
+
+                    
                     //                     GameEntry.Entity.ShowEnemy(new NPCData(GameEntry.Entity.GenerateSerialId(), 80002, CampType.Enemy)
                     //                     {
                     //                         Position = sPt,
                     //                     });
-                }
+               }
             }
         }
 

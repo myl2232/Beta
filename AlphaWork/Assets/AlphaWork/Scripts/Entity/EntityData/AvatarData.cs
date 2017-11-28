@@ -16,7 +16,7 @@ namespace AlphaWork
         public AvatarData(int entityId = -1, int typeId = 80002, CampType camp = CampType.Unknown)
             : base(entityId, typeId, camp)
         {
-
+            
         }
 
         // Use this for initialization
@@ -37,11 +37,11 @@ namespace AlphaWork
                 m_parts.Add(part);
         }
 
-        public void GetParts(ref List<string> parts)
+
+        public List<string> GetParts()
         {
-            parts = m_parts;
+            return m_parts;
         }
-        
         /// <summary>
         /// 主骨架
         /// </summary>

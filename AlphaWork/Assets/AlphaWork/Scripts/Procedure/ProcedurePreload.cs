@@ -64,33 +64,28 @@ namespace AlphaWork
         private void PreloadResources()
         {
             // Preload data tables
-//             LoadDataTable("Aircraft");
-//             LoadDataTable("Armor");
-//             LoadDataTable("Asteroid");
+
             LoadDataTable("Entity");
             LoadDataTable("Music");
             LoadDataTable("Scene");
             LoadDataTable("Sound");
             LoadDataTable("Ethan");
             LoadDataTable("Structure");
-            //LoadDataTable("Thruster");
             LoadDataTable("UIForm");
             LoadDataTable("UISound");
             LoadDataTable("Avatar");
 
             // Preload dictionaries
             LoadDictionary("Default");
-            GameEntry.UI.AddUIGroup("Default");
-            GameEntry.Entity.AddEntityGroup("Structure", 1, 20, 1, 10000);
-            GameEntry.Entity.AddEntityGroup("Entity", 1, 20, 1, 10000);
-            GameEntry.Entity.AddEntityGroup("Ethan", 1, 20, 1, 10000);
-            GameEntry.Entity.AddEntityGroup("UIForm", 1, 20, 1, 10000);
-            GameEntry.Entity.AddEntityGroup("NPC", 1, 20, 1, 10000);
-            GameEntry.Entity.AddEntityGroup("Enemy", 1, 20, 1, 10000);
-            GameEntry.Entity.AddEntityGroup("Avatar", 1, 20, 1, 10000);
-            //GameEntry.Sound.AddSoundGroup("Music", 1);
-            //GameEntry.Sound.AddSoundGroup("Sound", 1);
-            //GameEntry.Sound.AddSoundGroup("UISound", 1);
+            //GameEntry.UI.AddUIGroup("Default");
+            //GameEntry.Entity.AddEntityGroup("Structure", 1000, 20, 1000, 10000);
+            //GameEntry.Entity.AddEntityGroup("Entity", 1000, 20, 1000, 10000);
+            //GameEntry.Entity.AddEntityGroup("Ethan", 1000, 20, 1000, 10000);
+            //GameEntry.Entity.AddEntityGroup("UIForm", 1000, 20, 1000, 10000);
+            //GameEntry.Entity.AddEntityGroup("NPC", 1000, 20, 1000, 10000);
+            //GameEntry.Entity.AddEntityGroup("Enemy", 1000, 20, 1000, 10000);
+            //GameEntry.Entity.AddEntityGroup("Avatar", 1000, 20, 1000, 10000);
+
             // Preload fonts
             LoadFont("MainFont");
 

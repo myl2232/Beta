@@ -10,7 +10,7 @@ namespace AlphaWork
 {
     public class AvatarManager
     {
-        private Dictionary<string, int> m_Skeletons = new Dictionary<string, int>();//<skeletonString, entityId>
+        private Dictionary<int, string> m_Skeletons = new Dictionary<int, string>();//<skeletonString, entityId>
 
         public AvatarManager()
         {
@@ -25,10 +25,15 @@ namespace AlphaWork
             {
                 AvatarData userData = ne.UserData as AvatarData;
 
-                if(!m_Skeletons.ContainsKey(userData.Skeleton))
-                    m_Skeletons[userData.Skeleton] = ne.Id;
-
-                GameEntry.Event.Fire(this,new AvatarCreateEventArgs(userData,ne.Entity.Handle as GameObject));
+                if(!m_Skeletons.ContainsKey(userData.Id))
+                    m_Skeletons[userData.Id] = userData.Skeleton;
+                
+                GameObject ob = ne.Entity.Handle as GameObject;
+                ob.name = "Avatar" + m_Skeletons.Count;
+                Animator animator = ob.GetComponent<Animator>();
+//                 if (animator)
+//                     animator.runtimeAnimatorController = "JZ_AG";
+                GameEntry.Event.Fire(this,new AvatarCreateEventArgs(userData, ob));
             }
         }
 

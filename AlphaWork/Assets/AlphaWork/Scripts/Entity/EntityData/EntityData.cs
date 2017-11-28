@@ -18,6 +18,9 @@ namespace AlphaWork
         [SerializeField]
         private Quaternion m_Rotation = Quaternion.identity;
 
+        [SerializeField]
+        private Vector3 m_Scale = Vector3.one;
+
         public EntityData(int entityId, int typeId)
         {
             m_Id = entityId;
@@ -73,6 +76,18 @@ namespace AlphaWork
             set
             {
                 m_Rotation = value;
+            }
+        }
+        //实体缩放
+        public Vector3 Scale
+        {
+            get
+            {
+                return m_Scale;
+            }
+            set
+            {
+                m_Scale = value;
             }
         }
     }

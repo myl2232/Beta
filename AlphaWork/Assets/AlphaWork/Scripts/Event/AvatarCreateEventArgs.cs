@@ -10,7 +10,7 @@ namespace AlphaWork
     class AvatarCreateEventArgs : GameEventArgs
     {
         public static readonly int EventId = typeof(AvatarCreateEventArgs).GetHashCode();
-
+   
         private AvatarData m_data = new AvatarData();
         public AvatarCreateEventArgs(AvatarData data,GameObject skeletonObj)
         {
@@ -24,6 +24,7 @@ namespace AlphaWork
                 return EventId;
             }
         }
+
         public GameObject SkeletonObject
         {
             get;

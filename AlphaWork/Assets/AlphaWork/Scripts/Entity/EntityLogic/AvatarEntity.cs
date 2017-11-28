@@ -49,21 +49,25 @@ namespace AlphaWork
             Utils.CombineObject(m_skeleton, meshRenders.ToArray());
 
         }
-        protected virtual void OnCreateAvatar(object sender, GameEventArgs e)
-        {
+        protected void OnCreateAvatar(object sender, GameEventArgs e)
+        {           
             AvatarCreateEventArgs ne = (AvatarCreateEventArgs)e;
+            if (Id != ne.UserData.Id)
+                return;
+
+            m_Parts.Clear();
+            m_partCount = 0;
 
             AvatarData userData = ne.UserData;
             m_skeleton = ne.SkeletonObject;
-            List<string> parts = new List<string>();
-            userData.GetParts(ref parts);
+            List<string> parts = userData.GetParts();
             m_partCount = parts.Count;
             for (int i = 0; i < m_partCount; ++i)
             {
                 GameEntry.Resource.LoadAsset(parts[i], m_LoadCallbacks, userData.Skeleton);
             }
 
-
+            return;
         }
 
         public void OnLoadSuccessCallback(string assetName, object asset, float duration, object userData)
