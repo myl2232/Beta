@@ -1,7 +1,52 @@
-﻿namespace AlphaWork
+﻿using UnityEngine;
+
+namespace AlphaWork
 {
     public static class AssetUtility
     {
+        public static void SolveNames(GameObject gb)
+        {
+            if (!gb)
+                return;
+            int count = gb.transform.childCount;
+            for (int i = 0; i < count; ++i)
+            {
+                Transform trans = gb.transform.GetChild(i);
+                string name = trans.gameObject.name;
+                name = name.Replace(" ", "");
+                trans.gameObject.name = name;//.Replace(" ", "");
+                SolveNames(trans.gameObject);
+            }
+        }
+
+        public static Transform FindChild(Transform trans, string str)
+        {
+            if (!trans)
+                return null;
+            Transform result = trans.Find(str);
+            if (!result)
+            {
+                int count = trans.childCount;
+                for (int i = 0; i < count; ++i)
+                {
+                    if (result)
+                        break;
+
+                    Transform tr = trans.GetChild(i);
+                    if (tr.gameObject.name == str)
+                    {
+                        result = tr;
+                    }
+                    else
+                        result = FindChild(tr, str);
+                }
+            }
+            else
+                return result;
+
+            return result;
+        }
+
         public static string GetDataTableAsset(string assetName)
         {
             return string.Format("Assets/AlphaWork/DataTables/{0}.txt", assetName);

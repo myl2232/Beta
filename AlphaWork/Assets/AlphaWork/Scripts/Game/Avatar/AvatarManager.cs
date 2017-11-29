@@ -30,9 +30,6 @@ namespace AlphaWork
                 
                 GameObject ob = ne.Entity.Handle as GameObject;
                 ob.name = "Avatar" + m_Skeletons.Count;
-                Animator animator = ob.GetComponent<Animator>();
-//                 if (animator)
-//                     animator.runtimeAnimatorController = "JZ_AG";
                 GameEntry.Event.Fire(this,new AvatarCreateEventArgs(userData, ob));
             }
         }
@@ -40,6 +37,8 @@ namespace AlphaWork
         protected virtual void OnShowEntityFailure(object sender, GameEventArgs e)
         {
         }
+
+        
 
     }
 }

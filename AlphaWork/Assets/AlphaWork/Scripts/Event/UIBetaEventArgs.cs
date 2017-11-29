@@ -1,14 +1,14 @@
-﻿using System;
+﻿using GameFramework.Event;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using GameFramework.Event;
 
 namespace AlphaWork
 {
-    class UIOccupyEventArgs : GameEventArgs
+    class UIBetaEventArgs : GameEventArgs
     {
-        public static readonly int EventId = typeof(UIOccupyEventArgs).GetHashCode();
+        public static readonly int EventId = typeof(UIBetaEventArgs).GetHashCode();
         public override int Id
         {
             get
@@ -16,6 +16,5 @@ namespace AlphaWork
                 return EventId;
             }
         }
-
     }
 }

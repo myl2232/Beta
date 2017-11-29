@@ -12,9 +12,9 @@
 	50001	�����ӵ�	HellephantPrefab
 	50002	�����ӵ�	ZomBearPrefab
 	50003	�����ӵ�	ZombunnyPrefab
-	60000	С����	Asteroid01
-	60001	С����	Asteroid02
-	60002	С����	Asteroid03
+	60000	С����	weapon
+	60001	С����	weapon001
+	60002	С����	weapon002
 	70000	����������Ч	PlayerEpxlosion
 	70001	����������Ч	EnemyExplosion
 	70002	С����������Ч	AsteroidExplosion

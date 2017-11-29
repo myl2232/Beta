@@ -14,7 +14,7 @@ namespace AlphaWork
         }
         public void OnClickSit()
         {            
-            GameEntry.Event.Fire(this, new UIOccupyEventArgs());
+            GameEntry.Event.Fire(this, new UIAlphaEventArgs());
         }
         public void OnClickHome()        
         {

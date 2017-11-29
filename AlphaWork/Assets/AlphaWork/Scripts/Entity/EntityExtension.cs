@@ -2,6 +2,7 @@
 using GameFramework.DataTable;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityGameFramework.Runtime;
 
 namespace AlphaWork
@@ -49,10 +50,30 @@ namespace AlphaWork
 		{
             entityComponent.ShowEntity(typeof(Ethan), "Ethan", data);
 		}
+
+        public static void ShowAttachment(this EntityComponent entityComponent, AttachmentData data)
+        {
+            if (data == null)
+            {
+                Log.Warning("Data is invalid.");
+                return;
+            }
+
+            IDataTable<DRAttachment> dtEntity = GameEntry.DataTable.GetDataTable<DRAttachment>();
+            DRAttachment drEntity = dtEntity.GetDataRow(data.TypeId);
+            if (drEntity == null)
+            {
+                Log.Warning("Can not load entity id '{0}' from data table.", data.TypeId.ToString());
+                return;
+            }
+
+        }
+
         public static void ShowStructure(this EntityComponent entityComponent, StructureData data)
         {
             entityComponent.ShowEntity(typeof(Structure), "Structure", data);
         }
+        
 
         public static void ShowAvatar(this EntityComponent entityComponent, AvatarData data)
         {

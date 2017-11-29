@@ -74,6 +74,7 @@ namespace AlphaWork
             LoadDataTable("UIForm");
             LoadDataTable("UISound");
             LoadDataTable("Avatar");
+            LoadDataTable("Attachment");
 
             // Preload dictionaries
             LoadDictionary("Default");

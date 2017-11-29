@@ -12,12 +12,12 @@ namespace AlphaWork
     {
         public void OnReplaceButtonClick()
         {
-            GameEntry.Event.Fire(this, new UIOccupyEventArgs());
+            GameEntry.Event.Fire(this, new UIAlphaEventArgs());
         }
 
         public void OnAIButtonClick()
         {
-            GameEntry.Event.Fire(this, new AIGoEventArgs());
+            GameEntry.Event.Fire(this, new UIBetaEventArgs());
         }
        
     }
