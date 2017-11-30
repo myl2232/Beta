@@ -12,6 +12,8 @@ namespace AlphaWork
 	{
         public AttachmentEntity()
         {
+            GameEntry.Event.Subscribe(ShowEntitySuccessEventArgs.EventId, OnShowEntitySuccess);
+            GameEntry.Event.Subscribe(ShowEntityFailureEventArgs.EventId, OnShowEntityFailure);
         }
 
         // Use this for initialization
@@ -40,6 +42,22 @@ namespace AlphaWork
 
         }
 
+        protected virtual void OnShowEntitySuccess(object sender, GameEventArgs e)
+        {
+            ShowEntitySuccessEventArgs ne = (ShowEntitySuccessEventArgs)e;
+            if (ne.EntityLogicType == typeof(AttachmentEntity))
+            {
+                AttachmentData userData = ne.UserData as AttachmentData;
+                if(Id == userData.Id)
+                {
+                    GameEntry.Entity.AttachEntity(Id, userData.ParentId, userData);
+                }
+            }
+        }
+
+        protected virtual void OnShowEntityFailure(object sender, GameEventArgs e)
+        {
+        }
 
     }
 

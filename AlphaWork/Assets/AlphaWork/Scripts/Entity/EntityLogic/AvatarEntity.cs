@@ -22,6 +22,7 @@ namespace AlphaWork
         {
             GameEntry.Event.Subscribe(AvatarCreateEventArgs.EventId, OnCreateAvatar);
             m_LoadCallbacks = new LoadAssetCallbacks(OnLoadSuccessCallback, OnLoadFailureCallback);
+
         }
 
         // Use this for initialization
@@ -127,7 +128,6 @@ namespace AlphaWork
             }
 
             data.ParentId = Id;
-            //data.AttachTrans = AssetUtility.FindChild(CachedTransform, drEntity.Bone/*"Bip001 Spine1"*/);//
             data.AttachPos = drEntity.Position;
             data.AttachScale = drEntity.Scale;
             data.AttachScale.Set(data.AttachScale.x*transform.localScale.x,
@@ -136,10 +136,9 @@ namespace AlphaWork
             data.AttachRotate = drEntity.Rotate;           
             data.Bone = drEntity.Bone;
             
-            int newId = GameEntry.Entity.GenerateSerialId();
-            GameEntry.Entity.ShowEntity<AttachmentEntity>(newId, drEntity.Weapon, "Attachment",data);
+            GameEntry.Entity.ShowEntity<AttachmentEntity>(GameEntry.Entity.GenerateSerialId(), drEntity.Weapon, "Attachment",data);
 
-            GameEntry.Entity.AttachEntity(newId,Id,data);
+            //GameEntry.Entity.AttachEntity(newId,Id,data);
         }
 
     }

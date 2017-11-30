@@ -1,6 +1,6 @@
 ﻿using GameFramework;
 using GameFramework.Event;
-using GameFramework.Resource;
+//using GameFramework.Resource;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
@@ -9,8 +9,9 @@ namespace AlphaWork
 {
     public class ProcedureCheckVersion : ProcedureBase
     {
-        private bool m_LatestVersionComplete = false;
+        //private bool m_LatestVersionComplete = false;		
         private VersionInfo m_VersionInfo = null;
+		private bool m_ResourceInitComplete = false;
 
         public override bool UseNativeDialog
         {
@@ -24,14 +25,15 @@ namespace AlphaWork
         {
             base.OnEnter(procedureOwner);
 
-            m_LatestVersionComplete = false;
+			m_ResourceInitComplete = false;
+            //m_LatestVersionComplete = false;
             m_VersionInfo = null;
 
             GameEntry.Event.Subscribe(WebRequestSuccessEventArgs.EventId, OnWebRequestSuccess);
             GameEntry.Event.Subscribe(WebRequestFailureEventArgs.EventId, OnWebRequestFailure);
-            //GameEntry.Event.Subscribe(ResourceInitCompleteEventArgs.EventId, OnResourceInitComplete);
-            GameEntry.Event.Subscribe(UnityGameFramework.Runtime.VersionListUpdateSuccessEventArgs.EventId, OnVersionListUpdateSuccess);
-            GameEntry.Event.Subscribe(UnityGameFramework.Runtime.VersionListUpdateFailureEventArgs.EventId, OnVersionListUpdateFailure);
+            GameEntry.Event.Subscribe(ResourceInitCompleteEventArgs.EventId, OnResourceInitComplete);
+//             GameEntry.Event.Subscribe(UnityGameFramework.Runtime.VersionListUpdateSuccessEventArgs.EventId, OnVersionListUpdateSuccess);
+//             GameEntry.Event.Subscribe(UnityGameFramework.Runtime.VersionListUpdateFailureEventArgs.EventId, OnVersionListUpdateFailure);
 
             RequestVersion();
         }
@@ -40,9 +42,9 @@ namespace AlphaWork
         {
             GameEntry.Event.Unsubscribe(WebRequestSuccessEventArgs.EventId, OnWebRequestSuccess);
             GameEntry.Event.Unsubscribe(WebRequestFailureEventArgs.EventId, OnWebRequestFailure);
-            //GameEntry.Event.Unsubscribe(ResourceInitCompleteEventArgs.EventId, OnResourceInitComplete);
-            GameEntry.Event.Unsubscribe(UnityGameFramework.Runtime.VersionListUpdateSuccessEventArgs.EventId, OnVersionListUpdateSuccess);
-            GameEntry.Event.Unsubscribe(UnityGameFramework.Runtime.VersionListUpdateFailureEventArgs.EventId, OnVersionListUpdateFailure);
+            GameEntry.Event.Unsubscribe(ResourceInitCompleteEventArgs.EventId, OnResourceInitComplete);
+//             GameEntry.Event.Unsubscribe(UnityGameFramework.Runtime.VersionListUpdateSuccessEventArgs.EventId, OnVersionListUpdateSuccess);
+//             GameEntry.Event.Unsubscribe(UnityGameFramework.Runtime.VersionListUpdateFailureEventArgs.EventId, OnVersionListUpdateFailure);
 
             base.OnLeave(procedureOwner, isShutdown);
         }
@@ -51,12 +53,12 @@ namespace AlphaWork
         {
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
 
-            if (!m_LatestVersionComplete)
+            if (!m_ResourceInitComplete)//m_LatestVersionComplete
             {
                 return;
             }
 
-            ChangeState<ProcedureUpdateResource>(procedureOwner);//ChangeState<ProcedurePreload>(procedureOwner);
+            /*ChangeState<ProcedureUpdateResource>(procedureOwner);*/ChangeState<ProcedurePreload>(procedureOwner);
         }
 
         private void GotoUpdateApp(object userData)
@@ -131,17 +133,17 @@ namespace AlphaWork
             GameEntry.WebRequest.AddWebRequest(GameEntry.Config.BuildInfo.CheckVersionUrl, wwwForm, this);
         }
 
-        private void UpdateVersion()
-        {
-            if (GameEntry.Resource.CheckVersionList(m_VersionInfo.InternalResourceVersion) == CheckVersionListResult.Updated)
-            {
-                m_LatestVersionComplete = true;
-            }
-            else
-            {
-                GameEntry.Resource.UpdateVersionList(m_VersionInfo.VersionListLength, m_VersionInfo.VersionListHashCode, m_VersionInfo.VersionListZipLength, m_VersionInfo.VersionListZipHashCode);
-            }
-        }
+//         private void UpdateVersion()
+//         {
+//             if (GameEntry.Resource.CheckVersionList(m_VersionInfo.InternalResourceVersion) == CheckVersionListResult.Updated)
+//             {
+//                 m_LatestVersionComplete = true;
+//             }
+//             else
+//             {
+//                 GameEntry.Resource.UpdateVersionList(m_VersionInfo.VersionListLength, m_VersionInfo.VersionListHashCode, m_VersionInfo.VersionListZipLength, m_VersionInfo.VersionListZipHashCode);
+//             }
+//         }
 
         private void OnWebRequestSuccess(object sender, GameEventArgs e)
         {
@@ -179,8 +181,8 @@ namespace AlphaWork
 
             GameEntry.Resource.UpdatePrefixUri = Utility.Path.GetCombinePath(m_VersionInfo.GameUpdateUrl, GetResourceVersionName(), GetPlatformPath());
             
-            //GameEntry.Resource.InitResources();
-			UpdateVersion();
+            GameEntry.Resource.InitResources();
+            //UpdateVersion();  
         }
 
         private void OnWebRequestFailure(object sender, GameEventArgs e)
@@ -195,24 +197,26 @@ namespace AlphaWork
 
             GameEntry.Resource.InitResources();
 	    }
-        private void OnVersionListUpdateSuccess(object sender, GameEventArgs e)
-        {
-            UnityGameFramework.Runtime.VersionListUpdateSuccessEventArgs ne = (UnityGameFramework.Runtime.VersionListUpdateSuccessEventArgs)e;
-            m_LatestVersionComplete = true;
-            Log.Info("Download latest resource version list from '{0}' success.", ne.DownloadUri);
-        }
 
-        private void OnVersionListUpdateFailure(object sender, GameEventArgs e)
-        {
-            UnityGameFramework.Runtime.VersionListUpdateFailureEventArgs ne = (UnityGameFramework.Runtime.VersionListUpdateFailureEventArgs)e;
-            Log.Warning("Download latest resource version list from '{0}' failure, error message '{1}'.", ne.DownloadUri, ne.ErrorMessage);
-        }
-//         private void OnResourceInitComplete(object sender, GameEventArgs e)
+//         private void OnVersionListUpdateSuccess(object sender, GameEventArgs e)
 //         {
-//             m_ResourceInitComplete = true;
-// 
-//             Log.Info("Init resource complete.");
+//             UnityGameFramework.Runtime.VersionListUpdateSuccessEventArgs ne = (UnityGameFramework.Runtime.VersionListUpdateSuccessEventArgs)e;
+//             m_LatestVersionComplete = true;
+//             Log.Info("Download latest resource version list from '{0}' success.", ne.DownloadUri);
 //         }
+
+//         private void OnVersionListUpdateFailure(object sender, GameEventArgs e)
+//         {
+//             UnityGameFramework.Runtime.VersionListUpdateFailureEventArgs ne = (UnityGameFramework.Runtime.VersionListUpdateFailureEventArgs)e;
+//             Log.Warning("Download latest resource version list from '{0}' failure, error message '{1}'.", ne.DownloadUri, ne.ErrorMessage);
+//         }
+		
+         private void OnResourceInitComplete(object sender, GameEventArgs e)
+         {
+             m_ResourceInitComplete = true;
+ 
+             Log.Info("Init resource complete.");
+         }
 
 		//myl.modified
 		private string GetResourceVersionName()

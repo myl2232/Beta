@@ -2,7 +2,7 @@
 <UnityGameFramework>
   <AssetBundleBuilder>
     <Settings>
-      <InternalResourceVersion>2</InternalResourceVersion>
+      <InternalResourceVersion>4</InternalResourceVersion>
       <WindowsSelected>True</WindowsSelected>
       <MacOSXSelected>False</MacOSXSelected>
       <IOSSelected>False</IOSSelected>
@@ -18,7 +18,7 @@
       <AppendHashToAssetBundleNameSelected>False</AppendHashToAssetBundleNameSelected>
       <ChunkBasedCompressionSelected>True</ChunkBasedCompressionSelected>
       <BuildEventHandlerTypeName>AlphaWork.Editor.AlphaWorkBuildEventHandler</BuildEventHandlerTypeName>
-      <OutputDirectory>F:/Unity/Private/AlphaWork/AlphaWork/Output</OutputDirectory>
+      <OutputDirectory>F:/Unity/Private/Beta-Avatar/Out</OutputDirectory>
     </Settings>
   </AssetBundleBuilder>
 </UnityGameFramework>
