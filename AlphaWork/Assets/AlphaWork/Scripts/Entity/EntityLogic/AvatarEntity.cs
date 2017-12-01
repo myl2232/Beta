@@ -135,8 +135,8 @@ namespace AlphaWork
                 data.AttachScale.z * transform.localScale.z);
             data.AttachRotate = drEntity.Rotate;           
             data.Bone = drEntity.Bone;
-            
-            GameEntry.Entity.ShowEntity<AttachmentEntity>(GameEntry.Entity.GenerateSerialId(), drEntity.Weapon, "Attachment",data);
+
+            GameEntry.Entity.ShowEntity<AttachmentEntity>(data.Id/*GameEntry.Entity.GenerateSerialId()*/, drEntity.Weapon, "Attachment",data);
 
             //GameEntry.Entity.AttachEntity(newId,Id,data);
         }
