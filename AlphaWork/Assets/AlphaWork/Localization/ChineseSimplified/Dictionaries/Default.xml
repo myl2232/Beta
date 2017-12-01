@@ -25,7 +25,7 @@
     <String Key="Setting.UISound" Value="界面音效" />
     <String Key="Setting.Language" Value="语言" />
     <String Key="Setting.LanguageTips" Value="更改语言需要重启游戏" />
-    <String Key="InGame.Replace" Value="按钮" />
-    <String Key="AI.Go" Value="开始" />
+    <String Key="InGame.Replace" Value="受击" />
+    <String Key="AI.Go" Value="切换" />
   </Dictionary>
 </Dictionaries>
