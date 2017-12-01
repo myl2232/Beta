@@ -18,11 +18,14 @@ namespace AlphaWork
         private List<GameObject> m_Parts = new List<GameObject>();
         private LoadAssetCallbacks m_LoadCallbacks;
 
+        private int testskill = 0;
+
         public AvatarEntity()
         {
+            GameEntry.Event.Subscribe(UIBetaEventArgs.EventId, OnTestBeta);
             GameEntry.Event.Subscribe(AvatarCreateEventArgs.EventId, OnCreateAvatar);
             m_LoadCallbacks = new LoadAssetCallbacks(OnLoadSuccessCallback, OnLoadFailureCallback);
-
+            
         }
 
         // Use this for initialization
@@ -46,6 +49,24 @@ namespace AlphaWork
             }
         }
 
+        void OnTestBeta(object sender, GameEventArgs arg)
+        {
+            if (testskill == 0)
+            {
+                GameObject gb = Entity.Handle as GameObject;
+                gb.GetComponent<Animator>().SetInteger("skill", 1);
+
+                testskill = 1;
+            }
+            else if (testskill == 1)
+            {
+                GameObject gb = Entity.Handle as GameObject;
+                gb.GetComponent<Animator>().SetInteger("skill", 0);
+
+                testskill = 0;
+            }
+
+        }
         protected internal override void OnAttached(EntityLogic childEntity, Transform parentTransform, object userData)
         {
             base.OnAttached(childEntity, parentTransform, userData);
