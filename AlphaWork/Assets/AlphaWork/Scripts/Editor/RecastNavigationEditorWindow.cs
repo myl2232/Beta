@@ -186,8 +186,9 @@ public class RecastNavigationEditorWindow : EditorWindow
 		}
 		if (GUILayout.Button("Clear"))
 		{
-			m_navMeshRepresentation.DoClear();
-			AssetDatabase.DeleteAsset(resourceFolder);
+            if(m_navMeshRepresentation != null)
+                m_navMeshRepresentation.DoClear();
+			AssetDatabase.DeleteAsset("Assets/Resources/" + resourceFolder + "RecastNavmesh.asset");
 			
 		}
 		if (GUILayout.Button("Bake"))
@@ -459,7 +460,7 @@ public class RecastNavigationEditorWindow : EditorWindow
 			
 			System.IO.Directory.CreateDirectory(resourceFolder);
 			
-			AssetDatabase.CreateAsset(navMeshAsset, resourceFolder + "RecastNavmesh.asset");
+			AssetDatabase.CreateAsset(navMeshAsset, "Assets/Resources/"+ resourceFolder + "RecastNavmesh.asset");
 			Debug.Log(AssetDatabase.GetAssetPath(navMeshAsset));
 
             string binaryPath = resourceFolder + sceneName + ".bin";
@@ -647,7 +648,7 @@ public class RecastNavigationEditorWindow : EditorWindow
 	
 	void Init()
 	{
-		RecastNavigationDllImports.CreateLog(4096, 500);
+		//RecastNavigationDllImports.CreateLog(4096, 500);
         if (RecastNavigationDllImports.NavGeneration_Init() == false)
         {
             Debug.Log("Error initializing Recast Navigation plugin!");
