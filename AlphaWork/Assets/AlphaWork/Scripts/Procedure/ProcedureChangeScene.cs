@@ -13,7 +13,7 @@ namespace AlphaWork
         private bool m_ChangeToMenu = false;
         private bool m_IsChangeSceneComplete = false;
         private int m_BackgroundMusicId = 0;
-        private NavigationHelper m_navHelper = null;
+        //private NavigationHelper m_navHelper = null;//myl
 
         public override bool UseNativeDialog
         {
@@ -52,9 +52,9 @@ namespace AlphaWork
             // 还原游戏速度
             GameEntry.Base.ResetNormalGameSpeed();
 
-            // 卸载navigation
-            if (m_navHelper)
-                m_navHelper.CloseNavigation();
+            // 卸载navigation//myl
+//             if (m_navHelper)
+//                 m_navHelper.CloseNavigation();
 
             int sceneId = procedureOwner.GetData<VarInt>(Constant.ProcedureData.NextSceneId).Value;
             m_ChangeToMenu = (sceneId == MenuSceneId);
@@ -77,8 +77,9 @@ namespace AlphaWork
             GameEntry.Event.Unsubscribe(LoadSceneUpdateEventArgs.EventId, OnLoadSceneUpdate);
             GameEntry.Event.Unsubscribe(LoadSceneDependencyAssetEventArgs.EventId, OnLoadSceneDependencyAsset);
 
-            if (m_navHelper)
-                m_navHelper.CloseNavigation();
+            //myl
+//             if (m_navHelper)
+//                 m_navHelper.CloseNavigation();
 
             base.OnLeave(procedureOwner, isShutdown);
         }
@@ -113,7 +114,7 @@ namespace AlphaWork
             Log.Info("Load scene '{0}' OK.", ne.SceneAssetName);
 
             m_IsChangeSceneComplete = true;
-            m_navHelper = new NavigationHelper(ne.SceneAssetName);
+            //m_navHelper = new NavigationHelper(ne.SceneAssetName);//myl
             
         }
 
