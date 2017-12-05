@@ -2,96 +2,6 @@
 <UnityGameFramework>
   <AssetBundleCollection>
     <AssetBundles>
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero_airdown" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero_airground" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero_airhurt" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero_airup" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero_attack_0" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero_attack_1" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero_attack_2" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero_attack_3" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero_dead" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero_getup" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero_idle" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero_idle_g" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero_run" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero_show_g" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero_skill01" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero_skill02" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero_skill03" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero_walk" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero02_airdown" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero02_airground" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero02_airhurt" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero02_airup" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero02_attack" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero02_dead" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero02_getup" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero02_hurt" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero02_idle" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero02_run" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero02_show" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero02_skill01" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero02_skill02" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero02_skill03" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero02_skin_all" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hero02_walk" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Animations/hurt_01" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/JZ_AG" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Materials/body_03" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Materials/fashi_02" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Materials/fazhang_01" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Materials/hair_03" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Materials/jian_02" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Materials/jiemao_01" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Materials/pifeng_02" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Materials/shenti_01" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Materials/sword_03" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Materials/tou_01" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Materials/toufa_01" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Materials/toufa_02" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Materials/yanqiu_01" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Materials/yao_02" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Materials/yifu_02" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Skins/hero02_skin_all" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Skins/hero02_skin_all_g" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Skins/Low/Low_bone" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Skins/Low/Low_other" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Skins/Low/Low_shenti" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Skins/Low/Low_tou" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Skins/Low/Low_tui" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Skins/Materials/fashi_d" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Skins/Materials/jian_d" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Skins/Materials/jian_s" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Skins/Materials/Jiemao_01_Albedo" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Skins/Materials/pifeng_d" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Skins/Materials/Tou_01_Albedo" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Skins/Materials/toufa_d" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Skins/Materials/Yanqiu_01_Albedo" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Skins/Materials/yao_d" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Skins/Materials/yifu_d" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/Skins/Materials/yifu_s" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/fashi_d" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/fashi_n" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/fashi_s" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/jian_d" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/jian_n" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/jian_s" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/pifeng_d" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/pifeng_n" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/pifeng_s" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/sword_03_d" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/sword_03_n" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/sword_03_s" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/toufa_d" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/toufa_n" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/toufa_s" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/yao_d" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/yao_n" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/yao_s" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/yifu_d" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/yifu_n" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/7_jinzhan/texture/yifu_s" LoadType="0" Packed="False" />
       <AssetBundle Name="Characters/Hero/Animations/hero_airdown" LoadType="0" Packed="False" />
       <AssetBundle Name="Characters/Hero/Animations/hero_airground" LoadType="0" Packed="False" />
       <AssetBundle Name="Characters/Hero/Animations/hero_airhurt" LoadType="0" Packed="False" />
@@ -111,7 +21,6 @@
       <AssetBundle Name="Characters/Hero/Animations/hero_skill04_loop" LoadType="0" Packed="False" />
       <AssetBundle Name="Characters/Hero/Animations/hero_skill04_start" LoadType="0" Packed="False" />
       <AssetBundle Name="Characters/Hero/Animations/hero_walk" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/Hero/hero_AC" LoadType="0" Packed="False" />
       <AssetBundle Name="Characters/Hero/hero_skin" LoadType="0" Packed="False" />
       <AssetBundle Name="Characters/Hero/hero_skin2" LoadType="0" Packed="False" />
       <AssetBundle Name="Characters/Hero/Materials/Fazhang_01_Albedo" LoadType="0" Packed="False" />
@@ -161,7 +70,6 @@
       <AssetBundle Name="Characters/ThirdPersonCharacter/Animation/HumanoidWalk" LoadType="0" Packed="False" />
       <AssetBundle Name="Characters/ThirdPersonCharacter/Animation/HumanoidWalkTurn" LoadType="0" Packed="False" />
       <AssetBundle Name="Characters/ThirdPersonCharacter/Animation/HumanoidWalkTurnSharp" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController" LoadType="0" Packed="False" />
       <AssetBundle Name="Characters/ThirdPersonCharacter/Materials/EthanGrey" LoadType="0" Packed="False" />
       <AssetBundle Name="Characters/ThirdPersonCharacter/Materials/EthanWhite" LoadType="0" Packed="False" />
       <AssetBundle Name="Characters/ThirdPersonCharacter/Models/Ethan" LoadType="0" Packed="False" />
@@ -169,7 +77,6 @@
       <AssetBundle Name="Characters/ThirdPersonCharacter/Prefabs/ThirdPersonController" LoadType="0" Packed="False" />
       <AssetBundle Name="Characters/ThirdPersonCharacter/Textures/EthanNormals" LoadType="0" Packed="False" />
       <AssetBundle Name="Characters/ThirdPersonCharacter/Textures/EthanOcclusion" LoadType="0" Packed="False" />
-      <AssetBundle Name="Characters/ThirdPersonCharacter/ThirdPersonCharacterGuidelines" LoadType="0" Packed="False" />
       <AssetBundle Name="Configs/DebuggerSkin" LoadType="0" Packed="False" />
       <AssetBundle Name="DataTables/Attachment" LoadType="0" Packed="False" />
       <AssetBundle Name="DataTables/Avatar" LoadType="0" Packed="False" />
@@ -184,19 +91,10 @@
       <AssetBundle Name="DataTables/Structure" LoadType="0" Packed="False" />
       <AssetBundle Name="DataTables/UIForm" LoadType="0" Packed="False" />
       <AssetBundle Name="DataTables/UISound" LoadType="0" Packed="False" />
-      <AssetBundle Name="Entities/BallPrefab" LoadType="0" Packed="False" />
-      <AssetBundle Name="Entities/CS001" LoadType="0" Packed="False" />
-      <AssetBundle Name="Entities/CS002" LoadType="0" Packed="False" />
-      <AssetBundle Name="Entities/CS003" LoadType="0" Packed="False" />
-      <AssetBundle Name="Entities/CSPlane" LoadType="0" Packed="False" />
-      <AssetBundle Name="Entities/Cube" LoadType="0" Packed="False" />
-      <AssetBundle Name="Entities/CubePrefab" LoadType="0" Packed="False" />
       <AssetBundle Name="Entities/Ethan" LoadType="0" Packed="False" />
       <AssetBundle Name="Entities/FrameworkPrefab" LoadType="0" Packed="False" />
       <AssetBundle Name="Entities/HellephantPrefab" LoadType="0" Packed="False" />
       <AssetBundle Name="Entities/StructureBlock" LoadType="0" Packed="False" />
-      <AssetBundle Name="Entities/Test_High" LoadType="0" Packed="False" />
-      <AssetBundle Name="Entities/Test_Low" LoadType="0" Packed="False" />
       <AssetBundle Name="Entities/ZomBearPrefab" LoadType="0" Packed="False" />
       <AssetBundle Name="Entities/ZombunnyPrefab" LoadType="0" Packed="False" />
       <AssetBundle Name="Joystack/JoyStack" LoadType="0" Packed="False" />
@@ -416,15 +314,10 @@
       <Asset Guid="03debf1fe8640d04084c2c498346e974" AssetBundleName="Materials/PlayerMaterial" />
       <Asset Guid="04ebcf76f8471d946a0c79bc029b4141" AssetBundleName="Textures/FiretruckSpecular" />
       <Asset Guid="0513a639646d5434085ed846c332e341" AssetBundleName="Textures/ZomBearEmission" />
-      <Asset Guid="06ba737e4a8701546a14524538818b28" AssetBundleName="Characters/7_jinzhan/Animations/hero_attack_1" />
       <Asset Guid="07a69e8ae0dfc4c4081d8acc42dc4958" AssetBundleName="Navigations/Main/RecastNavmesh" />
       <Asset Guid="082a477a29c51434097a2cba0ae07c87" AssetBundleName="Textures/ZomBearSpecular" />
       <Asset Guid="09109b1c9eceb7f45b59ed327bed5114" AssetBundleName="Localization/ChineseTraditional/Fonts/MainFont" />
-      <Asset Guid="0958e35a21cec4b4ea7db4ecace46ded" AssetBundleName="Characters/7_jinzhan/Animations/hero_run" />
-      <Asset Guid="095f83fad9851f74d809afe22b9852ef" AssetBundleName="Characters/7_jinzhan/Skins/Materials/yifu_d" />
-      <Asset Guid="09b80ea949d6c3c468deb86b9a9c1b29" AssetBundleName="Characters/7_jinzhan/Skins/Low/Low_tui" />
       <Asset Guid="0a12413ecc2c3f54681edcc36c00993f" AssetBundleName="Textures/PlayerSpecular" />
-      <Asset Guid="0ab1e60806f7d4943bd85842a57b863d" AssetBundleName="Characters/7_jinzhan/Animations/hero_airup" />
       <Asset Guid="0b02c1b0f2dee13469778171ed1ff9bb" AssetBundleName="Textures/ClockNormals" />
       <Asset Guid="0be6d17ff4d80d34fbdbde77a12901bd" AssetBundleName="Textures/part_shockwave_dff" />
       <Asset Guid="0bfd74eda21b8b4408f654c7cf1f3665" AssetBundleName="Textures/GunSpecular" />
@@ -432,13 +325,10 @@
       <Asset Guid="0c47d4390b5db234dbe536895f43495d" AssetBundleName="Textures/FiretruckNormals" />
       <Asset Guid="0d25d98b7d007314f96f15d0b4404275" AssetBundleName="Materials/vehicle_enemyShip_glow_mat" />
       <Asset Guid="0d57e662c121ee64ab5f3d35f80170e8" AssetBundleName="Materials/vehicle_playerShip_glass_mat" />
-      <Asset Guid="0d59c95016579aa45b2fa6e73ab8f642" AssetBundleName="Characters/7_jinzhan/texture/pifeng_s" />
       <Asset Guid="0d9d26e2162aa4d11ab075b34c029673" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidIdleJumpUp" />
       <Asset Guid="0e0fc435634c4e941aee927d10781689" AssetBundleName="Characters/Hero/Textures/body_03_d" />
       <Asset Guid="0e7dd50bf04895c488b9efb777cbeac5" AssetBundleName="DataTables/Effect" />
-      <Asset Guid="10367b741d123c042a20e86908a02657" AssetBundleName="Characters/7_jinzhan/Skins/Low/Low_tou" />
       <Asset Guid="1062212255550964e974f3ffb3cbaae3" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidRunTurn" />
-      <Asset Guid="121ec4d4fcd09dc42b76d26607fc3a2f" AssetBundleName="Characters/7_jinzhan/Skins/Materials/yao_d" />
       <Asset Guid="1341592d3e2aa4647b8862340367543d" AssetBundleName="Characters/Hero/Textures/Jiemao_01_Albedo" />
       <Asset Guid="13ccfd607ec139f49969bbc0ec55662e" AssetBundleName="Meshes/prop_asteroid_03" />
       <Asset Guid="153b92475f333b648b3e1d90d575f9c3" AssetBundleName="Characters/Hero/Models/hero_hair" />
@@ -446,106 +336,74 @@
       <Asset Guid="16939a00896ff6c41892078c2559b621" AssetBundleName="Textures/HearseDiffuse" />
       <Asset Guid="16b2e2857409f6c46929e129735bcbba" AssetBundleName="UI/UIForms/AboutForm" />
       <Asset Guid="16ee79b9b1bc1494084f10c24a8f8d21" AssetBundleName="Textures/fx_lazer_cyan_dff" />
-      <Asset Guid="1752e44556e34f3488c4887d2b7c6168" AssetBundleName="Characters/7_jinzhan/texture/yao_s" />
-      <Asset Guid="179f09bbe1d389f4bbca31cd209436ff" AssetBundleName="Characters/7_jinzhan/Animations/hero_skill01" />
-      <Asset Guid="183ce70149e26a74d9b550361045a0e1" AssetBundleName="Characters/7_jinzhan/Animations/hero02_walk" />
       <Asset Guid="18683334a2daa4f40a666d3499c6eb81" AssetBundleName="Textures/DrawersNormals" />
       <Asset Guid="1954b061d6582e847bcb37fb6f3e5dc2" AssetBundleName="Textures/PlayerNormals" />
       <Asset Guid="198e8077dfa85724e949b8ee7111f203" AssetBundleName="Textures/ZomBunnyNormals" />
       <Asset Guid="19a100d5770bf4e33b0ea90254c734c8" AssetBundleName="Entities/Ethan" />
       <Asset Guid="19c0288ab1148d044b3fcd84ad5984b5" AssetBundleName="Sounds/explosion_asteroid" />
       <Asset Guid="1a4f193c7db72274692e2a0716debe39" AssetBundleName="Characters/Hero/Textures/Toufa_1_Albedo" />
-      <Asset Guid="1af915c8c1cbd6f48920f0240f709b6e" AssetBundleName="Characters/7_jinzhan/Animations/hero_attack_2" />
       <Asset Guid="1b23ed5ec94433f41ae8af0e68b1ef13" AssetBundleName="Textures/DollArmDiffuse" />
       <Asset Guid="1b9c0a73e6b356f4bbf33123f8243773" AssetBundleName="UI/UISprites/Common/background" />
       <Asset Guid="1c52c953c83c2254a9fa72d50250f028" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidWalkTurn" />
       <Asset Guid="1cb8ed3cbba15f0479fbae54e0a963df" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidRun" />
-      <Asset Guid="1d15cd9892bb0e649aff6e281d1d5e90" AssetBundleName="Characters/7_jinzhan/Animations/hero02_airhurt" />
       <Asset Guid="1d85b3bca0cde624fbe5cafa3df1976f" AssetBundleName="Characters/Hero/Animations/hero_dead" />
       <Asset Guid="1d89cf5056dba384f907e6377f086fa8" AssetBundleName="Textures/prop_asteroid_03_dff" />
-      <Asset Guid="1ddc9ddd2b53827488b8036adf50a3ea" AssetBundleName="Entities/CubePrefab" />
       <Asset Guid="1f0e3e9550f4cb44ca61a823aa187b48" AssetBundleName="Textures/part_jet_core_dff" />
       <Asset Guid="1fab1e4d34b275a4cadc3c9f81ad817a" AssetBundleName="Textures/HearseOcclusion" />
       <Asset Guid="1fe200713a8c18943ae1dceb515bc3c3" AssetBundleName="Materials/HellephantMaterial" />
       <Asset Guid="2118c0f2414a28744bd2fc8d7e632f7a" AssetBundleName="Textures/HellephantOcclusion" />
-      <Asset Guid="21222764fb18a8c468ac256871087bc1" AssetBundleName="Characters/7_jinzhan/Materials/yifu_02" />
       <Asset Guid="2130698f043fe8149974dbe7b12d1752" AssetBundleName="Textures/UIToggleBG" />
       <Asset Guid="21ab533090b128c4c8126e088451a3f9" AssetBundleName="Characters/Hero/Textures/Fazhang_01_Albedo" />
       <Asset Guid="21acfe469e928e54d8705ff74ecdb939" AssetBundleName="UI/Resource/testAtlas" />
       <Asset Guid="21f5846427977eb478ed1b1816e1f728" AssetBundleName="UI/UISounds/click" />
-      <Asset Guid="22e0af6897bac46448f391a9a7cdb391" AssetBundleName="Characters/7_jinzhan/texture/toufa_s" />
       <Asset Guid="236d996a6f89832458bce35d9d4a268b" AssetBundleName="Textures/UISliderBG" />
-      <Asset Guid="239b975bda7739b45b3893c229da0702" AssetBundleName="Characters/7_jinzhan/Skins/Materials/yifu_s" />
-      <Asset Guid="239df9c4ff315364eaaf62b91e946c03" AssetBundleName="Characters/7_jinzhan/Animations/hero_show_g" />
       <Asset Guid="23d3529109036154f8015bc12fd8e2d2" AssetBundleName="Materials/vehicle_playerShip_metal_mat" />
       <Asset Guid="25c6f434d9610ef44bf44671ef0be504" AssetBundleName="Textures/WallNormals" />
-      <Asset Guid="284050149c43ae04e96b0ac1bc936b8f" AssetBundleName="Characters/7_jinzhan/Materials/body_03" />
-      <Asset Guid="2a5def100a3ebd8479a435609ae4b4ba" AssetBundleName="Characters/7_jinzhan/Animations/hero02_hurt" />
       <Asset Guid="2aabe84e37c1686468b7e9741a75acfb" AssetBundleName="Textures/ArchesOcclusion" />
       <Asset Guid="2acbff91df6e8914c8d8ee2e341a12bb" AssetBundleName="Characters/Hero/Animations/hero_run" />
       <Asset Guid="2afdbfec03da65448a82f9bd561218c6" AssetBundleName="Textures/PlanksDiffuse" />
-      <Asset Guid="2b31481169f366f4fac8383464260871" AssetBundleName="Characters/7_jinzhan/texture/fashi_d" />
-      <Asset Guid="2b389b104133c2540af55fad0be697b1" AssetBundleName="Entities/CSPlane" />
-      <Asset Guid="2bde5060f5cc106459d089a6c4027953" AssetBundleName="Characters/7_jinzhan/Animations/hero_attack_3" />
       <Asset Guid="2c38b41a69c9bdc4bbac4dbc9324dacf" AssetBundleName="Textures/HellephantSpecular" />
       <Asset Guid="2cbe99a42b2b32f41b1f9acef79e6856" AssetBundleName="Characters/Hero/Textures/hair_03_n" />
-      <Asset Guid="2d237afc2dc75cb4da42b7e4476a7e81" AssetBundleName="Characters/7_jinzhan/texture/yifu_s" />
       <Asset Guid="2e8881e3df7cb9f4a91e414ba57fc1c2" AssetBundleName="Materials/part_blast_mat" />
       <Asset Guid="2ff3693a6a961b2439e15117174ce957" AssetBundleName="Textures/FiretruckOcclusion" />
-      <Asset Guid="301562a8594bea447895ccfeba7cb1f7" AssetBundleName="Characters/7_jinzhan/Materials/fashi_02" />
       <Asset Guid="30a4c783c386e7a46998c241a7b7a189" AssetBundleName="UI/UISprites/Common/dialog-background" />
-      <Asset Guid="326f9b7206c3dd94587963b2f7ec7ed3" AssetBundleName="Characters/7_jinzhan/texture/jian_d" />
-      <Asset Guid="32a3d65626e57454d9571abef2c19c10" AssetBundleName="Entities/Test_High" />
       <Asset Guid="32e811e014937034dbb932a3fb457c15" AssetBundleName="UI/UIForms/LoginForm" />
-      <Asset Guid="333ba78bc25e8664d86fa3c3b1a76e6b" AssetBundleName="Characters/7_jinzhan/Materials/jiemao_01" />
       <Asset Guid="347ee1be9028cc746b3616d9a7fbafd5" AssetBundleName="Materials/part_spark_large_mat" />
-      <Asset Guid="354128299b31894448ee9f75faac66df" AssetBundleName="Characters/7_jinzhan/Animations/hero_skill02" />
       <Asset Guid="3645f1bcb5fb287409ecc3731e9b1669" AssetBundleName="Textures/ReflectorSoftboxDiffuse" />
       <Asset Guid="36a3c1c0711fe9f4f89dba21529eb883" AssetBundleName="Textures/StoolSpecular" />
       <Asset Guid="381a5191badc49d4e9a90118cadf64ac" AssetBundleName="Textures/TrainNormals" />
       <Asset Guid="3834d679d9de7754dba32d72e5a4d927" AssetBundleName="Characters/Hero/Textures/hair_03_d" />
-      <Asset Guid="385e18469f1dfec4eaa09d764943b9f6" AssetBundleName="Characters/7_jinzhan/Skins/Materials/Jiemao_01_Albedo" />
       <Asset Guid="39323f4e1dd1d80408bd05af5f2db69f" AssetBundleName="Textures/HellephantNormals" />
       <Asset Guid="396fbd204325d89438de5e8c26b63d43" AssetBundleName="Textures/prop_asteroid_01_nrm" />
       <Asset Guid="3a4f2e0bbf9e45342a4613652616b762" AssetBundleName="UI/UISprites/Common/progressbar-background" />
       <Asset Guid="3a51fde69768ffe45b9d0fe68218682d" AssetBundleName="Textures/BatSpecular" />
       <Asset Guid="3ac04cbeba0db9f4a9b8aebf8409f167" AssetBundleName="Textures/tile_nebula_green_dff" />
       <Asset Guid="3b5b7be0f2332c24f89a2af018daa62d" AssetBundleName="Characters/ThirdPersonCharacter/Textures/EthanNormals" />
-      <Asset Guid="3bb063388415d5e41bfff51dfcfc98aa" AssetBundleName="Characters/7_jinzhan/Materials/sword_03" />
-      <Asset Guid="3c7d2cb1bea65fc4d890f0e7c3af75e2" AssetBundleName="Characters/7_jinzhan/texture/fashi_s" />
       <Asset Guid="3d3707bb6252f4b44b3071f150f29712" AssetBundleName="Characters/Hero/Animations/hero_skill01" />
       <Asset Guid="3d9e68517e401ae449049a6e5ec82ff1" AssetBundleName="Textures/WallSpecular" />
       <Asset Guid="3e81aed82f687094da25b33759ee1c30" AssetBundleName="Textures/DrawersSpecular" />
-      <Asset Guid="3e866b1fa9a095044a3aecf77bfdb4af" AssetBundleName="Characters/7_jinzhan/Skins/Materials/Tou_01_Albedo" />
       <Asset Guid="3ead1e5d5a3aa104693789def85c266d" AssetBundleName="Characters/Hero/Textures/Yanqiu_01_Albedo" />
       <Asset Guid="3f5c49c6fb9d37d4a899894b65d6082c" AssetBundleName="UI/UISprites/Common/checked" />
       <Asset Guid="410beef8631343141bc5c918b4f4fe03" AssetBundleName="Textures/TrainOcclusion" />
       <Asset Guid="41a4fe639750e1f46a3f96eef43eac7e" AssetBundleName="Textures/PlanksSpecular" />
       <Asset Guid="41b8965346e4a9c40bdf4430ca96b096" AssetBundleName="DataTables/Sound" />
       <Asset Guid="41f8ee8c26cf84545a0691657f0916e1" AssetBundleName="Textures/vehicle_playerShip_orange_dff" />
-      <Asset Guid="4212197a1c18eac40a65c1aecc6326ed" AssetBundleName="Characters/7_jinzhan/Animations/hero_airhurt" />
       <Asset Guid="43ef0c14169eec5409c46acb7686ddb5" AssetBundleName="Meshes/vehicle_playerShip_collider" />
-      <Asset Guid="450dc7cb7e4a70c4d890b8efc8d391d2" AssetBundleName="Characters/7_jinzhan/Animations/hero02_attack" />
       <Asset Guid="4543a6aa9a0d7874c86b472dbe652692" AssetBundleName="Textures/ZomBearDiffuse" />
       <Asset Guid="46da951115a53d146b56260e8051f9f0" AssetBundleName="Characters/Hero/Animations/hero_show_g" />
-      <Asset Guid="46ebf34c3987cf0448822fb013526d65" AssetBundleName="Characters/7_jinzhan/texture/sword_03_s" />
       <Asset Guid="4834816512cbb6849abdf88663789514" AssetBundleName="UI/UISprites/Common/button-filled" />
       <Asset Guid="48404ff521e16d149b89fa6e446741ac" AssetBundleName="Textures/FiretruckDiffuse" />
       <Asset Guid="4853cea0fbf448e48b204bdcc16a46d7" AssetBundleName="Characters/Hero/Textures/Shenti_01_emission" />
       <Asset Guid="48575bb36dfdfc44398d938a35efc744" AssetBundleName="Characters/Hero/Models/hero_body" />
-      <Asset Guid="48951715ffb45d44dac862217585330e" AssetBundleName="Characters/7_jinzhan/texture/pifeng_n" />
       <Asset Guid="491f76a9dcc198d46aaca2c0def2cd95" AssetBundleName="Textures/PlayerDiffuse" />
       <Asset Guid="49cfc658a07623b46b02d03853b573f0" AssetBundleName="Materials/done_fx_bolt_cyan_mat" />
       <Asset Guid="4af398c87fde6ed479de678f8842a5a8" AssetBundleName="Materials/part_star_mat" />
       <Asset Guid="4affaaafd64de6d4c933dc4d68b1ec1a" AssetBundleName="Meshes/prop_asteroid_02" />
       <Asset Guid="4c2d7a05a4778b2418ea91169957d60c" AssetBundleName="Characters/Hero/Textures/Fazhang_01_MetallicSmoothness" />
-      <Asset Guid="4c5e95846e28e6e4f8c3109aec96a4fe" AssetBundleName="Characters/7_jinzhan/Skins/Materials/fashi_d" />
       <Asset Guid="4db39ae0b20c1e449b2b39ce18b9a6bc" AssetBundleName="Characters/Hero/Materials/Shenti_01_Albedo" />
       <Asset Guid="4e19d0141a76bf74f832b72e8637c74b" AssetBundleName="UI/UISprites/Icons/sound" />
       <Asset Guid="4e2f32e9a1fefc24092337ae061f3dbc" AssetBundleName="Characters/ThirdPersonCharacter/Textures/EthanOcclusion" />
-      <Asset Guid="4e3f4f4a005471848808954cfa18ffba" AssetBundleName="Characters/Hero/hero_AC" />
-      <Asset Guid="4eed0ae009288d94b964124a86e317a7" AssetBundleName="Characters/7_jinzhan/Animations/hero02_skill03" />
-      <Asset Guid="4eefb300410c045409b300b14d0df17c" AssetBundleName="Characters/7_jinzhan/Skins/Materials/jian_s" />
+      <Asset Guid="4e3f4f4a005471848808954cfa18ffba" AssetBundleName="Characters/Hero/Models/hero_skin_all_lod01" />
       <Asset Guid="4f60b9a58009248478b8cac95541f9d1" AssetBundleName="Textures/ZomBunnySpecular" />
       <Asset Guid="50642870b8bd66c48a49ae1db6896653" AssetBundleName="UI/UISprites/Icons/music" />
       <Asset Guid="51dd2e4c869794f75a0df7d54b210214" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidJumpAndFall" />
@@ -554,15 +412,12 @@
       <Asset Guid="5362fbfb8a7d67b499bebb4e286cea71" AssetBundleName="Textures/UIButtonHighlighted" />
       <Asset Guid="53fb208443d163048a190733a1f44d57" AssetBundleName="Characters/Hero/Textures/Yanqiu_01_MetallicSmoothness" />
       <Asset Guid="54eb5844754051b40a918a84c33b7c1a" AssetBundleName="Characters/ThirdPersonCharacter/Prefabs/AIThirdPersonController" />
-      <Asset Guid="55b09dcef0b519742b27cd4ae1cfc7d3" AssetBundleName="Characters/7_jinzhan/Skins/Materials/toufa_d" />
-      <Asset Guid="55b79e606586ff74e811123ca3ef565f" AssetBundleName="Characters/7_jinzhan/Animations/hero02_getup" />
       <Asset Guid="560b57fe10d4fff4892a3b3350ee0f8d" AssetBundleName="Localization/Korean/Fonts/MainFont" />
       <Asset Guid="5720e34ecbfe7c24d87788a55bbe0f89" AssetBundleName="UI/UISprites/Common/button-outline" />
       <Asset Guid="57966ef28c0ddae48a8ebf6ae7a208ff" AssetBundleName="UI/Resource/testAtlas" />
       <Asset Guid="59c0dcc5dd463a94399a2ebac02bad58" AssetBundleName="Music/music_background" />
       <Asset Guid="59dab1dd1ec939a438d57d3ad863887d" AssetBundleName="Textures/prop_asteroid_02_dff" />
       <Asset Guid="5a67801764ddafb449dfc756e70481e0" AssetBundleName="UI/UISprites/Logos/unity-logo" />
-      <Asset Guid="5b61c980b2cff05479967d6b4e636d92" AssetBundleName="Characters/7_jinzhan/Materials/toufa_01" />
       <Asset Guid="5b830df7c1304b547b24168260dd6e02" AssetBundleName="Characters/Hero/Animations/hero_skill03" />
       <Asset Guid="5ba68f68e49792d4f9c087cd137ec0a9" AssetBundleName="Textures/DollhouseNormals" />
       <Asset Guid="5df579629bc404690ae7bf8cc10ed2f7" AssetBundleName="DataTables/Ethan" />
@@ -576,7 +431,6 @@
       <Asset Guid="623f716e24f00d040a8008cd4f0dbccf" AssetBundleName="Localization/ChineseTraditional/Dictionaries/Default" />
       <Asset Guid="6278805c59262fa48b3180e56f6cacb6" AssetBundleName="DataTables/UIForm" />
       <Asset Guid="62b24e67fa4ba904086c8be1ee44fc7d" AssetBundleName="Materials/GunMaterial" />
-      <Asset Guid="62e9980f010207446a4f2e2f94e71c0d" AssetBundleName="Characters/7_jinzhan/Materials/pifeng_02" />
       <Asset Guid="6355b2789aa021447be82725381416db" AssetBundleName="DataTables/Structure" />
       <Asset Guid="63afb82f72573664786156bd5b087e0b" AssetBundleName="Textures/RobotNormals" />
       <Asset Guid="63f24ea8bdc26a147909da8aed6a4398" AssetBundleName="Materials/ZombunnyMaterial" />
@@ -588,26 +442,17 @@
       <Asset Guid="6b27986d9f40f2f428310ce9577cb08f" AssetBundleName="Scenes/Login" />
       <Asset Guid="6b2b0c4bf9125a34095371457bd07f2b" AssetBundleName="Textures/DollArmNormals" />
       <Asset Guid="6b7f10f4b8f030f4e91f11e48f49da4a" AssetBundleName="Characters/Hero/Textures/Tou_01_MetallicSmoothness" />
-      <Asset Guid="6c110795031f0da46a9645fcc36607ef" AssetBundleName="Characters/7_jinzhan/texture/toufa_d" />
       <Asset Guid="6cbd226957c486148b8b68b18090a597" AssetBundleName="Characters/Hero/Animations/hero_skill02" />
-      <Asset Guid="6e5bd9a8d56da004f981e1c98b7b98f9" AssetBundleName="Characters/7_jinzhan/texture/jian_s" />
-      <Asset Guid="6e7fbd4a907fd994a9c73803d62ce5b7" AssetBundleName="Characters/7_jinzhan/Materials/jian_02" />
-      <Asset Guid="6f137415e84a00149873f66d0557dda0" AssetBundleName="Entities/CS003" />
       <Asset Guid="6fb3851da6a6f5948ab6892bee8ba920" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidStandTurn" />
-      <Asset Guid="70f5f9027e424f24eb3450bec403aa4f" AssetBundleName="Characters/7_jinzhan/Animations/hero_skill03" />
       <Asset Guid="71384cf2f49307f40a2eda6bda9c528a" AssetBundleName="Materials/prop_asteroid_01_mat" />
       <Asset Guid="71adde4ba2a09614bbf038c9b52df7d8" AssetBundleName="Characters/Hero/Models/hero_skin_all_lod01" />
       <Asset Guid="72d2e042768206b46bb11e99674a6a2d" AssetBundleName="Textures/HearseSpecular" />
       <Asset Guid="7477200d1b344094fba1ff6e01b4fe0f" AssetBundleName="UI/UISprites/Icons/world" />
-      <Asset Guid="7530ebc69efd03d4f99f5f28d0a01a03" AssetBundleName="Characters/7_jinzhan/Animations/hero_dead" />
       <Asset Guid="755a0e848abeecc499064e809a701213" AssetBundleName="Characters/Hero/Models/hero_cloth" />
-      <Asset Guid="75baaabff797e03498f1c4cd29ef9ca5" AssetBundleName="Entities/Test_Low" />
       <Asset Guid="7737647c22c1fc64a88d5cd030c352ce" AssetBundleName="Characters/ThirdPersonCharacter/Prefabs/ThirdPersonController" />
-      <Asset Guid="7748bf6f7b5b46c47b2ebf0082effbd5" AssetBundleName="Characters/7_jinzhan/Skins/Materials/Yanqiu_01_Albedo" />
       <Asset Guid="777d258aba35c41459675e40cf92c808" AssetBundleName="Textures/PlanksNormals" />
       <Asset Guid="787bbb09a483d42458ba353a5f1f7cbb" AssetBundleName="Textures/DollArmOcclusion" />
       <Asset Guid="788b07038fff8df4693fe14e04589ba9" AssetBundleName="Entities/HellephantPrefab" />
-      <Asset Guid="795f3b8296a3a184eb8fd71fa474ca96" AssetBundleName="Characters/7_jinzhan/texture/yifu_d" />
       <Asset Guid="797a108d3fae48c40aa4bbb71faa6acd" AssetBundleName="Characters/Hero/Animations/hero_skill04_loop" />
       <Asset Guid="79e46a89c4df945418dce13d70a5e0f0" AssetBundleName="Materials/part_jet_core_mat" />
       <Asset Guid="7ba81d8f0d9447b469566b45b58c8e63" AssetBundleName="Textures/prop_asteroid_03_nrm" />
@@ -621,80 +466,58 @@
       <Asset Guid="8136f0437c3f1304c90ab510cf2accd8" AssetBundleName="Textures/RobotSpecular" />
       <Asset Guid="823f9dc25d825e94cb0d08aa01fe5876" AssetBundleName="Characters/Hero/Textures/body_03_n" />
       <Asset Guid="82ee1aadbd19ec94a9685d3199f37d5b" AssetBundleName="UI/UISprites/Common/box" />
-      <Asset Guid="84f22a87bddb23645860255b414e3338" AssetBundleName="Characters/7_jinzhan/texture/toufa_n" />
       <Asset Guid="852bdb600838817499bbf9ae0d7e8a7b" AssetBundleName="UI/UISprites/Common/info" />
       <Asset Guid="8640ef3b950dc01419a5369463f74721" AssetBundleName="Textures/UISliderFill" />
       <Asset Guid="868a33f1e77795744bfd3c751c716e9d" AssetBundleName="UI/UISprites/Common/circle-filled" />
       <Asset Guid="86d3c1d6c6db92c4e9b191755bee3221" AssetBundleName="Characters/Hero/Animations/hero_run" />
       <Asset Guid="8833177f8a48f9e458e7ddf2527ea92f" AssetBundleName="Materials/prop_asteroid_02_mat" />
-      <Asset Guid="8834d9f3deafca94681761384cd7f4a0" AssetBundleName="Characters/7_jinzhan/Skins/Low/Low_shenti" />
       <Asset Guid="88553df029cf462428072d4ecb75273a" AssetBundleName="Textures/DrawersDiffuse" />
       <Asset Guid="885b17639e5cafe47827fb894b7f764c" AssetBundleName="Textures/prop_asteroid_02_nrm" />
-      <Asset Guid="88ae938a4085c514798d1f6c5535328a" AssetBundleName="Entities/BallPrefab" />
-      <Asset Guid="88ddef6f538f8f64e9bc9bb725e81834" AssetBundleName="Characters/7_jinzhan/texture/yifu_n" />
       <Asset Guid="89913d3f3f48dd5418ff0afa30a590be" AssetBundleName="Materials/part_glow_mat" />
       <Asset Guid="89a2c0944e879414eb32b698720c0865" AssetBundleName="Characters/Hero/Textures/Tou_01_Albedo" />
       <Asset Guid="8a90a6a8dbf0ab64897d26471a78776c" AssetBundleName="Textures/part_jet_flare_dff" />
       <Asset Guid="8c8ea43b8b666d341940cd3ed92a7dd0" AssetBundleName="Sounds/explosion_enemy" />
       <Asset Guid="8d0189751dff2f148818c7c0fad2d148" AssetBundleName="Characters/Hero/weapon" />
       <Asset Guid="8d5986c13966162419ddf516cdcf7b04" AssetBundleName="DataTables/Scene" />
-      <Asset Guid="8da2fd53412cab2479193c1dac9b6479" AssetBundleName="Characters/7_jinzhan/texture/sword_03_n" />
       <Asset Guid="8db6c60261cf07d4aa546a2a430c818d" AssetBundleName="UI/UIForms/DialogForm" />
       <Asset Guid="8e9dbed664c304e479442dd130ad74d6" AssetBundleName="UI/UISprites/Common/round-button-outline" />
-      <Asset Guid="904206c454333bc47a6355cf9b1b9fa4" AssetBundleName="Characters/7_jinzhan/Animations/hero02_idle" />
       <Asset Guid="90ee7b540ee22b84fb50965ff82a5d28" AssetBundleName="Textures/UIToggleButton" />
       <Asset Guid="911206f842e8da04da0f1f9042b5e555" AssetBundleName="Textures/StoolNormals" />
       <Asset Guid="91e5744fc7025b34b9a274ab36df7e0c" AssetBundleName="Textures/DollhouseDiffuse" />
       <Asset Guid="923bf454e97680a4698865ff1ca5e743" AssetBundleName="Textures/part_enginePulse_dff" />
       <Asset Guid="929bb6b7f53d81949a02f84762a5a453" AssetBundleName="Entities/FrameworkPrefab" />
-      <Asset Guid="92beef0282f87d846909a060ec3b39c7" AssetBundleName="Characters/7_jinzhan/Skins/Materials/jian_d" />
       <Asset Guid="953a666cbf70033428e8c1afa360bede" AssetBundleName="Textures/DollhouseOcclusion" />
-      <Asset Guid="96b51c61a23bc9e42b623ace4327bc10" AssetBundleName="Characters/7_jinzhan/Skins/Low/Low_other" />
-      <Asset Guid="96bcaaa2406445548a93fa740a7c8bb9" AssetBundleName="Characters/7_jinzhan/texture/jian_n" />
       <Asset Guid="979899c60b85b8c45b2d755902df55ad" AssetBundleName="Characters/Hero/Textures/body_03_s" />
-      <Asset Guid="97c8331457c14434c9673073da400087" AssetBundleName="Characters/7_jinzhan/texture/yao_n" />
-      <Asset Guid="983a3dd7a122c9341beb99a7549cd7e0" AssetBundleName="Characters/7_jinzhan/texture/yao_d" />
-      <Asset Guid="98f8ee5ed1023ff4ebea207ceed58e21" AssetBundleName="Characters/7_jinzhan/Animations/hero02_airdown" />
       <Asset Guid="997c5c17c1c4b8e45b6a1c47799ddeb0" AssetBundleName="Textures/UIButtonPressed" />
       <Asset Guid="9cad636bbf2b4ad4d80d4fb19a50b566" AssetBundleName="Textures/vehicle_enemyShip_purple_dff" />
       <Asset Guid="9e764d83643703a4392f9fca8af44ffe" AssetBundleName="Meshes/prop_asteroid_01" />
       <Asset Guid="9f5b2bd0e9ae86a4588ddf76b5ddc700" AssetBundleName="Textures/ArchesNormals" />
       <Asset Guid="a0672e5eeec32c840806d83462559e70" AssetBundleName="Characters/Hero/Textures/Shenti_01_MetallicSmoothness" />
       <Asset Guid="a0dd0f8e7db3b20428417b0d86b8976e" AssetBundleName="Sounds/explosion_player" />
-      <Asset Guid="a1ddf1dbab2c3d74599af5406fae6efb" AssetBundleName="Characters/7_jinzhan/Animations/hero02_run" />
       <Asset Guid="a33e76a8a18682947930d95a62547c5f" AssetBundleName="Textures/BloxOcclusion" />
       <Asset Guid="a4449c79c475ba04fbe67a98ec0f8877" AssetBundleName="Materials/done_tile_nebula_green_dff" />
       <Asset Guid="a50b14a3ad106b9439a5d268b5137f61" AssetBundleName="Characters/Hero/Textures/Toufa_01_Normal" />
       <Asset Guid="a5a780e4a881ea44f88afed421a63c3a" AssetBundleName="Textures/UIPanel" />
       <Asset Guid="a62ef14f9fc2e92449d8e3182a679ca4" AssetBundleName="Textures/WallOcclusion" />
-      <Asset Guid="a6beb9fa90eadba408bc127f2ed6ae85" AssetBundleName="Characters/7_jinzhan/Animations/hero_getup" />
-      <Asset Guid="a721c94785f7ae24b8caeb263fedb0f4" AssetBundleName="Characters/7_jinzhan/Animations/hero_airground" />
       <Asset Guid="a74ca7a8e93e7254d99bf0a903ced0f2" AssetBundleName="Localization/English/Fonts/MainFont" />
       <Asset Guid="a8e147f89dc10e14cb895ca15101f928" AssetBundleName="Music/music_about" />
-      <Asset Guid="a8ebbe241b1ee624c873930b537586f3" AssetBundleName="Characters/7_jinzhan/Animations/hero_idle" />
       <Asset Guid="a9b9ddf6fe2c8a34d94a0f40cc7288c0" AssetBundleName="Textures/ClockSpecular" />
       <Asset Guid="aa18764e367f1a14ba7b403f813be05a" AssetBundleName="Textures/WallDiffuse" />
       <Asset Guid="aa43a5895e7e6034dba3f9a308177107" AssetBundleName="UI/UISprites/Common/RadialJoy_Touch" />
       <Asset Guid="aaa268a288c4c8544ac10f0c99780a05" AssetBundleName="Textures/vehicle_enemyShip_nrm" />
-      <Asset Guid="ab2be10f726d37045996e29a121864ce" AssetBundleName="Characters/7_jinzhan/Animations/hero_airdown" />
       <Asset Guid="ac394e6e5080d754e8b437e5936fca3b" AssetBundleName="Textures/Heart" />
       <Asset Guid="acdb41fd591a7434a9f285ba714869c9" AssetBundleName="Textures/PuffSprite" />
       <Asset Guid="ae2f7e9c72f9fb841a7e4ad890d12f42" AssetBundleName="Characters/Hero/Animations/hero_walk" />
-      <Asset Guid="ae6536d602b716f4a9433025de29a502" AssetBundleName="Characters/7_jinzhan/Materials/shenti_01" />
       <Asset Guid="aeb818ab889bcd24199891c3cbbc6e47" AssetBundleName="Textures/UISliderHandle" />
       <Asset Guid="aee06623896086249b875dcbd6dd1c8f" AssetBundleName="Entities/ZombunnyPrefab" />
-      <Asset Guid="af82a5dcdad0f544c99fd1a84212021d" AssetBundleName="Characters/ThirdPersonCharacter/ThirdPersonCharacterGuidelines" />
       <Asset Guid="afcea23a190c35f4ab5d0dc51bd9c3e6" AssetBundleName="Textures/PuffNormalSprite" />
       <Asset Guid="afd0eaaf061ee4e57afadf00b9691829" AssetBundleName="Scenes/Main" />
       <Asset Guid="b14c8e325b9410d4a9700ebb36b41875" AssetBundleName="Textures/TrainDiffuse" />
       <Asset Guid="b1a5e04ae51004842aba06704a6c2903" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidWalk" />
-      <Asset Guid="b1a601f8c7f9b334cb69848c02dcaa39" AssetBundleName="Characters/7_jinzhan/Animations/hero02_skin_all" />
       <Asset Guid="b235179bd2a63d1468dd430670338c55" AssetBundleName="Characters/ThirdPersonCharacter/Models/Ethan" />
-      <Asset Guid="b2af184f133039346bd12f51b7f9481f" AssetBundleName="Characters/7_jinzhan/texture/pifeng_d" />
       <Asset Guid="b2e6b09f30c82044189dc7c71ef63949" AssetBundleName="Characters/Hero/hero_skin" />
       <Asset Guid="b49cb1af3dbbf9044a5bdb0a875c2359" AssetBundleName="Textures/DrawersOcclusion" />
       <Asset Guid="b4d1c7d98e9dba44abe28774b401b5b2" AssetBundleName="Textures/BloxDiffuse" />
-      <Asset Guid="b57c3a2bff905ba4ba255b0e68c919ea" AssetBundleName="Characters/7_jinzhan/Animations/hero02_airup" />
       <Asset Guid="b6348e231572d884f932b6c18cfc67b8" AssetBundleName="Characters/Hero/Textures/sword_03_d" />
       <Asset Guid="b758be8bb94230041960ef4642a3388a" AssetBundleName="Characters/Hero/Textures/Yanqiu__01Normal" />
       <Asset Guid="b75c17f964e69fb4fa26775bbb3b8bbe" AssetBundleName="Textures/StoolDiffuse" />
@@ -705,51 +528,36 @@
       <Asset Guid="bac8a5174c9e4bc44aad4f40be74f167" AssetBundleName="UI/UISprites/Common/dialog-title-background" />
       <Asset Guid="bb141fc9a700c9c4ca7e6dadb8acf24b" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidWalkTurnSharp" />
       <Asset Guid="bb14626fa3aa3aa4ba0c22e62cfd8b58" AssetBundleName="Textures/ClockOcclusion" />
-      <Asset Guid="bb39b97afe04b9441bb17d4b4a8e860c" AssetBundleName="Characters/7_jinzhan/Materials/tou_01" />
       <Asset Guid="bc3da00c6a503064885f56e579ee1898" AssetBundleName="Meshes/vehicle_playerShip" />
       <Asset Guid="bd717824af089434aada5d941efbbe36" AssetBundleName="Textures/DollhouseSpecular" />
       <Asset Guid="bdccf8d8a826ce340a7fac88e98a421e" AssetBundleName="UI/UISprites/Common/progress-conner" />
       <Asset Guid="be66986effd141b4992d2d78be127139" AssetBundleName="Models/Zombunny" />
-      <Asset Guid="bea4b3551ce3dba479049103702da5e1" AssetBundleName="Entities/CS002" />
-      <Asset Guid="bef5ddd440ae2314ba6f4cb52b4ebab2" AssetBundleName="Characters/7_jinzhan/Materials/toufa_02" />
-      <Asset Guid="bfe887d18ff7ff247befbd957b076a46" AssetBundleName="Characters/7_jinzhan/Skins/hero02_skin_all_g" />
-      <Asset Guid="c054ed638e784d24c85091e6719726e4" AssetBundleName="Characters/7_jinzhan/Materials/yao_02" />
       <Asset Guid="c0e882515e9c95140aaa78d1b19e740b" AssetBundleName="Localization/ChineseSimplified/Dictionaries/Default" />
       <Asset Guid="c191e1d53f423ae4fb39545c8d3088d2" AssetBundleName="Textures/RobotOcclusion" />
       <Asset Guid="c2134e78e02ea0f409faf4f4110d6227" AssetBundleName="Localization/Korean/Dictionaries/Default" />
       <Asset Guid="c236aa7ad6dcabe47abc7d2cf903ae71" AssetBundleName="Models/ZomBear" />
       <Asset Guid="c2a68c156250a734ba386e7c8a924b20" AssetBundleName="Characters/Hero/Textures/Shenti_01_Albedo" />
       <Asset Guid="c3d515b9e9f07fc4c946876a56944ae7" AssetBundleName="Music/music_menu" />
-      <Asset Guid="c3d690350049471438dfd34dd6e63291" AssetBundleName="Characters/7_jinzhan/Animations/hero02_skill02" />
       <Asset Guid="c621ddb405f9fd24eb7ab79082ce3d10" AssetBundleName="Textures/ZomBunnyDiffuse" />
       <Asset Guid="c629f7c714307574f9e370c160ce99ef" AssetBundleName="Textures/part_spark_large_dff" />
       <Asset Guid="c76fb875a2309d0419fb1f98e70eb70b" AssetBundleName="Sounds/weapon_enemy" />
-      <Asset Guid="c8c2f489e73d7114eb304f70d5e0b11f" AssetBundleName="Characters/7_jinzhan/Animations/hero02_skill01" />
       <Asset Guid="c97a1b95721384544bd705a31375d214" AssetBundleName="Characters/Hero/Textures/Shenti_01_Normal" />
-      <Asset Guid="cad737a28866d3a4e9d235ef150c87db" AssetBundleName="Characters/7_jinzhan/JZ_AG" />
       <Asset Guid="cb73336ad65ebd8478b7a1685a44e643" AssetBundleName="UI/UISprites/Common/circle-outline" />
-      <Asset Guid="cb8cd3ce1bf1eb7479365b15d717c01d" AssetBundleName="Characters/7_jinzhan/Skins/Low/Low_bone" />
       <Asset Guid="cbcc0ae670965c545b4070c76c3875a2" AssetBundleName="DataTables/UISound" />
       <Asset Guid="cc5d083810f620741959a7a2003c26d5" AssetBundleName="Materials/vehicle_enemyShip_metal_mat" />
       <Asset Guid="cc7782cd1d8f67c4b9ffc5cef3b25717" AssetBundleName="Configs/DebuggerSkin" />
-      <Asset Guid="ccb34bb80fe59bd428200c793afc405d" AssetBundleName="Characters/7_jinzhan/Materials/hair_03" />
       <Asset Guid="cd4f570575143de4da3d6a8885e4b53a" AssetBundleName="UI/UIForms/InGameForm" />
       <Asset Guid="cdb9fe901fb3ffe45a4702a94b57d132" AssetBundleName="UI/UIForms/MainForm" />
       <Asset Guid="d054d8229077ef64b8178b31b8aece07" AssetBundleName="DataTables/Entity" />
       <Asset Guid="d1054bfa27d4ea94597e1a76dcdd8216" AssetBundleName="Characters/Hero/weapon_skin" />
-      <Asset Guid="d12a5fbe2627a8a4d936a08e092f4ee6" AssetBundleName="Entities/CS001" />
       <Asset Guid="d1c7ecbfa9d390d47bc8069ef11ef63c" AssetBundleName="Materials/EyesMaterial" />
       <Asset Guid="d2485d75ed202304a845924f7e0add8a" AssetBundleName="UI/UISprites/Common/progressbar" />
       <Asset Guid="d280b9a7a89689a43a723f61e4bb4f68" AssetBundleName="UI/UISprites/Common/line" />
-      <Asset Guid="d33fac772ac6d6d48820697f47837557" AssetBundleName="Characters/7_jinzhan/Animations/hero02_show" />
       <Asset Guid="d4856d3629180cb41b866592e9597e5b" AssetBundleName="Materials/done_fx_bolt_orange_mat" />
-      <Asset Guid="d4b16a8b858f05e448bff5e682e5f1ac" AssetBundleName="Characters/7_jinzhan/texture/sword_03_d" />
-      <Asset Guid="d4e65d426cd065442ae5b5d7680e7847" AssetBundleName="Characters/7_jinzhan/Animations/hero_walk" />
       <Asset Guid="d4ff752cdc026c940a344acee627c9af" AssetBundleName="Characters/Hero/Animations/hero_idle" />
       <Asset Guid="d7b4c1dfdd42501499d25733a2d0f401" AssetBundleName="Materials/ZombearMaterial" />
       <Asset Guid="d89ea37480b6d75458aa38843e9688dc" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidCrouch" />
       <Asset Guid="d8e0286bdc82a2f4583592f58e77eee1" AssetBundleName="DataTables/Avatar" />
-      <Asset Guid="d979a09873ec3684e9cb8156ae5bf6c3" AssetBundleName="Characters/7_jinzhan/Materials/yanqiu_01" />
       <Asset Guid="d9f8f1c91f916284ebbc6e0c7442b094" AssetBundleName="Materials/fx_enemyShip_engines_mat" />
       <Asset Guid="daddb9e8841e08b43b3fb891f0cc3abd" AssetBundleName="Characters/Hero/Animations/hero_airhurt" />
       <Asset Guid="ddaa54c04e998c0428fade562388a441" AssetBundleName="Textures/vehicle_playerShip_orange_nrm" />
@@ -759,10 +567,7 @@
       <Asset Guid="e10d7f96ad9b81e4f9959c92cda4332e" AssetBundleName="DataTables/Attachment" />
       <Asset Guid="e12e02d772ea2ae46a1df6caad08b12f" AssetBundleName="Characters/Hero/Textures/Fazhang_01_Normal" />
       <Asset Guid="e195a48b7304e10499b4e02e42b13bfc" AssetBundleName="Textures/SpinningTopOcclusion" />
-      <Asset Guid="e2795e83d7c151b4f9ad19d83dd06274" AssetBundleName="Characters/7_jinzhan/Animations/hero02_airground" />
-      <Asset Guid="e2cf68ff4b1ffda45a77f7307dd789b9" AssetBundleName="Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController" />
-      <Asset Guid="e46cf805f87219b4784f44b12eed0b1e" AssetBundleName="Characters/7_jinzhan/texture/fashi_n" />
-      <Asset Guid="e5a864ac29f43e94bb2c115ba0702c38" AssetBundleName="Characters/7_jinzhan/Materials/fazhang_01" />
+      <Asset Guid="e2cf68ff4b1ffda45a77f7307dd789b9" AssetBundleName="Characters/ThirdPersonCharacter/Models/Ethan" />
       <Asset Guid="e6ab9854c54d06a428ac81317888d567" AssetBundleName="Textures/part_flash_dff" />
       <Asset Guid="e6e99f9ddd45baf4bb95a4f65b0d88de" AssetBundleName="Textures/HellephantDiffuse" />
       <Asset Guid="e79c99912213d634a94d1f353e1f956e" AssetBundleName="Characters/Hero/Animations/hero_skill04_end" />
@@ -770,38 +575,31 @@
       <Asset Guid="e91a8034e8f26cb4d895cd6595c06313" AssetBundleName="Localization/English/Dictionaries/Default" />
       <Asset Guid="e92c8811c1c00c0458e45fc68a77a16c" AssetBundleName="UI/Resource/testAtlas" />
       <Asset Guid="e9328fea47a3a274097565f94dbe7fd9" AssetBundleName="UI/UIForms/SettingForm" />
-      <Asset Guid="ea604a11d537af94fb9386af811abeb8" AssetBundleName="Characters/7_jinzhan/Skins/Materials/pifeng_d" />
       <Asset Guid="eb5f9e30440abd147aafe8ac1ba0f490" AssetBundleName="Characters/Hero/Animations/hero_airground" />
       <Asset Guid="ebabfc2a7539dad479baf4c706edd998" AssetBundleName="UI/UISprites/Common/round-button-filled" />
       <Asset Guid="ec067660d6fb5db47893be73bc85b546" AssetBundleName="Textures/part_star_dff" />
       <Asset Guid="ecda132217afa6041ac58145caf59b46" AssetBundleName="Materials/part_spark_yellow_mat" />
       <Asset Guid="ed22a54916e788349a9667dde244c8db" AssetBundleName="Textures/BatOcclusion" />
       <Asset Guid="ed4740d780aef3f42a21849c26bd5218" AssetBundleName="DataTables/NPC" />
-      <Asset Guid="ede77c323e4338248b19394eef696d3e" AssetBundleName="Characters/7_jinzhan/Skins/hero02_skin_all" />
       <Asset Guid="ef101b2513f727f4f84880eaf51994c8" AssetBundleName="DataTables/Music" />
       <Asset Guid="ef51644ef7f232043b01220784de2c23" AssetBundleName="Textures/fx_lazer_orange_dff" />
       <Asset Guid="efa9e000e09a8e04e9d2e9030bcc78fb" AssetBundleName="Textures/ClockDiffuse" />
       <Asset Guid="f03e10c73f30b4ab4aa8ea8f1cc16d36" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidMidAir" />
       <Asset Guid="f0b5213189232764daf08b2e7ad112f5" AssetBundleName="Textures/HellephantEmissive" />
       <Asset Guid="f0b885155cd32d2478fb7c78b5a98c53" AssetBundleName="Textures/StoolOcclusion" />
-      <Asset Guid="f0dc0e2e8e5621441921cc0fd2708765" AssetBundleName="Characters/7_jinzhan/Animations/hero02_dead" />
       <Asset Guid="f18bf6df691bb9b4a908f76fa02cafb0" AssetBundleName="DataTables/DOWNLOAD" />
       <Asset Guid="f29cadcd4f883bd42853f5130797bd90" AssetBundleName="Sounds/weapon_player" />
       <Asset Guid="f2bed5dc5afacff44a00de8daae9703b" AssetBundleName="Characters/ThirdPersonCharacter/Animation/HumanoidRunTurnSharp" />
       <Asset Guid="f3b9facfe70602045a05c93c991f96a5" AssetBundleName="Textures/PlayerOcclusion" />
-      <Asset Guid="f449a450b0b292f4298e9d6a9be7596f" AssetBundleName="Entities/Cube" />
       <Asset Guid="f48f0c81ef3d12e43aa8ca0b3e87ead8" AssetBundleName="Textures/ZomBunnyEmissive" />
       <Asset Guid="f592d534af6aced4784d9e55b1d3a8c7" AssetBundleName="Textures/ZomBunnyOcclusion" />
       <Asset Guid="f62b52b2d4b721742a0bc5c6b4db468d" AssetBundleName="Characters/ThirdPersonCharacter/Materials/EthanWhite" />
       <Asset Guid="f8562f7b6c022bd42b415a91880d7480" AssetBundleName="Characters/Hero/Textures/sword_03_n" />
       <Asset Guid="f991c5ebb40b5db42b9505a1a96c5ffa" AssetBundleName="Textures/ArchesDiffuse" />
-      <Asset Guid="f9c22f7e3141ca9408714b7238dc968d" AssetBundleName="Characters/7_jinzhan/Animations/hero_idle_g" />
       <Asset Guid="fa6aba998fc935d43ac3834efc6f08d6" AssetBundleName="UI/UISprites/Common/circle" />
       <Asset Guid="fa765a81bc7e9654db4e63eb74d757e8" AssetBundleName="Textures/ZomBearOcclusion" />
       <Asset Guid="fab7131405f96e44a93246f7cc0d319b" AssetBundleName="Entities/StructureBlock" />
-      <Asset Guid="fb0a63fc65550e34d9d116ab5df0f3ab" AssetBundleName="Characters/7_jinzhan/Animations/hero_attack_0" />
       <Asset Guid="fcf27ef4ab257ab4ba700a4440626a94" AssetBundleName="Joystack/JoyStack" />
-      <Asset Guid="fe5c9f5b4ddd9e846bb8e831f955fba1" AssetBundleName="Characters/7_jinzhan/Animations/hurt_01" />
       <Asset Guid="fe9d2b783b9403f459ee92cf71d207e2" AssetBundleName="Textures/RobotDiffuse" />
       <Asset Guid="feca4e72d41645f459b10a4af45093de" AssetBundleName="Meshes/vehicle_enemyShip" />
       <Asset Guid="ff31eb95ae365874199f51b34dc11af1" AssetBundleName="Characters/Hero/Animations/hero_hurt" />

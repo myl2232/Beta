@@ -90,7 +90,7 @@ namespace AlphaWork
             // Preload fonts
             LoadFont("MainFont");
 
-            Download();
+            //Download();//myl
         }
 
         private void LoadDataTable(string dataTableName)

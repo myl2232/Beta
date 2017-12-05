@@ -43,7 +43,7 @@ namespace AlphaWork
                 {
                     for (int j = 0; j < 4; ++j)
                     {
-                        sPt = new Vector3(128 + i * 2, 0.5f, 128 + j * 2);
+                        sPt = new Vector3(128 + i * 5 + j*3, 0.5f, 128 + j * 4);
                         GameEntry.Entity.ShowAvatar(new AvatarData(GameEntry.Entity.GenerateSerialId(), 80003,
                             CampType.Player)
                         {

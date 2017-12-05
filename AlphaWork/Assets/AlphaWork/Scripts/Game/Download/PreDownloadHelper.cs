@@ -6,7 +6,9 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using UnityGameFramework.Runtime;
-
+/// <summary>
+/// 测试下载模块
+/// </summary>
 namespace AlphaWork
 {
     public partial class PreDownloadHelper : MonoBehaviour
