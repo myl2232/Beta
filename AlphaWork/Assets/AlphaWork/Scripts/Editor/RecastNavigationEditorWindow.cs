@@ -247,7 +247,7 @@ public class RecastNavigationEditorWindow : EditorWindow
             Handles.EndGUI();
         }
 #if !UNITY_STANDALONE_OSX
-        if(_params.drawNavMesh)
+        if(m_params.drawNavMesh)
 #endif
         {
             if (m_navMeshRepresentation.m_navDataVisualDebugMeshes != null)
