@@ -18,8 +18,17 @@ public struct NavMeshBuildSettings
     public float m_heightInaccuracy;
 };
 
+
 public class RecastNavigationDllImports
 {
+
+#if UNITY_IPHONE //|| UNITY_STANDALONE_OSX
+    const string Recast_Dll = "__Internal";
+#elif UNITY_STANDALONE_OSX
+    const string Recast_Dll = "ASimplePlugin";
+#else
+    const string Recast_Dll = "recast-unity";
+#endif
     /******** Log    ************************************************************
     * Call CreateLog before GwNavigation init (before calling GwNavRuntime_Init).
     * Call DestroyLog after GwNavigation deinit (after calling GwNavRuntime_DeInit).
@@ -30,28 +39,28 @@ public class RecastNavigationDllImports
     * GetGwNavLogMessageCount and for each message, call GetGwNavLog. When done, call FlushGwNavLog.
     */
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern void CreateLog(int bufferMaxSize, int maxMessageCount);
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern int GetGwNavLogMessageCount();
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern IntPtr GetGwNavLog(int messageIndex, out int messageSize);
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern void FlushGwNavLog();
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern void DestroyLog();
 
 
     /******** Base system *************************************************************/
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern bool NavGeneration_Init();
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern void NavGeneration_DeInit();
 
     /******** Path find *************************************************************/
@@ -69,10 +78,10 @@ public class RecastNavigationDllImports
         return true;
     }
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern int CalcSmoothPath(Vector3 start, Vector3 end);
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern int GetSmoothPath(Vector3[] smoothPath);
 
     /******** Generate ************************************************************
@@ -83,57 +92,57 @@ public class RecastNavigationDllImports
      * 5. Render generated data
      */
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern void InitGenerator();
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern bool Generate(NavMeshBuildSettings config, string generationName);
 
 
     /******** Consume inputs *************************************************************/
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern void PushTriangle(Vector3 A, Vector3 B, Vector3 C);
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern void PushSeedPoint(Vector3 pos);
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern void PushTriangleWithNavTag(Vector3 A, Vector3 B, Vector3 C);
 
 
     /******** Get generated data *************************************************************/
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern int GetGeneratedDataSizeInBytes();
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern bool GetGeneratedData(ref IntPtr buffer, ref int bufferSize);
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern int GetNavMeshTriangleCount();
 
 
     /******** Render generated data *************************************************************/
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern bool LoadNavDataImmediate(IntPtr memory);
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern bool RemoveAllNavData();
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern bool BuildDatabaseGeometry();
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern uint GetDatabaseTriangleCount();
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern bool GetDatabaseTriangle(uint triangleIndex, out RecastVisualTriangle triangle);
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern int GetPolygonVertexCount();
 
-    [DllImport("recast-unity", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern bool GetPolygonVertex(uint vertexIndex, out Vector3 vertex, out Color32 color);
 }
