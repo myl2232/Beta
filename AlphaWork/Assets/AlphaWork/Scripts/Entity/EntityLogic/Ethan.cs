@@ -27,7 +27,7 @@ namespace AlphaWork
         
         void OnShrink(object sender, GameEventArgs arg)
         {
-            GetComponent<ShakeHit>().OnShake();
+            GetComponent<BehaviourShakeHit>().OnShake();
         }
                
     }

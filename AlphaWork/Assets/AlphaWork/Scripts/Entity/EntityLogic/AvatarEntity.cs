@@ -24,13 +24,17 @@ namespace AlphaWork
         {
             GameEntry.Event.Subscribe(UIBetaEventArgs.EventId, OnTestBeta);
             GameEntry.Event.Subscribe(AvatarCreateEventArgs.EventId, OnCreateAvatar);
-            m_LoadCallbacks = new LoadAssetCallbacks(OnLoadSuccessCallback, OnLoadFailureCallback);
-            
+            m_LoadCallbacks = new LoadAssetCallbacks(OnLoadSuccessCallback, OnLoadFailureCallback);            
         }
 
         // Use this for initialization
         void Start()
         {
+            if ((Data as AvatarData).AlowMove)
+            {
+                BehaviourMove moveBehaviour = gameObject.AddComponent<BehaviourMove>();
+                moveBehaviour.Parent = this;
+            }
         }
 
         // Update is called once per frame

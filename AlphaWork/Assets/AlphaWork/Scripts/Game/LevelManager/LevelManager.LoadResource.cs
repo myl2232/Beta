@@ -45,7 +45,7 @@ namespace AlphaWork
                     {
                         sPt = new Vector3(128 + i * 5 + j*3, 0.5f, 128 + j * 4);
                         GameEntry.Entity.ShowAvatar(new AvatarData(GameEntry.Entity.GenerateSerialId(), 80003,
-                            CampType.Player)
+                            CampType.Player/*,true*/)
                         {
                             Position = sPt,
 //                             Rotation = Quaternion.AngleAxis(90, Vector3.left),

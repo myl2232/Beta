@@ -7,7 +7,7 @@ namespace AlphaWork
 {
     public class MoveTarget : MonoBehaviour
     {
-        public float Speed = 1;
+        public float Speed = 2;
         private Vector3 m_movePos;
         private Vector3 m_startPos;
         

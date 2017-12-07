@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShakeHit : MonoBehaviour {
+public class BehaviourShakeHit : MonoBehaviour {
 
     public string SkeletonRoot = "EthanHips";
     public float Duration = 0.2f;    

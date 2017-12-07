@@ -90,5 +90,6 @@ namespace AlphaWork
                 m_Scale = value;
             }
         }
+
     }
 }
