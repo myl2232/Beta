@@ -25,7 +25,7 @@ public class RecastNavigationDllImports
 #if UNITY_IPHONE //|| UNITY_STANDALONE_OSX
     const string Recast_Dll = "__Internal";
 #elif UNITY_STANDALONE_OSX
-    const string Recast_Dll = "ASimplePlugin";
+    const string Recast_Dll = "Recast-1.0";
 #else
     const string Recast_Dll = "recast-unity";
 #endif
@@ -65,16 +65,31 @@ public class RecastNavigationDllImports
 
     /******** Path find *************************************************************/
 
-    public static bool PathFind(Vector3 start, Vector3 end, 
+    public static bool PathFind(Vector3 start, Vector3 end,
         ref int pathNum, ref Vector3[] smoothPath)
     {
+
+
+#if UNITY_IPHONE || UNITY_STANDALONE_OSX
+        pathNum = CalcSmoothPath2(start.x, start.y, start.z, end.x, end.y, end.z);
+#else
         pathNum = CalcSmoothPath(start, end);
+#endif
         if (pathNum == 0)
         {
             return false;
         }
 
+#if UNITY_IPHONE || UNITY_STANDALONE_OSX
+        for (int i = 0; i < GetPathPointCount();++i)
+        {
+
+            GetSmoothVert(i, ref smoothPath[i].x, ref smoothPath[i].y, ref smoothPath[i].z);
+        }
+#else
         GetSmoothPath(smoothPath);
+#endif
+       
         return true;
     }
 
@@ -98,7 +113,15 @@ public class RecastNavigationDllImports
     [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern bool Generate(NavMeshBuildSettings config, string generationName);
 
-
+    //myl
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
+    public static extern int CalcSmoothPath2(float startX, float startY, float startZ, float endX, float endY, float endZ);
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
+    public static extern int GetPathPointCount();
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
+    public static extern void GetSmoothVert(int index, ref float xx, ref float yy,ref float zz);
+    //[DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
+    //public static extern bool GetPolygonVertex2(int vertexIndex,ref float xx,ref float yy, ref float zz, GwNavColor* color);
     /******** Consume inputs *************************************************************/
 
     [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
