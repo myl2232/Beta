@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{F69D865B-AF57-ED36-3C03-12EE49EF5962}|Unit Tests">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/AlphaWork/Scripts/Game/Navigation/RecastNavigationDllImports.cs">
+    <Files>
+      <File FileName="Assets/AlphaWork/Scripts/Game/Navigation/RecastNavigationDllImports.cs" Line="29" Column="6" />
+      <File FileName="Assets/AlphaWork/Scripts/Game/LevelManager/LevelManager.LoadResource.cs" Line="41" Column="17" />
+      <File FileName="Assets/AlphaWork/Scripts/Editor/RecastNavigationEditorWindow.cs" Line="599" Column="54" />
+      <File FileName="Game Status" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-firstpass PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>

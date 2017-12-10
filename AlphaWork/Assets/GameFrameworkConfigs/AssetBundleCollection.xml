@@ -78,6 +78,7 @@
       <AssetBundle Name="Characters/ThirdPersonCharacter/Textures/EthanNormals" LoadType="0" Packed="False" />
       <AssetBundle Name="Characters/ThirdPersonCharacter/Textures/EthanOcclusion" LoadType="0" Packed="False" />
       <AssetBundle Name="Configs/DebuggerSkin" LoadType="0" Packed="False" />
+      <AssetBundle Name="Configs/DeviceModelConfig" LoadType="0" Packed="False" />
       <AssetBundle Name="DataTables/Attachment" LoadType="0" Packed="False" />
       <AssetBundle Name="DataTables/Avatar" LoadType="0" Packed="False" />
       <AssetBundle Name="DataTables/DOWNLOAD" LoadType="0" Packed="False" />
@@ -602,6 +603,7 @@
       <Asset Guid="fcf27ef4ab257ab4ba700a4440626a94" AssetBundleName="Joystack/JoyStack" />
       <Asset Guid="fe9d2b783b9403f459ee92cf71d207e2" AssetBundleName="Textures/RobotDiffuse" />
       <Asset Guid="feca4e72d41645f459b10a4af45093de" AssetBundleName="Meshes/vehicle_enemyShip" />
+      <Asset Guid="ff2227fa2efd760439b40a38b8dcbd61" AssetBundleName="Configs/DeviceModelConfig" />
       <Asset Guid="ff31eb95ae365874199f51b34dc11af1" AssetBundleName="Characters/Hero/Animations/hero_hurt" />
       <Asset Guid="ff4f3f77995280d4097a5987293bb2f5" AssetBundleName="Textures/prop_asteroid_01_dff" />
       <Asset Guid="ff9457235c8767c40b11bdae21330def" AssetBundleName="Scenes/Temp" />

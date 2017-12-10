@@ -2,10 +2,10 @@
 <UnityGameFramework>
   <AssetBundleBuilder>
     <Settings>
-      <InternalResourceVersion>8</InternalResourceVersion>
-      <WindowsSelected>True</WindowsSelected>
+      <InternalResourceVersion>1</InternalResourceVersion>
+      <WindowsSelected>False</WindowsSelected>
       <MacOSXSelected>False</MacOSXSelected>
-      <IOSSelected>False</IOSSelected>
+      <IOSSelected>True</IOSSelected>
       <AndroidSelected>False</AndroidSelected>
       <WindowsStoreSelected>False</WindowsStoreSelected>
       <ZipSelected>True</ZipSelected>
@@ -18,7 +18,7 @@
       <AppendHashToAssetBundleNameSelected>False</AppendHashToAssetBundleNameSelected>
       <ChunkBasedCompressionSelected>True</ChunkBasedCompressionSelected>
       <BuildEventHandlerTypeName>AlphaWork.Editor.AlphaWorkBuildEventHandler</BuildEventHandlerTypeName>
-      <OutputDirectory>F:/Unity/Private/Beta-Avatar/Out</OutputDirectory>
+      <OutputDirectory>/Users/yuleima/Downloads/Beta/Out</OutputDirectory>
     </Settings>
   </AssetBundleBuilder>
 </UnityGameFramework>
