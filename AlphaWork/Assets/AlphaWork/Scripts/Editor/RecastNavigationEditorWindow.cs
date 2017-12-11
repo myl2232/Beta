@@ -184,7 +184,7 @@ public class RecastNavigationEditorWindow : EditorWindow
         {
             OnResetButtonPressed();
         }
-#if !UNITY_STANDALONE_OSX
+//#if !UNITY_STANDALONE_OSX
         if (GUILayout.Button("Clear"))
         {
             if (m_navMeshRepresentation != null)
@@ -196,7 +196,7 @@ public class RecastNavigationEditorWindow : EditorWindow
         {
             Bake();
         }
-#endif
+//#endif
         EditorGUILayout.EndHorizontal();
 
         m_params.showInEditorGui = GUILayout.Toggle(m_params.showInEditorGui, "Editor navMesh view config");
@@ -334,12 +334,21 @@ public class RecastNavigationEditorWindow : EditorWindow
                 Vector3 posA = t.TransformPoint(posALocal);
                 Vector3 posB = t.TransformPoint(posBLocal);
                 Vector3 posC = t.TransformPoint(posCLocal);
-
+#if UNITY_IPHONE || UNITY_STANDALONE_OSX
+                if (HasNegativeScaleTransform(t))
+                    RecastNavigationDllImports.PushTriangleWithNavTag2(posC.x, posC.y, posC.z,
+                                                                       posB.x, posB.y, posB.z,
+                                                                       posA.x, posA.y, posA.z);
+                else
+                    RecastNavigationDllImports.PushTriangleWithNavTag2(posA.x, posA.y, posA.z,
+                                                                       posB.x, posB.y, posB.z,
+                                                                       posC.x, posC.y, posC.z);
+#else
                 if (HasNegativeScaleTransform(t))
                     RecastNavigationDllImports.PushTriangleWithNavTag(posC, posB, posA);
                 else
                     RecastNavigationDllImports.PushTriangleWithNavTag(posA, posB, posC);
-
+#endif
                 totalTriangleCount++;
             }
         }
@@ -373,8 +382,18 @@ public class RecastNavigationEditorWindow : EditorWindow
 
                 //                 RecastNavigationDllImports.PushTriangleWithNavTag(A, B, C);
                 //                 RecastNavigationDllImports.PushTriangleWithNavTag(A, C, D);
+#if UNITY_IPHONE || UNITY_STANDALONE_OSX
+                RecastNavigationDllImports.PushTriangleWithNavTag2(C.x, C.y, C.z,
+                                                                   B.x, B.y, B.z,
+                                                                   A.x, A.y, A.z);
+                RecastNavigationDllImports.PushTriangleWithNavTag2(D.x, D.y, D.z,
+                                                                   C.x, C.y, C.z,
+                                                                   A.x, A.y, A.z);
+#else
                 RecastNavigationDllImports.PushTriangleWithNavTag(C, B, A);
                 RecastNavigationDllImports.PushTriangleWithNavTag(D, C, A);
+#endif
+
                 totalTriangleCount += 2;
             }
         }
@@ -402,7 +421,37 @@ public class RecastNavigationEditorWindow : EditorWindow
             totalTriangleCount +=2;
             */
 
-            // Push trunk as a vertical square based tube
+// Push trunk as a vertical square based tube
+#if UNITY_IPHONE || UNITY_STANDALONE_OSX
+            // Front
+            RecastNavigationDllImports.PushTriangleWithNavTag2(baseA.x,baseA.y,baseA.z,
+                                                               baseB.x,baseB.y,baseB.z,
+                                                               topB.x,topB.y,topB.z);
+            RecastNavigationDllImports.PushTriangleWithNavTag2(baseA.x,baseA.y,baseA.z,
+                                                               topB.x,topB.y,topB.z,
+                                                               topA.x,topA.y,topA.z);
+            // Right
+            RecastNavigationDllImports.PushTriangleWithNavTag2(baseB.x,baseB.y,baseB.z,
+                                                               baseC.x,baseC.y,baseC.z,
+                                                               topC.x,topC.y,topC.z);
+            RecastNavigationDllImports.PushTriangleWithNavTag2(baseB.x,baseB.y,baseB.z,
+                                                               topC.x,topC.y,topC.z, 
+                                                               topB.x,topB.y,topB.z);
+            // Back
+            RecastNavigationDllImports.PushTriangleWithNavTag2(baseC.x,baseC.y,baseC.z,
+                                                               baseD.x,baseD.y,baseD.z,
+                                                               topD.x,topD.y,topD.z);
+            RecastNavigationDllImports.PushTriangleWithNavTag2(baseC.x,baseC.y,baseC.z,
+                                                               topD.x,topD.y,topD.z,
+                                                               topC.x,topC.y,topC.z);
+            // Left
+            RecastNavigationDllImports.PushTriangleWithNavTag2(baseD.x,baseD.y,baseD.z,
+                                                               baseA.x,baseA.y,baseA.z,
+                                                               topA.x,topA.y,topA.z);
+            RecastNavigationDllImports.PushTriangleWithNavTag2(baseD.x,baseD.y,baseD.z,
+                                                               topA.x,topA.y,topA.z,
+                                                               topD.x,topD.y,topD.z);
+#else
             // Front
             RecastNavigationDllImports.PushTriangleWithNavTag(baseA, baseB, topB);
             RecastNavigationDllImports.PushTriangleWithNavTag(baseA, topB, topA);
@@ -415,6 +464,8 @@ public class RecastNavigationEditorWindow : EditorWindow
             // Left
             RecastNavigationDllImports.PushTriangleWithNavTag(baseD, baseA, topA);
             RecastNavigationDllImports.PushTriangleWithNavTag(baseD, topA, topD);
+#endif
+
             totalTriangleCount += 8;
         }
     }
@@ -602,7 +653,12 @@ public class RecastNavigationEditorWindow : EditorWindow
         {
             Vector3 vertex = new Vector3();
             Color32 color = new Color32();
+#if UNITY_IPHONE || UNITY_STANDALONE_OSX
+            RecastNavigationDllImports.GetPolygonVertex2(i, ref vertex.x,ref vertex.y,ref vertex.z, out color);
+#else
             RecastNavigationDllImports.GetPolygonVertex((uint)i, out vertex, out color);
+#endif
+
             m_navMeshRepresentation.AddLineVertex(i, vertex, color);
         }
         m_navMeshRepresentation.BuildLineMesh();

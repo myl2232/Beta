@@ -120,8 +120,13 @@ public class RecastNavigationDllImports
     public static extern int GetPathPointCount();
     [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
     public static extern void GetSmoothVert(int index, ref float xx, ref float yy,ref float zz);
-    //[DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
-    //public static extern bool GetPolygonVertex2(int vertexIndex,ref float xx,ref float yy, ref float zz, GwNavColor* color);
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
+    public static extern bool GetPolygonVertex2(int vertexIndex,ref float xx,ref float yy, ref float zz, out Color32 color);
+    [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
+    public static extern void PushTriangleWithNavTag2(float Ax,float Ay,float Az,
+                                                      float Bx,float By,float Bz,
+                                                      float Cx,float Cy,float Cz);
+
     /******** Consume inputs *************************************************************/
 
     [DllImport(Recast_Dll, CallingConvention = CallingConvention.Cdecl)]
