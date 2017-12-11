@@ -25,7 +25,10 @@ namespace AlphaWork
         {
             m_HitTransform = trans;
         }
-       
+        public override void Clear()
+        {
+
+        }
     }
 }
 

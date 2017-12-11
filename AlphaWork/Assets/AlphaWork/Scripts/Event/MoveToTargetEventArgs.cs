@@ -27,5 +27,9 @@ namespace AlphaWork
         {
             m_MovePos = newMovePos;
         }
+        public override void Clear()
+        {
+
+        }
     }
 }

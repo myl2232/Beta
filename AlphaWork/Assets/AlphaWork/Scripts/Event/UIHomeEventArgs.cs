@@ -16,5 +16,9 @@ namespace AlphaWork
                 return EventId;
             }
         }
+        public override void Clear()
+        {
+
+        }
     }
 }

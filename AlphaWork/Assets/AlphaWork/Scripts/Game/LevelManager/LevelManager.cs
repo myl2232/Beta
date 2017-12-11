@@ -23,7 +23,7 @@ namespace AlphaWork
         {
             GameEntry.Event.Subscribe(GameToLoginEventArgs.EventId, OnGameToLogin);
             GameEntry.Event.Subscribe(GameStartEventArgs.EventId, OnGameStart);
-            GameEntry.Event.Subscribe(UIAlphaEventArgs.EventId, OnUIAlpha);
+            //GameEntry.Event.Subscribe(UIAlphaEventArgs.EventId, OnUIAlpha);
 /*            GameEntry.Event.Subscribe(UIBetaEventArgs.EventId,OnAIGo);   */         
         }
         protected void InitCallbacks()
