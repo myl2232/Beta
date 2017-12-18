@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<!--Source File: SwtichStatusAction.xml-->
+<behavior name="SwtichStatusAction" agenttype="SecondAgent" version="5">
+  <node class="IfElse" id="0">
+    <node class="Condition" id="1">
+      <property Operator="Equal" />
+      <property Opl="LogicStatus Self.FirstAgent::m_LogicStatus" />
+      <property Opr="const LogicStatus ELogic_PATROL" />
+    </node>
+    <node class="Action" id="3">
+      <property Method="Self.SecondAgent::Patrol()" />
+      <property ResultOption="BT_RUNNING" />
+    </node>
+    <node class="IfElse" id="2">
+      <node class="Condition" id="4">
+        <property Operator="Equal" />
+        <property Opl="LogicStatus Self.FirstAgent::m_LogicStatus" />
+        <property Opr="const LogicStatus ELogic_ATTACK" />
+      </node>
+      <node class="Action" id="5">
+        <property Method="Self.SecondAgent::Attack()" />
+        <property ResultOption="BT_RUNNING" />
+      </node>
+      <node class="Action" id="6">
+        <property Method="Self.SecondAgent::MakeIdle()" />
+        <property ResultOption="BT_RUNNING" />
+      </node>
+    </node>
+  </node>
+</behavior>

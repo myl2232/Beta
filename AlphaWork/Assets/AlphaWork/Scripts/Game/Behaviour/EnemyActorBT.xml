@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<!--Source File: EnemyActorBT.xml-->
+<behavior name="EnemyActorBT" agenttype="SecondAgent" version="5">
+  <node class="Sequence" id="0">
+    <node class="Action" id="1">
+      <property Method="Self.FirstAgent::GetLogicStatus()" />
+      <property ResultOption="BT_SUCCESS" />
+    </node>
+    <node class="ReferencedBehavior" id="2">
+      <property ReferenceBehavior="const string &quot;SwtichStatusAction&quot;" />
+    </node>
+  </node>
+</behavior>

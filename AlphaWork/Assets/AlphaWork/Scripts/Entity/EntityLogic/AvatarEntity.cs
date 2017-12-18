@@ -17,6 +17,11 @@ namespace AlphaWork
         private GameObject m_skeleton;
         private List<GameObject> m_Parts = new List<GameObject>();
         private LoadAssetCallbacks m_LoadCallbacks;
+        private SecondAgent m_agent;//agent for behaviour tree
+        public SecondAgent Agent
+        {
+            get { return m_agent; }
+        }
 
         private int testskill = 0;
 
@@ -24,7 +29,13 @@ namespace AlphaWork
         {
             GameEntry.Event.Subscribe(UIBetaEventArgs.EventId, OnTestBeta);
             GameEntry.Event.Subscribe(AvatarCreateEventArgs.EventId, OnCreateAvatar);
-            m_LoadCallbacks = new LoadAssetCallbacks(OnLoadSuccessCallback, OnLoadFailureCallback);            
+            m_LoadCallbacks = new LoadAssetCallbacks(OnLoadSuccessCallback, OnLoadFailureCallback);
+            //ai
+            m_agent = new SecondAgent();
+            m_agent.btload("EnemyActorBT");
+            m_agent.btsetcurrent("EnemyActorBT");
+            m_agent.Parent = this;
+            m_agent._set_m_LogicStatus(LogicStatus.ELogic_IDLE);
         }
 
         // Use this for initialization
@@ -51,6 +62,10 @@ namespace AlphaWork
                 GameObject gb = Entity.Handle as GameObject;
                 gb.GetComponent<Animator>().SetInteger("skill", 0);
             }
+
+            //ai
+            if(m_agent != null)
+                m_agent.btexec();
         }
 
         void OnTestBeta(object sender, GameEventArgs arg)
@@ -79,6 +94,7 @@ namespace AlphaWork
 
         private void OnDestroy()
         {
+            m_agent = null;
             m_Parts.Clear();
         }
 
