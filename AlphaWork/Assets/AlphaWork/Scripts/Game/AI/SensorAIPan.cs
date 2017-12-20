@@ -42,15 +42,6 @@ namespace AlphaWork
             }
         }
 
-        protected EntityObject GetEntityOfHashCode(Int32 code)
-        {
-            UnityGameFramework.Runtime.Entity[] enties = GameEntry.Entity.GetAllLoadedEntities();
-            for(int i = 0; i < enties.Length; ++i)
-            {
-                if (enties[i].Handle.GetHashCode() == code)
-                    return enties[i].Logic as EntityObject;
-            }
-            return null;
-        }
+
     }
 }
