@@ -177,32 +177,14 @@ namespace behaviac
 		public Action_bt_EnemyActorBT_node1()
 		{
 			this.m_resultOption = EBTStatus.BT_SUCCESS;
+			method_p0 = false;
 		}
 		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
 		{
-			((FirstAgent)pAgent).GetLogicStatus();
+			((FirstAgent)pAgent).SayHello(method_p0);
 			return EBTStatus.BT_SUCCESS;
 		}
-	}
-
-	[behaviac.GeneratedTypeMetaInfo()]
-	class ReferencedBehavior_bt_EnemyActorBT_node2 : behaviac.ReferencedBehavior
-	{
-		public ReferencedBehavior_bt_EnemyActorBT_node2()
-		{
-			string szTreePath = this.GetReferencedTree(null);
-			if (!string.IsNullOrEmpty(szTreePath)) {
-			BehaviorTree behaviorTree = Workspace.Instance.LoadBehaviorTree(szTreePath);
-			if (behaviorTree != null)
-			{
-				this.m_bHasEvents |= behaviorTree.HasEvents();
-			}
-			}
-		}
-		public override string GetReferencedTree(Agent pAgent)
-		{
-			return "SwtichStatusAction";
-		}
+		bool method_p0;
 	}
 
 	public static class bt_EnemyActorBT
@@ -234,16 +216,6 @@ namespace behaviac
 #endif
 					node0.AddChild(node1);
 					node0.SetHasEvents(node0.HasEvents() | node1.HasEvents());
-				}
-				{
-					ReferencedBehavior_bt_EnemyActorBT_node2 node2 = new ReferencedBehavior_bt_EnemyActorBT_node2();
-					node2.SetClassNameString("ReferencedBehavior");
-					node2.SetId(2);
-#if !BEHAVIAC_RELEASE
-					node2.SetAgentType("SecondAgent");
-#endif
-					node0.AddChild(node2);
-					node0.SetHasEvents(node0.HasEvents() | node2.HasEvents());
 				}
 				bt.SetHasEvents(bt.HasEvents() | node0.HasEvents());
 			}
@@ -303,12 +275,14 @@ namespace behaviac
 		public Action_bt_SwtichStatusAction_node5()
 		{
 			this.m_resultOption = EBTStatus.BT_RUNNING;
+			method_p0 = 0f;
 		}
 		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
 		{
-			((SecondAgent)pAgent).Attack();
+			((SecondAgent)pAgent).Attack(method_p0);
 			return EBTStatus.BT_RUNNING;
 		}
+		float method_p0;
 	}
 
 	[behaviac.GeneratedTypeMetaInfo()]

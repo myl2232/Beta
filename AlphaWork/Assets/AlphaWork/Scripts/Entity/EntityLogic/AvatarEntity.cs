@@ -43,8 +43,9 @@ namespace AlphaWork
         {
             if ((Data as AvatarData).AlowMove)
             {
-                BehaviourMove moveBehaviour = gameObject.AddComponent<BehaviourMove>();
-                moveBehaviour.Parent = this;
+                m_agent.InitMove();
+//                 BehaviourMove moveBehaviour = gameObject.AddComponent<BehaviourMove>();
+//                 moveBehaviour.Parent = this;
             }
         }
 

@@ -46,6 +46,8 @@ namespace AlphaWork
             GameEntry.UI.OpenUIForm(UIFormId.MainForm);
 
             m_levelManager.m_parent = this;
+
+            
         }
 
         public void OnRefreshMainPos(object sender, GameEventArgs e)

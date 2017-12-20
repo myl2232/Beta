@@ -43,9 +43,9 @@ namespace AlphaWork
                 {
                     for (int j = 0; j < 4; ++j)
                     {
-                        sPt = new Vector3(128 + i * 5 + j*3, 0.5f, 128 + j * 4);
+                        sPt = new Vector3(128 + i * 8 + j * 5, 0.5f, 128 + j * 4);
                         GameEntry.Entity.ShowAvatar(new AvatarData(GameEntry.Entity.GenerateSerialId(), 80003,
-                            CampType.Player/*,true*/)
+                            UnityEngine.Random.Range(1,10) > 5?CampType.Enemy:CampType.Enemy2, true)
                         {
                             Position = sPt,
 //                             Rotation = Quaternion.AngleAxis(90, Vector3.left),

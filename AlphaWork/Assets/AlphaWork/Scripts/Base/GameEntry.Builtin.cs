@@ -9,6 +9,15 @@ namespace AlphaWork
     public partial class GameEntry
     {
         /// <summary>
+        /// 获取感知组件。
+        /// </summary>
+        public static SenseDispatcherComponent Sensor
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
         /// 获取游戏基础组件。
         /// </summary>
         public static BaseComponent Base
@@ -207,7 +216,8 @@ namespace AlphaWork
                 Setting = UnityGameFramework.Runtime.GameEntry.GetComponent<SettingComponent>();
                 Sound = UnityGameFramework.Runtime.GameEntry.GetComponent<SoundComponent>();
                 UI = UnityGameFramework.Runtime.GameEntry.GetComponent<UIComponent>();
-                WebRequest = UnityGameFramework.Runtime.GameEntry.GetComponent<WebRequestComponent>();               
+                WebRequest = UnityGameFramework.Runtime.GameEntry.GetComponent<WebRequestComponent>();
+                Sensor = UnityGameFramework.Runtime.GameEntry.GetComponent<SenseDispatcherComponent>();
             }
             LogIntoMain = false;
             BackToLogin = false;

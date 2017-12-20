@@ -9,7 +9,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 ///<<< BEGIN WRITING YOUR CODE FILE_INIT
-
+using UnityEngine;
+using AlphaWork;
 ///<<< END WRITING YOUR CODE
 
 public class SecondAgent : FirstAgent
@@ -18,25 +19,61 @@ public class SecondAgent : FirstAgent
 {
 	public int p2 = 0;
 
-	public void Attack()
+	public void Attack(float attackParam)
 	{
 ///<<< BEGIN WRITING YOUR CODE Attack
+        GameObject gb = m_parent.Entity.Handle as GameObject;
+        if (gb)
+        {
+            Animator animator = gb.GetComponent<Animator>();
+            LogicStatus status = LogicStatus.ELogic_ATTACK | ~basicStatus;
+            animator.SetLayerWeight(1, 0.5f);
+            animator.SetInteger("status",(int)status);
+            animator.SetFloat("BlendAttack",attackParam);
+        }
 ///<<< END WRITING YOUR CODE
 	}
 
 	public void MakeIdle()
 	{
 ///<<< BEGIN WRITING YOUR CODE MakeIdle
-///<<< END WRITING YOUR CODE
+        ///
+        GameObject gb = m_parent.Entity.Handle as GameObject;
+        if (gb)
+        {
+            Animator animator = gb.GetComponent<Animator>();
+            LogicStatus status = LogicStatus.ELogic_IDLE | ~basicStatus;
+            animator.SetLayerWeight(1, 0.0f);
+            animator.SetInteger("status", (int)status);
+        }
+        ///<<< END WRITING YOUR CODE
 	}
 
 	public void Patrol()
 	{
 ///<<< BEGIN WRITING YOUR CODE Patrol
-///<<< END WRITING YOUR CODE
+        GameObject gb = m_parent.Entity.Handle as GameObject;
+        if (gb)
+        {
+            Animator animator = gb.GetComponent<Animator>();
+            LogicStatus status = LogicStatus.ELogic_PATROL | ~basicStatus;
+            animator.SetInteger("status", (int)status);
+            
+        }
+        ///<<< END WRITING YOUR CODE
 	}
 
 ///<<< BEGIN WRITING YOUR CODE CLASS_PART
+    LogicStatus basicStatus = LogicStatus.ELogic_PATROL | LogicStatus.ELogic_ATTACK | LogicStatus.ELogic_IDLE | 
+        LogicStatus.ELogic_AIR | LogicStatus.ELogic_Hurt| LogicStatus.ELogic_Dead |LogicStatus.ELogic_Jump;
+
+    private BehaviourMove m_move;
+
+    public void InitMove()
+    {
+        m_move = (m_parent.Entity.Handle as GameObject).AddComponent<BehaviourMove>();
+        m_move.Parent = m_parent;
+    }
 
 ///<<< END WRITING YOUR CODE
 

@@ -19,7 +19,7 @@
         <property Opr="const LogicStatus ELogic_ATTACK" />
       </node>
       <node class="Action" id="5">
-        <property Method="Self.SecondAgent::Attack()" />
+        <property Method="Self.SecondAgent::Attack(0)" />
         <property ResultOption="BT_RUNNING" />
       </node>
       <node class="Action" id="6">

@@ -4,11 +4,8 @@
 <behavior name="EnemyActorBT" agenttype="SecondAgent" version="5">
   <node class="Sequence" id="0">
     <node class="Action" id="1">
-      <property Method="Self.FirstAgent::GetLogicStatus()" />
+      <property Method="Self.FirstAgent::SayHello(false)" />
       <property ResultOption="BT_SUCCESS" />
-    </node>
-    <node class="ReferencedBehavior" id="2">
-      <property ReferenceBehavior="const string &quot;SwtichStatusAction&quot;" />
     </node>
   </node>
 </behavior>

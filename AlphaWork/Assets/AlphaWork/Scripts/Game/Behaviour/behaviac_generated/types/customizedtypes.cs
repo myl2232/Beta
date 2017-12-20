@@ -15,5 +15,9 @@ public enum LogicStatus
 	ELogic_IDLE = 0,
 	ELogic_PATROL = 1,
 	ELogic_ATTACK = 2,
+	ELogic_AIR = 3,
+	ELogic_Hurt = 4,
+	ELogic_Dead = 5,
+	ELogic_Jump = 6,
 }
 
