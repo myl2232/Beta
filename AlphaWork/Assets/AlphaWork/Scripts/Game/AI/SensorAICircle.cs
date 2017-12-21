@@ -8,7 +8,12 @@ namespace AlphaWork
 {
     public class SensorAICircle : SensorAI
     {
-        private float m_radius;
+        private float m_radius = 5;
+        public float Radius
+        {
+            get { return m_radius; }
+            set { m_radius = value; }
+        }
         SensorAICircle(float radius)
         {
             m_sensorType = ESensorType.ESensor_Circle;
@@ -19,26 +24,24 @@ namespace AlphaWork
         {
             List<EntityObject> results = new List<EntityObject>();
             _search(ref results);
-            GameEntry.Sensor.RegisteSense(new SenseResult(this, ref results));
+            GameEntry.Sensor.RegisterSense(new SenseResult(this, ref results));
         }
 
         protected override void _search(ref List<EntityObject> results)
         {
-            Vector3 vStart = new Vector3(1, 0, 1);
-            for (int i = 0; i < 360; ++i)
+            Collider[] cols = Physics.OverlapSphere(transform.position, m_radius);
+            for (int i = 0; i < cols.Length; ++i)
             {
-                Vector3 dir = Quaternion.AngleAxis(i, Vector3.up) * vStart;
-
-                Collider[] cols = Physics.OverlapSphere(transform.position, m_radius, 0, QueryTriggerInteraction.Collide);
-                for (int k = 0; k < cols.Length; ++k)
+                int tCode = cols[i].gameObject.GetHashCode();
+                int parentCode = GameEntry.Entity.GetEntity(m_parentEntId).Handle.GetHashCode();
+                if (tCode != parentCode)
                 {
-                    EntityObject ob = GetEntityOfHashCode(cols[k].gameObject.GetHashCode());
+                    EntityObject ob = GetEntityOfHashCode(tCode);
                     if (ob)
                         results.Add(ob);
                 }
             }
         }
-
 
     }
 }

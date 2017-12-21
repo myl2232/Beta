@@ -26,7 +26,7 @@ namespace AlphaWork
         {
             List<EntityObject> results = new List<EntityObject>();
             _search(ref results);
-            GameEntry.Sensor.RegisteSense(new SenseResult(this,ref results));
+            GameEntry.Sensor.RegisterSense(new SenseResult(this,ref results));
         }
 
         protected override void _search(ref List<EntityObject> results)
@@ -42,6 +42,6 @@ namespace AlphaWork
             }
         }
 
-
+        
     }
 }

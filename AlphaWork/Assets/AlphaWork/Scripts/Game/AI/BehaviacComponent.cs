@@ -9,9 +9,19 @@ namespace AlphaWork
 {
     public class BehaviacComponent: MonoBehaviour
     {
+        public void Start()
+        {
+            InitBehavic();
+        }
+
+        public void OnDestroy()
+        {
+            CleanupBehaviac();
+        }
+
         public bool InitBehavic()
         {
-            Console.WriteLine("InitBehavic");
+            //Console.WriteLine("InitBehavic");
 
             behaviac.Workspace.Instance.FilePath = "Assets/AlphaWork/Scripts/Game/Behaviour";
             behaviac.Workspace.Instance.FileFormat = behaviac.Workspace.EFileFormat.EFF_xml;
@@ -19,10 +29,6 @@ namespace AlphaWork
             return true;
         }
 
-        public void InitActorAgent()
-        {
- 
-        }
 
         public void UpdateLoop()
         {
@@ -31,7 +37,7 @@ namespace AlphaWork
 
         public void CleanupBehaviac()
         {
-            Console.WriteLine("CleanupBehaviac");
+            //Console.WriteLine("CleanupBehaviac");
 
             behaviac.Workspace.Instance.Cleanup();
         }

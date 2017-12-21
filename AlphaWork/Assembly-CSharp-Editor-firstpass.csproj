@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{6821F4A5-EFC2-5F22-84AD-A0FD3D17F868}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp-Editor-firstpass</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_3;UNITY_5_6;UNITY_5;UNITY_64;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_VR;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE;CROSS_PLATFORM_INPUT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\InventorySystem\Editor\InvDatabaseInspector.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\InventorySystem\Editor\InvFindItem.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\ActiveAnimationEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\BMFontReader.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\ComponentSelector.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\EventDelegateDrawer.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\EventDelegateEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\FreeType.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\MinMaxRangeAttributeDrawer.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\NGUIContextMenu.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\NGUIEditorExtensions.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\NGUIEditorTools.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\NGUIHandles.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\NGUIHelp.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\NGUIJson.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\NGUIMenu.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\NGUISelectionTools.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\NGUISettings.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\NGUISnap.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\NGUITransformInspector.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\PropertyBindingEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\PropertyReferenceDrawer.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\SpriteSelector.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\TweenAlphaEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\TweenColorEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\TweenFOVEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\TweenHeightEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\TweenOrthoSizeEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\TweenPositionEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\TweenRotationEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\TweenScaleEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\TweenTransformEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\TweenVolumeEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\TweenWidthEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\TypewriterEffectEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UI2DSpriteEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIAnchorEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIAtlasInspector.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIAtlasMaker.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIBasicSpriteEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIButtonColorEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIButtonEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIButtonKeysEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIButtonMessageEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UICameraEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UICameraTool.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIColorPickerEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UICreateNewUIWizard.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UICreateWidgetWizard.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIDragObjectEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIDrawCallInspector.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIDrawCallViewer.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIEventTriggerEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIFontInspector.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIFontMaker.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIForwardEventsEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIGridEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIImageButtonInspector.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIInputEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIKeyNavigationEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UILabelInspector.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UILocalizeEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIPanelInspector.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIPanelTool.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIPlayAnimationEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIPlayTweenEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIPopupListInspector.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIPrefabTool.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIProgressBarEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIRectEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIRootEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIScrollBarEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIScrollViewEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UISliderEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UISnapshotPointEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UISpriteAnimationInspector.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UISpriteInspector.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIStretchEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UITableEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UITextureInspector.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UITexturePacker.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIToggleInspector.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UITweenerEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIWidgetContainerEditor.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIWidgetInspector.cs" />
+     <Compile Include="Assets\Plugins\NGUI\Scripts\Editor\UIWrapContentEditor.cs" />
+     <Compile Include="Assets\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
+     <None Include="Assets\Plugins\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
+     <None Include="Assets\Plugins\NGUI\ReadMe - 3.11.4.txt" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Masked 1.shader" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Text 2.shader" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Masked 2.shader" />
+     <None Include="Assets\Plugins\NGUI\Examples\Models\Orc\Orc Skin.shader" />
+     <None Include="Assets\AlphaWork\Scripts\Game\Behaviour\SwtichStatusAction.xml" />
+     <None Include="Assets\Plugins\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
+     <None Include="Assets\Plugins\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
+     <None Include="Assets\AlphaWork\Scripts\Game\Behaviour\CustomBT.xml" />
+     <None Include="Assets\AlphaWork\Localization\ChineseSimplified\Dictionaries\Default.xml" />
+     <None Include="Assets\AlphaWork\DataTables\Scene.txt" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Text 1.shader" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (TextureClip).shader" />
+     <None Include="Assets\GameFrameworkConfigs\AssetBundleEditor.xml" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (TextureClip).shader" />
+     <None Include="Assets\AlphaWork\DataTables\Entity.txt" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Colored 2.shader" />
+     <None Include="Assets\AlphaWork\Scripts\Game\Behaviour\meta\Beta1.meta.xml" />
+     <None Include="Assets\AlphaWork\DataTables\Ethan.txt" />
+     <None Include="Assets\Plugins\NGUI\Examples\Shaders\Unlit - Masked Colored.shader" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 3.shader" />
+     <None Include="Assets\Plugins\NGUI\Examples\Atlases\Wooden\Arimo18.txt" />
+     <None Include="Assets\UnityGameFramework\Libraries\link.xml" />
+     <None Include="Assets\AlphaWork\DataTables\Sound.txt" />
+     <None Include="Assets\GameFrameworkConfigs\AssetBundleBuilder.xml" />
+     <None Include="Assets\UnityGameFramework\Libraries\GameFramework.xml" />
+     <None Include="Assets\AlphaWork\Scripts\Game\Behaviour\EnemyActorBT.xml" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Colored (TextureClip).shader" />
+     <None Include="Assets\AlphaWork\Localization\English\Dictionaries\Default.xml" />
+     <None Include="Assets\Plugins\NGUI\Examples\Atlases\SciFi\SciFi Font - Header.txt" />
+     <None Include="Assets\AlphaWork\DataTables\Music.txt" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Masked 3.shader" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Colored 1.shader" />
+     <None Include="Assets\Plugins\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
+     <None Include="Assets\AlphaWork\Configs\BuildInfo.txt" />
+     <None Include="Assets\AlphaWork\DataTables\Attachment.txt" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Colored 3.shader" />
+     <None Include="Assets\Plugins\NGUI\Examples\Atlases\Refractive\Refractive Font - Normal.txt" />
+     <None Include="Assets\AlphaWork\DataTables\UISound.txt" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 2.shader" />
+     <None Include="Assets\GameFrameworkConfigs\AssetBundleCollection.xml" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Text 3.shader" />
+     <None Include="Assets\AlphaWork\DataTables\NPC.txt" />
+     <None Include="Assets\GameFrameworkConfigs\BuildSettings.xml" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Packed 2.shader" />
+     <None Include="Assets\AlphaWork\DataTables\Structure.txt" />
+     <None Include="Assets\AlphaWork\Localization\Korean\Dictionaries\Default.xml" />
+     <None Include="Assets\Resources\Navigations\NavShaders\NavMeshWireframe.shader" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Packed 1.shader" />
+     <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 1.shader" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
+     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Text.shader" />
+     <None Include="Assets\AlphaWork\DataTables\Effect.txt" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
+     <None Include="Assets\AlphaWork\DataTables\Avatar.txt" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Packed 3.shader" />
+     <None Include="Assets\AlphaWork\DataTables\UIForm.txt" />
+     <None Include="Assets\TUTORIAL.txt" />
+     <None Include="Assets\Resources\Navigations\NavShaders\NavMeshSolid.shader" />
+     <None Include="Assets\Plugins\NGUI\Examples\Shaders\Unlit - Additive Colored.shader" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Masked.shader" />
+     <None Include="Assets\Plugins\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
+     <None Include="Assets\Plugins\NGUI\Examples\Shaders\Refractive.shader" />
+     <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Text (TextureClip).shader" />
+     <None Include="Assets\Plugins\NGUI\Examples\Shaders\Unlit - Depth.shader" />
+     <None Include="Assets\Plugins\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
+     <None Include="Assets\AlphaWork\Localization\ChineseTraditional\Dictionaries\Default.xml" />
+     <None Include="Assets\Plugins\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
+     <None Include="Assets\SCENES.txt" />
+     <None Include="Assets\Plugins\NGUI\Examples\Resources\Localization.txt" />
+     <None Include="Assets\AlphaWork\Configs\DefaultDictionary.xml" />
+     <None Include="Assets\AlphaWork\DataTables\DOWNLOAD.txt" />
+ <Reference Include="UnityEditor.Advertisements">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Networking">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.TestRunner">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TestRunner">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.TreeEditor">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Analytics">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/Editor/UnityEditor.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.HoloLens">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/Editor/UnityEditor.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Purchasing">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityPurchasing/Editor/UnityEditor.Purchasing.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.VR">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VR">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Android.Extensions">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WebGL.Extensions">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.OSXStandalone.Extensions">
+ <HintPath>/Volumes/DEVELOP/Unity 5.6.3/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>/Users/yuleima/Downloads/Beta/AlphaWork/Assets/UnityGameFramework/Libraries/ICSharpCode.SharpZipLib.dll</HintPath>
+ </Reference>
+ <Reference Include="GameFramework">
+ <HintPath>/Users/yuleima/Downloads/Beta/AlphaWork/Assets/UnityGameFramework/Libraries/GameFramework.dll</HintPath>
+ </Reference>
+ <Reference Include="LitJson">
+ <HintPath>/Users/yuleima/Downloads/Beta/AlphaWork/Assets/GameFrameworkExtensions/LitJson.dll</HintPath>
+ </Reference>
+ <Reference Include="behaviac">
+ <HintPath>/Users/yuleima/Downloads/Beta/AlphaWork/Assets/GameFrameworkExtensions/behaviac.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{F69D865B-AF57-ED36-3C03-12EE49EF5962}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

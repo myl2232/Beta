@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
-<agents version="1" signature="754079751">
+<agents version="1" signature="786930101">
   <agent type="FirstAgent" base="behaviac::Agent" signature="2116090284">
     <properties>
       <property name="m_LogicStatus" type="LogicStatus" member="false" static="false" defaultvalue="ELogic_IDLE" />
@@ -8,7 +8,7 @@
       <property name="pInstance" type="SecondAgent*" member="false" static="false" defaultvalue="null" />
     </properties>
   </agent>
-  <agent type="SecondAgent" base="FirstAgent" signature="110509475">
+  <agent type="SecondAgent" base="FirstAgent" signature="1520495831">
     <properties>
       <property name="m_LogicStatus" type="LogicStatus" member="false" static="false" defaultvalue="ELogic_IDLE" />
       <property name="p1" type="int" member="false" static="false" defaultvalue="0" />

@@ -1,8 +1,10 @@
-﻿using System;
+﻿using GameFramework.Event;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using UnityGameFramework.Runtime;
 
 namespace AlphaWork
 {
@@ -14,8 +16,8 @@ namespace AlphaWork
 
     public struct SenseResult
     {
-        private SensorAI m_sensor;
-        private List<EntityObject> m_results;
+        public SensorAI m_sensor;
+        public List<EntityObject> m_results;
 
         public SenseResult(SensorAI sr, ref List<EntityObject> results)
         {
@@ -27,10 +29,21 @@ namespace AlphaWork
     public class SensorAI : MonoBehaviour
     {
         protected ESensorType m_sensorType;
+        protected int m_parentEntId;
+        public int ParentId
+        {
+            get { return m_parentEntId; }
+            set { m_parentEntId = value; }
+        }
 
         public ESensorType SensorType
         {
             get { return m_sensorType; }
+        }
+
+        public void Start()
+        {
+               
         }
 
         public virtual void Init()
@@ -58,5 +71,7 @@ namespace AlphaWork
             }
             return null;
         }
+                
+
     }
 }

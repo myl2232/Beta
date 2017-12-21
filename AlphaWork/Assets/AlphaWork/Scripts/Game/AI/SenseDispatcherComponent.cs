@@ -10,15 +10,33 @@ namespace AlphaWork
     {
         private  List<SenseResult> m_senses;
 
-        public void RegisteSense(SenseResult sense)
+        public void RegisterSense(SenseResult sense)
         {
             m_senses.Add(sense);
         }
 
-        public void UnRegisteSense(SenseResult sense)
+        public void UnRegisterSense(SenseResult sense)
         {
             m_senses.Remove(sense);
         }
 
+        public void Start()
+        {
+            m_senses = new List<SenseResult>();
+        }
+
+        public void Update()
+        {
+            for(int i = 0; i < m_senses.Count; ++i)
+            {                
+                for(int k = 0; k < m_senses[i].m_results.Count; ++k)
+                {
+                    GameEntry.Event.Fire(this, new SenseAIEventArgs(m_senses[i].m_sensor.ParentId, 
+                        m_senses[i].m_results[k].Entity.Handle.GetHashCode()));
+                }
+            }
+
+            m_senses.Clear();
+        }
     }
 }

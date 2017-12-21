@@ -3,7 +3,11 @@
 <!--Source File: EnemyActorBT.xml-->
 <behavior name="EnemyActorBT" agenttype="SecondAgent" version="5">
   <node class="Sequence" id="0">
-    <node class="Action" id="1">
+    <node class="Action" id="2">
+      <property Method="Self.SecondAgent::FlushSensor()" />
+      <property ResultOption="BT_SUCCESS" />
+    </node>
+    <node class="Action" id="3">
       <property Method="Self.FirstAgent::SayHello(false)" />
       <property ResultOption="BT_SUCCESS" />
     </node>

@@ -172,9 +172,23 @@ namespace behaviac
 	// Source file: EnemyActorBT
 
 	[behaviac.GeneratedTypeMetaInfo()]
-	class Action_bt_EnemyActorBT_node1 : behaviac.Action
+	class Action_bt_EnemyActorBT_node2 : behaviac.Action
 	{
-		public Action_bt_EnemyActorBT_node1()
+		public Action_bt_EnemyActorBT_node2()
+		{
+			this.m_resultOption = EBTStatus.BT_SUCCESS;
+		}
+		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
+		{
+			((SecondAgent)pAgent).FlushSensor();
+			return EBTStatus.BT_SUCCESS;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class Action_bt_EnemyActorBT_node3 : behaviac.Action
+	{
+		public Action_bt_EnemyActorBT_node3()
 		{
 			this.m_resultOption = EBTStatus.BT_SUCCESS;
 			method_p0 = false;
@@ -208,14 +222,24 @@ namespace behaviac
 #endif
 				bt.AddChild(node0);
 				{
-					Action_bt_EnemyActorBT_node1 node1 = new Action_bt_EnemyActorBT_node1();
-					node1.SetClassNameString("Action");
-					node1.SetId(1);
+					Action_bt_EnemyActorBT_node2 node2 = new Action_bt_EnemyActorBT_node2();
+					node2.SetClassNameString("Action");
+					node2.SetId(2);
 #if !BEHAVIAC_RELEASE
-					node1.SetAgentType("SecondAgent");
+					node2.SetAgentType("SecondAgent");
 #endif
-					node0.AddChild(node1);
-					node0.SetHasEvents(node0.HasEvents() | node1.HasEvents());
+					node0.AddChild(node2);
+					node0.SetHasEvents(node0.HasEvents() | node2.HasEvents());
+				}
+				{
+					Action_bt_EnemyActorBT_node3 node3 = new Action_bt_EnemyActorBT_node3();
+					node3.SetClassNameString("Action");
+					node3.SetId(3);
+#if !BEHAVIAC_RELEASE
+					node3.SetAgentType("SecondAgent");
+#endif
+					node0.AddChild(node3);
+					node0.SetHasEvents(node0.HasEvents() | node3.HasEvents());
 				}
 				bt.SetHasEvents(bt.HasEvents() | node0.HasEvents());
 			}

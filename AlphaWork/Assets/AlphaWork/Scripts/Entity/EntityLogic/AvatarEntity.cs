@@ -23,7 +23,7 @@ namespace AlphaWork
             get { return m_agent; }
         }
 
-        private int testskill = 0;
+        //private int testskill = 0;
 
         public AvatarEntity()
         {
@@ -32,7 +32,7 @@ namespace AlphaWork
             m_LoadCallbacks = new LoadAssetCallbacks(OnLoadSuccessCallback, OnLoadFailureCallback);
             //ai
             m_agent = new SecondAgent();
-            m_agent.btload("EnemyActorBT");
+            bool bRet = m_agent.btload("EnemyActorBT");
             m_agent.btsetcurrent("EnemyActorBT");
             m_agent.Parent = this;
             m_agent._set_m_LogicStatus(LogicStatus.ELogic_IDLE);
@@ -43,7 +43,7 @@ namespace AlphaWork
         {
             if ((Data as AvatarData).AlowMove)
             {
-                m_agent.InitMove();
+                m_agent.InitAI((Data as AvatarData).AIRadius);
 //                 BehaviourMove moveBehaviour = gameObject.AddComponent<BehaviourMove>();
 //                 moveBehaviour.Parent = this;
             }
@@ -52,39 +52,43 @@ namespace AlphaWork
         // Update is called once per frame
         void Update()
         {
-            bool skill1 = CrossPlatformInputManager.GetButtonDown("skill1");
-            if(skill1)
-            {
-                GameObject gb = Entity.Handle as GameObject;
-                gb.GetComponent<Animator>().SetInteger("skill",1);
-            }
-            if(CrossPlatformInputManager.GetButtonDown("noskill"))
-            {
-                GameObject gb = Entity.Handle as GameObject;
-                gb.GetComponent<Animator>().SetInteger("skill", 0);
-            }
+            //bool skill1 = CrossPlatformInputManager.GetButtonDown("skill1");
+            //if(skill1)
+            //{
+            //    GameObject gb = Entity.Handle as GameObject;
+            //    gb.GetComponent<Animator>().SetInteger("skill",1);
+            //}
+            //if(CrossPlatformInputManager.GetButtonDown("noskill"))
+            //{
+            //    GameObject gb = Entity.Handle as GameObject;
+            //    gb.GetComponent<Animator>().SetInteger("skill", 0);
+            //}
 
             //ai
             if(m_agent != null)
-                m_agent.btexec();
+            {
+                behaviac.EBTStatus status = behaviac.EBTStatus.BT_RUNNING;
+                status = m_agent.btexec();
+            }
+                
         }
 
         void OnTestBeta(object sender, GameEventArgs arg)
         {
-            if (testskill == 0)
-            {
-                GameObject gb = Entity.Handle as GameObject;
-                gb.GetComponent<Animator>().SetInteger("skill", 1);
+            //if (testskill == 0)
+            //{
+            //    GameObject gb = Entity.Handle as GameObject;
+            //    gb.GetComponent<Animator>().SetInteger("skill", 1);
 
-                testskill = 1;
-            }
-            else if (testskill == 1)
-            {
-                GameObject gb = Entity.Handle as GameObject;
-                gb.GetComponent<Animator>().SetInteger("skill", 0);
+            //    testskill = 1;
+            //}
+            //else if (testskill == 1)
+            //{
+            //    GameObject gb = Entity.Handle as GameObject;
+            //    gb.GetComponent<Animator>().SetInteger("skill", 0);
 
-                testskill = 0;
-            }
+            //    testskill = 0;
+            //}
 
         }
         protected internal override void OnAttached(EntityLogic childEntity, Transform parentTransform, object userData)

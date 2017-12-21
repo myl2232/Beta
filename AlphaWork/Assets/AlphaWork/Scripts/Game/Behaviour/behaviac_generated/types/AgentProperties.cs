@@ -253,7 +253,7 @@ namespace behaviac
 
 		public override bool Load()
 		{
-			AgentMeta.TotalSignature = 754079751;
+			AgentMeta.TotalSignature = 786930101;
 
 			AgentMeta meta;
 
@@ -287,7 +287,7 @@ namespace behaviac
 			meta.RegisterMethod(502968959, new CMethod_behaviac_Agent_VectorRemove());
 
 			// SecondAgent
-			meta = new AgentMeta(110509475);
+			meta = new AgentMeta(1520495831);
 			AgentMeta._AgentMetas_[2432194202] = meta;
 			meta.RegisterMemberProperty(3126568407, new CMemberProperty<LogicStatus>("m_LogicStatus", delegate(Agent self, LogicStatus value) { ((SecondAgent)self)._set_m_LogicStatus(value); }, delegate(Agent self) { return ((SecondAgent)self)._get_m_LogicStatus(); }));
 			meta.RegisterMemberProperty(2082220067, new CMemberProperty<int>("p1", delegate(Agent self, int value) { ((SecondAgent)self)._set_p1(value); }, delegate(Agent self) { return ((SecondAgent)self)._get_p1(); }));
@@ -295,6 +295,7 @@ namespace behaviac
 			meta.RegisterMemberProperty(1144200279, new CMemberProperty<SecondAgent>("pInstance", delegate(Agent self, SecondAgent value) { ((SecondAgent)self).pInstance = value; }, delegate(Agent self) { return ((SecondAgent)self).pInstance; }));
 			meta.RegisterMethod(3127879122, new CAgentMethodVoid<float>(delegate(Agent self, float attackParam) { ((SecondAgent)self).Attack(attackParam); }));
 			meta.RegisterMethod(871511148, new CAgentMethodVoid(delegate(Agent self) { ((SecondAgent)self).FlushEnemies(); }));
+			meta.RegisterMethod(119980225, new CAgentMethodVoid(delegate(Agent self) { ((SecondAgent)self).FlushSensor(); }));
 			meta.RegisterMethod(321785930, new CAgentMethod<LogicStatus>(delegate(Agent self) { return ((SecondAgent)self).GetLogicStatus(); }));
 			meta.RegisterMethod(4203173863, new CAgentMethod<bool, string>(delegate(Agent self, string checkEntity) { return ((SecondAgent)self).IsHit(checkEntity); }));
 			meta.RegisterMethod(1045109914, new CAgentStaticMethodVoid<string>(delegate(string param0) { SecondAgent.LogMessage(param0); }));

@@ -14,11 +14,14 @@ namespace AlphaWork
         private List<string> m_parts = new List<string>();
         [SerializeField]
         private bool m_AlowMove = false;
+        [SerializeField]
+        private float m_AiRadius = 5;
 
-        public AvatarData(int entityId = -1, int typeId = 80002, CampType camp = CampType.Unknown,bool alowMove = false)
+        public AvatarData(int entityId = -1, int typeId = 80002, CampType camp = CampType.Unknown,bool alowMove = false,float aiRadius = 5)
             : base(entityId, typeId, camp)
         {
             m_AlowMove = alowMove;
+            m_AiRadius = aiRadius;
         }
 
         // Use this for initialization
@@ -44,7 +47,10 @@ namespace AlphaWork
         {
             return m_parts;
         }
-
+        public float AIRadius
+        {
+            get { return m_AiRadius; }
+        }
         //允许移动
         public bool AlowMove
         {
