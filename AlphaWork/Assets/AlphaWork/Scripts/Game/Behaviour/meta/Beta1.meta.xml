@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
-<agents version="1" signature="786930101">
-  <agent type="FirstAgent" base="behaviac::Agent" signature="2116090284">
+<agents version="1" signature="2982566067">
+  <agent type="BaseAgent" base="behaviac::Agent" signature="3597912848">
     <properties>
       <property name="m_LogicStatus" type="LogicStatus" member="false" static="false" defaultvalue="ELogic_IDLE" />
-      <property name="p1" type="int" member="false" static="false" defaultvalue="0" />
-      <property name="pInstance" type="SecondAgent*" member="false" static="false" defaultvalue="null" />
     </properties>
   </agent>
-  <agent type="SecondAgent" base="FirstAgent" signature="1520495831">
+  <agent type="EnemyAgent" base="BaseAgent" signature="3248645853">
     <properties>
       <property name="m_LogicStatus" type="LogicStatus" member="false" static="false" defaultvalue="ELogic_IDLE" />
-      <property name="p1" type="int" member="false" static="false" defaultvalue="0" />
-      <property name="p2" type="int" member="false" static="false" defaultvalue="0" />
-      <property name="pInstance" type="SecondAgent*" member="false" static="false" defaultvalue="null" />
     </properties>
   </agent>
 </agents>

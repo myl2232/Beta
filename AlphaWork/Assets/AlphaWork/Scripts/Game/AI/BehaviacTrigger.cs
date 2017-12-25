@@ -29,7 +29,7 @@ namespace AlphaWork
                 if (se.ResultHashCode == m_parent.Entity.Handle.GetHashCode())
                 {
                     EntityObject sensor = GameEntry.Entity.GetEntity(se.SensorId).Logic as EntityObject;
-
+                    
                 }
             }
         }

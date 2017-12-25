@@ -17,8 +17,8 @@ namespace AlphaWork
         private GameObject m_skeleton;
         private List<GameObject> m_Parts = new List<GameObject>();
         private LoadAssetCallbacks m_LoadCallbacks;
-        private SecondAgent m_agent;//agent for behaviour tree
-        public SecondAgent Agent
+        private EnemyAgent m_agent;//agent for behaviour tree
+        public EnemyAgent Agent
         {
             get { return m_agent; }
         }
@@ -30,19 +30,24 @@ namespace AlphaWork
             GameEntry.Event.Subscribe(UIBetaEventArgs.EventId, OnTestBeta);
             GameEntry.Event.Subscribe(AvatarCreateEventArgs.EventId, OnCreateAvatar);
             m_LoadCallbacks = new LoadAssetCallbacks(OnLoadSuccessCallback, OnLoadFailureCallback);
-            //ai
-            m_agent = new SecondAgent();
-            bool bRet = m_agent.btload("EnemyActorBT");
-            m_agent.btsetcurrent("EnemyActorBT");
-            m_agent.Parent = this;
-            m_agent._set_m_LogicStatus(LogicStatus.ELogic_IDLE);
+
+            //m_agent._set_m_LogicStatus(LogicStatus.ELogic_IDLE);
         }
+
+
+
 
         // Use this for initialization
         void Start()
         {
             if ((Data as AvatarData).AlowMove)
             {
+                //ai
+                m_agent = new EnemyAgent();
+                bool bRet = m_agent.btload("EnemyAvatar");
+                m_agent.btsetcurrent("EnemyAvatar");
+                m_agent.Parent = this;
+                m_agent.SetName(this.name);
                 m_agent.InitAI((Data as AvatarData).AIRadius);
 //                 BehaviourMove moveBehaviour = gameObject.AddComponent<BehaviourMove>();
 //                 moveBehaviour.Parent = this;
@@ -63,14 +68,14 @@ namespace AlphaWork
             //    GameObject gb = Entity.Handle as GameObject;
             //    gb.GetComponent<Animator>().SetInteger("skill", 0);
             //}
-
+                   
             //ai
-            if(m_agent != null)
+            behaviac.EBTStatus status = behaviac.EBTStatus.BT_RUNNING;
+            while (status == behaviac.EBTStatus.BT_RUNNING)
             {
-                behaviac.EBTStatus status = behaviac.EBTStatus.BT_RUNNING;
                 status = m_agent.btexec();
             }
-                
+
         }
 
         void OnTestBeta(object sender, GameEventArgs arg)

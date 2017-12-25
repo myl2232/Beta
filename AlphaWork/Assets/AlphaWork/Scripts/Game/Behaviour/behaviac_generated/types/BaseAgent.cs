@@ -12,8 +12,8 @@ using System.Collections.Generic;
 
 ///<<< END WRITING YOUR CODE
 
-public class FirstAgent : behaviac.Agent
-///<<< BEGIN WRITING YOUR CODE FirstAgent
+public class BaseAgent : behaviac.Agent
+///<<< BEGIN WRITING YOUR CODE BaseAgent
 ///<<< END WRITING YOUR CODE
 {
 	private LogicStatus m_LogicStatus = LogicStatus.ELogic_IDLE;
@@ -26,58 +26,14 @@ public class FirstAgent : behaviac.Agent
 		return m_LogicStatus;
 	}
 
-	private int p1 = 0;
-	public void _set_p1(int value)
-	{
-		p1 = value;
-	}
-	public int _get_p1()
-	{
-		return p1;
-	}
-
-	public SecondAgent pInstance = null;
-
-	public void FlushEnemies()
-	{
-///<<< BEGIN WRITING YOUR CODE FlushEnemies
-///<<< END WRITING YOUR CODE
-	}
-
-	public LogicStatus GetLogicStatus()
-	{
-///<<< BEGIN WRITING YOUR CODE GetLogicStatus
-		return m_LogicStatus;
-///<<< END WRITING YOUR CODE
-	}
-
-	public bool IsHit(string checkEntity)
-	{
-///<<< BEGIN WRITING YOUR CODE IsHit
-		return false;
-///<<< END WRITING YOUR CODE
-	}
-
-	public void Say(ref string param0)
-	{
-///<<< BEGIN WRITING YOUR CODE Say
-///<<< END WRITING YOUR CODE
-	}
-
-	public void SayHello(bool bEnd)
-	{
-///<<< BEGIN WRITING YOUR CODE SayHello
-///<<< END WRITING YOUR CODE
-	}
-
 ///<<< BEGIN WRITING YOUR CODE CLASS_PART
     protected AlphaWork.EntityObject m_parent;
     public AlphaWork.EntityObject Parent
     {
         get { return m_parent; }
-        set { m_parent = value;}
+        set { m_parent = value; }
     }
-///<<< END WRITING YOUR CODE
+    ///<<< END WRITING YOUR CODE
 
 }
 
