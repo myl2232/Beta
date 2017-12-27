@@ -36,7 +36,7 @@ public class EnemyAgent : BaseAgent
 	{
 ///<<< BEGIN WRITING YOUR CODE FlushSensor
         if(m_ai != null)
-            m_ai.ExecSensor();
+            m_ai.ExecSensor(GetName());
         ///<<< END WRITING YOUR CODE
 	}
 

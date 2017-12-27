@@ -8,6 +8,7 @@ public class BehaviourShakeHit : MonoBehaviour {
     public float Duration = 0.2f;    
     public Vector3 Amplitude = new Vector3(10, 10, 10);
     public Vector3 Frequence = new Vector3(15, 15, 15);
+    protected Vector3 shakeVarint = new Vector3();
 
     private GameObject Parent;
     private float m_lastShrinkTime;
@@ -50,15 +51,16 @@ public class BehaviourShakeHit : MonoBehaviour {
             float k = 1.0f - mTime;
             //选择第一个skinmesh做为可以抖动的模型
             SkinnedMeshRenderer[] smr = Parent.GetComponentsInChildren<SkinnedMeshRenderer>();
+            
             for (int i = 0; i < smr[0].bones.Length; ++i)
             {
                 if (smr[0].bones[i].name.Equals(SkeletonRoot))//bone_root01
-                {
-                    Vector3 shakeVarint = new Vector3();
-                    for(int j = 0; j < 3; ++j)
+                {                   
+                    for (int j = 0; j < 3; ++j)
                     {
-                        shakeVarint[j] = m_forward * Parent.transform.forward[j] * Mathf.Sin(Frequence[j] * lastTime) * k * Amplitude[j] ;
+                        shakeVarint[j] = m_forward * Parent.transform.forward[j] * Mathf.Sin(Frequence[j] * lastTime) * k * Amplitude[j];
                     }
+
                     smr[0].bones[i].transform.position += shakeVarint;
 
                     return;

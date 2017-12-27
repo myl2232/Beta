@@ -20,14 +20,15 @@ namespace AlphaWork
             m_radius = radius;
         }
 
-        public override void ExecSensor()
+        public override void ExecSensor(string agentName)
         {
-            List<EntityObject> results = new List<EntityObject>();
+            List<int> results = new List<int>();
             _search(ref results);
-            GameEntry.Sensor.RegisterSense(new SenseResult(this, ref results));
+            //GameEntry.Sensor.UnRegisterSense(new SenseResult(this, ref results));
+            GameEntry.Sensor.RegisterSense(new SenseResult(agentName, ref results));
         }
 
-        protected override void _search(ref List<EntityObject> results)
+        protected override void _search(ref List<int> results)
         {
             Collider[] cols = Physics.OverlapSphere(transform.position, m_radius);
             for (int i = 0; i < cols.Length; ++i)
@@ -38,7 +39,7 @@ namespace AlphaWork
                 {
                     EntityObject ob = GetEntityOfHashCode(tCode);
                     if (ob)
-                        results.Add(ob);
+                        results.Add(ob.Id);
                 }
             }
         }

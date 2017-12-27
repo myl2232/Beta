@@ -10,13 +10,13 @@ namespace AlphaWork
     class SenseAIEventArgs: GameEventArgs
     {
         public static readonly int EventId = typeof(SenseAIEventArgs).GetHashCode();
-        private int m_sensorId;
+        private string m_sensor;
         private int m_resultHashCode;
 
-        public SenseAIEventArgs(int sensorEntId,int hashcode)
+        public SenseAIEventArgs(string sensor/*,int hashcode*/)
         {
-            m_sensorId = sensorEntId;
-            m_resultHashCode = hashcode;
+            m_sensor = sensor;
+            //m_resultHashCode = hashcode;
         }
 
         public override int Id
@@ -26,9 +26,9 @@ namespace AlphaWork
                 return EventId;
             }
         }
-        public int SensorId
+        public string Sensor
         {
-            get { return m_sensorId; }
+            get { return m_sensor; }
         }
         public int ResultHashCode
         {

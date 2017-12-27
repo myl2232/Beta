@@ -22,14 +22,14 @@ namespace AlphaWork
             m_dir = dir;
         }
 
-        public override void ExecSensor()
+        public override void ExecSensor(string name)
         {
-            List<EntityObject> results = new List<EntityObject>();
+            List<int> results = new List<int>();
             _search(ref results);
-            GameEntry.Sensor.RegisterSense(new SenseResult(this,ref results));
+            GameEntry.Sensor.RegisterSense(new SenseResult(name,ref results));
         }
 
-        protected override void _search(ref List<EntityObject> results)
+        protected override void _search(ref List<int> results)
         {
             for(int i = 0; i < m_angle; ++i)
             {
@@ -38,7 +38,7 @@ namespace AlphaWork
                 Physics.Raycast(m_center, dir, out hit, m_radius);
                 EntityObject ob = GetEntityOfHashCode(hit.collider.gameObject.GetHashCode());
                 if(ob)
-                    results.Add(ob);
+                    results.Add(ob.Id);
             }
         }
 

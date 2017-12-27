@@ -16,13 +16,23 @@ namespace AlphaWork
 
     public struct SenseResult
     {
-        public SensorAI m_sensor;
-        public List<EntityObject> m_results;
+        public string m_sensor;
+        public List<int> m_results;
 
-        public SenseResult(SensorAI sr, ref List<EntityObject> results)
+        public SenseResult(string sr, ref List<int> results)
         {
             m_sensor = sr;
             m_results = results;
+        }
+        public override bool Equals(object obj)
+        {
+            SenseResult res = (SenseResult)obj;
+
+            return (m_sensor == res.m_sensor);
+        }
+        public override int GetHashCode()
+        {
+            return m_sensor.GetHashCode();
         }
     }
 
@@ -51,12 +61,12 @@ namespace AlphaWork
 
         }
 
-        public virtual void ExecSensor()
+        public virtual void ExecSensor(string agentName)
         {
             
         }
 
-        protected virtual void _search(ref List<EntityObject> results)
+        protected virtual void _search(ref List<int> results)
         {
 
         }
@@ -71,7 +81,16 @@ namespace AlphaWork
             }
             return null;
         }
-                
 
+        public override bool Equals(object other)
+        {
+            SensorAI ai = (SensorAI)other;
+            return (m_sensorType== ai.m_sensorType) && 
+                (m_parentEntId == ai.m_parentEntId);
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

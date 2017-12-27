@@ -47,8 +47,9 @@ namespace AlphaWork
                 bool bRet = m_agent.btload("EnemyAvatar");
                 m_agent.btsetcurrent("EnemyAvatar");
                 m_agent.Parent = this;
-                m_agent.SetName(this.name);
                 m_agent.InitAI((Data as AvatarData).AIRadius);
+                GameEntry.SenseDiapacher.AddSensor(m_agent.GetName());
+
 //                 BehaviourMove moveBehaviour = gameObject.AddComponent<BehaviourMove>();
 //                 moveBehaviour.Parent = this;
             }
