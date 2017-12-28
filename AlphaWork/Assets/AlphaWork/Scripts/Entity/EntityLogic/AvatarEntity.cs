@@ -48,7 +48,6 @@ namespace AlphaWork
                 m_agent.btsetcurrent("EnemyAvatar");
                 m_agent.Parent = this;
                 m_agent.InitAI((Data as AvatarData).AIRadius);
-                GameEntry.SenseDiapacher.AddSensor(m_agent.GetName());
 
 //                 BehaviourMove moveBehaviour = gameObject.AddComponent<BehaviourMove>();
 //                 moveBehaviour.Parent = this;
@@ -72,7 +71,7 @@ namespace AlphaWork
                    
             //ai
             behaviac.EBTStatus status = behaviac.EBTStatus.BT_RUNNING;
-            while (status == behaviac.EBTStatus.BT_RUNNING)
+            while ((status == behaviac.EBTStatus.BT_RUNNING) && (m_agent != null))
             {
                 status = m_agent.btexec();
             }

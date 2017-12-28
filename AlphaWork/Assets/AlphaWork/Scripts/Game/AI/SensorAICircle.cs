@@ -10,10 +10,16 @@ namespace AlphaWork
     {
         private List<int> results;
         private float m_radius = 5;
+
         public float Radius
         {
             get { return m_radius; }
             set { m_radius = value; }
+        }
+        SensorAICircle()
+        {
+            m_sensorType = ESensorType.ESensor_Circle;
+            results = new List<int>();
         }
         SensorAICircle(float radius)
         {
@@ -22,15 +28,11 @@ namespace AlphaWork
             results = new List<int>();
         }
 
-        public override void ExecSensor(string agentName)
+        public override void ExecSensor(int agentId)
         {
-            if(results != null)
-            {
-                results.Clear();
-                _search(ref results);
-                //GameEntry.Sensor.UnRegisterSense(new SenseResult(this, ref results));
-                GameEntry.Sensor.RegisterSense(new SenseResult(agentName, ref results));
-            }
+            results.Clear();
+            _search(ref results);
+            GameEntry.Sensor.RegisterSense(new SenseResult(agentId, results));
         }
 
         protected override void _search(ref List<int> results)
@@ -41,13 +43,15 @@ namespace AlphaWork
                 int tCode = cols[i].gameObject.GetHashCode();
                 int parentCode = GameEntry.Entity.GetEntity(m_parentEntId).Handle.GetHashCode();
                 if (tCode != parentCode)
-                {
-                    EntityObject ob = GetEntityOfHashCode(tCode);
-                    if (ob)
-                        results.Add(ob.Id);
+                {                   
+                    int Id = GetEntityIdOfHashCode(tCode);
+                    if((Id != 0) && !(results.Contains(Id)))
+                    {
+                        results.Add(Id);                        
+                    }                        
                 }
             }
         }
-
+        
     }
 }

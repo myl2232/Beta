@@ -14,10 +14,12 @@ namespace AlphaWork
         int pathNum = 0;
         Vector3[] smoothPath = new Vector3[512];
         private int m_curIdx = 0;
+        private Transform m_trans;
 
         // Use this for initialization
         void Start()
         {
+            m_trans = GetComponentInParent<Transform>();
         }
 
         // Update is called once per frame
@@ -25,7 +27,7 @@ namespace AlphaWork
         {
             if (pathNum > 0)
             {                
-                Vector3 pCur = GetComponentInParent<Transform>().transform.position;
+                Vector3 pCur = /*GetComponentInParent<Transform>()*/m_trans.transform.position;
                 if (m_curIdx > (pathNum - 1))
                     return;
 
@@ -35,11 +37,11 @@ namespace AlphaWork
                 Vector3 newDir = Vector3.Normalize(pNext - newPos);
                 if(Vector3.Dot(dir,newDir) > 0)//not go to target yet
                 {
-                    GetComponentInParent<Transform>().transform.position = newPos;
+                    /*GetComponentInParent<Transform>()*/m_trans.transform.position = newPos;
                 }
                 else
                 {
-                    GetComponentInParent<Transform>().transform.position = pNext;
+                    /*GetComponentInParent<Transform>()*/m_trans.transform.position = pNext;
                     m_curIdx++;
                 }                
             }

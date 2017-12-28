@@ -9,26 +9,22 @@ namespace AlphaWork
 {
     public  class SenseDispatcherComponent: GameFrameworkComponent
     {
-        private List<string> m_sensors;
         private List<SenseResult> m_senses;
         private float m_lastTime;
-        //behaviac.Agent ag = behaviac.Agent.GetInstance(m_agent.name);
-        public void AddSensor(string name)
-        {
-            if (m_sensors.Contains(name))
-                return;
-            m_sensors.Add(name);
-        }
-        public void RemoveSensor(string name)
-        {
-            if (m_sensors.Contains(name))
-                m_sensors.Remove(name);
-        }
 
         public void RegisterSense(SenseResult sense)
         {
-            if(!m_senses.Contains(sense))
+            if (m_senses.Count == 0)
                 m_senses.Add(sense);
+            else
+            {
+                for (int i = 0; i < m_senses.Count; ++i)
+                {
+                    if (m_senses[i].m_sensor == sense.m_sensor)
+                        return;
+                }
+                m_senses.Add(sense);
+            }
         }
 
         public void UnRegisterSense(SenseResult sense)
@@ -39,19 +35,19 @@ namespace AlphaWork
         public void Start()
         {
             m_senses = new List<SenseResult>();
-            m_sensors = new List<string>();
             m_lastTime = Time.realtimeSinceStartup;
         }
-
+        
         public void Update()
         {
             for (int i = 0; i < m_senses.Count; ++i)
             {
                 for (int k = 0; k < m_senses[i].m_results.Count; ++k)
                 {
-                    GameEntry.Event.Fire(this, new SenseAIEventArgs(m_senses[i].m_sensor));
+                    GameEntry.Event.FireNow(this, new SenseAIEventArgs(m_senses[i].m_sensor, m_senses[i].m_results[k]));
                 }
-            }            
+            }
+            m_senses.Clear();
         }
 
     }

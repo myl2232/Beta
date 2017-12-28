@@ -16,24 +16,24 @@ namespace AlphaWork
 
     public struct SenseResult
     {
-        public string m_sensor;
+        public int m_sensor;
         public List<int> m_results;
 
-        public SenseResult(string sr, ref List<int> results)
+        public SenseResult(int sr, List<int> results)
         {
             m_sensor = sr;
             m_results = results;
         }
-        public override bool Equals(object obj)
-        {
-            SenseResult res = (SenseResult)obj;
-
-            return (m_sensor == res.m_sensor);
-        }
-        public override int GetHashCode()
-        {
-            return m_sensor.GetHashCode();
-        }
+//         public override bool Equals(object obj)
+//         {
+//             SenseResult res = (SenseResult)obj;
+// 
+//             return (m_sensor == res.m_sensor);
+//         }
+//         public override int GetHashCode()
+//         {
+//             return m_sensor.GetHashCode();
+//         }
     }
 
     public class SensorAI : MonoBehaviour
@@ -50,10 +50,13 @@ namespace AlphaWork
         {
             get { return m_sensorType; }
         }
+        private UnityGameFramework.Runtime.Entity[] enties;
 
         public void Start()
         {
-               
+            FlushEntityRecord();
+            GameEntry.Event.Subscribe(ShowEntitySuccessEventArgs.EventId, OnShowEntitySuccess);
+            GameEntry.Event.Subscribe(ShowEntityFailureEventArgs.EventId, OnShowEntityFailure);
         }
 
         public virtual void Init()
@@ -61,9 +64,9 @@ namespace AlphaWork
 
         }
 
-        public virtual void ExecSensor(string agentName)
+        public virtual void ExecSensor(int agentId)
         {
-            
+
         }
 
         protected virtual void _search(ref List<int> results)
@@ -71,26 +74,40 @@ namespace AlphaWork
 
         }
 
-        protected EntityObject GetEntityOfHashCode(Int32 code)
+        private void FlushEntityRecord()
         {
-            UnityGameFramework.Runtime.Entity[] enties = GameEntry.Entity.GetAllLoadedEntities();
+            enties = GameEntry.Entity.GetAllLoadedEntities();
+        }
+
+        protected int GetEntityIdOfHashCode(Int32 code)
+        {
             for (int i = 0; i < enties.Length; ++i)
             {
                 if (enties[i].Handle.GetHashCode() == code)
-                    return enties[i].Logic as EntityObject;
+                    return enties[i].Id;
             }
-            return null;
+            return 0;
         }
 
-        public override bool Equals(object other)
+//         public override bool Equals(object other)
+//         {
+//             SensorAI ai = (SensorAI)other;
+//             return (m_sensorType == ai.m_sensorType) &&
+//                 (m_parentEntId == ai.m_parentEntId);
+//         }
+//         public override int GetHashCode()
+//         {
+//             return base.GetHashCode();
+//         }
+
+        protected virtual void OnShowEntitySuccess(object sender, GameEventArgs e)
         {
-            SensorAI ai = (SensorAI)other;
-            return (m_sensorType== ai.m_sensorType) && 
-                (m_parentEntId == ai.m_parentEntId);
+            FlushEntityRecord();
         }
-        public override int GetHashCode()
+        protected virtual void OnShowEntityFailure(object sender, GameEventArgs e)
         {
-            return base.GetHashCode();
+            FlushEntityRecord();
         }
+
     }
 }

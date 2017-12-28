@@ -24,16 +24,16 @@ namespace AlphaWork
         public void OnSensor(object sender, GameEventArgs e)
         {
             SenseAIEventArgs se = e as SenseAIEventArgs;
-            if (se != null)
+            if (se != null && m_parent.Id == se.Result)
             {
-                if (se.ResultHashCode == m_parent.Entity.Handle.GetHashCode())
+                EntityObject sensor = GameEntry.Entity.GetEntity(se.Sensor).Logic as EntityObject;
+                if(sensor != null)
                 {
-                    EnemyAgent ag = behaviac.Agent.GetInstance(se.Sensor) as EnemyAgent;
-                    EntityObject sensor = ag.Parent;
-
-
+                    
                 }
+
             }
         }
+
     }
 }

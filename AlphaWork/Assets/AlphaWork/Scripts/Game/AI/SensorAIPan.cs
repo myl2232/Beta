@@ -12,7 +12,12 @@ namespace AlphaWork
         private float m_radius;
         private Vector3 m_center;
         private Vector3 m_dir;
-
+        private List<int> results;
+        SensorAIPan()
+        {
+            m_sensorType = ESensorType.ESensor_Pan;
+            results = new List<int>();
+        }
         SensorAIPan(Vector3 center, Vector3 dir, float angle,float radius)
         {        
             m_sensorType = ESensorType.ESensor_Pan;
@@ -20,13 +25,17 @@ namespace AlphaWork
             m_radius = radius;
             m_center = center;
             m_dir = dir;
+            results = new List<int>();
         }
 
-        public override void ExecSensor(string name)
+        public override void ExecSensor(int agentId)
         {
-            List<int> results = new List<int>();
-            _search(ref results);
-            GameEntry.Sensor.RegisterSense(new SenseResult(name,ref results));
+            if(results != null)
+            {
+                results.Clear();
+                _search(ref results);
+                GameEntry.Sensor.RegisterSense(new SenseResult(agentId, results));
+            }
         }
 
         protected override void _search(ref List<int> results)
@@ -36,9 +45,9 @@ namespace AlphaWork
                 Vector3 dir = Quaternion.AngleAxis(i-m_angle/2, Vector3.up) * m_dir;
                 RaycastHit hit;
                 Physics.Raycast(m_center, dir, out hit, m_radius);
-                EntityObject ob = GetEntityOfHashCode(hit.collider.gameObject.GetHashCode());
-                if(ob)
-                    results.Add(ob.Id);
+                int Id = GetEntityIdOfHashCode(hit.collider.gameObject.GetHashCode());
+                if(!results.Contains(Id))
+                    results.Add(Id);
             }
         }
 
