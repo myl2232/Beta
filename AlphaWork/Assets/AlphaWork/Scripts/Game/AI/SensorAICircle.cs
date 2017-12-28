@@ -8,6 +8,7 @@ namespace AlphaWork
 {
     public class SensorAICircle : SensorAI
     {
+        private List<int> results;
         private float m_radius = 5;
         public float Radius
         {
@@ -18,14 +19,18 @@ namespace AlphaWork
         {
             m_sensorType = ESensorType.ESensor_Circle;
             m_radius = radius;
+            results = new List<int>();
         }
 
         public override void ExecSensor(string agentName)
         {
-            List<int> results = new List<int>();
-            _search(ref results);
-            //GameEntry.Sensor.UnRegisterSense(new SenseResult(this, ref results));
-            GameEntry.Sensor.RegisterSense(new SenseResult(agentName, ref results));
+            if(results != null)
+            {
+                results.Clear();
+                _search(ref results);
+                //GameEntry.Sensor.UnRegisterSense(new SenseResult(this, ref results));
+                GameEntry.Sensor.RegisterSense(new SenseResult(agentName, ref results));
+            }
         }
 
         protected override void _search(ref List<int> results)

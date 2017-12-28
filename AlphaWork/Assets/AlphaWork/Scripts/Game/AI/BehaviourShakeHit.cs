@@ -9,7 +9,7 @@ public class BehaviourShakeHit : MonoBehaviour {
     public Vector3 Amplitude = new Vector3(10, 10, 10);
     public Vector3 Frequence = new Vector3(15, 15, 15);
     protected Vector3 shakeVarint = new Vector3();
-
+    private List<float> listFrequence = new List<float>();
     private GameObject Parent;
     private float m_lastShrinkTime;
     private Vector3 m_rootPos; 
@@ -41,8 +41,13 @@ public class BehaviourShakeHit : MonoBehaviour {
 
     private void LateUpdate()
     {
-        float[] listFrequence = { Frequence[0], Frequence[1], Frequence[2] };
-        if (m_bShake && Time.realtimeSinceStartup-m_updateTime >= 1.0f/ Mathf.Max(listFrequence))
+        listFrequence.Clear();
+        listFrequence.Add(Frequence[0]);
+        listFrequence.Add(Frequence[1]);
+        listFrequence.Add(Frequence[2]);
+        //listFrequence = { Frequence[0], Frequence[1], Frequence[2] };
+        
+        if (m_bShake && Time.realtimeSinceStartup-m_updateTime >= 1.0f/ Mathf.Max(Mathf.Max(listFrequence[0],listFrequence[1]),listFrequence[2]))
         {
             m_forward *= -1;
 
