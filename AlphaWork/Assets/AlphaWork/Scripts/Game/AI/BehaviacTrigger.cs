@@ -35,5 +35,11 @@ namespace AlphaWork
             }
         }
 
+        public void OnSensorAI(EntityObject sensor)
+        {
+            AvatarEntity et = sensor.Entity.Logic as AvatarEntity;
+            
+        }
+
     }
 }
