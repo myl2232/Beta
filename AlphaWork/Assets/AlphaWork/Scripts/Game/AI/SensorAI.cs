@@ -24,16 +24,6 @@ namespace AlphaWork
             m_sensor = sr;
             m_results = results;
         }
-//         public override bool Equals(object obj)
-//         {
-//             SenseResult res = (SenseResult)obj;
-// 
-//             return (m_sensor == res.m_sensor);
-//         }
-//         public override int GetHashCode()
-//         {
-//             return m_sensor.GetHashCode();
-//         }
     }
 
     public class SensorAI : MonoBehaviour
@@ -88,17 +78,6 @@ namespace AlphaWork
             }
             return 0;
         }
-
-//         public override bool Equals(object other)
-//         {
-//             SensorAI ai = (SensorAI)other;
-//             return (m_sensorType == ai.m_sensorType) &&
-//                 (m_parentEntId == ai.m_parentEntId);
-//         }
-//         public override int GetHashCode()
-//         {
-//             return base.GetHashCode();
-//         }
 
         protected virtual void OnShowEntitySuccess(object sender, GameEventArgs e)
         {

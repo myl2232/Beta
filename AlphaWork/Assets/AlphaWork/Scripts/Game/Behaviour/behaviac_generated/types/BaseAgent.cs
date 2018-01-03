@@ -27,11 +27,17 @@ public class BaseAgent : behaviac.Agent
 	}
 
 ///<<< BEGIN WRITING YOUR CODE CLASS_PART
-    protected AlphaWork.EntityObject m_parent;
-    public AlphaWork.EntityObject Parent
+//     protected AlphaWork.EntityObject m_parent;
+//     public AlphaWork.EntityObject Parent
+//     {
+//         get { return m_parent; }
+//         set { m_parent = value; }
+//     }
+    protected int m_ParentId;
+    public int ParentId
     {
-        get { return m_parent; }
-        set { m_parent = value; }
+        get { return m_ParentId; }
+        set { m_ParentId = value; }
     }
     ///<<< END WRITING YOUR CODE
 

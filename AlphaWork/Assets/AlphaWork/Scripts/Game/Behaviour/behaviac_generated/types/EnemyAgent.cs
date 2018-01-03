@@ -75,8 +75,11 @@ public class EnemyAgent : BaseAgent
     private SensorAICircle m_ai;
     private BehaviacTrigger m_trigger;
     private BehaviourMove m_move;
+    private AlphaWork.EntityObject m_parent;
+
     public void InitAI(float aiRadius)
-    {
+    {        
+        m_parent = AlphaWork.GameEntry.Entity.GetEntity(m_ParentId).Logic as AlphaWork.EntityObject;
         GameObject gb = m_parent.Entity.Handle as GameObject;
 
         m_ai = gb.AddComponent<SensorAICircle>();

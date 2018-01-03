@@ -10,6 +10,7 @@ namespace AlphaWork
     {
         private List<int> results;
         private float m_radius = 5;
+        private RaycastHit[] hitResults;
 
         public float Radius
         {
@@ -19,38 +20,63 @@ namespace AlphaWork
         SensorAICircle()
         {
             m_sensorType = ESensorType.ESensor_Circle;
-            results = new List<int>();
+            results = new List<int>(30);
+            hitResults = new RaycastHit[30];
         }
         SensorAICircle(float radius)
         {
             m_sensorType = ESensorType.ESensor_Circle;
             m_radius = radius;
             results = new List<int>();
+            hitResults = new RaycastHit[30];
         }
 
         public override void ExecSensor(int agentId)
         {
             results.Clear();
             _search(ref results);
+         
             GameEntry.Sensor.RegisterSense(new SenseResult(agentId, results));
         }
 
         protected override void _search(ref List<int> results)
         {
-            Collider[] cols = Physics.OverlapSphere(transform.position, m_radius);
-            for (int i = 0; i < cols.Length; ++i)
+            int nHit = Physics.SphereCastNonAlloc(transform.position, m_radius, transform.forward,
+                hitResults,5);
+
+//             Collider[] cols = Physics.OverlapSphere(transform.position, m_radius);
+//             for (int i = 0; i < cols.Length; ++i)
+//             {
+//                 int tCode = cols[i].gameObject.GetHashCode();
+//                 int parentCode = GameEntry.Entity.GetEntity(m_parentEntId).Handle.GetHashCode();
+//                 if (tCode != parentCode)
+//                 {                   
+//                     int Id = GetEntityIdOfHashCode(tCode);
+//                     if((Id != 0) && !(results.Contains(Id)))
+//                     {
+//                         results.Add(Id);                        
+//                     }                        
+//                 }
+//             }
+
+            for(int k = 0; k < hitResults.Length; ++k)
             {
-                int tCode = cols[i].gameObject.GetHashCode();
-                int parentCode = GameEntry.Entity.GetEntity(m_parentEntId).Handle.GetHashCode();
-                if (tCode != parentCode)
-                {                   
-                    int Id = GetEntityIdOfHashCode(tCode);
-                    if((Id != 0) && !(results.Contains(Id)))
+                if(hitResults[k].collider != null)
+                {
+                    int tCode = hitResults[k].collider.gameObject.GetHashCode();
+                    int parentCode = GameEntry.Entity.GetEntity(m_parentEntId).Handle.GetHashCode();
+                    if (tCode != parentCode)
                     {
-                        results.Add(Id);                        
-                    }                        
+                        int Id = GetEntityIdOfHashCode(tCode);
+                        if ((Id != 0) && !(results.Contains(Id)))
+                        {
+                            results.Add(Id);
+                        }
+                    }                    
                 }
             }
+
+            
         }
         
     }

@@ -15,7 +15,7 @@ namespace AlphaWork
     {
         private int m_partCount;
         private GameObject m_skeleton;
-        private List<GameObject> m_Parts = new List<GameObject>();
+        private List<GameObject> m_Parts/* = new List<GameObject>()*/;
         private LoadAssetCallbacks m_LoadCallbacks;
         private EnemyAgent m_agent;//agent for behaviour tree
         public EnemyAgent Agent
@@ -30,7 +30,7 @@ namespace AlphaWork
             GameEntry.Event.Subscribe(UIBetaEventArgs.EventId, OnTestBeta);
             GameEntry.Event.Subscribe(AvatarCreateEventArgs.EventId, OnCreateAvatar);
             m_LoadCallbacks = new LoadAssetCallbacks(OnLoadSuccessCallback, OnLoadFailureCallback);
-
+            m_Parts = new List<GameObject>();
             //m_agent._set_m_LogicStatus(LogicStatus.ELogic_IDLE);
         }
 
@@ -46,7 +46,7 @@ namespace AlphaWork
                 m_agent = new EnemyAgent();
                 bool bRet = m_agent.btload("EnemyAvatar");
                 m_agent.btsetcurrent("EnemyAvatar");
-                m_agent.Parent = this;
+                m_agent.ParentId = Id;
                 m_agent.InitAI((Data as AvatarData).AIRadius);
 
 //                 BehaviourMove moveBehaviour = gameObject.AddComponent<BehaviourMove>();
