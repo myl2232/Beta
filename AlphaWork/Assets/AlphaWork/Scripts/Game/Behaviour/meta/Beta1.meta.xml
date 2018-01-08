@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
-<agents version="1" signature="2982566067">
-  <agent type="BaseAgent" base="behaviac::Agent" signature="3597912848">
+<agents version="1" signature="19108081">
+  <agent type="BaseAgent" base="behaviac::Agent" signature="3005121506">
     <properties>
       <property name="m_LogicStatus" type="LogicStatus" member="false" static="false" defaultvalue="ELogic_IDLE" />
+      <property name="m_Sensors" type="vector&lt;int&gt;" member="false" static="false" defaultvalue="0:" />
     </properties>
   </agent>
-  <agent type="EnemyAgent" base="BaseAgent" signature="3248645853">
+  <agent type="EnemyAgent" base="BaseAgent" signature="1635640367">
     <properties>
       <property name="m_LogicStatus" type="LogicStatus" member="false" static="false" defaultvalue="ELogic_IDLE" />
+      <property name="m_Sensors" type="vector&lt;int&gt;" member="false" static="false" defaultvalue="0:" />
     </properties>
   </agent>
 </agents>

@@ -20,25 +20,25 @@ namespace AlphaWork
         {
             GameEntry.Event.Subscribe(SenseAIEventArgs.EventId, OnSensor);
         }
-
+                
         public void OnSensor(object sender, GameEventArgs e)
         {
-            SenseAIEventArgs se = e as SenseAIEventArgs;
-            if (se != null && m_parent.Id == se.Result)
-            {
-                EntityObject sensor = GameEntry.Entity.GetEntity(se.Sensor).Logic as EntityObject;
-                if(sensor != null)
-                {
-                    
-                }
-
-            }
+//             SenseAIEventArgs se = e as SenseAIEventArgs;
+//             if (se != null && m_parent.Id == se.Result)
+//             {
+//                 EntityObject sensor = GameEntry.Entity.GetEntity(se.Sensor).Logic as EntityObject;
+//                 if(sensor != null)
+//                 {
+//                     
+//                 }
+// 
+//             }
         }
 
         public void OnSensorAI(EntityObject sensor)
         {
             AvatarEntity et = sensor.Entity.Logic as AvatarEntity;
-            
+            et.Agent.Attack(0.5f);
         }
 
     }

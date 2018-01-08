@@ -29,10 +29,12 @@ namespace AlphaWork
         public int Sensor
         {
             get { return m_sensor; }
+            set { m_sensor = value; }
         }
         public int Result
         {
             get { return m_result; }
+            set { m_result = value; }
         }
 
         public override void Clear()

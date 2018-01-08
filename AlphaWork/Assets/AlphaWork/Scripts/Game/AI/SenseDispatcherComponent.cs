@@ -10,7 +10,8 @@ namespace AlphaWork
     public  class SenseDispatcherComponent: GameFrameworkComponent
     {
         private Dictionary<int,SenseResult> m_senses;
-        private float m_lastTime;
+        
+        //private SenseAIEventArgs m_argSense;
 
         public void RegisterSense(SenseResult sense)
         {
@@ -29,7 +30,8 @@ namespace AlphaWork
         public void Start()
         {
             m_senses = new Dictionary<int, SenseResult>();
-            m_lastTime = Time.realtimeSinceStartup;
+
+            //m_argSense = new SenseAIEventArgs(0, 0);
         }
         
         public void Update()
@@ -39,6 +41,9 @@ namespace AlphaWork
                 for (int i = 0; i < item.Value.m_results.Count; ++i)
                 {
                     OnBehaviourTrigger(item.Key, item.Value.m_results[i]);
+//                     m_argSense.Sensor = item.Key;
+//                     m_argSense.Result = item.Value.m_results[i];
+//                     GameEntry.Event.FireNow(this, m_argSense);
                 }
             }
 

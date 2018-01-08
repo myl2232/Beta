@@ -10,6 +10,58 @@ using System.Reflection;
 
 namespace behaviac
 {
+	// Source file: DispatchStatus
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class Action_bt_DispatchStatus_node1 : behaviac.Action
+	{
+		public Action_bt_DispatchStatus_node1()
+		{
+			this.m_resultOption = EBTStatus.BT_SUCCESS;
+		}
+		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
+		{
+			((EnemyAgent)pAgent).CheckSensor();
+			return EBTStatus.BT_SUCCESS;
+		}
+	}
+
+	public static class bt_DispatchStatus
+	{
+		public static bool build_behavior_tree(BehaviorTree bt)
+		{
+			bt.SetClassNameString("BehaviorTree");
+			bt.SetId(-1);
+			bt.SetName("DispatchStatus");
+			bt.IsFSM = false;
+#if !BEHAVIAC_RELEASE
+			bt.SetAgentType("EnemyAgent");
+#endif
+			// children
+			{
+				Sequence node0 = new Sequence();
+				node0.SetClassNameString("Sequence");
+				node0.SetId(0);
+#if !BEHAVIAC_RELEASE
+				node0.SetAgentType("EnemyAgent");
+#endif
+				bt.AddChild(node0);
+				{
+					Action_bt_DispatchStatus_node1 node1 = new Action_bt_DispatchStatus_node1();
+					node1.SetClassNameString("Action");
+					node1.SetId(1);
+#if !BEHAVIAC_RELEASE
+					node1.SetAgentType("EnemyAgent");
+#endif
+					node0.AddChild(node1);
+					node0.SetHasEvents(node0.HasEvents() | node1.HasEvents());
+				}
+				bt.SetHasEvents(bt.HasEvents() | node0.HasEvents());
+			}
+			return true;
+		}
+	}
+
 	// Source file: EnemyAvatar
 
 	[behaviac.GeneratedTypeMetaInfo()]
@@ -23,6 +75,26 @@ namespace behaviac
 		{
 			((EnemyAgent)pAgent).FlushSensor();
 			return EBTStatus.BT_SUCCESS;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class ReferencedBehavior_bt_EnemyAvatar_node2 : behaviac.ReferencedBehavior
+	{
+		public ReferencedBehavior_bt_EnemyAvatar_node2()
+		{
+			string szTreePath = this.GetReferencedTree(null);
+			if (!string.IsNullOrEmpty(szTreePath)) {
+			BehaviorTree behaviorTree = Workspace.Instance.LoadBehaviorTree(szTreePath);
+			if (behaviorTree != null)
+			{
+				this.m_bHasEvents |= behaviorTree.HasEvents();
+			}
+			}
+		}
+		public override string GetReferencedTree(Agent pAgent)
+		{
+			return "DispatchStatus";
 		}
 	}
 
@@ -55,6 +127,16 @@ namespace behaviac
 #endif
 					node0.AddChild(node1);
 					node0.SetHasEvents(node0.HasEvents() | node1.HasEvents());
+				}
+				{
+					ReferencedBehavior_bt_EnemyAvatar_node2 node2 = new ReferencedBehavior_bt_EnemyAvatar_node2();
+					node2.SetClassNameString("ReferencedBehavior");
+					node2.SetId(2);
+#if !BEHAVIAC_RELEASE
+					node2.SetAgentType("EnemyAgent");
+#endif
+					node0.AddChild(node2);
+					node0.SetHasEvents(node0.HasEvents() | node2.HasEvents());
 				}
 				bt.SetHasEvents(bt.HasEvents() | node0.HasEvents());
 			}

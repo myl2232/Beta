@@ -24,15 +24,35 @@ public class EnemyAgent : BaseAgent
         if (gb)
         {
             Animator animator = gb.GetComponent<Animator>();
-            LogicStatus status = LogicStatus.ELogic_ATTACK | ~basicStatus;
-            animator.SetLayerWeight(1, 0.5f);
+            LogicStatus status = LogicStatus.ELogic_ATTACK /*| ~basicStatus*/;
+            //animator.SetLayerWeight(1, 0.5f);
+            int nStatus = animator.GetInteger("status");
+            if (nStatus == (int)status)
+                return;
             animator.SetInteger("status", (int)status);
             animator.SetFloat("BlendAttack", attackParam);
         }
         ///<<< END WRITING YOUR CODE
 	}
 
-	public void FlushSensor()
+	public void CheckSensor()
+	{
+        ///<<< BEGIN WRITING YOUR CODE CheckSensor
+        GameObject gb = m_parent.Entity.Handle as GameObject;
+        if (gb)
+        {
+            Animator animator = gb.GetComponent<Animator>();
+            AnimatorStateInfo animatorInfo;
+            animatorInfo = animator.GetCurrentAnimatorStateInfo(0);
+            if(animatorInfo.normalizedTime > 1.0f)
+            {
+                MakeIdle();
+            }
+        }
+        ///<<< END WRITING YOUR CODE
+    }
+
+    public void FlushSensor()
 	{
 ///<<< BEGIN WRITING YOUR CODE FlushSensor
         if(m_ai != null)
@@ -47,8 +67,11 @@ public class EnemyAgent : BaseAgent
         if (gb)
         {
             Animator animator = gb.GetComponent<Animator>();
-            LogicStatus status = LogicStatus.ELogic_IDLE | ~basicStatus;
-            animator.SetLayerWeight(1, 0.0f);
+            LogicStatus status = LogicStatus.ELogic_IDLE /*| ~basicStatus*/;
+            //animator.SetLayerWeight(1, 0.0f);
+            int nStatus = animator.GetInteger("status");
+            if (nStatus == (int)status)
+                return;
             animator.SetInteger("status", (int)status);
         }
         ///<<< END WRITING YOUR CODE
@@ -61,7 +84,10 @@ public class EnemyAgent : BaseAgent
         if (gb)
         {
             Animator animator = gb.GetComponent<Animator>();
-            LogicStatus status = LogicStatus.ELogic_PATROL | ~basicStatus;
+            LogicStatus status = LogicStatus.ELogic_PATROL /*| ~basicStatus*/;
+            int nStatus = animator.GetInteger("status");
+            if (nStatus == (int)status)
+                return;
             animator.SetInteger("status", (int)status);
 
         }
@@ -69,13 +95,20 @@ public class EnemyAgent : BaseAgent
 	}
 
 ///<<< BEGIN WRITING YOUR CODE CLASS_PART
-    LogicStatus basicStatus = LogicStatus.ELogic_PATROL | LogicStatus.ELogic_ATTACK | LogicStatus.ELogic_IDLE |
-            LogicStatus.ELogic_AIR | LogicStatus.ELogic_Hurt | LogicStatus.ELogic_Dead | LogicStatus.ELogic_Jump;
+
+//     LogicStatus basicStatus = LogicStatus.ELogic_PATROL | LogicStatus.ELogic_ATTACK | LogicStatus.ELogic_IDLE |
+//             LogicStatus.ELogic_AIR | LogicStatus.ELogic_Hurt | LogicStatus.ELogic_Dead | LogicStatus.ELogic_Jump;
 
     private SensorAICircle m_ai;
     private BehaviacTrigger m_trigger;
     private BehaviourMove m_move;
     private AlphaWork.EntityObject m_parent;
+
+    protected void _initMove()
+    {
+        m_move = (m_parent.Entity.Handle as GameObject).AddComponent<BehaviourMove>();
+        m_move.Parent = m_parent;
+    }
 
     public void InitAI(float aiRadius)
     {        
@@ -88,14 +121,10 @@ public class EnemyAgent : BaseAgent
         m_trigger = gb.AddComponent<BehaviacTrigger>();
         m_trigger.Parent = m_parent.Entity.Logic as EntityObject;
 
-        _initMove();//temperary,will be removed
+        //_initMove();//temperary,will be removed
     }
 
-    public void _initMove()
-    {
-        m_move = (m_parent.Entity.Handle as GameObject).AddComponent<BehaviourMove>();
-        m_move.Parent = m_parent;
-    }
+
     ///<<< END WRITING YOUR CODE
 
 }

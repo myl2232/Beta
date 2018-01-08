@@ -26,6 +26,23 @@ public class BaseAgent : behaviac.Agent
 		return m_LogicStatus;
 	}
 
+	private List<int> m_Sensors = new List<int>(0) {};
+	public void _set_m_Sensors(List<int> value)
+	{
+		m_Sensors = value;
+	}
+	public List<int> _get_m_Sensors()
+	{
+		return m_Sensors;
+	}
+
+	public bool IsStatusValide()
+	{
+///<<< BEGIN WRITING YOUR CODE IsStatusValide
+		return false;
+///<<< END WRITING YOUR CODE
+	}
+
 ///<<< BEGIN WRITING YOUR CODE CLASS_PART
 //     protected AlphaWork.EntityObject m_parent;
 //     public AlphaWork.EntityObject Parent

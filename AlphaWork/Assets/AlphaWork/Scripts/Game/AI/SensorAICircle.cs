@@ -21,14 +21,14 @@ namespace AlphaWork
         {
             m_sensorType = ESensorType.ESensor_Circle;
             results = new List<int>(30);
-            hitResults = new RaycastHit[30];
+            hitResults = new RaycastHit[10];
         }
         SensorAICircle(float radius)
         {
             m_sensorType = ESensorType.ESensor_Circle;
             m_radius = radius;
             results = new List<int>();
-            hitResults = new RaycastHit[30];
+            hitResults = new RaycastHit[10];
         }
 
         public override void ExecSensor(int agentId)
@@ -42,7 +42,7 @@ namespace AlphaWork
         protected override void _search(ref List<int> results)
         {
             int nHit = Physics.SphereCastNonAlloc(transform.position, m_radius, transform.forward,
-                hitResults,5);
+                hitResults, m_radius);
 
 //             Collider[] cols = Physics.OverlapSphere(transform.position, m_radius);
 //             for (int i = 0; i < cols.Length; ++i)
@@ -74,9 +74,7 @@ namespace AlphaWork
                         }
                     }                    
                 }
-            }
-
-            
+            }            
         }
         
     }

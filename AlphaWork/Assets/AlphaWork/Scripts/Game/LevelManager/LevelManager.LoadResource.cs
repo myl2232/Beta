@@ -39,9 +39,9 @@ namespace AlphaWork
                 // 
                 //                 });
 
-                for (int i = 0; i < 10; ++i)
+                for (int i = 0; i < 1; ++i)
                 {
-                    for (int j = 0; j < 4; ++j)
+                    for (int j = 0; j < 1; ++j)
                     {
                         sPt = new Vector3(128 + i * 8 + j * 5, 0.5f, 128 + j * 4);
                         GameEntry.Entity.ShowAvatar(new AvatarData(GameEntry.Entity.GenerateSerialId(), 80003,

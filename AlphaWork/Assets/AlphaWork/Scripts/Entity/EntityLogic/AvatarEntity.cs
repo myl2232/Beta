@@ -22,7 +22,7 @@ namespace AlphaWork
         {
             get { return m_agent; }
         }
-
+        private float m_lastTime;
         //private int testskill = 0;
 
         public AvatarEntity()
@@ -32,6 +32,7 @@ namespace AlphaWork
             m_LoadCallbacks = new LoadAssetCallbacks(OnLoadSuccessCallback, OnLoadFailureCallback);
             m_Parts = new List<GameObject>();
             //m_agent._set_m_LogicStatus(LogicStatus.ELogic_IDLE);
+            m_lastTime = 0;
         }
 
 
@@ -71,9 +72,11 @@ namespace AlphaWork
                    
             //ai
             behaviac.EBTStatus status = behaviac.EBTStatus.BT_RUNNING;
-            while ((status == behaviac.EBTStatus.BT_RUNNING) && (m_agent != null))
+            while ((status == behaviac.EBTStatus.BT_RUNNING) && (m_agent != null) && 
+                (Time.realtimeSinceStartup - m_lastTime > 0.1) )
             {
                 status = m_agent.btexec();
+                m_lastTime = Time.realtimeSinceStartup;
             }
 
         }
