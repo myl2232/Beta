@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
-<agents version="1" signature="19108081">
-  <agent type="BaseAgent" base="behaviac::Agent" signature="3005121506">
+<agents version="1" signature="4219521358">
+  <agent type="BaseAgent" base="behaviac::Agent" signature="3659509290">
     <properties>
+      <property name="m_bAwakeSense" type="bool" member="false" static="false" defaultvalue="false" />
       <property name="m_LogicStatus" type="LogicStatus" member="false" static="false" defaultvalue="ELogic_IDLE" />
-      <property name="m_Sensors" type="vector&lt;int&gt;" member="false" static="false" defaultvalue="0:" />
+      <property name="m_senseRadius" type="float" member="false" static="false" defaultvalue="20" />
     </properties>
   </agent>
-  <agent type="EnemyAgent" base="BaseAgent" signature="1635640367">
+  <agent type="EnemyAgent" base="BaseAgent" signature="2534794771">
     <properties>
+      <property name="m_bAwakeSense" type="bool" member="false" static="false" defaultvalue="false" />
       <property name="m_LogicStatus" type="LogicStatus" member="false" static="false" defaultvalue="ELogic_IDLE" />
-      <property name="m_Sensors" type="vector&lt;int&gt;" member="false" static="false" defaultvalue="0:" />
+      <property name="m_senseRadius" type="float" member="false" static="false" defaultvalue="20" />
     </properties>
   </agent>
 </agents>

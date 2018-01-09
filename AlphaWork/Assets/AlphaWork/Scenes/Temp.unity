@@ -293,7 +293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!154 &1027930855
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -656,7 +656,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: b2e6b09f30c82044189dc7c71ef63949, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.43
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: b2e6b09f30c82044189dc7c71ef63949, type: 3}
       propertyPath: m_LocalPosition.z

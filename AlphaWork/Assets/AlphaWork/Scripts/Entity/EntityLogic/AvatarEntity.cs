@@ -16,13 +16,14 @@ namespace AlphaWork
         private int m_partCount;
         private GameObject m_skeleton;
         private List<GameObject> m_Parts/* = new List<GameObject>()*/;
-        private LoadAssetCallbacks m_LoadCallbacks;
+        private LoadAssetCallbacks m_LoadCallbacks;        
         private EnemyAgent m_agent;//agent for behaviour tree
         public EnemyAgent Agent
         {
             get { return m_agent; }
         }
         private float m_lastTime;
+        private int m_senseHit;
         //private int testskill = 0;
 
         public AvatarEntity()
@@ -33,6 +34,7 @@ namespace AlphaWork
             m_Parts = new List<GameObject>();
             //m_agent._set_m_LogicStatus(LogicStatus.ELogic_IDLE);
             m_lastTime = 0;
+            m_senseHit = 0;
         }
 
 
@@ -48,7 +50,8 @@ namespace AlphaWork
                 bool bRet = m_agent.btload("EnemyAvatar");
                 m_agent.btsetcurrent("EnemyAvatar");
                 m_agent.ParentId = Id;
-                m_agent.InitAI((Data as AvatarData).AIRadius);
+                m_agent._set_m_senseRadius((Data as AvatarData).AIRadius);
+                m_agent.InitAI();
 
 //                 BehaviourMove moveBehaviour = gameObject.AddComponent<BehaviourMove>();
 //                 moveBehaviour.Parent = this;
@@ -72,11 +75,21 @@ namespace AlphaWork
                    
             //ai
             behaviac.EBTStatus status = behaviac.EBTStatus.BT_RUNNING;
-            while ((status == behaviac.EBTStatus.BT_RUNNING) && (m_agent != null) && 
-                (Time.realtimeSinceStartup - m_lastTime > 0.1) )
+            while ((status == behaviac.EBTStatus.BT_RUNNING) && (m_agent != null)
+                && (Time.realtimeSinceStartup - m_lastTime > 0.3))                 
             {
                 status = m_agent.btexec();
                 m_lastTime = Time.realtimeSinceStartup;
+                if (m_senseHit > 1)
+                {
+                    m_agent._set_m_bAwakeSense(true);
+                    m_senseHit = 0;
+                }
+                else
+                {
+                    m_agent._set_m_bAwakeSense(false);
+                    m_senseHit++;
+                }
             }
 
         }

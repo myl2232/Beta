@@ -50,6 +50,7 @@ namespace AlphaWork
         public float AIRadius
         {
             get { return m_AiRadius; }
+            set { m_AiRadius = value; }
         }
         //允许移动
         public bool AlowMove

@@ -17,6 +17,11 @@ namespace AlphaWork
                 return EventId;
             }
         }
+        protected int m_entId;
+        public int EId
+        {
+            get { return m_entId; }
+        }
         protected Vector3 m_MovePos;
         public Vector3 MovePos
         {
@@ -25,6 +30,11 @@ namespace AlphaWork
         }
         public MoveToTargetEventArgs(Vector3 newMovePos)
         {
+            m_MovePos = newMovePos;
+        }
+        public MoveToTargetEventArgs(int entId,Vector3 newMovePos)
+        {
+            m_entId = entId;
             m_MovePos = newMovePos;
         }
         public override void Clear()

@@ -12,23 +12,28 @@ namespace AlphaWork
             get;
             private set;
         }
-        public static SenseDispatcherComponent SenseDiapacher
+        /// <summary>
+        /// 获取感知组件。
+        /// </summary>
+        public static SenseDispatcherComponent Sensor
         {
             get;
             private set;
         }
-        //         public static HPBarComponent HPBar
-        //         {
-        //             get;
-        //             private set;
-        //         }
+        /// <summary>
+        /// 获取行为树组件。
+        /// </summary>
+        public static BehaviacComponent Behaviac
+        {
+            get;
+            private set;
+        }
 
         private static void InitCustomComponents()
         {
             Config = UnityGameFramework.Runtime.GameEntry.GetComponent<ConfigComponent>();
-            //HPBar = UnityGameFramework.Runtime.GameEntry.GetComponent<HPBarComponent>();  
-            SenseDiapacher = UnityGameFramework.Runtime.GameEntry.GetComponent<SenseDispatcherComponent>();
-
+            Sensor = UnityGameFramework.Runtime.GameEntry.GetComponent<SenseDispatcherComponent>();
+            Behaviac = UnityGameFramework.Runtime.GameEntry.GetComponent<BehaviacComponent>();
         }
       
     }

@@ -3,12 +3,11 @@
 <!--Source File: EnemyAvatar.xml-->
 <behavior name="EnemyAvatar" agenttype="EnemyAgent" version="5">
   <node class="Sequence" id="0">
-    <node class="Action" id="1">
-      <property Method="Self.EnemyAgent::FlushSensor()" />
-      <property ResultOption="BT_SUCCESS" />
+    <node class="ReferencedBehavior" id="1">
+      <property ReferenceBehavior="const string &quot;Base&quot;" />
     </node>
-    <node class="ReferencedBehavior" id="2">
-      <property ReferenceBehavior="const string &quot;DispatchStatus&quot;" />
+    <node class="ReferencedBehavior" id="4">
+      <property ReferenceBehavior="const string &quot;Dispatch&quot;" />
     </node>
   </node>
 </behavior>

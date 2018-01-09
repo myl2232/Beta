@@ -11,6 +11,7 @@ using System.Collections.Generic;
 ///<<< BEGIN WRITING YOUR CODE FILE_INIT
 using UnityEngine;
 using AlphaWork;
+using GameFramework.Event;
 ///<<< END WRITING YOUR CODE
 
 public class EnemyAgent : BaseAgent
@@ -37,27 +38,40 @@ public class EnemyAgent : BaseAgent
 
 	public void CheckSensor()
 	{
-        ///<<< BEGIN WRITING YOUR CODE CheckSensor
+///<<< BEGIN WRITING YOUR CODE CheckSensor
         GameObject gb = m_parent.Entity.Handle as GameObject;
         if (gb)
         {
             Animator animator = gb.GetComponent<Animator>();
             AnimatorStateInfo animatorInfo;
             animatorInfo = animator.GetCurrentAnimatorStateInfo(0);
-            if(animatorInfo.normalizedTime > 1.0f)
+            if(animatorInfo.normalizedTime >= 1.0f && animatorInfo.IsName("AttackSwitch"))
             {
                 MakeIdle();
             }
         }
         ///<<< END WRITING YOUR CODE
-    }
+	}
 
-    public void FlushSensor()
+	public bool FindEnemy()
+	{
+///<<< BEGIN WRITING YOUR CODE FindEnemy
+		return false;
+///<<< END WRITING YOUR CODE
+	}
+
+	public void FlushSensor()
 	{
 ///<<< BEGIN WRITING YOUR CODE FlushSensor
         if(m_ai != null)
             m_ai.ExecSensor(m_parent.Id);
         ///<<< END WRITING YOUR CODE
+	}
+
+	public void Hurt()
+	{
+///<<< BEGIN WRITING YOUR CODE Hurt
+///<<< END WRITING YOUR CODE
 	}
 
 	public void MakeIdle()
@@ -77,6 +91,15 @@ public class EnemyAgent : BaseAgent
         ///<<< END WRITING YOUR CODE
 	}
 
+	public void MoveToTarget()
+	{
+///<<< BEGIN WRITING YOUR CODE MoveToTarget
+        GameObject gb = m_parent.Entity.Handle as GameObject;
+        if (m_nextTarget.x == 0 ||Vector3.Distance(gb.transform.position,m_nextTarget) < 0.5f)
+            RecordTarget();
+///<<< END WRITING YOUR CODE
+	}
+
 	public void Patrol()
 	{
 ///<<< BEGIN WRITING YOUR CODE Patrol
@@ -89,42 +112,64 @@ public class EnemyAgent : BaseAgent
             if (nStatus == (int)status)
                 return;
             animator.SetInteger("status", (int)status);
-
+            animator.SetFloat("MotionBlend",0.45f);
         }
         ///<<< END WRITING YOUR CODE
 	}
 
 ///<<< BEGIN WRITING YOUR CODE CLASS_PART
 
-//     LogicStatus basicStatus = LogicStatus.ELogic_PATROL | LogicStatus.ELogic_ATTACK | LogicStatus.ELogic_IDLE |
-//             LogicStatus.ELogic_AIR | LogicStatus.ELogic_Hurt | LogicStatus.ELogic_Dead | LogicStatus.ELogic_Jump;
-
     private SensorAICircle m_ai;
     private BehaviacTrigger m_trigger;
-    private BehaviourMove m_move;
+    //private BehaviourMove m_move;//temp removed,replace by behaviour
+    private MoveTarget m_moveTarget;
     private AlphaWork.EntityObject m_parent;
+    private Vector3 m_nextTarget;
 
-    protected void _initMove()
-    {
-        m_move = (m_parent.Entity.Handle as GameObject).AddComponent<BehaviourMove>();
-        m_move.Parent = m_parent;
-    }
+//     protected void _initMove()
+//     {
+//         m_move = (m_parent.Entity.Handle as GameObject).AddComponent<BehaviourMove>();
+//         m_move.Parent = m_parent;
+//     }
 
-    public void InitAI(float aiRadius)
+    public void InitAI()
     {        
         m_parent = AlphaWork.GameEntry.Entity.GetEntity(m_ParentId).Logic as AlphaWork.EntityObject;
         GameObject gb = m_parent.Entity.Handle as GameObject;
 
         m_ai = gb.AddComponent<SensorAICircle>();
-        m_ai.Radius = aiRadius;
+        m_ai.Radius = _get_m_senseRadius();
         m_ai.ParentId = m_parent.Id;
         m_trigger = gb.AddComponent<BehaviacTrigger>();
         m_trigger.Parent = m_parent.Entity.Logic as EntityObject;
 
+        m_moveTarget = gb.AddComponent<MoveTarget>();
+        GameEntry.Event.Subscribe(MoveToTargetEventArgs.EventId, OnMoveToTarget);
         //_initMove();//temperary,will be removed
     }
 
+    public void RecordTarget()
+    {
+        GameObject target = new GameObject();
+        GameEntry.Behaviac.GetNextTarget(m_parent.transform.position, ref target);
+        m_nextTarget = target.transform.position;
+        GameEntry.Event.Fire(this, new MoveToTargetEventArgs(m_ParentId, m_nextTarget));
+    }
 
+    public void OnMoveToTarget(object sender, GameEventArgs e)
+    {
+        MoveToTargetEventArgs mvArgs = e as MoveToTargetEventArgs;
+        if(mvArgs.EId == m_ParentId)
+        {
+            GameObject gb = m_parent.Entity.Handle as GameObject;
+
+            if (m_moveTarget)
+                m_moveTarget.Move(gb.transform.position, mvArgs.MovePos);
+
+            Patrol();
+        }
+
+    }
     ///<<< END WRITING YOUR CODE
 
 }

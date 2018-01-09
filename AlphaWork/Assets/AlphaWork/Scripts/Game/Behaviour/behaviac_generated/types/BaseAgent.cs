@@ -16,6 +16,16 @@ public class BaseAgent : behaviac.Agent
 ///<<< BEGIN WRITING YOUR CODE BaseAgent
 ///<<< END WRITING YOUR CODE
 {
+	private bool m_bAwakeSense = false;
+	public void _set_m_bAwakeSense(bool value)
+	{
+		m_bAwakeSense = value;
+	}
+	public bool _get_m_bAwakeSense()
+	{
+		return m_bAwakeSense;
+	}
+
 	private LogicStatus m_LogicStatus = LogicStatus.ELogic_IDLE;
 	public void _set_m_LogicStatus(LogicStatus value)
 	{
@@ -26,14 +36,14 @@ public class BaseAgent : behaviac.Agent
 		return m_LogicStatus;
 	}
 
-	private List<int> m_Sensors = new List<int>(0) {};
-	public void _set_m_Sensors(List<int> value)
+	private float m_senseRadius = 20f;
+	public void _set_m_senseRadius(float value)
 	{
-		m_Sensors = value;
+		m_senseRadius = value;
 	}
-	public List<int> _get_m_Sensors()
+	public float _get_m_senseRadius()
 	{
-		return m_Sensors;
+		return m_senseRadius;
 	}
 
 	public bool IsStatusValide()

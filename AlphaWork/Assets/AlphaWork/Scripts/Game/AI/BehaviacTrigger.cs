@@ -38,7 +38,7 @@ namespace AlphaWork
         public void OnSensorAI(EntityObject sensor)
         {
             AvatarEntity et = sensor.Entity.Logic as AvatarEntity;
-            et.Agent.Attack(0.5f);
+            et.Agent.Attack(UnityEngine.Random.Range(0.1f,0.99f));
         }
 
     }

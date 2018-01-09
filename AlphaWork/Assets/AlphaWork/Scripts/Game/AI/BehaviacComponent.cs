@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
-//using behaviac;
+using UnityGameFramework.Runtime;
 
 namespace AlphaWork 
 {
-    public class BehaviacComponent: MonoBehaviour
+    public class BehaviacComponent: GameFrameworkComponent
     {
+        protected List<GameObject> Targets;
         public void Start()
         {
+            Targets = new List<GameObject>();
+
             InitBehavic();
+            FullfillTargets();
         }
 
         public void OnDestroy()
@@ -19,7 +23,7 @@ namespace AlphaWork
             CleanupBehaviac();
         }
 
-        public bool InitBehavic()
+        protected bool InitBehavic()
         {
             //Console.WriteLine("InitBehavic");
 
@@ -41,5 +45,33 @@ namespace AlphaWork
 
             behaviac.Workspace.Instance.Cleanup();
         }
+
+        protected void FullfillTargets()
+        {
+            GameObject[] hings = FindObjectsOfType(typeof(GameObject)) as GameObject[];
+            for (int i = 0; i < hings.Length; ++i)
+            {
+                TargetPoint pt = hings[i].GetComponent<TargetPoint>();
+                if (pt)
+                {
+                    Targets.Add(hings[i]);
+                }
+            }
+        }
+
+        public void GetNextTarget(Vector3 vPos, ref GameObject target)
+        {
+            //             for(int i = 0; i < Targets.Count; ++i)
+            //             {
+            // 
+            //             }
+            if(Targets.Count > 0)
+            {
+                int index = UnityEngine.Random.Range(0, Targets.Count() - 1);
+                target = Targets[index];
+            }
+
+        }
+
     }
 }
