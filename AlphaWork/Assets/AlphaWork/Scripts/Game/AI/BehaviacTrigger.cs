@@ -35,10 +35,14 @@ namespace AlphaWork
 //             }
         }
 
-        public void OnSensorAI(EntityObject sensor)
+        public void OnSensorAI(EntityObject sensor, int result)
         {
             AvatarEntity et = sensor.Entity.Logic as AvatarEntity;
-            et.Agent.Attack(UnityEngine.Random.Range(0.1f,0.99f));
+
+            if (et.Agent._get_bAwakeSense())
+            {
+                et.Agent.SenseResult = result;
+            }
         }
 
     }

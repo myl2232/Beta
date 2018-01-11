@@ -1,24 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
 <!--Source File: Base.xml-->
-<behavior name="Base" agenttype="EnemyAgent" version="5">
-  <node class="Sequence" id="0">
-    <node class="Action" id="1">
-      <property Method="Self.EnemyAgent::CheckSensor()" />
-      <property ResultOption="BT_SUCCESS" />
+<behavior name="Base" agenttype="EnemyAgent" fsm="true" version="5">
+  <node class="FSM" id="-1">
+    <property initialid="1" />
+    <node class="State" id="1">
+      <property IsEndState="true" />
+      <property Method="Self.EnemyAgent::ActionPatrol(0.2)" />
+      <attachment class="Transition" id="6" flag="transition">
+        <property Operator="Equal" />
+        <property Opl="LogicStatus Self.BaseAgent::logicStatus" />
+        <property Opr2="const LogicStatus ELogic_TRACK" />
+        <property TargetFSMNodeId="2" />
+      </attachment>
+      <attachment class="Transition" id="8" flag="transition">
+        <property Operator="Equal" />
+        <property Opl="LogicStatus Self.BaseAgent::logicStatus" />
+        <property Opr2="const LogicStatus ELogic_ATTACK" />
+        <property TargetFSMNodeId="3" />
+      </attachment>
     </node>
-    <node class="WaitforSignal" id="2">
-      <custom>
-        <node class="Condition" id="3">
-          <property Operator="Equal" />
-          <property Opl="bool Self.BaseAgent::m_bAwakeSense" />
-          <property Opr="const bool true" />
-        </node>
-      </custom>
+    <node class="State" id="2">
+      <property IsEndState="false" />
+      <property Method="Self.EnemyAgent::ActionPatrol(0.6)" />
+      <attachment class="Transition" id="5" flag="transition">
+        <property Operator="Equal" />
+        <property Opl="LogicStatus Self.BaseAgent::logicStatus" />
+        <property Opr2="const LogicStatus ELogic_PATROL" />
+        <property TargetFSMNodeId="1" />
+      </attachment>
+      <attachment class="Transition" id="4" flag="transition">
+        <property Operator="Equal" />
+        <property Opl="LogicStatus Self.BaseAgent::logicStatus" />
+        <property Opr2="const LogicStatus ELogic_ATTACK" />
+        <property TargetFSMNodeId="3" />
+      </attachment>
     </node>
-    <node class="Action" id="4">
-      <property Method="Self.EnemyAgent::FlushSensor()" />
-      <property ResultOption="BT_SUCCESS" />
+    <node class="State" id="3">
+      <property IsEndState="false" />
+      <property Method="Self.EnemyAgent::ActionAttack()" />
+      <attachment class="Transition" id="7" flag="transition">
+        <property Operator="Equal" />
+        <property Opl="LogicStatus Self.BaseAgent::logicStatus" />
+        <property Opr2="const LogicStatus ELogic_PATROL" />
+        <property TargetFSMNodeId="1" />
+      </attachment>
     </node>
   </node>
 </behavior>

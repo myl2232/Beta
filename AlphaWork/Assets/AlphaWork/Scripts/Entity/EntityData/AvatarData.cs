@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameFramework.DataTable;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,13 +16,14 @@ namespace AlphaWork
         [SerializeField]
         private bool m_AlowMove = false;
         [SerializeField]
-        private float m_AiRadius = 5;
+        private float m_SenseRadius = 10;
+        [SerializeField]
+        private float m_attackRadius = 5;
 
-        public AvatarData(int entityId = -1, int typeId = 80002, CampType camp = CampType.Unknown,bool alowMove = false,float aiRadius = 5)
+        public AvatarData(int entityId = -1, int typeId = 80002, CampType camp = CampType.Unknown,bool alowMove = false)
             : base(entityId, typeId, camp)
         {
-            m_AlowMove = alowMove;
-            m_AiRadius = aiRadius;
+            m_AlowMove = alowMove;            
         }
 
         // Use this for initialization
@@ -47,10 +49,15 @@ namespace AlphaWork
         {
             return m_parts;
         }
-        public float AIRadius
+        public float SenseRadius
         {
-            get { return m_AiRadius; }
-            set { m_AiRadius = value; }
+            get { return m_SenseRadius; }
+            set { m_SenseRadius = value; }
+        }
+        public float AttackRadius
+        {
+            get { return m_attackRadius; }
+            set { m_attackRadius = value; }
         }
         //允许移动
         public bool AlowMove

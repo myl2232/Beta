@@ -44,14 +44,16 @@ namespace AlphaWork
             index++;
             string str = text[index];
 			m_Data.Skeleton = str;
-            for (int i = 3; i < text.Length-1; ++i)
+            for (int i = 3; i < text.Length-2; ++i)
             {
                 index++;
                 m_Data.AddPart(text[index]);
             }
             index++;
-            m_Data.AIRadius = float.Parse(text[index]);
-		}
+            m_Data.SenseRadius = float.Parse(text[index]);
+            index++;
+            m_Data.AttackRadius = float.Parse(text[index]);
+        }
 	}
 
 }

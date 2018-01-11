@@ -24,22 +24,19 @@ namespace AlphaWork
         }
         private float m_lastTime;
         private int m_senseHit;
-        //private int testskill = 0;
-
+        
         public AvatarEntity()
         {
+            GameEntry.Event.Subscribe(UIAlphaEventArgs.EventId, OnTestAlpha);
             GameEntry.Event.Subscribe(UIBetaEventArgs.EventId, OnTestBeta);
             GameEntry.Event.Subscribe(AvatarCreateEventArgs.EventId, OnCreateAvatar);
             m_LoadCallbacks = new LoadAssetCallbacks(OnLoadSuccessCallback, OnLoadFailureCallback);
             m_Parts = new List<GameObject>();
-            //m_agent._set_m_LogicStatus(LogicStatus.ELogic_IDLE);
+ 
             m_lastTime = 0;
             m_senseHit = 0;
         }
-
-
-
-
+        
         // Use this for initialization
         void Start()
         {
@@ -50,7 +47,8 @@ namespace AlphaWork
                 bool bRet = m_agent.btload("EnemyAvatar");
                 m_agent.btsetcurrent("EnemyAvatar");
                 m_agent.ParentId = Id;
-                m_agent._set_m_senseRadius((Data as AvatarData).AIRadius);
+                m_agent._set_senseRadius((Data as AvatarData).SenseRadius);
+                m_agent._set_attackRadius((Data as AvatarData).AttackRadius);
                 m_agent.InitAI();
 
 //                 BehaviourMove moveBehaviour = gameObject.AddComponent<BehaviourMove>();
@@ -60,19 +58,7 @@ namespace AlphaWork
 
         // Update is called once per frame
         void Update()
-        {
-            //bool skill1 = CrossPlatformInputManager.GetButtonDown("skill1");
-            //if(skill1)
-            //{
-            //    GameObject gb = Entity.Handle as GameObject;
-            //    gb.GetComponent<Animator>().SetInteger("skill",1);
-            //}
-            //if(CrossPlatformInputManager.GetButtonDown("noskill"))
-            //{
-            //    GameObject gb = Entity.Handle as GameObject;
-            //    gb.GetComponent<Animator>().SetInteger("skill", 0);
-            //}
-                   
+        {                   
             //ai
             behaviac.EBTStatus status = behaviac.EBTStatus.BT_RUNNING;
             while ((status == behaviac.EBTStatus.BT_RUNNING) && (m_agent != null)
@@ -80,38 +66,28 @@ namespace AlphaWork
             {
                 status = m_agent.btexec();
                 m_lastTime = Time.realtimeSinceStartup;
-                if (m_senseHit > 1)
-                {
-                    m_agent._set_m_bAwakeSense(true);
-                    m_senseHit = 0;
-                }
-                else
-                {
-                    m_agent._set_m_bAwakeSense(false);
-                    m_senseHit++;
-                }
+                m_agent._set_bAwakeSense(true);
             }
 
         }
 
+        /*for test*/
+        private float lscale = 1;
+        private void LateUpdate()
+        {
+            Transform trans = AssetUtility.FindChild(Entity.transform, "Bip001 L Thigh");//"Bip001 L Hand"
+            trans.localScale *= lscale;
+        }
+        void OnTestAlpha(object sender, GameEventArgs arg)
+        {
+            lscale = (lscale >1)?lscale*0.5f:1.0f;
+        }
         void OnTestBeta(object sender, GameEventArgs arg)
         {
-            //if (testskill == 0)
-            //{
-            //    GameObject gb = Entity.Handle as GameObject;
-            //    gb.GetComponent<Animator>().SetInteger("skill", 1);
-
-            //    testskill = 1;
-            //}
-            //else if (testskill == 1)
-            //{
-            //    GameObject gb = Entity.Handle as GameObject;
-            //    gb.GetComponent<Animator>().SetInteger("skill", 0);
-
-            //    testskill = 0;
-            //}
-
+            lscale *= 2;
         }
+        /*end test*/
+
         protected internal override void OnAttached(EntityLogic childEntity, Transform parentTransform, object userData)
         {
             base.OnAttached(childEntity, parentTransform, userData);

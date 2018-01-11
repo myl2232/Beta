@@ -16,34 +16,44 @@ public class BaseAgent : behaviac.Agent
 ///<<< BEGIN WRITING YOUR CODE BaseAgent
 ///<<< END WRITING YOUR CODE
 {
-	private bool m_bAwakeSense = false;
-	public void _set_m_bAwakeSense(bool value)
+	private float attackRadius = 10f;
+	public void _set_attackRadius(float value)
 	{
-		m_bAwakeSense = value;
+		attackRadius = value;
 	}
-	public bool _get_m_bAwakeSense()
+	public float _get_attackRadius()
 	{
-		return m_bAwakeSense;
-	}
-
-	private LogicStatus m_LogicStatus = LogicStatus.ELogic_IDLE;
-	public void _set_m_LogicStatus(LogicStatus value)
-	{
-		m_LogicStatus = value;
-	}
-	public LogicStatus _get_m_LogicStatus()
-	{
-		return m_LogicStatus;
+		return attackRadius;
 	}
 
-	private float m_senseRadius = 20f;
-	public void _set_m_senseRadius(float value)
+	private bool bAwakeSense = false;
+	public void _set_bAwakeSense(bool value)
 	{
-		m_senseRadius = value;
+		bAwakeSense = value;
 	}
-	public float _get_m_senseRadius()
+	public bool _get_bAwakeSense()
 	{
-		return m_senseRadius;
+		return bAwakeSense;
+	}
+
+	private LogicStatus logicStatus = LogicStatus.ELogic_IDLE;
+	public void _set_logicStatus(LogicStatus value)
+	{
+		logicStatus = value;
+	}
+	public LogicStatus _get_logicStatus()
+	{
+		return logicStatus;
+	}
+
+	private float senseRadius = 20f;
+	public void _set_senseRadius(float value)
+	{
+		senseRadius = value;
+	}
+	public float _get_senseRadius()
+	{
+		return senseRadius;
 	}
 
 	public bool IsStatusValide()
@@ -65,7 +75,7 @@ public class BaseAgent : behaviac.Agent
     {
         get { return m_ParentId; }
         set { m_ParentId = value; }
-    }
+    }    
     ///<<< END WRITING YOUR CODE
 
 }

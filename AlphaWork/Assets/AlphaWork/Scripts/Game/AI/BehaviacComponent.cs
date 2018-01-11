@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameFramework.Event;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,13 +16,14 @@ namespace AlphaWork
             Targets = new List<GameObject>();
 
             InitBehavic();
-            FullfillTargets();
+            GameEntry.Event.Subscribe(LoadSceneSuccessEventArgs.EventId, OnLoadSceneSuccess);
         }
 
         public void OnDestroy()
         {
             CleanupBehaviac();
         }
+
 
         protected bool InitBehavic()
         {
@@ -33,17 +35,16 @@ namespace AlphaWork
             return true;
         }
 
-
-        public void UpdateLoop()
-        {
-
-        }
-
         public void CleanupBehaviac()
         {
             //Console.WriteLine("CleanupBehaviac");
 
             behaviac.Workspace.Instance.Cleanup();
+        }
+
+        private void OnLoadSceneSuccess(object sender, GameEventArgs e)
+        {
+            FullfillTargets();
         }
 
         protected void FullfillTargets()

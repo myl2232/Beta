@@ -13,11 +13,12 @@ using System.Collections.Generic;
 public enum LogicStatus
 {
 	ELogic_IDLE = 0,
-	ELogic_PATROL = 1,
-	ELogic_ATTACK = 2,
-	ELogic_AIR = 3,
-	ELogic_Hurt = 4,
-	ELogic_Dead = 5,
-	ELogic_Jump = 6,
+	ELogic_ATTACK = 1,
+	ELogic_PATROL = 2,
+	ELogic_TRACK = 3,
+	ELogic_AIR = 4,
+	ELogic_HURT = 5,
+	ELogic_DEAD = 6,
+	ELogic_JUMP = 7,
 }
 

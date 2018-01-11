@@ -92,6 +92,9 @@ namespace AlphaWork
             }
             data.Skeleton = drEntity.Data.Skeleton;
             data.Parts = drEntity.Data.Parts;
+            data.SenseRadius = drEntity.Data.SenseRadius;
+            data.AttackRadius = drEntity.Data.AttackRadius;
+            
             entityComponent.ShowEntity(data.Id, typeof(AvatarEntity), drEntity.Data.Skeleton, "Avatar", data);
         }
 

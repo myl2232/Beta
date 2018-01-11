@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
-<agents version="1" signature="4219521358">
-  <agent type="BaseAgent" base="behaviac::Agent" signature="3659509290">
+<agents version="1" signature="1124588391">
+  <agent type="BaseAgent" base="behaviac::Agent" signature="3876861960">
     <properties>
-      <property name="m_bAwakeSense" type="bool" member="false" static="false" defaultvalue="false" />
-      <property name="m_LogicStatus" type="LogicStatus" member="false" static="false" defaultvalue="ELogic_IDLE" />
-      <property name="m_senseRadius" type="float" member="false" static="false" defaultvalue="20" />
+      <property name="attackRadius" type="float" member="false" static="false" defaultvalue="10" />
+      <property name="bAwakeSense" type="bool" member="false" static="false" defaultvalue="false" />
+      <property name="logicStatus" type="LogicStatus" member="false" static="false" defaultvalue="ELogic_IDLE" />
+      <property name="senseRadius" type="float" member="false" static="false" defaultvalue="20" />
     </properties>
   </agent>
-  <agent type="EnemyAgent" base="BaseAgent" signature="2534794771">
+  <agent type="EnemyAgent" base="BaseAgent" signature="3739981600">
     <properties>
-      <property name="m_bAwakeSense" type="bool" member="false" static="false" defaultvalue="false" />
-      <property name="m_LogicStatus" type="LogicStatus" member="false" static="false" defaultvalue="ELogic_IDLE" />
-      <property name="m_senseRadius" type="float" member="false" static="false" defaultvalue="20" />
+      <property name="attackParam" type="float" member="false" static="false" defaultvalue="0" />
+      <property name="attackRadius" type="float" member="false" static="false" defaultvalue="10" />
+      <property name="bAwakeSense" type="bool" member="false" static="false" defaultvalue="false" />
+      <property name="CurrentAnimStateEnd" type="bool" member="false" static="false" defaultvalue="false" />
+      <property name="logicStatus" type="LogicStatus" member="false" static="false" defaultvalue="ELogic_IDLE" />
+      <property name="senseRadius" type="float" member="false" static="false" defaultvalue="20" />
     </properties>
   </agent>
 </agents>

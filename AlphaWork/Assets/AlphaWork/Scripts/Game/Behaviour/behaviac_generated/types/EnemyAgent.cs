@@ -18,46 +18,111 @@ public class EnemyAgent : BaseAgent
 ///<<< BEGIN WRITING YOUR CODE EnemyAgent
 ///<<< END WRITING YOUR CODE
 {
-	public void Attack(float attackParam)
+	private float attackParam = 0f;
+	public void _set_attackParam(float value)
 	{
-///<<< BEGIN WRITING YOUR CODE Attack
-        GameObject gb = m_parent.Entity.Handle as GameObject;
-        if (gb)
-        {
-            Animator animator = gb.GetComponent<Animator>();
-            LogicStatus status = LogicStatus.ELogic_ATTACK /*| ~basicStatus*/;
-            //animator.SetLayerWeight(1, 0.5f);
-            int nStatus = animator.GetInteger("status");
-            if (nStatus == (int)status)
-                return;
-            animator.SetInteger("status", (int)status);
-            animator.SetFloat("BlendAttack", attackParam);
-        }
+		attackParam = value;
+	}
+	public float _get_attackParam()
+	{
+		return attackParam;
+	}
+
+	private bool CurrentAnimStateEnd = false;
+	public void _set_CurrentAnimStateEnd(bool value)
+	{
+		CurrentAnimStateEnd = value;
+	}
+	public bool _get_CurrentAnimStateEnd()
+	{
+		return CurrentAnimStateEnd;
+	}
+
+	public void ActionAttack()
+	{
+///<<< BEGIN WRITING YOUR CODE ActionAttack
+
+        m_moveTarget.Pause();
+        m_pAnimator.SetFloat("BlendAttack", attackParam);
+        m_pAnimator.SetTrigger("Attack");
         ///<<< END WRITING YOUR CODE
 	}
+
+	public void ActionHurt()
+	{
+///<<< BEGIN WRITING YOUR CODE ActionHurt
+///<<< END WRITING YOUR CODE
+	}
+
+	public void ActionIdle()
+	{
+///<<< BEGIN WRITING YOUR CODE ActionIdle
+
+        LogicStatus status = LogicStatus.ELogic_IDLE;
+        int nStatus = m_pAnimator.GetInteger("status");
+        if (nStatus == (int)status)
+            return;
+
+        ///<<< END WRITING YOUR CODE
+	}
+
+	public void ActionPatrol(float speed)
+	{
+///<<< BEGIN WRITING YOUR CODE ActionPatrol
+
+        m_pAnimator.SetFloat("MotionBlend", speed);
+        m_moveTarget.Scale = speed;
+        MoveToTarget();
+        ///<<< END WRITING YOUR CODE
+	}
+
+	public bool CheckActionEnd()
+	{
+        ///<<< BEGIN WRITING YOUR CODE CheckActionEnd
+        AnimatorStateInfo animatorInfo;
+        animatorInfo = m_pAnimator.GetCurrentAnimatorStateInfo(0);
+        if (animatorInfo.normalizedTime >= 1.0f)
+            CurrentAnimStateEnd = true;
+        else
+            CurrentAnimStateEnd = false;
+
+        return CurrentAnimStateEnd;
+        ///<<< END WRITING YOUR CODE
+    }
 
 	public void CheckSensor()
 	{
 ///<<< BEGIN WRITING YOUR CODE CheckSensor
-        GameObject gb = m_parent.Entity.Handle as GameObject;
-        if (gb)
+////本该是状态机的工作，但是目前状态机的transition不支持右值参数，只能是数值
+        UnityGameFramework.Runtime.Entity etEnemy = GameEntry.Entity.GetEntity(m_senseResult);
+        int logicSt = -1;
+        if (etEnemy != null)
         {
-            Animator animator = gb.GetComponent<Animator>();
-            AnimatorStateInfo animatorInfo;
-            animatorInfo = animator.GetCurrentAnimatorStateInfo(0);
-            if(animatorInfo.normalizedTime >= 1.0f && animatorInfo.IsName("AttackSwitch"))
+            if (Vector3.Distance(etEnemy.transform.position, m_parent.transform.position) <= _get_attackRadius())
             {
-                MakeIdle();
+                logicSt = (int)LogicStatus.ELogic_ATTACK;
+                m_pAnimator.SetInteger("status", logicSt);
             }
+            else if (Vector3.Distance(etEnemy.transform.position, m_parent.transform.position) <= _get_senseRadius())
+            {
+                logicSt = (int)LogicStatus.ELogic_TRACK;
+                m_pAnimator.SetInteger("status", (int)LogicStatus.ELogic_PATROL);
+            }
+            else
+            {
+                logicSt = (int)LogicStatus.ELogic_PATROL;
+                m_pAnimator.SetInteger("status", logicSt);
+            }
+            m_nextTarget = etEnemy.transform.position;
         }
+        else
+        {
+            logicSt = (int)LogicStatus.ELogic_PATROL;
+            m_pAnimator.SetInteger("status", (int)LogicStatus.ELogic_PATROL);            
+        }
+        _set_logicStatus((LogicStatus)logicSt);
+        DispatchActions();
         ///<<< END WRITING YOUR CODE
-	}
-
-	public bool FindEnemy()
-	{
-///<<< BEGIN WRITING YOUR CODE FindEnemy
-		return false;
-///<<< END WRITING YOUR CODE
 	}
 
 	public void FlushSensor()
@@ -68,52 +133,15 @@ public class EnemyAgent : BaseAgent
         ///<<< END WRITING YOUR CODE
 	}
 
-	public void Hurt()
-	{
-///<<< BEGIN WRITING YOUR CODE Hurt
-///<<< END WRITING YOUR CODE
-	}
-
-	public void MakeIdle()
-	{
-///<<< BEGIN WRITING YOUR CODE MakeIdle
-        GameObject gb = m_parent.Entity.Handle as GameObject;
-        if (gb)
-        {
-            Animator animator = gb.GetComponent<Animator>();
-            LogicStatus status = LogicStatus.ELogic_IDLE /*| ~basicStatus*/;
-            //animator.SetLayerWeight(1, 0.0f);
-            int nStatus = animator.GetInteger("status");
-            if (nStatus == (int)status)
-                return;
-            animator.SetInteger("status", (int)status);
-        }
-        ///<<< END WRITING YOUR CODE
-	}
-
 	public void MoveToTarget()
 	{
 ///<<< BEGIN WRITING YOUR CODE MoveToTarget
-        GameObject gb = m_parent.Entity.Handle as GameObject;
+        ///       
+        FaceToTarget(); 
+        GameObject gb = m_parent.Entity.Handle as GameObject;        
         if (m_nextTarget.x == 0 ||Vector3.Distance(gb.transform.position,m_nextTarget) < 0.5f)
             RecordTarget();
-///<<< END WRITING YOUR CODE
-	}
-
-	public void Patrol()
-	{
-///<<< BEGIN WRITING YOUR CODE Patrol
-        GameObject gb = m_parent.Entity.Handle as GameObject;
-        if (gb)
-        {
-            Animator animator = gb.GetComponent<Animator>();
-            LogicStatus status = LogicStatus.ELogic_PATROL /*| ~basicStatus*/;
-            int nStatus = animator.GetInteger("status");
-            if (nStatus == (int)status)
-                return;
-            animator.SetInteger("status", (int)status);
-            animator.SetFloat("MotionBlend",0.45f);
-        }
+        MoveImpl();
         ///<<< END WRITING YOUR CODE
 	}
 
@@ -124,8 +152,14 @@ public class EnemyAgent : BaseAgent
     //private BehaviourMove m_move;//temp removed,replace by behaviour
     private MoveTarget m_moveTarget;
     private AlphaWork.EntityObject m_parent;
+    private int m_senseResult;
+    public int SenseResult
+    {
+        get { return m_senseResult; }
+        set { m_senseResult = value; }
+    }
     private Vector3 m_nextTarget;
-
+    private Animator m_pAnimator;
 //     protected void _initMove()
 //     {
 //         m_move = (m_parent.Entity.Handle as GameObject).AddComponent<BehaviourMove>();
@@ -138,25 +172,35 @@ public class EnemyAgent : BaseAgent
         GameObject gb = m_parent.Entity.Handle as GameObject;
 
         m_ai = gb.AddComponent<SensorAICircle>();
-        m_ai.Radius = _get_m_senseRadius();
+        m_ai.Radius = _get_senseRadius();
         m_ai.ParentId = m_parent.Id;
         m_trigger = gb.AddComponent<BehaviacTrigger>();
         m_trigger.Parent = m_parent.Entity.Logic as EntityObject;
 
+        m_pAnimator = gb.GetComponent<Animator>();
         m_moveTarget = gb.AddComponent<MoveTarget>();
         GameEntry.Event.Subscribe(MoveToTargetEventArgs.EventId, OnMoveToTarget);
         //_initMove();//temperary,will be removed
     }
 
-    public void RecordTarget()
+    protected void RecordTarget()
     {
-        GameObject target = new GameObject();
-        GameEntry.Behaviac.GetNextTarget(m_parent.transform.position, ref target);
-        m_nextTarget = target.transform.position;
+        m_nextTarget = GetTargetPos();        
+    }
+
+    protected void MoveImpl()
+    {
         GameEntry.Event.Fire(this, new MoveToTargetEventArgs(m_ParentId, m_nextTarget));
     }
 
-    public void OnMoveToTarget(object sender, GameEventArgs e)
+    protected void FaceToTarget()
+    {
+        GameObject gb = m_parent.Entity.Handle as GameObject;
+        
+        gb.transform.forward = m_nextTarget - gb.transform.position;
+    }
+
+    protected void OnMoveToTarget(object sender, GameEventArgs e)
     {
         MoveToTargetEventArgs mvArgs = e as MoveToTargetEventArgs;
         if(mvArgs.EId == m_ParentId)
@@ -166,9 +210,39 @@ public class EnemyAgent : BaseAgent
             if (m_moveTarget)
                 m_moveTarget.Move(gb.transform.position, mvArgs.MovePos);
 
-            Patrol();
         }
+    }
 
+    public Vector3 GetTargetPos()
+    {
+        UnityGameFramework.Runtime.Entity etEnemy = GameEntry.Entity.GetEntity(m_senseResult);
+        if (etEnemy != null)
+        {
+            return etEnemy.transform.position;
+        }
+        else
+        {
+            GameObject target = new GameObject();
+            GameEntry.Behaviac.GetNextTarget(m_parent.transform.position, ref target);
+            return target.transform.position;
+        }
+    }
+
+    protected void DispatchActions()
+    {
+        AnimatorStateInfo animatorInfo;
+        animatorInfo = m_pAnimator.GetCurrentAnimatorStateInfo(0);
+        bool battack = animatorInfo.IsName("AttackSwitch");
+        bool bMotion = animatorInfo.IsName("Motion.Blend Tree");
+        float blendAttack = m_pAnimator.GetFloat("BlendAttack");
+
+        LogicStatus status = _get_logicStatus();
+        if (status == LogicStatus.ELogic_ATTACK)
+            ActionAttack();
+        else if (status == LogicStatus.ELogic_PATROL)
+            ActionPatrol(0.3f);
+        else if (status == LogicStatus.ELogic_TRACK)
+            ActionPatrol(0.8f);
     }
     ///<<< END WRITING YOUR CODE
 

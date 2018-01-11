@@ -2,12 +2,32 @@
 <!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
 <!--Source File: EnemyAvatar.xml-->
 <behavior name="EnemyAvatar" agenttype="EnemyAgent" version="5">
-  <node class="Sequence" id="0">
-    <node class="ReferencedBehavior" id="1">
-      <property ReferenceBehavior="const string &quot;Base&quot;" />
-    </node>
-    <node class="ReferencedBehavior" id="4">
-      <property ReferenceBehavior="const string &quot;Dispatch&quot;" />
+  <node class="Parallel" id="0">
+    <property ChildFinishPolicy="CHILDFINISH_LOOP" />
+    <property ExitPolicy="EXIT_ABORT_RUNNINGSIBLINGS" />
+    <property FailurePolicy="FAIL_ON_ONE" />
+    <property SuccessPolicy="SUCCEED_ON_ALL" />
+    <node class="Sequence" id="1">
+      <node class="WaitforSignal" id="3">
+        <custom>
+          <node class="Condition" id="4">
+            <property Operator="Equal" />
+            <property Opl="bool Self.BaseAgent::bAwakeSense" />
+            <property Opr="const bool true" />
+          </node>
+        </custom>
+      </node>
+      <node class="Action" id="5">
+        <property Method="Self.EnemyAgent::FlushSensor()" />
+        <property ResultOption="BT_SUCCESS" />
+      </node>
+      <node class="Action" id="9">
+        <property Method="Self.EnemyAgent::CheckSensor()" />
+        <property ResultOption="BT_SUCCESS" />
+      </node>
+      <node class="ReferencedBehavior" id="7">
+        <property ReferenceBehavior="const string &quot;AttackDispatch&quot;" />
+      </node>
     </node>
   </node>
 </behavior>

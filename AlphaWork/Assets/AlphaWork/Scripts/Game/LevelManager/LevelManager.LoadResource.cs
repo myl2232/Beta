@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameFramework.DataTable;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,7 +50,7 @@ namespace AlphaWork
                         {
                             Position = sPt,
 //                             Rotation = Quaternion.AngleAxis(90, Vector3.left),
-                             Scale = new Vector3(5.0f, 5.0f, 5.0f),//80002->300
+                             Scale = new Vector3(3.0f, 3.0f, 3.0f),//80002->300
                         });
                     }
                     

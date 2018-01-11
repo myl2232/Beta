@@ -53,9 +53,9 @@ namespace AlphaWork
         protected void OnBehaviourTrigger(int sensor, int result)
         {
             EntityObject etSensor = GameEntry.Entity.GetEntity(sensor).Logic as EntityObject;
-            GameObject gbResult = GameEntry.Entity.GetEntity(sensor).Handle as GameObject;
+            GameObject gbSensor = GameEntry.Entity.GetEntity(sensor).Handle as GameObject;
 
-            gbResult.GetComponent<BehaviacTrigger>().OnSensorAI(etSensor);
+            gbSensor.GetComponent<BehaviacTrigger>().OnSensorAI(etSensor,result);
         }
 
     }

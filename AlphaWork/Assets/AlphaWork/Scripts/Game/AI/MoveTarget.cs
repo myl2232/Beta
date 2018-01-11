@@ -7,7 +7,8 @@ namespace AlphaWork
 {
     public class MoveTarget : MonoBehaviour
     {
-        public float Speed = 2;
+        public float Speed = 5;
+        public float Scale = 1;
         private Vector3 m_movePos;
         private Vector3 m_startPos;
         
@@ -33,7 +34,7 @@ namespace AlphaWork
 
                 Vector3 pNext = smoothPath[m_curIdx];
                 Vector3 dir = Vector3.Normalize(pNext - pCur);
-                Vector3 newPos = pCur + dir * Speed * Time.deltaTime;
+                Vector3 newPos = pCur + dir * Speed * Scale * Time.deltaTime;
                 Vector3 newDir = Vector3.Normalize(pNext - newPos);
                 if(Vector3.Dot(dir,newDir) > 0)//not go to target yet
                 {
@@ -46,6 +47,11 @@ namespace AlphaWork
                 }                
             }
 
+        }
+
+        public void Pause()
+        {
+            pathNum = 0;
         }
 
         public void Move(Vector3 startPos, Vector3 movePos)
