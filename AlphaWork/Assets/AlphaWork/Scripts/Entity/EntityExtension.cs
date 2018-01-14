@@ -98,6 +98,24 @@ namespace AlphaWork
             entityComponent.ShowEntity(data.Id, typeof(AvatarEntity), drEntity.Data.Skeleton, "Avatar", data);
         }
 
+        public static void ShowEffect(this EntityComponent entityComponent, EffectData data)
+        {
+            if (data == null)
+            {
+                Log.Warning("Data is invalid.");
+                return;
+            }
+
+            IDataTable<DREffect> dtEffect = GameEntry.DataTable.GetDataTable<DREffect>();
+            DREffect drEntity = dtEffect.GetDataRow(data.TypeId);
+            if (drEntity == null)
+            {
+                Log.Warning("Can not load entity id '{0}' from data table.", data.TypeId.ToString());
+                return;
+            }
+            entityComponent.ShowEntity(data.Id, typeof(EffectEntity), AssetUtility.GetEffectAsset(drEntity.AssetName), "Effect", data);
+        }
+
         private static void ShowEntity(this EntityComponent entityComponent, Type logicType, string entityGroup, EntityData data)
         {
             if (data == null)

@@ -11,6 +11,10 @@ namespace AlphaWork
 
         [SerializeField]
         private int m_HP = 0;
+        [SerializeField]
+        protected float m_SenseRadius = 10;
+        [SerializeField]
+        protected float m_attackRadius = 5;
 
         public TargetableObjectData(int entityId, int typeId, CampType camp)
             : base(entityId, typeId)
@@ -52,7 +56,16 @@ namespace AlphaWork
         {
             get;
         }
-
+        public float SenseRadius
+        {
+            get { return m_SenseRadius; }
+            set { m_SenseRadius = value; }
+        }
+        public float AttackRadius
+        {
+            get { return m_attackRadius; }
+            set { m_attackRadius = value; }
+        }
         /// <summary>
         /// 生命百分比。
         /// </summary>

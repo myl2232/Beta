@@ -10,73 +10,56 @@ namespace AlphaWork
 {
     public class Enemy: NPC
     {
-        protected List<GameObject> Targets = new List<GameObject>();
-        protected int m_nextTargetId = 0;
-        private BehaviourMove m_move;
+        private EnemyAgent m_agent;//agent for behaviour tree
+        public EnemyAgent Agent
+        {
+            get { return m_agent; }
+        }
+        private float m_lastTime;
         // Use this for initialization
         void Start()
         {
-            m_move = gameObject.AddComponent<BehaviourMove>();
-            m_move.Parent = this;
-            
-            //GameEntry.Event.Subscribe(MoveToTargetEventArgs.EventId, OnMoveToTarget);
+            m_lastTime = 0;
+            //ai
+            m_agent = new EnemyAgent();
+            bool bRet = m_agent.btload("EnemyAvatar");
+            m_agent.btsetcurrent("EnemyAvatar");
+            m_agent.ParentId = Id;
+            m_agent._set_senseRadius((Data as NPCData).SenseRadius);
+            m_agent._set_attackRadius((Data as NPCData).AttackRadius);
+            m_agent.InitAI();
         }
 
         // Update is called once per frame
         void Update()
-        { 
-//             if (m_nextTargetId == Targets.Count - 1)
-//             {
-//                 m_nextTargetId = 0;
-//                 return;
-//             }
-// 
-//             if (m_nextTargetId == 0)
-//             {
-//                 GameEntry.Event.Fire(this, new MoveToTargetEventArgs(Targets[0].transform.position));
-//                 m_nextTargetId++;
-//             }
-//             else if (Vector3.Distance(transform.position, Targets[m_nextTargetId-1].transform.position) < 0.5f)
-//             {
-//                 GameEntry.Event.Fire(this, new MoveToTargetEventArgs(Targets[m_nextTargetId].transform.position));
-//                 m_nextTargetId++;
-//             }
-            
+        {
+            //ai
+            behaviac.EBTStatus status = behaviac.EBTStatus.BT_RUNNING;
+            while ((status == behaviac.EBTStatus.BT_RUNNING) && (m_agent != null)
+                && (Time.realtimeSinceStartup - m_lastTime > 0.3))
+            {
+                status = m_agent.btexec();
+                m_lastTime = Time.realtimeSinceStartup;
+                m_agent._set_bAwakeSense(true);
+            }
         }
 
         protected internal override void OnShow(object userdata)
         {
             base.OnShow(userdata);
+
+            GameObject gb = Entity.Handle as GameObject;
+            RPGCharacterControllerFREE ctl = gb.GetComponent<RPGCharacterControllerFREE>();
+            if (ctl)
+            {
+                ctl.sceneCamera = Camera.main;
+            }
             
-            //FullfillTargets();
         }
 
-//         protected void FullfillTargets()
-//         {
-//             GameObject[] hings = FindObjectsOfType(typeof(GameObject)) as GameObject[];
-//             for (int i = 0; i < hings.Length; ++i)
-//             {
-//                 TargetPoint pt = hings[i].GetComponent<TargetPoint>();
-//                 if(pt)
-//                 {
-//                     Targets.Add(hings[i]);
-//                 }
-//             }
-//         }
-// 
-//         public void OnMoveToTarget(object sender, GameEventArgs e)
-//         {
-//             GameObject gb = GameEntry.Entity.GetEntity(Id).Handle as GameObject;
-//             MoveToTargetEventArgs mvArgs = e as MoveToTargetEventArgs;
-//             //start move new position
-//             MoveTarget ctl = GetComponentInParent<MoveTarget>();
-//             if(ctl)
-//                 ctl.Move(gb.transform.position, mvArgs.MovePos);
-//             //start move state
-//             Animator animator = GetComponentInParent<Animator>();
-//             if(animator)
-//                 animator.SetBool("Move", true);
-//         }
+        public void PauseMove()
+        {
+        }
 
     }
 }

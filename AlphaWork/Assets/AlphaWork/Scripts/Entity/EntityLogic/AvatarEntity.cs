@@ -27,8 +27,8 @@ namespace AlphaWork
         
         public AvatarEntity()
         {
-            GameEntry.Event.Subscribe(UIAlphaEventArgs.EventId, OnTestAlpha);
-            GameEntry.Event.Subscribe(UIBetaEventArgs.EventId, OnTestBeta);
+//             GameEntry.Event.Subscribe(UIAlphaEventArgs.EventId, OnTestAlpha);
+//             GameEntry.Event.Subscribe(UIBetaEventArgs.EventId, OnTestBeta);
             GameEntry.Event.Subscribe(AvatarCreateEventArgs.EventId, OnCreateAvatar);
             m_LoadCallbacks = new LoadAssetCallbacks(OnLoadSuccessCallback, OnLoadFailureCallback);
             m_Parts = new List<GameObject>();
@@ -51,8 +51,6 @@ namespace AlphaWork
                 m_agent._set_attackRadius((Data as AvatarData).AttackRadius);
                 m_agent.InitAI();
 
-//                 BehaviourMove moveBehaviour = gameObject.AddComponent<BehaviourMove>();
-//                 moveBehaviour.Parent = this;
             }
         }
 
@@ -72,20 +70,21 @@ namespace AlphaWork
         }
 
         /*for test*/
-        private float lscale = 1;
-        private void LateUpdate()
-        {
-            Transform trans = AssetUtility.FindChild(Entity.transform, "Bip001 L Thigh");//"Bip001 L Hand"
-            trans.localScale *= lscale;
-        }
-        void OnTestAlpha(object sender, GameEventArgs arg)
-        {
-            lscale = (lscale >1)?lscale*0.5f:1.0f;
-        }
-        void OnTestBeta(object sender, GameEventArgs arg)
-        {
-            lscale *= 2;
-        }
+//         private float lscale = 1;
+//         private void LateUpdate()
+//         {
+//             Transform trans = AssetUtility.FindChild(Entity.transform, "Bip001 L Thigh");//"Bip001 L Hand"
+//             if(trans != null)
+//                 trans.localScale *= lscale;
+//         }
+//         void OnTestAlpha(object sender, GameEventArgs arg)
+//         {
+//             lscale = (lscale >1)?lscale*0.5f:1.0f;
+//         }
+//         void OnTestBeta(object sender, GameEventArgs arg)
+//         {
+//             lscale *= 2;
+//         }
         /*end test*/
 
         protected internal override void OnAttached(EntityLogic childEntity, Transform parentTransform, object userData)

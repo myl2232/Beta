@@ -14,19 +14,14 @@ namespace AlphaWork
             get;
         }
 
-        //         protected ScrollableBackground SceneBackground
-        //         {
-        //             get;
-        //             private set;
-        //         }
-
         public bool GameOver
         {
             get;
             protected set;
         }
 
-        protected static UnityGameFramework.Runtime.Entity MainEthan = null;
+        public static UnityGameFramework.Runtime.Entity MainEthan = null;
+
         protected int m_MenuId;
         public int MenuID
         {
@@ -62,27 +57,11 @@ namespace AlphaWork
         protected virtual void OnShowEntitySuccess(object sender, GameEventArgs e)
         {
             ShowEntitySuccessEventArgs ne = (ShowEntitySuccessEventArgs)e;
-            if (ne.EntityLogicType == typeof(Ethan))
+            if (ne.EntityLogicType == typeof(Structure))
             {
-                if (MainEthan == null)
-                {
-                    Vector3 offset = new Vector3(10, 10, 0);
-                    Camera.main.transform.position = ne.Entity.transform.position + offset;
-                    Camera.main.transform.LookAt(ne.Entity.transform);
-                    MainEthan = ne.Entity;
-                    GameObject ob = MainEthan.Handle as GameObject;
-                    ob.name = "MainEthan";
-                }
-
-            }
-            else if (ne.EntityLogicType == typeof(Structure))
-            {                
                 RegisterStructure(ne.Entity);
             }
-            else if (ne.EntityLogicType == typeof(NPC))
-            {
-                
-            }
+
         }
         
         protected virtual void RegisterStructure(UnityGameFramework.Runtime.Entity ent)

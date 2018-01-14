@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
+  Scale: 1
 --- !u!137 &137341614556594470
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

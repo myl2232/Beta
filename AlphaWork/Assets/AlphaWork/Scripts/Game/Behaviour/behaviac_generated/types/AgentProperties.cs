@@ -246,8 +246,9 @@ namespace behaviac
 			meta.RegisterMethod(502968959, new CMethod_behaviac_Agent_VectorRemove());
 
 			// EnemyAgent
-			meta = new AgentMeta(3739981600);
+			meta = new AgentMeta(1745574915);
 			AgentMeta._AgentMetas_[3531795815] = meta;
+			meta.RegisterMemberProperty(2658199205, new CMemberProperty<int>("attackIndex", delegate(Agent self, int value) { ((EnemyAgent)self)._set_attackIndex(value); }, delegate(Agent self) { return ((EnemyAgent)self)._get_attackIndex(); }));
 			meta.RegisterMemberProperty(2100782252, new CMemberProperty<float>("attackParam", delegate(Agent self, float value) { ((EnemyAgent)self)._set_attackParam(value); }, delegate(Agent self) { return ((EnemyAgent)self)._get_attackParam(); }));
 			meta.RegisterMemberProperty(2666778206, new CMemberProperty<float>("attackRadius", delegate(Agent self, float value) { ((EnemyAgent)self)._set_attackRadius(value); }, delegate(Agent self) { return ((EnemyAgent)self)._get_attackRadius(); }));
 			meta.RegisterMemberProperty(2245610422, new CMemberProperty<bool>("bAwakeSense", delegate(Agent self, bool value) { ((EnemyAgent)self)._set_bAwakeSense(value); }, delegate(Agent self) { return ((EnemyAgent)self)._get_bAwakeSense(); }));

@@ -15,10 +15,6 @@ namespace AlphaWork
         private List<string> m_parts = new List<string>();
         [SerializeField]
         private bool m_AlowMove = false;
-        [SerializeField]
-        private float m_SenseRadius = 10;
-        [SerializeField]
-        private float m_attackRadius = 5;
 
         public AvatarData(int entityId = -1, int typeId = 80002, CampType camp = CampType.Unknown,bool alowMove = false)
             : base(entityId, typeId, camp)
@@ -49,16 +45,7 @@ namespace AlphaWork
         {
             return m_parts;
         }
-        public float SenseRadius
-        {
-            get { return m_SenseRadius; }
-            set { m_SenseRadius = value; }
-        }
-        public float AttackRadius
-        {
-            get { return m_attackRadius; }
-            set { m_attackRadius = value; }
-        }
+
         //允许移动
         public bool AlowMove
         {

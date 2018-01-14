@@ -1,5 +1,9 @@
-#	玩家表			
-#	Id		MaxHP
-#	int		int
-#	玩家	策划备注	最大生命
-	10000	enemy	1000
+#	玩家表				
+#	Id		MaxHP	SenseRadius	AttackRadius
+#	int		int	float	float
+#	玩家	策划备注	最大生命	探知距离	攻击距离
+	10000	enemy	1000	150	10
+	50001	HellephantPrefab	1000	100	10
+	50002	ZomBearPrefab	1000	100	10
+	50003	ZombunnyPrefab	1000	100	10
+	50004	RPG-Character	1000	150	10

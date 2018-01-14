@@ -10,7 +10,7 @@ namespace AlphaWork
     {
         [SerializeField]
         private int m_MaxHP = 0;
-        public NPCData(int entityId, int typeId, CampType camp)
+        public NPCData(int entityId = -1, int typeId = -1, CampType camp = CampType.Enemy)
             : base(entityId, typeId, camp)
         {
 

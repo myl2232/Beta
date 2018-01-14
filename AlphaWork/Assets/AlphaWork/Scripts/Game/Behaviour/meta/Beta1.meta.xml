@@ -9,8 +9,9 @@
       <property name="senseRadius" type="float" member="false" static="false" defaultvalue="20" />
     </properties>
   </agent>
-  <agent type="EnemyAgent" base="BaseAgent" signature="3739981600">
+  <agent type="EnemyAgent" base="BaseAgent" signature="1745574915">
     <properties>
+      <property name="attackIndex" type="int" member="false" static="false" defaultvalue="0" />
       <property name="attackParam" type="float" member="false" static="false" defaultvalue="0" />
       <property name="attackRadius" type="float" member="false" static="false" defaultvalue="10" />
       <property name="bAwakeSense" type="bool" member="false" static="false" defaultvalue="false" />

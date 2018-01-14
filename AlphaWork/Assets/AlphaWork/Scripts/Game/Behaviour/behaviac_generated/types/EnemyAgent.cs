@@ -18,6 +18,16 @@ public class EnemyAgent : BaseAgent
 ///<<< BEGIN WRITING YOUR CODE EnemyAgent
 ///<<< END WRITING YOUR CODE
 {
+	private int attackIndex = 0;
+	public void _set_attackIndex(int value)
+	{
+		attackIndex = value;
+	}
+	public int _get_attackIndex()
+	{
+		return attackIndex;
+	}
+
 	private float attackParam = 0f;
 	public void _set_attackParam(float value)
 	{
@@ -45,6 +55,11 @@ public class EnemyAgent : BaseAgent
         m_moveTarget.Pause();
         m_pAnimator.SetFloat("BlendAttack", attackParam);
         m_pAnimator.SetTrigger("Attack");
+        int attId = GameEntry.Entity.GenerateSerialId();
+        GameEntry.Entity.ShowEffect(new EffectData(attId, 60001)
+        {
+            
+        });
         ///<<< END WRITING YOUR CODE
 	}
 
@@ -78,7 +93,7 @@ public class EnemyAgent : BaseAgent
 
 	public bool CheckActionEnd()
 	{
-        ///<<< BEGIN WRITING YOUR CODE CheckActionEnd
+///<<< BEGIN WRITING YOUR CODE CheckActionEnd
         AnimatorStateInfo animatorInfo;
         animatorInfo = m_pAnimator.GetCurrentAnimatorStateInfo(0);
         if (animatorInfo.normalizedTime >= 1.0f)
@@ -88,7 +103,7 @@ public class EnemyAgent : BaseAgent
 
         return CurrentAnimStateEnd;
         ///<<< END WRITING YOUR CODE
-    }
+	}
 
 	public void CheckSensor()
 	{
@@ -114,6 +129,7 @@ public class EnemyAgent : BaseAgent
                 m_pAnimator.SetInteger("status", logicSt);
             }
             m_nextTarget = etEnemy.transform.position;
+            m_nextTarget.z += GetMoveOffsetZ();
         }
         else
         {
@@ -159,6 +175,7 @@ public class EnemyAgent : BaseAgent
         set { m_senseResult = value; }
     }
     private Vector3 m_nextTarget;
+    private Vector3 m_MoveStartPos;
     private Animator m_pAnimator;
 //     protected void _initMove()
 //     {
@@ -181,11 +198,13 @@ public class EnemyAgent : BaseAgent
         m_moveTarget = gb.AddComponent<MoveTarget>();
         GameEntry.Event.Subscribe(MoveToTargetEventArgs.EventId, OnMoveToTarget);
         //_initMove();//temperary,will be removed
+        m_MoveStartPos = new Vector3();
     }
 
     protected void RecordTarget()
     {
-        m_nextTarget = GetTargetPos();        
+        m_nextTarget = GetTargetPos();
+        m_nextTarget.z += GetMoveOffsetZ();
     }
 
     protected void MoveImpl()
@@ -206,14 +225,16 @@ public class EnemyAgent : BaseAgent
         if(mvArgs.EId == m_ParentId)
         {
             GameObject gb = m_parent.Entity.Handle as GameObject;
+            m_MoveStartPos = gb.transform.position;
+            m_MoveStartPos.z += GetMoveOffsetZ();
 
             if (m_moveTarget)
-                m_moveTarget.Move(gb.transform.position, mvArgs.MovePos);
+                m_moveTarget.Move(m_MoveStartPos, mvArgs.MovePos);
 
         }
     }
 
-    public Vector3 GetTargetPos()
+    protected Vector3 GetTargetPos()
     {
         UnityGameFramework.Runtime.Entity etEnemy = GameEntry.Entity.GetEntity(m_senseResult);
         if (etEnemy != null)
@@ -227,15 +248,15 @@ public class EnemyAgent : BaseAgent
             return target.transform.position;
         }
     }
+    protected float GetMoveOffsetZ()
+    {
+        return 0;
+        GameObject gb = m_parent.Entity.Handle as GameObject;
+        return -gb.GetComponent<CapsuleCollider>().height * 0.5f;
+    }
 
     protected void DispatchActions()
     {
-        AnimatorStateInfo animatorInfo;
-        animatorInfo = m_pAnimator.GetCurrentAnimatorStateInfo(0);
-        bool battack = animatorInfo.IsName("AttackSwitch");
-        bool bMotion = animatorInfo.IsName("Motion.Blend Tree");
-        float blendAttack = m_pAnimator.GetFloat("BlendAttack");
-
         LogicStatus status = _get_logicStatus();
         if (status == LogicStatus.ELogic_ATTACK)
             ActionAttack();

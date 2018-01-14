@@ -62,10 +62,6 @@ namespace AlphaWork
 
         public void GetNextTarget(Vector3 vPos, ref GameObject target)
         {
-            //             for(int i = 0; i < Targets.Count; ++i)
-            //             {
-            // 
-            //             }
             if(Targets.Count > 0)
             {
                 int index = UnityEngine.Random.Range(0, Targets.Count() - 1);

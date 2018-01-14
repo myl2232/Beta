@@ -36,12 +36,23 @@ namespace AlphaWork
 
         }
 
+        private NPCData m_Data = new NPCData();
+        public NPCData Data
+        {
+            get { return m_Data; }
+            //set { m_Data = value; }
+        }
+
         public void ParseDataRow(string dataRowText)
         {
             string[] text = DataTableExtension.SplitDataRow(dataRowText);
             int index = 0;
             index++;
             Id = int.Parse(text[index++]);
+            index++;
+            m_Data.SenseRadius = float.Parse(text[index]);
+            index++;
+            m_Data.AttackRadius = float.Parse(text[index]);
         }
     }
 }

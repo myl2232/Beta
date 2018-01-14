@@ -55,21 +55,7 @@ namespace AlphaWork
             RefreshMainPosArgs arg = e as RefreshMainPosArgs;
             MainEthan.transform.position = arg.TransCache.position + new Vector3(0,2,0);
         }
-        //public void LoadGameObjects()
-        //{
-        //    GameEntry.Entity.ShowEthan(new EthanData(GameEntry.Entity.GenerateSerialId(), 80000, CampType.Player)
-        //    {
-        //        Position = new Vector3(26, 2, 20),
-        //    });
-        //    //create structures
-        //    for (int i = 0; i < 10; ++i)
-        //    {
-        //        GameEntry.Entity.ShowStructure(new StructureData(GameEntry.Entity.GenerateSerialId(), 90004)
-        //        {
-        //            Position = new Vector3(20 + UnityEngine.Random.Range(-i, i), 4, 20 + UnityEngine.Random.Range(-i, i)),
-        //        });
-        //    }
-        //}
+
 
         protected override void RegisterStructure(UnityGameFramework.Runtime.Entity ent)
         {
@@ -84,7 +70,7 @@ namespace AlphaWork
 
             if(MainEthan && !GameEntry.ArMode)
             {
-                Vector3 offset = new Vector3(20, 30, 20);
+                Vector3 offset = new Vector3(30, 30, 30);
                 offset += MainEthan.transform.position;
                 Camera.main.transform.position = offset;
 

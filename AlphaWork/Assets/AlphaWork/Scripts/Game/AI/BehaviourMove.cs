@@ -57,6 +57,10 @@ namespace AlphaWork
 
         }
 
+        public void PauseMove()
+        {
+            m_moveTarget.Pause();
+        }
 
         public void FullfillTargets()
         {

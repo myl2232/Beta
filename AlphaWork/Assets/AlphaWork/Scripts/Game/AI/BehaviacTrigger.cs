@@ -38,10 +38,15 @@ namespace AlphaWork
         public void OnSensorAI(EntityObject sensor, int result)
         {
             AvatarEntity et = sensor.Entity.Logic as AvatarEntity;
+            Enemy etEnemy = sensor.Entity.Logic as Enemy;
 
-            if (et.Agent._get_bAwakeSense())
+            if (et && et.Agent._get_bAwakeSense())
             {
                 et.Agent.SenseResult = result;
+            }
+            else if(etEnemy && etEnemy.Agent._get_bAwakeSense())
+            {
+                etEnemy.Agent.SenseResult = result;
             }
         }
 
