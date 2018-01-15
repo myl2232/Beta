@@ -8,7 +8,8 @@ using UnityEngine;
 
 namespace AlphaWork
 {
-    class NavigationHelper : MonoBehaviour
+    class NavigationHelper
+    //: MonoBehaviour
     {
         private GCHandle handle;
         private LoadAssetCallbacks loadCallbacks;
@@ -36,7 +37,7 @@ namespace AlphaWork
 //              UnityEngine.Object asset = Resources.Load(levelName + "RecastNavmesh");
 // #else
             string racastAsset = AssetUtility.GetNavigationAsset(levelName);
-            GameEntry.Resource.LoadAsset(racastAsset, loadCallbacks);    
+            GameEntry.Resource.LoadAsset(racastAsset, loadCallbacks);
 //#endif
             return true;
         }

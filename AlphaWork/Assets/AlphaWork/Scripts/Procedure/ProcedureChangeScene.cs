@@ -53,7 +53,7 @@ namespace AlphaWork
             GameEntry.Base.ResetNormalGameSpeed();
 
             // 卸载navigation//myl
-            if (m_navHelper)
+            if (m_navHelper != null)
                 m_navHelper.CloseNavigation();
 
             int sceneId = procedureOwner.GetData<VarInt>(Constant.ProcedureData.NextSceneId).Value;
@@ -78,7 +78,7 @@ namespace AlphaWork
             GameEntry.Event.Unsubscribe(LoadSceneDependencyAssetEventArgs.EventId, OnLoadSceneDependencyAsset);
 
             //myl
-            if (m_navHelper)
+            if (m_navHelper != null)
                 m_navHelper.CloseNavigation();
 
             base.OnLeave(procedureOwner, isShutdown);
@@ -115,7 +115,7 @@ namespace AlphaWork
 
             m_IsChangeSceneComplete = true;
             m_navHelper = new NavigationHelper(ne.SceneAssetName);//myl
-            
+
         }
 
         private void OnLoadSceneFailure(object sender, GameEventArgs e)
