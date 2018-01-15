@@ -56,9 +56,10 @@ public class EnemyAgent : BaseAgent
         m_pAnimator.SetFloat("BlendAttack", attackParam);
         m_pAnimator.SetTrigger("Attack");
         int attId = GameEntry.Entity.GenerateSerialId();
-        GameEntry.Entity.ShowEffect(new EffectData(attId, 60001)
+        Vector3 vDir = GameEntry.Entity.GetEntity(m_senseResult).transform.position - m_parent.transform.position;        
+        GameEntry.Entity.ShowEffect(new EffectData(vDir, m_parent.transform, attId, 60001)
         {
-            
+            //Position = m_parent.transform.position + m_parent.transform.forward.normalized*2,
         });
         ///<<< END WRITING YOUR CODE
 	}
@@ -134,7 +135,7 @@ public class EnemyAgent : BaseAgent
         else
         {
             logicSt = (int)LogicStatus.ELogic_PATROL;
-            m_pAnimator.SetInteger("status", (int)LogicStatus.ELogic_PATROL);            
+            m_pAnimator.SetInteger("status", (int)LogicStatus.ELogic_PATROL);
         }
         _set_logicStatus((LogicStatus)logicSt);
         DispatchActions();
@@ -152,9 +153,9 @@ public class EnemyAgent : BaseAgent
 	public void MoveToTarget()
 	{
 ///<<< BEGIN WRITING YOUR CODE MoveToTarget
-        ///       
-        FaceToTarget(); 
-        GameObject gb = m_parent.Entity.Handle as GameObject;        
+        ///
+        FaceToTarget();
+        GameObject gb = m_parent.Entity.Handle as GameObject;
         if (m_nextTarget.x == 0 ||Vector3.Distance(gb.transform.position,m_nextTarget) < 0.5f)
             RecordTarget();
         MoveImpl();
@@ -171,7 +172,7 @@ public class EnemyAgent : BaseAgent
     private int m_senseResult;
     public int SenseResult
     {
-        get { return m_senseResult; }
+				get { return m_senseResult; }
         set { m_senseResult = value; }
     }
     private Vector3 m_nextTarget;
@@ -184,7 +185,7 @@ public class EnemyAgent : BaseAgent
 //     }
 
     public void InitAI()
-    {        
+    {
         m_parent = AlphaWork.GameEntry.Entity.GetEntity(m_ParentId).Logic as AlphaWork.EntityObject;
         GameObject gb = m_parent.Entity.Handle as GameObject;
 
@@ -215,7 +216,7 @@ public class EnemyAgent : BaseAgent
     protected void FaceToTarget()
     {
         GameObject gb = m_parent.Entity.Handle as GameObject;
-        
+
         gb.transform.forward = m_nextTarget - gb.transform.position;
     }
 
@@ -272,4 +273,3 @@ public class EnemyAgent : BaseAgent
 ///<<< BEGIN WRITING YOUR CODE FILE_UNINIT
 
 ///<<< END WRITING YOUR CODE
-

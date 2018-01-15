@@ -18,7 +18,34 @@ namespace AlphaWork
         {
 
         }
-        
+        public static Transform FindChild(Transform trans, string str)
+        {
+            if (!trans)
+                return null;
+            Transform result = trans.Find(str);
+            if (!result)
+            {
+                int count = trans.childCount;
+                for (int i = 0; i < count; ++i)
+                {
+                    if (result)
+                        break;
+
+                    Transform tr = trans.GetChild(i);
+                    if (tr.gameObject.name == str)
+                    {
+                        result = tr;
+                    }
+                    else
+                        result = FindChild(tr, str);
+                }
+            }
+            else
+                return result;
+
+            return result;
+        }
+
         public static UnityEngine.Object GetAssistObject()
         {
             string str = "EthanAgent";

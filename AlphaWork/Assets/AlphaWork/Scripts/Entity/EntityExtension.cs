@@ -73,7 +73,7 @@ namespace AlphaWork
         {
             entityComponent.ShowEntity(typeof(Structure), "Structure", data);
         }
-        
+
 
         public static void ShowAvatar(this EntityComponent entityComponent, AvatarData data)
         {
@@ -94,7 +94,7 @@ namespace AlphaWork
             data.Parts = drEntity.Data.Parts;
             data.SenseRadius = drEntity.Data.SenseRadius;
             data.AttackRadius = drEntity.Data.AttackRadius;
-            
+
             entityComponent.ShowEntity(data.Id, typeof(AvatarEntity), drEntity.Data.Skeleton, "Avatar", data);
         }
 
@@ -108,6 +108,14 @@ namespace AlphaWork
 
             IDataTable<DREffect> dtEffect = GameEntry.DataTable.GetDataTable<DREffect>();
             DREffect drEntity = dtEffect.GetDataRow(data.TypeId);
+            data.HitHP = drEntity.HitHP;
+            data.Speed = drEntity.Speed;
+            data.LifeTime = drEntity.LifeTime;
+            data.AssetName = drEntity.AssetName;
+            data.AttachName = drEntity.AttachName;
+            data.AttachOffset = drEntity.AttachOffset;
+            data.AttachRot = drEntity.AttachRot;            
+
             if (drEntity == null)
             {
                 Log.Warning("Can not load entity id '{0}' from data table.", data.TypeId.ToString());

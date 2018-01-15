@@ -90,7 +90,7 @@ namespace AlphaWork
         }
         public static string GetEffectAsset(string assetName)
         {
-            return string.Format("Assets/AlphaWork/Effects/{0}.prefab", assetName);
+            return string.Format("Assets/AlphaWork/Effect_FX/Prefab/{0}.prefab", assetName);
         }
         public static string GetUIFormAsset(string assetName)
         {

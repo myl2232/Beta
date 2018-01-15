@@ -3,5 +3,5 @@
 #	int		float	float	float	string	string	string
 #	特效ID	策划备注	杀伤力	武器速度	存在时间	挂接骨骼	挂接位置偏移	挂接位置旋转
 	60000	weapon	100	10	-1	Bip001 Spine1	"0,0,0"	"0,0,0"
-	60001	FireBall001	150	15	5	Bip001 Spine1	"0,0,1"	"0,0,1"
-	60002	weapon002	100	10	-1	Bip001 Spine1	"0,0,2"	"0,0,2"
+	60001	fashi_attack_01_01	150	25	5	Bip001 Spine1	"0,0,1"	"0,0,1"
+	60002	buff_jiasu（pbrdemo）	100	10	-1	Bip001 Spine1	"0,0,2"	"0,0,2"

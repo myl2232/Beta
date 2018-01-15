@@ -8,11 +8,60 @@ namespace AlphaWork
 {
     public class EffectData : EntityData
     {
+          /// <summary>
+          /// 伤害值。
+          /// </summary>
+          public float HitHP
+          {
+              get;
+              set;
+          }
+          public float Speed
+          {
+              get;
+              set;
+          }
+          public float LifeTime
+          {
+              get;
+              set;
+          }
+          public string AssetName
+          {
+              get;
+              set;
+          }
+          public string AttachName
+          {
+              get;
+              set;
+          }
+          public string AttachOffset
+          {
+              get;
+              set;
+          }
+          public string AttachRot
+          {
+              get;
+              set;
+          }
+          public Vector3 Forward
+          {
+              get;
+              set;
+          }
+          public Transform Parent
+          {
+              get;
+              set;
+          }
 
-        public EffectData(int entityId = -1, int typeId = -1)
+        public EffectData(Vector3 forward,Transform parent, int entityId = -1, int typeId = -1)
             : base(entityId, typeId)
         {
-
+            Forward = forward;
+            Parent = parent;
         }
         // Use this for initialization
         void Start()

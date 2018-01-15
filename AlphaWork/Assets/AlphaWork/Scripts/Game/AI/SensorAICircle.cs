@@ -56,7 +56,7 @@ namespace AlphaWork
             {
                 int tCode = cols[i].gameObject.GetHashCode();
                 int parentCode = GameEntry.Entity.GetEntity(m_parentEntId).Handle.GetHashCode();
-                if (tCode != parentCode)
+                if (tCode != parentCode && !(GameEntry.Entity.GetEntity(m_parentEntId).Logic as EffectEntity))
                 {
                     int Id = GetEntityIdOfHashCode(tCode);
                     if ((Id != 0) && !(results.Contains(Id)))

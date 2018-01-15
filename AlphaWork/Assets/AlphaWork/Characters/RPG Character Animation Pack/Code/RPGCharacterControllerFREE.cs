@@ -53,9 +53,9 @@ public class RPGCharacterControllerFREE : MonoBehaviour{
 	//movement variables
 	[HideInInspector]
 	public bool canMove = true;
-	public float walkSpeed = 1.35f;
+	public float walkSpeed = 3.35f;
 	float moveSpeed;
-	public float runSpeed = 6f;
+	public float runSpeed = 12f;
 	float rotationSpeed = 40f;
 	Vector3 inputVec;
 	Vector3 newVelocity;
