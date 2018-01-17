@@ -259,6 +259,7 @@ namespace Navigation
         for (var j = 0; j != numColumn; ++j)
         {
           m_grid[i, j] = new Node(new Position(i, j));
+          this[new Position(i,j)] = true;//add by myl
         }
     }
 

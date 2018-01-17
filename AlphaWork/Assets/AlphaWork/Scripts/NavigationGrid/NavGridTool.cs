@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using System;
+using System.IO;
+using UnityEditor.SceneManagement;
 
 public class NavGridTool : MonoBehaviour
 {
@@ -13,6 +16,10 @@ public class NavGridTool : MonoBehaviour
         EPAINT_NULL
     }
     private static Navigation.Grid m_grid;
+    private static string projectName;
+    private static string sceneName;
+    private static string levelName;
+    private static string resourceFolder;
 
     public static float BrushSize;
     public static float ViewSize;
@@ -23,14 +30,20 @@ public class NavGridTool : MonoBehaviour
     public static int Columns;
     public static bool AccurateHight;
     public static bool bGenerate = false;
-
-    private Vector3 StartPt = new Vector3();
-    private Vector3 EndPt = new Vector3();
-    private EPaint m_PaintType = EPaint.EPAINT_NULL;
-    private Dictionary<List<Navigation.Grid.Position>, bool> m_path = new Dictionary<List<Navigation.Grid.Position>, bool>();
+    public static bool bOperate = false;
+    public static bool bStartPick = false;
+    public static bool bEndPick = false;
+    public static Vector3 StartPt;
+    public static Vector3 EndPt;
+    public static EPaint PaintType = EPaint.EPAINT_NULL;
+    //private Dictionary<List<Navigation.Grid.Position>, bool> m_path = new Dictionary<List<Navigation.Grid.Position>, bool>();
     private static List<List<float>> m_hightFields = new List<List<float>>();
+    private static LinkedList<Navigation.Grid.Position> m_path = new LinkedList<Navigation.Grid.Position>();
     private static Vector3 mPos;
-
+    private static SceneView m_sceneView;
+    private static Transform selTransform;   
+    private static Vector3 m_lastMousePos;
+    
     public NavGridTool(int columns, int rows)
     {
         Columns = columns;
@@ -39,11 +52,22 @@ public class NavGridTool : MonoBehaviour
 
     public static void Initialize()
     {
+        //GameObject gbTerrain = GameObject.Find("Terrain") as GameObject;
+        //if (gbTerrain)
+        //{
+        //    Terrain ter = gbTerrain.GetComponent<Terrain>();
+        //    Rows = (int)ter.terrainData.size.x;
+        //    Columns = (int)ter.terrainData.size.z;
+        //}
+
+        BuildProjectNameAndSceneName();
+
         int realRow = (int)(Rows / MeshSize);
         int realColumns = (int)(Columns / MeshSize);
+        
         if(m_grid == null)
             m_grid = new Navigation.Grid(realRow, realColumns);
-       
+
         Refresh();
     }
     // Use this for initialization
@@ -62,24 +86,59 @@ public class NavGridTool : MonoBehaviour
         bGenerate = true;
     }
 
-    public void SetStartPt(Vector3 pt)
+    public void SetStartPt()
     {
-        StartPt = pt;
+        bStartPick = true;
+        bEndPick = false;
     }
 
-    public void SetEndPt(Vector3 pt)
+    public void SetEndPt()
     {
-        EndPt = pt;
+        bEndPick = true;
+        bStartPick = false;
     }
 
     public void ReadData()
     {
+        
 
     }
 
     public void SaveData()
     {
+        if(!Directory.Exists(GetFilePath()))
+            Directory.CreateDirectory(GetFilePath());
 
+        StreamWriter sw;
+        FileInfo t = new FileInfo(GetFilePath()+"//GridData.bin");        
+        if (!t.Exists)
+        {
+            //如果此文件不存在则创建  
+            sw = t.CreateText();
+        }
+        else
+        {
+            //如果此文件存在则打开  
+            sw = t.AppendText();
+        }
+        for(int i = 0; i < m_hightFields.Count; ++i)
+        {
+            char[] chStr = new char[m_hightFields[i].Count];
+            string strWalkable = new string(chStr);
+            for(int j = 0; j < m_hightFields[i].Count; ++j)
+            {
+                bool bWalkable = m_grid[new Navigation.Grid.Position(i, j)];
+                char vOut = (bWalkable == true ? '1' : '0');
+                chStr[j] = vOut;                
+            }
+            //以行的形式写入信息  
+            sw.WriteLine(chStr);
+        }
+        
+        //关闭流
+        sw.Close();
+        //销毁流  
+        sw.Dispose();
     }
 
     public static void Refresh()
@@ -95,22 +154,17 @@ public class NavGridTool : MonoBehaviour
         }
     }
 
-    //private static Navigation.Grid.Position GetCameraPos(int x, int y)
-    //{
-    //    Navigation.Grid.Position pos = new Navigation.Grid.Position();
-    //    pos.Row = (int)( x / MeshSize);
-    //    pos.Column = (int)(y / MeshSize);
-    //    return pos;
-    //}
     private static float GetZPos(int x, int y, bool bRefresh = false)
     {
         if (!bRefresh)
         {
-            if (m_hightFields.Count == 0|| x >= m_hightFields.Count || y >= m_hightFields[x].Count|| m_hightFields[x].Count == 0)
-                Debug.LogWarning("error pos: x="+x+", y="+y);
+            if (m_hightFields.Count == 0 || x < 0 ||y < 0 || x >= m_hightFields.Count || y >= m_hightFields[x].Count || m_hightFields[x].Count == 0)
+            {
+                Debug.LogWarning("error pos: x=" + x + ", y=" + y);
+                return 0;
+            }
             return m_hightFields[x][y];
         }
-            
 
         float fValue = 0.0f;
         GameObject gbTerrain = GameObject.Find("Terrain") as GameObject;
@@ -139,22 +193,38 @@ public class NavGridTool : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (!IsActive || !bGenerate)
+        if (!IsActive || !bGenerate || m_grid == null)
             return;
-        //draw pointer       
-        //Gizmos.color = Color.red;
-        //mPos.y = GetZPos((int)mPos.x, (int)mPos.z, true);
-        //Gizmos.DrawSphere(mPos, 5);
-
+        //draw pointer     
+        Gizmos.color = Color.yellow;
+        Vector3[] ptLines = new Vector3[4];
+        ptLines[0].x = mPos.x - (int)(BrushSize * 0.5);
+        ptLines[0].z = mPos.z - (int)(BrushSize * 0.5);
+        ptLines[0].y = GetZPos((int)ptLines[0].x, (int)ptLines[0].z) + 3;
+        ptLines[1].x = mPos.x - (int)(BrushSize * 0.5);
+        ptLines[1].z = mPos.z + (int)(BrushSize * 0.5);
+        ptLines[1].y = GetZPos((int)ptLines[1].x, (int)ptLines[1].z) + 3;
+        ptLines[2].x = mPos.x + (int)(BrushSize * 0.5);
+        ptLines[2].z = mPos.z + (int)(BrushSize * 0.5);
+        ptLines[2].y = GetZPos((int)ptLines[2].x, (int)ptLines[2].z) + 3;
+        ptLines[3].x = mPos.x + (int)(BrushSize * 0.5);
+        ptLines[3].z = mPos.z - (int)(BrushSize * 0.5);
+        ptLines[3].y = GetZPos((int)ptLines[3].x, (int)ptLines[3].z) + 3;
+        Gizmos.DrawLine(ptLines[0],ptLines[1]);
+        Gizmos.DrawLine(ptLines[1], ptLines[2]);
+        Gizmos.DrawLine(ptLines[2], ptLines[3]);
+        Gizmos.DrawLine(ptLines[3], ptLines[0]);
+        //draw this pos
+        Gizmos.color = Color.black;
         float viewCenterX = transform.position.x;
         float viewCenterY = transform.position.z;
-
+        Gizmos.DrawCube(transform.position, new Vector3(3,3,3));
         //draw grid                
-        for (int j = (int)((viewCenterY - ViewSize / MeshSize) > 0 ? (viewCenterY - ViewSize / MeshSize) : 0) + 1; (j < Columns / MeshSize) && j < (viewCenterY + ViewSize / MeshSize); ++j)
+        for (int j = (int)((viewCenterY - ViewSize )/MeshSize > 0 ? (viewCenterY - ViewSize )/ MeshSize : 0) + 1; (j < Columns / MeshSize) && j < (viewCenterY + ViewSize) / MeshSize; ++j)
         {
             if (j + 1 >= Columns / MeshSize)
                 break;
-            for (int i = (int)(viewCenterX - ViewSize / MeshSize > 0 ? (viewCenterX - ViewSize / MeshSize) : 0) + 1; (i < Rows / MeshSize) && j < (viewCenterX + ViewSize / MeshSize); ++i)
+            for (int i = (int)((viewCenterX  - ViewSize )/ MeshSize > 0 ? (viewCenterX  - ViewSize )/ MeshSize : 0) + 1; (i < Rows / MeshSize) && i < (viewCenterX + ViewSize) / MeshSize; ++i)
             {
                 if (i + 1 >= Rows / MeshSize)
                     break;
@@ -198,8 +268,30 @@ public class NavGridTool : MonoBehaviour
             }
 
         }
+
         //draw start.end
+        Gizmos.color = Color.blue;
+        Gizmos.DrawCube(StartPt, new Vector3(MeshSize*0.5f, MeshSize * 0.5f, MeshSize * 0.5f));
+        Gizmos.DrawCube(EndPt, new Vector3(MeshSize * 0.5f, MeshSize * 0.5f, MeshSize * 0.5f));
+
         //draw path
+        if(m_path.Count > 0)
+        {
+            IEnumerator iter = m_path.GetEnumerator();
+            iter.MoveNext();
+            
+            Navigation.Grid.Position p1 = (Navigation.Grid.Position)iter.Current;
+            Gizmos.DrawLine(StartPt, new Vector3(p1.Row,GetZPos(p1.Row,p1.Column),p1.Column));
+            Navigation.Grid.Position p2 = p1;
+            while (iter.MoveNext())
+            {
+                p2 = (Navigation.Grid.Position)iter.Current;
+                Gizmos.DrawLine(new Vector3(p1.Row, GetZPos(p1.Row, p1.Column), p1.Column), new Vector3(p2.Row, GetZPos(p2.Row, p2.Column), p2.Column));
+                p1 = p2;
+            }
+            Gizmos.DrawLine(new Vector3(p1.Row, GetZPos(p1.Row, p1.Column), p1.Column),EndPt);
+        }
+
     }
 
 
@@ -208,8 +300,9 @@ public class NavGridTool : MonoBehaviour
     
     static void OnSceneGUI(SceneView sceneView)
     {
-        
-        var current = Event.current;        
+        m_sceneView = SceneView.lastActiveSceneView;
+        var current = Event.current;
+        int button = Event.current.button;
 
         int controlID = GUIUtility.GetControlID(FocusType.Passive);
         if (IsActive)
@@ -218,43 +311,218 @@ public class NavGridTool : MonoBehaviour
                 HandleUtility.AddDefaultControl(controlID);
         }
         else
+        {
+            m_grid = null;
             bGenerate = false;
-        
+        }
         switch (current.type)
         {
             case EventType.MouseMove:
                 {
-                    Camera cam = sceneView.camera;
-                    Vector2 mousepos = Event.current.mousePosition;
-                    mPos = sceneView.camera.ScreenToWorldPoint(mousepos);
-                    mPos.z += 5;
-                    Handles.DrawSolidDisc(mPos,vNormal, 5);
+                    //Camera cam = m_sceneView.camera;
+                    //Vector3 mousepos = Event.current.mousePosition;
+                    //if (Vector3.Distance(m_lastMousePos, mousepos) < 0.1f)
+                    //    break;
+                    //m_lastMousePos = mousepos;
 
-                    //Ray ray = sceneView.camera.ScreenPointToRay(mousepos.x, -mousepos.y);
-                    
-
+                    //RaycastHit hit;
+                    //Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
+                    //if (Physics.Raycast(ray, out hit))
+                    //{
+                    //    mPos = hit.point;
+                    //}
+                    current.Use();
                 }
                 break;
             case EventType.MouseUp:
                 //鼠标弹起，这里是鼠标所有的点击，如果要在区别如下
-                if (current.button == 0)
                 {
-
+                    bStartPick = false;
+                    bEndPick = false;
                 }
                 break;
             case EventType.MouseDown:
                 //鼠标按下
+                {
+                    RaycastHit hit;
+                    Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
+                    if (Physics.Raycast(ray, out hit))
+                    {
+                        mPos = hit.point;
+                    }
+
+                    if (bStartPick)
+                        StartPt = mPos;
+                    else if (bEndPick)
+                        EndPt = mPos;
+
+                    GetPath();
+                }
                 break;
             case EventType.MouseDrag:
                 //鼠标拖
-                break;
-            case EventType.Repaint:
-                //重绘
-                break;
-            case EventType.Layout:
-                //布局
+                {
+                    RaycastHit hit;
+                    Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
+                    if (Physics.Raycast(ray, out hit))
+                    {
+                        mPos = hit.point;
+                    }
+                    if (Selection.activeTransform != selTransform)
+                    {
+                        selTransform = Selection.activeTransform;
+                    }
+                    else if (button == 0 && Event.current.isMouse && bOperate )
+                    {
+                        if (PaintType == EPaint.EPAINT_OPENBLOCK)
+                        {
+                            FlushWalkable(mPos, true);
+                        }
+                        else if (PaintType == EPaint.EPAINT_CLOSEBLOCK)
+                        {
+                            FlushWalkable(mPos, false);
+                        }
+                        else if (PaintType == EPaint.EPAINT_SETHIGHT)
+                        {
+                            FlushZ(mPos, FlushHight);
+                        }
+                    }
+                }
                 break;
         }
     }
 
+    private static void GetPath()
+    {
+        if (m_grid != null)
+        {
+            m_path.Clear();
+            Navigation.Grid.Position st = new Navigation.Grid.Position((int)StartPt.x, (int)StartPt.z);
+            Navigation.Grid.Position et = new Navigation.Grid.Position((int)EndPt.x, (int)EndPt.z);
+            m_grid.FindPath(st,et,m_path);
+        }
+            
+    }
+    private static void FlushWalkable(Vector3 center, bool bWalkable = false)
+    {
+        if (m_grid == null)
+            return;
+
+        for (int j = (int)((center.z - BrushSize*0.5) / MeshSize > 0 ? (center.z - BrushSize*0.5) / MeshSize : 0) + 1; (j < Columns / MeshSize) && j < (center.z + BrushSize*0.5) / MeshSize; ++j)
+        {
+            if (j + 1 >= Columns / MeshSize)
+                break;
+            for (int i = (int)((center.x - BrushSize*0.5) / MeshSize > 0 ? (center.x - BrushSize*0.5) / MeshSize : 0) + 1; (i < Rows / MeshSize) && i < (center.x + BrushSize*0.5) / MeshSize; ++i)
+            {
+                if (i + 1 >= Rows / MeshSize)
+                    break;
+                Navigation.Grid.Position pPos = new Navigation.Grid.Position(i, j);
+                m_grid[pPos] = bWalkable;
+            }
+        }
+    }
+
+    private static void FlushZ(Vector3 center,float zHight)
+    {
+        if (m_grid == null)
+            return;
+
+        for (int j = (int)((center.z - BrushSize*0.5) / MeshSize > 0 ? (center.z - BrushSize * 0.5) / MeshSize : 0) + 1; (j < Columns / MeshSize) && j < (center.z + BrushSize * 0.5) / MeshSize; ++j)
+        {
+            if (j + 1 >= Columns / MeshSize)
+                break;
+            for (int i = (int)((center.x - BrushSize * 0.5) / MeshSize > 0 ? (center.x - BrushSize * 0.5) / MeshSize : 0) + 1; (i < Rows / MeshSize) && i < (center.x + BrushSize * 0.5) / MeshSize; ++i)
+            {
+                if (i + 1 >= Rows / MeshSize)
+                    break;
+                Navigation.Grid.Position pPos = new Navigation.Grid.Position(i, j);
+                m_hightFields[i][j] = zHight;
+            }
+        }
+    }
+
+    //private static Vector3 SceneScreenToWorldPoint(Vector3 sceneScreenPoint)
+    //{
+    //    Camera sceneCamera = m_sceneView.camera;
+    //    float screenHeight = sceneCamera.orthographicSize * 2f;
+    //    float screenWidth = screenHeight * sceneCamera.aspect;
+
+    //    Vector3 worldPos = new Vector3(
+    //        (sceneScreenPoint.x / sceneCamera.pixelWidth) * screenWidth - screenWidth * 0.5f,
+    //        0f,
+    //        ((-(sceneScreenPoint.y) / sceneCamera.pixelHeight) * screenHeight + screenHeight * 0.5f)
+    //        );
+
+    //    worldPos += sceneCamera.transform.position;
+
+    //    return worldPos;
+    //}
+
+    /** 
+ * 读取文本文件 
+ * path：读取文件的路径 
+ * name：读取文件的名称 
+ */
+    ArrayList LoadFile(string path, string name)
+    {
+        //使用流的形式读取  
+        StreamReader sr = null;
+        try
+        {
+            sr = File.OpenText(path + "//" + name);
+        }
+        catch (Exception e)
+        {
+            //路径与名称未找到文件则直接返回空  
+            return null;
+        }
+        string line;
+        ArrayList arrlist = new ArrayList();
+        while ((line = sr.ReadLine()) != null)
+        {
+            //一行一行的读取  
+            //将每一行的内容存入数组链表容器中  
+            arrlist.Add(line);
+        }
+        //关闭流  
+        sr.Close();
+        //销毁流  
+        sr.Dispose();
+        //将数组链表容器返回  
+        return arrlist;
+    }
+
+    void DeleteFile(string path, string name)
+    {
+        File.Delete(path + "//" + name);
+    }
+
+    private static void BuildProjectNameAndSceneName()
+    {
+        // Project name
+        string[] s = Application.persistentDataPath.Split('/');
+        projectName = s[s.Length - 2];
+
+        // Level name and resource folder
+        string[] s2 = EditorSceneManager.GetActiveScene().name.Split('/');
+        string currentSceneFullName = s2[s2.Length - 1];
+        string[] s3 = currentSceneFullName.Split('.');
+
+        if (s3.Length >= 2)
+        {
+            sceneName = s3[0];
+            for (int i = 1; i < s3.Length - 1; i++)
+            {
+                sceneName += ".";
+                sceneName += s3[i];
+            }
+            levelName = sceneName + "/";
+        }
+        resourceFolder = "NavGrid/" + levelName;
+    }
+
+    private static string GetFilePath()
+    {
+        return Application.dataPath + "//Resources//NavGrid//" + EditorSceneManager.GetActiveScene().name;
+    }
 }

@@ -47,17 +47,17 @@ namespace AlphaWork.Editor
             EditorGUILayout.BeginHorizontal();
             GUILayout.Label("画刷大小：", EditorStyles.boldLabel);
             m_brushSize = GUILayout.HorizontalSlider(m_brushSize, 0, 10);
-            EditorGUILayout.DelayedFloatField(m_brushSize, GUILayout.Width(50));
+            m_brushSize = EditorGUILayout.DelayedFloatField(m_brushSize, GUILayout.Width(50));
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.BeginHorizontal();
             GUILayout.Label("可视范围：", EditorStyles.boldLabel);
             m_viewSize = GUILayout.HorizontalSlider(m_viewSize, 0, 1000);
-            EditorGUILayout.DelayedFloatField(m_viewSize, GUILayout.Width(50));
+            m_viewSize = EditorGUILayout.DelayedFloatField(m_viewSize, GUILayout.Width(50));
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.BeginHorizontal();
             GUILayout.Label("网格大小：", EditorStyles.boldLabel);
             m_meshSize = GUILayout.HorizontalSlider(m_meshSize, 0, 10);
-            EditorGUILayout.DelayedFloatField(m_meshSize, GUILayout.Width(50));
+            m_meshSize = EditorGUILayout.DelayedFloatField(m_meshSize, GUILayout.Width(50));
             EditorGUILayout.EndHorizontal();
             //GUILayout.EndArea();
             EditorGUILayout.Space();
@@ -83,7 +83,7 @@ namespace AlphaWork.Editor
             EditorGUILayout.BeginHorizontal();
             m_bFlushHeight = EditorGUILayout.Toggle("刷新Z值", m_bFlushHeight);
             m_fFlushHight = GUILayout.HorizontalSlider(m_fFlushHight, -1000, 1000);
-            EditorGUILayout.DelayedFloatField(m_fFlushHight, GUILayout.Width(50));
+            m_fFlushHight = EditorGUILayout.DelayedFloatField(m_fFlushHight, GUILayout.Width(50));
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.EndVertical();
             EditorGUILayout.EndToggleGroup();
@@ -135,6 +135,16 @@ namespace AlphaWork.Editor
             NavGridTool.AccurateHight = m_bAccurateToggle;
             NavGridTool.Rows = m_rows;
             NavGridTool.Columns = m_columns;
+            NavGridTool.bOperate = m_bOperateToggle;
+            if (m_bOpenBlock)
+                NavGridTool.PaintType = NavGridTool.EPaint.EPAINT_OPENBLOCK;
+            else if (m_bCloseBlock)
+                NavGridTool.PaintType = NavGridTool.EPaint.EPAINT_CLOSEBLOCK;
+            else
+                NavGridTool.PaintType = NavGridTool.EPaint.EPAINT_SETHIGHT;
+
+            m_StartPt = NavGridTool.StartPt;
+            m_EndPt = NavGridTool.EndPt;
         }
 
         private void GenerateMesh()
@@ -144,12 +154,12 @@ namespace AlphaWork.Editor
 
         private void SetStartPt()
         {
-            m_gridTool.SetStartPt(m_StartPt);
+            m_gridTool.SetStartPt();
         }
 
         private void SetEndPt()
         {
-            m_gridTool.SetEndPt(m_EndPt);
+            m_gridTool.SetEndPt();
         }
 
         private void ReadData()
