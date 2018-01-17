@@ -100,7 +100,7 @@ public class NavGridTool : MonoBehaviour
 
     public void ReadData()
     {
-        
+        ArrayList data = LoadFile(GetFilePath(), "GridData.bin");
 
     }
 
@@ -335,7 +335,7 @@ public class NavGridTool : MonoBehaviour
                 }
                 break;
             case EventType.MouseUp:
-                //鼠标弹起，这里是鼠标所有的点击，如果要在区别如下
+                //鼠标弹起
                 {
                     bStartPick = false;
                     bEndPick = false;
