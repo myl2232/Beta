@@ -11,11 +11,17 @@ namespace AlphaWork
     public class BehaviacComponent: GameFrameworkComponent
     {
         protected List<GameObject> Targets;
-        public void Start()
-        {
-            Targets = new List<GameObject>();
 
+        protected override void Awake()
+        {
+            base.Awake();
+            
             InitBehavic();
+            Targets = new List<GameObject>();
+        }
+        
+        public void Start()
+        {            
             GameEntry.Event.Subscribe(LoadSceneSuccessEventArgs.EventId, OnLoadSceneSuccess);
         }
 
@@ -27,8 +33,6 @@ namespace AlphaWork
 
         protected bool InitBehavic()
         {
-            //Console.WriteLine("InitBehavic");
-
             behaviac.Workspace.Instance.FilePath = "Assets/AlphaWork/Scripts/Game/Behaviour";
             behaviac.Workspace.Instance.FileFormat = behaviac.Workspace.EFileFormat.EFF_xml;
 

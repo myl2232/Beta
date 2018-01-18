@@ -1,0 +1,136 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityGameFramework.Runtime;
+
+namespace AlphaWork
+{
+    public class NavGridComponent : GameFrameworkComponent
+    {
+        private Navigation.Grid m_ActiveGrid;
+        private int Rows;
+        private int Columns;
+        private string gStrHeader;
+        private int gVersion;
+        private List<List<float>> m_hightFields = new List<List<float>>();
+        private LinkedList<Navigation.Grid.Position> m_path = new LinkedList<Navigation.Grid.Position>();
+        private float Threshold = 0.1f;
+
+        protected override void Awake()
+        {
+            base.Awake();
+
+            gStrHeader = "NavigationGrid Header:";
+            gVersion = 1;
+        }
+
+
+        private void Update()
+        {
+            
+        }
+
+        public void ReadData(string scene = "")
+        {
+            gStrHeader = "NavigationGrid Header:";
+
+            if (scene == "")
+                scene = SceneManager.GetActiveScene().name;
+            string path = GetFilePath() + scene + "//GalaxyNavFile";
+
+            if (!File.Exists(path))
+                return;
+            else
+                m_ActiveGrid = null;
+
+            FileStream fs = new FileStream(path, FileMode.Open);
+            BinaryReader binReader = new BinaryReader(fs);      
+
+            byte[] bBuffer = new byte[100];
+            bBuffer = binReader.ReadBytes(gStrHeader.Length);
+            gStrHeader = System.Text.Encoding.Default.GetString(bBuffer);
+            gVersion = binReader.ReadInt32();
+            Rows = binReader.ReadInt32();
+            Columns = binReader.ReadInt32();
+            float MeshSize = binReader.ReadSingle();
+
+            m_hightFields.Clear();
+
+            Navigation.Grid grid = new Navigation.Grid(Rows, Columns);
+
+            for (int i = 0; i < Rows / MeshSize; ++i)
+            {
+                m_hightFields.Add(new List<float>());
+                for (int j = 0; j < Columns / MeshSize; ++j)
+                {
+                    int nWalkable = binReader.ReadInt32();
+                    float hight = binReader.ReadSingle();
+                    m_hightFields[i].Add(hight);
+                    grid[new Navigation.Grid.Position(i, j)] = (nWalkable == 1 ? true : false);
+                }
+            }
+
+            m_ActiveGrid = grid;
+
+            binReader.Close();
+            fs.Close();
+        }
+
+        private string GetFilePath()
+        {
+            return Application.dataPath + "//AlphaWork//Navigations//";
+        }
+
+        public void Close()
+        {
+            m_ActiveGrid = null;
+        }
+
+        public int FindPath(Vector3 startPt, Vector3 endPt, ref Vector3[] path)
+        {
+            if (m_ActiveGrid != null)
+            {
+                m_path.Clear();
+                Navigation.Grid.Position st = new Navigation.Grid.Position((int)startPt.x, (int)startPt.z);
+                Navigation.Grid.Position et = new Navigation.Grid.Position((int)endPt.x, (int)endPt.z);
+                m_ActiveGrid.FindPath(st, et, m_path);
+            }
+            return GetSmoothPath(ref path);
+        }
+
+        private int GetSmoothPath(ref Vector3[] path)
+        {
+            int index = 0;
+            IEnumerator iter = m_path.GetEnumerator();
+            while (iter.MoveNext())
+            {
+                Navigation.Grid.Position pos = (Navigation.Grid.Position)iter.Current;                
+                path[index++] = new Vector3(pos.Row, m_hightFields[pos.Row][pos.Column], pos.Column);
+            }
+            return m_path.Count;
+        }
+
+        public Vector3 GetNextPoint(Vector3 current)
+        {
+            if (m_path.Count > 0)
+            {
+                IEnumerator iter = m_path.GetEnumerator();                
+                while (iter.MoveNext())
+                {
+                    Navigation.Grid.Position pos = (Navigation.Grid.Position)iter.Current;
+                    Vector3 currentPos = new Vector3(pos.Row, m_hightFields[pos.Row][pos.Column], pos.Column);
+                    if(Vector3.Distance(current, currentPos) < Threshold)
+                    {
+                        iter.MoveNext();
+                        return currentPos;
+                    }
+                }
+                return current;
+            }
+            return Vector3.zero;
+        }
+
+    }
+}

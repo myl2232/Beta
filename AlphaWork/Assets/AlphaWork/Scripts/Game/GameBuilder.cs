@@ -13,6 +13,14 @@ namespace AlphaWork
             get { return m_ArMode; }
             set { value = m_ArMode; }
         }
+        [SerializeField]
+        private bool m_useNavGrid = true;
+        public bool UseNavGrid
+        {
+            get { return m_useNavGrid; }
+            set { m_useNavGrid = value; }
+        }
+
         // Use this for initialization
         void Start()
         {

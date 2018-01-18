@@ -52,9 +52,16 @@ namespace AlphaWork
             // 还原游戏速度
             GameEntry.Base.ResetNormalGameSpeed();
 
-            // 卸载navigation//myl
-            if (m_navHelper != null)
-                m_navHelper.CloseNavigation();
+            // 卸载navigation
+            if(GameEntry.UseNavGrid)
+            {
+                GameEntry.NavGrid.Close();
+            }
+            else
+            {
+                if (m_navHelper != null)
+                    m_navHelper.CloseNavigation();
+            }            
 
             int sceneId = procedureOwner.GetData<VarInt>(Constant.ProcedureData.NextSceneId).Value;
             m_ChangeToMenu = (sceneId == MenuSceneId);
@@ -77,10 +84,17 @@ namespace AlphaWork
             GameEntry.Event.Unsubscribe(LoadSceneUpdateEventArgs.EventId, OnLoadSceneUpdate);
             GameEntry.Event.Unsubscribe(LoadSceneDependencyAssetEventArgs.EventId, OnLoadSceneDependencyAsset);
 
-            //myl
-            if (m_navHelper != null)
-                m_navHelper.CloseNavigation();
-
+            // 卸载navigation
+            if (GameEntry.UseNavGrid)
+            {                
+                GameEntry.NavGrid.Close();
+            }
+            else
+            {
+                if (m_navHelper != null)
+                    m_navHelper.CloseNavigation();
+            }
+            
             base.OnLeave(procedureOwner, isShutdown);
         }
 
@@ -114,8 +128,13 @@ namespace AlphaWork
             Log.Info("Load scene '{0}' OK.", ne.SceneAssetName);
 
             m_IsChangeSceneComplete = true;
-            m_navHelper = new NavigationHelper(ne.SceneAssetName);//myl
 
+            // navigation
+            if (GameEntry.UseNavGrid)
+                GameEntry.NavGrid.ReadData(ne.SceneAssetName);//Nav_Grid
+            else
+                m_navHelper = new NavigationHelper(ne.SceneAssetName);//Recast_Nav
+            
         }
 
         private void OnLoadSceneFailure(object sender, GameEventArgs e)

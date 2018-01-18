@@ -9,11 +9,9 @@ namespace AlphaWork
     {
         public float Speed = 5;
         public float Scale = 1;
-        private Vector3 m_movePos;
-        private Vector3 m_startPos;
         
-        int pathNum = 0;
-        Vector3[] smoothPath = new Vector3[512];
+        private int pathNum = 0;
+        private Vector3[] smoothPath; 
         private int m_curIdx = 0;
         private Transform m_trans;
 
@@ -21,6 +19,7 @@ namespace AlphaWork
         void Start()
         {
             m_trans = GetComponentInParent<Transform>();
+            smoothPath = new Vector3[512];
         }
 
         // Update is called once per frame
@@ -28,7 +27,7 @@ namespace AlphaWork
         {
             if (pathNum > 0)
             {                
-                Vector3 pCur = /*GetComponentInParent<Transform>()*/m_trans.transform.position;
+                Vector3 pCur = m_trans.transform.position;
                 if (m_curIdx > (pathNum - 1))
                     return;
 
@@ -38,11 +37,11 @@ namespace AlphaWork
                 Vector3 newDir = Vector3.Normalize(pNext - newPos);
                 if(Vector3.Dot(dir,newDir) > 0)//not go to target yet
                 {
-                    /*GetComponentInParent<Transform>()*/m_trans.transform.position = newPos;
+                    m_trans.transform.position = newPos;
                 }
                 else
                 {
-                    /*GetComponentInParent<Transform>()*/m_trans.transform.position = pNext;
+                    m_trans.transform.position = pNext;
                     m_curIdx++;
                 }                
             }
@@ -54,21 +53,23 @@ namespace AlphaWork
             pathNum = 0;
         }
 
-        public void Move(Vector3 startPos, Vector3 movePos)
+        public void Move(Vector3 startPos, Vector3 endPos)
         {
-            m_startPos = startPos;
-            m_movePos = movePos;
             pathNum = 0;
-            
-            RecastNavigationDllImports.PathFind(m_startPos, m_movePos, ref pathNum, ref smoothPath);
 
+            if (GameEntry.UseNavGrid)
+               GameEntry.NavGrid.FindPath(startPos, endPos, ref smoothPath);
+            else
+                RecastNavigationDllImports.PathFind(startPos, endPos, ref pathNum, ref smoothPath);
+            
             if(pathNum == 0)
             {
                 pathNum = 1;
-                smoothPath[0] = movePos;
+                smoothPath[0] = endPos;
             }
         }
 
+        //temp
         public void SetTarget(Vector3 goal)
         {
             NavMeshAgent ag = GetComponent<NavMeshAgent>();

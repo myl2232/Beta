@@ -29,11 +29,18 @@ namespace AlphaWork
             private set;
         }
 
+        public static NavGridComponent NavGrid
+        {
+            get;
+            private set;
+        }
+
         private static void InitCustomComponents()
         {
             Config = UnityGameFramework.Runtime.GameEntry.GetComponent<ConfigComponent>();
             Sensor = UnityGameFramework.Runtime.GameEntry.GetComponent<SenseDispatcherComponent>();
             Behaviac = UnityGameFramework.Runtime.GameEntry.GetComponent<BehaviacComponent>();
+            NavGrid = UnityGameFramework.Runtime.GameEntry.GetComponent<NavGridComponent>();
         }
       
     }

@@ -438,6 +438,58 @@ namespace behaviac
 		}
 	}
 
+	// Source file: Dispatch
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class Action_bt_Dispatch_node4 : behaviac.Action
+	{
+		public Action_bt_Dispatch_node4()
+		{
+			this.m_resultOption = EBTStatus.BT_SUCCESS;
+		}
+		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
+		{
+			((EnemyAgent)pAgent).MoveToTarget();
+			return EBTStatus.BT_SUCCESS;
+		}
+	}
+
+	public static class bt_Dispatch
+	{
+		public static bool build_behavior_tree(BehaviorTree bt)
+		{
+			bt.SetClassNameString("BehaviorTree");
+			bt.SetId(-1);
+			bt.SetName("Dispatch");
+			bt.IsFSM = false;
+#if !BEHAVIAC_RELEASE
+			bt.SetAgentType("EnemyAgent");
+#endif
+			// children
+			{
+				Sequence node0 = new Sequence();
+				node0.SetClassNameString("Sequence");
+				node0.SetId(0);
+#if !BEHAVIAC_RELEASE
+				node0.SetAgentType("EnemyAgent");
+#endif
+				bt.AddChild(node0);
+				{
+					Action_bt_Dispatch_node4 node4 = new Action_bt_Dispatch_node4();
+					node4.SetClassNameString("Action");
+					node4.SetId(4);
+#if !BEHAVIAC_RELEASE
+					node4.SetAgentType("EnemyAgent");
+#endif
+					node0.AddChild(node4);
+					node0.SetHasEvents(node0.HasEvents() | node4.HasEvents());
+				}
+				bt.SetHasEvents(bt.HasEvents() | node0.HasEvents());
+			}
+			return true;
+		}
+	}
+
 	// Source file: EnemyAvatar
 
 	[behaviac.GeneratedTypeMetaInfo()]
@@ -496,22 +548,214 @@ namespace behaviac
 	}
 
 	[behaviac.GeneratedTypeMetaInfo()]
-	class ReferencedBehavior_bt_EnemyAvatar_node7 : behaviac.ReferencedBehavior
+	class SelectorProbability_bt_EnemyAvatar_node2 : behaviac.SelectorProbability
 	{
-		public ReferencedBehavior_bt_EnemyAvatar_node7()
+		public SelectorProbability_bt_EnemyAvatar_node2()
 		{
-			string szTreePath = this.GetReferencedTree(null);
-			if (!string.IsNullOrEmpty(szTreePath)) {
-			BehaviorTree behaviorTree = Workspace.Instance.LoadBehaviorTree(szTreePath);
-			if (behaviorTree != null)
-			{
-				this.m_bHasEvents |= behaviorTree.HasEvents();
-			}
-			}
 		}
-		public override string GetReferencedTree(Agent pAgent)
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class DecoratorWeight_bt_EnemyAvatar_node6 : behaviac.DecoratorWeight
+	{
+		public DecoratorWeight_bt_EnemyAvatar_node6()
 		{
-			return "AttackDispatch";
+			m_bDecorateWhenChildEnds = false;
+		}
+		protected override int GetWeight(Agent pAgent)
+		{
+			return 1;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class Assignment_bt_EnemyAvatar_node8 : behaviac.Assignment
+	{
+		public Assignment_bt_EnemyAvatar_node8()
+		{
+		}
+		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
+		{
+			EBTStatus result = EBTStatus.BT_SUCCESS;
+			int opr = 1;
+			pAgent.SetVariable<int>("attackIndex", 2658199205u, opr);
+			return result;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class DecoratorWeight_bt_EnemyAvatar_node10 : behaviac.DecoratorWeight
+	{
+		public DecoratorWeight_bt_EnemyAvatar_node10()
+		{
+			m_bDecorateWhenChildEnds = false;
+		}
+		protected override int GetWeight(Agent pAgent)
+		{
+			return 1;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class Assignment_bt_EnemyAvatar_node11 : behaviac.Assignment
+	{
+		public Assignment_bt_EnemyAvatar_node11()
+		{
+		}
+		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
+		{
+			EBTStatus result = EBTStatus.BT_SUCCESS;
+			int opr = 2;
+			pAgent.SetVariable<int>("attackIndex", 2658199205u, opr);
+			return result;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class DecoratorWeight_bt_EnemyAvatar_node12 : behaviac.DecoratorWeight
+	{
+		public DecoratorWeight_bt_EnemyAvatar_node12()
+		{
+			m_bDecorateWhenChildEnds = false;
+		}
+		protected override int GetWeight(Agent pAgent)
+		{
+			return 1;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class Assignment_bt_EnemyAvatar_node13 : behaviac.Assignment
+	{
+		public Assignment_bt_EnemyAvatar_node13()
+		{
+		}
+		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
+		{
+			EBTStatus result = EBTStatus.BT_SUCCESS;
+			int opr = 3;
+			pAgent.SetVariable<int>("attackIndex", 2658199205u, opr);
+			return result;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class DecoratorWeight_bt_EnemyAvatar_node14 : behaviac.DecoratorWeight
+	{
+		public DecoratorWeight_bt_EnemyAvatar_node14()
+		{
+			m_bDecorateWhenChildEnds = false;
+		}
+		protected override int GetWeight(Agent pAgent)
+		{
+			return 1;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class Assignment_bt_EnemyAvatar_node15 : behaviac.Assignment
+	{
+		public Assignment_bt_EnemyAvatar_node15()
+		{
+		}
+		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
+		{
+			EBTStatus result = EBTStatus.BT_SUCCESS;
+			int opr = 4;
+			pAgent.SetVariable<int>("attackIndex", 2658199205u, opr);
+			return result;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class SelectorProbability_bt_EnemyAvatar_node16 : behaviac.SelectorProbability
+	{
+		public SelectorProbability_bt_EnemyAvatar_node16()
+		{
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class DecoratorWeight_bt_EnemyAvatar_node7 : behaviac.DecoratorWeight
+	{
+		public DecoratorWeight_bt_EnemyAvatar_node7()
+		{
+			m_bDecorateWhenChildEnds = false;
+		}
+		protected override int GetWeight(Agent pAgent)
+		{
+			return 30;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class Assignment_bt_EnemyAvatar_node17 : behaviac.Assignment
+	{
+		public Assignment_bt_EnemyAvatar_node17()
+		{
+		}
+		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
+		{
+			EBTStatus result = EBTStatus.BT_SUCCESS;
+			float opr = 0.2f;
+			pAgent.SetVariable<float>("attackParam", 2100782252u, opr);
+			return result;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class DecoratorWeight_bt_EnemyAvatar_node18 : behaviac.DecoratorWeight
+	{
+		public DecoratorWeight_bt_EnemyAvatar_node18()
+		{
+			m_bDecorateWhenChildEnds = false;
+		}
+		protected override int GetWeight(Agent pAgent)
+		{
+			return 35;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class Assignment_bt_EnemyAvatar_node19 : behaviac.Assignment
+	{
+		public Assignment_bt_EnemyAvatar_node19()
+		{
+		}
+		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
+		{
+			EBTStatus result = EBTStatus.BT_SUCCESS;
+			float opr = 0.6f;
+			pAgent.SetVariable<float>("attackParam", 2100782252u, opr);
+			return result;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class DecoratorWeight_bt_EnemyAvatar_node20 : behaviac.DecoratorWeight
+	{
+		public DecoratorWeight_bt_EnemyAvatar_node20()
+		{
+			m_bDecorateWhenChildEnds = false;
+		}
+		protected override int GetWeight(Agent pAgent)
+		{
+			return 35;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class Assignment_bt_EnemyAvatar_node21 : behaviac.Assignment
+	{
+		public Assignment_bt_EnemyAvatar_node21()
+		{
+		}
+		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
+		{
+			EBTStatus result = EBTStatus.BT_SUCCESS;
+			float opr = 0.8f;
+			pAgent.SetVariable<float>("attackParam", 2100782252u, opr);
+			return result;
 		}
 	}
 
@@ -584,14 +828,164 @@ namespace behaviac
 						node1.SetHasEvents(node1.HasEvents() | node9.HasEvents());
 					}
 					{
-						ReferencedBehavior_bt_EnemyAvatar_node7 node7 = new ReferencedBehavior_bt_EnemyAvatar_node7();
-						node7.SetClassNameString("ReferencedBehavior");
-						node7.SetId(7);
+						SelectorProbability_bt_EnemyAvatar_node2 node2 = new SelectorProbability_bt_EnemyAvatar_node2();
+						node2.SetClassNameString("SelectorProbability");
+						node2.SetId(2);
 #if !BEHAVIAC_RELEASE
-						node7.SetAgentType("EnemyAgent");
+						node2.SetAgentType("EnemyAgent");
 #endif
-						node1.AddChild(node7);
-						node1.SetHasEvents(node1.HasEvents() | node7.HasEvents());
+						node1.AddChild(node2);
+						{
+							DecoratorWeight_bt_EnemyAvatar_node6 node6 = new DecoratorWeight_bt_EnemyAvatar_node6();
+							node6.SetClassNameString("DecoratorWeight");
+							node6.SetId(6);
+#if !BEHAVIAC_RELEASE
+							node6.SetAgentType("EnemyAgent");
+#endif
+							node2.AddChild(node6);
+							{
+								Assignment_bt_EnemyAvatar_node8 node8 = new Assignment_bt_EnemyAvatar_node8();
+								node8.SetClassNameString("Assignment");
+								node8.SetId(8);
+#if !BEHAVIAC_RELEASE
+								node8.SetAgentType("EnemyAgent");
+#endif
+								node6.AddChild(node8);
+								node6.SetHasEvents(node6.HasEvents() | node8.HasEvents());
+							}
+							node2.SetHasEvents(node2.HasEvents() | node6.HasEvents());
+						}
+						{
+							DecoratorWeight_bt_EnemyAvatar_node10 node10 = new DecoratorWeight_bt_EnemyAvatar_node10();
+							node10.SetClassNameString("DecoratorWeight");
+							node10.SetId(10);
+#if !BEHAVIAC_RELEASE
+							node10.SetAgentType("EnemyAgent");
+#endif
+							node2.AddChild(node10);
+							{
+								Assignment_bt_EnemyAvatar_node11 node11 = new Assignment_bt_EnemyAvatar_node11();
+								node11.SetClassNameString("Assignment");
+								node11.SetId(11);
+#if !BEHAVIAC_RELEASE
+								node11.SetAgentType("EnemyAgent");
+#endif
+								node10.AddChild(node11);
+								node10.SetHasEvents(node10.HasEvents() | node11.HasEvents());
+							}
+							node2.SetHasEvents(node2.HasEvents() | node10.HasEvents());
+						}
+						{
+							DecoratorWeight_bt_EnemyAvatar_node12 node12 = new DecoratorWeight_bt_EnemyAvatar_node12();
+							node12.SetClassNameString("DecoratorWeight");
+							node12.SetId(12);
+#if !BEHAVIAC_RELEASE
+							node12.SetAgentType("EnemyAgent");
+#endif
+							node2.AddChild(node12);
+							{
+								Assignment_bt_EnemyAvatar_node13 node13 = new Assignment_bt_EnemyAvatar_node13();
+								node13.SetClassNameString("Assignment");
+								node13.SetId(13);
+#if !BEHAVIAC_RELEASE
+								node13.SetAgentType("EnemyAgent");
+#endif
+								node12.AddChild(node13);
+								node12.SetHasEvents(node12.HasEvents() | node13.HasEvents());
+							}
+							node2.SetHasEvents(node2.HasEvents() | node12.HasEvents());
+						}
+						{
+							DecoratorWeight_bt_EnemyAvatar_node14 node14 = new DecoratorWeight_bt_EnemyAvatar_node14();
+							node14.SetClassNameString("DecoratorWeight");
+							node14.SetId(14);
+#if !BEHAVIAC_RELEASE
+							node14.SetAgentType("EnemyAgent");
+#endif
+							node2.AddChild(node14);
+							{
+								Assignment_bt_EnemyAvatar_node15 node15 = new Assignment_bt_EnemyAvatar_node15();
+								node15.SetClassNameString("Assignment");
+								node15.SetId(15);
+#if !BEHAVIAC_RELEASE
+								node15.SetAgentType("EnemyAgent");
+#endif
+								node14.AddChild(node15);
+								node14.SetHasEvents(node14.HasEvents() | node15.HasEvents());
+							}
+							node2.SetHasEvents(node2.HasEvents() | node14.HasEvents());
+						}
+						node1.SetHasEvents(node1.HasEvents() | node2.HasEvents());
+					}
+					{
+						SelectorProbability_bt_EnemyAvatar_node16 node16 = new SelectorProbability_bt_EnemyAvatar_node16();
+						node16.SetClassNameString("SelectorProbability");
+						node16.SetId(16);
+#if !BEHAVIAC_RELEASE
+						node16.SetAgentType("EnemyAgent");
+#endif
+						node1.AddChild(node16);
+						{
+							DecoratorWeight_bt_EnemyAvatar_node7 node7 = new DecoratorWeight_bt_EnemyAvatar_node7();
+							node7.SetClassNameString("DecoratorWeight");
+							node7.SetId(7);
+#if !BEHAVIAC_RELEASE
+							node7.SetAgentType("EnemyAgent");
+#endif
+							node16.AddChild(node7);
+							{
+								Assignment_bt_EnemyAvatar_node17 node17 = new Assignment_bt_EnemyAvatar_node17();
+								node17.SetClassNameString("Assignment");
+								node17.SetId(17);
+#if !BEHAVIAC_RELEASE
+								node17.SetAgentType("EnemyAgent");
+#endif
+								node7.AddChild(node17);
+								node7.SetHasEvents(node7.HasEvents() | node17.HasEvents());
+							}
+							node16.SetHasEvents(node16.HasEvents() | node7.HasEvents());
+						}
+						{
+							DecoratorWeight_bt_EnemyAvatar_node18 node18 = new DecoratorWeight_bt_EnemyAvatar_node18();
+							node18.SetClassNameString("DecoratorWeight");
+							node18.SetId(18);
+#if !BEHAVIAC_RELEASE
+							node18.SetAgentType("EnemyAgent");
+#endif
+							node16.AddChild(node18);
+							{
+								Assignment_bt_EnemyAvatar_node19 node19 = new Assignment_bt_EnemyAvatar_node19();
+								node19.SetClassNameString("Assignment");
+								node19.SetId(19);
+#if !BEHAVIAC_RELEASE
+								node19.SetAgentType("EnemyAgent");
+#endif
+								node18.AddChild(node19);
+								node18.SetHasEvents(node18.HasEvents() | node19.HasEvents());
+							}
+							node16.SetHasEvents(node16.HasEvents() | node18.HasEvents());
+						}
+						{
+							DecoratorWeight_bt_EnemyAvatar_node20 node20 = new DecoratorWeight_bt_EnemyAvatar_node20();
+							node20.SetClassNameString("DecoratorWeight");
+							node20.SetId(20);
+#if !BEHAVIAC_RELEASE
+							node20.SetAgentType("EnemyAgent");
+#endif
+							node16.AddChild(node20);
+							{
+								Assignment_bt_EnemyAvatar_node21 node21 = new Assignment_bt_EnemyAvatar_node21();
+								node21.SetClassNameString("Assignment");
+								node21.SetId(21);
+#if !BEHAVIAC_RELEASE
+								node21.SetAgentType("EnemyAgent");
+#endif
+								node20.AddChild(node21);
+								node20.SetHasEvents(node20.HasEvents() | node21.HasEvents());
+							}
+							node16.SetHasEvents(node16.HasEvents() | node20.HasEvents());
+						}
+						node1.SetHasEvents(node1.HasEvents() | node16.HasEvents());
 					}
 					node0.SetHasEvents(node0.HasEvents() | node1.HasEvents());
 				}

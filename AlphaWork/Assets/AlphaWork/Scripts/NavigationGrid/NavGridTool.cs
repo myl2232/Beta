@@ -54,7 +54,7 @@ public class NavGridTool : MonoBehaviour
         int realRow = (int)(Rows / MeshSize);
         int realColumns = (int)(Columns / MeshSize);
         
-        if(m_grid == null)
+        if(m_grid == null && realRow > 0 && realColumns > 0)
             m_grid = new Navigation.Grid(realRow, realColumns);
 
         gStrHeader = "NavigationGrid Header:";
@@ -134,7 +134,8 @@ public class NavGridTool : MonoBehaviour
         if(!Directory.Exists(GetFilePath()))
             Directory.CreateDirectory(GetFilePath());
 
-        FileStream fs = new FileStream(GetFilePath() + "//GalaxyNavFile", FileMode.OpenOrCreate);
+        string currentFile = GetFilePath() + "//GalaxyNavFile";
+        FileStream fs = new FileStream(currentFile, FileMode.OpenOrCreate);
         BinaryWriter binWriter = new BinaryWriter(fs);
       
         binWriter.Write(gStrHeader.ToCharArray(), 0, gStrHeader.Length);
@@ -155,7 +156,11 @@ public class NavGridTool : MonoBehaviour
         }
 
         binWriter.Close();
-        fs.Close();        
+        fs.Close();
+
+        //temp        
+        string targetPath = GetTargetPath() + "//GalaxyNavFile";
+        System.IO.File.Copy(currentFile, targetPath, true);
     }
 
     public static void Refresh()
@@ -183,13 +188,7 @@ public class NavGridTool : MonoBehaviour
             return m_hightFields[x][y];
         }
 
-        float fValue = 0.0f;
-        GameObject gbTerrain = GameObject.Find("Terrain") as GameObject;
-        if (gbTerrain)
-        {
-            Terrain ter = gbTerrain.GetComponent<Terrain>();
-            fValue = ter.terrainData.GetHeight(x, y);
-        }
+        float fValue = GetTerrainZ(x,y);        
 
         if (AccurateHight)
         {
@@ -446,8 +445,32 @@ public class NavGridTool : MonoBehaviour
         }
     } 
 
+    private static float GetTerrainZ(int x, int y)
+    {
+        Terrain[] terrains = FindObjectsOfType(typeof(Terrain)) as Terrain[];
+        for (int i = 0; i < terrains.Length; ++i)
+        {
+            if(x <= terrains[i].terrainData.size.x && y <= terrains[i].terrainData.size.z)
+                return terrains[i].terrainData.GetHeight(x, y);
+        }
+
+        //GameObject gbTerrain = GameObject.Find("Terrain") as GameObject;
+        //if (gbTerrain)
+        //{
+        //    Terrain ter = gbTerrain.GetComponent<Terrain>();
+        //    return ter.terrainData.GetHeight(x, y);
+        //}
+
+        return 0;
+    }
+
     private static string GetFilePath()
     {
         return Application.dataPath + "//Resources//NavGrid//" + EditorSceneManager.GetActiveScene().name;
+    }
+
+    private static string GetTargetPath()
+    {
+        return Application.dataPath + "//AlphaWork//Navigations//" + EditorSceneManager.GetActiveScene().name;
     }
 }

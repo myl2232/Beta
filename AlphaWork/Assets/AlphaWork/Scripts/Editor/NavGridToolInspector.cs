@@ -65,8 +65,8 @@ namespace AlphaWork.Editor
             m_bAccurateToggle = EditorGUILayout.BeginToggleGroup("精准高度", m_bAccurateToggle);
             EditorGUILayout.BeginHorizontal();
             GUILayout.Label("自地面以上射线高度：", EditorStyles.boldLabel);
-            m_RayHeightField = GUILayout.HorizontalSlider(m_RayHeightField, -1000, 1000);
-            EditorGUILayout.DelayedFloatField(m_RayHeightField, GUILayout.Width(50));
+            m_RayHeightField = GUILayout.HorizontalSlider(m_RayHeightField, 0, 1000);
+            m_RayHeightField = EditorGUILayout.DelayedFloatField(m_RayHeightField, GUILayout.Width(50));
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.EndToggleGroup();
             if (GUILayout.Button("生成网格", GUILayout.Width(300)))

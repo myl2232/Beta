@@ -3,46 +3,8 @@
 <!--Source File: Dispatch.xml-->
 <behavior name="Dispatch" agenttype="EnemyAgent" version="5">
   <node class="Sequence" id="0">
-    <node class="Action" id="1">
-      <property Method="Self.EnemyAgent::FindEnemy()" />
-      <property ResultOption="BT_SUCCESS" />
-    </node>
-    <node class="Condition" id="2">
-      <property Operator="Equal" />
-      <property Opl="bool Self.EnemyAgent::m_bCatchedEnemy" />
-      <property Opr="const bool true" />
-    </node>
-    <node class="SelectorProbability" id="3">
-      <node class="DecoratorWeight" id="4">
-        <property DecorateWhenChildEnds="false" />
-        <property Weight="const int 30" />
-        <node class="Assignment" id="5">
-          <property CastRight="false" />
-          <property Opl="float Self.EnemyAgent::m_attackParam" />
-          <property Opr="const float 0.2" />
-        </node>
-      </node>
-      <node class="DecoratorWeight" id="6">
-        <property DecorateWhenChildEnds="false" />
-        <property Weight="const int 35" />
-        <node class="Assignment" id="7">
-          <property CastRight="false" />
-          <property Opl="float Self.EnemyAgent::m_attackParam" />
-          <property Opr="const float 0.6" />
-        </node>
-      </node>
-      <node class="DecoratorWeight" id="8">
-        <property DecorateWhenChildEnds="false" />
-        <property Weight="const int 35" />
-        <node class="Assignment" id="9">
-          <property CastRight="false" />
-          <property Opl="float Self.EnemyAgent::m_attackParam" />
-          <property Opr="const float 0.85" />
-        </node>
-      </node>
-    </node>
-    <node class="Action" id="10">
-      <property Method="Self.EnemyAgent::ActionAttack()" />
+    <node class="Action" id="4">
+      <property Method="Self.EnemyAgent::MoveToTarget()" />
       <property ResultOption="BT_SUCCESS" />
     </node>
   </node>

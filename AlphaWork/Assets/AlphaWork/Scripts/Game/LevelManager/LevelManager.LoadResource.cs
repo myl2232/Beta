@@ -32,8 +32,8 @@ namespace AlphaWork
                 //test for Efficiency
                 RaycastHit hitInfo;
                 Physics.Raycast(mainPos, Vector3.down, out hitInfo, 1000);
-                Vector3 sPt = new Vector3(UnityEngine.Random.Range(hitInfo.point.x - 10, hitInfo.point.x + 10), 
-                    1.5f, UnityEngine.Random.Range(hitInfo.point.z - 10, hitInfo.point.x + 10));
+                Vector3 sPt = new Vector3(UnityEngine.Random.Range(hitInfo.point.x - 10, hitInfo.point.x + 10),
+                    hitInfo.point.y, UnityEngine.Random.Range(hitInfo.point.z - 10, hitInfo.point.x + 10));
 
                 for (int i = 0; i < 1; ++i)
                 {

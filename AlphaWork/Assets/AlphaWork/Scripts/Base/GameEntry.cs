@@ -12,22 +12,16 @@ namespace AlphaWork
         private float markTime;
         private float lastMarkTime;
         public static bool ArMode;
-        public GameBuilder builder;
-        
+        public static bool UseNavGrid;
+
+        public GameBuilder builder;//assign by editor
+
         private void Start()
         {
-//             GameObject frameworkPrefab = (GameObject)Resources.Load("PrefabDefined/GameFramework");
-//             Instantiate(frameworkPrefab);
-
             InitBuiltinComponents();
-            InitCustomComponents();
-
-            //builder = ObjectUtility.GetFellow("GameBuilder") as GameBuilder;
-            /*Agent = GetAssistObject();*/
-            //OnClick = OnClickImpl;
-            //if(gm == null)
-            //    gm = new SurvivalGame();
+            InitCustomComponents();  
         }
+
         private void Awake()
         {
             markTime = Time.time;
@@ -41,7 +35,9 @@ namespace AlphaWork
             markTime = Time.time;
             //gm.Update(Time.timeSinceLevelLoad, Time.fixedDeltaTime/*markTime - lastMarkTime*/);
             lastMarkTime = markTime;
+
             ArMode = builder.ARMode;
+            UseNavGrid = builder.UseNavGrid;
         }
 
     }

@@ -27,11 +27,17 @@ namespace AlphaWork
             m_senses.Remove(sense.m_sensor);
         }
 
-        public void Start()
+        protected override void Awake()
         {
+            base.Awake();
+
             m_senses = new Dictionary<int, SenseResult>();
 
-            //m_argSense = new SenseAIEventArgs(0, 0);
+        }
+
+        public void Start()
+        {
+            
         }
         
         public void Update()
