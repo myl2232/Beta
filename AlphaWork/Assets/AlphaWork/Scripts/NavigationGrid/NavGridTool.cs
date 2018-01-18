@@ -15,6 +15,9 @@ public class NavGridTool : MonoBehaviour
         EPAINT_SETHIGHT,
         EPAINT_NULL
     }
+    public delegate void SyncBroadcast();
+    public event SyncBroadcast SyncEvent;
+
     private static Navigation.Grid m_grid;
     private static string projectName;
     private static string sceneName;
@@ -43,7 +46,10 @@ public class NavGridTool : MonoBehaviour
     private static SceneView m_sceneView;
     private static Transform selTransform;   
     private static Vector3 m_lastMousePos;
-    
+
+    private static string gStrHeader;
+    private static int gVersion;
+
     public NavGridTool(int columns, int rows)
     {
         Columns = columns;
@@ -52,24 +58,18 @@ public class NavGridTool : MonoBehaviour
 
     public static void Initialize()
     {
-        //GameObject gbTerrain = GameObject.Find("Terrain") as GameObject;
-        //if (gbTerrain)
-        //{
-        //    Terrain ter = gbTerrain.GetComponent<Terrain>();
-        //    Rows = (int)ter.terrainData.size.x;
-        //    Columns = (int)ter.terrainData.size.z;
-        //}
-
-        BuildProjectNameAndSceneName();
-
         int realRow = (int)(Rows / MeshSize);
         int realColumns = (int)(Columns / MeshSize);
         
         if(m_grid == null)
             m_grid = new Navigation.Grid(realRow, realColumns);
 
+        gStrHeader = "NavigationGrid Header:";
+        gVersion = 1;
+
         Refresh();
     }
+
     // Use this for initialization
     void Start () {
         
@@ -100,8 +100,40 @@ public class NavGridTool : MonoBehaviour
 
     public void ReadData()
     {
-        ArrayList data = LoadFile(GetFilePath(), "GridData.bin");
+        gStrHeader = "NavigationGrid Header:";
+        gVersion = 1;
 
+        FileStream fs = new FileStream(GetFilePath()+ "//GalaxyNavFile", FileMode.Open);
+        BinaryReader binReader = new BinaryReader(fs);
+        
+        byte[] bBuffer = new byte[100];      
+        bBuffer = binReader.ReadBytes(gStrHeader.Length);
+        gStrHeader = System.Text.Encoding.Default.GetString(bBuffer);
+        gVersion = binReader.ReadInt32();
+        Rows = binReader.ReadInt32();
+        Columns = binReader.ReadInt32();
+        MeshSize = binReader.ReadSingle();
+
+        m_hightFields.Clear();
+        if (m_grid == null)
+            m_grid = new Navigation.Grid(Rows, Columns);
+
+        for (int i = 0; i < Rows / MeshSize; ++i)
+        {
+            m_hightFields.Add(new List<float>());
+            for (int j = 0; j < Columns / MeshSize; ++j)
+            {
+                int nWalkable = binReader.ReadInt32();
+                float hight = binReader.ReadSingle();
+                m_hightFields[i].Add(hight);
+                m_grid[new Navigation.Grid.Position(i, j)] = (nWalkable == 1 ? true:false);
+            }
+        }
+
+        binReader.Close();
+        fs.Close();
+
+        SyncEvent();
     }
 
     public void SaveData()
@@ -109,36 +141,28 @@ public class NavGridTool : MonoBehaviour
         if(!Directory.Exists(GetFilePath()))
             Directory.CreateDirectory(GetFilePath());
 
-        StreamWriter sw;
-        FileInfo t = new FileInfo(GetFilePath()+"//GridData.bin");        
-        if (!t.Exists)
-        {
-            //如果此文件不存在则创建  
-            sw = t.CreateText();
-        }
-        else
-        {
-            //如果此文件存在则打开  
-            sw = t.AppendText();
-        }
-        for(int i = 0; i < m_hightFields.Count; ++i)
-        {
-            char[] chStr = new char[m_hightFields[i].Count];
-            string strWalkable = new string(chStr);
+        FileStream fs = new FileStream(GetFilePath() + "//GalaxyNavFile", FileMode.OpenOrCreate);
+        BinaryWriter binWriter = new BinaryWriter(fs);
+      
+        binWriter.Write(gStrHeader.ToCharArray(), 0, gStrHeader.Length);
+        binWriter.Write(gVersion);
+        binWriter.Write(Rows);
+        binWriter.Write(Columns);
+        binWriter.Write(MeshSize);
+
+        for (int i = 0; i < m_hightFields.Count; ++i)
+        {            
             for(int j = 0; j < m_hightFields[i].Count; ++j)
             {
-                bool bWalkable = m_grid[new Navigation.Grid.Position(i, j)];
-                char vOut = (bWalkable == true ? '1' : '0');
-                chStr[j] = vOut;                
+                bool bWalkable = m_grid[new Navigation.Grid.Position(i, j)];       
+                //以行的形式写入信息  
+                binWriter.Write(bWalkable == true ? 1 : 0);
+                binWriter.Write(m_hightFields[i][j]);
             }
-            //以行的形式写入信息  
-            sw.WriteLine(chStr);
         }
-        
-        //关闭流
-        sw.Close();
-        //销毁流  
-        sw.Dispose();
+
+        binWriter.Close();
+        fs.Close();        
     }
 
     public static void Refresh()
@@ -193,7 +217,7 @@ public class NavGridTool : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (!IsActive || !bGenerate || m_grid == null)
+        if (!IsActive /*|| !bGenerate*/ || m_grid == null)
             return;
         //draw pointer     
         Gizmos.color = Color.yellow;
@@ -296,7 +320,6 @@ public class NavGridTool : MonoBehaviour
 
 
     public static bool IsActive = true;
-    private static Vector3 vNormal = new Vector3(0, 1, 0);
     
     static void OnSceneGUI(SceneView sceneView)
     {
@@ -490,35 +513,6 @@ public class NavGridTool : MonoBehaviour
         sr.Dispose();
         //将数组链表容器返回  
         return arrlist;
-    }
-
-    void DeleteFile(string path, string name)
-    {
-        File.Delete(path + "//" + name);
-    }
-
-    private static void BuildProjectNameAndSceneName()
-    {
-        // Project name
-        string[] s = Application.persistentDataPath.Split('/');
-        projectName = s[s.Length - 2];
-
-        // Level name and resource folder
-        string[] s2 = EditorSceneManager.GetActiveScene().name.Split('/');
-        string currentSceneFullName = s2[s2.Length - 1];
-        string[] s3 = currentSceneFullName.Split('.');
-
-        if (s3.Length >= 2)
-        {
-            sceneName = s3[0];
-            for (int i = 1; i < s3.Length - 1; i++)
-            {
-                sceneName += ".";
-                sceneName += s3[i];
-            }
-            levelName = sceneName + "/";
-        }
-        resourceFolder = "NavGrid/" + levelName;
     }
 
     private static string GetFilePath()

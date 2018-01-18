@@ -34,7 +34,8 @@ namespace AlphaWork.Editor
             base.OnInspectorGUI();
             serializedObject.Update();
 
-            m_gridTool = (NavGridTool)target;            
+            m_gridTool = (NavGridTool)target;
+            m_gridTool.SyncEvent += OnSync;
 
             //GUILayout.BeginArea(new Rect(10, 10 + layoutExtent, 300, 1000));
             bActive = EditorGUILayout.BeginToggleGroup("激活", bActive);
@@ -145,6 +146,14 @@ namespace AlphaWork.Editor
 
             m_StartPt = NavGridTool.StartPt;
             m_EndPt = NavGridTool.EndPt;
+        }
+
+        private void OnSync()
+        {            
+            m_brushSize = NavGridTool.BrushSize;
+            m_meshSize = NavGridTool.MeshSize;
+            m_rows = NavGridTool.Rows;
+            m_columns = NavGridTool.Columns;
         }
 
         private void GenerateMesh()
