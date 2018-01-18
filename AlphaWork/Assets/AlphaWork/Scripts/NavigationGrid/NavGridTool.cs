@@ -19,10 +19,6 @@ public class NavGridTool : MonoBehaviour
     public event SyncBroadcast SyncEvent;
 
     private static Navigation.Grid m_grid;
-    private static string projectName;
-    private static string sceneName;
-    private static string levelName;
-    private static string resourceFolder;
 
     public static float BrushSize;
     public static float ViewSize;
@@ -39,13 +35,10 @@ public class NavGridTool : MonoBehaviour
     public static Vector3 StartPt;
     public static Vector3 EndPt;
     public static EPaint PaintType = EPaint.EPAINT_NULL;
-    //private Dictionary<List<Navigation.Grid.Position>, bool> m_path = new Dictionary<List<Navigation.Grid.Position>, bool>();
     private static List<List<float>> m_hightFields = new List<List<float>>();
     private static LinkedList<Navigation.Grid.Position> m_path = new LinkedList<Navigation.Grid.Position>();
     private static Vector3 mPos;
-    private static SceneView m_sceneView;
     private static Transform selTransform;   
-    private static Vector3 m_lastMousePos;
 
     private static string gStrHeader;
     private static int gVersion;
@@ -217,7 +210,7 @@ public class NavGridTool : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (!IsActive /*|| !bGenerate*/ || m_grid == null)
+        if (!IsActive || m_grid == null)
             return;
         //draw pointer     
         Gizmos.color = Color.yellow;
@@ -323,7 +316,6 @@ public class NavGridTool : MonoBehaviour
     
     static void OnSceneGUI(SceneView sceneView)
     {
-        m_sceneView = SceneView.lastActiveSceneView;
         var current = Event.current;
         int button = Event.current.button;
 
@@ -342,18 +334,7 @@ public class NavGridTool : MonoBehaviour
         {
             case EventType.MouseMove:
                 {
-                    //Camera cam = m_sceneView.camera;
-                    //Vector3 mousepos = Event.current.mousePosition;
-                    //if (Vector3.Distance(m_lastMousePos, mousepos) < 0.1f)
-                    //    break;
-                    //m_lastMousePos = mousepos;
-
-                    //RaycastHit hit;
-                    //Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
-                    //if (Physics.Raycast(ray, out hit))
-                    //{
-                    //    mPos = hit.point;
-                    //}
+                    
                     current.Use();
                 }
                 break;
@@ -379,7 +360,7 @@ public class NavGridTool : MonoBehaviour
                     else if (bEndPick)
                         EndPt = mPos;
 
-                    GetPath();
+                    FindPath();
                 }
                 break;
             case EventType.MouseDrag:
@@ -415,7 +396,7 @@ public class NavGridTool : MonoBehaviour
         }
     }
 
-    private static void GetPath()
+    private static void FindPath()
     {
         if (m_grid != null)
         {
@@ -426,6 +407,7 @@ public class NavGridTool : MonoBehaviour
         }
             
     }
+
     private static void FlushWalkable(Vector3 center, bool bWalkable = false)
     {
         if (m_grid == null)
@@ -445,12 +427,12 @@ public class NavGridTool : MonoBehaviour
         }
     }
 
-    private static void FlushZ(Vector3 center,float zHight)
+    private static void FlushZ(Vector3 center, float zHight)
     {
         if (m_grid == null)
             return;
 
-        for (int j = (int)((center.z - BrushSize*0.5) / MeshSize > 0 ? (center.z - BrushSize * 0.5) / MeshSize : 0) + 1; (j < Columns / MeshSize) && j < (center.z + BrushSize * 0.5) / MeshSize; ++j)
+        for (int j = (int)((center.z - BrushSize * 0.5) / MeshSize > 0 ? (center.z - BrushSize * 0.5) / MeshSize : 0) + 1; (j < Columns / MeshSize) && j < (center.z + BrushSize * 0.5) / MeshSize; ++j)
         {
             if (j + 1 >= Columns / MeshSize)
                 break;
@@ -462,58 +444,7 @@ public class NavGridTool : MonoBehaviour
                 m_hightFields[i][j] = zHight;
             }
         }
-    }
-
-    //private static Vector3 SceneScreenToWorldPoint(Vector3 sceneScreenPoint)
-    //{
-    //    Camera sceneCamera = m_sceneView.camera;
-    //    float screenHeight = sceneCamera.orthographicSize * 2f;
-    //    float screenWidth = screenHeight * sceneCamera.aspect;
-
-    //    Vector3 worldPos = new Vector3(
-    //        (sceneScreenPoint.x / sceneCamera.pixelWidth) * screenWidth - screenWidth * 0.5f,
-    //        0f,
-    //        ((-(sceneScreenPoint.y) / sceneCamera.pixelHeight) * screenHeight + screenHeight * 0.5f)
-    //        );
-
-    //    worldPos += sceneCamera.transform.position;
-
-    //    return worldPos;
-    //}
-
-    /** 
- * 读取文本文件 
- * path：读取文件的路径 
- * name：读取文件的名称 
- */
-    ArrayList LoadFile(string path, string name)
-    {
-        //使用流的形式读取  
-        StreamReader sr = null;
-        try
-        {
-            sr = File.OpenText(path + "//" + name);
-        }
-        catch (Exception e)
-        {
-            //路径与名称未找到文件则直接返回空  
-            return null;
-        }
-        string line;
-        ArrayList arrlist = new ArrayList();
-        while ((line = sr.ReadLine()) != null)
-        {
-            //一行一行的读取  
-            //将每一行的内容存入数组链表容器中  
-            arrlist.Add(line);
-        }
-        //关闭流  
-        sr.Close();
-        //销毁流  
-        sr.Dispose();
-        //将数组链表容器返回  
-        return arrlist;
-    }
+    } 
 
     private static string GetFilePath()
     {

@@ -14,13 +14,12 @@ namespace AlphaWork.Editor
         int m_rows = 64;
         float m_brushSize = 5.0f;
         float m_viewSize = 40.0f;
-        float m_meshSize = 0.5f;
-        //float m_fMeshSize = 0.0f;
+        float m_meshSize = 1f;
         bool m_bAccurateToggle = false;
         bool m_bOperateToggle = false;
         float m_RayHeightField = 50.0f;
-        bool m_bOpenBlock = true;
-        bool m_bCloseBlock = false;
+        bool m_bOpenBlock = false;
+        bool m_bCloseBlock = true;
         bool m_bFlushHeight = false;
         float m_fFlushHight = 0.0f;
         Vector3 m_StartPt = new Vector3();
