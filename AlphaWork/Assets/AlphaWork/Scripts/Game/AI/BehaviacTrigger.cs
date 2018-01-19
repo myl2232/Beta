@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using UnityGameFramework.Runtime;
 
 namespace AlphaWork
 {
@@ -35,8 +36,27 @@ namespace AlphaWork
 //             }
         }
 
+        private bool ValidSense(EntityObject sensor,int result)
+        {
+            AvatarData dt = sensor.Data as AvatarData;
+            Entity etResult = GameEntry.Entity.GetEntity(result);
+            if (etResult == null)
+                return false;
+            EntityObject obResult = etResult.Logic as EntityObject;
+            TargetableObjectData trData = obResult.Data as TargetableObjectData;
+            if (trData == null)
+                return false;
+            if (dt.Camp != trData.Camp)
+                return true;
+
+            return false;
+        }
+
         public void OnSensorAI(EntityObject sensor, int result)
         {
+            if (!ValidSense(sensor, result))
+                return;
+
             AvatarEntity et = sensor.Entity.Logic as AvatarEntity;
             Enemy etEnemy = sensor.Entity.Logic as Enemy;
 

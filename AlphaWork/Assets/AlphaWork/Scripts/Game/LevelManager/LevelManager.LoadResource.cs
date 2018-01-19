@@ -40,8 +40,7 @@ namespace AlphaWork
                     for (int j = 0; j < 1; ++j)
                     {
                         sPt = new Vector3(128 + i * 8 + j * 5, 0.5f, 128 + j * 4);
-                        GameEntry.Entity.ShowAvatar(new AvatarData(GameEntry.Entity.GenerateSerialId(), 80003,
-                            UnityEngine.Random.Range(1, 10) > 5 ? CampType.Enemy : CampType.Enemy2, true)
+                        GameEntry.Entity.ShowAvatar(new AvatarData(GameEntry.Entity.GenerateSerialId(), 80003, CampType.Enemy)
                         {
                             Position = sPt,
                             Scale = new Vector3(3.0f, 3.0f, 3.0f),

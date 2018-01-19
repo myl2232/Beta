@@ -14,19 +14,19 @@ namespace AlphaWork
         public void RefreshAgent(Vector3 pos)
         {
             return;
-            GameObject gbAgent = ObjectUtility.GetAssistObject() as GameObject;
-            if (gbAgent)
-            {
-                GameObject transObjet = ObjectUtility.GetTargetAgent() as GameObject;
-                trans = transObjet.transform;
-                trans.position = new Vector3(pos.x, UnityEngine.Random.Range(pos.y, pos.y + 5), pos.z);
+            //GameObject gbAgent = ObjectUtility.GetAssistObject() as GameObject;
+            //if (gbAgent)
+            //{
+            //    GameObject transObjet = ObjectUtility.GetTargetAgent() as GameObject;
+            //    trans = transObjet.transform;
+            //    trans.position = new Vector3(pos.x, UnityEngine.Random.Range(pos.y, pos.y + 5), pos.z);
 
-                AICharacterControl ctl = gbAgent.GetComponent<AICharacterControl>();
-                if (ctl)
-                {
-                    ctl.target = trans;
-                }
-            }
+            //    AICharacterControl ctl = gbAgent.GetComponent<AICharacterControl>();
+            //    if (ctl)
+            //    {
+            //        ctl.target = trans;
+            //    }
+            //}
         }
 
         public void RefreshEnemy(GameObject target, GameObject dest, Vector3 pos)

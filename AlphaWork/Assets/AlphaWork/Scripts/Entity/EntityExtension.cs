@@ -114,8 +114,8 @@ namespace AlphaWork
             data.AssetName = drEntity.AssetName;
             data.AttachName = drEntity.AttachName;
             data.AttachOffset = drEntity.AttachOffset;
-            data.AttachRot = drEntity.AttachRot;            
-
+            data.AttachRot = drEntity.AttachRot;
+            data.Flush();
             if (drEntity == null)
             {
                 Log.Warning("Can not load entity id '{0}' from data table.", data.TypeId.ToString());

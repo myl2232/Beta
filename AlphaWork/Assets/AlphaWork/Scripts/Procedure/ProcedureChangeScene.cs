@@ -87,7 +87,7 @@ namespace AlphaWork
             // 卸载navigation
             if (GameEntry.UseNavGrid)
             {                
-                GameEntry.NavGrid.Close();
+                //GameEntry.NavGrid.Close();
             }
             else
             {
@@ -131,7 +131,7 @@ namespace AlphaWork
 
             // navigation
             if (GameEntry.UseNavGrid)
-                GameEntry.NavGrid.ReadData(ne.SceneAssetName);//Nav_Grid
+                GameEntry.NavGrid.ReadData();//Nav_Grid
             else
                 m_navHelper = new NavigationHelper(ne.SceneAssetName);//Recast_Nav
             

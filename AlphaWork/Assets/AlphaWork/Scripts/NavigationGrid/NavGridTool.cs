@@ -439,7 +439,7 @@ public class NavGridTool : MonoBehaviour
             {
                 if (i + 1 >= Rows / MeshSize)
                     break;
-                Navigation.Grid.Position pPos = new Navigation.Grid.Position(i, j);
+                //Navigation.Grid.Position pPos = new Navigation.Grid.Position(i, j);
                 m_hightFields[i][j] = zHight;
             }
         }

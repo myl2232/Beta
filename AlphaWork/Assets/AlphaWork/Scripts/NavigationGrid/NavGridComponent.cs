@@ -88,7 +88,7 @@ namespace AlphaWork
             m_ActiveGrid = null;
         }
 
-        public int FindPath(Vector3 startPt, Vector3 endPt, ref Vector3[] path)
+        public Vector3[] FindPath(Vector3 startPt, Vector3 endPt)
         {
             if (m_ActiveGrid != null)
             {
@@ -97,7 +97,27 @@ namespace AlphaWork
                 Navigation.Grid.Position et = new Navigation.Grid.Position((int)endPt.x, (int)endPt.z);
                 m_ActiveGrid.FindPath(st, et, m_path);
             }
-            return GetSmoothPath(ref path);
+
+            Vector3[] path = new Vector3[m_path.Count];
+            int index = 0;
+            IEnumerator iter = m_path.GetEnumerator();
+            while (iter.MoveNext())
+            {
+                Navigation.Grid.Position pos = (Navigation.Grid.Position)iter.Current;
+                path[index++] = new Vector3(pos.Row, m_hightFields[pos.Row][pos.Column], pos.Column);
+            }
+            return path;
+        }
+
+        public bool IsWalkable(Vector3 pos)
+        {
+            if (m_ActiveGrid != null)
+            {
+                Navigation.Grid.Position st = new Navigation.Grid.Position((int)pos.x, (int)pos.z);
+                return m_ActiveGrid[st];
+            }
+            else
+                return false;
         }
 
         private int GetSmoothPath(ref Vector3[] path)

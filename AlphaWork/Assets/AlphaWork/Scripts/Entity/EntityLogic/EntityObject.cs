@@ -31,7 +31,7 @@ namespace AlphaWork
             private set;
         }
 
-        protected EntityData Data
+        public EntityData Data
         {
             get { return m_EntityData; }
             private set {;}

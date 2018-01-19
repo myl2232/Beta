@@ -22,7 +22,7 @@ namespace AlphaWork
             m_lastTime = 0;
             //ai
             m_agent = new EnemyAgent();
-            bool bRet = m_agent.btload("EnemyAvatar");
+            m_agent.btload("EnemyAvatar");
             m_agent.btsetcurrent("EnemyAvatar");
             m_agent.ParentId = Id;
             m_agent._set_senseRadius((Data as NPCData).SenseRadius);

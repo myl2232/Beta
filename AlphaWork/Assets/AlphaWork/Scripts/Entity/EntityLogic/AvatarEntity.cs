@@ -23,8 +23,33 @@ namespace AlphaWork
             get { return m_agent; }
         }
         private float m_lastTime;
-        private int m_senseHit;
-        
+        //private int m_senseHit;
+
+        public void AttackSkill01()
+        {
+            int attId = GameEntry.Entity.GenerateSerialId();
+            Vector3 vDir = GameEntry.Entity.GetEntity(Agent.SenseResult).transform.position - transform.position;
+            GameEntry.Entity.ShowEffect(new EffectData(vDir, transform, attId, 60001)
+            {
+                //Position = m_parent.transform.position + m_parent.transform.forward.normalized*2,
+            });
+        }
+
+        public void AttackSkill02()
+        {
+            int attId = GameEntry.Entity.GenerateSerialId();
+            Vector3 vDir = GameEntry.Entity.GetEntity(Agent.SenseResult).transform.position - transform.position;
+            GameEntry.Entity.ShowEffect(new EffectData(vDir, transform, attId, 60002)
+            {
+                //Position = m_parent.transform.position + m_parent.transform.forward.normalized*2,
+            });
+        }
+
+        public void AttackSkill03()
+        {
+
+        }
+
         public AvatarEntity()
         {
 //             GameEntry.Event.Subscribe(UIAlphaEventArgs.EventId, OnTestAlpha);
@@ -34,17 +59,17 @@ namespace AlphaWork
             m_Parts = new List<GameObject>();
  
             m_lastTime = 0;
-            m_senseHit = 0;
+            //m_senseHit = 0;
         }
         
         // Use this for initialization
         void Start()
         {
-            if ((Data as AvatarData).AlowMove)
+            //if ((Data as AvatarData).AlowMove)
             {
                 //ai
                 m_agent = new EnemyAgent();
-                bool bRet = m_agent.btload("EnemyAvatar");
+                m_agent.btload("EnemyAvatar");
                 m_agent.btsetcurrent("EnemyAvatar");
                 m_agent.ParentId = Id;
                 m_agent._set_senseRadius((Data as AvatarData).SenseRadius);

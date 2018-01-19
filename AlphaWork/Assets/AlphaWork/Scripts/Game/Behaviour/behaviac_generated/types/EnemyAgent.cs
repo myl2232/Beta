@@ -54,13 +54,8 @@ public class EnemyAgent : BaseAgent
 
         m_moveTarget.Pause();
         m_pAnimator.SetFloat("BlendAttack", attackParam);
-        m_pAnimator.SetTrigger("Attack");
-        int attId = GameEntry.Entity.GenerateSerialId();
-        Vector3 vDir = GameEntry.Entity.GetEntity(m_senseResult).transform.position - m_parent.transform.position;        
-        GameEntry.Entity.ShowEffect(new EffectData(vDir, m_parent.transform, attId, 60001)
-        {
-            //Position = m_parent.transform.position + m_parent.transform.forward.normalized*2,
-        });
+        m_pAnimator.SetTrigger("Attack");        
+       
         ///<<< END WRITING YOUR CODE
 	}
 
@@ -252,8 +247,8 @@ public class EnemyAgent : BaseAgent
     protected float GetMoveOffsetZ()
     {
         return 0;
-        GameObject gb = m_parent.Entity.Handle as GameObject;
-        return -gb.GetComponent<CapsuleCollider>().height * 0.5f;
+        //GameObject gb = m_parent.Entity.Handle as GameObject;
+        //return -gb.GetComponent<CapsuleCollider>().height * 0.5f;
     }
 
     protected void DispatchActions()

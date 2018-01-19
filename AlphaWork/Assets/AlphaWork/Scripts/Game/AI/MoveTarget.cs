@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -35,7 +36,8 @@ namespace AlphaWork
                 Vector3 dir = Vector3.Normalize(pNext - pCur);
                 Vector3 newPos = pCur + dir * Speed * Scale * Time.deltaTime;
                 Vector3 newDir = Vector3.Normalize(pNext - newPos);
-                if(Vector3.Dot(dir,newDir) > 0)//not go to target yet
+
+                if(Vector3.Dot(dir,newDir) > 0 && IsWalkable(newPos))//not go to target yet
                 {
                     m_trans.transform.position = newPos;
                 }
@@ -45,6 +47,13 @@ namespace AlphaWork
                     m_curIdx++;
                 }                
             }
+            
+            for(int i = 0; i < smoothPath.Length;++i)
+            {
+                if (i < smoothPath.Length - 1)
+                    Debug.DrawLine(smoothPath[i], smoothPath[i + 1],Color.blue);
+            }
+            
 
         }
 
@@ -58,14 +67,31 @@ namespace AlphaWork
             pathNum = 0;
 
             if (GameEntry.UseNavGrid)
-               GameEntry.NavGrid.FindPath(startPos, endPos, ref smoothPath);
-            else
-                RecastNavigationDllImports.PathFind(startPos, endPos, ref pathNum, ref smoothPath);
-            
-            if(pathNum == 0)
             {
-                pathNum = 1;
-                smoothPath[0] = endPos;
+                smoothPath = GameEntry.NavGrid.FindPath(startPos, endPos);
+                pathNum = smoothPath.Length;
+            }
+            else
+            {
+                smoothPath = new Vector3[512];
+                RecastNavigationDllImports.PathFind(startPos, endPos, ref pathNum, ref smoothPath);
+                if (pathNum == 0)
+                {
+                    pathNum = 1;
+                    smoothPath[0] = endPos;
+                }
+            }
+        }
+
+        private bool IsWalkable(Vector3 pos)
+        {
+            if (GameEntry.UseNavGrid)
+            {
+                return GameEntry.NavGrid.IsWalkable(pos);
+            }
+            else
+            {
+                return true;
             }
         }
 

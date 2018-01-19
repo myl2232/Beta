@@ -63,16 +63,38 @@ namespace AlphaWork
             Forward = forward;
             Parent = parent;
         }
+
         // Use this for initialization
         void Start()
         {
-
+            
         }
-
+        
         // Update is called once per frame
         void Update()
         {
 
+        }
+
+        public void Flush()
+        {
+            Transform attachTrans = AssetUtility.FindChild(Parent, AttachName);
+            Vector3 rot = new Vector3();
+            GetParseString(AttachRot, ref rot);
+            Vector3 offset = new Vector3();
+            GetParseString(AttachRot, ref offset);
+            Position = attachTrans.position + offset;
+            Rotation = Quaternion.Euler(rot.x, rot.y, rot.z);
+        }
+
+        private void GetParseString(string str,ref Vector3 vResult)
+        {            
+            str = str.Remove(0,1);
+            str = str.Remove(str.Length - 1,1);
+            string[] result = str.Split(',');
+            vResult.x = Convert.ToSingle(result[0]);
+            vResult.y = Convert.ToSingle(result[1]);
+            vResult.z = Convert.ToSingle(result[2]);            
         }
     }
 }

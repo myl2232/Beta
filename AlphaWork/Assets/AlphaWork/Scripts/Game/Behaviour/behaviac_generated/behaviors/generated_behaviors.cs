@@ -684,7 +684,7 @@ namespace behaviac
 		}
 		protected override int GetWeight(Agent pAgent)
 		{
-			return 30;
+			return 35;
 		}
 	}
 
@@ -697,7 +697,7 @@ namespace behaviac
 		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
 		{
 			EBTStatus result = EBTStatus.BT_SUCCESS;
-			float opr = 0.2f;
+			float opr = 0f;
 			pAgent.SetVariable<float>("attackParam", 2100782252u, opr);
 			return result;
 		}
@@ -725,7 +725,7 @@ namespace behaviac
 		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
 		{
 			EBTStatus result = EBTStatus.BT_SUCCESS;
-			float opr = 0.6f;
+			float opr = 0.5f;
 			pAgent.SetVariable<float>("attackParam", 2100782252u, opr);
 			return result;
 		}
@@ -740,7 +740,7 @@ namespace behaviac
 		}
 		protected override int GetWeight(Agent pAgent)
 		{
-			return 35;
+			return 15;
 		}
 	}
 
@@ -753,7 +753,7 @@ namespace behaviac
 		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
 		{
 			EBTStatus result = EBTStatus.BT_SUCCESS;
-			float opr = 0.8f;
+			float opr = 1f;
 			pAgent.SetVariable<float>("attackParam", 2100782252u, opr);
 			return result;
 		}
