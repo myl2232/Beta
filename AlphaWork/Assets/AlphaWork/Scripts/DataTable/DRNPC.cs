@@ -50,9 +50,10 @@ namespace AlphaWork
             index++;
             Id = int.Parse(text[index++]);
             index++;
-            m_Data.SenseRadius = float.Parse(text[index]);
-            index++;
-            m_Data.AttackRadius = float.Parse(text[index]);
+            m_Data.MaxHP = int.Parse(text[index++]);
+            m_Data.SenseRadius = float.Parse(text[index++]);
+            m_Data.AttackRadius = float.Parse(text[index++]);
+            
         }
     }
 }

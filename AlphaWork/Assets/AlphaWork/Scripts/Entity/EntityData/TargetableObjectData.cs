@@ -52,9 +52,9 @@ namespace AlphaWork
         /// <summary>
         /// 最大生命。
         /// </summary>
-        public abstract int MaxHP
+        public int MaxHP
         {
-            get;
+            get;set;
         }
         public float SenseRadius
         {

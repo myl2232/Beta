@@ -8,11 +8,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 400004}
-  - component: {fileID: 11459736}
-  - component: {fileID: 11400000}
   - component: {fileID: 9592804}
   - component: {fileID: 5400000}
   - component: {fileID: 13681452}
+  - component: {fileID: 114362521594936948}
+  - component: {fileID: 114604288296077856}
   m_Layer: 0
   m_Name: RPG-Character
   m_TagString: Player
@@ -1641,51 +1641,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad159c285c6e6ae4caa1641e7eff37c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  targetDashDirection: {x: 0, y: 0, z: 0}
-  sceneCamera: {fileID: 0}
-  goal: {fileID: 0}
-  gravity: -9.8
-  canJump: 0
-  isGrounded: 0
-  jumpSpeed: 9
-  doublejumpSpeed: 10
-  canDoubleJump: 0
-  isDoubleJumping: 0
-  inAirSpeed: 8
-  rollSpeed: 8
-  rollduration: 0.5
-  canMove: 1
-  walkSpeed: 2
-  runSpeed: 8
-  weapon: 0
-  isRelax: 0
-  canAction: 1
-  isStrafing: 0
-  isDead: 0
-  knockbackMultiplier: 7
---- !u!114 &11459736
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100004}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e990a4282dd83124da5fbc76f30e1e55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &13681452
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1807,3 +1762,56 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100004}
   m_IsPrefabParent: 1
+--- !u!114 &114362521594936948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5817c50661b70d54a888fde0f6c2b55c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targetDashDirection: {x: 0, y: 0, z: 0}
+  sceneCamera: {fileID: 0}
+  goal: {fileID: 0}
+  gravity: -9.8
+  canJump: 0
+  isGrounded: 0
+  jumpSpeed: 12
+  doublejumpSpeed: 12
+  canDoubleJump: 0
+  isDoubleJumping: 0
+  inAirSpeed: 8
+  rollSpeed: 8
+  rollduration: 0
+  canMove: 1
+  walkSpeed: 3.35
+  runSpeed: 12
+  weapon: 0
+  isRelax: 0
+  canAction: 1
+  isStrafing: 0
+  isDead: 0
+  knockbackMultiplier: 1
+  inputAttackR: 0
+  inputAttackL: 0
+  inputCastL: 0
+  inputCastR: 0
+--- !u!114 &114604288296077856
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19a9b6bdeb2f38347b1a4e6efe74d436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkeletonRoot: EthanHips
+  Duration: 0.2
+  Amplitude: {x: 10, y: 10, z: 10}
+  Frequence: {x: 15, y: 15, z: 15}

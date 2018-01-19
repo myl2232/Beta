@@ -6,8 +6,8 @@ using UnityStandardAssets.CrossPlatformInput;
 
 namespace AlphaWork
 {
-    public class Ethan : EntityObject
-	{        
+    public class Ethan : TargetableObject
+	{
         // Use this for initialization
         void Start()
 		{
@@ -91,6 +91,45 @@ namespace AlphaWork
                 ctl.inputCastR = true;
             }
         }
+        protected override void OnDead()
+        {
+            GameObject gb = GameBase.MainEthan.Handle as GameObject;
+            RPGCharacterControllerFREE ctl = gb.GetComponent<RPGCharacterControllerFREE>();
+            if (ctl)
+            {
+                ctl.inputDeath = true;
+            }
+            else
+            {
+                Animator gAnimator = Entity.gameObject.GetComponent<Animator>();
+                if (gAnimator)
+                {
+                    gAnimator.SetBool("Dead", true);
+                }
+            }
+        }
+
+        protected override void OnHurt()
+        {
+            GameObject gb = GameBase.MainEthan.Handle as GameObject;
+            RPGCharacterControllerFREE ctl = gb.GetComponent<RPGCharacterControllerFREE>();
+            if (ctl)
+            {
+                ctl.inputLightHit = true;
+            }
+            else
+            {
+                Animator gAnimator = Entity.gameObject.GetComponent<Animator>();
+                if (gAnimator)
+                {
+
+                }
+            }
+        }
+        //public override ImpactData GetImpactData()
+        //{
+        //    throw new System.NotImplementedException();
+        //}
     }
 }
 

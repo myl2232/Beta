@@ -19,7 +19,7 @@ namespace AlphaWork
         /// <summary>
         /// 伤害值。
         /// </summary>
-        public float HitHP
+        public int HitHP
         {
             get;
             private set;
@@ -73,7 +73,7 @@ namespace AlphaWork
             index++;
             Id = int.Parse(text[index++]);
             AssetName = text[index++];
-            HitHP = float.Parse(text[index++]);
+            HitHP = int.Parse(text[index++]);
             Speed = float.Parse(text[index++]);
             LifeTime = float.Parse(text[index++]);
             AttachName = text[index++];

@@ -27,15 +27,15 @@ namespace AlphaWork
 
         }
 
-        /// <summary>
-        /// 最大生命。
-        /// </summary>
-        public override int MaxHP
-        {
-            get
-            {
-                return m_MaxHP;
-            }
-        }
+        ///// <summary>
+        ///// 最大生命。
+        ///// </summary>
+        //public override int MaxHP
+        //{
+        //    get
+        //    {
+        //        return m_MaxHP;
+        //    }
+        //}
     }
 }

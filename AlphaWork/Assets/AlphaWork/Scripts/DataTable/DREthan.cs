@@ -41,7 +41,9 @@ namespace AlphaWork
 			int index = 0;
 			index++;
 			Id = int.Parse(text[index++]);
-		}
+            MaxHP = int.Parse(text[index++]);
+
+        }
 	}
 
 }

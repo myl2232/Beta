@@ -98,12 +98,12 @@ namespace AlphaWork
             get { return m_Attachment; }
             set { m_Attachment = value; }
         }
-        public override int MaxHP
-        {
-            get
-            {
-                return 0;
-            }
-        }
+        //public override int MaxHP
+        //{
+        //    get
+        //    {
+        //        return 0;
+        //    }
+        //}
     }
 }

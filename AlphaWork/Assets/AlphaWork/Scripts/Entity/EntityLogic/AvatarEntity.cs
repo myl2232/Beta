@@ -11,7 +11,7 @@ using UnityStandardAssets.CrossPlatformInput;
 
 namespace AlphaWork
 {
-    public class AvatarEntity : EntityObject
+    public class AvatarEntity : TargetableObject
     {
         private int m_partCount;
         private GameObject m_skeleton;
@@ -24,6 +24,24 @@ namespace AlphaWork
         }
         private float m_lastTime;
         //private int m_senseHit;
+
+        protected override void OnDead()
+        {
+            Animator gAnimator = Entity.gameObject.GetComponent<Animator>();
+            if (gAnimator)
+            {
+                gAnimator.SetBool("Dead", true);
+            }
+        }
+
+        protected override void OnHurt()
+        {
+            Animator gAnimator = Entity.gameObject.GetComponent<Animator>();
+            if (gAnimator)
+            {
+                gAnimator.SetTrigger("Hurt");
+            }
+        }
 
         public void AttackSkill01()
         {

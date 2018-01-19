@@ -19,9 +19,9 @@ namespace AlphaWork
             }
         }
 
-        public abstract ImpactData GetImpactData();
+        //public abstract ImpactData GetImpactData();
 
-        public void ApplyDamage(EntityObject attacker, int damageHP)
+        public void ApplyDamage(int damageHP)
         {
             float fromHPRatio = m_TargetableObjectData.HPRatio;
             m_TargetableObjectData.HP -= damageHP;
@@ -31,9 +31,11 @@ namespace AlphaWork
                 //GameEntry.HPBar.ShowHPBar(this, fromHPRatio, toHPRatio);
             }
 
+            OnHurt();
+
             if (m_TargetableObjectData.HP <= 0)
             {
-                OnDead(attacker);
+                OnDead();
             }
         }
 
@@ -55,11 +57,14 @@ namespace AlphaWork
             }
         }
 
-        protected virtual void OnDead(EntityObject attacker)
+        protected virtual void OnDead()
         {
-            GameEntry.Entity.HideEntity(this);
+            //GameEntry.Entity.HideEntity(this);
         }
-
+        protected virtual void OnHurt()
+        {
+            //GameEntry.Entity.HideEntity(this);
+        }
         private void OnTriggerEnter(Collider other)
         {
             EntityObject entity = other.gameObject.GetComponent<EntityObject>();

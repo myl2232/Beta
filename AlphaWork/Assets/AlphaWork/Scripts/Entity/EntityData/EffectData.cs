@@ -11,7 +11,7 @@ namespace AlphaWork
           /// <summary>
           /// 伤害值。
           /// </summary>
-          public float HitHP
+          public int HitHP
           {
               get;
               set;

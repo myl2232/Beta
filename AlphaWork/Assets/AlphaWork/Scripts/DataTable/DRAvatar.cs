@@ -16,6 +16,15 @@ namespace AlphaWork
 			set;
 		}
 
+  //      /// <summary>
+		///// 最大生命值。
+		///// </summary>
+		//public int MaxHP
+  //      {
+  //          get;
+  //          private set;
+  //      }
+
         private AvatarData m_Data = new AvatarData();
         public AvatarData Data
         {
@@ -40,20 +49,18 @@ namespace AlphaWork
 			string[] text = DataTableExtension.SplitDataRow(dataRowText);
 			int index = 0;
             index++;
-            Id = int.Parse(text[index]);
-            index++;
-            string str = text[index];
-			m_Data.Skeleton = str;
-            for (int i = 3; i < text.Length-2; ++i)
-            {
-                index++;
+            Id = int.Parse(text[index++]);
+            m_Data.SenseRadius = float.Parse(text[index++]);
+            m_Data.AttackRadius = float.Parse(text[index++]);
+            m_Data.MaxHP = int.Parse(text[index++]);          
+			m_Data.Skeleton = text[index++];
+
+            for (int i = index; i < text.Length; ++i,index++)
+            {                
                 m_Data.AddPart(text[index]);
             }
-            index++;
-            m_Data.SenseRadius = float.Parse(text[index]);
-            index++;
-            m_Data.AttackRadius = float.Parse(text[index]);
         }
-	}
+
+    }
 
 }

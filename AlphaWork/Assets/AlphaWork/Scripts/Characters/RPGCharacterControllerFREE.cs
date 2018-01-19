@@ -38,7 +38,7 @@ public class RPGCharacterControllerFREE : MonoBehaviour{
 	bool doublejumped = false;
 	bool isFalling;
 	bool startFall;
-	float fallingVelocity = -1f;
+	float fallingVelocity = -8f;
 
 	// Used for continuing momentum while in air
 	public float inAirSpeed = 8f;
@@ -84,8 +84,8 @@ public class RPGCharacterControllerFREE : MonoBehaviour{
 	float inputDashVertical = 0f;
 	float inputDashHorizontal = 0f;
 	float inputBlock = 0f;
-	bool inputLightHit;
-	bool inputDeath;
+	public bool inputLightHit;
+	public bool inputDeath;
 	public bool inputAttackR;
 	public bool inputAttackL;
 	public bool inputCastL;
@@ -103,13 +103,14 @@ public class RPGCharacterControllerFREE : MonoBehaviour{
         m_Joystack = FindObjectOfType<JoystackCc>();//myl
     }
 
+    //外部参与输入的都注释掉
 	void Inputs(){
 		inputDashHorizontal = Input.GetAxisRaw("DashHorizontal");
 		inputDashVertical = Input.GetAxisRaw("DashVertical");
         inputHorizontal = /*Input.GetAxisRaw("Horizontal") +*/ m_Joystack.MovePosiNorm.x;
 		inputVertical = /*Input.GetAxisRaw("Vertical") +*/ m_Joystack.MovePosiNorm.y;
-		inputLightHit = Input.GetButtonDown("LightHit");
-		inputDeath = Input.GetButtonDown("Death");
+		//inputLightHit = Input.GetButtonDown("LightHit");
+		//inputDeath = Input.GetButtonDown("Death");
 // 		inputAttackL = Input.GetButtonDown("AttackL")? Input.GetButtonDown("AttackL"):inputAttackL;
 // 		inputAttackR = Input.GetButtonDown("AttackR") ? Input.GetButtonDown("AttackR") : inputAttackR;
 // 		inputCastL = Input.GetButtonDown("CastL") ? Input.GetButtonDown("CastL") : inputCastL;
@@ -123,6 +124,8 @@ public class RPGCharacterControllerFREE : MonoBehaviour{
         inputAttackR = false;
         inputCastL = false;
         inputCastR = false;
+        inputLightHit = false;
+        inputDeath = false;
     }
 	#endregion
 

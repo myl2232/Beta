@@ -16,6 +16,7 @@ namespace AlphaWork
         private float dist;
         private float spawnTime = 0.0f;
         private Transform tr;
+        private int hitHP;
 
         protected bool bActive;
         public bool Active
@@ -69,6 +70,9 @@ namespace AlphaWork
         private void OnTriggerEnter(Collider other)
         {
             bActive = false;
+            BehaviourShakeHit hitCom = other.GetComponentInParent<BehaviourShakeHit>();
+            if (hitCom)
+                hitCom.OnHit(hitHP);
             GameEntry.Entity.HideEntity(this);
         }
 
@@ -81,6 +85,7 @@ namespace AlphaWork
             transform.forward = data.Forward;
             Transform vTrans = ObjectUtility.FindChild(data.Parent, data.AttachName);
             transform.position = vTrans.position + transform.forward.normalized*4;
+            hitHP = data.HitHP;
         }
 
     }

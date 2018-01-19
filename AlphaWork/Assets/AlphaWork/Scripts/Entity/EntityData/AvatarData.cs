@@ -71,12 +71,13 @@ namespace AlphaWork
             get { return m_parts; }
             set { m_parts = value; }
         }
-        public override int MaxHP
-        {
-            get
-            {
-                return 0;
-            }
-        }
+
+        //public override int MaxHP
+        //{
+        //    get
+        //    {
+        //        return 0;
+        //    }
+        //}
     }
 }

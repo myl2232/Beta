@@ -36,16 +36,18 @@ namespace AlphaWork
                 Vector3 dir = Vector3.Normalize(pNext - pCur);
                 Vector3 newPos = pCur + dir * Speed * Scale * Time.deltaTime;
                 Vector3 newDir = Vector3.Normalize(pNext - newPos);
-
+                Vector3 realPos;
                 if(Vector3.Dot(dir,newDir) > 0 && IsWalkable(newPos))//not go to target yet
                 {
-                    m_trans.transform.position = newPos;
+                    realPos = newPos;
                 }
                 else
                 {
-                    m_trans.transform.position = pNext;
+                    realPos = pNext;
                     m_curIdx++;
-                }                
+                }
+                m_trans.transform.forward = realPos - m_trans.transform.position;
+                m_trans.transform.position = realPos;
             }
             
             for(int i = 0; i < smoothPath.Length;++i)
