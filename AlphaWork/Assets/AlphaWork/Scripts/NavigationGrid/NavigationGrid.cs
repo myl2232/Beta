@@ -216,7 +216,7 @@ namespace Navigation
     }
   }
 
-  class Grid
+  public class Grid
   {
     Node[,] m_grid;
 

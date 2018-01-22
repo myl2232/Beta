@@ -7,8 +7,7 @@ using UnityEngine;
 
 namespace AlphaWork.Editor
 {
-    [CustomEditor(typeof(NavGridTool))]
-    class NavGridToolInspector : UnityEditor.Editor
+    public class NavGridWindow : EditorWindow
     {
         int m_columns = 64;
         int m_rows = 64;
@@ -24,18 +23,40 @@ namespace AlphaWork.Editor
         float m_fFlushHight = 0.0f;
         Vector3 m_StartPt = new Vector3();
         Vector3 m_EndPt = new Vector3();
-        NavGridTool m_gridTool;
-        int layoutExtent = 400;
-        static bool bActive = false;
+        NavGridTool m_gridTool;     
+        bool bActive = false;
+        
+        private NavGridTool.EPaint PaintType = NavGridTool.EPaint.EPAINT_NULL;
+        private bool bStartPick = false;
+        private bool bEndPick = false;
 
-        public override void OnInspectorGUI()
+        [MenuItem("Window/NavGridWindow")]
+        public static void ShowWindow()
         {
-            base.OnInspectorGUI();
-            serializedObject.Update();
+            //Show existing window instance. If one doesn't exist, make one.
+            EditorWindow sWin = EditorWindow.GetWindow(typeof(NavGridWindow));
+            sWin.Show();
+        }
 
-            m_gridTool = (NavGridTool)target;
-            m_gridTool.SyncEvent += OnSync;
+        void Awake()
+        {
+            
+        }
 
+        private void OnEnable()
+        {
+            SceneView.onSceneGUIDelegate += this.OnSceneGUI; 
+        }
+
+        void OnDestroy()
+        {
+            SceneView.onSceneGUIDelegate -= this.OnSceneGUI;
+            if (m_gridTool != null)
+                m_gridTool.IsActive = false;
+        }
+
+        void OnGUI()
+        {
             //GUILayout.BeginArea(new Rect(10, 10 + layoutExtent, 300, 1000));
             bActive = EditorGUILayout.BeginToggleGroup("激活", bActive);
             EditorGUILayout.BeginHorizontal();
@@ -121,53 +142,151 @@ namespace AlphaWork.Editor
             //GUILayout.EndArea();
             EditorGUILayout.EndToggleGroup();
 
-            Sysnc();
+            if (bActive)
+                Sysnc();
+        }
+        
+
+        public void OnSceneGUI(SceneView sceneView)
+        {
+            var current = Event.current;
+            int button = Event.current.button;
+
+            int controlID = GUIUtility.GetControlID(FocusType.Passive);
+            if (bActive)
+            {
+                if (current.type == EventType.Layout)
+                    HandleUtility.AddDefaultControl(controlID);
+            }
+            else
+            {
+                if(m_gridTool != null)
+                    m_gridTool.m_grid = null;
+            }
+            switch (current.type)
+            {
+                case EventType.MouseMove:
+                    {
+
+                        current.Use();
+                    }
+                    break;
+                case EventType.MouseUp:
+                    //鼠标弹起
+                    {
+                        bStartPick = false;
+                        bEndPick = false;
+                    }
+                    break;
+                case EventType.MouseDown:
+                    //鼠标按下
+                    {
+                        if (m_gridTool == null)
+                            return;
+
+                        RaycastHit hit;
+                        Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
+                        if (Physics.Raycast(ray, out hit))
+                        {
+                            m_gridTool.mPos = hit.point;
+                        }
+
+                        if (bStartPick)
+                            m_gridTool.StartPt = m_gridTool.mPos;
+                        else if (bEndPick)
+                            m_gridTool.EndPt = m_gridTool.mPos;
+
+                        m_gridTool.FindPath();
+                    }
+                    break;
+                case EventType.MouseDrag:
+                    //鼠标拖
+                    {
+                        if (m_gridTool == null)
+                            return;
+
+                        RaycastHit hit;
+                        Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
+                        if (Physics.Raycast(ray, out hit))
+                        {
+                            m_gridTool.mPos = hit.point;
+                        }
+
+                        if (button == 0 && Event.current.isMouse && m_bOperateToggle)
+                        {
+                            if (PaintType == NavGridTool.EPaint.EPAINT_OPENBLOCK)
+                            {
+                                m_gridTool.FlushWalkable(m_gridTool.mPos, true);
+                            }
+                            else if (PaintType == NavGridTool.EPaint.EPAINT_CLOSEBLOCK)
+                            {
+                                m_gridTool.FlushWalkable(m_gridTool.mPos, false);
+                            }
+                            else if (PaintType == NavGridTool.EPaint.EPAINT_SETHIGHT)
+                            {
+                                m_gridTool.FlushZ(m_gridTool.mPos, m_fFlushHight);
+                            }
+                        }
+                    }
+                    break;
+            }
         }
 
-        private void Sysnc()
+        private void Sysnc(bool bGenerate = false)
         {
-            NavGridTool.IsActive = bActive;
-            NavGridTool.BrushSize = m_brushSize;
-            NavGridTool.ViewSize = m_viewSize;
-            NavGridTool.MeshSize = m_meshSize;
-            NavGridTool.RayHeightField = m_RayHeightField;
-            NavGridTool.FlushHight = m_fFlushHight;
-            NavGridTool.AccurateHight = m_bAccurateToggle;
-            NavGridTool.Rows = m_rows;
-            NavGridTool.Columns = m_columns;
-            NavGridTool.bOperate = m_bOperateToggle;
-            if (m_bOpenBlock)
-                NavGridTool.PaintType = NavGridTool.EPaint.EPAINT_OPENBLOCK;
-            else if (m_bCloseBlock)
-                NavGridTool.PaintType = NavGridTool.EPaint.EPAINT_CLOSEBLOCK;
-            else
-                NavGridTool.PaintType = NavGridTool.EPaint.EPAINT_SETHIGHT;
+            if (m_gridTool == null)
+            {
+                m_gridTool = FindObjectOfType<NavGridTool>();
+                m_gridTool.SyncEvent += OnSync;
+            }
+            
+            m_gridTool.IsActive = bActive;
+            m_gridTool.BrushSize = m_brushSize;
+            m_gridTool.ViewSize = m_viewSize;
+            if(bGenerate)
+                m_gridTool.MeshSize = m_meshSize;
+            m_gridTool.RayHeightField = m_RayHeightField;
+            m_gridTool.FlushHight = m_fFlushHight;
+            m_gridTool.AccurateHight = m_bAccurateToggle;
+            m_gridTool.Rows = m_rows;
+            m_gridTool.Columns = m_columns;
 
-            m_StartPt = NavGridTool.StartPt;
-            m_EndPt = NavGridTool.EndPt;
+            if (m_bOpenBlock)
+                PaintType = NavGridTool.EPaint.EPAINT_OPENBLOCK;
+            else if (m_bCloseBlock)
+                PaintType = NavGridTool.EPaint.EPAINT_CLOSEBLOCK;
+            else
+                PaintType = NavGridTool.EPaint.EPAINT_SETHIGHT;
+
+            m_gridTool.StartPt = m_StartPt;
+            m_gridTool.EndPt = m_EndPt;
+            
         }
 
         private void OnSync()
-        {            
-            m_brushSize = NavGridTool.BrushSize;
-            m_meshSize = NavGridTool.MeshSize;
-            m_rows = NavGridTool.Rows;
-            m_columns = NavGridTool.Columns;
+        {
+            m_brushSize = m_gridTool.BrushSize;
+            m_meshSize = m_gridTool.MeshSize;
+            m_rows = m_gridTool.Rows;
+            m_columns = m_gridTool.Columns;
         }
 
         private void GenerateMesh()
         {
-            m_gridTool.GenerateMesh();
+            Sysnc(true);
+            m_gridTool.Initialize();            
         }
 
         private void SetStartPt()
         {
-            m_gridTool.SetStartPt();
+            bStartPick = true;
+            bEndPick = false;
         }
 
         private void SetEndPt()
         {
-            m_gridTool.SetEndPt();
+            bEndPick = true;
+            bStartPick = false;
         }
 
         private void ReadData()

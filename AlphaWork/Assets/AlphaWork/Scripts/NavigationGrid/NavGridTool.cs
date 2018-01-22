@@ -18,27 +18,38 @@ public class NavGridTool : MonoBehaviour
     public delegate void SyncBroadcast();
     public event SyncBroadcast SyncEvent;
 
-    private static Navigation.Grid m_grid;
+    public Navigation.Grid m_grid;
 
-    public static float BrushSize;
-    public static float ViewSize;
-    public static float MeshSize;
-    public static float RayHeightField;
-    public static float FlushHight;
-    public static int Rows;
-    public static int Columns;
-    public static bool AccurateHight;
-    public static bool bGenerate = false;
-    public static bool bOperate = false;
-    public static bool bStartPick = false;
-    public static bool bEndPick = false;
-    public static Vector3 StartPt;
-    public static Vector3 EndPt;
-    public static EPaint PaintType = EPaint.EPAINT_NULL;
-    private static List<List<float>> m_hightFields = new List<List<float>>();
-    private static LinkedList<Navigation.Grid.Position> m_path = new LinkedList<Navigation.Grid.Position>();
-    private static Vector3 mPos;
-    private static Transform selTransform;   
+    public float BrushSize
+    { get; set; }
+    public  float ViewSize
+    { get; set; }
+    public  float MeshSize
+    { get; set; }
+    public  float RayHeightField
+    { get; set; }
+    public  float FlushHight
+    { get; set; }
+    public  int Rows
+    { get; set; }
+    public  int Columns
+    { get; set; }
+    public  bool AccurateHight
+    { get; set; }
+    public  Vector3 StartPt
+    { get; set; }
+    public  Vector3 EndPt
+    { get; set; }
+    public  EPaint PaintType
+    { get; set; }
+    public Vector3 mPos
+    { get; set; }
+    public bool IsActive
+    { get; set; }
+
+    private List<List<float>> m_hightFields;
+    private LinkedList<Navigation.Grid.Position> m_path;
+    private  Transform selTransform;
 
     private static string gStrHeader;
     private static int gVersion;
@@ -47,14 +58,20 @@ public class NavGridTool : MonoBehaviour
     {
         Columns = columns;
         Rows = rows;
+        m_hightFields = new List<List<float>>();
+        m_path = new LinkedList<Navigation.Grid.Position>();
     }
 
-    public static void Initialize()
+    public void Initialize()
     {
         int realRow = (int)(Rows / MeshSize);
         int realColumns = (int)(Columns / MeshSize);
-        
-        if(m_grid == null && realRow > 0 && realColumns > 0)
+
+        if(m_hightFields == null)
+            m_hightFields = new List<List<float>>();
+        if(m_path == null)
+            m_path = new LinkedList<Navigation.Grid.Position>();
+        if (/*m_grid == null &&*/ realRow > 0 && realColumns > 0)
             m_grid = new Navigation.Grid(realRow, realColumns);
 
         gStrHeader = "NavigationGrid Header:";
@@ -73,24 +90,6 @@ public class NavGridTool : MonoBehaviour
 		
 	}
 
-    public void GenerateMesh()
-    {
-        Initialize();
-        bGenerate = true;
-    }
-
-    public void SetStartPt()
-    {
-        bStartPick = true;
-        bEndPick = false;
-    }
-
-    public void SetEndPt()
-    {
-        bEndPick = true;
-        bStartPick = false;
-    }
-
     public void ReadData()
     {
         gStrHeader = "NavigationGrid Header:";
@@ -107,7 +106,11 @@ public class NavGridTool : MonoBehaviour
         Columns = binReader.ReadInt32();
         MeshSize = binReader.ReadSingle();
 
-        m_hightFields.Clear();
+        if (m_hightFields == null)
+            m_hightFields = new List<List<float>>();
+        else
+            m_hightFields.Clear();
+
         if (m_grid == null)
             m_grid = new Navigation.Grid(Rows, Columns);
 
@@ -158,12 +161,12 @@ public class NavGridTool : MonoBehaviour
         binWriter.Close();
         fs.Close();
 
-        //temp        
-        string targetPath = GetTargetPath() + "//GalaxyNavFile";
-        System.IO.File.Copy(currentFile, targetPath, true);
+        ////temp        
+        //string targetPath = GetTargetPath() + "//GalaxyNavFile";
+        //System.IO.File.Copy(currentFile, targetPath, true);
     }
 
-    public static void Refresh()
+    public void Refresh()
     {
         m_hightFields.Clear();
         for(int i = 0; i < Rows/MeshSize; ++i)
@@ -176,7 +179,7 @@ public class NavGridTool : MonoBehaviour
         }
     }
 
-    private static float GetZPos(int x, int y, bool bRefresh = false)
+    private float GetZPos(int x, int y, bool bRefresh = false)
     {
         if (!bRefresh)
         {
@@ -198,13 +201,6 @@ public class NavGridTool : MonoBehaviour
         }
 
         return fValue;
-    }
-
-    [InitializeOnLoadMethod]
-    static void Init()
-    {
-        SceneView.onSceneGUIDelegate += OnSceneGUI;
-        Initialize();
     }
 
     private void OnDrawGizmos()
@@ -291,7 +287,7 @@ public class NavGridTool : MonoBehaviour
         Gizmos.DrawCube(EndPt, new Vector3(MeshSize * 0.5f, MeshSize * 0.5f, MeshSize * 0.5f));
 
         //draw path
-        if(m_path.Count > 0)
+        if(m_path != null && m_path.Count > 0)
         {
             IEnumerator iter = m_path.GetEnumerator();
             iter.MoveNext();
@@ -309,97 +305,16 @@ public class NavGridTool : MonoBehaviour
         }
 
     }
-
-
-    public static bool IsActive = true;
-    
-    static void OnSceneGUI(SceneView sceneView)
-    {
-        var current = Event.current;
-        int button = Event.current.button;
-
-        int controlID = GUIUtility.GetControlID(FocusType.Passive);
-        if (IsActive)
-        {
-            if (current.type == EventType.Layout)
-                HandleUtility.AddDefaultControl(controlID);
-        }
-        else
-        {
-            m_grid = null;
-            bGenerate = false;
-        }
-        switch (current.type)
-        {
-            case EventType.MouseMove:
-                {
-                    
-                    current.Use();
-                }
-                break;
-            case EventType.MouseUp:
-                //鼠标弹起
-                {
-                    bStartPick = false;
-                    bEndPick = false;
-                }
-                break;
-            case EventType.MouseDown:
-                //鼠标按下
-                {
-                    RaycastHit hit;
-                    Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
-                    if (Physics.Raycast(ray, out hit))
-                    {
-                        mPos = hit.point;
-                    }
-
-                    if (bStartPick)
-                        StartPt = mPos;
-                    else if (bEndPick)
-                        EndPt = mPos;
-
-                    FindPath();
-                }
-                break;
-            case EventType.MouseDrag:
-                //鼠标拖
-                {
-                    RaycastHit hit;
-                    Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
-                    if (Physics.Raycast(ray, out hit))
-                    {
-                        mPos = hit.point;
-                    }
-                    if (Selection.activeTransform != selTransform)
-                    {
-                        selTransform = Selection.activeTransform;
-                    }
-                    else if (button == 0 && Event.current.isMouse && bOperate )
-                    {
-                        if (PaintType == EPaint.EPAINT_OPENBLOCK)
-                        {
-                            FlushWalkable(mPos, true);
-                        }
-                        else if (PaintType == EPaint.EPAINT_CLOSEBLOCK)
-                        {
-                            FlushWalkable(mPos, false);
-                        }
-                        else if (PaintType == EPaint.EPAINT_SETHIGHT)
-                        {
-                            FlushZ(mPos, FlushHight);
-                        }
-                    }
-                }
-                break;
-        }
-    }
-
-    private static void FindPath()
+       
+    public void FindPath()
     {
         if (m_grid != null)
         {
-            m_path.Clear();
+            if (m_path == null)
+                m_path = new LinkedList<Navigation.Grid.Position>();
+            else
+                m_path.Clear();
+
             Navigation.Grid.Position st = new Navigation.Grid.Position((int)StartPt.x, (int)StartPt.z);
             Navigation.Grid.Position et = new Navigation.Grid.Position((int)EndPt.x, (int)EndPt.z);
             m_grid.FindPath(st,et,m_path);
@@ -407,7 +322,7 @@ public class NavGridTool : MonoBehaviour
             
     }
 
-    private static void FlushWalkable(Vector3 center, bool bWalkable = false)
+    public void FlushWalkable(Vector3 center, bool bWalkable = false)
     {
         if (m_grid == null)
             return;
@@ -426,7 +341,7 @@ public class NavGridTool : MonoBehaviour
         }
     }
 
-    private static void FlushZ(Vector3 center, float zHight)
+    public void FlushZ(Vector3 center, float zHight)
     {
         if (m_grid == null)
             return;
@@ -445,7 +360,7 @@ public class NavGridTool : MonoBehaviour
         }
     } 
 
-    private static float GetTerrainZ(int x, int y)
+    private float GetTerrainZ(int x, int y)
     {
         Terrain[] terrains = FindObjectsOfType(typeof(Terrain)) as Terrain[];
         for (int i = 0; i < terrains.Length; ++i)
@@ -454,22 +369,15 @@ public class NavGridTool : MonoBehaviour
                 return terrains[i].terrainData.GetHeight(x, y);
         }
 
-        //GameObject gbTerrain = GameObject.Find("Terrain") as GameObject;
-        //if (gbTerrain)
-        //{
-        //    Terrain ter = gbTerrain.GetComponent<Terrain>();
-        //    return ter.terrainData.GetHeight(x, y);
-        //}
-
         return 0;
     }
 
-    private static string GetFilePath()
+    private string GetFilePath()
     {
         return Application.dataPath + "//Resources//NavGrid//" + EditorSceneManager.GetActiveScene().name;
     }
 
-    private static string GetTargetPath()
+    private string GetTargetPath()
     {
         return Application.dataPath + "//AlphaWork//Navigations//" + EditorSceneManager.GetActiveScene().name;
     }
