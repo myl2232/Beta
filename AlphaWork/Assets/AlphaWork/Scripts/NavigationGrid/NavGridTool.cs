@@ -162,8 +162,8 @@ public class NavGridTool : MonoBehaviour
         fs.Close();
 
         ////temp        
-        //string targetPath = GetTargetPath() + "//GalaxyNavFile";
-        //System.IO.File.Copy(currentFile, targetPath, true);
+        string targetPath = GetTargetPath() + "//GalaxyNavFile";
+        System.IO.File.Copy(currentFile, targetPath, true);
     }
 
     public void Refresh()

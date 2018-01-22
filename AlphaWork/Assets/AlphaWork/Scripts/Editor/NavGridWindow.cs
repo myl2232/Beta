@@ -25,7 +25,9 @@ namespace AlphaWork.Editor
         Vector3 m_EndPt = new Vector3();
         NavGridTool m_gridTool;     
         bool bActive = false;
-        
+        public Vector3 mousePos = new Vector3();
+
+
         private NavGridTool.EPaint PaintType = NavGridTool.EPaint.EPAINT_NULL;
         private bool bStartPick = false;
         private bool bEndPick = false;
@@ -188,15 +190,15 @@ namespace AlphaWork.Editor
                         Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
                         if (Physics.Raycast(ray, out hit))
                         {
-                            m_gridTool.mPos = hit.point;
+                            mousePos = hit.point;
+                            m_gridTool.mPos = mousePos;
                         }
 
                         if (bStartPick)
-                            m_gridTool.StartPt = m_gridTool.mPos;
+                            m_StartPt = mousePos;
                         else if (bEndPick)
-                            m_gridTool.EndPt = m_gridTool.mPos;
+                            m_EndPt =  mousePos;
 
-                        m_gridTool.FindPath();
                     }
                     break;
                 case EventType.MouseDrag:
@@ -209,22 +211,23 @@ namespace AlphaWork.Editor
                         Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
                         if (Physics.Raycast(ray, out hit))
                         {
-                            m_gridTool.mPos = hit.point;
+                            mousePos = hit.point;
+                            m_gridTool.mPos = mousePos;
                         }
-
+                        
                         if (button == 0 && Event.current.isMouse && m_bOperateToggle)
                         {
                             if (PaintType == NavGridTool.EPaint.EPAINT_OPENBLOCK)
                             {
-                                m_gridTool.FlushWalkable(m_gridTool.mPos, true);
+                                m_gridTool.FlushWalkable(mousePos, true);
                             }
                             else if (PaintType == NavGridTool.EPaint.EPAINT_CLOSEBLOCK)
                             {
-                                m_gridTool.FlushWalkable(m_gridTool.mPos, false);
+                                m_gridTool.FlushWalkable(mousePos, false);
                             }
                             else if (PaintType == NavGridTool.EPaint.EPAINT_SETHIGHT)
                             {
-                                m_gridTool.FlushZ(m_gridTool.mPos, m_fFlushHight);
+                                m_gridTool.FlushZ(mousePos, m_fFlushHight);
                             }
                         }
                     }
@@ -260,7 +263,8 @@ namespace AlphaWork.Editor
 
             m_gridTool.StartPt = m_StartPt;
             m_gridTool.EndPt = m_EndPt;
-            
+
+            m_gridTool.FindPath();
         }
 
         private void OnSync()
