@@ -66,6 +66,10 @@ namespace AlphaWork
         {
             return string.Format("Assets/AlphaWork/Scenes/{0}.unity", assetName);
         }
+        public static string GetVillageScene(string assetName)
+        {
+            return string.Format("Assets/Top-Down city/Demo/{0}.unity", assetName);
+        }
 
         public static string GetNavigationAsset(string assetName)
         {
@@ -87,6 +91,10 @@ namespace AlphaWork
         public static string GetEntityAsset(string assetName)
         {
             return string.Format("Assets/AlphaWork/Entities/{0}.prefab", assetName);
+        }
+        public static string GetEffectAsset2(string assetName)
+        {
+            return string.Format("Assets/AlphaWork/KY_effects/MagicEffectsPackFree/Prefab/{0}.prefab", assetName);
         }
         public static string GetEffectAsset(string assetName)
         {

@@ -29,9 +29,9 @@ namespace AlphaWork
 
             if(GameBase.MainEthan == null)
             {
-                Vector3 offset = new Vector3(8, 5, 0);
-                Camera.main.transform.position = Entity.transform.position + offset;
-                Camera.main.transform.LookAt(Entity.transform);
+                //Vector3 offset = new Vector3(8, 5, 0);
+                //Camera.main.transform.position = Entity.transform.position + offset;
+                //Camera.main.transform.LookAt(Entity.transform);
                 GameBase.MainEthan = Entity;
                 GameObject gb = GameBase.MainEthan.Handle as GameObject;
                 gb.name = "MainEthan";
@@ -41,6 +41,12 @@ namespace AlphaWork
                 {
                     ctl.sceneCamera = Camera.main;
                     ctl.runSpeed = 12;
+                }
+                //主相机要处理遮挡半透的情况
+                OccTransparent oc = Camera.main.GetComponent<OccTransparent>();
+                if(oc)
+                {
+                    oc.m_Hero = gb;
                 }
             }
         }

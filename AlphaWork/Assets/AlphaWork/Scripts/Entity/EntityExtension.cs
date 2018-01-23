@@ -98,7 +98,7 @@ namespace AlphaWork
             entityComponent.ShowEntity(data.Id, typeof(AvatarEntity), drEntity.Data.Skeleton, "Avatar", data);
         }
 
-        public static void ShowEffect(this EntityComponent entityComponent, EffectData data)
+        public static void ShowEffect(this EntityComponent entityComponent, EffectData data,int group = 0)
         {
             if (data == null)
             {
@@ -121,7 +121,8 @@ namespace AlphaWork
                 Log.Warning("Can not load entity id '{0}' from data table.", data.TypeId.ToString());
                 return;
             }
-            entityComponent.ShowEntity(data.Id, typeof(EffectEntity), AssetUtility.GetEffectAsset(drEntity.AssetName), "Effect", data);
+            entityComponent.ShowEntity(data.Id, typeof(EffectEntity), 
+                group>0? AssetUtility.GetEffectAsset2(drEntity.AssetName):AssetUtility.GetEffectAsset(drEntity.AssetName), "Effect", data);
         }
 
         private static void ShowEntity(this EntityComponent entityComponent, Type logicType, string entityGroup, EntityData data)

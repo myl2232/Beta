@@ -253,6 +253,7 @@ public class RPGCharacterControllerFREE : MonoBehaviour{
 	#region UpdateMovement
 
 	void CameraRelativeMovement(){
+        
 		//converts control input vectors into camera facing vectors
 		Transform cameraTransform = sceneCamera.transform;
 		//Forward vector relative to the camera along the x-z plane   

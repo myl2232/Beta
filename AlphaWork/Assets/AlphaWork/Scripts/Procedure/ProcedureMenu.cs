@@ -55,7 +55,7 @@ namespace AlphaWork
                 if (GameEntry.ArMode)
                     sceneId = (int)SceneId.Default;
                 else
-                    sceneId = (int)SceneId.Main;
+                    sceneId = (int)SceneId.Day;//SceneId.Main;
                 procedureOwner.SetData<VarInt>(Constant.ProcedureData.NextSceneId, sceneId);
                 procedureOwner.SetData<VarInt>(Constant.ProcedureData.GameMode, (int)GameMode.Survival);
                 ChangeState<ProcedureChangeScene>(procedureOwner);

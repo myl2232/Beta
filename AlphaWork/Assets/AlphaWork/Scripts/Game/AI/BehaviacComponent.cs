@@ -41,9 +41,8 @@ namespace AlphaWork
 
         public void CleanupBehaviac()
         {
-            //Console.WriteLine("CleanupBehaviac");
-
-            behaviac.Workspace.Instance.Cleanup();
+            if(behaviac.Workspace.Instance != null)
+                behaviac.Workspace.Instance.Cleanup();
         }
 
         private void OnLoadSceneSuccess(object sender, GameEventArgs e)

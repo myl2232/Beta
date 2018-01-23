@@ -6,3 +6,5 @@
 	2	登录场景	Login	2
 	3	主场景	Default	2
 	4	正常主场景	Main	2
+	5	白天	Demo1-Day	2
+	6	夜晚	Demo1-Night	2

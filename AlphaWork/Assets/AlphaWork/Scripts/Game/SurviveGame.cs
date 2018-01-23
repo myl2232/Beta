@@ -41,7 +41,7 @@ namespace AlphaWork
              base.Initialize();
 
             GameEntry.Event.Subscribe(RefreshMainPosArgs.EventId, OnRefreshMainPos);
-            //Alib.Meto();
+            
             GameEntry.Event.Fire(this, new GameStartEventArgs());
             GameEntry.UI.OpenUIForm(UIFormId.MainForm);
 
@@ -70,7 +70,7 @@ namespace AlphaWork
 
             if(MainEthan && !GameEntry.ArMode)
             {
-                Vector3 offset = new Vector3(30, 30, 30);
+                Vector3 offset = new Vector3(5, 5, 5);
                 offset += MainEthan.transform.position;
                 Camera.main.transform.position = offset;
 

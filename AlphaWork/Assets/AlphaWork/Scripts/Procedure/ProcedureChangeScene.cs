@@ -73,7 +73,11 @@ namespace AlphaWork
                 return;
             }
 
-            GameEntry.Scene.LoadScene(AssetUtility.GetSceneAsset(drScene.AssetName), this);
+            if(sceneId > (int)SceneId.Main)
+                GameEntry.Scene.LoadScene(AssetUtility.GetVillageScene(drScene.AssetName), this);
+            else
+                GameEntry.Scene.LoadScene(AssetUtility.GetSceneAsset(drScene.AssetName), this);
+
             m_BackgroundMusicId = drScene.BackgroundMusicId;
         }
 

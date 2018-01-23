@@ -26,5 +26,15 @@
         /// 主场景。
         /// </summary>
         Main = 4,
+
+        /// <summary>
+        /// 白天城镇。
+        /// </summary>
+        Day = 5,
+
+        /// <summary>
+        /// 夜晚城镇。
+        /// </summary>
+        Night = 6,
     }
 }

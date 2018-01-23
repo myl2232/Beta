@@ -61,5 +61,15 @@ namespace AlphaWork
         {
         }
 
+        public void AttackSkill01()
+        {
+            int attId = GameEntry.Entity.GenerateSerialId();
+            Vector3 vDir = GameEntry.Entity.GetEntity(Agent.SenseResult).transform.position - transform.position;
+            GameEntry.Entity.ShowEffect(new EffectData(vDir, transform, attId, 60001)
+            {
+               
+            },1);
+        }
+
     }
 }
