@@ -1,6 +1,10 @@
-#	玩家表	
-#	Id	MaxHP
-#	int	int
-#	玩家	最大生命
-	80000	1000
-	80001	2000
+#	玩家表		
+#	Id	MaxHP	Prefab
+#	int	int	string
+#	玩家	最大生命	prefab名称
+	80000	1000	Ethan
+	80001	2000	Character_Color_01
+	80002	2000	Character_Color_02
+	80003	2000	Character_Color_03
+	80004	2000	Character_Color_04
+	80005	2000	Character_Color_05

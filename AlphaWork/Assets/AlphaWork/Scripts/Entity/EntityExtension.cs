@@ -139,7 +139,7 @@ namespace AlphaWork
             {
                 Log.Warning("Can not load entity id '{0}' from data table.", data.TypeId.ToString());
                 return;
-            }
+            }            
 
             entityComponent.ShowEntity(data.Id, logicType, AssetUtility.GetEntityAsset(drEntity.AssetName), entityGroup, data);
         }
