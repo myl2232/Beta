@@ -1693,8 +1693,10 @@ GameObject:
   - component: {fileID: 4792588005983590}
   - component: {fileID: 114668976739941692}
   - component: {fileID: 114878973946743432}
+  - component: {fileID: 114254204450248652}
   - component: {fileID: 54606961099500798}
   - component: {fileID: 95135096644135792}
+  - component: {fileID: 136256954064280874}
   m_Layer: 0
   m_Name: Character_Color_01
   m_TagString: Untagged
@@ -3971,10 +3973,10 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1877574274248960}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
@@ -4013,6 +4015,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114254204450248652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1877574274248960}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 521b611700410be45810047f0a74e899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
 --- !u!114 &114668976739941692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4021,11 +4035,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1877574274248960}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76d411bd6db11604d93cbafd38573b5a, type: 3}
+  m_Script: {fileID: 11500000, guid: c33f238cbd6279546a8788b00edf48ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon_01: {fileID: 1980630174075254}
-  weapon_02: {fileID: 1376086931569522}
+  anim: {fileID: 0}
+  rbody: {fileID: 0}
+  speed: 1
+  rotationSpeed: 100
 --- !u!114 &114878973946743432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4034,11 +4050,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1877574274248960}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91ef7dcf8c1e1c14280880246ca987e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 35648685e198b4e419bf02d9f2c9fe75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  rbody: {fileID: 0}
+  weapon_01: {fileID: 100000, guid: c3a4da02b80957b47b2c1d7f67c7c76e, type: 3}
+  weapon_02: {fileID: 100000, guid: 94585d30e6da6e045b5c1531b0660650, type: 3}
+--- !u!136 &136256954064280874
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1877574274248960}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!137 &137049507267698980
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

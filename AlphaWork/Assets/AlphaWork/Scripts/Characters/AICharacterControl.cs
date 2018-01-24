@@ -1,10 +1,10 @@
 using System;
 using UnityEngine;
 
-namespace UnityStandardAssets.Characters.ThirdPerson
+namespace AlphaWork
 {
-    [RequireComponent(typeof (UnityEngine.AI.NavMeshAgent))]
-    [RequireComponent(typeof (ThirdPersonCharacter))]
+    //[RequireComponent(typeof (UnityEngine.AI.NavMeshAgent))]
+    //[RequireComponent(typeof (BaseCharacter))]
     public class AICharacterControl : MonoBehaviour
     {
         public UnityEngine.AI.NavMeshAgent agent { get; private set; }             // the navmesh agent required for the path finding

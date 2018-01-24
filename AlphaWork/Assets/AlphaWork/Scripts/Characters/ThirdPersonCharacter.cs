@@ -1,11 +1,11 @@
 using UnityEngine;
 
-namespace UnityStandardAssets.Characters.ThirdPerson
+namespace AlphaWork
 {
 	[RequireComponent(typeof(Rigidbody))]
 	[RequireComponent(typeof(CapsuleCollider))]
 	[RequireComponent(typeof(Animator))]
-	public class ThirdPersonCharacter : MonoBehaviour
+	public class ThirdPersonCharacter : BaseCharacter
 	{
 		[SerializeField] float m_MovingTurnSpeed = 360;
 		[SerializeField] float m_StationaryTurnSpeed = 180;
@@ -43,9 +43,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 
 
-		public void Move(Vector3 move, bool crouch, bool jump)
+		public override void Move(Vector3 move, bool crouch, bool jump)
 		{
-
 			// convert the world relative moveInput vector into a local-relative
 			// turn amount and forward amount required to head in the desired
 			// direction.
