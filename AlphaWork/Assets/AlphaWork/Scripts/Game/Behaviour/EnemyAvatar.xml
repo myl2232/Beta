@@ -25,44 +25,6 @@
         <property Method="Self.EnemyAgent::CheckSensor()" />
         <property ResultOption="BT_SUCCESS" />
       </node>
-      <node class="SelectorProbability" id="2">
-        <node class="DecoratorWeight" id="6">
-          <property DecorateWhenChildEnds="false" />
-          <property Weight="const int 1" />
-          <node class="Assignment" id="8">
-            <property CastRight="false" />
-            <property Opl="int Self.EnemyAgent::attackIndex" />
-            <property Opr="const int 1" />
-          </node>
-        </node>
-        <node class="DecoratorWeight" id="10">
-          <property DecorateWhenChildEnds="false" />
-          <property Weight="const int 1" />
-          <node class="Assignment" id="11">
-            <property CastRight="false" />
-            <property Opl="int Self.EnemyAgent::attackIndex" />
-            <property Opr="const int 2" />
-          </node>
-        </node>
-        <node class="DecoratorWeight" id="12">
-          <property DecorateWhenChildEnds="false" />
-          <property Weight="const int 1" />
-          <node class="Assignment" id="13">
-            <property CastRight="false" />
-            <property Opl="int Self.EnemyAgent::attackIndex" />
-            <property Opr="const int 3" />
-          </node>
-        </node>
-        <node class="DecoratorWeight" id="14">
-          <property DecorateWhenChildEnds="false" />
-          <property Weight="const int 1" />
-          <node class="Assignment" id="15">
-            <property CastRight="false" />
-            <property Opl="int Self.EnemyAgent::attackIndex" />
-            <property Opr="const int 4" />
-          </node>
-        </node>
-      </node>
       <node class="SelectorProbability" id="16">
         <node class="DecoratorWeight" id="7">
           <property DecorateWhenChildEnds="false" />

@@ -79,6 +79,8 @@ namespace AlphaWork
         public void Flush()
         {
             Transform attachTrans = AssetUtility.FindChild(Parent, AttachName);
+            if (attachTrans == null)
+                return;
             Vector3 rot = new Vector3();
             GetParseString(AttachRot, ref rot);
             Vector3 offset = new Vector3();

@@ -39,6 +39,8 @@ namespace AlphaWork
         private bool ValidSense(EntityObject sensor,int result)
         {
             AvatarData dt = sensor.Data as AvatarData;
+            if (dt == null)
+                return false;
             Entity etResult = GameEntry.Entity.GetEntity(result);
             if (etResult == null)
                 return false;

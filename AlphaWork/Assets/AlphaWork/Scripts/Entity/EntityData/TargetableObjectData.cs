@@ -67,6 +67,13 @@ namespace AlphaWork
             set { m_attackRadius = value; }
         }
         /// <summary>
+        /// AI行为树。
+        /// </summary>
+        public string AI;
+        public float walkSpeed;
+        public float runSpeed;
+        public float sprintSpeed;
+        /// <summary>
         /// 生命百分比。
         /// </summary>
         public float HPRatio

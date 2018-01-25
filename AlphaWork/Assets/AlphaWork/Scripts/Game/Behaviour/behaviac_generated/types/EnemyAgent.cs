@@ -18,16 +18,6 @@ public class EnemyAgent : BaseAgent
 ///<<< BEGIN WRITING YOUR CODE EnemyAgent
 ///<<< END WRITING YOUR CODE
 {
-	private int attackIndex = 0;
-	public void _set_attackIndex(int value)
-	{
-		attackIndex = value;
-	}
-	public int _get_attackIndex()
-	{
-		return attackIndex;
-	}
-
 	private float attackParam = 0f;
 	public void _set_attackParam(float value)
 	{
@@ -38,99 +28,34 @@ public class EnemyAgent : BaseAgent
 		return attackParam;
 	}
 
-	private bool CurrentAnimStateEnd = false;
-	public void _set_CurrentAnimStateEnd(bool value)
-	{
-		CurrentAnimStateEnd = value;
-	}
-	public bool _get_CurrentAnimStateEnd()
-	{
-		return CurrentAnimStateEnd;
-	}
-
-	public void ActionAttack()
-	{
-///<<< BEGIN WRITING YOUR CODE ActionAttack
-
-        m_moveTarget.Pause();
-        m_pAnimator.SetFloat("BlendAttack", attackParam);
-        m_pAnimator.SetTrigger("Attack");        
-       
-        ///<<< END WRITING YOUR CODE
-	}
-
-	public void ActionHurt()
-	{
-///<<< BEGIN WRITING YOUR CODE ActionHurt
-///<<< END WRITING YOUR CODE
-	}
-
-	public void ActionIdle()
-	{
-///<<< BEGIN WRITING YOUR CODE ActionIdle
-
-        LogicStatus status = LogicStatus.ELogic_IDLE;
-        int nStatus = m_pAnimator.GetInteger("status");
-        if (nStatus == (int)status)
-            return;
-
-        ///<<< END WRITING YOUR CODE
-	}
-
-	public void ActionPatrol(float speed)
-	{
-///<<< BEGIN WRITING YOUR CODE ActionPatrol
-
-        m_pAnimator.SetFloat("MotionBlend", speed);
-        m_moveTarget.Scale = speed;
-        MoveToTarget();
-        ///<<< END WRITING YOUR CODE
-	}
-
-	public bool CheckActionEnd()
-	{
-///<<< BEGIN WRITING YOUR CODE CheckActionEnd
-        AnimatorStateInfo animatorInfo;
-        animatorInfo = m_pAnimator.GetCurrentAnimatorStateInfo(0);
-        if (animatorInfo.normalizedTime >= 1.0f)
-            CurrentAnimStateEnd = true;
-        else
-            CurrentAnimStateEnd = false;
-
-        return CurrentAnimStateEnd;
-        ///<<< END WRITING YOUR CODE
-	}
-
 	public void CheckSensor()
 	{
 ///<<< BEGIN WRITING YOUR CODE CheckSensor
-////本该是状态机的工作，但是目前状态机的transition不支持右值参数，只能是数值
+        ////本该是状态机的工作，但是目前状态机的transition不支持右值参数，只能是数值
         UnityGameFramework.Runtime.Entity etEnemy = GameEntry.Entity.GetEntity(m_senseResult);
         int logicSt = -1;
         if (etEnemy != null)
         {
-            if (Vector3.Distance(etEnemy.transform.position, m_parent.transform.position) <= _get_attackRadius())
+            if (Vector3.Distance(etEnemy.transform.position, m_parent.transform.position) <= m_LogicData.AttackRadius)
             {
                 logicSt = (int)LogicStatus.ELogic_ATTACK;
-                m_pAnimator.SetInteger("status", logicSt);
+                m_character.SyncStatus(logicSt);
             }
-            else if (Vector3.Distance(etEnemy.transform.position, m_parent.transform.position) <= _get_senseRadius())
+            else if (Vector3.Distance(etEnemy.transform.position, m_parent.transform.position) <= m_LogicData.SenseRadius)
             {
                 logicSt = (int)LogicStatus.ELogic_TRACK;
-                m_pAnimator.SetInteger("status", (int)LogicStatus.ELogic_PATROL);
+                m_character.SyncStatus(logicSt);
             }
             else
             {
                 logicSt = (int)LogicStatus.ELogic_PATROL;
-                m_pAnimator.SetInteger("status", logicSt);
+                m_character.SyncStatus(logicSt);
             }
             m_nextTarget = etEnemy.transform.position;
-            m_nextTarget.z += GetMoveOffsetZ();
         }
         else
         {
-            logicSt = (int)LogicStatus.ELogic_PATROL;
-            m_pAnimator.SetInteger("status", (int)LogicStatus.ELogic_PATROL);
+            m_character.SyncStatus((int)LogicStatus.ELogic_IDLE);
         }
         _set_logicStatus((LogicStatus)logicSt);
         DispatchActions();
@@ -145,73 +70,57 @@ public class EnemyAgent : BaseAgent
         ///<<< END WRITING YOUR CODE
 	}
 
-	public void MoveToTarget()
-	{
-///<<< BEGIN WRITING YOUR CODE MoveToTarget
-        ///
-        FaceToTarget();
-        GameObject gb = m_parent.Entity.Handle as GameObject;
-        if (m_nextTarget.x == 0 ||Vector3.Distance(gb.transform.position,m_nextTarget) < 0.5f)
-            RecordTarget();
-        MoveImpl();
-        ///<<< END WRITING YOUR CODE
-	}
-
 ///<<< BEGIN WRITING YOUR CODE CLASS_PART
 
     private SensorAICircle m_ai;
     private BehaviacTrigger m_trigger;
-    //private BehaviourMove m_move;//temp removed,replace by behaviour
     private MoveTarget m_moveTarget;
     private AlphaWork.EntityObject m_parent;
     private int m_senseResult;
     public int SenseResult
     {
-				get { return m_senseResult; }
+		get { return m_senseResult; }
         set { m_senseResult = value; }
     }
     private Vector3 m_nextTarget;
     private Vector3 m_MoveStartPos;
-    private Animator m_pAnimator;
-//     protected void _initMove()
-//     {
-//         m_move = (m_parent.Entity.Handle as GameObject).AddComponent<BehaviourMove>();
-//         m_move.Parent = m_parent;
-//     }
+    private BaseCharacter m_character;
+    TargetableObjectData m_LogicData;
 
     public void InitAI()
     {
         m_parent = AlphaWork.GameEntry.Entity.GetEntity(m_ParentId).Logic as AlphaWork.EntityObject;
         GameObject gb = m_parent.Entity.Handle as GameObject;
 
+        EntityObject en = m_parent.Entity.Logic as EntityObject;
+        m_LogicData = en.Data as TargetableObjectData;
+
         m_ai = gb.AddComponent<SensorAICircle>();
-        m_ai.Radius = _get_senseRadius();
+        m_ai.Radius = m_LogicData.SenseRadius;
         m_ai.ParentId = m_parent.Id;
         m_trigger = gb.AddComponent<BehaviacTrigger>();
-        m_trigger.Parent = m_parent.Entity.Logic as EntityObject;
-
-        m_pAnimator = gb.GetComponent<Animator>();
+        m_trigger.Parent = m_parent.Entity.Logic as EntityObject;        
         m_moveTarget = gb.AddComponent<MoveTarget>();
+        m_character = gb.GetComponent<BaseCharacter>();
+
         GameEntry.Event.Subscribe(MoveToTargetEventArgs.EventId, OnMoveToTarget);
-        //_initMove();//temperary,will be removed
+        
         m_MoveStartPos = new Vector3();
     }
 
-    protected void RecordTarget()
+    protected void MoveToTarget()
     {
-        m_nextTarget = GetTargetPos();
-        m_nextTarget.z += GetMoveOffsetZ();
-    }
+        FaceToTarget();
+        GameObject gb = m_parent.Entity.Handle as GameObject;
+        if (m_nextTarget.x == 0 || Vector3.Distance(gb.transform.position, m_nextTarget) < 0.5f)
+            m_nextTarget = GetTargetPos();
 
-    protected void MoveImpl()
-    {
         GameEntry.Event.Fire(this, new MoveToTargetEventArgs(m_ParentId, m_nextTarget));
-    }
+    }    
 
     protected void FaceToTarget()
     {
         GameObject gb = m_parent.Entity.Handle as GameObject;
-
         gb.transform.forward = m_nextTarget - gb.transform.position;
     }
 
@@ -221,12 +130,10 @@ public class EnemyAgent : BaseAgent
         if(mvArgs.EId == m_ParentId)
         {
             GameObject gb = m_parent.Entity.Handle as GameObject;
-            m_MoveStartPos = gb.transform.position;
-            m_MoveStartPos.z += GetMoveOffsetZ();
+            m_MoveStartPos = gb.transform.position;            
 
             if (m_moveTarget)
                 m_moveTarget.Move(m_MoveStartPos, mvArgs.MovePos);
-
         }
     }
 
@@ -244,22 +151,31 @@ public class EnemyAgent : BaseAgent
             return target.transform.position;
         }
     }
-    protected float GetMoveOffsetZ()
-    {
-        return 0;
-        //GameObject gb = m_parent.Entity.Handle as GameObject;
-        //return -gb.GetComponent<CapsuleCollider>().height * 0.5f;
-    }
 
     protected void DispatchActions()
     {
         LogicStatus status = _get_logicStatus();
         if (status == LogicStatus.ELogic_ATTACK)
-            ActionAttack();
+        {
+            m_moveTarget.Pause();
+            m_character.ActionAttack(attackParam);
+        }
         else if (status == LogicStatus.ELogic_PATROL)
-            ActionPatrol(0.3f);
+        {
+            m_character.ActionPatrol(m_LogicData.walkSpeed);
+            m_moveTarget.Speed = m_LogicData.walkSpeed;
+            MoveToTarget();
+        }
         else if (status == LogicStatus.ELogic_TRACK)
-            ActionPatrol(0.8f);
+        {
+            m_character.ActionPatrol(m_LogicData.runSpeed);
+            m_moveTarget.Speed = m_LogicData.runSpeed;
+            MoveToTarget();
+        }
+        else if(status == LogicStatus.ELogic_IDLE)
+        {
+            m_character.ActionIdle();
+        }
     }
     ///<<< END WRITING YOUR CODE
 

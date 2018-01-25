@@ -24,6 +24,7 @@ namespace AlphaWork
             get;
             private set;
         }
+        public string AssetName;
         // Use this for initialization
         void Start()
         {
@@ -49,11 +50,14 @@ namespace AlphaWork
             int index = 0;
             index++;
             Id = int.Parse(text[index++]);
-            index++;
+            AssetName = text[index++];
             m_Data.MaxHP = int.Parse(text[index++]);
             m_Data.SenseRadius = float.Parse(text[index++]);
             m_Data.AttackRadius = float.Parse(text[index++]);
-            
+            m_Data.AI = text[index++];
+            m_Data.walkSpeed = float.Parse(text[index++]);
+            m_Data.runSpeed = float.Parse(text[index++]);
+            m_Data.sprintSpeed = float.Parse(text[index++]);
         }
     }
 }

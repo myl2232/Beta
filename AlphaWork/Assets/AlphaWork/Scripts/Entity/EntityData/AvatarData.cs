@@ -13,13 +13,12 @@ namespace AlphaWork
         private string m_skeleton;
         [SerializeField]
         private List<string> m_parts = new List<string>();
-        //[SerializeField]
-        //private bool m_AlowMove = false;
 
-        public AvatarData(int entityId = -1, int typeId = 80002, CampType camp = CampType.Unknown/*,bool alowMove = false*/)
+
+        public AvatarData(int entityId = -1, int typeId = 80002, CampType camp = CampType.Unknown)
             : base(entityId, typeId, camp)
         {
-            //m_AlowMove = alowMove;            
+            
         }
 
         // Use this for initialization
@@ -46,38 +45,19 @@ namespace AlphaWork
             return m_parts;
         }
 
-        ////允许移动
-        //public bool AlowMove
-        //{
-        //    get { return m_AlowMove; }
-        //    set { m_AlowMove = value; }
-        //}
-        /// <summary>
+        //命名
+        public string AvatarName;
         /// 主骨架
-        /// </summary>
-        public  string Skeleton
+        public string Skeleton
         {
-            get
-            {
-                return m_skeleton;
-            }
-            set
-            {
-                m_skeleton = value;
-            }
+            get { return m_skeleton; }
+            set { m_skeleton = value; }
         }
+        //配件
         public List<string> Parts
         {
-            get { return m_parts; }
-            set { m_parts = value; }
+            get { return m_parts; }           
         }
-
-        //public override int MaxHP
-        //{
-        //    get
-        //    {
-        //        return 0;
-        //    }
-        //}
+        
     }
 }

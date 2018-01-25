@@ -50,6 +50,11 @@ namespace AlphaWork
 			int index = 0;
             index++;
             Id = int.Parse(text[index++]);
+            m_Data.AvatarName = text[index++];
+            m_Data.AI = text[index++];
+            m_Data.walkSpeed = float.Parse(text[index++]);
+            m_Data.runSpeed = float.Parse(text[index++]);
+            m_Data.sprintSpeed = float.Parse(text[index++]);
             m_Data.SenseRadius = float.Parse(text[index++]);
             m_Data.AttackRadius = float.Parse(text[index++]);
             m_Data.MaxHP = int.Parse(text[index++]);          

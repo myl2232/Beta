@@ -1,28 +1,28 @@
-#	玩家表				
-#	Id		MaxHP	SenseRadius	AttackRadius
-#	int		int	float	float
-#	玩家	策划备注	最大生命	探知距离	攻击距离
-	50000	enemy	1000	150	10
-	50001	HellephantPrefab	1000	100	10
-	50002	ZomBearPrefab	1000	100	10
-	50003	ZombunnyPrefab	1000	100	10
-	50004	Character_Color_01	1000	150	10
-	50005	Character_Color_02	1000	150	10
-	50006	Character_Color_03	1000	150	10
-	50007	Character_Color_04	1000	150	10
-	50008	Character_Color_05	1000	150	10
-	50009	barbarian_01	1000	150	10
-	500010	barbarian_02	1000	150	10
-	500011	barbarian_03	1000	150	10
-	500012	barbarian_04	1000	150	10
-	500013	barbarian_05	1000	150	10
-	500014	barbarian_06	1000	150	10
-	500015	barbarian_07	1000	150	10
-	500016	barbarian_08	1000	150	10
-	500017	barbarian_09	1000	150	10
-	500018	barbarian_10	1000	150	10
-	500019	barbarian_11	1000	150	10
-	500020	barbarian_12	1000	150	10
-	500021	barbarian_13	1000	150	10
-	500022	barbarian_14	1000	150	10
-	500023	barbarian_15	1000	150	10
+#	玩家表								
+#	Id		MaxHP	SenseRadius	AttackRadius	AI	walk speed	run speed	sprint speed
+#	int		int	float	float	string	float	float	float
+#	玩家	策划备注	最大生命	探知距离	攻击距离	AI行为树	行走速度	奔跑速度	冲刺速度
+	50000	enemy	1000	150	10	EnemyAvatar	5	10	15
+	50001	HellephantPrefab	1000	100	10	EnemyAvatar	5	10	15
+	50002	ZomBearPrefab	1000	100	10	EnemyAvatar	5	10	15
+	50003	ZombunnyPrefab	1000	100	10	EnemyAvatar	5	10	15
+	50004	Character_Color_01	1000	150	10	EnemyAvatar	5	10	15
+	50005	Character_Color_02	1000	150	10	EnemyAvatar	5	10	15
+	50006	Character_Color_03	1000	150	10	EnemyAvatar	5	10	15
+	50007	Character_Color_04	1000	150	10	EnemyAvatar	5	10	15
+	50008	Character_Color_05	1000	150	10	EnemyAvatar	5	10	15
+	50009	barbarian_01	1000	150	10	EnemyAvatar	5	10	15
+	50010	barbarian_02	1000	150	10	EnemyAvatar	5	10	15
+	50011	barbarian_03	1000	150	10	EnemyAvatar	5	10	15
+	50012	barbarian_04	1000	150	10	EnemyAvatar	5	10	15
+	50013	barbarian_05	1000	150	10	EnemyAvatar	5	10	15
+	50014	barbarian_06	1000	150	10	EnemyAvatar	5	10	15
+	50015	barbarian_07	1000	150	10	EnemyAvatar	5	10	15
+	50016	barbarian_08	1000	150	10	EnemyAvatar	5	10	15
+	50017	barbarian_09	1000	150	10	EnemyAvatar	5	10	15
+	50018	barbarian_10	1000	150	10	EnemyAvatar	5	10	15
+	50019	barbarian_11	1000	150	10	EnemyAvatar	5	10	15
+	50020	barbarian_12	1000	150	10	EnemyAvatar	5	10	15
+	50021	barbarian_13	1000	150	10	EnemyAvatar	5	10	15
+	50022	barbarian_14	1000	150	10	EnemyAvatar	5	10	15
+	50023	barbarian_15	1000	150	10	EnemyAvatar	5	10	15

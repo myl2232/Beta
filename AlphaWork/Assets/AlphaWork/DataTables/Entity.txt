@@ -2,7 +2,7 @@
 #	Id		AssetName
 #	int		string
 #	EntityId	Entity说明（只存ID，属性到对应的表查询）	Entity的Prefab名称
-	10000	占位	BallPrefab
+	10000	Avatar	Hero
 	10001	占位	BallPrefab
 	20000	占位	PlayerEngine
 	20001	占位	EnemyEngine
@@ -18,20 +18,20 @@
 	50007	NPC怪	Character_Color_04
 	50008	NPC怪	Character_Color_05
 	50009	NPC怪	barbarian_01
-	500010	NPC怪	barbarian_02
-	500011	NPC怪	barbarian_03
-	500012	NPC怪	barbarian_04
-	500013	NPC怪	barbarian_05
-	500014	NPC怪	barbarian_06
-	500015	NPC怪	barbarian_07
-	500016	NPC怪	barbarian_08
-	500017	NPC怪	barbarian_09
-	500018	NPC怪	barbarian_10
-	500019	NPC怪	barbarian_11
-	500020	NPC怪	barbarian_12
-	500021	NPC怪	barbarian_13
-	500022	NPC怪	barbarian_14
-	500023	NPC怪	barbarian_15
+	50010	NPC怪	barbarian_02
+	50011	NPC怪	barbarian_03
+	50012	NPC怪	barbarian_04
+	50013	NPC怪	barbarian_05
+	50014	NPC怪	barbarian_06
+	50015	NPC怪	barbarian_07
+	50016	NPC怪	barbarian_08
+	50017	NPC怪	barbarian_09
+	50018	NPC怪	barbarian_10
+	50019	NPC怪	barbarian_11
+	50020	NPC怪	barbarian_12
+	50021	NPC怪	barbarian_13
+	50022	NPC怪	barbarian_14
+	50023	NPC怪	barbarian_15
 	60000	武器表的起始ID	weapon
 	60001	武器	weapon001
 	60002	武器	weapon002

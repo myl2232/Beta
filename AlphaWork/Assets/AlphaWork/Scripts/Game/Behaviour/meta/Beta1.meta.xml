@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
-<agents version="1" signature="1124588391">
-  <agent type="BaseAgent" base="behaviac::Agent" signature="3876861960">
+<agents version="1" signature="96213612">
+  <agent type="BaseAgent" base="behaviac::Agent" signature="3096401382">
     <properties>
-      <property name="attackRadius" type="float" member="false" static="false" defaultvalue="10" />
       <property name="bAwakeSense" type="bool" member="false" static="false" defaultvalue="false" />
       <property name="logicStatus" type="LogicStatus" member="false" static="false" defaultvalue="ELogic_IDLE" />
-      <property name="senseRadius" type="float" member="false" static="false" defaultvalue="20" />
     </properties>
   </agent>
-  <agent type="EnemyAgent" base="BaseAgent" signature="1745574915">
+  <agent type="EnemyAgent" base="BaseAgent" signature="3951108106">
     <properties>
-      <property name="attackIndex" type="int" member="false" static="false" defaultvalue="0" />
       <property name="attackParam" type="float" member="false" static="false" defaultvalue="0" />
-      <property name="attackRadius" type="float" member="false" static="false" defaultvalue="10" />
       <property name="bAwakeSense" type="bool" member="false" static="false" defaultvalue="false" />
-      <property name="CurrentAnimStateEnd" type="bool" member="false" static="false" defaultvalue="false" />
       <property name="logicStatus" type="LogicStatus" member="false" static="false" defaultvalue="ELogic_IDLE" />
-      <property name="senseRadius" type="float" member="false" static="false" defaultvalue="20" />
     </properties>
   </agent>
 </agents>

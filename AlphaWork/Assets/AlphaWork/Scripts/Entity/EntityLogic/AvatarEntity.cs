@@ -23,7 +23,6 @@ namespace AlphaWork
             get { return m_agent; }
         }
         private float m_lastTime;
-        //private int m_senseHit;
 
         protected override void OnDead()
         {
@@ -42,24 +41,24 @@ namespace AlphaWork
                 gAnimator.SetTrigger("Hurt");
             }
         }
-
+        //pick from animation event
         public void AttackSkill01()
         {
             int attId = GameEntry.Entity.GenerateSerialId();
             Vector3 vDir = GameEntry.Entity.GetEntity(Agent.SenseResult).transform.position - transform.position;
-            GameEntry.Entity.ShowEffect(new EffectData(vDir, transform, attId, 60001)
+            GameEntry.Entity.ShowEffect(new EffectData(vDir.normalized, transform, attId, 60001)
             {
-                //Position = m_parent.transform.position + m_parent.transform.forward.normalized*2,
+                
             });
         }
-
+        //pick from animation event
         public void AttackSkill02()
         {
             int attId = GameEntry.Entity.GenerateSerialId();
             Vector3 vDir = GameEntry.Entity.GetEntity(Agent.SenseResult).transform.position - transform.position;
             GameEntry.Entity.ShowEffect(new EffectData(vDir, transform, attId, 60002)
             {
-                //Position = m_parent.transform.position + m_parent.transform.forward.normalized*2,
+               
             });
         }
 
@@ -70,30 +69,25 @@ namespace AlphaWork
 
         public AvatarEntity()
         {
-//             GameEntry.Event.Subscribe(UIAlphaEventArgs.EventId, OnTestAlpha);
-//             GameEntry.Event.Subscribe(UIBetaEventArgs.EventId, OnTestBeta);
             GameEntry.Event.Subscribe(AvatarCreateEventArgs.EventId, OnCreateAvatar);
             m_LoadCallbacks = new LoadAssetCallbacks(OnLoadSuccessCallback, OnLoadFailureCallback);
             m_Parts = new List<GameObject>();
  
             m_lastTime = 0;
-            //m_senseHit = 0;
         }
         
         // Use this for initialization
         void Start()
         {
-            //if ((Data as AvatarData).AlowMove)
+            AvatarData data = Data as AvatarData;
+            if (data != null)
             {
                 //ai
                 m_agent = new EnemyAgent();
-                m_agent.btload("EnemyAvatar");
-                m_agent.btsetcurrent("EnemyAvatar");
+                m_agent.btload(data.AI);
+                m_agent.btsetcurrent(data.AI);
                 m_agent.ParentId = Id;
-                m_agent._set_senseRadius((Data as AvatarData).SenseRadius);
-                m_agent._set_attackRadius((Data as AvatarData).AttackRadius);
                 m_agent.InitAI();
-
             }
         }
 
@@ -111,24 +105,6 @@ namespace AlphaWork
             }
 
         }
-
-        /*for test*/
-//         private float lscale = 1;
-//         private void LateUpdate()
-//         {
-//             Transform trans = AssetUtility.FindChild(Entity.transform, "Bip001 L Thigh");//"Bip001 L Hand"
-//             if(trans != null)
-//                 trans.localScale *= lscale;
-//         }
-//         void OnTestAlpha(object sender, GameEventArgs arg)
-//         {
-//             lscale = (lscale >1)?lscale*0.5f:1.0f;
-//         }
-//         void OnTestBeta(object sender, GameEventArgs arg)
-//         {
-//             lscale *= 2;
-//         }
-        /*end test*/
 
         protected internal override void OnAttached(EntityLogic childEntity, Transform parentTransform, object userData)
         {
