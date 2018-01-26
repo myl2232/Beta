@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace AlphaWork
 {
-    //暂时不用
     public class BehaviourMove : MonoBehaviour
     {
         protected List<GameObject> Targets = new List<GameObject>();

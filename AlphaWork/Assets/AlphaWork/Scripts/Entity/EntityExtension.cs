@@ -43,27 +43,7 @@ namespace AlphaWork
 
         public static void ShowEnemy(this EntityComponent entityComponent, NPCData data)
         {
-            if (data == null)
-            {
-                Log.Warning("Data is invalid.");
-                return;
-            }
-
-            IDataTable<DRNPC> dtEntity = GameEntry.DataTable.GetDataTable<DRNPC>();
-            DRNPC drEntity = dtEntity.GetDataRow(data.TypeId);
-            if (drEntity == null)
-            {
-                Log.Warning("Can not load entity id '{0}' from data table.", data.TypeId.ToString());
-                return;
-            }
-            data.SenseRadius = drEntity.Data.SenseRadius;
-            data.AttackRadius = drEntity.Data.AttackRadius;
-            data.AI = drEntity.Data.AI;
-            data.walkSpeed = drEntity.Data.walkSpeed;
-            data.runSpeed = drEntity.Data.runSpeed;
-            data.sprintSpeed = drEntity.Data.sprintSpeed;
-
-            entityComponent.ShowEntity(data.Id, typeof(Enemy), AssetUtility.GetEntityAsset(drEntity.AssetName), "Enemy", data);
+            entityComponent.ShowEntity(typeof(Enemy), "Enemy", data);
         }
 
         public static void ShowEthan(this EntityComponent entityComponent, EthanData data)
@@ -111,15 +91,9 @@ namespace AlphaWork
                 return;
             }
             data.Skeleton = drEntity.Data.Skeleton;
-            for(int i = 0;i < drEntity.Data.Parts.Count; ++i)
-                data.AddPart(drEntity.Data.Parts[i]);
+            data.Parts = drEntity.Data.Parts;
             data.SenseRadius = drEntity.Data.SenseRadius;
             data.AttackRadius = drEntity.Data.AttackRadius;
-            data.AI = drEntity.Data.AI;
-            data.AvatarName = drEntity.Data.AvatarName;
-            data.walkSpeed = drEntity.Data.walkSpeed;
-            data.runSpeed = drEntity.Data.runSpeed;
-            data.sprintSpeed = drEntity.Data.sprintSpeed;
 
             entityComponent.ShowEntity(data.Id, typeof(AvatarEntity), drEntity.Data.Skeleton, "Avatar", data);
         }

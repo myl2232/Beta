@@ -9,7 +9,12 @@ namespace AlphaWork
 {
     public class BaseCharacter : MonoBehaviour
     {
-        private void Awake()
+        private void Start()
+        {
+
+        }
+
+        public BaseCharacter()
         {
             GameEntry.Event.Subscribe(UIAttack1EventArgs.EventId, OnAttack1);
             GameEntry.Event.Subscribe(UIAttack2EventArgs.EventId, OnAttack2);
@@ -57,25 +62,9 @@ namespace AlphaWork
             //}
         }
 
-        public virtual bool CheckActionEnd()
-        {
-            return false;
-        }
-
-        public virtual void SyncStatus(int status)
-        { }
-        public virtual void ActionAttack(float attackParam)
-        { }
-        public virtual void ActionPatrol(float speed)
-        { }
-        public virtual void ActionIdle()
-        { }
-        public virtual void ActionHurt()
-        { }
-        public virtual void ActionDead()
-        { }
         public virtual void Move(Vector3 move, bool crouch, bool jump)
         {
+
         }
     }
 }

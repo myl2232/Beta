@@ -578,7 +578,6 @@ GameObject:
   - component: {fileID: 111723383468346832}
   - component: {fileID: 54981575662716234}
   - component: {fileID: 136684608194431926}
-  - component: {fileID: 114003201177982114}
   m_Layer: 0
   m_Name: barbarian_10
   m_TagString: Untagged
@@ -1735,19 +1734,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
---- !u!114 &114003201177982114
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1602087733910314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 882fc2526e49c574f8c0325e9def6922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  rbody: {fileID: 0}
 --- !u!136 &136684608194431926
 CapsuleCollider:
   m_ObjectHideFlags: 1

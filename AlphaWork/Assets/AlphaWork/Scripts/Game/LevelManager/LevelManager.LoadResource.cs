@@ -25,29 +25,34 @@ namespace AlphaWork
 
                 GameEntry.Entity.ShowEthan(new EthanData(GameEntry.Entity.GenerateSerialId(), 50004/*80000*/, CampType.Player)
                 {
-                    Position = hit.point,
+                    Position = hit.point,//new Vector3(26, 2, 20),
+                    //Scale = new Vector3(3.0f, 3.0f, 3.0f),
                 });
 
                 //GameEntry.Entity.ShowNPC(new NPCData(GameEntry.Entity.GenerateSerialId(), 50004, CampType.Player2)
                 //{
                 //    Position = hit.point + new Vector3(3.0f, 3.0f, 3.0f),//new Vector3(26, 2, 20),
+                //    Scale = new Vector3(3.0f, 3.0f, 3.0f),
                 //});
 
                 //test for Efficiency
-                Vector3 sPt = new Vector3(UnityEngine.Random.Range(hit.point.x, hit.point.x + 30),
-                    hit.point.y, UnityEngine.Random.Range(hit.point.z, hit.point.x + 30));
+                RaycastHit hitInfo;
+                Physics.Raycast(mainPos, Vector3.down, out hitInfo, 1000);
+                Vector3 sPt = new Vector3(UnityEngine.Random.Range(hitInfo.point.x - 10, hitInfo.point.x + 10),
+                    hitInfo.point.y, UnityEngine.Random.Range(hitInfo.point.z - 10, hitInfo.point.x + 10));
 
-                for (int i = 0; i < 1; ++i)
-                {
-                    for (int j = 0; j < 1; ++j)
-                    {
-                        //sPt = new Vector3(128 + i * 8 + j * 5, 0.5f, 128 + j * 4);
-                        GameEntry.Entity.ShowAvatar(new AvatarData(GameEntry.Entity.GenerateSerialId(), 10001, CampType.Enemy)
-                        {
-                            Position = sPt,
-                        });
-                    }
-                }
+                //for (int i = 0; i < 1; ++i)
+                //{
+                //    for (int j = 0; j < 1; ++j)
+                //    {
+                //        sPt = new Vector3(128 + i * 8 + j * 5, 0.5f, 128 + j * 4);
+                //        GameEntry.Entity.ShowAvatar(new AvatarData(GameEntry.Entity.GenerateSerialId(), 80003, CampType.Enemy)
+                //        {
+                //            Position = sPt,
+                //            Scale = new Vector3(3.0f, 3.0f, 3.0f),
+                //        });
+                //    }
+                //}
 
                 //                 GameEntry.Entity.ShowEnemy(new NPCData(GameEntry.Entity.GenerateSerialId(), 50004, CampType.Enemy)
                 //                 {
@@ -58,7 +63,6 @@ namespace AlphaWork
             }
         }
 
-        //test 
         public void LoadResourceForOccupySuccessCallback(string assetName, object asset, float duration, object userData)
         {
             //Process Occupy Behaviour from load Replace resource
@@ -76,7 +80,6 @@ namespace AlphaWork
                 }
             }
         }
-        //test for add enemy
         public void OnThetaUI(object sender,GameEventArgs arg)
         {
             UIThetaEventArgs thetaArg = arg as UIThetaEventArgs;
@@ -84,10 +87,10 @@ namespace AlphaWork
             {
                 Vector3 pos = new Vector3();
                 GameBase.GetMainPos(out pos);
-                GameEntry.Entity.ShowEnemy(new NPCData(GameEntry.Entity.GenerateSerialId(), 
-                    50009 /*+ UnityEngine.Random.Range(0,11)*/, CampType.Enemy)
+                GameEntry.Entity.ShowEnemy(new NPCData(GameEntry.Entity.GenerateSerialId(), 50001, CampType.Enemy)
                 { 
                     Position = pos + new Vector3(5,0,5),
+                    Scale = new Vector3(3.0f, 3.0f, 3.0f),
                 });
             }
         }

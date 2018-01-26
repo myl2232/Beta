@@ -25,10 +25,10 @@
     <String Key="Setting.UISound" Value="界面音效" />
     <String Key="Setting.Language" Value="语言" />
     <String Key="Setting.LanguageTips" Value="更改语言需要重启游戏" />
-    <String Key="InGame.Alpha" Value="A3" />
-    <String Key="InGame.Beta" Value="A4" />
+    <String Key="InGame.Alpha" Value="受击" />
+    <String Key="InGame.Beta" Value="切换" />
     <String Key="InGame.Theta" Value="+" />
-    <String Key="InGame.Attack1" Value="A1" />
-    <String Key="InGame.Attack2" Value="A2" />
+    <String Key="InGame.Attack1" Value="*|*" />
+    <String Key="InGame.Attack2" Value="/\" />
   </Dictionary>
 </Dictionaries>

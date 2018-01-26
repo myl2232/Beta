@@ -76,10 +76,17 @@ namespace AlphaWork
             LoadDataTable("Avatar");
             LoadDataTable("Attachment");
             LoadDataTable("Effect");
-            LoadDataTable("NPC");
 
             // Preload dictionaries
             LoadDictionary("Default");
+            //GameEntry.UI.AddUIGroup("Default");
+            //GameEntry.Entity.AddEntityGroup("Structure", 1000, 20, 1000, 10000);
+            //GameEntry.Entity.AddEntityGroup("Entity", 1000, 20, 1000, 10000);
+            //GameEntry.Entity.AddEntityGroup("Ethan", 1000, 20, 1000, 10000);
+            //GameEntry.Entity.AddEntityGroup("UIForm", 1000, 20, 1000, 10000);
+            //GameEntry.Entity.AddEntityGroup("NPC", 1000, 20, 1000, 10000);
+            //GameEntry.Entity.AddEntityGroup("Enemy", 1000, 20, 1000, 10000);
+            //GameEntry.Entity.AddEntityGroup("Avatar", 1000, 20, 1000, 10000);
 
             // Preload fonts
             LoadFont("MainFont");

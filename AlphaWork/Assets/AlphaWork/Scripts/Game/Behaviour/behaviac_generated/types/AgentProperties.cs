@@ -216,7 +216,7 @@ namespace behaviac
 
 		public override bool Load()
 		{
-			AgentMeta.TotalSignature = 96213612;
+			AgentMeta.TotalSignature = 1124588391;
 
 			AgentMeta meta;
 
@@ -231,10 +231,13 @@ namespace behaviac
 			meta.RegisterMethod(502968959, new CMethod_behaviac_Agent_VectorRemove());
 
 			// BaseAgent
-			meta = new AgentMeta(3096401382);
+			meta = new AgentMeta(3876861960);
 			AgentMeta._AgentMetas_[2774251291] = meta;
+			meta.RegisterMemberProperty(2666778206, new CMemberProperty<float>("attackRadius", delegate(Agent self, float value) { ((BaseAgent)self)._set_attackRadius(value); }, delegate(Agent self) { return ((BaseAgent)self)._get_attackRadius(); }));
 			meta.RegisterMemberProperty(2245610422, new CMemberProperty<bool>("bAwakeSense", delegate(Agent self, bool value) { ((BaseAgent)self)._set_bAwakeSense(value); }, delegate(Agent self) { return ((BaseAgent)self)._get_bAwakeSense(); }));
 			meta.RegisterMemberProperty(4105861508, new CMemberProperty<LogicStatus>("logicStatus", delegate(Agent self, LogicStatus value) { ((BaseAgent)self)._set_logicStatus(value); }, delegate(Agent self) { return ((BaseAgent)self)._get_logicStatus(); }));
+			meta.RegisterMemberProperty(4109508993, new CMemberProperty<float>("senseRadius", delegate(Agent self, float value) { ((BaseAgent)self)._set_senseRadius(value); }, delegate(Agent self) { return ((BaseAgent)self)._get_senseRadius(); }));
+			meta.RegisterMethod(1310288125, new CAgentMethod<bool>(delegate(Agent self) { return ((BaseAgent)self).IsStatusValide(); }));
 			meta.RegisterMethod(1045109914, new CAgentStaticMethodVoid<string>(delegate(string param0) { BaseAgent.LogMessage(param0); }));
 			meta.RegisterMethod(2521019022, new CMethod_behaviac_Agent_VectorAdd());
 			meta.RegisterMethod(2306090221, new CMethod_behaviac_Agent_VectorClear());
@@ -243,14 +246,25 @@ namespace behaviac
 			meta.RegisterMethod(502968959, new CMethod_behaviac_Agent_VectorRemove());
 
 			// EnemyAgent
-			meta = new AgentMeta(3951108106);
+			meta = new AgentMeta(1745574915);
 			AgentMeta._AgentMetas_[3531795815] = meta;
+			meta.RegisterMemberProperty(2658199205, new CMemberProperty<int>("attackIndex", delegate(Agent self, int value) { ((EnemyAgent)self)._set_attackIndex(value); }, delegate(Agent self) { return ((EnemyAgent)self)._get_attackIndex(); }));
 			meta.RegisterMemberProperty(2100782252, new CMemberProperty<float>("attackParam", delegate(Agent self, float value) { ((EnemyAgent)self)._set_attackParam(value); }, delegate(Agent self) { return ((EnemyAgent)self)._get_attackParam(); }));
+			meta.RegisterMemberProperty(2666778206, new CMemberProperty<float>("attackRadius", delegate(Agent self, float value) { ((EnemyAgent)self)._set_attackRadius(value); }, delegate(Agent self) { return ((EnemyAgent)self)._get_attackRadius(); }));
 			meta.RegisterMemberProperty(2245610422, new CMemberProperty<bool>("bAwakeSense", delegate(Agent self, bool value) { ((EnemyAgent)self)._set_bAwakeSense(value); }, delegate(Agent self) { return ((EnemyAgent)self)._get_bAwakeSense(); }));
+			meta.RegisterMemberProperty(95180411, new CMemberProperty<bool>("CurrentAnimStateEnd", delegate(Agent self, bool value) { ((EnemyAgent)self)._set_CurrentAnimStateEnd(value); }, delegate(Agent self) { return ((EnemyAgent)self)._get_CurrentAnimStateEnd(); }));
 			meta.RegisterMemberProperty(4105861508, new CMemberProperty<LogicStatus>("logicStatus", delegate(Agent self, LogicStatus value) { ((EnemyAgent)self)._set_logicStatus(value); }, delegate(Agent self) { return ((EnemyAgent)self)._get_logicStatus(); }));
+			meta.RegisterMemberProperty(4109508993, new CMemberProperty<float>("senseRadius", delegate(Agent self, float value) { ((EnemyAgent)self)._set_senseRadius(value); }, delegate(Agent self) { return ((EnemyAgent)self)._get_senseRadius(); }));
+			meta.RegisterMethod(3536310737, new CAgentMethodVoid(delegate(Agent self) { ((EnemyAgent)self).ActionAttack(); }));
+			meta.RegisterMethod(1544873684, new CAgentMethodVoid(delegate(Agent self) { ((EnemyAgent)self).ActionHurt(); }));
+			meta.RegisterMethod(3434107636, new CAgentMethodVoid(delegate(Agent self) { ((EnemyAgent)self).ActionIdle(); }));
+			meta.RegisterMethod(1149387345, new CAgentMethodVoid<float>(delegate(Agent self, float speed) { ((EnemyAgent)self).ActionPatrol(speed); }));
+			meta.RegisterMethod(2254652491, new CAgentMethod<bool>(delegate(Agent self) { return ((EnemyAgent)self).CheckActionEnd(); }));
 			meta.RegisterMethod(717029417, new CAgentMethodVoid(delegate(Agent self) { ((EnemyAgent)self).CheckSensor(); }));
 			meta.RegisterMethod(119980225, new CAgentMethodVoid(delegate(Agent self) { ((EnemyAgent)self).FlushSensor(); }));
+			meta.RegisterMethod(1310288125, new CAgentMethod<bool>(delegate(Agent self) { return ((EnemyAgent)self).IsStatusValide(); }));
 			meta.RegisterMethod(1045109914, new CAgentStaticMethodVoid<string>(delegate(string param0) { EnemyAgent.LogMessage(param0); }));
+			meta.RegisterMethod(1793645156, new CAgentMethodVoid(delegate(Agent self) { ((EnemyAgent)self).MoveToTarget(); }));
 			meta.RegisterMethod(2521019022, new CMethod_behaviac_Agent_VectorAdd());
 			meta.RegisterMethod(2306090221, new CMethod_behaviac_Agent_VectorClear());
 			meta.RegisterMethod(3483755530, new CMethod_behaviac_Agent_VectorContains());

@@ -698,7 +698,6 @@ GameObject:
   - component: {fileID: 111413089145615526}
   - component: {fileID: 136624324237042742}
   - component: {fileID: 54333459806310848}
-  - component: {fileID: 114317268467955648}
   m_Layer: 0
   m_Name: barbarian_07
   m_TagString: Untagged
@@ -1981,7 +1980,7 @@ Animation:
   m_GameObject: {fileID: 1745990652462482}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
   m_Animations:
   - {fileID: 7400110, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
   - {fileID: 7400112, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
@@ -2035,19 +2034,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
---- !u!114 &114317268467955648
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1745990652462482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 882fc2526e49c574f8c0325e9def6922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  rbody: {fileID: 0}
 --- !u!136 &136624324237042742
 CapsuleCollider:
   m_ObjectHideFlags: 1

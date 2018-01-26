@@ -16,6 +16,16 @@ public class BaseAgent : behaviac.Agent
 ///<<< BEGIN WRITING YOUR CODE BaseAgent
 ///<<< END WRITING YOUR CODE
 {
+	private float attackRadius = 10f;
+	public void _set_attackRadius(float value)
+	{
+		attackRadius = value;
+	}
+	public float _get_attackRadius()
+	{
+		return attackRadius;
+	}
+
 	private bool bAwakeSense = false;
 	public void _set_bAwakeSense(bool value)
 	{
@@ -34,6 +44,23 @@ public class BaseAgent : behaviac.Agent
 	public LogicStatus _get_logicStatus()
 	{
 		return logicStatus;
+	}
+
+	private float senseRadius = 20f;
+	public void _set_senseRadius(float value)
+	{
+		senseRadius = value;
+	}
+	public float _get_senseRadius()
+	{
+		return senseRadius;
+	}
+
+	public bool IsStatusValide()
+	{
+///<<< BEGIN WRITING YOUR CODE IsStatusValide
+		return false;
+///<<< END WRITING YOUR CODE
 	}
 
 ///<<< BEGIN WRITING YOUR CODE CLASS_PART

@@ -7,14 +7,13 @@ using UnityEngine;
 namespace AlphaWork
 {
     public class NPCData : TargetableObjectData
-    {        
+    {
         [SerializeField]
         private int m_MaxHP = 0;
-
         public NPCData(int entityId = -1, int typeId = -1, CampType camp = CampType.Enemy)
             : base(entityId, typeId, camp)
         {
-            
+
         }
         // Use this for initialization
         void Start()
@@ -27,6 +26,16 @@ namespace AlphaWork
         {
 
         }
-        
+
+        ///// <summary>
+        ///// 最大生命。
+        ///// </summary>
+        //public override int MaxHP
+        //{
+        //    get
+        //    {
+        //        return m_MaxHP;
+        //    }
+        //}
     }
 }

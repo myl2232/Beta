@@ -21,25 +21,19 @@ namespace AlphaWork
         {
             m_lastTime = 0;
             //ai
-            NPCData data = Data as NPCData;
-            if(data != null)
-            {
-                m_agent = new EnemyAgent();
-                m_agent.btload(data.AI);
-                m_agent.btsetcurrent(data.AI);
-                m_agent.ParentId = Id;
-                m_agent.InitAI();
-            }
-            
+            m_agent = new EnemyAgent();
+            m_agent.btload("EnemyAvatar");
+            m_agent.btsetcurrent("EnemyAvatar");
+            m_agent.ParentId = Id;
+            m_agent._set_senseRadius((Data as NPCData).SenseRadius);
+            m_agent._set_attackRadius((Data as NPCData).AttackRadius);
+            m_agent.InitAI();
         }
 
         // Update is called once per frame
         void Update()
         {
             //ai
-            if (m_agent == null)
-                return;
-
             behaviac.EBTStatus status = behaviac.EBTStatus.BT_RUNNING;
             while ((status == behaviac.EBTStatus.BT_RUNNING) && (m_agent != null)
                 && (Time.realtimeSinceStartup - m_lastTime > 0.3))
@@ -54,12 +48,12 @@ namespace AlphaWork
         {
             base.OnShow(userdata);
 
-            //GameObject gb = Entity.Handle as GameObject;
-            //RPGCharacterControllerFREE ctl = gb.GetComponent<RPGCharacterControllerFREE>();
-            //if (ctl)
-            //{
-            //    ctl.sceneCamera = Camera.main;
-            //}
+            GameObject gb = Entity.Handle as GameObject;
+            RPGCharacterControllerFREE ctl = gb.GetComponent<RPGCharacterControllerFREE>();
+            if (ctl)
+            {
+                ctl.sceneCamera = Camera.main;
+            }
             
         }
 
@@ -67,15 +61,15 @@ namespace AlphaWork
         {
         }
 
-        //public void AttackSkill01()
-        //{
-        //    int attId = GameEntry.Entity.GenerateSerialId();
-        //    Vector3 vDir = GameEntry.Entity.GetEntity(Agent.SenseResult).transform.position - transform.position;
-        //    GameEntry.Entity.ShowEffect(new EffectData(vDir, transform, attId, 60001)
-        //    {
+        public void AttackSkill01()
+        {
+            int attId = GameEntry.Entity.GenerateSerialId();
+            Vector3 vDir = GameEntry.Entity.GetEntity(Agent.SenseResult).transform.position - transform.position;
+            GameEntry.Entity.ShowEffect(new EffectData(vDir, transform, attId, 60001)
+            {
                
-        //    },1);
-        //}
+            },1);
+        }
 
     }
 }
