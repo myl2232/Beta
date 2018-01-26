@@ -34,20 +34,20 @@ namespace AlphaWork
                 //});
 
                 //test for Efficiency
-                Vector3 sPt = new Vector3(UnityEngine.Random.Range(hit.point.x, hit.point.x + 30),
-                    hit.point.y, UnityEngine.Random.Range(hit.point.z, hit.point.x + 30));
+                Vector3 sPt = new Vector3(UnityEngine.Random.Range(hit.point.x, hit.point.x + 10),
+                    hit.point.y, UnityEngine.Random.Range(hit.point.z, hit.point.x + 10));
 
-                for (int i = 0; i < 1; ++i)
-                {
-                    for (int j = 0; j < 1; ++j)
-                    {
-                        //sPt = new Vector3(128 + i * 8 + j * 5, 0.5f, 128 + j * 4);
-                        GameEntry.Entity.ShowAvatar(new AvatarData(GameEntry.Entity.GenerateSerialId(), 10001, CampType.Enemy)
-                        {
-                            Position = sPt,
-                        });
-                    }
-                }
+                //for (int i = 0; i < 1; ++i)
+                //{
+                //    for (int j = 0; j < 1; ++j)
+                //    {
+                //        //sPt = new Vector3(128 + i * 8 + j * 5, 0.5f, 128 + j * 4);
+                //        GameEntry.Entity.ShowAvatar(new AvatarData(GameEntry.Entity.GenerateSerialId(), 10001, CampType.Enemy)
+                //        {
+                //            Position = sPt,
+                //        });
+                //    }
+                //}
 
                 //                 GameEntry.Entity.ShowEnemy(new NPCData(GameEntry.Entity.GenerateSerialId(), 50004, CampType.Enemy)
                 //                 {
@@ -87,7 +87,7 @@ namespace AlphaWork
                 GameEntry.Entity.ShowEnemy(new NPCData(GameEntry.Entity.GenerateSerialId(), 
                     50009 /*+ UnityEngine.Random.Range(0,11)*/, CampType.Enemy)
                 { 
-                    Position = pos + new Vector3(5,0,5),
+                    Position = pos + new Vector3(15,0,15),
                 });
             }
         }

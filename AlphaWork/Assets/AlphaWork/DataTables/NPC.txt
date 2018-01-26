@@ -11,18 +11,18 @@
 	50006	Character_Color_03	1000	150	10	EnemyAvatar	5	10	15
 	50007	Character_Color_04	1000	150	10	EnemyAvatar	5	10	15
 	50008	Character_Color_05	1000	150	10	EnemyAvatar	5	10	15
-	50009	barbarian_01	1000	150	10	EnemyAvatar	5	10	15
-	50010	barbarian_02	1000	150	10	EnemyAvatar	5	10	15
-	50011	barbarian_03	1000	150	10	EnemyAvatar	5	10	15
-	50012	barbarian_04	1000	150	10	EnemyAvatar	5	10	15
-	50013	barbarian_05	1000	150	10	EnemyAvatar	5	10	15
-	50014	barbarian_06	1000	150	10	EnemyAvatar	5	10	15
-	50015	barbarian_07	1000	150	10	EnemyAvatar	5	10	15
-	50016	barbarian_08	1000	150	10	EnemyAvatar	5	10	15
-	50017	barbarian_09	1000	150	10	EnemyAvatar	5	10	15
-	50018	barbarian_10	1000	150	10	EnemyAvatar	5	10	15
-	50019	barbarian_11	1000	150	10	EnemyAvatar	5	10	15
-	50020	barbarian_12	1000	150	10	EnemyAvatar	5	10	15
-	50021	barbarian_13	1000	150	10	EnemyAvatar	5	10	15
-	50022	barbarian_14	1000	150	10	EnemyAvatar	5	10	15
-	50023	barbarian_15	1000	150	10	EnemyAvatar	5	10	15
+	50009	barbarian_01	1000	20	3	EnemyAvatar	0.1	0.4	1
+	50010	barbarian_02	1000	20	2	EnemyAvatar	0.1	0.4	1
+	50011	barbarian_03	1000	20	2	EnemyAvatar	0.1	0.4	1
+	50012	barbarian_04	1000	20	2	EnemyAvatar	0.1	0.4	1
+	50013	barbarian_05	1000	20	2	EnemyAvatar	0.1	0.4	1
+	50014	barbarian_06	1000	20	2	EnemyAvatar	0.1	0.4	1
+	50015	barbarian_07	1000	20	2	EnemyAvatar	0.1	0.4	1
+	50016	barbarian_08	1000	20	2	EnemyAvatar	0.1	0.4	1
+	50017	barbarian_09	1000	20	2	EnemyAvatar	0.1	0.4	1
+	50018	barbarian_10	1000	20	2	EnemyAvatar	0.1	0.4	1
+	50019	barbarian_11	1000	20	2	EnemyAvatar	0.1	0.4	1
+	50020	barbarian_12	1000	20	2	EnemyAvatar	0.1	0.4	1
+	50021	barbarian_13	1000	20	2	EnemyAvatar	0.1	0.4	1
+	50022	barbarian_14	1000	20	2	EnemyAvatar	0.1	0.4	1
+	50023	barbarian_15	1000	20	2	EnemyAvatar	0.1	0.4	1

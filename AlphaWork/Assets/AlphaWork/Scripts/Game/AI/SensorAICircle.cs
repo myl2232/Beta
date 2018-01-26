@@ -42,6 +42,11 @@ namespace AlphaWork
             GameEntry.Sensor.RegisterSense(new SenseResult(agentId, results));
         }
 
+        private void Update()
+        {
+            
+        }
+
         protected override void _search(ref List<int> results)
         {
             //总体看，还是数学上的简易计算更方便快捷准确。

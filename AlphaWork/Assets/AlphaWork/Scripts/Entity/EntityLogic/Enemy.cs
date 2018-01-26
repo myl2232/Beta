@@ -52,21 +52,19 @@ namespace AlphaWork
 
         protected internal override void OnShow(object userdata)
         {
-            base.OnShow(userdata);
-
-            //GameObject gb = Entity.Handle as GameObject;
-            //RPGCharacterControllerFREE ctl = gb.GetComponent<RPGCharacterControllerFREE>();
-            //if (ctl)
-            //{
-            //    ctl.sceneCamera = Camera.main;
-            //}
-            
+            base.OnShow(userdata);  
         }
 
-        public void PauseMove()
+        protected override void OnDead()
         {
+            GetComponentInParent<BaseCharacter>().ActionDead();
+        }
+        protected override void OnHurt()
+        {
+            GetComponentInParent<BaseCharacter>().ActionHurt();
         }
 
+        //test from animation event
         //public void AttackSkill01()
         //{
         //    int attId = GameEntry.Entity.GenerateSerialId();

@@ -9,72 +9,53 @@ namespace AlphaWork
     //legecy格式的角色，动画和mesh在一起
     public class BarbarianCharacter : BaseCharacter
     {
-        public Animation anim;
+        public Animator m_animator;
         public Rigidbody rbody;
+        private LogicStatus m_status;
 
         private void Start()
         {
-            anim = GetComponent<Animation>();
+            m_animator = GetComponent<Animator>();
             rbody = GetComponent<Rigidbody>();
 
             rbody.mass = 100;
         }
 
-        private void Update()
-        {
-        }
-
-        public void Move()
-        {
-            if (anim != null)
-                anim.Play("walk");
-        }
-
-        public void Track()
-        {
-            if (anim != null)
-                anim.Play("run");
-        }
-        public void Idle()
-        {
-            if (anim != null)
-                anim.Play("idle");
-        }
-
-        public void Attack()
-        {
-            if (anim != null)
-            {
-                string strAttack = "attack" + UnityEngine.Random.Range(1, 3);
-                anim.Play(strAttack);
-            }
-        }
-
         public override void SyncStatus(int status)
         {
-            LogicStatus st = (LogicStatus)status;
-            if (st == LogicStatus.ELogic_ATTACK)
-                Attack();
-            else if (st == LogicStatus.ELogic_PATROL)
-                Move();
-            else if (st == LogicStatus.ELogic_TRACK)
-                Track();
-            else if (st == LogicStatus.ELogic_IDLE)
-                Idle();
+            m_status = (LogicStatus)status;
+            if (m_animator != null)
+                m_animator.SetInteger("status", (int)m_status);
         }
 
         public override void ActionAttack(float attackParam)
         {
+            if (m_animator != null)
+            {
+                m_animator.SetTrigger("Attack");
+                m_animator.SetFloat("AttackBlend", attackParam);                
+            }
         }
         public override void ActionPatrol(float speed)
         {
+            if (m_animator != null)
+            {
+                m_animator.SetTrigger("Move");
+                m_animator.SetFloat("MoveBlend", speed);
+            }
         }
         public override void ActionIdle()
-        { }
+        {
+            m_animator.SetBool("Dead", false);
+        }
         public override void ActionHurt()
-        { }
+        {
+            m_animator.SetTrigger("Hurt");
+        }
         public override void ActionDead()
-        { }
+        {
+            m_animator.SetBool("Dead",true);
+        }
     }
 
 }

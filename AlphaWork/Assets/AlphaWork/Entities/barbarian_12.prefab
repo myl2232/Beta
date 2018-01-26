@@ -416,10 +416,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4598851599568114}
-  - component: {fileID: 111145461099792182}
   - component: {fileID: 136840758981411636}
   - component: {fileID: 54725498355823664}
   - component: {fileID: 114239199084596334}
+  - component: {fileID: 95231956227492912}
   m_Layer: 0
   m_Name: barbarian_12
   m_TagString: Untagged
@@ -2353,48 +2353,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!111 &111145461099792182
-Animation:
+--- !u!95 &95231956227492912
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1328426788884798}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400110, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  m_Animations:
-  - {fileID: 7400110, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400112, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400114, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400116, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400118, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400120, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400122, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400124, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400126, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400128, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400130, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400132, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400134, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400136, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400138, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400140, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400142, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400144, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400146, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400148, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400150, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400152, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400154, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400164, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400166, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
-  - {fileID: 7400002, guid: 2f4122f2acd02d84aba3553115349c36, type: 3}
-  - {fileID: 7400002, guid: c043052c067fba5468fc4dfae135cb11, type: 3}
-  - {fileID: 7400002, guid: 420fbf307cc4ec3498bd94c1daa4af4f, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 1
+  m_Avatar: {fileID: 9000000, guid: 8b0cbfe1516f0354592374482e3a33b3, type: 3}
+  m_Controller: {fileID: 9100000, guid: ab6b02a33da2fdc4ba0406e3a887925e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114239199084596334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2406,7 +2381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 882fc2526e49c574f8c0325e9def6922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  m_animator: {fileID: 0}
   rbody: {fileID: 0}
 --- !u!136 &136840758981411636
 CapsuleCollider:

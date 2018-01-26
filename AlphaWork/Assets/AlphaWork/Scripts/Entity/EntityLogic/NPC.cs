@@ -8,41 +8,24 @@ using UnityEngine.AI;
 
 namespace AlphaWork
 {
-    public class NPC: EntityObject
+    public class NPC: TargetableObject
     {
         protected Vector3 lockPos;
         protected NPCData m_data = null;
         protected float m_TimeSpawn;
         protected float m_RecordTime;
-        //protected bool m_AIGo;
+       
         // Use this for initialization
         void Start()
-        {
-            //GameEntry.Event.Subscribe(UIBetaEventArgs.EventId, OnAIGo);
+        {            
         }
 
         // Update is called once per frame
         void Update()
         {            
-            //if(Time.realtimeSinceStartup - m_RecordTime > 5)
-            //{
-            //    GameObject gb = GameEntry.Entity.GetEntity(Id).Handle as GameObject;
-            //    if (gb && m_AIGo)
-            //    {
-            //        gb.GetComponent<MoveTarget>().SetTarget(
-            //            new Vector3(UnityEngine.Random.Range(10, 100), 
-            //            0,
-            //            UnityEngine.Random.Range(10, 100)) );
-            //    }
-            //    m_RecordTime = Time.realtimeSinceStartup;
-            //}
             
         }
-
-        //public void OnAIGo(object sender, GameEventArgs e)
-        //{
-        //    m_AIGo = !m_AIGo;
-        //}
+        
 
         protected internal override void OnShow(object userdata)
         {
