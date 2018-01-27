@@ -13,8 +13,7 @@ namespace AlphaWork
         protected EntityObject m_Parent;
         private MoveTarget m_moveTarget;
 
-        private MoveTarget ctl;
-        private Animator animator;
+        //private MoveTarget ctl;
 
         public EntityObject Parent
         {
@@ -32,8 +31,7 @@ namespace AlphaWork
             GameEntry.Event.Subscribe(MoveToTargetEventArgs.EventId, OnMoveToTarget);
             m_moveTarget = m_Parent.gameObject.AddComponent<MoveTarget>();
             FullfillTargets();
-            ctl = m_Parent.GetComponentInParent<MoveTarget>();
-            animator = m_Parent.GetComponentInParent<Animator>();
+            //ctl = m_Parent.GetComponentInParent<MoveTarget>();
         }
 
         // Update is called once per frame
@@ -82,12 +80,11 @@ namespace AlphaWork
             MoveToTargetEventArgs mvArgs = e as MoveToTargetEventArgs;
             //start move new position
             //MoveTarget ctl = m_Parent.GetComponentInParent<MoveTarget>();
-            if (ctl)
-                ctl.Move(gb.transform.position, mvArgs.MovePos);
-            //start move state
-            //Animator animator = m_Parent.GetComponentInParent<Animator>();
-            if (animator)
-                animator.SetBool("Move", true);
+            TargetableObject et = GameEntry.Entity.GetEntity(m_Parent.Id).Logic as TargetableObject;
+            
+            if (m_moveTarget && et)
+                m_moveTarget.Move(gb.transform.position, mvArgs.MovePos,(et.Data as TargetableObjectData).baseSpeed);
+
         }
     }
 

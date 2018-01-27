@@ -73,6 +73,7 @@ namespace AlphaWork
         public float walkSpeed;
         public float runSpeed;
         public float sprintSpeed;
+        public float baseSpeed;
         /// <summary>
         /// 生命百分比。
         /// </summary>

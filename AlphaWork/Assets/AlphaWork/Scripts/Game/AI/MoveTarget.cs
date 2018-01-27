@@ -34,7 +34,7 @@ namespace AlphaWork
 
                 Vector3 pNext = smoothPath[m_curIdx];
                 Vector3 dir = Vector3.Normalize(pNext - pCur);
-                Vector3 newPos = pCur + dir * Speed /** Scale*/ * Time.deltaTime;
+                Vector3 newPos = pCur + dir * Speed * Time.deltaTime;
                 Vector3 newDir = Vector3.Normalize(pNext - newPos);
                 Vector3 realPos;
                 if(Vector3.Dot(dir,newDir) > 0 && IsWalkable(newPos))//not go to target yet
@@ -62,9 +62,10 @@ namespace AlphaWork
             pathNum = 0;
         }
 
-        public void Move(Vector3 startPos, Vector3 endPos)
+        public void Move(Vector3 startPos, Vector3 endPos,float baseSpeed = 1)
         {
             pathNum = 0;
+            Speed = baseSpeed;
 
             if (GameEntry.UseNavGrid)
             {

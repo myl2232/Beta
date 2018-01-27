@@ -62,6 +62,7 @@ namespace AlphaWork
             data.walkSpeed = drEntity.Data.walkSpeed;
             data.runSpeed = drEntity.Data.runSpeed;
             data.sprintSpeed = drEntity.Data.sprintSpeed;
+            data.baseSpeed = drEntity.Data.baseSpeed;
 
             entityComponent.ShowEntity(data.Id, typeof(Enemy), AssetUtility.GetEntityAsset(drEntity.AssetName), "Enemy", data);
         }

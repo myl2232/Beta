@@ -58,7 +58,7 @@ namespace AlphaWork
 
             m_hightFields.Clear();
 
-            Navigation.Grid grid = new Navigation.Grid(Rows, Columns);
+            Navigation.Grid grid = new Navigation.Grid((int)(Rows/MeshSize), (int)(Columns/MeshSize));
 
             for (int i = 0; i < Rows / MeshSize; ++i)
             {

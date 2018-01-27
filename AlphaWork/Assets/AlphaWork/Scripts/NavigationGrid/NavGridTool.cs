@@ -87,7 +87,8 @@ public class NavGridTool : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (!IsActive)
+            m_grid = null;
 	}
 
     public void ReadData()
@@ -112,7 +113,7 @@ public class NavGridTool : MonoBehaviour
             m_hightFields.Clear();
 
         if (m_grid == null)
-            m_grid = new Navigation.Grid(Rows, Columns);
+            m_grid = new Navigation.Grid((int)(Rows/MeshSize), (int)(Columns / MeshSize));
 
         for (int i = 0; i < Rows / MeshSize; ++i)
         {
@@ -147,9 +148,9 @@ public class NavGridTool : MonoBehaviour
         binWriter.Write(Columns);
         binWriter.Write(MeshSize);
 
-        for (int i = 0; i < m_hightFields.Count; ++i)
+        for (int i = 0; i < Rows/MeshSize; ++i)
         {            
-            for(int j = 0; j < m_hightFields[i].Count; ++j)
+            for(int j = 0; j < Columns/MeshSize; ++j)
             {
                 bool bWalkable = m_grid[new Navigation.Grid.Position(i, j)];       
                 //以行的形式写入信息  

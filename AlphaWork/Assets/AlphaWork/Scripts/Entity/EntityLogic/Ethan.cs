@@ -63,49 +63,49 @@ namespace AlphaWork
 
         void OnAttack1(object sender, GameEventArgs arg)
         {
-            GameObject gb = GameBase.MainEthan.Handle as GameObject;
-            RPGCharacterControllerFREE ctl = gb.GetComponent<RPGCharacterControllerFREE>();
-            if (ctl)
-            {
-                ctl.inputAttackL = true;
-            }
+            //GameObject gb = GameBase.MainEthan.Handle as GameObject;
+            //RPGCharacterControllerFREE ctl = gb.GetComponent<RPGCharacterControllerFREE>();
+            //if (ctl)
+            //{
+            //    ctl.inputAttackL = true;
+            //}
         }
         void OnAttack2(object sender, GameEventArgs arg)
         {
-            GameObject gb = GameBase.MainEthan.Handle as GameObject;
-            RPGCharacterControllerFREE ctl = gb.GetComponent<RPGCharacterControllerFREE>();
-            if (ctl)
-            {
-                ctl.inputAttackR = true;
-            }
+            //GameObject gb = GameBase.MainEthan.Handle as GameObject;
+            //RPGCharacterControllerFREE ctl = gb.GetComponent<RPGCharacterControllerFREE>();
+            //if (ctl)
+            //{
+            //    ctl.inputAttackR = true;
+            //}
         }
         void OnKick1(object sender, GameEventArgs arg)
         {
-            GameObject gb = GameBase.MainEthan.Handle as GameObject;
-            RPGCharacterControllerFREE ctl = gb.GetComponent<RPGCharacterControllerFREE>();
-            if (ctl)
-            {
-                ctl.inputCastL = true;
-            }
+            //GameObject gb = GameBase.MainEthan.Handle as GameObject;
+            //RPGCharacterControllerFREE ctl = gb.GetComponent<RPGCharacterControllerFREE>();
+            //if (ctl)
+            //{
+            //    ctl.inputCastL = true;
+            //}
         }
         void OnKick2(object sender, GameEventArgs arg)
         {
-            GameObject gb = GameBase.MainEthan.Handle as GameObject;
-            RPGCharacterControllerFREE ctl = gb.GetComponent<RPGCharacterControllerFREE>();
-            if (ctl)
-            {
-                ctl.inputCastR = true;
-            }
+            //GameObject gb = GameBase.MainEthan.Handle as GameObject;
+            //RPGCharacterControllerFREE ctl = gb.GetComponent<RPGCharacterControllerFREE>();
+            //if (ctl)
+            //{
+            //    ctl.inputCastR = true;
+            //}
         }
         protected override void OnDead()
         {
             GameObject gb = GameBase.MainEthan.Handle as GameObject;
-            RPGCharacterControllerFREE ctl = gb.GetComponent<RPGCharacterControllerFREE>();
-            if (ctl)
-            {
-                ctl.inputDeath = true;
-            }
-            else
+            //RPGCharacterControllerFREE ctl = gb.GetComponent<RPGCharacterControllerFREE>();
+            //if (ctl)
+            //{
+            //    ctl.inputDeath = true;
+            //}
+            //else
             {
                 Animator gAnimator = Entity.gameObject.GetComponent<Animator>();
                 if (gAnimator)
@@ -118,12 +118,12 @@ namespace AlphaWork
         protected override void OnHurt()
         {
             GameObject gb = GameBase.MainEthan.Handle as GameObject;
-            RPGCharacterControllerFREE ctl = gb.GetComponent<RPGCharacterControllerFREE>();
-            if (ctl)
-            {
-                ctl.inputLightHit = true;
-            }
-            else
+            //RPGCharacterControllerFREE ctl = gb.GetComponent<RPGCharacterControllerFREE>();
+            //if (ctl)
+            //{
+            //    ctl.inputLightHit = true;
+            //}
+            //else
             {
                 Animator gAnimator = Entity.gameObject.GetComponent<Animator>();
                 if (gAnimator)

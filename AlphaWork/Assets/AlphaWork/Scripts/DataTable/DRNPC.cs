@@ -58,6 +58,7 @@ namespace AlphaWork
             m_Data.walkSpeed = float.Parse(text[index++]);
             m_Data.runSpeed = float.Parse(text[index++]);
             m_Data.sprintSpeed = float.Parse(text[index++]);
+            m_Data.baseSpeed = float.Parse(text[index++]);
         }
     }
 }
