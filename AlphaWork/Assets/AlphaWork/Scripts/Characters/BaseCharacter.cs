@@ -9,6 +9,13 @@ namespace AlphaWork
 {
     public class BaseCharacter : MonoBehaviour
     {
+        public int ParentId;
+        public LogicStatus m_status;
+        public float walkSpeed;
+        public float runSpeed;
+        public float sprintSpeed;
+        public float baseSpeed;
+
         private void Awake()
         {
             GameEntry.Event.Subscribe(UIAttack1EventArgs.EventId, OnAttack1);
@@ -56,14 +63,23 @@ namespace AlphaWork
             //    ctl.inputCastR = true;
             //}
         }
+        public virtual bool IsActive()
+        {
+            if(m_status == LogicStatus.ELogic_DEAD)
+                return false;
 
+            return true;
+        }
         public virtual bool CheckActionEnd()
         {
             return false;
         }
 
         public virtual void SyncStatus(int status)
-        { }
+        {
+            m_status = (LogicStatus)status;
+        }
+
         public virtual void ActionAttack(float attackParam)
         { }
         public virtual void ActionPatrol(float speed)

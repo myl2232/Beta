@@ -23,8 +23,12 @@ namespace AlphaWork
 			get;
 			private set;
 		}
-		// Use this for initialization
-		void Start()
+        public float walkSpeed;
+        public float runSpeed;
+        public float sprintSpeed;
+        public float baseSpeed;
+        // Use this for initialization
+        void Start()
 		{
 
 		}
@@ -39,10 +43,14 @@ namespace AlphaWork
 		{
 			string[] text = DataTableExtension.SplitDataRow(dataRowText);
 			int index = 0;
-			index++;
+			index++;            
 			Id = int.Parse(text[index++]);
             MaxHP = int.Parse(text[index++]);
-
+            string AssetName = text[index++];
+            walkSpeed = float.Parse(text[index++]);
+            runSpeed = float.Parse(text[index++]);
+            sprintSpeed = float.Parse(text[index++]);
+            baseSpeed = float.Parse(text[index++]);            
         }
 	}
 

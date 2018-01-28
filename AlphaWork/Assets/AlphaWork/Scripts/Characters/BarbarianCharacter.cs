@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameFramework.Event;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,19 +13,18 @@ namespace AlphaWork
     {
         public Animator m_animator;
         public Rigidbody rbody;
-        private LogicStatus m_status;
 
         private void Start()
         {
             m_animator = GetComponent<Animator>();
             rbody = GetComponent<Rigidbody>();
-
             rbody.mass = 100;
         }
 
         public override void SyncStatus(int status)
         {
-            m_status = (LogicStatus)status;
+            base.SyncStatus(status);
+
             if (m_animator != null)
                 m_animator.SetInteger("status", (int)m_status);
         }

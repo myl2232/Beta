@@ -9,7 +9,6 @@ namespace AlphaWork
     public class MoveTarget : MonoBehaviour
     {
         public float Speed = 5;
-        //public float Scale = 1;
         
         private int pathNum = 0;
         private Vector3[] smoothPath; 

@@ -7,7 +7,6 @@ namespace AlphaWork
 {
     public class BehaviourShakeHit : MonoBehaviour
     {
-
         public string SkeletonRoot = "EthanHips";
         public float Duration = 0.2f;
         public Vector3 Amplitude = new Vector3(10, 10, 10);

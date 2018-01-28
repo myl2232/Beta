@@ -10,6 +10,7 @@ namespace AlphaWork
     {
         [SerializeField]
         private TargetableObjectData m_TargetableObjectData = null;
+        public Vector3 m_nextTarget;
 
         public bool IsDead
         {
@@ -55,15 +56,32 @@ namespace AlphaWork
                 Log.Error("Targetable object data is invalid.");
                 return;
             }
+            //记录各个角色表中的属性
+            BaseCharacter chr = GetComponent<BaseCharacter>();
+            TargetableObjectData data = Data as TargetableObjectData;
+            chr.walkSpeed = data.walkSpeed;
+            chr.runSpeed = data.runSpeed;
+            chr.sprintSpeed = data.sprintSpeed;
+            chr.baseSpeed = data.baseSpeed;
+
+            WeaponAttachment[] attaches = GetComponentsInChildren<WeaponAttachment>();
+            for(int i = 0; i < attaches.Length; ++i)
+            {
+                attaches[i].ParentId = Id;
+            }
         }
 
         protected virtual void OnDead()
         {
-            //GameEntry.Entity.HideEntity(this);
+            BaseCharacter chr = GetComponentInParent<BaseCharacter>();
+            if(chr!=null)
+                chr.ActionDead();
         }
         protected virtual void OnHurt()
         {
-            //GameEntry.Entity.HideEntity(this);
+            BaseCharacter chr = GetComponentInParent<BaseCharacter>();
+            if(chr!=null)
+                chr.ActionHurt();
         }
         private void OnTriggerEnter(Collider other)
         {

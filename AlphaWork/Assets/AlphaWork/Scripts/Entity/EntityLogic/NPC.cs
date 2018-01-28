@@ -17,7 +17,10 @@ namespace AlphaWork
        
         // Use this for initialization
         void Start()
-        {            
+        {
+            BaseCharacter chr = gameObject.GetComponent<BaseCharacter>();
+            if(chr)
+                chr.ParentId = Id;
         }
 
         // Update is called once per frame
@@ -25,7 +28,7 @@ namespace AlphaWork
         {            
             
         }
-        
+              
 
         protected internal override void OnShow(object userdata)
         {
@@ -41,9 +44,7 @@ namespace AlphaWork
             }
      
             m_TimeSpawn = Time.realtimeSinceStartup;
-
-            //GameObject gb = GameEntry.Entity.GetEntity(Id).Handle as GameObject;
-            
+                        
         }
     }
 }

@@ -23,7 +23,7 @@ namespace AlphaWork
 				RaycastHit hit;
                 Physics.Raycast(mainPos, Vector3.down, out hit, 1000);
 
-                GameEntry.Entity.ShowEthan(new EthanData(GameEntry.Entity.GenerateSerialId(), 50004/*80000*/, CampType.Player)
+                GameEntry.Entity.ShowEthan(new EthanData(GameEntry.Entity.GenerateSerialId(), 80001/*80000*/, CampType.Player)
                 {
                     Position = hit.point,
                 });

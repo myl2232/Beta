@@ -1,10 +1,10 @@
-#	玩家表		
-#	Id	MaxHP	Prefab
-#	int	int	string
-#	玩家	最大生命	prefab名称
-	80000	1000	Ethan
-	80001	2000	Character_Color_01
-	80002	2000	Character_Color_02
-	80003	2000	Character_Color_03
-	80004	2000	Character_Color_04
-	80005	2000	Character_Color_05
+#	玩家表						
+#	Id	MaxHP	Prefab	walk speed	run speed	sprint speed	speed
+#	int	int	string	float	float	float	float
+#	玩家	最大生命	prefab名称（没用，只是标识一下）	行走速度系数	奔跑速度系数	冲刺速度系数	基础速度
+	80000	1000	Ethan	5	10	15	5
+	80001	2000	Character_Color_01	20	35	50	5
+	80002	2000	Character_Color_02	20	35	50	5
+	80003	2000	Character_Color_03	20	35	50	5
+	80004	2000	Character_Color_04	20	35	50	5
+	80005	2000	Character_Color_05	20	35	50	5

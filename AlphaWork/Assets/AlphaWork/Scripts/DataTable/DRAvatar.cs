@@ -16,14 +16,14 @@ namespace AlphaWork
 			set;
 		}
 
-  //      /// <summary>
-		///// 最大生命值。
-		///// </summary>
-		//public int MaxHP
-  //      {
-  //          get;
-  //          private set;
-  //      }
+        //      /// <summary>
+        ///// 最大生命值。
+        ///// </summary>
+        public int MaxHP
+        {
+            get;
+            private set;
+        }
 
         private AvatarData m_Data = new AvatarData();
         public AvatarData Data

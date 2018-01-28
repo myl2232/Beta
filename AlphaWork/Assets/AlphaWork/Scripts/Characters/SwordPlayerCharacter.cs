@@ -20,7 +20,7 @@ namespace AlphaWork
         private Vector3 inputVec;
         private bool run;
         private JoystackCc m_Joystack;
-
+       
         // Use this for initialization
         void Start()
         {
@@ -127,6 +127,9 @@ namespace AlphaWork
 
         private void FixedUpdate()
         {
+            if (!IsActive())
+                return;
+
             float h = CrossPlatformInputManager.GetAxis("Horizontal");
             float v = CrossPlatformInputManager.GetAxis("Vertical");            
 
@@ -170,16 +173,21 @@ namespace AlphaWork
             inputH = inputVec.z;
             inputV = inputVec.x;
 
-            float moveX = inputV * 50f * Time.deltaTime;
-            float moveZ = inputH * 80f * Time.deltaTime;
-
+            float moveX;
+            float moveZ;
+           
             if (run)
             {
-                moveX *= 3f;
-                moveZ *= 3f;
+                moveX = inputV * runSpeed * baseSpeed * Time.deltaTime;
+                moveZ = inputH * runSpeed * baseSpeed * Time.deltaTime;
+            }
+            else
+            {
+                moveX = inputV * walkSpeed * baseSpeed * Time.deltaTime;
+                moveZ = inputH * walkSpeed * baseSpeed * Time.deltaTime;
             }
 
-            rbody.velocity = new Vector3(moveX, 0f, moveZ); 
+            rbody.velocity = new Vector3(moveX, 0f, moveZ);
         }
 
         protected override void OnAttack1(object sender, GameEventArgs arg)
@@ -219,7 +227,34 @@ namespace AlphaWork
             anim.Play("Attack_06", -1, 0F);
         }
 
+        public override void ActionHurt()
+        {
+            if (anim == null)
+                anim = GetComponent<Animator>();
 
+            int n = Random.Range(0, 2);
+            if (n == 0)
+            {
+                anim.Play("Dame_01", -1, 0F);
+            }
+            else
+            {
+                anim.Play("Dame_02", -1, 0F);
+            }
+        }
+
+        public override void ActionDead()
+        {
+            int n = Random.Range(0, 2);
+            if (n == 0)
+            {
+                anim.Play("Death_01", -1, 0F);
+            }
+            else
+            {
+                anim.Play("Death_02", -1, 0F);
+            }          
+        }
     }
 
 }

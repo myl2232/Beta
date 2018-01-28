@@ -15,10 +15,16 @@ namespace AlphaWork
         {
             get { return m_agent; }
         }
+
+        private MoveTarget m_moveTarget;
+        private BehaviacTrigger m_trigger;
+        //private Vector3 m_nextTarget;
+        private Vector3 m_MoveStartPos = new Vector3();
+
         private float m_lastTime;
         // Use this for initialization
         void Start()
-        {
+        {            
             m_lastTime = 0;
             //ai
             NPCData data = Data as NPCData;
@@ -30,7 +36,11 @@ namespace AlphaWork
                 m_agent.ParentId = Id;
                 m_agent.InitAI();
             }
-            
+            m_trigger = gameObject.GetOrAddComponent<BehaviacTrigger>();
+            m_trigger.Parent = Entity.Logic as TargetableObject;
+            gameObject.GetOrAddComponent<BehaviourShakeHit>();
+            m_moveTarget = gameObject.GetOrAddComponent<MoveTarget>();
+            GameEntry.Event.Subscribe(MoveToTargetEventArgs.EventId, OnMoveToTarget);
         }
 
         // Update is called once per frame
@@ -50,6 +60,14 @@ namespace AlphaWork
             }
         }
 
+        public void SetSpeed(float speed)
+        {
+            m_moveTarget.Speed = speed;
+        }
+        public void PauseMove()
+        {
+            m_moveTarget.Pause();
+        }
         protected internal override void OnShow(object userdata)
         {
             base.OnShow(userdata);  
@@ -64,6 +82,55 @@ namespace AlphaWork
             GetComponentInParent<BaseCharacter>().ActionHurt();
         }
 
+        #region 
+        /*移动调用流程*/
+       
+        public void MoveToTarget()
+        {
+            FaceToTarget();
+            GameObject gb = Entity.Handle as GameObject;
+            if (m_nextTarget.x == 0 || Vector3.Distance(gb.transform.position, m_nextTarget) < 0.5f)
+                m_nextTarget = GetTargetPos();
+
+            GameEntry.Event.Fire(this, new MoveToTargetEventArgs(Id, m_nextTarget));
+        }
+
+        protected void FaceToTarget()
+        {
+            GameObject gb = Entity.Handle as GameObject;
+            gb.transform.forward = m_nextTarget - gb.transform.position;
+        }
+
+        protected void OnMoveToTarget(object sender, GameEventArgs e)
+        {
+            MoveToTargetEventArgs mvArgs = e as MoveToTargetEventArgs;
+            if (mvArgs.EId == Id)
+            {
+                GameObject gb = Entity.Handle as GameObject;
+                m_MoveStartPos = gb.transform.position;
+
+                if (m_moveTarget)
+                    m_moveTarget.Move(m_MoveStartPos, mvArgs.MovePos);
+            }
+        }
+
+        protected Vector3 GetTargetPos()
+        {
+            UnityGameFramework.Runtime.Entity etEnemy = GameEntry.Entity.GetEntity(m_agent.SenseResult);
+            if (etEnemy != null)
+            {
+                return etEnemy.transform.position;
+            }
+            else
+            {
+                GameObject target = new GameObject();
+                GameEntry.Behaviac.GetNextTarget(transform.position, ref target);
+                return target.transform.position;
+            }
+        }
+
+        #endregion
+
         //test from animation event
         //public void AttackSkill01()
         //{
@@ -71,9 +138,8 @@ namespace AlphaWork
         //    Vector3 vDir = GameEntry.Entity.GetEntity(Agent.SenseResult).transform.position - transform.position;
         //    GameEntry.Entity.ShowEffect(new EffectData(vDir, transform, attId, 60001)
         //    {
-               
+
         //    },1);
         //}
-
     }
 }

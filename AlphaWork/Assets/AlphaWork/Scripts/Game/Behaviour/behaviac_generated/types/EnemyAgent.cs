@@ -51,7 +51,7 @@ public class EnemyAgent : BaseAgent
                 logicSt = (int)LogicStatus.ELogic_PATROL;
                 m_character.SyncStatus(logicSt);
             }
-            m_nextTarget = etEnemy.transform.position;
+            m_parent.m_nextTarget = etEnemy.transform.position;
         }
         else
         {
@@ -73,83 +73,28 @@ public class EnemyAgent : BaseAgent
 ///<<< BEGIN WRITING YOUR CODE CLASS_PART
 
     private SensorAICircle m_ai;
-    private BehaviacTrigger m_trigger;
-    private MoveTarget m_moveTarget;
-    private AlphaWork.EntityObject m_parent;
-    private int m_senseResult;
+    private Enemy m_parent;
+    public int m_senseResult;
     public int SenseResult
     {
 		get { return m_senseResult; }
-        set { m_senseResult = value; }
+        set{ m_senseResult = value; }
     }
-    private Vector3 m_nextTarget;
-    private Vector3 m_MoveStartPos;
+
     private BaseCharacter m_character;
     TargetableObjectData m_LogicData;
 
     public void InitAI()
     {
-        m_parent = AlphaWork.GameEntry.Entity.GetEntity(m_ParentId).Logic as AlphaWork.EntityObject;
+        m_parent = GameEntry.Entity.GetEntity(m_ParentId).Logic as Enemy;
         GameObject gb = m_parent.Entity.Handle as GameObject;
-
-        EntityObject en = m_parent.Entity.Logic as EntityObject;
-        m_LogicData = en.Data as TargetableObjectData;
+        m_LogicData = m_parent.Data as TargetableObjectData;
 
         m_ai = gb.AddComponent<SensorAICircle>();
         m_ai.Radius = m_LogicData.SenseRadius;
         m_ai.ParentId = m_parent.Id;
-        m_trigger = gb.AddComponent<BehaviacTrigger>();
-        m_trigger.Parent = m_parent.Entity.Logic as EntityObject;        
-        m_moveTarget = gb.AddComponent<MoveTarget>();
+
         m_character = gb.GetComponent<BaseCharacter>();
-
-        GameEntry.Event.Subscribe(MoveToTargetEventArgs.EventId, OnMoveToTarget);
-        
-        m_MoveStartPos = new Vector3();
-    }
-
-    protected void MoveToTarget()
-    {
-        FaceToTarget();
-        GameObject gb = m_parent.Entity.Handle as GameObject;
-        if (m_nextTarget.x == 0 || Vector3.Distance(gb.transform.position, m_nextTarget) < 0.5f)
-            m_nextTarget = GetTargetPos();
-
-        GameEntry.Event.Fire(this, new MoveToTargetEventArgs(m_ParentId, m_nextTarget));
-    }    
-
-    protected void FaceToTarget()
-    {
-        GameObject gb = m_parent.Entity.Handle as GameObject;
-        gb.transform.forward = m_nextTarget - gb.transform.position;
-    }
-
-    protected void OnMoveToTarget(object sender, GameEventArgs e)
-    {
-        MoveToTargetEventArgs mvArgs = e as MoveToTargetEventArgs;
-        if(mvArgs.EId == m_ParentId)
-        {
-            GameObject gb = m_parent.Entity.Handle as GameObject;
-            m_MoveStartPos = gb.transform.position;            
-
-            if (m_moveTarget)
-                m_moveTarget.Move(m_MoveStartPos, mvArgs.MovePos);
-        }
-    }
-
-    protected Vector3 GetTargetPos()
-    {
-        UnityGameFramework.Runtime.Entity etEnemy = GameEntry.Entity.GetEntity(m_senseResult);
-        if (etEnemy != null)
-        {
-            return etEnemy.transform.position;
-        }
-        else
-        {
-            GameObject target = new GameObject();
-            GameEntry.Behaviac.GetNextTarget(m_parent.transform.position, ref target);
-            return target.transform.position;
-        }
     }
 
     protected void DispatchActions()
@@ -157,24 +102,28 @@ public class EnemyAgent : BaseAgent
         LogicStatus status = _get_logicStatus();
         if (status == LogicStatus.ELogic_ATTACK)
         {
-            m_moveTarget.Pause();
+            m_parent.PauseMove();
             m_character.ActionAttack(attackParam);
         }
         else if (status == LogicStatus.ELogic_PATROL)
         {
             m_character.ActionPatrol(m_LogicData.walkSpeed);
-            m_moveTarget.Speed = m_LogicData.walkSpeed;
-            MoveToTarget();
+            m_parent.SetSpeed(m_LogicData.walkSpeed);
+            m_parent.MoveToTarget();
         }
         else if (status == LogicStatus.ELogic_TRACK)
         {
             m_character.ActionPatrol(m_LogicData.runSpeed);
-            m_moveTarget.Speed = m_LogicData.runSpeed;
-            MoveToTarget();
+            m_parent.SetSpeed(m_LogicData.runSpeed);
+            m_parent.MoveToTarget();
         }
         else if(status == LogicStatus.ELogic_IDLE)
         {
             m_character.ActionIdle();
+        }
+        else if(status == LogicStatus.ELogic_DEAD)
+        {
+            m_character.ActionDead();
         }
     }
     ///<<< END WRITING YOUR CODE

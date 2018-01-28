@@ -63,13 +63,39 @@ namespace AlphaWork
             data.runSpeed = drEntity.Data.runSpeed;
             data.sprintSpeed = drEntity.Data.sprintSpeed;
             data.baseSpeed = drEntity.Data.baseSpeed;
+            data.HP = drEntity.MaxHP;
 
             entityComponent.ShowEntity(data.Id, typeof(Enemy), AssetUtility.GetEntityAsset(drEntity.AssetName), "Enemy", data);
         }
 
         public static void ShowEthan(this EntityComponent entityComponent, EthanData data)
 		{
-            entityComponent.ShowEntity(typeof(Ethan), "Ethan", data);
+            if (data == null)
+            {
+                Log.Warning("Data is invalid.");
+                return;
+            }
+
+            IDataTable<DREthan> dtEntity = GameEntry.DataTable.GetDataTable<DREthan>();
+            DREthan drEntity = dtEntity.GetDataRow(data.TypeId);
+            if (drEntity == null)
+            {
+                Log.Warning("Can not load entity id '{0}' from data table.", data.TypeId.ToString());
+                return;
+            }
+
+            IDataTable<DREntity> dtEnt = GameEntry.DataTable.GetDataTable<DREntity>();
+            DREntity drEnt = dtEnt.GetDataRow(data.TypeId);            
+
+            data.walkSpeed = drEntity.walkSpeed;
+            data.runSpeed = drEntity.runSpeed;
+            data.sprintSpeed = drEntity.sprintSpeed;
+            data.baseSpeed = drEntity.baseSpeed;
+            data.HP = drEntity.MaxHP;
+            
+            entityComponent.ShowEntity(data.Id, typeof(Ethan), AssetUtility.GetEntityAsset(drEnt.AssetName), "Ethan", data);
+
+    
 		}
 
         public static void ShowAttachment(this EntityComponent entityComponent, AttachmentData data)
@@ -121,6 +147,7 @@ namespace AlphaWork
             data.walkSpeed = drEntity.Data.walkSpeed;
             data.runSpeed = drEntity.Data.runSpeed;
             data.sprintSpeed = drEntity.Data.sprintSpeed;
+            data.HP = drEntity.MaxHP;
 
             entityComponent.ShowEntity(data.Id, typeof(AvatarEntity), drEntity.Data.Skeleton, "Avatar", data);
         }

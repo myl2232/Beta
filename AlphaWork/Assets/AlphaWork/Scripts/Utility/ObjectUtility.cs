@@ -18,6 +18,19 @@ namespace AlphaWork
         {
 
         }
+
+        public static Transform GetRootParent(Transform trans)
+        {
+            if (!trans)
+                return null;
+
+            Transform parentTrans = trans.parent;
+            if (!parentTrans)
+                return trans;
+
+            return GetRootParent(parentTrans);
+        }
+
         public static Transform FindChild(Transform trans, string str)
         {
             if (!trans)
