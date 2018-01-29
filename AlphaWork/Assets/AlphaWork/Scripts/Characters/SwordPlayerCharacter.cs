@@ -131,11 +131,17 @@ namespace AlphaWork
                 return;
 
             float h = CrossPlatformInputManager.GetAxis("Horizontal");
-            float v = CrossPlatformInputManager.GetAxis("Vertical");            
+            float v = CrossPlatformInputManager.GetAxis("Vertical"); 
+           
 
             h += m_Joystack.MovePosiNorm.x * speed;
             v += m_Joystack.MovePosiNorm.y * speed;
 
+            if (!IsMainActor())
+            {
+                h = 0;
+                v = 0;
+            }
             Move(h, v);
 
             CleanInputs();

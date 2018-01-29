@@ -3,7 +3,7 @@
 #	int		string
 #	EntityId	Entity说明（只存ID，属性到对应的表查询）	Entity的Prefab名称
 	10000	Avatar	Hero
-	10001	占位	BallPrefab
+	10001	Avatar	Hero
 	20000	占位	PlayerEngine
 	20001	占位	EnemyEngine
 	30000	占位	DefaultWeapon

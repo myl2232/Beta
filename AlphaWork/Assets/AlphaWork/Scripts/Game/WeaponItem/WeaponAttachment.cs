@@ -20,13 +20,13 @@ namespace AlphaWork
         // Use this for initialization
         void Start()
         {
-
+            gameObject.layer = Constant.Layer.WeaponLayerId;
         }
 
         // Update is called once per frame
         void Update()
         {
-            
+           
         }
 
         void OnEnable()

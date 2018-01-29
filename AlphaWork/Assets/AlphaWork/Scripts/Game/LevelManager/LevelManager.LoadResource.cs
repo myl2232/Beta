@@ -37,23 +37,25 @@ namespace AlphaWork
                 Vector3 sPt = new Vector3(UnityEngine.Random.Range(hit.point.x, hit.point.x + 10),
                     hit.point.y, UnityEngine.Random.Range(hit.point.z, hit.point.x + 10));
 
-                //for (int i = 0; i < 1; ++i)
-                //{
-                //    for (int j = 0; j < 1; ++j)
-                //    {
-                //        //sPt = new Vector3(128 + i * 8 + j * 5, 0.5f, 128 + j * 4);
-                //        GameEntry.Entity.ShowAvatar(new AvatarData(GameEntry.Entity.GenerateSerialId(), 10001, CampType.Enemy)
-                //        {
-                //            Position = sPt,
-                //        });
-                //    }
-                //}
+                for (int i = 0; i < 2; ++i)
+                {
+                    for (int j = 0; j < 10; ++j)
+                    {
+                        //GameEntry.Entity.ShowAvatar(new AvatarData(GameEntry.Entity.GenerateSerialId(), 10001, CampType.Enemy)
+                        //{
+                        //    Position = sPt,
+                        //});
 
-                //                 GameEntry.Entity.ShowEnemy(new NPCData(GameEntry.Entity.GenerateSerialId(), 50004, CampType.Enemy)
-                //                 {
-                //                     Position = sPt + new Vector3(5, 0, 5),
-                //                     Scale = new Vector3(3.0f, 3.0f, 3.0f),
-                //                 });
+                        int id = UnityEngine.Random.Range(0, 4);
+                        GameEntry.Entity.ShowNPC(new NPCData(GameEntry.Entity.GenerateSerialId(), 50004+id, CampType.Neutral)
+                        {
+                            Position = sPt + new Vector3(5, 0, 5),
+                            //Scale = new Vector3(3.0f, 3.0f, 3.0f),
+                        });
+                    }
+                }
+
+
 
             }
         }

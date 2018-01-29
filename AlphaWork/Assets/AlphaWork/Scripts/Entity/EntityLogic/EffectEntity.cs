@@ -79,6 +79,7 @@ namespace AlphaWork
         protected internal override void OnShow(object userdata)
         {
             base.OnShow(userdata);
+
             EffectData data = userdata as EffectData;
             speed = data.Speed;
             lifetime = data.LifeTime;
@@ -86,6 +87,8 @@ namespace AlphaWork
             Transform vTrans = ObjectUtility.FindChild(data.Parent, data.AttachName);
             transform.position = vTrans.position + transform.forward.normalized*4;
             hitHP = data.HitHP;
+
+            gameObject.layer = Constant.Layer.EffectLayerId;
         }
 
     }

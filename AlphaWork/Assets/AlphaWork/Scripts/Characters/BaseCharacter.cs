@@ -70,6 +70,15 @@ namespace AlphaWork
 
             return true;
         }
+
+        public virtual bool IsMainActor()
+        {
+            if (ParentId == GameBase.MainEthan.Id)
+                return true;
+
+            return false;
+        }
+
         public virtual bool CheckActionEnd()
         {
             return false;

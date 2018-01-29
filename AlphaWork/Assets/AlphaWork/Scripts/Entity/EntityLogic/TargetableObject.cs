@@ -69,6 +69,8 @@ namespace AlphaWork
             {
                 attaches[i].ParentId = Id;
             }
+
+            gameObject.layer = Constant.Layer.TargetableObjectLayerId;
         }
 
         protected virtual void OnDead()
