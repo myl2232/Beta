@@ -15,10 +15,9 @@ namespace AlphaWork
         {
             get { return m_agent; }
         }
-
+        
         private MoveTarget m_moveTarget;
-        private BehaviacTrigger m_trigger;
-        //private Vector3 m_nextTarget;
+        private BehaviacTrigger m_trigger;        
         private Vector3 m_MoveStartPos = new Vector3();
 
         private float m_lastTime;
@@ -26,7 +25,6 @@ namespace AlphaWork
         void Start()
         {  
             m_lastTime = 0;
-
             BaseCharacter chr = gameObject.GetComponent<BaseCharacter>();
             if (chr)
                 chr.ParentId = Id;
@@ -46,6 +44,7 @@ namespace AlphaWork
             gameObject.GetOrAddComponent<BehaviourShakeHit>();
             m_moveTarget = gameObject.GetOrAddComponent<MoveTarget>();
             GameEntry.Event.Subscribe(MoveToTargetEventArgs.EventId, OnMoveToTarget);
+            GameEntry.Event.Subscribe(MoveToTargetEndEventArgs.EventId, OnMoveToEnd);
         }
 
         // Update is called once per frame
@@ -63,6 +62,7 @@ namespace AlphaWork
                 m_lastTime = Time.realtimeSinceStartup;
                 m_agent._set_bAwakeSense(true);
             }
+                       
         }
 
         public void SetSpeed(float speed)
@@ -116,6 +116,15 @@ namespace AlphaWork
 
                 if (m_moveTarget)
                     m_moveTarget.Move(m_MoveStartPos, mvArgs.MovePos);
+            }
+        }
+
+        protected void OnMoveToEnd(object sender, GameEventArgs e)
+        {
+            MoveToTargetEndEventArgs mvArgs = e as MoveToTargetEndEventArgs;
+            if(mvArgs.parentId == m_data.Id)
+            {
+                m_agent.MoveOn = false;
             }
         }
 

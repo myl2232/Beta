@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityGameFramework.Runtime;
 
 namespace AlphaWork
 {
@@ -10,7 +11,7 @@ namespace AlphaWork
     {
         public float Speed = 5;
         
-        private int pathNum = 0;
+        private int pathNum = 1;
         private Vector3[] smoothPath; 
         private int m_curIdx = 0;
         private Transform m_trans;
@@ -28,8 +29,10 @@ namespace AlphaWork
             if (pathNum > 0)
             {                
                 Vector3 pCur = m_trans.transform.position;
-                if (m_curIdx > (pathNum - 1))
+                if (m_curIdx > (pathNum - 1))             
+                {                    
                     return;
+                }
 
                 Vector3 pNext = smoothPath[m_curIdx];
                 Vector3 dir = Vector3.Normalize(pNext - pCur);
@@ -48,8 +51,10 @@ namespace AlphaWork
                 m_trans.transform.forward = realPos - m_trans.transform.position;
                 m_trans.transform.position = realPos;
             }
-            
-            for(int i = 0; i < smoothPath.Length;++i)
+            else
+                GameEntry.Event.Fire(this, new MoveToTargetEndEventArgs(GetComponentInParent<Entity>().Id));
+
+            for (int i = 0; i < smoothPath.Length;++i)
             {
                 if (i < smoothPath.Length - 1)
                     Debug.DrawLine(smoothPath[i], smoothPath[i + 1],Color.blue);
