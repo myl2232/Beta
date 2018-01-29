@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using UnityGameFramework.Runtime;
 
 namespace AlphaWork
 {
@@ -59,15 +60,24 @@ namespace AlphaWork
             Collider[] cols = Physics.OverlapSphere(transform.position, m_radius);
             for (int i = 0; i < cols.Length; ++i)
             {
-                int tCode = cols[i].gameObject.GetHashCode();
-                int parentCode = GameEntry.Entity.GetEntity(m_parentEntId).Handle.GetHashCode();
-                if (tCode != parentCode && !(GameEntry.Entity.GetEntity(m_parentEntId).Logic as EffectEntity))
+                //int tCode = cols[i].gameObject.GetHashCode();
+                //int parentCode = GameEntry.Entity.GetEntity(m_parentEntId).Handle.GetHashCode();
+                //if (tCode != parentCode && !(GameEntry.Entity.GetEntity(m_parentEntId).Logic as EffectEntity))
+                //{
+                //    int Id = GetEntityIdOfHashCode(tCode);
+                //    if ((Id != 0) && !(results.Contains(Id)))
+                //    {
+                //        results.Add(Id);
+                //    }
+                //}
+
+                Entity etCol = cols[i].gameObject.GetComponentInParent<Entity>();
+                if (etCol == null)
+                    continue;
+
+                if(m_parentEntId != etCol.Id && (etCol.Id != 0) && !(results.Contains(etCol.Id)))
                 {
-                    int Id = GetEntityIdOfHashCode(tCode);
-                    if ((Id != 0) && !(results.Contains(Id)))
-                    {
-                        results.Add(Id);
-                    }
+                    results.Add(etCol.Id);
                 }
             }
 

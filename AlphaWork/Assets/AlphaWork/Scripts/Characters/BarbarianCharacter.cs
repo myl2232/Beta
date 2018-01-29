@@ -19,6 +19,11 @@ namespace AlphaWork
             m_animator = GetComponent<Animator>();
             rbody = GetComponent<Rigidbody>();
             rbody.mass = 100;
+
+            if (IsMainActor())
+                rbody.useGravity = true;
+            else
+                rbody.useGravity = false;
         }
 
         public override void SyncStatus(int status)
@@ -31,36 +36,36 @@ namespace AlphaWork
 
         public override void ActionAttack(float attackParam)
         {
-            if (m_animator != null)
-            {
-                m_animator.SetTrigger("Attack");
-                m_animator.SetFloat("AttackBlend", attackParam);
-                //StartCoroutine(_LockMovementAndAttack(0, .25f));
-                m_animator.SetBool("Move", false);
-            }
+            //if (m_animator != null)
+            //{
+            //    m_animator.SetTrigger("Attack");
+            //    m_animator.SetFloat("AttackBlend", attackParam);
+            //    //StartCoroutine(_LockMovementAndAttack(0, .25f));
+            //    m_animator.SetBool("Move", false);
+            //}
         }
         public override void ActionPatrol(float speed)
         {
-            if (m_animator != null)
-            {
-                m_animator.SetBool("Move",true);
-                m_animator.SetFloat("MoveBlend", speed);
-            }
+            //if (m_animator != null)
+            //{
+            //    m_animator.SetBool("Move",true);
+            //    m_animator.SetFloat("MoveBlend", speed);
+            //}
         }
         public override void ActionIdle()
         {
-            m_animator.SetBool("Dead", false);
-            m_animator.SetBool("Move", false);
+            //m_animator.SetBool("Dead", false);
+            //m_animator.SetBool("Move", false);
         }
         public override void ActionHurt()
         {
-            m_animator.SetTrigger("Hurt");
-            m_animator.SetBool("Move", false);
+            //m_animator.SetBool("Hurt",true);
+            //m_animator.SetBool("Move", false);
         }
         public override void ActionDead()
         {
-            m_animator.SetBool("Dead",true);
-            m_animator.SetBool("Move", false);
+            //m_animator.SetBool("Dead",true);
+            //m_animator.SetBool("Move", false);
         }
 
         //method to keep character from moveing while attacking, etc

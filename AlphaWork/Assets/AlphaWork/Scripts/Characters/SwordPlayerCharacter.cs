@@ -11,7 +11,7 @@ namespace AlphaWork
 
         public Animator anim;
         public Rigidbody rbody;
-        public float speed = 1;
+        //public float speed = 1;
         public float rotationSpeed = 100;
 
         private float inputH;
@@ -29,6 +29,11 @@ namespace AlphaWork
             inputVec = new Vector3();
             run = false;
             m_Joystack = FindObjectOfType<JoystackCc>();
+
+            if (IsMainActor())
+                rbody.useGravity = true;
+            else
+                rbody.useGravity = false;
         }
         
 
@@ -134,8 +139,8 @@ namespace AlphaWork
             float v = CrossPlatformInputManager.GetAxis("Vertical"); 
            
 
-            h += m_Joystack.MovePosiNorm.x * speed;
-            v += m_Joystack.MovePosiNorm.y * speed;
+            h += m_Joystack.MovePosiNorm.x;
+            v += m_Joystack.MovePosiNorm.y;
 
             if (!IsMainActor())
             {
@@ -198,6 +203,9 @@ namespace AlphaWork
 
         protected override void OnAttack1(object sender, GameEventArgs arg)
         {
+            if (!IsMainActor())
+                return;
+
             if(anim == null)
                 anim = GetComponent<Animator>();
 
@@ -209,6 +217,9 @@ namespace AlphaWork
         }
         protected override void OnAttack2(object sender, GameEventArgs arg)
         {
+            if (!IsMainActor())
+                return;
+
             if (anim == null)
                 anim = GetComponent<Animator>();
 
@@ -220,6 +231,9 @@ namespace AlphaWork
         }
         protected override void OnKick1(object sender, GameEventArgs arg)
         {
+            if (!IsMainActor())
+                return;
+
             if (anim == null)
                 anim = GetComponent<Animator>();
 
@@ -227,6 +241,9 @@ namespace AlphaWork
         }
         protected override void OnKick2(object sender, GameEventArgs arg)
         {
+            if (!IsMainActor())
+                return;
+
             if (anim == null)
                 anim = GetComponent<Animator>();
 

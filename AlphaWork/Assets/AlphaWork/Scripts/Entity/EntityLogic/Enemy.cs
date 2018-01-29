@@ -24,8 +24,13 @@ namespace AlphaWork
         private float m_lastTime;
         // Use this for initialization
         void Start()
-        {            
+        {  
             m_lastTime = 0;
+
+            BaseCharacter chr = gameObject.GetComponent<BaseCharacter>();
+            if (chr)
+                chr.ParentId = Id;
+
             //ai
             NPCData data = Data as NPCData;
             if(data != null)
