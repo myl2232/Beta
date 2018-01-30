@@ -11,7 +11,7 @@
 	50006	Character_Color_03	1000	150	10	EnemyAvatar	5	10	15	5
 	50007	Character_Color_04	1000	150	10	EnemyAvatar	5	10	15	5
 	50008	Character_Color_05	1000	150	10	EnemyAvatar	5	10	15	5
-	50009	barbarian_01	1000	20	2	EnemyAvatar	0.1	0.6	1	5
+	50009	barbarian_01	1000	20	2	EnemyAvatar	0.1	0.6	1	100
 	50010	barbarian_02	1000	20	2	EnemyAvatar	0.1	0.4	1	5
 	50011	barbarian_03	1000	20	2	EnemyAvatar	0.1	0.4	1	5
 	50012	barbarian_04	1000	20	2	EnemyAvatar	0.1	0.4	1	5

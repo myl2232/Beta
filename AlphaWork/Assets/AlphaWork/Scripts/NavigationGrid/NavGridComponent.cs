@@ -10,13 +10,14 @@ namespace AlphaWork
     public class NavGridComponent : GameFrameworkComponent
     {
         private Navigation.Grid m_ActiveGrid;
-        private int Rows;
-        private int Columns;
+        public int Rows;
+        public int Columns;
         private string gStrHeader;
         private int gVersion;
         private List<List<float>> m_hightFields = new List<List<float>>();
         private LinkedList<Navigation.Grid.Position> m_path = new LinkedList<Navigation.Grid.Position>();
         private float Threshold = 0.1f;
+        public float MeshSize = 0.0f;
 
         protected override void Awake()
         {
@@ -54,7 +55,7 @@ namespace AlphaWork
             gVersion = binReader.ReadInt32();
             Rows = binReader.ReadInt32();
             Columns = binReader.ReadInt32();
-            float MeshSize = binReader.ReadSingle();
+            MeshSize = binReader.ReadSingle();
 
             m_hightFields.Clear();
 

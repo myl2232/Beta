@@ -36,12 +36,15 @@ public class EnemyAgent : BaseAgent
         int logicSt = -1;
         if (etEnemy != null)
         {
-            if (Vector3.Distance(etEnemy.transform.position, m_parent.transform.position) <= m_LogicData.AttackRadius)
+            float dist = Vector3.Distance(etEnemy.transform.position, m_parent.transform.position);
+            if (InRange(dist, m_LogicData.AttackRadius - GameEntry.NavGrid.MeshSize, 
+                m_LogicData.AttackRadius + GameEntry.NavGrid.MeshSize))
             {
                 logicSt = (int)LogicStatus.ELogic_ATTACK;
                 m_character.SyncStatus(logicSt);
             }
-            else if (Vector3.Distance(etEnemy.transform.position, m_parent.transform.position) <= m_LogicData.SenseRadius)
+            else if (InRange(dist, m_LogicData.SenseRadius - GameEntry.NavGrid.MeshSize, 
+                m_LogicData.SenseRadius + GameEntry.NavGrid.MeshSize))              
             {
                 logicSt = (int)LogicStatus.ELogic_TRACK;
                 m_character.SyncStatus(logicSt);
@@ -128,6 +131,10 @@ public class EnemyAgent : BaseAgent
         }
     }
         
+    protected bool InRange(float val, float min , float max)
+    {
+        return (val <= max && val > min);
+    }
     ///<<< END WRITING YOUR CODE
 
 }
