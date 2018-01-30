@@ -83,7 +83,7 @@ namespace AlphaWork
             TargetableObject et = GameEntry.Entity.GetEntity(m_Parent.Id).Logic as TargetableObject;
             
             if (m_moveTarget && et)
-                m_moveTarget.Move(gb.transform.position, mvArgs.MovePos,(et.Data as TargetableObjectData).baseSpeed);
+                m_moveTarget.Move(gb.transform.position, mvArgs.MovePos/*,(et.Data as TargetableObjectData).baseSpeed*/);
 
         }
     }

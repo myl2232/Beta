@@ -37,13 +37,12 @@ public class EnemyAgent : BaseAgent
         if (etEnemy != null)
         {
             float dist = Vector3.Distance(etEnemy.transform.position, m_parent.transform.position);
-            if (InRange(dist, m_LogicData.AttackRadius - GameEntry.NavGrid.MeshSize, 
-                m_LogicData.AttackRadius + GameEntry.NavGrid.MeshSize))
+            if (InRange(dist, 0, m_LogicData.AttackRadius + GameEntry.NavGrid.MeshSize))
             {
                 logicSt = (int)LogicStatus.ELogic_ATTACK;
                 m_character.SyncStatus(logicSt);
             }
-            else if (InRange(dist, m_LogicData.SenseRadius - GameEntry.NavGrid.MeshSize, 
+            else if (InRange(dist, m_LogicData.AttackRadius + GameEntry.NavGrid.MeshSize, 
                 m_LogicData.SenseRadius + GameEntry.NavGrid.MeshSize))              
             {
                 logicSt = (int)LogicStatus.ELogic_TRACK;
@@ -112,13 +111,13 @@ public class EnemyAgent : BaseAgent
         else if (status == LogicStatus.ELogic_PATROL)
         {
             m_character.ActionPatrol(m_LogicData.walkSpeed);
-            m_parent.SetSpeed(m_LogicData.walkSpeed);
+            m_parent.SetSpeed(m_LogicData.walkSpeed * m_LogicData.baseSpeed);
             m_parent.MoveToTarget();
         }
         else if (status == LogicStatus.ELogic_TRACK)
         {
             m_character.ActionPatrol(m_LogicData.runSpeed);
-            m_parent.SetSpeed(m_LogicData.runSpeed);
+            m_parent.SetSpeed(m_LogicData.runSpeed * m_LogicData.baseSpeed);
             m_parent.MoveToTarget();
         }
         else if(status == LogicStatus.ELogic_IDLE)

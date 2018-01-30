@@ -77,10 +77,10 @@ namespace AlphaWork
             GameEntry.Event.Fire(this, new MoveToTargetEndEventArgs(GetComponentInParent<Entity>().Id));
         }
 
-        public void Move(Vector3 startPos, Vector3 endPos,float baseSpeed = 1)
+        public void Move(Vector3 startPos, Vector3 endPos)
         {
             pathNum = 0;
-            Speed = baseSpeed;
+            //Speed = baseSpeed;
 
             if (GameEntry.UseNavGrid)
             {
