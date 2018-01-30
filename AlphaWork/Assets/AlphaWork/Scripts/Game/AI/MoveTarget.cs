@@ -11,10 +11,16 @@ namespace AlphaWork
     {
         public float Speed = 5;
         
-        private int pathNum = 1;
+        private int pathNum = 0;
         private Vector3[] smoothPath; 
         private int m_curIdx = 0;
         private Transform m_trans;
+        private bool m_movePause = true;
+        public bool MovePause
+        {
+            get { return m_movePause; }
+            set { m_movePause = value; }
+        }
 
         // Use this for initialization
         void Start()
@@ -27,7 +33,7 @@ namespace AlphaWork
         void Update()
         {
             if (pathNum > 0)
-            {                
+            {
                 Vector3 pCur = m_trans.transform.position;
                 if (m_curIdx > (pathNum - 1))             
                 {                    
@@ -52,7 +58,11 @@ namespace AlphaWork
                 m_trans.transform.position = realPos;
             }
             else
-                GameEntry.Event.Fire(this, new MoveToTargetEndEventArgs(GetComponentInParent<Entity>().Id));
+            {
+                if (m_movePause)
+                    GameEntry.Event.Fire(this, new MoveToTargetEndEventArgs(GetComponentInParent<Entity>().Id));
+            }
+
 
             for (int i = 0; i < smoothPath.Length;++i)
             {
@@ -64,6 +74,7 @@ namespace AlphaWork
         public void Pause()
         {
             pathNum = 0;
+            GameEntry.Event.Fire(this, new MoveToTargetEndEventArgs(GetComponentInParent<Entity>().Id));
         }
 
         public void Move(Vector3 startPos, Vector3 endPos,float baseSpeed = 1)
@@ -75,6 +86,9 @@ namespace AlphaWork
             {
                 smoothPath = GameEntry.NavGrid.FindPath(startPos, endPos);
                 pathNum = smoothPath.Length;
+
+                TargetableObject etParent = GetComponentInParent<TargetableObject>();
+                GameEntry.Event.Fire(this, new MoveToTargetEventArgs(etParent.Id));
             }
             else
             {

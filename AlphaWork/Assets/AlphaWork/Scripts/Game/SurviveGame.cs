@@ -70,7 +70,7 @@ namespace AlphaWork
 
             if(MainEthan && !GameEntry.ArMode)
             {
-                Vector3 offset = new Vector3(6, 6, 6);
+                Vector3 offset = new Vector3(30, 30, 30);
                 offset += MainEthan.transform.position;
                 Camera.main.transform.position = offset;
 

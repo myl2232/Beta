@@ -77,7 +77,7 @@ namespace AlphaWork
                 GameEntry.Entity.ShowEnemy(new NPCData(GameEntry.Entity.GenerateSerialId(), 
                     50009 /*+ UnityEngine.Random.Range(0,11)*/, CampType.Enemy)
                 { 
-                    Position = pos + new Vector3(5,0,5),
+                    Position = pos + new Vector3(20,0,20),
                 });
             }
         }

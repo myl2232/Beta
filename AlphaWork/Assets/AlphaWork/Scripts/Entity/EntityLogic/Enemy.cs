@@ -15,11 +15,8 @@ namespace AlphaWork
         {
             get { return m_agent; }
         }
-        
-        private MoveTarget m_moveTarget;
-        private BehaviacTrigger m_trigger;        
-        private Vector3 m_MoveStartPos = new Vector3();
-
+        private BehaviacTrigger m_trigger;
+                
         private float m_lastTime;
         // Use this for initialization
         void Start()
@@ -69,7 +66,7 @@ namespace AlphaWork
         {
             m_moveTarget.Speed = speed;
         }
-        public void PauseMove()
+        public override void PauseMove()
         {
             m_moveTarget.Pause();
         }
@@ -89,45 +86,30 @@ namespace AlphaWork
 
         #region 
         /*移动调用流程*/
-       
+        private MoveTarget m_moveTarget;
+        private Vector3 m_startPos;
+        public Vector3 m_nextPos;
+
         public void MoveToTarget()
-        {
+        {            
             FaceToTarget();
             GameObject gb = Entity.Handle as GameObject;
-            if (m_nextTarget.x == 0 || Vector3.Distance(gb.transform.position, m_nextTarget) < 0.5f)
-                m_nextTarget = GetTargetPos();
+            if (m_nextPos.x == 0 || Vector3.Distance(gb.transform.position, m_nextPos) < 0.5f)
+                m_nextPos = GetTargetPos();
 
-            GameEntry.Event.Fire(this, new MoveToTargetEventArgs(Id, m_nextTarget));
+            //GameEntry.Event.Fire(this, new MoveToTargetEventArgs(Id, m_nextTarget));
+                       
+            m_startPos = gb.transform.position;
+            if (m_moveTarget)
+                m_moveTarget.Move(m_startPos, m_nextPos);
         }
 
         protected void FaceToTarget()
         {
             GameObject gb = Entity.Handle as GameObject;
-            gb.transform.forward = m_nextTarget - gb.transform.position;
+            gb.transform.forward = m_nextPos - gb.transform.position;
         }
-
-        protected void OnMoveToTarget(object sender, GameEventArgs e)
-        {
-            MoveToTargetEventArgs mvArgs = e as MoveToTargetEventArgs;
-            if (mvArgs.EId == Id)
-            {
-                GameObject gb = Entity.Handle as GameObject;
-                m_MoveStartPos = gb.transform.position;
-
-                if (m_moveTarget)
-                    m_moveTarget.Move(m_MoveStartPos, mvArgs.MovePos);
-            }
-        }
-
-        protected void OnMoveToEnd(object sender, GameEventArgs e)
-        {
-            MoveToTargetEndEventArgs mvArgs = e as MoveToTargetEndEventArgs;
-            if(mvArgs.parentId == m_data.Id)
-            {
-                m_agent.MoveOn = false;
-            }
-        }
-
+        
         protected Vector3 GetTargetPos()
         {
             UnityGameFramework.Runtime.Entity etEnemy = GameEntry.Entity.GetEntity(m_agent.SenseResult);
@@ -140,6 +122,23 @@ namespace AlphaWork
                 GameObject target = new GameObject();
                 GameEntry.Behaviac.GetNextTarget(transform.position, ref target);
                 return target.transform.position;
+            }
+        }
+
+        protected void OnMoveToTarget(object sender, GameEventArgs e)
+        {
+            MoveToTargetEventArgs mvArgs = e as MoveToTargetEventArgs;
+            if (mvArgs.EId == Id)
+            {
+                m_moveTarget.MovePause = false;
+            }
+        }
+        protected void OnMoveToEnd(object sender, GameEventArgs e)
+        {
+            MoveToTargetEndEventArgs mvArgs = e as MoveToTargetEndEventArgs;
+            if (mvArgs.parentId == m_data.Id)
+            {
+                m_moveTarget.MovePause  = true;
             }
         }
 

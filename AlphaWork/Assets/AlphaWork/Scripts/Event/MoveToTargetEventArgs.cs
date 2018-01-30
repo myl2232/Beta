@@ -37,6 +37,10 @@ namespace AlphaWork
             m_entId = entId;
             m_MovePos = newMovePos;
         }
+        public MoveToTargetEventArgs(int entId)
+        {
+            m_entId = entId;
+        }
         public override void Clear()
         {
 

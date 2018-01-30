@@ -17,6 +17,12 @@ namespace AlphaWork
             }
         }
 
+        public EntityData Data
+        {
+            get { return m_EntityData; }
+            private set {; }
+        }
+
         public Animation CachedAnimation
         {
             get;

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using UnityGameFramework.Runtime;
 
 namespace AlphaWork
 {
@@ -36,50 +37,49 @@ namespace AlphaWork
 
         public override void ActionAttack(float attackParam)
         {
-            //if (m_animator != null)
-            //{
-            //    m_animator.SetTrigger("Attack");
-            //    m_animator.SetFloat("AttackBlend", attackParam);
-            //    //StartCoroutine(_LockMovementAndAttack(0, .25f));
-            //    m_animator.SetBool("Move", false);
-            //}
+            if (m_animator != null)
+            {
+                m_animator.SetTrigger("Attack");
+                m_animator.SetFloat("AttackBlend", attackParam);                
+            }
         }
+
         public override void ActionPatrol(float speed)
         {
-            //if (m_animator != null)
-            //{
-            //    m_animator.SetBool("Move",true);
-            //    m_animator.SetFloat("MoveBlend", speed);
-            //}
+            if (m_animator != null)
+            {
+                m_animator.SetFloat("MoveBlend", speed);
+                m_animator.SetTrigger("Move");
+            }
         }
+
         public override void ActionIdle()
         {
-            //m_animator.SetBool("Dead", false);
-            //m_animator.SetBool("Move", false);
+            m_animator.SetBool("Dead", false);
         }
+
         public override void ActionHurt()
         {
-            //m_animator.SetBool("Hurt",true);
-            //m_animator.SetBool("Move", false);
+            m_animator.SetBool("Hurt",true);
+            //StartCoroutine(_LockMovementAndAttack(0, .667f));
         }
         public override void ActionDead()
         {
-            //m_animator.SetBool("Dead",true);
-            //m_animator.SetBool("Move", false);
+            m_animator.SetBool("Dead",true);
         }
 
-        //method to keep character from moveing while attacking, etc
-        protected IEnumerator _LockMovementAndAttack(float delayTime, float lockTime)
-        {
-            //yield return new WaitForSeconds(delayTime);
-           
-            m_animator.SetBool("Moving", false);
-            rbody.velocity = Vector3.zero;
-            rbody.angularVelocity = Vector3.zero;            
-            m_animator.applyRootMotion = true;
-            yield return new WaitForSeconds(lockTime);
-            m_animator.applyRootMotion = false;
-        }
+        ////method to keep character from moveing while attacking, etc
+        //protected IEnumerator _LockMovementAndAttack(float delayTime, float lockTime)
+        //{
+        //    yield return new WaitForSeconds(delayTime);
+        //    PauseMove();
+        //    rbody.velocity = Vector3.zero;
+        //    rbody.angularVelocity = Vector3.zero;            
+        //    m_animator.applyRootMotion = true;
+        //    yield return new WaitForSeconds(lockTime);
+        //    m_animator.applyRootMotion = false;
+        //}               
+
     }
 
 }

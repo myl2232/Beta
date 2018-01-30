@@ -10,8 +10,8 @@ namespace AlphaWork
 {
     public class BehaviacTrigger : MonoBehaviour
     {
-        private EntityObject m_parent;
-        public EntityObject Parent
+        private CustomEntity m_parent;
+        public CustomEntity Parent
         {
             get { return m_parent; }
             set { m_parent = value; }
@@ -36,16 +36,15 @@ namespace AlphaWork
 //             }
         }
 
-        private bool ValidSense(EntityObject sensor,int result)
+        private bool ValidSense(EntityLogic sensor,int result)
         {
-            TargetableObjectData dt = sensor.Data as TargetableObjectData;
+            TargetableObjectData dt = (sensor as CustomEntity).Data as TargetableObjectData;
             if (dt == null)
                 return false;
             Entity etResult = GameEntry.Entity.GetEntity(result);
             if (etResult == null)
                 return false;
-            EntityObject obResult = etResult.Logic as EntityObject;
-            TargetableObjectData trData = obResult.Data as TargetableObjectData;
+            TargetableObjectData trData = (etResult.Logic as CustomEntity).Data as TargetableObjectData;
             if (trData == null)
                 return false;
             if (dt.Camp != trData.Camp)
@@ -54,7 +53,7 @@ namespace AlphaWork
             return false;
         }
 
-        public void OnSensorAI(EntityObject sensor, int result)
+        public void OnSensorAI(EntityLogic sensor, int result)
         {
             if (!ValidSense(sensor, result))
                 return;
@@ -66,7 +65,7 @@ namespace AlphaWork
             {
                 et.Agent.SenseResult = result;
             }
-            else if(etEnemy && etEnemy.Agent._get_bAwakeSense())
+            else if (etEnemy && etEnemy.Agent._get_bAwakeSense())
             {
                 etEnemy.Agent.SenseResult = result;
             }

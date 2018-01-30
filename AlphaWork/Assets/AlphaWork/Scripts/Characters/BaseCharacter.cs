@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using UnityGameFramework.Runtime;
 
 namespace AlphaWork
 {
@@ -100,7 +101,11 @@ namespace AlphaWork
         public virtual void ActionDead()
         { }
         public virtual void Move(Vector3 move, bool crouch, bool jump)
-        {
-        }
+        { }
+
+        //public virtual void PauseMove()
+        //{
+        //    GameEntry.Event.Fire(this, new MoveToTargetEndEventArgs(GetComponentInParent<Entity>().Id));
+        //}
     }
 }

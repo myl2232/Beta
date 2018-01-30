@@ -1,4 +1,5 @@
 ﻿using GameFramework;
+using System.Collections;
 using UnityEngine;
 
 namespace AlphaWork
@@ -6,11 +7,10 @@ namespace AlphaWork
     /// <summary>
     /// 可作为目标的实体类。
     /// </summary>
-    public abstract class TargetableObject : EntityObject
+    public abstract class TargetableObject : CustomEntity
     {
         [SerializeField]
         private TargetableObjectData m_TargetableObjectData = null;
-        public Vector3 m_nextTarget;
 
         public bool IsDead
         {
@@ -58,7 +58,7 @@ namespace AlphaWork
             }
             //记录各个角色表中的属性
             BaseCharacter chr = GetComponent<BaseCharacter>();
-            TargetableObjectData data = Data as TargetableObjectData;
+            TargetableObjectData data = userData as TargetableObjectData;
             chr.walkSpeed = data.walkSpeed;
             chr.runSpeed = data.runSpeed;
             chr.sprintSpeed = data.sprintSpeed;
@@ -69,22 +69,30 @@ namespace AlphaWork
             {
                 attaches[i].ParentId = Id;
             }
-
+            
             gameObject.layer = Constant.Layer.TargetableObjectLayerId;
         }
 
         protected virtual void OnDead()
         {
             BaseCharacter chr = GetComponentInParent<BaseCharacter>();
-            if(chr!=null)
+            if (chr != null)
+            {
+                PauseMove();
                 chr.ActionDead();
+            }
         }
+
         protected virtual void OnHurt()
         {
             BaseCharacter chr = GetComponentInParent<BaseCharacter>();
-            if(chr!=null)
+            if (chr != null)
+            {
+                PauseMove();
                 chr.ActionHurt();
+            }
         }
+
         private void OnTriggerEnter(Collider other)
         {
             EntityObject entity = other.gameObject.GetComponent<EntityObject>();
@@ -98,8 +106,10 @@ namespace AlphaWork
                 // 碰撞事件由 Id 小的一方处理，避免重复处理
                 return;
             }
-
-            //AIUtility.PerformCollision(this, entity);
         }
+
+        public virtual void PauseMove()
+        { }       
+
     }
 }
