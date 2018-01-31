@@ -42,7 +42,15 @@ public class BaseAgent : behaviac.Agent
     {
         get { return m_ParentId; }
         set { m_ParentId = value; }
-    }    
+    }
+    protected float SqAdd(float x)
+    {
+        return (float)Math.Sqrt(2 * x * x);
+    }
+    protected bool InRange(float val, float min, float max)
+    {
+        return (val <= max && val > min);
+    }
     ///<<< END WRITING YOUR CODE
 
 }

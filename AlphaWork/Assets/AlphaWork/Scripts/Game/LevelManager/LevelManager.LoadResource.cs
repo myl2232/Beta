@@ -37,12 +37,18 @@ namespace AlphaWork
                         //    Position = sPt,
                         //});
 
-                        //Vector3 sPt = new Vector3(hit.point.x + i + 1, hit.point.y,hit.point.z + j + 1);
-                        //int id = UnityEngine.Random.Range(0, 4);
-                        //GameEntry.Entity.ShowNPC(new NPCData(GameEntry.Entity.GenerateSerialId(), 50004+id, CampType.Neutral)
-                        //{
-                        //    Position = sPt,
-                        //});
+                        Vector3 sPt = new Vector3(hit.point.x + i + 3, hit.point.y, hit.point.z + j + 3);
+                        int id = UnityEngine.Random.Range(0, 4);
+                        GameEntry.Entity.ShowNPC(new NPCData(GameEntry.Entity.GenerateSerialId(), 50004 + id, CampType.Neutral)
+                        {
+                            Position = sPt,
+                        });
+
+                        GameEntry.Entity.ShowNPC(new NPCData(GameEntry.Entity.GenerateSerialId(), 50024, CampType.Neutral)
+                        {
+                            Position = sPt + new Vector3(5, 0, 5),
+                            Scale = new Vector3(30, 30, 30)
+                        });
                     }
                 }
             }

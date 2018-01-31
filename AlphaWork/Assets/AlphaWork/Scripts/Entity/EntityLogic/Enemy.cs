@@ -40,8 +40,8 @@ namespace AlphaWork
             m_trigger.Parent = Entity.Logic as TargetableObject;
             gameObject.GetOrAddComponent<BehaviourShakeHit>();
             m_moveTarget = gameObject.GetOrAddComponent<MoveTarget>();
-            GameEntry.Event.Subscribe(MoveToTargetEventArgs.EventId, OnMoveToTarget);
-            GameEntry.Event.Subscribe(MoveToTargetEndEventArgs.EventId, OnMoveToEnd);
+            //GameEntry.Event.Subscribe(MoveToTargetEventArgs.EventId, OnMoveToTarget);
+            //GameEntry.Event.Subscribe(MoveToTargetEndEventArgs.EventId, OnMoveToEnd);
         }
 
         // Update is called once per frame
@@ -96,9 +96,7 @@ namespace AlphaWork
             GameObject gb = Entity.Handle as GameObject;
             if (m_nextPos.x == 0 || Vector3.Distance(gb.transform.position, m_nextPos) < 0.5f)
                 m_nextPos = GetTargetPos();
-
-            //GameEntry.Event.Fire(this, new MoveToTargetEventArgs(Id, m_nextTarget));
-                       
+            
             m_startPos = gb.transform.position;
             if (m_moveTarget)
                 m_moveTarget.Move(m_startPos, m_nextPos);
@@ -125,22 +123,22 @@ namespace AlphaWork
             }
         }
 
-        protected void OnMoveToTarget(object sender, GameEventArgs e)
-        {
-            MoveToTargetEventArgs mvArgs = e as MoveToTargetEventArgs;
-            if (mvArgs.EId == Id)
-            {
-                m_moveTarget.MovePause = false;
-            }
-        }
-        protected void OnMoveToEnd(object sender, GameEventArgs e)
-        {
-            MoveToTargetEndEventArgs mvArgs = e as MoveToTargetEndEventArgs;
-            if (mvArgs.parentId == m_data.Id)
-            {
-                m_moveTarget.MovePause  = true;
-            }
-        }
+        //protected void OnMoveToTarget(object sender, GameEventArgs e)
+        //{
+        //    MoveToTargetEventArgs mvArgs = e as MoveToTargetEventArgs;
+        //    if (mvArgs.EId == Id)
+        //    {
+        //        m_moveTarget.MovePause = false;
+        //    }
+        //}
+        //protected void OnMoveToEnd(object sender, GameEventArgs e)
+        //{
+        //    MoveToTargetEndEventArgs mvArgs = e as MoveToTargetEndEventArgs;
+        //    if (mvArgs.parentId == m_data.Id)
+        //    {
+        //        m_moveTarget.MovePause  = true;
+        //    }
+        //}
 
         #endregion
 

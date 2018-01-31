@@ -26,3 +26,4 @@
 	50021	barbarian_13	1000	60	20	2	EnemyAvatar	0.1	0.4	1	5
 	50022	barbarian_14	1000	60	20	2	EnemyAvatar	0.1	0.4	1	5
 	50023	barbarian_15	1000	60	20	2	EnemyAvatar	0.1	0.4	1	5
+	50024	Rabbit_Red_A	1000	60	20	2	EnemyAvatar	0.1	0.4	1	5

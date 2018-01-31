@@ -32,6 +32,7 @@
 	50021	NPC怪	barbarian_13
 	50022	NPC怪	barbarian_14
 	50023	NPC怪	barbarian_15
+	50024	NPC	Rabbit_Red_A
 	60000	武器表的起始ID	weapon
 	60001	武器	weapon001
 	60002	武器	weapon002

@@ -57,7 +57,7 @@ namespace AlphaWork
                 return;
             }
             //记录各个角色表中的属性
-            BaseCharacter chr = GetComponent<BaseCharacter>();
+            BaseCharacter chr = gameObject.GetOrAddComponent<BaseCharacter>();
             TargetableObjectData data = userData as TargetableObjectData;
             chr.walkSpeed = data.walkSpeed;
             chr.runSpeed = data.runSpeed;
