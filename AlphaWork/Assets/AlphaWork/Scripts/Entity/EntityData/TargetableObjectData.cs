@@ -12,7 +12,9 @@ namespace AlphaWork
         [SerializeField]
         private int m_HP = 0;
         [SerializeField]
-        protected float m_SenseRadius = 10;
+        protected float m_SenseRadius = 30;
+        [SerializeField]
+        protected float m_trackRadius = 10;
         [SerializeField]
         protected float m_attackRadius = 5;
 
@@ -65,6 +67,11 @@ namespace AlphaWork
         {
             get { return m_attackRadius; }
             set { m_attackRadius = value; }
+        }
+        public float TrackRadius
+        {
+            get { return m_trackRadius; }
+            set { m_trackRadius = value; }
         }
         /// <summary>
         /// AI行为树。

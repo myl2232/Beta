@@ -10,9 +10,9 @@ namespace AlphaWork
     public class MoveTarget : MonoBehaviour
     {
         public float Speed = 5;
-        
+
         private int pathNum = 0;
-        private Vector3[] smoothPath; 
+        private Vector3[] smoothPath;
         private int m_curIdx = 0;
         private Transform m_trans;
         private bool m_movePause = true;
@@ -28,15 +28,15 @@ namespace AlphaWork
             m_trans = GetComponentInParent<Transform>();
             smoothPath = new Vector3[512];
         }
-
-        // Update is called once per frame
-        void Update()
+        
+        // Update is called once per frame 
+        private void LateUpdate()
         {
             if (pathNum > 0)
             {
                 Vector3 pCur = m_trans.transform.position;
-                if (m_curIdx > (pathNum - 1))             
-                {                    
+                if (m_curIdx > (pathNum - 1))
+                {
                     return;
                 }
 
@@ -45,7 +45,7 @@ namespace AlphaWork
                 Vector3 newPos = pCur + dir * Speed * Time.deltaTime;
                 Vector3 newDir = Vector3.Normalize(pNext - newPos);
                 Vector3 realPos;
-                if(Vector3.Dot(dir,newDir) > 0 && IsWalkable(newPos))//not go to target yet
+                if (Vector3.Dot(dir, newDir) > 0 && IsWalkable(newPos))//not go to target yet
                 {
                     realPos = newPos;
                 }
@@ -57,38 +57,39 @@ namespace AlphaWork
                 m_trans.transform.forward = realPos - m_trans.transform.position;
                 m_trans.transform.position = realPos;
             }
-            else
-            {
-                if (m_movePause)
-                    GameEntry.Event.Fire(this, new MoveToTargetEndEventArgs(GetComponentInParent<Entity>().Id));
-            }
+            //else
+            //{
+            //    if (m_movePause)
+            //        GameEntry.Event.Fire(this, new MoveToTargetEndEventArgs(GetComponentInParent<Entity>().Id));
+            //}
 
 
-            for (int i = 0; i < smoothPath.Length;++i)
+            for (int i = 0; i < smoothPath.Length; ++i)
             {
                 if (i < smoothPath.Length - 1)
-                    Debug.DrawLine(smoothPath[i], smoothPath[i + 1],Color.blue);
+                    Debug.DrawLine(smoothPath[i], smoothPath[i + 1], Color.blue);
             }
         }
 
         public void Pause()
         {
-            pathNum = 0;
-            GameEntry.Event.Fire(this, new MoveToTargetEndEventArgs(GetComponentInParent<Entity>().Id));
+            pathNum = 0;            
+            //GameEntry.Event.Fire(this, new MoveToTargetEndEventArgs(GetComponentInParent<Entity>().Id));
+            StartCoroutine(_LockMovement(0.1f));
         }
 
         public void Move(Vector3 startPos, Vector3 endPos)
         {
             pathNum = 0;
-            //Speed = baseSpeed;
 
             if (GameEntry.UseNavGrid)
             {
                 smoothPath = GameEntry.NavGrid.FindPath(startPos, endPos);
                 pathNum = smoothPath.Length;
 
-                TargetableObject etParent = GetComponentInParent<TargetableObject>();
-                GameEntry.Event.Fire(this, new MoveToTargetEventArgs(etParent.Id));
+                //TargetableObject etParent = GetComponentInParent<TargetableObject>();
+                //GameEntry.Event.Fire(this, new MoveToTargetEventArgs(etParent.Id));
+                
             }
             else
             {
@@ -112,6 +113,12 @@ namespace AlphaWork
             {
                 return true;
             }
+        }
+
+        //留足时间从移动动作切换到其他动作
+        protected IEnumerator _LockMovement(float lockTime)
+        {
+            yield return new WaitForSeconds(lockTime);
         }
 
         //temp

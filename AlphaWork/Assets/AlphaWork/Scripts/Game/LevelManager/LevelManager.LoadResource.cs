@@ -66,6 +66,7 @@ namespace AlphaWork
                 }
             }
         }
+        
         //test for add enemy
         public void OnThetaUI(object sender,GameEventArgs arg)
         {
@@ -74,12 +75,16 @@ namespace AlphaWork
             {
                 Vector3 pos = new Vector3();
                 GameBase.GetMainPos(out pos);
+                pos += new Vector3(40, 0, 40);
                 GameEntry.Entity.ShowEnemy(new NPCData(GameEntry.Entity.GenerateSerialId(), 
                     50009 /*+ UnityEngine.Random.Range(0,11)*/, CampType.Enemy)
                 { 
-                    Position = pos + new Vector3(20,0,20),
+                    Position = pos,
+                    
                 });
             }
         }
+
+
     }
 }

@@ -69,7 +69,10 @@ namespace AlphaWork
             {
                 attaches[i].ParentId = Id;
             }
-            
+
+#if UNITY_EDITOR
+            aiAdd = transform.position;
+#endif
             gameObject.layer = Constant.Layer.TargetableObjectLayerId;
         }
 
@@ -109,7 +112,16 @@ namespace AlphaWork
         }
 
         public virtual void PauseMove()
-        { }       
+        { }
+
+#if UNITY_EDITOR
+        private Vector3 aiAdd = new Vector3();
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawCube(aiAdd, new Vector3(1, 1, 1));
+        }
+#endif
 
     }
 }

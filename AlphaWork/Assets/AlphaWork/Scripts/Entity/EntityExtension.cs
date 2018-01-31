@@ -58,6 +58,7 @@ namespace AlphaWork
             }
             data.SenseRadius = drEntity.Data.SenseRadius;
             data.AttackRadius = drEntity.Data.AttackRadius;
+            data.TrackRadius = drEntity.Data.TrackRadius;
             data.AI = drEntity.Data.AI;
             data.walkSpeed = drEntity.Data.walkSpeed;
             data.runSpeed = drEntity.Data.runSpeed;

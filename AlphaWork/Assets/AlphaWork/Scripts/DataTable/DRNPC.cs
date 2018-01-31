@@ -53,6 +53,7 @@ namespace AlphaWork
             AssetName = text[index++];
             m_Data.MaxHP = int.Parse(text[index++]);
             m_Data.SenseRadius = float.Parse(text[index++]);
+            m_Data.TrackRadius = float.Parse(text[index++]);
             m_Data.AttackRadius = float.Parse(text[index++]);
             m_Data.AI = text[index++];
             m_Data.walkSpeed = float.Parse(text[index++]);

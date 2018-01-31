@@ -43,7 +43,7 @@ public class EnemyAgent : BaseAgent
                 m_character.SyncStatus(logicSt);
             }
             else if (InRange(dist, m_LogicData.AttackRadius + GameEntry.NavGrid.MeshSize, 
-                m_LogicData.SenseRadius + GameEntry.NavGrid.MeshSize))              
+                m_LogicData.TrackRadius + GameEntry.NavGrid.MeshSize))              
             {
                 logicSt = (int)LogicStatus.ELogic_TRACK;
                 m_character.SyncStatus(logicSt);
@@ -122,10 +122,12 @@ public class EnemyAgent : BaseAgent
         }
         else if(status == LogicStatus.ELogic_IDLE)
         {
+            m_parent.PauseMove();
             m_character.ActionIdle();
         }
         else if(status == LogicStatus.ELogic_DEAD)
         {
+            m_parent.PauseMove();
             m_character.ActionDead();
         }
     }
