@@ -70,9 +70,13 @@ namespace AlphaWork
         {
             m_moveTarget.Pause();
         }
+
         protected internal override void OnShow(object userdata)
         {
-            base.OnShow(userdata);  
+            base.OnShow(userdata);
+
+            AddDefeatCamp(CampType.Player);
+            AddDefeatCamp(CampType.Player2);
         }
 
         protected override void OnDead()

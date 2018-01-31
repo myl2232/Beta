@@ -74,10 +74,11 @@ namespace AlphaWork
                 Entity etCol = cols[i].gameObject.GetComponentInParent<Entity>();
                 if (etCol == null)
                     continue;
-
+                TargetableObject parent = GameEntry.Entity.GetEntity(m_parentEntId).Logic as TargetableObject;
                 if(m_parentEntId != etCol.Id && (etCol.Id != 0) && !(results.Contains(etCol.Id)))
                 {
-                    results.Add(etCol.Id);
+                    if(parent.IsDefeat(etCol.Id))
+                        results.Add(etCol.Id);
                 }
             }
 

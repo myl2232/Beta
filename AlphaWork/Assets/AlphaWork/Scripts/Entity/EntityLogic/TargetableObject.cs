@@ -1,5 +1,6 @@
 ﻿using GameFramework;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace AlphaWork
@@ -11,6 +12,7 @@ namespace AlphaWork
     {
         [SerializeField]
         private TargetableObjectData m_TargetableObjectData = null;
+        public List<CampType> DefeatCamps = new List<CampType>();
 
         public bool IsDead
         {
@@ -113,6 +115,25 @@ namespace AlphaWork
 
         public virtual void PauseMove()
         { }
+
+        public virtual void AddDefeatCamp(CampType tp)
+        {
+            if (!DefeatCamps.Contains(tp))
+                DefeatCamps.Add(tp);
+        }
+
+        public virtual bool IsDefeat(int id)
+        {
+            TargetableObject tgR = GameEntry.Entity.GetEntity(id).Logic as TargetableObject;
+            if (tgR == null)
+                return false;
+            TargetableObjectData dt = tgR.Data as TargetableObjectData;
+
+            if (dt != null && DefeatCamps.Contains(dt.Camp))
+                return true;
+
+            return false;
+        }
 
 #if UNITY_EDITOR
         private Vector3 aiAdd = new Vector3();

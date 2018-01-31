@@ -41,8 +41,9 @@ namespace AlphaWork
             BaseCharacter chrOther = other.GetComponentInParent<BaseCharacter>();
             if (chrOther == null || ParentId == chrOther.ParentId)
                 return;
-            
-            if (hitCom)
+            Entity otherEt = other.GetComponentInParent<Entity>();
+            TargetableObject parentEt = GameEntry.Entity.GetEntity(ParentId).Logic as TargetableObject;
+            if (hitCom && parentEt.IsDefeat(otherEt.Id))
                 hitCom.OnHit(hitHP);
         }
 

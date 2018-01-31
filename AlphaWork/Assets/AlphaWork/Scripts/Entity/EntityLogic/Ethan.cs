@@ -38,6 +38,9 @@ namespace AlphaWork
                     oc.m_Hero = gb;
                 }
             }
+
+            AddDefeatCamp(CampType.Enemy);
+            AddDefeatCamp(CampType.Enemy2);
         }
 
         private void LateUpdate()
