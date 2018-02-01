@@ -27,7 +27,7 @@ namespace AlphaWork
 
         public void OnDestroy()
         {
-            CleanupBehaviac();
+            //CleanupBehaviac();
         }
 
 

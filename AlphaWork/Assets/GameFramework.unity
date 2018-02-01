@@ -369,7 +369,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11499388, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_EditorResourceMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11497722, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_ResourceMode
@@ -587,6 +587,10 @@ Prefab:
       propertyPath: m_DownloadAgentHelperCount
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 140694, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
   m_IsPrefabParent: 0
@@ -700,6 +704,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 787c75d0b7e009d48a8dc559dd5fe020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Rows: 0
+  Columns: 0
+  MeshSize: 0
 --- !u!1 &1329958100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,7 +1046,7 @@ Transform:
   m_GameObject: {fileID: 1804849387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0033726813, y: 0.0033726813, z: 0.0033726813}
+  m_LocalScale: {x: 0.0026666666, y: 0.0026666666, z: 0.0026666666}
   m_Children:
   - {fileID: 1763317107}
   - {fileID: 1329958101}
