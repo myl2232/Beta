@@ -178,8 +178,15 @@ namespace AlphaWork
             inputVec = CameraRelativeMovement(inH, inV);
             anim.SetFloat("inputV", inputVec.magnitude);//第三人称只需要向前动作
 
-            if(inputVec.magnitude > 0.1)
+            if (inputVec.magnitude > 0.1)
+            {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(inputVec), Time.deltaTime * rotationSpeed);
+               //List<GestureRecognizer> recognizers = FingerGestures.RegisteredGestureRecognizers;
+                //for(int i = 0; i < recognizers.Count; ++i)
+                //{
+                //    recognizers[i].UseSendMessage = false;
+                //}
+            }            
 
             inputH = inputVec.z;
             inputV = inputVec.x;

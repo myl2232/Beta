@@ -18,6 +18,8 @@ namespace AlphaWork
         protected AvatarManager m_avatarManager = new AvatarManager();
         private float m_ElapseSeconds = 0f;
         public Transform m_MainEthanTransform;
+        protected TBPinchZoom tbZoom;
+        protected TBOrbit tbOrbit;
         //protected Alpha Alib = new Alpha();
 
         public override GameMode GameMode
@@ -47,6 +49,9 @@ namespace AlphaWork
 
             m_levelManager.m_parent = this;
 
+            Camera.main.gameObject.GetOrAddComponent<PinchRecognizer>();
+            tbZoom = Camera.main.gameObject.GetOrAddComponent<TBPinchZoom>();
+            tbOrbit = Camera.main.gameObject.GetOrAddComponent<TBOrbit>();
             
         }
 
@@ -64,6 +69,7 @@ namespace AlphaWork
             m_levelManager.RegisterStructure(ent);            
         }
         
+
         public override void Update(float elapseSeconds, float realElapseSeconds)
         {
             base.Update(elapseSeconds, realElapseSeconds);
@@ -73,11 +79,10 @@ namespace AlphaWork
                 Vector3 offset = new Vector3(8, 8, 8);
                 offset += MainEthan.transform.position;
                 Camera.main.transform.position = offset;
+                tbZoom.DefaultPos = Camera.main.transform.position;
+                tbOrbit.target = MainEthan.gameObject.transform;
 
-                //RaycastHit hitInfo;
-                //Physics.Raycast(Camera.main.transform.position, MainEthan.transform.position - Camera.main.transform.position - offset, out hitInfo, 100);
-
-                Camera.main.transform.LookAt(MainEthan.transform.position/* + new Vector3(0,1,0)hitInfo.point*/);
+                Camera.main.transform.LookAt(MainEthan.transform.position);
 
                 //string str = string.Format("{0:f2},{1:f2},{2:f2}", hitInfo.point.x, hitInfo.point.y, hitInfo.point.z);
                 //DebugUtility.DebugText(str);
@@ -88,25 +93,9 @@ namespace AlphaWork
             m_ElapseSeconds += realElapseSeconds;
             if (m_ElapseSeconds >= 2f)
             {
-                m_ElapseSeconds = 0.0f;
-                //RaycastHit hit;
+                m_ElapseSeconds = 0.0f; 
                 Vector3 tempPos = new Vector3(UnityEngine.Random.Range(0.0f, 50), 5.0f, UnityEngine.Random.Range(0.0f, 50.0f));
-                //if (Physics.Raycast(tempPos, Vector3.down, out hit))
-                {
-                    m_levelManager.RefreshAgent(tempPos/*hit.point*/);
-                }
-                ////refresh ships pos
-                //for(int i = 0; i < m_EnemyIds.Count; ++i)
-                //{
-                //    RaycastHit hitResult;
-                //    Vector3 RamPos = new Vector3(UnityEngine.Random.Range(0.0f, 50), 5.0f, UnityEngine.Random.Range(0.0f, 50.0f));
-                //    if (Physics.Raycast(RamPos, Vector3.down, out hitResult))
-                //    {
-                //        UnityGameFramework.Runtime.Entity enemyObj = GameEntry.Entity.GetEntity(m_EnemyIds[i]);
-                //        if(enemyObj)
-                //            m_levelManager.RefreshEnemy(enemyObj.Handle as GameObject, ObjectUtility.GetTargetAgent() as GameObject, RamPos);
-                //    }
-                //}
+                m_levelManager.RefreshAgent(tempPos);                               
             }
             m_levelManager.RefreshStructures();
         }

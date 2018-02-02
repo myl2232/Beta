@@ -37,7 +37,7 @@ namespace AlphaWork
                         //    Position = sPt,
                         //});
 
-                        Vector3 sPt = new Vector3(hit.point.x + i + 3, hit.point.y, hit.point.z + j + 3);
+                        Vector3 sPt = new Vector3(hit.point.x + 2*i, hit.point.y, hit.point.z + 2*j);
                         int id = UnityEngine.Random.Range(0, 4);
                         GameEntry.Entity.ShowNPC(new NPCData(GameEntry.Entity.GenerateSerialId(), 50004 + id, CampType.Neutral)
                         {

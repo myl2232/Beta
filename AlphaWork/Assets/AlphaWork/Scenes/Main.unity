@@ -274,7 +274,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 0.29009074, g: 0.36764705, b: 0.22707611, a: 1}
+  m_Color: {r: 0.5808823, g: 0.5738127, b: 0.3246107, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -889,6 +889,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c49ed014673f07847be2bb1995e31a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  makePersistent: 1
+  detectUnityRemote: 1
+  mouseInputProviderPrefab: {fileID: 0}
+  touchInputProviderPrefab: {fileID: 0}
 --- !u!4 &2057510049
 Transform:
   m_ObjectHideFlags: 0
