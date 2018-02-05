@@ -18,9 +18,12 @@ namespace AlphaWork
         {
             if (!GameBase.HasMainActor())
             {
+                object tg = ObjectUtility.GetFellow("TargetMain");         
                 //add main actor
-				Vector3 mainPos = Camera.main.transform.position + Camera.main.transform.forward * 20;			
-				RaycastHit hit;
+                Vector3 mainPos = Camera.main.transform.position + Camera.main.transform.forward * 20;
+                if (tg != null)
+                    mainPos = (tg as GameObject).transform.position + Vector3.up*10;
+                RaycastHit hit;
                 Physics.Raycast(mainPos, Vector3.down, out hit, 1000);
                 GameEntry.Entity.ShowEthan(new EthanData(GameEntry.Entity.GenerateSerialId(), 80001/*80000*/, CampType.Player)
                 {
@@ -46,7 +49,7 @@ namespace AlphaWork
 
                         GameEntry.Entity.ShowNPC(new NPCData(GameEntry.Entity.GenerateSerialId(), 50024, CampType.Neutral)
                         {
-                            Position = sPt + new Vector3(5, 0, 5),
+                            Position = sPt + new Vector3(0, 0, 10),
                             Scale = new Vector3(30, 30, 30)
                         });
                     }

@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: FXWater
+  m_Shader: {fileID: 4800000, guid: dca2a11b04e53a2418502070dea6fe80, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 262f1ed152453f44fab23d60daef387b, type: 3}
+        m_Scale: {x: 6, y: 6}
+        m_Offset: {x: 0, y: 0}
+    - _CubeReflection:
+        m_Texture: {fileID: 8900000, guid: 016ca28c9462be041a49a29d828ba351, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CubeWaterTexture:
+        m_Texture: {fileID: 2800000, guid: 4563f2ccf9f6c8543806df4ac1272634, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0}
+    - _Fresnel:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectiveColor:
+        m_Texture: {fileID: 2800000, guid: 400e4d0b40a91624f97a229e6dbafdcb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectiveColorCube:
+        m_Texture: {fileID: 8900000, guid: 00bea2f78ba7abd4d8c364a7092163cd, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RefractionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _CubeCubeAdd: 5
+    - _CubeRelDistortion: 0.2
+    - _ReflDistort: 0.892
+    - _RefrDistort: 1.5
+    - _WaveScale: 0.0883
+    m_Colors:
+    - WaveSpeed: {r: 2, g: 2, b: 2, a: -12.23}
+    - _BumpMap_ST: {r: 1, g: 1, b: 0, a: 0}
+    - _CubeAmbientColor: {r: 0.23945719, g: 0.31617647, b: 0.28443056, a: 1}
+    - _CubeWaveSpeed: {r: 0.05, g: 0.03, b: 0.01, a: 0.06}
+    - _Fresnel_ST: {r: 1, g: 1, b: 0, a: 0}
+    - _HorizonColor: {r: 0.006845881, g: 0, b: 0.19852942, a: 0}
+    - _MainTex_ST: {r: 1, g: 1, b: 0, a: 0}
+    - _ReflectionTex_ST: {r: 1, g: 1, b: 0, a: 0}
+    - _ReflectiveColorCube_ST: {r: 1, g: 1, b: 0, a: 0}
+    - _ReflectiveColor_ST: {r: 1, g: 1, b: 0, a: 0}
+    - _RefrColor: {r: 0.13459012, g: 0.4705882, b: 0.027681658, a: 1}
+    - _RefractionTex_ST: {r: 1, g: 1, b: 0, a: 0}
+--- !u!1002 &2100001
+EditorExtensionImpl:
+  serializedVersion: 6
