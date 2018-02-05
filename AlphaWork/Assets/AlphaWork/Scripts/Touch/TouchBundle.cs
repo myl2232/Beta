@@ -37,24 +37,19 @@ namespace AlphaWork
                 }
             }
         }
-        public bool IsPointerOverGameObject() { 
-       //if (Input.touchCount > 0) { 
-                        
-       //    int id = Input.GetTouch(0).fingerId; 
-       //    return UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(id);//安卓机上不行 
-       //} 
-       //else { 
-           //return UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(); 
-           PointerEventData eventData = new PointerEventData(UnityEngine.EventSystems.EventSystem.current); 
-           eventData.pressPosition = Input.mousePosition; 
-           eventData.position = Input.mousePosition; 
+
+        public bool IsPointerOverGameObject()
+        { 
  
-           List<RaycastResult> list = new List<RaycastResult>(); 
-           UnityEngine.EventSystems.EventSystem.current.RaycastAll(eventData, list); 
-           //Debug.Log(list.Count); 
-           return list.Count > 0; 
-      // } 
-   } 
+           PointerEventData eventData = new PointerEventData(UnityEngine.EventSystems.EventSystem.current);
+           eventData.pressPosition = Input.mousePosition;
+           eventData.position = Input.mousePosition;
+ 
+           List<RaycastResult> list = new List<RaycastResult>();
+           UnityEngine.EventSystems.EventSystem.current.RaycastAll(eventData, list);
+           return list.Count > 0;
+        }
+
         void OnFingerHover(FingerHoverEvent e)
         {
             if (e.Selection == fingerHoverObject)

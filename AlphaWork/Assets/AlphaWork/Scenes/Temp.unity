@@ -373,7 +373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!154 &1027930855
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -465,6 +465,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4792588005983590, guid: 67d303b1c043ecd4ea5b1ba6ceab4348, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54606961099500798, guid: 67d303b1c043ecd4ea5b1ba6ceab4348,
+        type: 2}
+      propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -781,7 +786,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1511612782549574, guid: c4b093035c86ae2429ce30f7db19cb1a, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4b093035c86ae2429ce30f7db19cb1a, type: 2}
@@ -925,6 +930,10 @@ Prefab:
     - target: {fileID: 4950317281142852, guid: 14adf217b3fe06045ba3e359992ce840, type: 2}
       propertyPath: m_LocalScale.z
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661394922661060, guid: 14adf217b3fe06045ba3e359992ce840, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 14adf217b3fe06045ba3e359992ce840, type: 2}
