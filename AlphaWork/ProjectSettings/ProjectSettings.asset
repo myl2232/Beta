@@ -11,7 +11,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Myl
-  productName: AlphaWork
+  productName: Beta2.0
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -233,7 +233,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 0097857ce343b494ca4f2f42f84dc56b, type: 3}
+      m_Icon: {fileID: 2800000, guid: 9356c44783c484050a3fc7dd310d3746, type: 3}
       m_Width: 128
       m_Height: 128
   m_BuildTargetBatching: []
