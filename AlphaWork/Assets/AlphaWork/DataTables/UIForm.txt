@@ -1,10 +1,10 @@
-#	½çÃæÅäÖÃ±í					
+ï»¿#	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã±ï¿½					
 #	Id		AssetName	UIGroupName	AllowMultiInstance	PauseCoveredUIForm
 #	int		string	string	bool	bool
-#	½çÃæ±àºÅ	²ß»®±¸×¢	×ÊÔ´Ãû³Æ	½çÃæ×éÃû³Æ	ÊÇ·ñÔÊÐí¶à¸ö½çÃæÊµÀý	ÊÇ·ñÔÝÍ£±»Æä¸²¸ÇµÄ½çÃæ
-	1	µ¯³ö¿ò	DialogForm	Default	TRUE	TRUE
-	100	Ö÷²Ëµ¥	MenuForm	Default	FALSE	TRUE
-	101	ÉèÖÃ	SettingForm	Default	FALSE	TRUE
-	102	¹ØÓÚ	AboutForm	Default	FALSE	TRUE
-	2	µÇÂ¼	LoginForm	Default	FALSE	TRUE
-	3	Ö÷½ÇÃæ	InGameForm	Default	FALSE	TRUE
+#	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	ï¿½ß»ï¿½ï¿½ï¿½×¢	ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½	ï¿½Ç·ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½ä¸²ï¿½ÇµÄ½ï¿½ï¿½ï¿½
+	1	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	DialogForm	Default	TRUE	TRUE
+	100	ï¿½ï¿½ï¿½Ëµï¿½	MenuForm	Default	FALSE	TRUE
+	101	ï¿½ï¿½ï¿½ï¿½	SettingForm	Default	FALSE	TRUE
+	102	ï¿½ï¿½ï¿½ï¿½	AboutForm	Default	FALSE	TRUE
+	2	ï¿½ï¿½Â¼	LoginForm	Default	FALSE	TRUE
+	3	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	InGameForm	Default	FALSE	TRUE

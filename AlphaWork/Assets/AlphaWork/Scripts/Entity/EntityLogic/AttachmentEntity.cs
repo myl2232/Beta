@@ -26,7 +26,11 @@ namespace AlphaWork
 		{
         }
 
+#if UNITY_2017_3_OR_NEWER
+        protected override void OnAttachTo(EntityLogic parentEntity, Transform parentTransform, object userData)
+#else
         protected internal override void OnAttachTo(EntityLogic parentEntity, Transform parentTransform, object userData)
+#endif
         {
             base.OnAttachTo(parentEntity, parentTransform, userData);
 

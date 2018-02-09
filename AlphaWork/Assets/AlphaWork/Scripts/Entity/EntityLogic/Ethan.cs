@@ -20,8 +20,12 @@ namespace AlphaWork
         {
 
         }
-        
+
+#if UNITY_2017_3_OR_NEWER
+        protected override void OnShow(object userdata)
+#else
         protected internal override void OnShow(object userdata)
+#endif
         {
             base.OnShow(userdata);
 

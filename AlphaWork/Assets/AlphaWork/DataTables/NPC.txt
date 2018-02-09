@@ -1,7 +1,7 @@
-#	Íæ¼Ò±í										
+ï»¿#	ï¿½ï¿½ï¿½Ò±ï¿½
 #	Id		MaxHP	SenseRadius	TrackRadius	AttackRadius	AI	walk speed	run speed	sprint speed	speed
 #	int		int	float	float	float	string	float	float	float	float
-#	Íæ¼Ò	²ß»®±¸×¢	×î´óÉúÃü	Ì½Öª¾àÀë	×·»÷°ë¾¶	¹¥»÷¾àÀë	AIÐÐÎªÊ÷	ÐÐ×ßËÙ¶ÈÏµÊý	±¼ÅÜËÙ¶ÈÏµÊý	³å´ÌËÙ¶ÈÏµÊý	»ù´¡ËÙ¶È
+#	ï¿½ï¿½ï¿½ï¿½	ï¿½ß»ï¿½ï¿½ï¿½×¢	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	Ì½Öªï¿½ï¿½ï¿½ï¿½	×·ï¿½ï¿½ï¿½ë¾¶	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	AIï¿½ï¿½Îªï¿½ï¿½	ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½Ïµï¿½ï¿½	ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½Ïµï¿½ï¿½	ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½Ïµï¿½ï¿½	ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½
 	50000	enemy	1000	150	20	10	EnemyAvatar	5	10	15	5
 	50001	HellephantPrefab	1000	100	20	10	EnemyAvatar	5	10	15	5
 	50002	ZomBearPrefab	1000	100	20	10	EnemyAvatar	5	10	15	5

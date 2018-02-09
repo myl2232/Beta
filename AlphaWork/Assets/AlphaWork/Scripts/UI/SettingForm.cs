@@ -134,7 +134,11 @@ namespace AlphaWork
             UnityGameFramework.Runtime.GameEntry.Shutdown(ShutdownType.Restart);
         }
 
+#if UNITY_2017_3_OR_NEWER
+        protected override void OnOpen(object userData)
+#else
         protected internal override void OnOpen(object userData)
+#endif
         {
             base.OnOpen(userData);
 
@@ -167,7 +171,11 @@ namespace AlphaWork
             }
         }
 
+#if UNITY_2017_3_OR_NEWER
+        protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
+#else
         protected internal override void OnUpdate(float elapseSeconds, float realElapseSeconds)
+#endif
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);
 

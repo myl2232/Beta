@@ -1,49 +1,49 @@
-#			
+ï»¿#
 #	Id		AssetName
 #	int		string
-#	EntityId	EntityËµÃ÷£¨Ö»´æID£¬ÊôÐÔµ½¶ÔÓ¦µÄ±í²éÑ¯£©	EntityµÄPrefabÃû³Æ
+#	EntityId	EntityËµï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½IDï¿½ï¿½ï¿½ï¿½ï¿½Ôµï¿½ï¿½ï¿½Ó¦ï¿½Ä±ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½	Entityï¿½ï¿½Prefabï¿½ï¿½ï¿½ï¿½
 	10000	Avatar	Hero
 	10001	Avatar	Hero
 	20000	Õ¼Î»	PlayerEngine
 	20001	Õ¼Î»	EnemyEngine
 	30000	Õ¼Î»	DefaultWeapon
 	40000	Õ¼Î»	DefaultArmor
-	50000	NPC±íµÄÆðÊ¼ID	Enemy
-	50001	NPC¹Ö	HellephantPrefab
-	50002	NPC¹Ö	ZomBearPrefab
-	50003	NPC¹Ö	ZombunnyPrefab
-	50004	NPC¹Ö	Character_Color_01
-	50005	NPC¹Ö	Character_Color_02
-	50006	NPC¹Ö	Character_Color_03
-	50007	NPC¹Ö	Character_Color_04
-	50008	NPC¹Ö	Character_Color_05
-	50009	NPC¹Ö	barbarian_01
-	50010	NPC¹Ö	barbarian_02
-	50011	NPC¹Ö	barbarian_03
-	50012	NPC¹Ö	barbarian_04
-	50013	NPC¹Ö	barbarian_05
-	50014	NPC¹Ö	barbarian_06
-	50015	NPC¹Ö	barbarian_07
-	50016	NPC¹Ö	barbarian_08
-	50017	NPC¹Ö	barbarian_09
-	50018	NPC¹Ö	barbarian_10
-	50019	NPC¹Ö	barbarian_11
-	50020	NPC¹Ö	barbarian_12
-	50021	NPC¹Ö	barbarian_13
-	50022	NPC¹Ö	barbarian_14
-	50023	NPC¹Ö	barbarian_15
+	50000	NPCï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ID	Enemy
+	50001	NPCï¿½ï¿½	HellephantPrefab
+	50002	NPCï¿½ï¿½	ZomBearPrefab
+	50003	NPCï¿½ï¿½	ZombunnyPrefab
+	50004	NPCï¿½ï¿½	Character_Color_01
+	50005	NPCï¿½ï¿½	Character_Color_02
+	50006	NPCï¿½ï¿½	Character_Color_03
+	50007	NPCï¿½ï¿½	Character_Color_04
+	50008	NPCï¿½ï¿½	Character_Color_05
+	50009	NPCï¿½ï¿½	barbarian_01
+	50010	NPCï¿½ï¿½	barbarian_02
+	50011	NPCï¿½ï¿½	barbarian_03
+	50012	NPCï¿½ï¿½	barbarian_04
+	50013	NPCï¿½ï¿½	barbarian_05
+	50014	NPCï¿½ï¿½	barbarian_06
+	50015	NPCï¿½ï¿½	barbarian_07
+	50016	NPCï¿½ï¿½	barbarian_08
+	50017	NPCï¿½ï¿½	barbarian_09
+	50018	NPCï¿½ï¿½	barbarian_10
+	50019	NPCï¿½ï¿½	barbarian_11
+	50020	NPCï¿½ï¿½	barbarian_12
+	50021	NPCï¿½ï¿½	barbarian_13
+	50022	NPCï¿½ï¿½	barbarian_14
+	50023	NPCï¿½ï¿½	barbarian_15
 	50024	NPC	Rabbit_Red_A
-	60000	ÎäÆ÷±íµÄÆðÊ¼ID	weapon
-	60001	ÎäÆ÷	weapon001
-	60002	ÎäÆ÷	weapon002
+	60000	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ID	weapon
+	60001	ï¿½ï¿½ï¿½ï¿½	weapon001
+	60002	ï¿½ï¿½ï¿½ï¿½	weapon002
 	70000	Õ¼Î»	PlayerEpxlosion
 	70001	Õ¼Î»	EnemyExplosion
 	70002	Õ¼Î»	AsteroidExplosion
-	80000	Ö÷½Ç±íµÄÆðÊ¼ID	Ethan
-	80001	Ö÷½Ç	Character_Color_01
-	80002	Ö÷½Ç	Character_Color_02
-	80003	Ö÷½Ç	Character_Color_03
-	80004	Ö÷½Ç	Character_Color_04
-	80005	Ö÷½Ç	Character_Color_05
-	90000	Îï¼þ±íµÄÆðÊ¼ID	Cube
-	90001	Îï¼þstructure	StructureBlock
+	80000	ï¿½ï¿½ï¿½Ç±ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ID	Ethan
+	80001	ï¿½ï¿½ï¿½ï¿½	Character_Color_01
+	80002	ï¿½ï¿½ï¿½ï¿½	Character_Color_02
+	80003	ï¿½ï¿½ï¿½ï¿½	Character_Color_03
+	80004	ï¿½ï¿½ï¿½ï¿½	Character_Color_04
+	80005	ï¿½ï¿½ï¿½ï¿½	Character_Color_05
+	90000	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ID	Cube
+	90001	ï¿½ï¿½ï¿½ï¿½structure	StructureBlock

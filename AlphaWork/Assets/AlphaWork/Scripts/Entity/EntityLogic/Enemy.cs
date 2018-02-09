@@ -71,7 +71,11 @@ namespace AlphaWork
             m_moveTarget.Pause();
         }
 
+#if UNITY_2017_3_OR_NEWER
+        protected override void OnShow(object userdata)
+#else
         protected internal override void OnShow(object userdata)
+#endif
         {
             base.OnShow(userdata);
 
@@ -88,7 +92,7 @@ namespace AlphaWork
             GetComponentInParent<BaseCharacter>().ActionHurt();
         }
 
-        #region 
+#region 
         /*移动调用流程*/
         private MoveTarget m_moveTarget;
         private Vector3 m_startPos;
@@ -144,7 +148,7 @@ namespace AlphaWork
         //    }
         //}
 
-        #endregion
+#endregion
 
         //test from animation event
         //public void AttackSkill01()

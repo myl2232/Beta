@@ -13,20 +13,32 @@ namespace AlphaWork
             GameEntry.RefreshLoginFlag(login);
         }
 
+#if UNITY_2017_3_OR_NEWER
+        protected override void OnInit(object userData)
+#else
         protected override internal void OnInit(object userData)
+#endif
         {
             base.OnInit(userData);
 
             m_root = gameObject.GetComponent<UIRoot>();
         }
 
+#if UNITY_2017_3_OR_NEWER
+        protected override void OnClose(object userData)
+#else
         protected internal override void OnClose(object userData)
+#endif
         {
             //base.OnClose(userData);
             
         }
 
+#if UNITY_2017_3_OR_NEWER
+        protected override void OnOpen(object userData)
+#else
         protected override internal void OnOpen(object userData)
+#endif
         {
             base.OnOpen(userData);
 
