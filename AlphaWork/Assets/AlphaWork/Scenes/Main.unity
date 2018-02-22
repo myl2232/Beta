@@ -14377,6 +14377,46 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 7f3932cc8d632a5488b3e19c171f7f73, type: 3}
   m_PrefabInternal: {fileID: 510307996}
+--- !u!1 &1670849389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1670849391}
+  - component: {fileID: 1670849390}
+  m_Layer: 0
+  m_Name: NavGridTool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1670849390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1670849389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e2690a2c4af41f45a21509ca54c962c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1670849391
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1670849389}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 130.15, y: 3.9, z: 112.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1675979373 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: a59d3d3139f78cf43a3ebc0f60242ffd, type: 3}
