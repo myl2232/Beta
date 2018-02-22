@@ -9,7 +9,7 @@ Properties {
 }
 // Blinn
 SubShader {
-//	Tags {"Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent"}
+	Tags {"Queue"="Transparent" "IgnoreProjector"="True" }
 	AlphaTest Greater 0.1
 	cull off
 	LOD 300
