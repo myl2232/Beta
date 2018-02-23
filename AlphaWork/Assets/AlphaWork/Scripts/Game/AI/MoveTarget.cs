@@ -28,11 +28,11 @@ namespace AlphaWork
             m_trans = GetComponentInParent<Transform>();
             smoothPath = new Vector3[512];
         }
-        
+
         // Update is called once per frame 
         private void LateUpdate()
         {
-            if (pathNum > 0)
+            if (pathNum > 0 && !m_movePause)
             {
                 Vector3 pCur = m_trans.transform.position;
                 if (m_curIdx > (pathNum - 1))
@@ -73,14 +73,14 @@ namespace AlphaWork
 
         public void Pause()
         {
-            pathNum = 0;            
+            pathNum = m_curIdx = 0;            
             //GameEntry.Event.Fire(this, new MoveToTargetEndEventArgs(GetComponentInParent<Entity>().Id));
             StartCoroutine(_LockMovement(0.1f));
         }
 
         public void Move(Vector3 startPos, Vector3 endPos)
         {
-            pathNum = 0;
+            pathNum = m_curIdx = 0;
 
             if (GameEntry.UseNavGrid)
             {

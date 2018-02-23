@@ -13,7 +13,7 @@ namespace AlphaWork
     public class BarbarianCharacter : BaseCharacter
     {
         public Animator m_animator;
-        public Rigidbody rbody;
+        public Rigidbody rbody;        
 
         private void Start()
         {
@@ -26,6 +26,14 @@ namespace AlphaWork
             else
                 rbody.useGravity = false;
         }
+
+#if UNITY_EDITOR
+        private void OnGUI()
+        {            
+            GUI.color = Color.red;
+            GUI.Label(new Rect(Screen.width * 0.5f, Screen.height * 0.5f, 100, 100), m_animator.GetInteger("status").ToString());
+        }
+#endif
 
         public override void SyncStatus(int status)
         {
@@ -68,35 +76,17 @@ namespace AlphaWork
             m_animator.SetBool("Dead",true);
         }
 
-        public void RunStart()
+        //from animation events
+        public void MoveStart()
         {
-
+            m_bMovePause = false;
         }
 
-        public void RunEnd()
+        //from animation events
+        public void MoveEnd()
         {
-
-        }
-
-        public void WalkStart()
-        {
-
-        }
-
-        public void WalkEnd()
-        {
-
-        }
-
-        public void RunFastStart()
-        {
-
-        }
-
-        public void RunFastEnd()
-        {
-
-        }
+            m_bMovePause = true;
+        }                
 
         ////method to keep character from moveing while attacking, etc
         //protected IEnumerator _LockMovementAndAttack(float delayTime, float lockTime)

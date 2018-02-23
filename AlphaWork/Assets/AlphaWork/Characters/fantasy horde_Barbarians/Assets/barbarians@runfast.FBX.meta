@@ -159,14 +159,14 @@ ModelImporter:
       curves: []
       events:
       - time: 0.0057065226
-        functionName: RunFastStart
+        functionName: MoveStart
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.9986413
-        functionName: RunFastEnd
+      - time: 0.99232817
+        functionName: MoveEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

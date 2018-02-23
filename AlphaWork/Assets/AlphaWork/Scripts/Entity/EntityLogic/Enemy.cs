@@ -1,5 +1,6 @@
 ﻿using GameFramework.Event;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -98,8 +99,13 @@ namespace AlphaWork
         private Vector3 m_startPos;
         public Vector3 m_nextPos;
 
-        public void MoveToTarget()
-        {            
+        public void MoveToTarget(bool movePause = false)
+        {
+            if(m_moveTarget)
+                m_moveTarget.MovePause = movePause;
+
+            StartCoroutine(_LockToMovement(0.1f));
+
             FaceToTarget();
             GameObject gb = Entity.Handle as GameObject;
             if (m_nextPos.x == 0 || Vector3.Distance(gb.transform.position, m_nextPos) < 0.5f)
@@ -107,7 +113,7 @@ namespace AlphaWork
             
             m_startPos = gb.transform.position;
             if (m_moveTarget)
-                m_moveTarget.Move(m_startPos, m_nextPos);
+                m_moveTarget.Move(m_startPos, m_nextPos);                        
         }
 
         protected void FaceToTarget()
@@ -131,6 +137,12 @@ namespace AlphaWork
             }
         }
 
+        //留足时间切换到移动动作
+        protected IEnumerator _LockToMovement(float lockTime)
+        {
+            yield return new WaitForSeconds(lockTime);
+        }
+
         //protected void OnMoveToTarget(object sender, GameEventArgs e)
         //{
         //    MoveToTargetEventArgs mvArgs = e as MoveToTargetEventArgs;
@@ -148,7 +160,7 @@ namespace AlphaWork
         //    }
         //}
 
-#endregion
+        #endregion
 
         //test from animation event
         //public void AttackSkill01()

@@ -16,6 +16,12 @@ namespace AlphaWork
         public float runSpeed;
         public float sprintSpeed;
         public float baseSpeed;
+        
+        protected bool m_bMovePause = false;
+        public bool MovePause
+        {
+            get { return m_bMovePause; }
+        }
 
         private void Awake()
         {

@@ -112,13 +112,13 @@ public class EnemyAgent : BaseAgent
         {
             m_character.ActionPatrol(m_LogicData.walkSpeed);
             m_parent.SetSpeed(m_LogicData.walkSpeed * m_LogicData.baseSpeed);
-            m_parent.MoveToTarget();
+            m_parent.MoveToTarget(m_character.MovePause);
         }
         else if (status == LogicStatus.ELogic_TRACK)
         {
             m_character.ActionPatrol(m_LogicData.runSpeed);
-            m_parent.SetSpeed(m_LogicData.runSpeed * m_LogicData.baseSpeed);
-            m_parent.MoveToTarget();
+            m_parent.SetSpeed(m_LogicData.runSpeed * m_LogicData.baseSpeed);            
+            m_parent.MoveToTarget(m_character.MovePause);
         }
         else if(status == LogicStatus.ELogic_IDLE)
         {
@@ -131,7 +131,7 @@ public class EnemyAgent : BaseAgent
             m_character.ActionDead();
         }
     }
-        
+
     ///<<< END WRITING YOUR CODE
 
 }
