@@ -38,8 +38,7 @@ namespace AlphaWork
                         //GameEntry.Entity.ShowAvatar(new AvatarData(GameEntry.Entity.GenerateSerialId(), 10001, CampType.Enemy)
                         //{
                         //    Position = sPt,
-                        //});
-
+                        //});                        
                         Vector3 sPt = new Vector3(hit.point.x + 2*i, hit.point.y, hit.point.z + 2*j);
                         int id = UnityEngine.Random.Range(0, 4);
                         GameEntry.Entity.ShowNPC(new NPCData(GameEntry.Entity.GenerateSerialId(), 50004 + id, CampType.Neutral)
@@ -82,18 +81,17 @@ namespace AlphaWork
             UIThetaEventArgs thetaArg = arg as UIThetaEventArgs;
             if(thetaArg != null)
             {
-                Vector3 pos = new Vector3();
-                GameBase.GetMainPos(out pos);
-                pos += new Vector3(40, 0, 40);
-                GameEntry.Entity.ShowEnemy(new NPCData(GameEntry.Entity.GenerateSerialId(), 
-                    50009 /*+ UnityEngine.Random.Range(0,11)*/, CampType.Enemy)
-                { 
-                    Position = pos,
-                    
-                });
+                TargetPoint Tg = ObjectUtility.GetAnyObjectofType<TargetPoint>();
+                if(Tg != null)
+                {
+                    GameEntry.Entity.ShowEnemy(new NPCData(GameEntry.Entity.GenerateSerialId(),
+                        50009 /*+ UnityEngine.Random.Range(0,11)*/, CampType.Enemy)
+                    {
+                        Position = Tg.transform.position,
+                    });
+                }
             }
         }
-
 
     }
 }

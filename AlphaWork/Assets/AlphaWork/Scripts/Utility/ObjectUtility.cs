@@ -74,6 +74,13 @@ namespace AlphaWork
             string str = "TargetAgent";
             return ObjectUtility.GetFellow(str);
         }
+
+        public static T GetAnyObjectofType<T>() where T : MonoBehaviour
+        {
+            T[] hings = FindObjectsOfType(typeof(T)) as T[];
+            return hings[Random.Range(0, hings.Length - 1)] as T;
+        }
+
         public static Object GetFellow(string str)
         {
             GameObject[] hings = FindObjectsOfType(typeof(GameObject)) as GameObject[];

@@ -68,6 +68,36 @@ namespace AlphaWork
             m_animator.SetBool("Dead",true);
         }
 
+        public void RunStart()
+        {
+
+        }
+
+        public void RunEnd()
+        {
+
+        }
+
+        public void WalkStart()
+        {
+
+        }
+
+        public void WalkEnd()
+        {
+
+        }
+
+        public void RunFastStart()
+        {
+
+        }
+
+        public void RunFastEnd()
+        {
+
+        }
+
         ////method to keep character from moveing while attacking, etc
         //protected IEnumerator _LockMovementAndAttack(float delayTime, float lockTime)
         //{

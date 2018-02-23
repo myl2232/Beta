@@ -42,7 +42,7 @@ public class EnemyAgent : BaseAgent
                 logicSt = (int)LogicStatus.ELogic_ATTACK;
                 m_character.SyncStatus(logicSt);
             }
-            else if (InRange(dist, m_LogicData.AttackRadius + SqAdd(GameEntry.NavGrid.MeshSize), 
+            else if (InRange(dist, m_LogicData.AttackRadius - SqAdd(GameEntry.NavGrid.MeshSize), 
                 m_LogicData.TrackRadius + SqAdd(GameEntry.NavGrid.MeshSize)))              
             {
                 logicSt = (int)LogicStatus.ELogic_TRACK;
