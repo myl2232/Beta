@@ -41,6 +41,9 @@ namespace AlphaWork
             m_trigger.Parent = Entity.Logic as TargetableObject;
             gameObject.GetOrAddComponent<BehaviourShakeHit>();
             m_moveTarget = gameObject.GetOrAddComponent<MoveTarget>();
+            CapsuleCollider cp = gameObject.GetComponent<CapsuleCollider>();
+            if(cp)
+                cp.isTrigger = true;
             //GameEntry.Event.Subscribe(MoveToTargetEventArgs.EventId, OnMoveToTarget);
             //GameEntry.Event.Subscribe(MoveToTargetEndEventArgs.EventId, OnMoveToEnd);
         }
@@ -71,6 +74,15 @@ namespace AlphaWork
         {
             m_moveTarget.Pause();
         }
+
+#if UNITY_EDITOR
+        private void OnGUI()
+        {
+            BaseCharacter chr = gameObject.GetComponent<BaseCharacter>();
+            GUI.color = Color.red;
+            GUI.Label(new Rect(Screen.width * 0.5f, Screen.height * 0.5f, 100, 100), chr.m_status.ToString());
+        }
+#endif
 
 #if UNITY_2017_3_OR_NEWER
         protected override void OnShow(object userdata)

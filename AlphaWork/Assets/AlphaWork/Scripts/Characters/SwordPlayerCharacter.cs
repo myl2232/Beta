@@ -20,6 +20,7 @@ namespace AlphaWork
         private Vector3 inputVec;
         private bool run;
         private JoystackCc m_Joystack;
+        private bool bAttack = false;
        
         // Use this for initialization
         void Start()
@@ -132,22 +133,16 @@ namespace AlphaWork
 
         private void FixedUpdate()
         {
-            if (!IsActive())
+            if (!IsActive() || !IsMainActor())
                 return;
 
             float h = CrossPlatformInputManager.GetAxis("Horizontal");
-            float v = CrossPlatformInputManager.GetAxis("Vertical"); 
-           
+            float v = CrossPlatformInputManager.GetAxis("Vertical");           
 
             h += m_Joystack.MovePosiNorm.x;
             v += m_Joystack.MovePosiNorm.y;
-
-            if (!IsMainActor())
-            {
-                h = 0;
-                v = 0;
-            }
-            Move(h, v);
+            
+            Move(h, v); 
 
             CleanInputs();
         }
@@ -256,6 +251,58 @@ namespace AlphaWork
 
             anim.Play("Attack_06", -1, 0F);
         }
+
+        #region
+        //for npc
+        public override void SyncStatus(int status)
+        {
+            base.SyncStatus(status);
+
+            if (anim != null)
+            {
+                if (status == (int)LogicStatus.ELogic_TRACK)
+                    anim.SetBool("run", true);
+                else if (status == (int)LogicStatus.ELogic_PATROL)
+                    anim.SetBool("run", false);
+                else if (status == (int)LogicStatus.ELogic_IDLE)
+                    anim.SetFloat("inputV", 0.0f);
+                else if (status == (int)LogicStatus.ELogic_ATTACK)
+                {
+                    anim.SetBool("run", false);
+                    anim.SetFloat("inputV", 0.0f);
+                }
+            }                
+        }
+
+        public override void ActionPatrol(float speed)
+        {
+            if (anim != null)
+            {
+                anim.SetFloat("inputV", 0.2f);
+            }
+        }
+
+        public override void ActionAttack(float attackParam)
+        {
+            base.ActionAttack(attackParam);
+            if (bAttack)
+                return;
+
+            int index = Random.Range(1, 8);
+            string str = "Attack_0" + index.ToString();
+            anim.Play(str, -1, 0F);
+        }
+        //from animation event
+        public void AttackStart()
+        {
+            bAttack = true;
+        }
+        //from animation event
+        public void AttackEnd()
+        {
+            bAttack = false;
+        }
+        #endregion
 
         public override void ActionHurt()
         {

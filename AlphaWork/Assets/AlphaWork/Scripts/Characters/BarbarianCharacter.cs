@@ -27,13 +27,13 @@ namespace AlphaWork
                 rbody.useGravity = false;
         }
 
-#if UNITY_EDITOR
-        private void OnGUI()
-        {            
-            GUI.color = Color.red;
-            GUI.Label(new Rect(Screen.width * 0.5f, Screen.height * 0.5f, 100, 100), m_animator.GetInteger("status").ToString());
-        }
-#endif
+//#if UNITY_EDITOR
+//        private void OnGUI()
+//        {            
+//            GUI.color = Color.red;
+//            GUI.Label(new Rect(Screen.width * 0.5f, Screen.height * 0.5f, 100, 100), m_animator.GetInteger("status").ToString());
+//        }
+//#endif
 
         public override void SyncStatus(int status)
         {
