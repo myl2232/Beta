@@ -12777,11 +12777,7 @@ GameObject:
   - component: {fileID: 1475200083}
   - component: {fileID: 1475200082}
   - component: {fileID: 1475200081}
-  - component: {fileID: 1475200086}
-  - component: {fileID: 1475200080}
-  - component: {fileID: 1475200087}
-  - component: {fileID: 1475200088}
-  - component: {fileID: 1475200089}
+  - component: {fileID: 1475200090}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -12789,17 +12785,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1475200080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1475200079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ccbc39e95af89845a8026643e00fc45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!81 &1475200081
 AudioListener:
   m_ObjectHideFlags: 0
@@ -12846,7 +12831,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: 1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -12870,7 +12855,7 @@ Transform:
   m_Father: {fileID: 1013380669}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 25.324001, y: -211.61299, z: -0.372}
---- !u!114 &1475200086
+--- !u!114 &1475200090
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -12878,42 +12863,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1475200079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 261bd1bf8ad8ac24ca2499e836dee497, type: 3}
+  m_Script: {fileID: 11500000, guid: b05036b16e6004856aacf1ffc496c2c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1475200087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1475200079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82efb7b9e2b580c409608d06d7a4d0b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1475200088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1475200079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d0957989ebfbbd439aee6da038f521f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1475200089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1475200079}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47d05c42d6816f94d8b954dc2964d5a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  SnowTexture: {fileID: 2800000, guid: 1a0ba5fa31f07fb4eb6ebe15c09f623b, type: 3}
+  SnowColor: {r: 1, g: 1, b: 1, a: 1}
+  SnowTextureScale: 0
+  BottomThreshold: 1
+  TopThreshold: 1
 --- !u!1001 &1478771335
 Prefab:
   m_ObjectHideFlags: 0

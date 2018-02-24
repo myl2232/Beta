@@ -1,0 +1,346 @@
+-debug
+-target:library
+-nowarn:0169
+-langversion:4
+-out:Temp/Assembly-CSharp.dll
+-unsafe
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEditor.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.UNETModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.WebModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.VRModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.StyleSheetsModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.ParticlesLegacyModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll"
+-r:Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll
+-r:Library/ScriptAssemblies/UnityGameFramework.Runtime.dll
+-r:Library/ScriptAssemblies/UnityGameFramework.Editor.dll
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll"
+-r:Assets/GameFrameworkExtensions/LitJson.dll
+-r:Assets/UnityGameFramework/Libraries/GameFramework.dll
+-r:Assets/UnityGameFramework/Libraries/ICSharpCode.SharpZipLib.dll
+-r:C:/Users/mayulei/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@0.0.18/UnityEngine.Advertisements.dll
+-r:C:/Users/mayulei/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@0.0.19/UnityEngine.Analytics.dll
+-r:C:/Users/mayulei/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/UnityEngine.Purchasing.dll
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll"
+-r:"D:/Program Files/Unity 2017.3.0b10/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Common.dll"
+-define:UNITY_5_3_OR_NEWER
+-define:UNITY_5_4_OR_NEWER
+-define:UNITY_5_5_OR_NEWER
+-define:UNITY_5_6_OR_NEWER
+-define:UNITY_2017_1_OR_NEWER
+-define:UNITY_2017_2_OR_NEWER
+-define:UNITY_2017_3_OR_NEWER
+-define:UNITY_2017_3_0
+-define:UNITY_2017_3
+-define:UNITY_2017
+-define:PLATFORM_ARCH_64
+-define:UNITY_64
+-define:ENABLE_AUDIO
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_DUCK_TYPING
+-define:ENABLE_GENERICS
+-define:ENABLE_PVR_GI
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_PHYSICS
+-define:ENABLE_SPRITERENDERER_FLIPPING
+-define:ENABLE_SPRITES
+-define:ENABLE_GRID
+-define:ENABLE_TILEMAP
+-define:ENABLE_TERRAIN
+-define:ENABLE_RAKNET
+-define:ENABLE_DIRECTOR
+-define:ENABLE_UNET
+-define:ENABLE_LZMA
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_WEBCAM
+-define:ENABLE_WWW
+-define:ENABLE_CLOUD_SERVICES_COLLAB
+-define:ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS
+-define:ENABLE_CLOUD_SERVICES_ADS
+-define:ENABLE_CLOUD_HUB
+-define:ENABLE_CLOUD_PROJECT_ID
+-define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
+-define:ENABLE_CLOUD_SERVICES_UNET
+-define:ENABLE_CLOUD_SERVICES_BUILD
+-define:ENABLE_CLOUD_LICENSE
+-define:ENABLE_EDITOR_HUB
+-define:ENABLE_EDITOR_HUB_LICENSE
+-define:ENABLE_WEBSOCKET_CLIENT
+-define:ENABLE_DIRECTOR_AUDIO
+-define:ENABLE_DIRECTOR_TEXTURE
+-define:ENABLE_TIMELINE
+-define:ENABLE_EDITOR_METRICS
+-define:ENABLE_EDITOR_METRICS_CACHING
+-define:ENABLE_NATIVE_ARRAY
+-define:ENABLE_SPRITE_MASKING
+-define:INCLUDE_DYNAMIC_GI
+-define:INCLUDE_GI
+-define:ENABLE_MONO_BDWGC
+-define:PLATFORM_SUPPORTS_MONO
+-define:RENDER_SOFTWARE_CURSOR
+-define:INCLUDE_PUBNUB
+-define:ENABLE_PLAYMODE_TESTS_RUNNER
+-define:ENABLE_VIDEO
+-define:ENABLE_RMGUI
+-define:ENABLE_PACKMAN
+-define:ENABLE_CUSTOM_RENDER_TEXTURE
+-define:ENABLE_STYLE_SHEETS
+-define:ENABLE_LOCALIZATION
+-define:PLATFORM_STANDALONE_WIN
+-define:PLATFORM_STANDALONE
+-define:UNITY_STANDALONE_WIN
+-define:UNITY_STANDALONE
+-define:ENABLE_SUBSTANCE
+-define:ENABLE_RUNTIME_GI
+-define:ENABLE_MOVIES
+-define:ENABLE_NETWORK
+-define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+-define:ENABLE_UNITYWEBREQUEST
+-define:ENABLE_CLOUD_SERVICES
+-define:ENABLE_CLOUD_SERVICES_ANALYTICS
+-define:ENABLE_CLOUD_SERVICES_PURCHASING
+-define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+-define:ENABLE_EVENT_QUEUE
+-define:ENABLE_CLUSTERINPUT
+-define:ENABLE_VR
+-define:ENABLE_AR
+-define:ENABLE_WEBSOCKET_HOST
+-define:ENABLE_MONO
+-define:NET_2_0_SUBSET
+-define:ENABLE_PROFILER
+-define:DEBUG
+-define:TRACE
+-define:UNITY_ASSERTIONS
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_64
+-define:UNITY_EDITOR_WIN
+-define:ENABLE_NATIVE_ARRAY_CHECKS
+-define:UNITY_TEAM_LICENSE
+-define:ENABLE_VSTU
+-define:UNITY_PRO_LICENSE
+-define:CROSS_PLATFORM_INPUT
+-define:BEHAVIAC_RELEASE
+-define:BEHAVIAC_NOT_USE_MONOBEHAVIOUR
+Assets/AlphaWork/KY_effects/Script/ConGUI.cs
+Assets/AlphaWork/KY_effects/Script/Lighting.cs
+Assets/AlphaWork/PBR/Effect/Script_FX/Tail.cs
+Assets/AlphaWork/PBR/Shaders/WaterAdvance/Scripts/TLS_Water.cs
+Assets/AlphaWork/PBR/Shaders/WaterAdvance/Scripts/TLS_WaterReflection.cs
+Assets/AlphaWork/Scripts/Base/GameEntry.Builtin.cs
+Assets/AlphaWork/Scripts/Base/GameEntry.cs
+Assets/AlphaWork/Scripts/Base/GameEntry.Custom.cs
+Assets/AlphaWork/Scripts/Characters/AICharacterControl.cs
+Assets/AlphaWork/Scripts/Characters/BarbarianCharacter.cs
+Assets/AlphaWork/Scripts/Characters/BaseCharacter.cs
+Assets/AlphaWork/Scripts/Characters/CameraScroll.cs
+Assets/AlphaWork/Scripts/Characters/ChanceWeapon.cs
+Assets/AlphaWork/Scripts/Characters/MasterCharacter.cs
+Assets/AlphaWork/Scripts/Characters/MovementStateInfo.cs
+Assets/AlphaWork/Scripts/Characters/PlayerController.cs
+Assets/AlphaWork/Scripts/Characters/SwordPlayerCharacter.cs
+Assets/AlphaWork/Scripts/Characters/ThirdPersonCharacter.cs
+Assets/AlphaWork/Scripts/Characters/ThirdPersonUserControl.cs
+Assets/AlphaWork/Scripts/Config/ConfigComponent.cs
+Assets/AlphaWork/Scripts/Config/DeviceModelConfig.cs
+Assets/AlphaWork/Scripts/DataTable/DataTableExtension.cs
+Assets/AlphaWork/Scripts/DataTable/DRAttachment.cs
+Assets/AlphaWork/Scripts/DataTable/DRAvatar.cs
+Assets/AlphaWork/Scripts/DataTable/DREffect.cs
+Assets/AlphaWork/Scripts/DataTable/DREntity.cs
+Assets/AlphaWork/Scripts/DataTable/DREthan.cs
+Assets/AlphaWork/Scripts/DataTable/DRMusic.cs
+Assets/AlphaWork/Scripts/DataTable/DRNPC.cs
+Assets/AlphaWork/Scripts/DataTable/DRScene.cs
+Assets/AlphaWork/Scripts/DataTable/DRSound.cs
+Assets/AlphaWork/Scripts/DataTable/DRStructure.cs
+Assets/AlphaWork/Scripts/DataTable/DRUIForm.cs
+Assets/AlphaWork/Scripts/DataTable/DRUISound.cs
+Assets/AlphaWork/Scripts/Definition/Constant/Constant.Layer.cs
+Assets/AlphaWork/Scripts/Definition/Constant/Constant.ProcedureData.cs
+Assets/AlphaWork/Scripts/Definition/Constant/Constant.Setting.cs
+Assets/AlphaWork/Scripts/Definition/DataStruct/BuildInfo.cs
+Assets/AlphaWork/Scripts/Definition/DataStruct/DeviceModel.cs
+Assets/AlphaWork/Scripts/Definition/DataStruct/ImpactData.cs
+Assets/AlphaWork/Scripts/Definition/DataStruct/VersionInfo.cs
+Assets/AlphaWork/Scripts/Definition/Enum/CampType.cs
+Assets/AlphaWork/Scripts/Definition/Enum/QualityLevelType.cs
+Assets/AlphaWork/Scripts/Definition/Enum/RelationType.cs
+Assets/AlphaWork/Scripts/Entity/EntityData/AttachmentData.cs
+Assets/AlphaWork/Scripts/Entity/EntityData/AvatarData.cs
+Assets/AlphaWork/Scripts/Entity/EntityData/EffectData.cs
+Assets/AlphaWork/Scripts/Entity/EntityData/EntityData.cs
+Assets/AlphaWork/Scripts/Entity/EntityData/EthanData.cs
+Assets/AlphaWork/Scripts/Entity/EntityData/NPCData.cs
+Assets/AlphaWork/Scripts/Entity/EntityData/StructureData.cs
+Assets/AlphaWork/Scripts/Entity/EntityData/TargetableObjectData.cs
+Assets/AlphaWork/Scripts/Entity/EntityExtension.cs
+Assets/AlphaWork/Scripts/Entity/EntityLogic/AttachmentEntity.cs
+Assets/AlphaWork/Scripts/Entity/EntityLogic/AvatarEntity.cs
+Assets/AlphaWork/Scripts/Entity/EntityLogic/CustomEntity.cs
+Assets/AlphaWork/Scripts/Entity/EntityLogic/EffectEntity.cs
+Assets/AlphaWork/Scripts/Entity/EntityLogic/Enemy.cs
+Assets/AlphaWork/Scripts/Entity/EntityLogic/EntityObject.cs
+Assets/AlphaWork/Scripts/Entity/EntityLogic/Ethan.cs
+Assets/AlphaWork/Scripts/Entity/EntityLogic/NPC.cs
+Assets/AlphaWork/Scripts/Entity/EntityLogic/Structure.cs
+Assets/AlphaWork/Scripts/Entity/EntityLogic/TargetableObject.cs
+Assets/AlphaWork/Scripts/Event/AvatarCreateEventArgs.cs
+Assets/AlphaWork/Scripts/Event/EventExtension.cs
+Assets/AlphaWork/Scripts/Event/EventId.cs
+Assets/AlphaWork/Scripts/Event/GameStartEventArgs.cs
+Assets/AlphaWork/Scripts/Event/GameToLoginEventArgs.cs
+Assets/AlphaWork/Scripts/Event/MoveToTargetEndEventArgs.cs
+Assets/AlphaWork/Scripts/Event/MoveToTargetEventArgs.cs
+Assets/AlphaWork/Scripts/Event/RefreshMainPosArgs.cs
+Assets/AlphaWork/Scripts/Event/SenseAIEventArgs.cs
+Assets/AlphaWork/Scripts/Event/UIAlphaEventArgs.cs
+Assets/AlphaWork/Scripts/Event/UIAttack1EventArgs.cs
+Assets/AlphaWork/Scripts/Event/UIAttack2EventArgs.cs
+Assets/AlphaWork/Scripts/Event/UIBetaEventArgs.cs
+Assets/AlphaWork/Scripts/Event/UIHomeEventArgs.cs
+Assets/AlphaWork/Scripts/Event/UIMainEventArgs.cs
+Assets/AlphaWork/Scripts/Event/UIThetaEventArgs.cs
+Assets/AlphaWork/Scripts/Game/AI/BehaviacComponent.cs
+Assets/AlphaWork/Scripts/Game/AI/BehaviacTrigger.cs
+Assets/AlphaWork/Scripts/Game/AI/BehaviourShakeHit.cs
+Assets/AlphaWork/Scripts/Game/AI/MoveTarget.cs
+Assets/AlphaWork/Scripts/Game/AI/SenseDispatcherComponent.cs
+Assets/AlphaWork/Scripts/Game/AI/SenseObject.cs
+Assets/AlphaWork/Scripts/Game/AI/SensorAI.cs
+Assets/AlphaWork/Scripts/Game/AI/SensorAICircle.cs
+Assets/AlphaWork/Scripts/Game/AI/SensorAIPan.cs
+Assets/AlphaWork/Scripts/Game/AI/TargetPoint.cs
+Assets/AlphaWork/Scripts/Game/AI/temp/BehaviourMove.cs
+Assets/AlphaWork/Scripts/Game/Avatar/AvatarManager.cs
+Assets/AlphaWork/Scripts/Game/Behaviour/behaviac_generated/behaviors/generated_behaviors.cs
+Assets/AlphaWork/Scripts/Game/Behaviour/behaviac_generated/types/AgentProperties.cs
+Assets/AlphaWork/Scripts/Game/Behaviour/behaviac_generated/types/BaseAgent.cs
+Assets/AlphaWork/Scripts/Game/Behaviour/behaviac_generated/types/customizedtypes.cs
+Assets/AlphaWork/Scripts/Game/Behaviour/behaviac_generated/types/EnemyAgent.cs
+Assets/AlphaWork/Scripts/Game/Download/PreDownloadHelper.cs
+Assets/AlphaWork/Scripts/Game/Download/PreDownloadHelper.TableHelper.cs
+"Assets/AlphaWork/Scripts/Game/Effect/Screen-Space Snow Shader/ScreenSpaceSnow.cs"
+Assets/AlphaWork/Scripts/Game/FastShadow/FS_ShadowManager.cs
+Assets/AlphaWork/Scripts/Game/FastShadow/FS_ShadowManagerMesh.cs
+Assets/AlphaWork/Scripts/Game/FastShadow/FS_ShadowSimple.cs
+Assets/AlphaWork/Scripts/Game/GameBase.cs
+Assets/AlphaWork/Scripts/Game/GameBuilder.cs
+Assets/AlphaWork/Scripts/Game/GameEntityCallback.cs
+Assets/AlphaWork/Scripts/Game/GameMode.cs
+Assets/AlphaWork/Scripts/Game/LevelManager/LevelManager.AgentController.cs
+Assets/AlphaWork/Scripts/Game/LevelManager/LevelManager.cs
+Assets/AlphaWork/Scripts/Game/LevelManager/LevelManager.EventDispatcher.cs
+Assets/AlphaWork/Scripts/Game/LevelManager/LevelManager.LoadResource.cs
+Assets/AlphaWork/Scripts/Game/LevelManager/LevelManager.StructureController.cs
+Assets/AlphaWork/Scripts/Game/LevelManager/LevelManager.TerrainController.cs
+Assets/AlphaWork/Scripts/Game/Navigation/NavigationHelper.cs
+Assets/AlphaWork/Scripts/Game/Navigation/RecastNavigationAsset.cs
+Assets/AlphaWork/Scripts/Game/Navigation/RecastNavigationDllImports.cs
+Assets/AlphaWork/Scripts/Game/Navigation/RecastNavigationNavMesh.cs
+Assets/AlphaWork/Scripts/Game/StructureBehaviourCallback.cs
+Assets/AlphaWork/Scripts/Game/SurviveGame.cs
+Assets/AlphaWork/Scripts/Game/Transparent/AutoTransparent.cs
+Assets/AlphaWork/Scripts/Game/Transparent/MainCameraControl.cs
+Assets/AlphaWork/Scripts/Game/Transparent/OccTransparent.cs
+Assets/AlphaWork/Scripts/Game/WeaponItem/WeaponAttachment.cs
+Assets/AlphaWork/Scripts/Joystack/EventTriggerListener.cs
+Assets/AlphaWork/Scripts/Joystack/JoystackCc.cs
+Assets/AlphaWork/Scripts/Localization/LocalizationExtension.cs
+Assets/AlphaWork/Scripts/Localization/XmlLocalizationHelper.cs
+Assets/AlphaWork/Scripts/NavigationGrid/NavGridComponent.cs
+Assets/AlphaWork/Scripts/NavigationGrid/NavGridTool.cs
+Assets/AlphaWork/Scripts/NavigationGrid/NavigationGrid.cs
+Assets/AlphaWork/Scripts/Procedure/ProcedureBase.cs
+Assets/AlphaWork/Scripts/Procedure/ProcedureChangeScene.cs
+Assets/AlphaWork/Scripts/Procedure/ProcedureCheckVersion.cs
+Assets/AlphaWork/Scripts/Procedure/ProcedureLaunch.cs
+Assets/AlphaWork/Scripts/Procedure/ProcedureMain.cs
+Assets/AlphaWork/Scripts/Procedure/ProcedureMenu.cs
+Assets/AlphaWork/Scripts/Procedure/ProcedurePreload.cs
+Assets/AlphaWork/Scripts/Procedure/ProcedureSplash.cs
+Assets/AlphaWork/Scripts/Procedure/ProcedureUpdateResource.cs
+Assets/AlphaWork/Scripts/Scene/SceneId.cs
+Assets/AlphaWork/Scripts/Sound/SoundExtension.cs
+Assets/AlphaWork/Scripts/Touch/TouchBundle.cs
+Assets/AlphaWork/Scripts/UI/AboutForm.cs
+Assets/AlphaWork/Scripts/UI/CommonButton.cs
+Assets/AlphaWork/Scripts/UI/DialogForm.cs
+Assets/AlphaWork/Scripts/UI/DialogParams.cs
+Assets/AlphaWork/Scripts/UI/InGameForm.cs
+Assets/AlphaWork/Scripts/UI/LoginUIForm.cs
+Assets/AlphaWork/Scripts/UI/MainUIForm.cs
+Assets/AlphaWork/Scripts/UI/MenuForm.cs
+Assets/AlphaWork/Scripts/UI/NGUIForm.cs
+Assets/AlphaWork/Scripts/UI/SettingForm.cs
+Assets/AlphaWork/Scripts/UI/UGuiForm.cs
+Assets/AlphaWork/Scripts/UI/UGuiGroupHelper.cs
+Assets/AlphaWork/Scripts/UI/UIExtension.cs
+Assets/AlphaWork/Scripts/UI/UIFormId.cs
+Assets/AlphaWork/Scripts/UI/UpdateResourceForm.cs
+Assets/AlphaWork/Scripts/Utility/AIUtility.cs
+Assets/AlphaWork/Scripts/Utility/AssetUtility.cs
+Assets/AlphaWork/Scripts/Utility/DebugUtility.cs
+Assets/AlphaWork/Scripts/Utility/FIleUtility.cs
+Assets/AlphaWork/Scripts/Utility/LitJsonHelper.cs
+Assets/AlphaWork/Scripts/Utility/ObjectUtility.cs
+Assets/AlphaWork/Scripts/Utility/ScalableModel.cs
+Assets/AlphaWork/Scripts/Utility/Utils.cs
+Assets/AlphaWork/Scripts/Utility/WebUtility.cs
+"Assets/The Knights of Unity/Screen-Space Snow Shader/ScreenSpaceSnow.cs"
+-r:"D:\Program Files\Unity 2017.3.0b10\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll"
+-r:"D:\Program Files\Unity 2017.3.0b10\Editor\Data\Mono\lib\mono\unity\System.Xml.Linq.dll"
+-r:"D:\Program Files\Unity 2017.3.0b10\Editor\Data\Mono\lib\mono\unity\UnityScript.dll"
+-r:"D:\Program Files\Unity 2017.3.0b10\Editor\Data\Mono\lib\mono\unity\UnityScript.Lang.dll"
+-r:"D:\Program Files\Unity 2017.3.0b10\Editor\Data\Mono\lib\mono\unity\Boo.Lang.dll"
+-sdk:unity
