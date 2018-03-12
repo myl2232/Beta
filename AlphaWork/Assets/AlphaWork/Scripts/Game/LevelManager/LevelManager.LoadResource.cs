@@ -29,7 +29,7 @@ namespace AlphaWork
                 {
                     Position = hit.point,
                 });
-
+                /*
                 //test to add npc for Efficiency
                 for (int i = 0; i < 4; ++i)
                 {
@@ -53,6 +53,7 @@ namespace AlphaWork
                         });
                     }
                 }
+                */
             }
         }
 

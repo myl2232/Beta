@@ -18,6 +18,14 @@ namespace AlphaWork
         [SerializeField]
         private UpdateResourceForm m_UpdateResourceFormTemplate = null;
 
+        [SerializeField]
+        private int m_MainSceneId = 4;
+        public int MainScene
+        {
+            get { return m_MainSceneId; }
+            set { m_MainSceneId = value; }
+        }
+
         private BuildInfo m_BuildInfo = null;
 
         public DeviceModelConfig DeviceModelConfig

@@ -12868,8 +12868,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SnowTexture: {fileID: 2800000, guid: 1a0ba5fa31f07fb4eb6ebe15c09f623b, type: 3}
   SnowColor: {r: 1, g: 1, b: 1, a: 1}
-  SnowTextureScale: 0
-  BottomThreshold: 1
+  SnowTextureScale: 0.1
+  BottomThreshold: 0.066
   TopThreshold: 1
 --- !u!1001 &1478771335
 Prefab:

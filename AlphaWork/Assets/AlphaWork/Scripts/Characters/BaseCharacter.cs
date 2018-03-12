@@ -25,10 +25,13 @@ namespace AlphaWork
 
         private void Awake()
         {
-            GameEntry.Event.Subscribe(UIAttack1EventArgs.EventId, OnAttack1);
-            GameEntry.Event.Subscribe(UIAttack2EventArgs.EventId, OnAttack2);
-            GameEntry.Event.Subscribe(UIAlphaEventArgs.EventId, OnKick1);
-            GameEntry.Event.Subscribe(UIBetaEventArgs.EventId, OnKick2);
+            if(GameEntry.Event)
+            {
+                GameEntry.Event.Subscribe(UIAttack1EventArgs.EventId, OnAttack1);
+                GameEntry.Event.Subscribe(UIAttack2EventArgs.EventId, OnAttack2);
+                GameEntry.Event.Subscribe(UIAlphaEventArgs.EventId, OnKick1);
+                GameEntry.Event.Subscribe(UIBetaEventArgs.EventId, OnKick2);
+            }
         }
 
         protected virtual void OnAttack1(object sender, GameEventArgs arg)
@@ -80,6 +83,9 @@ namespace AlphaWork
 
         public virtual bool IsMainActor()
         {
+            if (!GameBase.MainEthan)
+                return false;
+
             if (ParentId == GameBase.MainEthan.Id)
                 return true;
 

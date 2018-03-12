@@ -16,7 +16,7 @@ namespace AlphaWork
                 return Entity.Id;
             }
         }
-
+        
         public EntityData Data
         {
             get { return m_EntityData; }

@@ -1,0 +1,181 @@
+fileFormatVersion: 2
+guid: d67d600dc3b1c3648930c52f6d99ed63
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: 1_ChiBang_06
+    100004: Bone001
+    100006: Bone002
+    100008: Bone003
+    100010: Bone004
+    100012: Bone006
+    100014: Bone007
+    100016: Bone008
+    100018: Bone009
+    100020: Bone011
+    100022: Bone012
+    100024: Bone013
+    100026: Bone015
+    100028: Bone016
+    100030: Bone017
+    100032: Bone019
+    100034: Bone020
+    100036: Bone021
+    100038: Bone023
+    100040: Bone024
+    100042: Bone025
+    100044: Bone_Root
+    400000: //RootNode
+    400002: 1_ChiBang_06
+    400004: Bone001
+    400006: Bone002
+    400008: Bone003
+    400010: Bone004
+    400012: Bone006
+    400014: Bone007
+    400016: Bone008
+    400018: Bone009
+    400020: Bone011
+    400022: Bone012
+    400024: Bone013
+    400026: Bone015
+    400028: Bone016
+    400030: Bone017
+    400032: Bone019
+    400034: Bone020
+    400036: Bone021
+    400038: Bone023
+    400040: Bone024
+    400042: Bone025
+    400044: Bone_Root
+    4300000: 1_ChiBang_06
+    7400000: Idle
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: 1_ChiBang_06
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: 2
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 70
+      lastFrame: 130
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 1_ChiBang_06
+        weight: 1
+      - path: Bone_Root
+        weight: 1
+      - path: Bone_Root/Bone001
+        weight: 1
+      - path: Bone_Root/Bone001/Bone002
+        weight: 1
+      - path: Bone_Root/Bone001/Bone002/Bone003
+        weight: 1
+      - path: Bone_Root/Bone001/Bone002/Bone003/Bone004
+        weight: 1
+      - path: Bone_Root/Bone001/Bone019
+        weight: 1
+      - path: Bone_Root/Bone001/Bone019/Bone020
+        weight: 1
+      - path: Bone_Root/Bone001/Bone019/Bone020/Bone021
+        weight: 1
+      - path: Bone_Root/Bone001/Bone023
+        weight: 1
+      - path: Bone_Root/Bone001/Bone023/Bone024
+        weight: 1
+      - path: Bone_Root/Bone001/Bone023/Bone024/Bone025
+        weight: 1
+      - path: Bone_Root/Bone006
+        weight: 1
+      - path: Bone_Root/Bone006/Bone007
+        weight: 1
+      - path: Bone_Root/Bone006/Bone007/Bone008
+        weight: 1
+      - path: Bone_Root/Bone006/Bone007/Bone008/Bone009
+        weight: 1
+      - path: Bone_Root/Bone006/Bone011
+        weight: 1
+      - path: Bone_Root/Bone006/Bone011/Bone012
+        weight: 1
+      - path: Bone_Root/Bone006/Bone011/Bone012/Bone013
+        weight: 1
+      - path: Bone_Root/Bone006/Bone015
+        weight: 1
+      - path: Bone_Root/Bone006/Bone015/Bone016
+        weight: 1
+      - path: Bone_Root/Bone006/Bone015/Bone016/Bone017
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

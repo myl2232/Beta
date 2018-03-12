@@ -1,0 +1,1510 @@
+fileFormatVersion: 2
+guid: e1ce9932a57798341b0eda08c8b11c7b
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: 1_T_HunDunMoShen_01
+    100004: Bone001
+    100006: Bone002
+    100008: Bone003
+    100010: Bone004
+    100012: Bone004(mirrored)
+    100014: Bone005
+    100016: Bone005(mirrored)
+    100018: Bone006
+    100020: Bone006(mirrored)
+    100022: Bone007
+    100024: Bone007(mirrored)
+    100026: Bone008
+    100028: Bone008(mirrored)
+    100030: Bone009
+    100032: Bone009(mirrored)
+    100034: Bone011
+    100036: Bone011(mirrored)
+    100038: Bone012
+    100040: Bone012(mirrored)
+    100042: Bone014
+    100044: Bone014(mirrored)
+    100046: Bone015
+    100048: Bone015(mirrored)
+    100050: Bone017
+    100052: Bone017(mirrored)
+    100054: Bone018
+    100056: Bone018(mirrored)
+    100058: Bone020
+    100060: Bone021
+    100062: Bone022
+    100064: Point001
+    100066: Point002
+    100068: Point003
+    100070: Point004
+    100072: Dummy001
+    400000: //RootNode
+    400002: 1_T_HunDunMoShen_01
+    400004: Bone001
+    400006: Bone002
+    400008: Bone003
+    400010: Bone004
+    400012: Bone004(mirrored)
+    400014: Bone005
+    400016: Bone005(mirrored)
+    400018: Bone006
+    400020: Bone006(mirrored)
+    400022: Bone007
+    400024: Bone007(mirrored)
+    400026: Bone008
+    400028: Bone008(mirrored)
+    400030: Bone009
+    400032: Bone009(mirrored)
+    400034: Bone011
+    400036: Bone011(mirrored)
+    400038: Bone012
+    400040: Bone012(mirrored)
+    400042: Bone014
+    400044: Bone014(mirrored)
+    400046: Bone015
+    400048: Bone015(mirrored)
+    400050: Bone017
+    400052: Bone017(mirrored)
+    400054: Bone018
+    400056: Bone018(mirrored)
+    400058: Bone020
+    400060: Bone021
+    400062: Bone022
+    400064: Point001
+    400066: Point002
+    400068: Point003
+    400070: Point004
+    400072: Dummy001
+    2300000: 1_T_HunDunMoShen_01
+    3300000: 1_T_HunDunMoShen_01
+    4300000: 1_T_HunDunMoShen_01
+    7400000: moshen_pugong_01
+    7400002: moshen_pugong_02
+    7400004: moshen_pugong_03
+    7400006: moshen_pugong_04
+    7400008: moshen_ex_01
+    7400010: moshen_ex_02_01
+    7400012: moshen_ex_02_02
+    7400014: moshen_ex_02_03
+    7400016: moshen_ex_02_04
+    7400018: moshen_ex_02_05
+    7400020: moshen_ex_02_06
+    7400022: moshen_ex_02_08
+    7400024: moshen_ex_02_07
+    7400026: moshen_ex_03
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: 1_T_HunDunMoShen_01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: 2
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: moshen_pugong_01
+      takeName: Take 001
+      firstFrame: 9
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 1_T_HunDunMoShen_01
+        weight: 1
+      - path: Bone001
+        weight: 1
+      - path: Bone001/Bone002
+        weight: 1
+      - path: Bone001/Bone002/Bone003
+        weight: 1
+      - path: Bone001/Bone004
+        weight: 1
+      - path: Bone001/Bone004/Bone005
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone008
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone008/Bone009
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone011
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone011/Bone012
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone014/Bone015
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone017
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone017/Bone018
+        weight: 1
+      - path: Bone001/Bone004(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)/Bone009(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)/Bone012(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)/Bone015(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)/Bone018(mirrored)
+        weight: 1
+      - path: Bone001/Bone020
+        weight: 1
+      - path: Bone001/Bone020/Bone021
+        weight: 1
+      - path: Bone001/Bone020/Bone021/Bone022
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: moshen_pugong_02
+      takeName: Take 001
+      firstFrame: 26
+      lastFrame: 38
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 1_T_HunDunMoShen_01
+        weight: 1
+      - path: Bone001
+        weight: 1
+      - path: Bone001/Bone002
+        weight: 1
+      - path: Bone001/Bone002/Bone003
+        weight: 1
+      - path: Bone001/Bone004
+        weight: 1
+      - path: Bone001/Bone004/Bone005
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone008
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone008/Bone009
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone011
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone011/Bone012
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone014/Bone015
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone017
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone017/Bone018
+        weight: 1
+      - path: Bone001/Bone004(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)/Bone009(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)/Bone012(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)/Bone015(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)/Bone018(mirrored)
+        weight: 1
+      - path: Bone001/Bone020
+        weight: 1
+      - path: Bone001/Bone020/Bone021
+        weight: 1
+      - path: Bone001/Bone020/Bone021/Bone022
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: moshen_pugong_03
+      takeName: Take 001
+      firstFrame: 44
+      lastFrame: 52
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 1_T_HunDunMoShen_01
+        weight: 1
+      - path: Bone001
+        weight: 1
+      - path: Bone001/Bone002
+        weight: 1
+      - path: Bone001/Bone002/Bone003
+        weight: 1
+      - path: Bone001/Bone004
+        weight: 1
+      - path: Bone001/Bone004/Bone005
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone008
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone008/Bone009
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone011
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone011/Bone012
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone014/Bone015
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone017
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone017/Bone018
+        weight: 1
+      - path: Bone001/Bone004(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)/Bone009(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)/Bone012(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)/Bone015(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)/Bone018(mirrored)
+        weight: 1
+      - path: Bone001/Bone020
+        weight: 1
+      - path: Bone001/Bone020/Bone021
+        weight: 1
+      - path: Bone001/Bone020/Bone021/Bone022
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: moshen_pugong_04
+      takeName: Take 001
+      firstFrame: 56
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 1_T_HunDunMoShen_01
+        weight: 1
+      - path: Bone001
+        weight: 1
+      - path: Bone001/Bone002
+        weight: 1
+      - path: Bone001/Bone002/Bone003
+        weight: 1
+      - path: Bone001/Bone004
+        weight: 1
+      - path: Bone001/Bone004/Bone005
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone008
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone008/Bone009
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone011
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone011/Bone012
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone014/Bone015
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone017
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone017/Bone018
+        weight: 1
+      - path: Bone001/Bone004(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)/Bone009(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)/Bone012(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)/Bone015(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)/Bone018(mirrored)
+        weight: 1
+      - path: Bone001/Bone020
+        weight: 1
+      - path: Bone001/Bone020/Bone021
+        weight: 1
+      - path: Bone001/Bone020/Bone021/Bone022
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: moshen_ex_01
+      takeName: Take 001
+      firstFrame: 97
+      lastFrame: 117
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 1_T_HunDunMoShen_01
+        weight: 1
+      - path: Dummy001
+        weight: 1
+      - path: Dummy001/Bone001
+        weight: 1
+      - path: Dummy001/Bone001/Bone002
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003/Point001
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003/Point002
+        weight: 1
+      - path: Dummy001/Bone001/Bone004
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone008
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone008/Bone009
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone011
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone011/Bone012
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone014/Bone015
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone017
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone017/Bone018
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Point003
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)/Bone009(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)/Bone012(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)/Bone015(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)/Bone018(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Point004
+        weight: 1
+      - path: Dummy001/Bone001/Bone020
+        weight: 1
+      - path: Dummy001/Bone001/Bone020/Bone021
+        weight: 1
+      - path: Dummy001/Bone001/Bone020/Bone021/Bone022
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: moshen_ex_02_01
+      takeName: Take 001
+      firstFrame: 141.199997
+      lastFrame: 141.300003
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 1_T_HunDunMoShen_01
+        weight: 1
+      - path: Dummy001
+        weight: 1
+      - path: Dummy001/Bone001
+        weight: 1
+      - path: Dummy001/Bone001/Bone002
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003/Point001
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003/Point002
+        weight: 1
+      - path: Dummy001/Bone001/Bone004
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone008
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone008/Bone009
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone011
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone011/Bone012
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone014/Bone015
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone017
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone017/Bone018
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Point003
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)/Bone009(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)/Bone012(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)/Bone015(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)/Bone018(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Point004
+        weight: 1
+      - path: Dummy001/Bone001/Bone020
+        weight: 1
+      - path: Dummy001/Bone001/Bone020/Bone021
+        weight: 1
+      - path: Dummy001/Bone001/Bone020/Bone021/Bone022
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: moshen_ex_02_02
+      takeName: Take 001
+      firstFrame: 141.199997
+      lastFrame: 143
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 1_T_HunDunMoShen_01
+        weight: 1
+      - path: Dummy001
+        weight: 1
+      - path: Dummy001/Bone001
+        weight: 1
+      - path: Dummy001/Bone001/Bone002
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003/Point001
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003/Point002
+        weight: 1
+      - path: Dummy001/Bone001/Bone004
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone008
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone008/Bone009
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone011
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone011/Bone012
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone014/Bone015
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone017
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone017/Bone018
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Point003
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)/Bone009(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)/Bone012(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)/Bone015(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)/Bone018(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Point004
+        weight: 1
+      - path: Dummy001/Bone001/Bone020
+        weight: 1
+      - path: Dummy001/Bone001/Bone020/Bone021
+        weight: 1
+      - path: Dummy001/Bone001/Bone020/Bone021/Bone022
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: moshen_ex_02_03
+      takeName: Take 001
+      firstFrame: 146.199997
+      lastFrame: 148
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 1_T_HunDunMoShen_01
+        weight: 1
+      - path: Dummy001
+        weight: 1
+      - path: Dummy001/Bone001
+        weight: 1
+      - path: Dummy001/Bone001/Bone002
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003/Point001
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003/Point002
+        weight: 1
+      - path: Dummy001/Bone001/Bone004
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone008
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone008/Bone009
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone011
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone011/Bone012
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone014/Bone015
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone017
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone017/Bone018
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Point003
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)/Bone009(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)/Bone012(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)/Bone015(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)/Bone018(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Point004
+        weight: 1
+      - path: Dummy001/Bone001/Bone020
+        weight: 1
+      - path: Dummy001/Bone001/Bone020/Bone021
+        weight: 1
+      - path: Dummy001/Bone001/Bone020/Bone021/Bone022
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: moshen_ex_02_04
+      takeName: Take 001
+      firstFrame: 143
+      lastFrame: 144
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 1_T_HunDunMoShen_01
+        weight: 1
+      - path: Dummy001
+        weight: 1
+      - path: Dummy001/Bone001
+        weight: 1
+      - path: Dummy001/Bone001/Bone002
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003/Point001
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003/Point002
+        weight: 1
+      - path: Dummy001/Bone001/Bone004
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone008
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone008/Bone009
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone011
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone011/Bone012
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone014/Bone015
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone017
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone017/Bone018
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Point003
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)/Bone009(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)/Bone012(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)/Bone015(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)/Bone018(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Point004
+        weight: 1
+      - path: Dummy001/Bone001/Bone020
+        weight: 1
+      - path: Dummy001/Bone001/Bone020/Bone021
+        weight: 1
+      - path: Dummy001/Bone001/Bone020/Bone021/Bone022
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: moshen_ex_02_05
+      takeName: Take 001
+      firstFrame: 148
+      lastFrame: 149
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 1_T_HunDunMoShen_01
+        weight: 1
+      - path: Dummy001
+        weight: 1
+      - path: Dummy001/Bone001
+        weight: 1
+      - path: Dummy001/Bone001/Bone002
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003/Point001
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003/Point002
+        weight: 1
+      - path: Dummy001/Bone001/Bone004
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone008
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone008/Bone009
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone011
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone011/Bone012
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone014/Bone015
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone017
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone017/Bone018
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Point003
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)/Bone009(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)/Bone012(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)/Bone015(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)/Bone018(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Point004
+        weight: 1
+      - path: Dummy001/Bone001/Bone020
+        weight: 1
+      - path: Dummy001/Bone001/Bone020/Bone021
+        weight: 1
+      - path: Dummy001/Bone001/Bone020/Bone021/Bone022
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: moshen_ex_02_06
+      takeName: Take 001
+      firstFrame: 140
+      lastFrame: 143
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 1_T_HunDunMoShen_01
+        weight: 1
+      - path: Dummy001
+        weight: 1
+      - path: Dummy001/Bone001
+        weight: 1
+      - path: Dummy001/Bone001/Bone002
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003/Point001
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003/Point002
+        weight: 1
+      - path: Dummy001/Bone001/Bone004
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone008
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone008/Bone009
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone011
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone011/Bone012
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone014/Bone015
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone017
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone017/Bone018
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Point003
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)/Bone009(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)/Bone012(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)/Bone015(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)/Bone018(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Point004
+        weight: 1
+      - path: Dummy001/Bone001/Bone020
+        weight: 1
+      - path: Dummy001/Bone001/Bone020/Bone021
+        weight: 1
+      - path: Dummy001/Bone001/Bone020/Bone021/Bone022
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: moshen_ex_02_07
+      takeName: Take 001
+      firstFrame: 145
+      lastFrame: 148
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 1_T_HunDunMoShen_01
+        weight: 1
+      - path: Dummy001
+        weight: 1
+      - path: Dummy001/Bone001
+        weight: 1
+      - path: Dummy001/Bone001/Bone002
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003/Point001
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003/Point002
+        weight: 1
+      - path: Dummy001/Bone001/Bone004
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone008
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone008/Bone009
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone011
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone011/Bone012
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone014/Bone015
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone017
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone017/Bone018
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Point003
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)/Bone009(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)/Bone012(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)/Bone015(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)/Bone018(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Point004
+        weight: 1
+      - path: Dummy001/Bone001/Bone020
+        weight: 1
+      - path: Dummy001/Bone001/Bone020/Bone021
+        weight: 1
+      - path: Dummy001/Bone001/Bone020/Bone021/Bone022
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: moshen_ex_02_08
+      takeName: Take 001
+      firstFrame: 154
+      lastFrame: 160
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 1_T_HunDunMoShen_01
+        weight: 1
+      - path: Dummy001
+        weight: 1
+      - path: Dummy001/Bone001
+        weight: 1
+      - path: Dummy001/Bone001/Bone002
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003/Point001
+        weight: 1
+      - path: Dummy001/Bone001/Bone002/Bone003/Point002
+        weight: 1
+      - path: Dummy001/Bone001/Bone004
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone008
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone008/Bone009
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone011
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone011/Bone012
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone014/Bone015
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone017
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Bone006/Bone007/Bone017/Bone018
+        weight: 1
+      - path: Dummy001/Bone001/Bone004/Bone005/Point003
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)/Bone009(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)/Bone012(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)/Bone015(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)/Bone018(mirrored)
+        weight: 1
+      - path: Dummy001/Bone001/Bone004(mirrored)/Bone005(mirrored)/Point004
+        weight: 1
+      - path: Dummy001/Bone001/Bone020
+        weight: 1
+      - path: Dummy001/Bone001/Bone020/Bone021
+        weight: 1
+      - path: Dummy001/Bone001/Bone020/Bone021/Bone022
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: moshen_ex_03
+      takeName: Take 001
+      firstFrame: 163
+      lastFrame: 184
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 1_T_HunDunMoShen_01
+        weight: 1
+      - path: Bone001
+        weight: 1
+      - path: Bone001/Bone002
+        weight: 1
+      - path: Bone001/Bone002/Bone003
+        weight: 1
+      - path: Bone001/Bone002/Bone003/Point001
+        weight: 1
+      - path: Bone001/Bone002/Bone003/Point002
+        weight: 1
+      - path: Bone001/Bone004
+        weight: 1
+      - path: Bone001/Bone004/Bone005
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone008
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone008/Bone009
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone011
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone011/Bone012
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone014/Bone015
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone017
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Bone006/Bone007/Bone017/Bone018
+        weight: 1
+      - path: Bone001/Bone004/Bone005/Point003
+        weight: 1
+      - path: Bone001/Bone004(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone008(mirrored)/Bone009(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone011(mirrored)/Bone012(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone014(mirrored)/Bone015(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Bone006(mirrored)/Bone007(mirrored)/Bone017(mirrored)/Bone018(mirrored)
+        weight: 1
+      - path: Bone001/Bone004(mirrored)/Bone005(mirrored)/Point004
+        weight: 1
+      - path: Bone001/Bone020
+        weight: 1
+      - path: Bone001/Bone020/Bone021
+        weight: 1
+      - path: Bone001/Bone020/Bone021/Bone022
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

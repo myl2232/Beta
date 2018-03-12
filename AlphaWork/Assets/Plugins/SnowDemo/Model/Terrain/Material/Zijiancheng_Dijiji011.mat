@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Zijiancheng_Dijiji011
+  m_Shader: {fileID: 4800000, guid: 5073aca1df10f344790dfcaed882fef5, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Control
+        second:
+          m_Texture: {fileID: 2800000, guid: 458b3c55f653ae140989dd1a0e0dbcee, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Splat3
+        second:
+          m_Texture: {fileID: 2800000, guid: 72b2c1f072aae2a4f828f9f9e984c8f1, type: 3}
+          m_Scale: {x: 35, y: 35}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Splat2
+        second:
+          m_Texture: {fileID: 2800000, guid: 97c527d6f427902419a00e08638d4e2a, type: 3}
+          m_Scale: {x: 30, y: 30}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Splat1
+        second:
+          m_Texture: {fileID: 2800000, guid: d7811b4b74d9f9f4f8316289b1833161, type: 3}
+          m_Scale: {x: 26.6999989, y: 26.6999989}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Splat0
+        second:
+          m_Texture: {fileID: 2800000, guid: c37eca51f818326419883ce24b169d6d, type: 3}
+          m_Scale: {x: 20, y: 20}
+          m_Offset: {x: 0, y: 0}
+    m_Floats: {}
+    m_Colors: {}

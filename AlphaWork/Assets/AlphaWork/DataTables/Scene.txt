@@ -8,3 +8,4 @@
 	4	����������	Main	2
 	5	����	Demo1-Day	2
 	6	ҹ��	Demo1-Night	2
+	7	ҹ��	yewai	2
