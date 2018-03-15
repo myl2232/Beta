@@ -2,10 +2,10 @@
 <UnityGameFramework>
   <AssetBundleBuilder>
     <Settings>
-      <InternalResourceVersion>1</InternalResourceVersion>
-      <WindowsSelected>False</WindowsSelected>
+      <InternalResourceVersion>0</InternalResourceVersion>
+      <WindowsSelected>True</WindowsSelected>
       <MacOSXSelected>False</MacOSXSelected>
-      <IOSSelected>True</IOSSelected>
+      <IOSSelected>False</IOSSelected>
       <AndroidSelected>False</AndroidSelected>
       <WindowsStoreSelected>False</WindowsStoreSelected>
       <ZipSelected>True</ZipSelected>
@@ -18,7 +18,7 @@
       <AppendHashToAssetBundleNameSelected>False</AppendHashToAssetBundleNameSelected>
       <ChunkBasedCompressionSelected>True</ChunkBasedCompressionSelected>
       <BuildEventHandlerTypeName>AlphaWork.Editor.AlphaWorkBuildEventHandler</BuildEventHandlerTypeName>
-      <OutputDirectory>/Users/yuleima/Downloads/WWW/Output</OutputDirectory>
+      <OutputDirectory>E:/Develop/Beta/Output</OutputDirectory>
     </Settings>
   </AssetBundleBuilder>
 </UnityGameFramework>
