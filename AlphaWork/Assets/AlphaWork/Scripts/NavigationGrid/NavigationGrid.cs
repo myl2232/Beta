@@ -1,7 +1,9 @@
+//using Galaxy;
 using System;
 using System.Collections.Generic;
-
-using System.Diagnostics;
+using System.IO;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Navigation
 {
@@ -96,10 +98,11 @@ namespace Navigation
 
   class Node
   {
-    readonly Grid.Position m_pos;
+    Grid.Position m_pos;
     Node m_parent;
     LinkedListNode<Node> m_openListLink;
     int m_GCost;
+    float m_height = 0;
     bool m_walkable = true;
     bool m_open;
     bool m_closed;
@@ -130,6 +133,20 @@ namespace Navigation
       {
         return m_walkable;
       }
+    }
+
+    public float Heigh
+    {
+        set
+        {
+            m_height = value;
+            m_pos.Height = value;
+        }
+
+        get
+        {
+            return m_height;
+        }
     }
 
     public Grid.Position Position
@@ -226,6 +243,7 @@ namespace Navigation
       {
         Row = row;
         Column = col;
+        Height = 0.1f;
       }
 
       public int Row
@@ -238,6 +256,12 @@ namespace Navigation
       {
         set;
         get;
+      }     
+
+      public float Height
+      {
+          set;
+          get;
       }
 
       public static Position operator +(Position lhs, Position rhs)
@@ -251,18 +275,44 @@ namespace Navigation
       }
     }
 
-    public Grid(int numRow, int numColumn)
+    public Grid()
     {
-      m_grid = new Node[numRow, numColumn];
-
-      for (var i = 0; i != numRow; ++i)
-        for (var j = 0; j != numColumn; ++j)
-        {
-          m_grid[i, j] = new Node(new Position(i, j));
-          this[new Position(i,j)] = true;//add by myl
-        }
     }
 
+    public Grid(int numRow, int numColumn)
+    {
+        Init(numRow, numColumn);
+    }
+
+    public void Init(int numRow, int numColumn)
+    {
+        m_grid = null;
+        m_grid = new Node[numRow, numColumn];
+
+        for (var i = 0; i != numRow; ++i)
+        for (var j = 0; j != numColumn; ++j)
+        {
+            m_grid[i, j] = new Node(new Position(i, j));
+            this[new Position(i, j)] = true;//add by myl
+        }
+    }
+    public void DrawGizmos()
+    {
+        Vector3 size = new Vector3(GridSize, 0.01f, GridSize);
+        for (var i = 0; i != m_grid.GetLength(0); ++i)
+            for (var j = 0; j != m_grid.GetLength(1); ++j)
+            {
+                Node node = m_grid[i,j];
+                Vector3 pos = new Vector3(node.Position.Row,node.Heigh,node.Position.Column );
+                Gizmos.DrawWireCube(pos, size);
+            }
+    }
+
+    public float GridSize
+    {
+        set;
+        get;
+    }
     public int NumRows
     {
       get
@@ -312,12 +362,45 @@ namespace Navigation
       return m_grid[startPos.Row, startPos.Column];
     }
 
+    Node GetNode(Vector3 startPos)
+    {
+        int r = (int)(startPos.x / GridSize);
+        int c = (int)(startPos.z / GridSize);
+        return m_grid[r, c];
+    }
+
+    float GetHeight(Vector3 startPos)
+    {
+        int r = (int)(startPos.x / GridSize);
+        int c = (int)(startPos.z / GridSize);
+        return m_grid[r, c].Heigh;
+    }
+
+    float GetHeight(int r, int c)
+    {
+        return m_grid[r, c].Heigh;
+    }
+
+    bool IsWalkable(Vector3 startPos)
+    {
+        int r = (int)(startPos.x / GridSize);
+        int c = (int)(startPos.z / GridSize);
+        return m_grid[r, c].Walkable;
+    }
+
     bool IsBetterParent(Node node, Node potentialParent, int stepG)
     {
       return potentialParent.GCost + stepG < node.GCost;
     }
 
-    public bool FindPath(Position startPos, Position endPos, LinkedList<Position> wayPoints)
+    public bool FindPath(Vector3 startPos, Vector3 endPos, ref LinkedList<Position> wayPoints)
+    {
+        Position sPos = new Position((int)(startPos.x / GridSize), (int)(startPos.z / GridSize));
+        Position ePos = new Position((int)(endPos.x / GridSize), (int)(endPos.z / GridSize));
+        return FindPath(sPos, ePos, ref wayPoints);
+    }
+
+    public bool FindPath(Position startPos, Position endPos, ref LinkedList<Position> wayPoints)
     {
       Debug.Assert(wayPoints.Count == 0);
 
@@ -337,14 +420,14 @@ namespace Navigation
 
       var adjOffset = new[]
         {
-    new Position(-1, -1),
-    new Position(-1, 0),
-    new Position(-1, 1),
-    new Position(0, 1),
-    new Position(1, 1),
-    new Position(1, 0),
-    new Position(1, -1),
-    new Position(0, -1)
+            new Position(-1, -1),
+            new Position(-1, 0),
+            new Position(-1, 1),
+            new Position(0, 1),
+            new Position(1, 1),
+            new Position(1, 0),
+            new Position(1, -1),
+            new Position(0, -1)
       };
 
       var stepG = new[] { 14, 10 };
@@ -408,5 +491,73 @@ namespace Navigation
 
       return false;
     }
+
+    public bool RayCast(Vector3 sPos, ref Vector3 ePos, float fHeight)
+	{
+        Vector3 tmp = ePos;
+        float dis = Vector3.Distance(sPos, tmp);
+        Vector3 res = sPos;
+        float lastHeight = GetHeight(sPos);
+        Vector3 dir = ePos - sPos;
+        dir = dir.normalized * GridSize;
+        int cnt = (int)(dis / GridSize) + 1;
+        for (int i = 0; i < cnt; ++i)
+        {
+            Vector3 checkPos = res + dir;
+            if (!IsWalkable(checkPos))
+            {
+                ePos = res;
+                return true;
+            }
+            float curH = GetHeight(checkPos);
+            if (Math.Abs(curH - lastHeight) > fHeight)
+            {
+                ePos = res;
+                return true;
+            }
+            lastHeight = curH;
+            res = checkPos;
+        }
+		return false;
+	}
+    public void ReadData()
+    {
+
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene == null)
+        {
+            return;
+        }
+        string gStrHeader = "NavigationGrid Header:";
+        int gVersion = 1;
+
+        string filePath = Application.streamingAssetsPath + "/NavGrid/" + scene.name + "/GalaxyNavFile";
+        FileStream fs = new FileStream(filePath, FileMode.Open);
+        BinaryReader binReader = new BinaryReader(fs);
+
+        byte[] bBuffer = new byte[100];
+        bBuffer = binReader.ReadBytes(gStrHeader.Length);
+        gStrHeader = System.Text.Encoding.Default.GetString(bBuffer);
+        gVersion = binReader.ReadInt32();
+        int Rows = binReader.ReadInt32();
+        int Columns = binReader.ReadInt32();
+        GridSize = binReader.ReadSingle();
+        Init(Rows, Columns);
+        for (int i = 0; i < Rows; ++i)
+        {
+            for (int j = 0; j < Columns; ++j)
+            {
+                int nWalkable = binReader.ReadInt32();
+                float hight = binReader.ReadSingle();
+                m_grid[i, j].Heigh = hight;
+                m_grid[i, j].Walkable = (nWalkable == 1 ? true : false);
+            }
+        }
+
+        binReader.Close();
+        fs.Close();
+
+    }
+   
   }
 }

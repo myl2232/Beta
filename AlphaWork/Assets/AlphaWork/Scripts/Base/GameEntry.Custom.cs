@@ -35,12 +35,19 @@ namespace AlphaWork
             private set;
         }
 
+        public static LuaScriptComponent LuaScriptEngine
+        {
+            get;
+            private set;
+        }
+
         private static void InitCustomComponents()
         {
             Config = UnityGameFramework.Runtime.GameEntry.GetComponent<ConfigComponent>();
             Sensor = UnityGameFramework.Runtime.GameEntry.GetComponent<SenseDispatcherComponent>();
             Behaviac = UnityGameFramework.Runtime.GameEntry.GetComponent<BehaviacComponent>();
             NavGrid = UnityGameFramework.Runtime.GameEntry.GetComponent<NavGridComponent>();
+            LuaScriptEngine = UnityGameFramework.Runtime.GameEntry.GetComponent<LuaScriptComponent>();
         }
       
     }

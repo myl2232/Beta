@@ -96,7 +96,7 @@ namespace AlphaWork
                 m_path.Clear();
                 Navigation.Grid.Position st = new Navigation.Grid.Position((int)startPt.x, (int)startPt.z);
                 Navigation.Grid.Position et = new Navigation.Grid.Position((int)endPt.x, (int)endPt.z);
-                m_ActiveGrid.FindPath(st, et, m_path);
+                m_ActiveGrid.FindPath(st, et, ref m_path);
             }
 
             Vector3[] path = new Vector3[m_path.Count];

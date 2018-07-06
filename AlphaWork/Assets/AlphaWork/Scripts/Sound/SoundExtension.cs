@@ -31,7 +31,7 @@ namespace AlphaWork
                 SpatialBlend = 0f,
             };
 
-            s_MusicSerialId = soundComponent.PlaySound(AssetUtility.GetMusicAsset(drMusic.AssetName), "Music", playSoundParams, null, userData);
+            s_MusicSerialId = soundComponent.PlaySound(AssetUtility.GetMusicAsset(drMusic.AssetName), "Music", musicId, playSoundParams, null, userData);
             return s_MusicSerialId;
         }
 
@@ -64,7 +64,7 @@ namespace AlphaWork
                 SpatialBlend = drSound.SpatialBlend,
             };
 
-            return soundComponent.PlaySound(AssetUtility.GetSoundAsset(drSound.AssetName), "Sound", playSoundParams, bindingEntity != null ? bindingEntity : null, userData);
+            return soundComponent.PlaySound(AssetUtility.GetSoundAsset(drSound.AssetName), "Sound", soundId,playSoundParams, bindingEntity != null ? bindingEntity : null, userData);
         }
 
         public static int? PlayUISound(this SoundComponent soundComponent, int uiSoundId, object userData = null)
@@ -85,7 +85,7 @@ namespace AlphaWork
                 SpatialBlend = 0f,
             };
 
-            return soundComponent.PlaySound(AssetUtility.GetUISoundAsset(drUISound.AssetName), "UISound", playSoundParams, userData);
+            return soundComponent.PlaySound(AssetUtility.GetUISoundAsset(drUISound.AssetName), "UISound", uiSoundId, playSoundParams, userData);
         }
 
         public static bool IsMuted(this SoundComponent soundComponent, string soundGroupName)

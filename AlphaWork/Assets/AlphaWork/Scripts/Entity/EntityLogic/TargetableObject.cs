@@ -49,7 +49,7 @@ namespace AlphaWork
 #endif
         {
             base.OnInit(userData);
-            CachedTransform.SetLayerRecursively(Constant.Layer.TargetableObjectLayerId);
+            CachedTransform.gameObject.SetLayerRecursively(Constant.Layer.TargetableObjectLayerId);
         }
 
 #if UNITY_2017_3_OR_NEWER

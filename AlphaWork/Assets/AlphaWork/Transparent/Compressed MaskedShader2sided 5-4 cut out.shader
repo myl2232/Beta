@@ -39,7 +39,11 @@ ENDCG
 }
 // Lambert
 SubShader {
-	Tags {"Queue"="Opaque"}
+	Tags 
+	{
+		"RenderType" = "Opaque"
+		"Queue"="Geometry"
+	}
 	AlphaTest Greater 0.1
 	Blend SrcAlpha OneMinusSrcAlpha
 	cull off
