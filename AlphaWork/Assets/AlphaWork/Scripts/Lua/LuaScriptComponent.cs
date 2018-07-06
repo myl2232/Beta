@@ -9,14 +9,15 @@ using UnityGameFramework.Runtime;
 
 
 namespace AlphaWork
-{
+{  
+    //代替了LuaClient的作用
     public class LuaScriptComponent : GameFrameworkComponent
     {
+
         /// <summary>
         /// Lua 文件在 AssetBundle 中的扩展名。
         /// </summary>
         public const string LuaAssetExtInBundle = ".bytes";
-
         private LuaState m_LuaState = null;
         private LuaLooper m_LuaLooper = null;
 
@@ -33,7 +34,7 @@ namespace AlphaWork
 
         public delegate void OnLoadScriptSuccess(string fileName);
         public delegate void OnLoadScriptFailure(string fileName, LoadResourceStatus status, string errorMessage);
-
+       
         /// <summary>
         /// 获取当前使用的 Lua 虚拟机实例。
         /// </summary>
@@ -128,7 +129,7 @@ namespace AlphaWork
         /// <returns>返回值列表。</returns>
         public void/*object[]*/ DoFile(string fileName)
         {
-            m_LuaState.DoFile(fileName);
+            m_LuaState.DoFile(fileName);            
         }
 
         #region MonoBehaviour
@@ -148,7 +149,8 @@ namespace AlphaWork
         private void Init()
         {
             new CustomLuaLoader(GetScriptContent);
-            m_LuaState = new LuaState();
+            m_LuaState = new LuaState();           
+            m_LuaState.AddSearchPath(LuaConst.luaDir);//增加默认lua逻辑目录
             AddSearchPaths();
             OpenLibs();
             m_LuaState.LuaSetTop(0);

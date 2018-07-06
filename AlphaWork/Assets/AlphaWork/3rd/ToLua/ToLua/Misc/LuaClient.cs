@@ -138,7 +138,7 @@ public class LuaClient : MonoBehaviour
 
     protected virtual void StartMain()
     {
-        luaState.DoFile("Main.lua");
+        luaState.DoFile("GameEntry.lua");
         levelLoaded = luaState.GetFunction("OnLevelWasLoaded");
         CallMain();
     }

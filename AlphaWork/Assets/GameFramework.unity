@@ -866,6 +866,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a13e590c1e25ec42a171fe19d977107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_EditorSearchPaths: []
+  m_UseZeroBraneStudioDebugger: 1
+  m_ZeroBraneStudioDebugPath: C:/ZeroBraneStudio/lualibs/mobdebug
 --- !u!1 &1329958100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,7 +1210,7 @@ Transform:
   m_GameObject: {fileID: 1804849387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0032840723, y: 0.0032840723, z: 0.0032840723}
+  m_LocalScale: {x: 0.0036764706, y: 0.0036764706, z: 0.0036764706}
   m_Children:
   - {fileID: 1763317107}
   - {fileID: 1329958101}

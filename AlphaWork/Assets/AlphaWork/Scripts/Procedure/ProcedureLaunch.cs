@@ -47,6 +47,9 @@ namespace AlphaWork
             // 此字典文件记录了资源更新前使用的各种语言的字符串，会随 App 一起发布，故不可更新。
             GameEntry.Config.InitDefaultDictionary();
 
+            //脚本系统
+            GameEntry.LuaScriptEngine.StartLuaVM();
+            GameEntry.LuaScriptEngine.DoFile("GameEntry.lua");
         }
 
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)

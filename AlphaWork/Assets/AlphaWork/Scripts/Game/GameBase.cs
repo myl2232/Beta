@@ -6,13 +6,12 @@ using System.Collections.Generic;
 using UnityGameFramework.Runtime;
 
 namespace AlphaWork
-{    
-
+{
     public abstract class GameBase
     {
         public abstract GameMode GameMode
         {
-            get;
+            get;     
         }
 
         public bool GameOver
