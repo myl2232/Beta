@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace AlphaWork
 {
-    class MainUIForm : NGUIForm
+    class MainUIForm : UGuiForm
     {
         public void OnClickPressBack(bool back)
         {
@@ -33,7 +33,7 @@ namespace AlphaWork
         {
             base.OnInit(userData);
 
-            m_root = gameObject.GetComponent<UIRoot>();
+            //m_root = gameObject.GetComponent<UIRoot>();
         }
 
 #if UNITY_2017_3_OR_NEWER
@@ -53,39 +53,38 @@ namespace AlphaWork
 #endif
         {
             base.OnOpen(userData);
+                        
+            //{
+            //    Transform transBtn = m_root.transform.Find("Camera/BackToLoginBtn");
+            //    UIButton bt = transBtn.gameObject.GetComponent<UIButton>();
+            //    EventDelegate clickDelegate = new EventDelegate(this, "OnClickPressBack");
+            //    clickDelegate.parameters[0] = new EventDelegate.Parameter(true);
+            //    bt.onClick.Add(clickDelegate);
+            //}
 
-            //for(int i = 0; i < m_root.transform.FindChild("SpriteBtn"); ++i)
-            {
-                Transform transBtn = m_root.transform.Find("Camera/BackToLoginBtn");
-                UIButton bt = transBtn.gameObject.GetComponent<UIButton>();
-                EventDelegate clickDelegate = new EventDelegate(this, "OnClickPressBack");
-                clickDelegate.parameters[0] = new EventDelegate.Parameter(true);
-                bt.onClick.Add(clickDelegate);
-            }
+            //{
+            //    Transform SitBtn = m_root.transform.Find("Camera/SitBtn");
+            //    UIButton bt = SitBtn.gameObject.GetComponent<UIButton>();
+            //    EventDelegate clickDelegate = new EventDelegate(this, "OnClickSit");
+            //    //clickDelegate.parameters[0] = new EventDelegate.Parameter(true);
+            //    bt.onClick.Add(clickDelegate);
+            //}
 
-            {
-                Transform SitBtn = m_root.transform.Find("Camera/SitBtn");
-                UIButton bt = SitBtn.gameObject.GetComponent<UIButton>();
-                EventDelegate clickDelegate = new EventDelegate(this, "OnClickSit");
-                //clickDelegate.parameters[0] = new EventDelegate.Parameter(true);
-                bt.onClick.Add(clickDelegate);
-            }
+            //{
+            //    Transform homeBtn = m_root.transform.Find("Camera/HomeEditBtn");
+            //    UIButton bt = homeBtn.gameObject.GetComponent<UIButton>();
+            //    EventDelegate clickDelegate = new EventDelegate(this, "OnClickHome");
+            //    //clickDelegate.parameters[0] = new EventDelegate.Parameter(true);
+            //    bt.onClick.Add(clickDelegate);
+            //}
 
-            {
-                Transform homeBtn = m_root.transform.Find("Camera/HomeEditBtn");
-                UIButton bt = homeBtn.gameObject.GetComponent<UIButton>();
-                EventDelegate clickDelegate = new EventDelegate(this, "OnClickHome");
-                //clickDelegate.parameters[0] = new EventDelegate.Parameter(true);
-                bt.onClick.Add(clickDelegate);
-            }
-
-            {
-                Transform homeBtn = m_root.transform.Find("Camera/MainBtn");
-                UIButton bt = homeBtn.gameObject.GetComponent<UIButton>();
-                EventDelegate clickDelegate = new EventDelegate(this, "OnClickMain");
-                //clickDelegate.parameters[0] = new EventDelegate.Parameter(true);
-                bt.onClick.Add(clickDelegate);
-            }
+            //{
+            //    Transform homeBtn = m_root.transform.Find("Camera/MainBtn");
+            //    UIButton bt = homeBtn.gameObject.GetComponent<UIButton>();
+            //    EventDelegate clickDelegate = new EventDelegate(this, "OnClickMain");
+            //    //clickDelegate.parameters[0] = new EventDelegate.Parameter(true);
+            //    bt.onClick.Add(clickDelegate);
+            //}
         }
     }
 }

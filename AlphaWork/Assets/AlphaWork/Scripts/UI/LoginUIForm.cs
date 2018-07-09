@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace AlphaWork
 {
-    class LoginUIForm : NGUIForm
+    class LoginUIForm : UGuiForm
     {
         public void OnClickPressLogin(bool login)
         {
@@ -21,7 +21,7 @@ namespace AlphaWork
         {
             base.OnInit(userData);
 
-            m_root = gameObject.GetComponent<UIRoot>();
+            //m_root = gameObject.GetComponent<UIRoot>();
         }
 
 #if UNITY_2017_3_OR_NEWER
@@ -42,13 +42,13 @@ namespace AlphaWork
         {
             base.OnOpen(userData);
 
-            //for(int i = 0; i < m_root.transform.FindChild("SpriteBtn"); ++i)
+            
             {
-                Transform transBtn = m_root.transform.Find("Camera/SpriteBtn");
-                UIButton bt = transBtn.gameObject.GetComponent<UIButton>();
-                EventDelegate clickDelegate = new EventDelegate(this, "OnClickPressLogin");
-                clickDelegate.parameters[0] = new EventDelegate.Parameter(true);
-                bt.onClick.Add(clickDelegate);
+                //Transform transBtn = m_root.transform.Find("Camera/SpriteBtn");
+                //UIButton bt = transBtn.gameObject.GetComponent<UIButton>();
+                //EventDelegate clickDelegate = new EventDelegate(this, "OnClickPressLogin");
+                //clickDelegate.parameters[0] = new EventDelegate.Parameter(true);
+                //bt.onClick.Add(clickDelegate);
             }
             
         }
