@@ -10,9 +10,7 @@ namespace AlphaWork
     {
         private float markTime;
         private float lastMarkTime;
-
-        public GameBuilder builder;//assign by editor
-
+        
         private void Start()
         {
             InitBuiltinComponents();

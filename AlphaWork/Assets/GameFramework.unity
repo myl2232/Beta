@@ -614,7 +614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093fc3131f2279a4b96570398b16f458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  builder: {fileID: 1088672573}
+  builder: {fileID: 0}
 --- !u!4 &168978761 stripped
 Transform:
   m_PrefabParentObject: {fileID: 433714, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
@@ -772,11 +772,10 @@ GameObject:
   - component: {fileID: 1088672574}
   - component: {fileID: 1088672575}
   - component: {fileID: 1088672577}
-  - component: {fileID: 1088672573}
   - component: {fileID: 1088672578}
   - component: {fileID: 1088672576}
   m_Layer: 0
-  m_Name: GameBuilder
+  m_Name: GameMain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -795,19 +794,6 @@ Transform:
   m_Father: {fileID: 1339137575}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1088672573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1088672571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 354daccca8bea4b60a64273789523e1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ArMode: 0
-  m_useNavGrid: 1
 --- !u!114 &1088672574
 MonoBehaviour:
   m_ObjectHideFlags: 0
