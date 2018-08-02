@@ -70,8 +70,8 @@ namespace AlphaWork
                 return;
             }
 
-            GameEntry.Base.GameVersion = GameEntry.Config.BuildInfo.GameVersion;
-            GameEntry.Base.InternalApplicationVersion = GameEntry.Config.BuildInfo.InternalVersion;
+            //GameEntry.Base.GameVersion = GameEntry.Config.BuildInfo.GameVersion;
+            //GameEntry.Base.InternalApplicationVersion = GameEntry.Config.BuildInfo.InternalVersion;
         }
 
         public void InitDefaultDictionary()

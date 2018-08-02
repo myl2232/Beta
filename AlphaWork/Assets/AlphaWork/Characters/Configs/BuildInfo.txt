@@ -1,9 +1,0 @@
-{
-  "GameVersion": "1.0.3",
-  "InternalApplicationVersion": 1,
-  "CheckVersionUrl": "http://localhost:81/WWW/version.txt",
-  "StandaloneAppUrl": "http://localhost:81/WWW",
-  "IosAppUrl": "http://localhost:81/WWW",
-  "AndroidAppUrl": "http://localhost:81/WWW",
-  "END_OF_JSON": ""
-}

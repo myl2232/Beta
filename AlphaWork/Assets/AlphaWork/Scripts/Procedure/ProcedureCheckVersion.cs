@@ -31,7 +31,7 @@ namespace AlphaWork
 
             GameEntry.Event.Subscribe(WebRequestSuccessEventArgs.EventId, OnWebRequestSuccess);
             GameEntry.Event.Subscribe(WebRequestFailureEventArgs.EventId, OnWebRequestFailure);
-            GameEntry.Event.Subscribe(ResourceInitCompleteEventArgs.EventId, OnResourceInitComplete);
+            //GameEntry.Event.Subscribe(ResourceInitCompleteEventArgs.EventId, OnResourceInitComplete);
 //             GameEntry.Event.Subscribe(UnityGameFramework.Runtime.VersionListUpdateSuccessEventArgs.EventId, OnVersionListUpdateSuccess);
 //             GameEntry.Event.Subscribe(UnityGameFramework.Runtime.VersionListUpdateFailureEventArgs.EventId, OnVersionListUpdateFailure);
 
@@ -42,7 +42,7 @@ namespace AlphaWork
         {
             GameEntry.Event.Unsubscribe(WebRequestSuccessEventArgs.EventId, OnWebRequestSuccess);
             GameEntry.Event.Unsubscribe(WebRequestFailureEventArgs.EventId, OnWebRequestFailure);
-            GameEntry.Event.Unsubscribe(ResourceInitCompleteEventArgs.EventId, OnResourceInitComplete);
+           // GameEntry.Event.Unsubscribe(ResourceInitCompleteEventArgs.EventId, OnResourceInitComplete);
 //             GameEntry.Event.Unsubscribe(UnityGameFramework.Runtime.VersionListUpdateSuccessEventArgs.EventId, OnVersionListUpdateSuccess);
 //             GameEntry.Event.Unsubscribe(UnityGameFramework.Runtime.VersionListUpdateFailureEventArgs.EventId, OnVersionListUpdateFailure);
 
@@ -53,10 +53,10 @@ namespace AlphaWork
         {
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
 
-            if (!m_ResourceInitComplete)//m_LatestVersionComplete
-            {
-                return;
-            }
+            //if (!m_ResourceInitComplete)//m_LatestVersionComplete
+            //{
+            //    return;
+            //}
 
             /*ChangeState<ProcedureUpdateResource>(procedureOwner);*/ChangeState<ProcedurePreload>(procedureOwner);
         }
@@ -93,7 +93,7 @@ namespace AlphaWork
             iOSSystemVersion = UnityEngine.iOS.Device.systemVersion;
             iOSVendorIdentifier = UnityEngine.iOS.Device.vendorIdentifier ?? string.Empty;
 #endif
-            string gameVersion = GameEntry.Base.GameVersion;
+            //string gameVersion = GameEntry.Base.GameVersion;
             string platform = Application.platform.ToString();
             string language = GameEntry.Localization.Language.ToString();
             string unityVersion = Application.unityVersion;
@@ -117,7 +117,7 @@ namespace AlphaWork
             wwwForm.AddField("IOSGeneration", WebUtility.EscapeString(iOSGeneration));
             wwwForm.AddField("IOSSystemVersion", WebUtility.EscapeString(iOSSystemVersion));
             wwwForm.AddField("IOSVendorIdentifier", WebUtility.EscapeString(iOSVendorIdentifier));
-            wwwForm.AddField("GameVersion", WebUtility.EscapeString(gameVersion));
+            //wwwForm.AddField("GameVersion", WebUtility.EscapeString(gameVersion));
             wwwForm.AddField("Platform", WebUtility.EscapeString(platform));
             wwwForm.AddField("Language", WebUtility.EscapeString(language));
             wwwForm.AddField("UnityVersion", WebUtility.EscapeString(unityVersion));
@@ -160,7 +160,7 @@ namespace AlphaWork
                 return;
             }
 
-            Log.Info("Latest game version is '{0}', local game version is '{1}'.", m_VersionInfo.LatestGameVersion, GameEntry.Base.GameVersion);
+            //Log.Info("Latest game version is '{0}', local game version is '{1}'.", m_VersionInfo.LatestGameVersion, GameEntry.Base.GameVersion);
 
             if (m_VersionInfo.ForceGameUpdate)
             {
@@ -181,7 +181,7 @@ namespace AlphaWork
 
             GameEntry.Resource.UpdatePrefixUri = Utility.Path.GetCombinePath(m_VersionInfo.GameUpdateUrl, GetResourceVersionName(), GetPlatformPath());
             
-            GameEntry.Resource.InitResources();
+            //GameEntry.Resource.InitResources();
             //UpdateVersion();  
         }
 
@@ -195,7 +195,7 @@ namespace AlphaWork
 
             Log.Warning("Check version failure.");
 
-            GameEntry.Resource.InitResources();
+            //GameEntry.Resource.InitResources();
 	    }
 
 //         private void OnVersionListUpdateSuccess(object sender, GameEventArgs e)
@@ -221,13 +221,14 @@ namespace AlphaWork
 		//myl.modified
 		private string GetResourceVersionName()
         {
-            string[] splitApplicableGameVersion = GameEntry.Base.GameVersion.Split('.');
-            if (splitApplicableGameVersion.Length != 3)
-            {
-                return string.Empty;
-            }
+            //string[] splitApplicableGameVersion = GameEntry.Base.GameVersion.Split('.');
+            //if (splitApplicableGameVersion.Length != 3)
+            //{
+            //    return string.Empty;
+            //}
 
-            return string.Format("{0}_{1}_{2}_{3}", splitApplicableGameVersion[0], splitApplicableGameVersion[1], splitApplicableGameVersion[2], m_VersionInfo.InternalResourceVersion.ToString());
+            //return string.Format("{0}_{1}_{2}_{3}", splitApplicableGameVersion[0], splitApplicableGameVersion[1], splitApplicableGameVersion[2], m_VersionInfo.InternalResourceVersion.ToString());
+            return "";
         }
 
         private string GetPlatformPath()
