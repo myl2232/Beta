@@ -20,7 +20,7 @@ namespace AlphaWork
             get { return m_useNavGrid; }
             set { m_useNavGrid = value; }
         }
-
+           
         // Use this for initialization
         void Start()
         {

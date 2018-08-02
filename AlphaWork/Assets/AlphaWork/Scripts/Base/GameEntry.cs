@@ -8,11 +8,8 @@ namespace AlphaWork
     /// </summary>
     public partial class GameEntry : MonoBehaviour
     {
-        /*public SurviveGame gm;*/
         private float markTime;
         private float lastMarkTime;
-        public static bool ArMode;
-        public static bool UseNavGrid;
 
         public GameBuilder builder;//assign by editor
 
@@ -35,9 +32,6 @@ namespace AlphaWork
             markTime = Time.time;
             //gm.Update(Time.timeSinceLevelLoad, Time.fixedDeltaTime/*markTime - lastMarkTime*/);
             lastMarkTime = markTime;
-
-            ArMode = builder.ARMode;
-            UseNavGrid = builder.UseNavGrid;
         }
 
     }

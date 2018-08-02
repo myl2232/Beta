@@ -9,5 +9,7 @@
         /// 生存模式。
         /// </summary>
         Survival,
+        //策略
+        Strategy,
     }
 }

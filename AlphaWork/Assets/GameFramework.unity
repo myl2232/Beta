@@ -949,4 +949,5 @@ MonoBehaviour:
     type: 3}
   m_UpdateResourceFormTemplate: {fileID: 11487720, guid: 0184a4883adbcd64cbd1376733ea6e2d,
     type: 2}
+  m_gameSetting: {fileID: 11400000, guid: 5b0dca6b0f653c74ba17f18569135e6a, type: 2}
   m_MainSceneId: 7

@@ -19,6 +19,13 @@ namespace AlphaWork
         private UpdateResourceForm m_UpdateResourceFormTemplate = null;
 
         [SerializeField]
+        private GameSetting m_gameSetting = null;
+        public GameSetting GameSetting
+        {
+            get { return m_gameSetting; }
+        }
+
+        [SerializeField]
         private int m_MainSceneId = 4;
         public int MainScene
         {

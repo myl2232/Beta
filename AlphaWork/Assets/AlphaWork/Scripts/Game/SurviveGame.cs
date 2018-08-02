@@ -74,7 +74,7 @@ namespace AlphaWork
         {
             base.Update(elapseSeconds, realElapseSeconds);
 
-            if(MainEthan && !GameEntry.ArMode)
+            if(MainEthan && !GameEntry.Config.GameSetting.ArMode)
             {
                 Vector3 offset = new Vector3(8, 8, 8);
                 offset += MainEthan.transform.position;

@@ -82,7 +82,7 @@ namespace AlphaWork
         {
             pathNum = m_curIdx = 0;
 
-            if (GameEntry.UseNavGrid)
+            if (GameEntry.Config.GameSetting.UseNavGrid)
             {
                 smoothPath = GameEntry.NavGrid.FindPath(startPos, endPos);
                 pathNum = smoothPath.Length;
@@ -105,7 +105,7 @@ namespace AlphaWork
 
         private bool IsWalkable(Vector3 pos)
         {
-            if (GameEntry.UseNavGrid)
+            if (GameEntry.Config.GameSetting.UseNavGrid)
             {
                 return GameEntry.NavGrid.IsWalkable(pos);
             }

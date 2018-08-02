@@ -53,7 +53,7 @@ namespace AlphaWork
             GameEntry.Base.ResetNormalGameSpeed();
 
             // 卸载navigation
-            if(GameEntry.UseNavGrid)
+            if(GameEntry.Config.GameSetting.UseNavGrid)
             {
                 GameEntry.NavGrid.Close();
             }
@@ -89,7 +89,7 @@ namespace AlphaWork
             GameEntry.Event.Unsubscribe(LoadSceneDependencyAssetEventArgs.EventId, OnLoadSceneDependencyAsset);
 
             // 卸载navigation
-            if (GameEntry.UseNavGrid)
+            if (GameEntry.Config.GameSetting.UseNavGrid)
             {                
                 //GameEntry.NavGrid.Close();
             }
@@ -134,7 +134,7 @@ namespace AlphaWork
             m_IsChangeSceneComplete = true;
 
             // navigation
-            if (GameEntry.UseNavGrid)
+            if (GameEntry.Config.GameSetting.UseNavGrid)
                 GameEntry.NavGrid.ReadData();//Nav_Grid
             else
                 m_navHelper = new NavigationHelper(ne.SceneAssetName);//Recast_Nav
