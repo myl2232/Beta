@@ -28,7 +28,7 @@ namespace AlphaWork
 
             GameEntry.Event.Subscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
 
-            m_StartGame = false;
+            //m_StartGame = false;
             GameEntry.UI.OpenUIForm(UIFormId.MenuForm, this);
         }
 
@@ -51,16 +51,18 @@ namespace AlphaWork
 
             if (m_StartGame)
             {
-                int sceneId = (int)SceneId.Undefined;
-                if (GameEntry.Config.GameSetting.ArMode)
-                    sceneId = (int)SceneId.Default;
-                else
-                    sceneId = GameEntry.Config.MainScene;// (int)SceneId.Main;//SceneId.Day;
-                
-                procedureOwner.SetData<VarInt>(Constant.ProcedureData.NextSceneId, sceneId);                
-                procedureOwner.SetData<VarInt>(Constant.ProcedureData.GameMode, (int)GameEntry.Config.GameSetting.gameMode/*GameMode.Survival*/);
-                ChangeState<ProcedureChangeScene>(procedureOwner);
+                //    int sceneId = (int)SceneId.Undefined;
+                //    if (GameEntry.Config.GameSetting.ArMode)
+                //        sceneId = (int)SceneId.Default;
+                //    else
+                //        sceneId = GameEntry.Config.MainScene;// (int)SceneId.Main;//SceneId.Day;
+
+                //    procedureOwner.SetData<VarInt>(Constant.ProcedureData.NextSceneId, sceneId);                
+                //    procedureOwner.SetData<VarInt>(Constant.ProcedureData.GameMode, (int)GameEntry.Config.GameSetting.gameMode/*GameMode.Survival*/);
+                //    ChangeState<ProcedureChangeScene>(procedureOwner);
+                ChangeState<ProcedureLogin>(procedureOwner);
             }
+            
         }
 
         private void OnOpenUIFormSuccess(object sender, GameEventArgs e)

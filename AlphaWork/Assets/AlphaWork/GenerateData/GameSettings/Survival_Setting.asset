@@ -14,3 +14,6 @@ MonoBehaviour:
   gameMode: 0
   ArMode: 0
   UseNavGrid: 1
+  Users:
+  - {fileID: 11400000, guid: fdf936dfe42cb344e8e2ed86640db359, type: 2}
+  - {fileID: 11400000, guid: 5a6b97f11d0bb4d4e8e31e04eac6d0fa, type: 2}

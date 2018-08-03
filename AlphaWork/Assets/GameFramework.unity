@@ -273,7 +273,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_AvailableProcedureTypeNames.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 433714, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_LocalPosition.x
@@ -330,19 +330,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_AvailableProcedureTypeNames.Array.data[3]
-      value: AlphaWork.ProcedureMain
+      value: AlphaWork.ProcedureLogin
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_AvailableProcedureTypeNames.Array.data[4]
-      value: AlphaWork.ProcedureMenu
+      value: AlphaWork.ProcedureMain
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_AvailableProcedureTypeNames.Array.data[5]
-      value: AlphaWork.ProcedurePreload
+      value: AlphaWork.ProcedureMenu
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_AvailableProcedureTypeNames.Array.data[6]
-      value: AlphaWork.ProcedureSplash
+      value: AlphaWork.ProcedurePreload
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_EntranceProcedureTypeName
@@ -390,7 +390,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_AvailableProcedureTypeNames.Array.data[7]
-      value: AlphaWork.ProcedureUpdateResource
+      value: AlphaWork.ProcedureSplash
       objectReference: {fileID: 0}
     - target: {fileID: 11494652, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_EntityGroups.Array.data[0].m_Name
@@ -614,7 +614,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093fc3131f2279a4b96570398b16f458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  builder: {fileID: 0}
 --- !u!4 &168978761 stripped
 Transform:
   m_PrefabParentObject: {fileID: 433714, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}

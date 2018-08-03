@@ -19,6 +19,22 @@ namespace AlphaWork
             }
         }
 
+        public static Transform GetParentForm<T>(Transform trans) where T : MonoBehaviour
+        {
+            if (trans == null || trans.parent == null)
+            {
+                return null;
+            }
+            if (trans.parent.GetComponent<T>() != null)
+            {
+                return trans.parent;
+            }
+            else
+            {
+                return GetParentForm<T>(trans.parent);
+            }
+        }
+
         public static Transform FindChild(Transform trans, string str)
         {
             if (!trans)

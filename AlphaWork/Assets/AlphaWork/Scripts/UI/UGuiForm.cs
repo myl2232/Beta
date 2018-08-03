@@ -1,4 +1,5 @@
 ﻿using GameFramework;
+using GameFramework.Event;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -202,5 +203,6 @@ namespace AlphaWork
             yield return m_CanvasGroup.FadeToAlpha(0f, duration);
             GameEntry.UI.CloseUIForm(this);
         }
+        
     }
 }

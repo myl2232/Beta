@@ -30,5 +30,9 @@
     <String Key="InGame.Theta" Value="+" />
     <String Key="InGame.Attack1" Value="A1" />
     <String Key="InGame.Attack2" Value="A2" />
+    <String Key="Login.UserLabel" Value="用户名:" />
+    <String Key="Login.UserText" Value="请输入用户名.." />
+    <String Key="Login.LoginBtn" Value="登录" />
+    <String Key="Login.LoginExit" Value="取消" />
   </Dictionary>
 </Dictionaries>
