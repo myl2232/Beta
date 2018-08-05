@@ -11,11 +11,11 @@ namespace AlphaWork
     {
         ProcedureLogin m_ProcedureLogin = null;
         string uiViewlist = "Canvas/UserViewList";
-        string uiCurUser = "Canvas/InputField/Text";
+        string uiCurUser = "Canvas/InputField";
 
         public void OnClickPressLogin(bool login)
         {
-            Text txt = UIForm.transform.Find(uiCurUser).GetComponent<Text>();
+            InputField txt = UIForm.transform.Find(uiCurUser).GetComponent<InputField>();
             if(txt.text != "")
             {
                 CreateUserImpl();
@@ -50,7 +50,7 @@ namespace AlphaWork
 
         public void RefreshUser(string name)
         {
-            UIForm.transform.Find(uiCurUser).GetComponent<Text>().text = name;
+            UIForm.transform.Find(uiCurUser).GetComponent<InputField>().text = name;
         }
 
         protected void CreateUserImpl()
