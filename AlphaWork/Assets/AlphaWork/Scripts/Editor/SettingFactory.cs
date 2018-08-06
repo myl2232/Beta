@@ -32,13 +32,13 @@ namespace AlphaWork.Editor
             AssetDatabase.CreateAsset(setting, strPath);
         }       
         
-        [MenuItem("Assets/Create/Settings/PlayerSetting")]
-        public static void CreatePlayerSetting()
-        {
-            PlayerSetting setting = ScriptableObject.CreateInstance<PlayerSetting>();
-            string strPath = PlayerFolder + GetNextName("PlayerSetting-");
-            AssetDatabase.CreateAsset(setting, strPath);
-        }
+        //[MenuItem("Assets/Create/Settings/PlayerSetting")]
+        //public static void CreatePlayerSetting()
+        //{
+        //    PlayerSetting setting = ScriptableObject.CreateInstance<PlayerSetting>();
+        //    string strPath = PlayerFolder + GetNextName("PlayerSetting-");
+        //    AssetDatabase.CreateAsset(setting, strPath);
+        //}
     }
 
     

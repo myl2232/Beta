@@ -28,25 +28,30 @@ namespace AlphaWork
         [SerializeField]
         public bool UseNavGrid = true;
         [SerializeField]
-        public IGameController gameContrller = null;
-        [SerializeField]
-        public List<PlayerSetting> Users;    
+        public GameBase gameContrller = null;
 
-        private PlayerSetting m_currentPlayer;
-        public PlayerSetting PlayerInfo
-        {
-            get { return m_currentPlayer; }
-            set { m_currentPlayer = value; }
-        }
+        private string id_str = "";
+        public string UID
+        { get { return id_str; } }
 
         private void OnEnable()
         {
-            if (gameMode == GameMode.Survival)
-                gameContrller = new SurvivalController();
-            else if(gameMode == GameMode.Strategy)
-                gameContrller = new StrategyController();
-        }
+            if(id_str == "")
+            {
+                DateTime now = DateTime.Now;
+                string newname = now.ToString();
+                newname = newname.Replace(" ", "");
+                newname = newname.Replace("-", "");
+                newname = newname.Replace(":", "");
+                newname = newname.Replace("/", "_");
+                id_str = "gamesetting:" + newname;
+            }
 
+            if (gameMode == GameMode.Survival)
+                gameContrller = new SurvivalGame();
+            else if(gameMode == GameMode.Strategy)
+                gameContrller = new StrategyGame();
+        }
 
     }
 }

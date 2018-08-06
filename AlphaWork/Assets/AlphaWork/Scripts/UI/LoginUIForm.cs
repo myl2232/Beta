@@ -18,7 +18,7 @@ namespace AlphaWork
             InputField txt = UIForm.transform.Find(uiCurUser).GetComponent<InputField>();
             if(txt.text != "")
             {
-                CreateUserImpl();
+                CreateUserImpl(txt.text);
                 m_ProcedureLogin.StartLogin();
             }
                 
@@ -35,30 +35,46 @@ namespace AlphaWork
 
         public void FillUserView()
         {
-            List<PlayerSetting> users = GameEntry.Config.GameSetting.Users;
-            List<object> data = new List<object>();
-            foreach(PlayerSetting setting in users)
+            IEnumerator<UPlayer> iter = GameEntry.DataBase.DataDevice.GetData<UPlayer>();
+            //List<PlayerSetting> users = GameEntry.Config.GameSetting.Users;
+            if(iter != null)
             {
-                data.Add(setting.user);
+                List<object> data = new List<object>();
+                while (iter.MoveNext())
+                {
+                    data.Add(iter.Current.user);
+                }
+                UGridListView view = UIForm.transform.Find(uiViewlist).GetComponent<UGridListView>();
+                if (view)
+                {
+                    view.SetData(data);
+                }
             }
-            UGridListView view = UIForm.transform.Find(uiViewlist).GetComponent<UGridListView>();
-            if(view)
-            {
-                view.SetData(data);
-            }
+
         }
 
         public void RefreshUser(string name)
         {
-            UIForm.transform.Find(uiCurUser).GetComponent<InputField>().text = name;
+            InputField info = UIForm.transform.Find(uiCurUser).transform.GetComponent<InputField>();
+            info.text = name;
         }
 
-        protected void CreateUserImpl()
+        protected void CreateUserImpl(string name)
         {
-#if UNITY_EDITOR || UNITY_STANDALONE_WIN
-#else
+            UPlayer player = new UPlayer();
+            player.user = name;
+            player.gamesetting = GameEntry.Config.GameSetting.UID;
 
-#endif
+            IEnumerator<UPlayer> playerIter;            
+            GameEntry.DataBase.DataDevice.GetDataByKey<UPlayer>(name,out playerIter);
+            if(playerIter == null || playerIter.Current == null)
+            {
+                GameEntry.DataBase.DataDevice.AddData<UPlayer>(player);
+            }
+            else
+            {
+                playerIter.Current.gamesetting = player.gamesetting;
+            }
         }
 
 #if UNITY_2017_3_OR_NEWER

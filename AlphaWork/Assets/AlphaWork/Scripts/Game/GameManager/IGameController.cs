@@ -7,6 +7,7 @@ namespace AlphaWork
 {
     public interface IGameController
     {
-
+        void Initialize();
+        void Shutdown();
     }
 }

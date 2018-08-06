@@ -10,7 +10,7 @@ namespace AlphaWork
 {
     public partial class LevelManager
     {
-        public SurviveGame m_parent;
+        public GameBase m_parent;
 
         public LevelManager()
         {

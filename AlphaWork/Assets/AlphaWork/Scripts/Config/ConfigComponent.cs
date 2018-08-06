@@ -33,6 +33,13 @@ namespace AlphaWork
             set { m_MainSceneId = value; }
         }
 
+        //private UPlayer m_curPlayer;
+        //public UPlayer Player
+        //{
+        //    get { return m_curPlayer; }
+        //    set { m_curPlayer = value; }
+        //}
+
         private BuildInfo m_BuildInfo = null;
 
         public DeviceModelConfig DeviceModelConfig

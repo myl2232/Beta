@@ -28,14 +28,20 @@ namespace AlphaWork
             get;
             private set;
         }
-
+        //寻路组件
         public static NavGridComponent NavGrid
         {
             get;
             private set;
         }
-
+        //脚本组件
         public static LuaScriptComponent LuaScriptEngine
+        {
+            get;
+            private set;
+        }
+        //数据库组件
+        public static DataBaseComponent DataBase
         {
             get;
             private set;
@@ -48,6 +54,7 @@ namespace AlphaWork
             Behaviac = UnityGameFramework.Runtime.GameEntry.GetComponent<BehaviacComponent>();
             NavGrid = UnityGameFramework.Runtime.GameEntry.GetComponent<NavGridComponent>();
             LuaScriptEngine = UnityGameFramework.Runtime.GameEntry.GetComponent<LuaScriptComponent>();
+            DataBase = UnityGameFramework.Runtime.GameEntry.GetComponent<DataBaseComponent>();
         }
       
     }
