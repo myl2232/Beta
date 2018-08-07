@@ -34,5 +34,6 @@
     <String Key="Login.UserText" Value="请输入用户名.." />
     <String Key="Login.LoginBtn" Value="登录" />
     <String Key="Login.LoginExit" Value="取消" />
+    <String Key="btn.Exit" Value="返回" />
   </Dictionary>
 </Dictionaries>

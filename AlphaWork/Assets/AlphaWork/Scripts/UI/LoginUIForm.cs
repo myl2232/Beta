@@ -19,9 +19,13 @@ namespace AlphaWork
             if(txt.text != "")
             {
                 CreateUserImpl(txt.text);
-                m_ProcedureLogin.StartLogin();
-            }
-                
+                m_ProcedureLogin.Go();
+            }                
+        }
+
+        public void OnClickExit()
+        {
+            GameEntry.Event.Fire(this, new GameToLoginEventArgs());
         }
 
         public void OnClickItem(object sender, GameEventArgs e)
@@ -65,16 +69,17 @@ namespace AlphaWork
             player.user = name;
             player.gamesetting = GameEntry.Config.GameSetting.UID;
 
-            IEnumerator<UPlayer> playerIter;            
-            GameEntry.DataBase.DataDevice.GetDataByKey<UPlayer>(name,out playerIter);
-            if(playerIter == null || playerIter.Current == null)
+            List<UPlayer> players;            
+            GameEntry.DataBase.DataDevice.GetDataByKey<UPlayer>(name,out players);
+            if(players == null || players.Count <= 0)
             {
                 GameEntry.DataBase.DataDevice.AddData<UPlayer>(player);
             }
             else
             {
-                playerIter.Current.gamesetting = player.gamesetting;
+                players[0].gamesetting = player.gamesetting;
             }
+            GameEntry.Config.GameSetting.CurrentUser = name;
         }
 
 #if UNITY_2017_3_OR_NEWER

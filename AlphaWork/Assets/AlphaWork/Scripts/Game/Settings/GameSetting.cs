@@ -29,6 +29,10 @@ namespace AlphaWork
         public bool UseNavGrid = true;
         [SerializeField]
         public GameBase gameContrller = null;
+        [HideInInspector]
+        public string CurrentUser;
+        [HideInInspector]
+        public int CurrentSceneId;
 
         private string id_str = "";
         public string UID
@@ -51,7 +55,8 @@ namespace AlphaWork
                 gameContrller = new SurvivalGame();
             else if(gameMode == GameMode.Strategy)
                 gameContrller = new StrategyGame();
+            
         }
-
+       
     }
 }

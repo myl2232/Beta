@@ -15,21 +15,31 @@ namespace AlphaWork
                 return false;
             }
         }
-        private bool m_Login = false;
+        private bool m_Go = false;
+        private bool m_Back = false;
         private LoginUIForm m_Form = null;
+        private int m_nextSceneId = -1;
 
-        public void StartLogin()
+        public void Go()
         {
-            m_Login = true;
+            m_Go = true;
         }
 
+        public void OnBackToLogin(object sender, GameEventArgs e)
+        {
+            GameToLoginEventArgs arg = (GameToLoginEventArgs)e;
+            m_nextSceneId = (int)SceneId.Menu;
+            m_Back = true;
+        }
         /// <summary>
         /// 状态初始化时调用。
         /// </summary>
         /// <param name="procedureOwner">流程持有者。</param>
         protected override void OnInit(ProcedureOwner procedureOwner)
         {
-            base.OnInit(procedureOwner);            
+            base.OnInit(procedureOwner);
+            GameEntry.Event.Subscribe(GameToLoginEventArgs.EventId, OnBackToLogin);
+            GameEntry.Event.Subscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
         }
 
         /// <summary>
@@ -39,9 +49,11 @@ namespace AlphaWork
         protected override void OnEnter(ProcedureOwner procedureOwner)
         {
             base.OnEnter(procedureOwner);
-            GameEntry.Event.Subscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
-            m_Login = false;
+            
+            m_Go = false;
+            m_Back = false;
             GameEntry.UI.OpenUIForm(UIFormId.LoginForm, this);
+            m_nextSceneId = GameEntry.Config.MainScene;//procedureOwner.GetData<VarInt>(Constant.ProcedureData.NextSceneId).Value;
         }
 
         /// <summary>
@@ -54,17 +66,24 @@ namespace AlphaWork
         {
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
 
-            if (m_Login)
+            if (m_Go)
             {
                 int sceneId = (int)SceneId.Undefined;
                 if (GameEntry.Config.GameSetting.ArMode)
                     sceneId = (int)SceneId.Default;
                 else
-                    sceneId = GameEntry.Config.MainScene;
+                    sceneId = m_nextSceneId;
+ 
 
                 procedureOwner.SetData<VarInt>(Constant.ProcedureData.NextSceneId, sceneId);
                 procedureOwner.SetData<VarInt>(Constant.ProcedureData.GameMode, (int)GameEntry.Config.GameSetting.gameMode);
+
                 ChangeState<ProcedureChangeScene>(procedureOwner);
+            }
+            else if(m_Back)
+            {
+                ChangeState<ProcedureMenu>(procedureOwner);
+                m_Back = false;
             }
         }
 
@@ -77,12 +96,12 @@ namespace AlphaWork
         {
             base.OnLeave(procedureOwner, isShutdown);
 
-            GameEntry.Event.Unsubscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
             if (m_Form != null)
             {
                 m_Form.Close(isShutdown);
                 m_Form = null;
             }
+
         }
 
         /// <summary>
@@ -92,6 +111,8 @@ namespace AlphaWork
         protected override void OnDestroy(ProcedureOwner procedureOwner)
         {
             base.OnDestroy(procedureOwner);
+            GameEntry.Event.Unsubscribe(GameToLoginEventArgs.EventId, OnBackToLogin);
+            GameEntry.Event.Unsubscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
         }
 
         private void OnOpenUIFormSuccess(object sender, GameEventArgs e)

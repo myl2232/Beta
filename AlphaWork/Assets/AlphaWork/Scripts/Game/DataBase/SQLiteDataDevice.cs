@@ -99,17 +99,27 @@ namespace AlphaWork
             return _connection.Table<T>().GetEnumerator();
         }
 
-        public void GetDataByKey<T>(string name, out IEnumerator<T> dataEnumerator) where T : ITable,new()
-        {
-            Func<T, bool> findMethod = delegate(T item)
-            {
-                return item.KeyName == name;
-            };
+        //public void GetDataByKey<T>(string name, out IEnumerator<T> dataEnumerator) where T : ITable,new()
+        //{
+        //    Func<T, bool> findMethod = delegate(T item)
+        //    {
+        //        return item.KeyName == name;
+        //    };
+            
+        //    TableQuery<T> query = _connection.Table<T>();
+        //    dataEnumerator = query.Where(x =>  x.KeyName == name/*findMethod(x)*/).GetEnumerator();
+        //}
 
-            TableQuery<T> query = _connection.Table<T>();
-            dataEnumerator = query.Where(x=> x.KeyName == "aaa"/*findMethod(x)*/).GetEnumerator();
+        public void GetDataByKey<T>(string name, out List<T> dataList) where T : ITable,new()
+        {
+            dataList = (from x in _connection.Table<T>() where x.KeyName == name select x).ToList();
         }
-       
+
+        public void UpdateData<T>(T data) where T : ITable, new()
+        {
+            _connection.Update(data);
+        }
+
         public void Close()
         {
             _connection.Close();

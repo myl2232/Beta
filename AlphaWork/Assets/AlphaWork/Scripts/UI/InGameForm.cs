@@ -34,5 +34,9 @@ namespace AlphaWork
         {
             GameEntry.Event.Fire(this, new UIAttack2EventArgs());
         }
+        public void OnBackClick()
+        {
+            GameEntry.Event.Fire(this, new GameToLoginEventArgs());
+        }
     }
 }

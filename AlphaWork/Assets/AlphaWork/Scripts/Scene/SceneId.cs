@@ -36,5 +36,10 @@
         /// 夜晚城镇。
         /// </summary>
         Night = 6,
+
+        /// <summary>
+        /// 夜晚城镇。
+        /// </summary>
+        YeWai = 7,
     }
 }

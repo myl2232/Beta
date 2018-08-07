@@ -8,13 +8,6 @@ namespace AlphaWork
 {
     public partial class ProcedureChangeScene : ProcedureBase
     {
-        private const int MenuSceneId = 2;
-
-        private bool m_ChangeToMenu = false;
-        private bool m_IsChangeSceneComplete = false;
-        private int m_BackgroundMusicId = 0;
-        private NavigationHelper m_navHelper = null;//myl
-
         public override bool UseNativeDialog
         {
             get
@@ -22,6 +15,11 @@ namespace AlphaWork
                 return false;
             }
         }
+
+        private int m_nextSceneId = -1;
+        private bool m_IsChangeSceneComplete = false;
+        private int m_BackgroundMusicId = 0;
+        private NavigationHelper m_navHelper = null;//myl
 
         protected override void OnEnter(ProcedureOwner procedureOwner)
         {
@@ -61,21 +59,21 @@ namespace AlphaWork
             {
                 if (m_navHelper != null)
                     m_navHelper.CloseNavigation();
-            }            
+            }
 
-            int sceneId = procedureOwner.GetData<VarInt>(Constant.ProcedureData.NextSceneId).Value;
-            m_ChangeToMenu = (sceneId == MenuSceneId);
+            m_nextSceneId = procedureOwner.GetData<VarInt>(Constant.ProcedureData.NextSceneId).Value;
+            
             IDataTable<DRScene> dtScene = GameEntry.DataTable.GetDataTable<DRScene>();
-            DRScene drScene = dtScene.GetDataRow(sceneId);
+            DRScene drScene = dtScene.GetDataRow(m_nextSceneId);
             if (drScene == null)
             {
-                Log.Warning("Can not load scene '{0}' from data table.", sceneId.ToString());
+                Log.Warning("Can not load scene '{0}' from data table.", m_nextSceneId.ToString());
                 return;
             }
 
-            //if(sceneId > (int)SceneId.Main)
-            //    GameEntry.Scene.LoadScene(AssetUtility.GetVillageScene(drScene.AssetName), this);
-            //else
+            GameEntry.Config.GameSetting.CurrentSceneId = m_nextSceneId;
+            string sceneName = AssetUtility.GetSceneAsset(drScene.AssetName);
+            if (!GameEntry.Scene.SceneIsLoaded(sceneName))
                 GameEntry.Scene.LoadScene(AssetUtility.GetSceneAsset(drScene.AssetName), this);
 
             m_BackgroundMusicId = drScene.BackgroundMusicId;
@@ -111,11 +109,11 @@ namespace AlphaWork
                 return;
             }
 
-            if (m_ChangeToMenu)
+            if ((int)SceneId.Menu == m_nextSceneId)
             {
                 ChangeState<ProcedureMenu>(procedureOwner);
             }
-            else
+            else if((int)SceneId.YeWai == m_nextSceneId)
             {
                 ChangeState<ProcedureMain>(procedureOwner);
             }

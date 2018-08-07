@@ -22,13 +22,21 @@ namespace AlphaWork
             m_StartGame = true;
         }
 
+        /// <summary>
+        /// 状态初始化时调用。
+        /// </summary>
+        /// <param name="procedureOwner">流程持有者。</param>
+        protected override void OnInit(ProcedureOwner procedureOwner)
+        {
+            base.OnInit(procedureOwner);
+            GameEntry.Event.Subscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
+        }
+
         protected override void OnEnter(ProcedureOwner procedureOwner)
         {
-            base.OnEnter(procedureOwner);
+            base.OnEnter(procedureOwner);            
 
-            GameEntry.Event.Subscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
-
-            //m_StartGame = false;
+            m_StartGame = false;
             GameEntry.UI.OpenUIForm(UIFormId.MenuForm, this);
         }
 
@@ -36,13 +44,23 @@ namespace AlphaWork
         {
             base.OnLeave(procedureOwner, isShutdown);
 
-            GameEntry.Event.Unsubscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
 
             if (m_MenuForm != null)
             {
                 m_MenuForm.Close(isShutdown);
                 m_MenuForm = null;
             }
+            m_StartGame = false;
+        }
+        /// <summary>
+        /// 状态销毁时调用。
+        /// </summary>
+        /// <param name="procedureOwner">流程持有者。</param>
+        protected override void OnDestroy(ProcedureOwner procedureOwner)
+        {
+            base.OnDestroy(procedureOwner);
+
+            GameEntry.Event.Unsubscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
         }
 
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
@@ -51,15 +69,6 @@ namespace AlphaWork
 
             if (m_StartGame)
             {
-                //    int sceneId = (int)SceneId.Undefined;
-                //    if (GameEntry.Config.GameSetting.ArMode)
-                //        sceneId = (int)SceneId.Default;
-                //    else
-                //        sceneId = GameEntry.Config.MainScene;// (int)SceneId.Main;//SceneId.Day;
-
-                //    procedureOwner.SetData<VarInt>(Constant.ProcedureData.NextSceneId, sceneId);                
-                //    procedureOwner.SetData<VarInt>(Constant.ProcedureData.GameMode, (int)GameEntry.Config.GameSetting.gameMode/*GameMode.Survival*/);
-                //    ChangeState<ProcedureChangeScene>(procedureOwner);
                 ChangeState<ProcedureLogin>(procedureOwner);
             }
             

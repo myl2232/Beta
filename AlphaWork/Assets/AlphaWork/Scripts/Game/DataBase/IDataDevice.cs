@@ -8,8 +8,10 @@ namespace AlphaWork
         void CreateTable<T>(bool bClear = false) where T : ITable;
         void ClearTable<T>() where T : ITable;
         void AddData<T>(T data) where T : ITable;
-        void GetDataByKey<T>(string keyName, out IEnumerator<T> dataEnumerator) where T : ITable, new();
+        //void GetDataByKey<T>(string keyName, out IEnumerator<T> dataEnumerator) where T : ITable, new();
+        void GetDataByKey<T>(string name, out List<T> dataList) where T : ITable, new();
         IEnumerator<T> GetData<T>() where T : ITable, new();
+        void UpdateData<T>(T data) where T : ITable,new();
         void Close();
     }
 

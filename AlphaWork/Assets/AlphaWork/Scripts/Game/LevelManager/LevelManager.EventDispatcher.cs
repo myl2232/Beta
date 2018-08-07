@@ -22,7 +22,7 @@ namespace AlphaWork
             GetDefaultTerrain();
             LoadGameObjects();
             //BuildBlocks();
-                        
+            
         }
 
         public void OnUIAlpha(object sender, GameEventArgs e)
