@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{69572218-C7E1-A8D7-12C3-962A6B329756}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/AlphaWork/3rd/ToLua/Source/Generate/LuaBinder.cs">
+    <Files>
+      <File FileName="Assets/AlphaWork/3rd/ToLua/Source/Generate/LuaBinder.cs" Line="19" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: cf3919c703bee124db95a9e6dbc11e6e
-timeCreated: 1494304241
-licenseType: Store
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: Arashi:driver_root
     100002: Arashi:master_anim
@@ -294,6 +292,7 @@ ModelImporter:
     13700010: L_Knot
     13700012: L_Rope_1
     13700014: L_Rope_2
+    2186277476908879412: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -475,6 +474,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -12302,6 +12302,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

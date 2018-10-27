@@ -168,7 +168,7 @@ namespace AlphaWork
                 instance.m_Lightmaps = lightmaps.ToArray();
                 instance.m_Lightmaps2 = lightmaps2.ToArray();
 
-                var targetPrefab = PrefabUtility.GetPrefabParent(gameObject) as GameObject;
+                var targetPrefab = PrefabUtility.GetCorrespondingObjectFromSource(gameObject) as GameObject;
                 if (targetPrefab != null)
                 {
                     //Prefab
