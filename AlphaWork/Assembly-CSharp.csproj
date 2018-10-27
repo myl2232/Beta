@@ -513,6 +513,10 @@
     <Compile Include="Assets\AlphaWork\Scripts\Game\Effect\Transparent\MainCameraControl.cs" />
     <Compile Include="Assets\AlphaWork\Scripts\Game\Effect\Transparent\OccTransparent.cs" />
     <Compile Include="Assets\AlphaWork\Scripts\Game\GameEntityCallback.cs" />
+    <Compile Include="Assets\AlphaWork\Scripts\Game\GameManager\Components\SpawnRandomCircleComponent.cs" />
+    <Compile Include="Assets\AlphaWork\Scripts\Game\GameManager\Components\SpawnRandomCircleSystem.cs" />
+    <Compile Include="Assets\AlphaWork\Scripts\Game\GameManager\Components\Utilities\HashUtility.cs" />
+    <Compile Include="Assets\AlphaWork\Scripts\Game\GameManager\Components\Utilities\MathUtility.cs" />
     <Compile Include="Assets\AlphaWork\Scripts\Game\GameManager\GameBase.cs" />
     <Compile Include="Assets\AlphaWork\Scripts\Game\GameManager\IGameController.cs" />
     <Compile Include="Assets\AlphaWork\Scripts\Game\GameManager\StrategyGame.cs" />
