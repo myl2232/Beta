@@ -1,12 +1,14 @@
 ﻿using Unity.Mathematics;
+using System;
+using UnityEngine;
 
-namespace Samples.Common
+namespace AlphaWork
 {
     public struct GridHash
     {
         public readonly static int3[] cellOffsets =
         {
-            new int3(0, 0, 0),
+            new Int32(),
             new int3(-1, 0, 0),
             new int3(0, -1, 0),
             new int3(0, 0, -1),

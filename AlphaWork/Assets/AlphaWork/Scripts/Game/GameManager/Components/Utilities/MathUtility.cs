@@ -2,7 +2,7 @@
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace Samples.Common
+namespace AlphaWork
 {
     public struct GeneratePoints
     {

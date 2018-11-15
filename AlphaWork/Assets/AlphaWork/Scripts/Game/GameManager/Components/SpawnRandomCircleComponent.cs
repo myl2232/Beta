@@ -2,7 +2,7 @@
 using Unity.Entities;
 using UnityEngine;
 
-namespace Samples.Common
+namespace AlphaWork
 {
     /// <summary>
     /// Spawn count Entities based on the specified Prefab. Components on the Prefab will be added to the Entities.

@@ -3,7 +3,7 @@ using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
 
-namespace Samples.Common
+namespace AlphaWork
 {
     public class SpawnRandomCircleSystem : ComponentSystem
     {

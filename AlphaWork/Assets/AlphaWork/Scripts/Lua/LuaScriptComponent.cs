@@ -52,7 +52,7 @@ namespace AlphaWork
         public void StartLuaVM()
         {
             m_LuaState.Start();
-            StartLooper();
+            StartLooper();   
         }
 
         /// <summary>
