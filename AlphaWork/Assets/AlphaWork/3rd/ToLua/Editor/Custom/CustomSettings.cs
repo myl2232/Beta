@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using LuaInterface;
 using UnityEditor;
+using UnityEngine.UI;
 
 using BindType = ToLuaMenu.BindType;
 using System.Reflection;
@@ -28,7 +29,7 @@ public static class CustomSettings
         typeof(UnityEngine.RenderSettings),
         typeof(UnityEngine.QualitySettings),
         typeof(UnityEngine.GL),
-        typeof(UnityEngine.Graphics),
+        typeof(UnityEngine.Graphics),      
     };
 
     //附加导出委托类型(在导出委托时, customTypeList 中牵扯的委托类型都会导出， 无需写在这里)
@@ -150,6 +151,19 @@ public static class CustomSettings
         _GT(typeof(RenderTexture)),
         _GT(typeof(Resources)),     
         _GT(typeof(LuaProfiler)),
+        //UI
+        _GT(typeof(Image)),
+        _GT(typeof(RawImage)),
+        _GT(typeof(InputField)),
+        _GT(typeof(Button)),
+        _GT(typeof(Toggle)),
+        _GT(typeof(ToggleGroup)),
+        _GT(typeof(Slider)),
+        _GT(typeof(Scrollbar)),
+        _GT(typeof(Selectable)),
+        _GT(typeof(Dropdown)),
+        _GT(typeof(ScrollRect)),
+        _GT(typeof(Canvas)),
     };
 
     public static List<Type> dynamicList = new List<Type>()

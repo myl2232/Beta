@@ -6,7 +6,7 @@ function Start()
 
     end
 
-    --TBGame.Instance():Start()
+    TBGame.Instance():Start()
 end
 
 --场景切换通知

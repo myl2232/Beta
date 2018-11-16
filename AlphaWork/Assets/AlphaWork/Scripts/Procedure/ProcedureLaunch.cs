@@ -49,7 +49,6 @@ namespace AlphaWork
 
             //脚本系统
             GameEntry.LuaScriptEngine.StartLuaVM();
-            GameEntry.LuaScriptEngine.DoFile("GameEntry.lua");
         }
 
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)

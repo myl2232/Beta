@@ -52,7 +52,22 @@ namespace AlphaWork
         public void StartLuaVM()
         {
             m_LuaState.Start();
-            StartLooper();   
+            StartLooper();
+            StartMain();
+        }
+
+        protected void StartMain()
+        {
+            DoFile("GameEntry.lua");
+            CallMain();
+        }
+
+        protected void CallMain()
+        {
+            LuaFunction main = m_LuaState.GetFunction("Start");
+            main.Call();
+            main.Dispose();
+            main = null;
         }
 
         /// <summary>
