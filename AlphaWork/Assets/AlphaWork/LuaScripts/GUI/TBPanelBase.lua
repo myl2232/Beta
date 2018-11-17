@@ -1,5 +1,5 @@
 local Lplus = require "Lplus"
-local TBPanelLoader = require "Game.GUI.TBPanelLoader"
+local TBPanelLoader = require "GUI.TBPanelLoader"
 local TBGUIMan = Lplus.ForwardDeclare("TBGUIMan")
 local GameUtil = require "Main.GameUtil"
 

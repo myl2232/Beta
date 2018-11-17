@@ -1,6 +1,4 @@
 ---
---- Created by jinguanghua.
---- DateTime: 2018/3/9 12:07
 ---
 
 local Lplus = require "Lplus"

@@ -5,7 +5,7 @@ local GameUtil = require("Main.GameUtil")
 	GUI 面板。有加载资源的功能，但不负责相关的 OnGroupXXX 事件
 	另负责 msgHandler 相关 UI 消息处理
 ]]
-local TBPanelLoader = Lplus.Class( "Game.GUI.TBPanelLoader")
+local TBPanelLoader = Lplus.Class( "GUI.TBPanelLoader")
 do
 	local def = TBPanelLoader.define
 

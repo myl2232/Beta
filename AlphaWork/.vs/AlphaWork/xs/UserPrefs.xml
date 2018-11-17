@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{69572218-C7E1-A8D7-12C3-962A6B329756}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/AlphaWork/Scripts/Game/GameManager/Components/SpawnRandomCircleSystem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/AlphaWork/3rd/ToLua/Source/Generate/UnityEngine_UI_ImageWrap.cs">
     <Files>
-      <File FileName="Assets/AlphaWork/Scripts/Game/GameManager/Components/SpawnRandomCircleComponent.cs" Line="1" Column="1" />
-      <File FileName="Assets/AlphaWork/Scripts/Game/GameManager/Components/SpawnRandomCircleSystem.cs" Line="1" Column="1" />
+      <File FileName="Assets/AlphaWork/3rd/ToLua/Editor/Custom/CustomSettings.cs" Line="165" Column="35" />
+      <File FileName="Assets/AlphaWork/3rd/ToLua/Source/Generate/UnityEngine_UI_ImageWrap.cs" Line="9" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

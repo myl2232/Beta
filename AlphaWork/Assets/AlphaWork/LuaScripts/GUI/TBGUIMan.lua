@@ -5,7 +5,7 @@
 		└ GroupBase
 ]]--
 local Lplus = require "Lplus"
-local TBPanelBase = require "Game.GUI.TBPanelBase"
+local TBPanelBase = require "GUI.TBPanelBase"
 local ConfigMgr = require("Main.ConfigMgr")
 local GameUtil = require("Main.GameUtil")
 local TBGUIMan = Lplus.Class("TBGUIMan")
@@ -311,7 +311,7 @@ def.method("string").NotifyDisappear = function(self,panelname)
 end
 def.method().Init = function( self )
 	--资源管理器初始化，为了加载图集先行--
-	ResourceManager.Initialize()
+	--ResourceManager.Initialize()
 	self:PreloadAtlas()
 	self:RegEvent()
 	self:PreInitUI()
@@ -334,22 +334,22 @@ end
 --注册响应事件
 def.method().RegEvent = function()
 	require("Main.module.Module")
-	Event.RegisterEvent(ModuleId.Common, gmodule.notifyId.Common.CREATE_PANEL, TBGUIMan.OnCreateUI);
+--[[ 	Event.RegisterEvent(ModuleId.Common, gmodule.notifyId.Common.CREATE_PANEL, TBGUIMan.OnCreateUI);
 	Event.RegisterEvent(ModuleId.Common, gmodule.notifyId.Common.DESTROY_PANEL, TBGUIMan.OnDestroyUI);
 	Event.RegisterEvent(ModuleId.Common, gmodule.notifyId.Common.TO_LOGIN, TBGUIMan.ToLogin);
-end
+ ]]end
 
 def.method().Release = function( self )
 	self:_LeaveGameStage(true)
-	Event.UnregisterEvent(ModuleId.Common, gmodule.notifyId.Common.CREATE_PANEL, TBGUIMan.OnCreateUI);
+	--[[ Event.UnregisterEvent(ModuleId.Common, gmodule.notifyId.Common.CREATE_PANEL, TBGUIMan.OnCreateUI);
 	Event.UnregisterEvent(ModuleId.Common, gmodule.notifyId.Common.DESTROY_PANEL, TBGUIMan.OnDestroyUI);
 	Event.UnregisterEvent(ModuleId.Common, gmodule.notifyId.Common.TO_LOGIN, TBGUIMan.ToLogin);
-end
+ ]]end
 --初始化UI 相关
 def.method().PreInitUI = function()
-	require "Game.Common.PlotMgr".Instance():Init()
+--[[ 	require "Game.Common.PlotMgr".Instance():Init()
 	require "Game.Trigger.EventTriggerMgr".Instance():Init()
-	require "Game.Common.GuideMgr_new".Instance():Init()
+	require "Game.Common.GuideMgr_new".Instance():Init() ]]
 end
 def.method(TBPanelBase, "string").RegisterUGUIPanel = function (self, panel, panelName)
 	self.m_uguiPanelMap[panelName] = panel

@@ -15,7 +15,7 @@ local function preRequire()
 	if step == 1 then
 		require("Data.ConfigDefine")
 		require("Game.GDefine")
-		require("Net.TBNet")
+		--require("Net.TBNet")
 		require("Net.Protodefine")
 		require "Event.Event".Instance()
 		_G.GameUtil = require "Main.GameUtil"

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using LuaInterface;
 using UnityEditor;
-using UnityEngine.UI;
+//using UnityEngine.UI;
 
 using BindType = ToLuaMenu.BindType;
 using System.Reflection;
@@ -152,17 +152,17 @@ public static class CustomSettings
         _GT(typeof(Resources)),     
         _GT(typeof(LuaProfiler)),
         //UI
-        _GT(typeof(Image)),
-        _GT(typeof(RawImage)),
-        _GT(typeof(InputField)),
-        _GT(typeof(Button)),
-        _GT(typeof(Toggle)),
-        _GT(typeof(ToggleGroup)),
-        _GT(typeof(Slider)),
-        _GT(typeof(Scrollbar)),
-        _GT(typeof(Selectable)),
-        _GT(typeof(Dropdown)),
-        _GT(typeof(ScrollRect)),
+        _GT(typeof(UnityEngine.UI.Image)),
+        _GT(typeof(UnityEngine.UI.RawImage)),
+        _GT(typeof(UnityEngine.UI.InputField)),
+        _GT(typeof(UnityEngine.UI.Button)),
+        _GT(typeof(UnityEngine.UI.Toggle)),
+        _GT(typeof(UnityEngine.UI.ToggleGroup)),
+        _GT(typeof(UnityEngine.UI.Slider)),
+        _GT(typeof(UnityEngine.UI.Scrollbar)),
+        _GT(typeof(UnityEngine.UI.Selectable)),
+        _GT(typeof(UnityEngine.UI.Dropdown)),
+        _GT(typeof(UnityEngine.UI.ScrollRect)),
         _GT(typeof(Canvas)),
     };
 

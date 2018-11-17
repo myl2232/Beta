@@ -17,15 +17,6 @@ def.static("=>", GameUtil).Instance = function ()
     return instance
 end
 
---[[
---加载资源--
---path: 资源路径，要带资源类型后缀比如".prefab"
---callback(UnityEngine.Object): 加载成功回调函数
-def.final("string", "function").AsyncLoad = function(path, callback)
---    ResourceManager.LoadResourceAsyncWithPath(path, callback)
-    ResourceManager.LoadResourceAsyncWithPath(path, callback, 0)
-end
---]]
 
 --加载资源，通过同respath_cfg.lua相同表结构读取信息
 --resInfo: 同respath_cfg.lua结构，至少要有path参数
@@ -33,17 +24,17 @@ end
 def.final("table", "function").AsyncLoadRes = function(resInfo, callback)
     local path = resInfo["path"] or ""
     local priority = resInfo["priority"] or 0
-    ResourceManager.LoadResourceAsyncWithPath(path, callback, priority)
+    --ResourceManager.LoadResourceAsyncWithPath(path, callback, priority)
 end
 def.final("string","number", "function").AsyncLoadResByPath = function(path,priority, callback)
-    ResourceManager.LoadResourceAsyncWithPath(path, callback, priority)
+    --ResourceManager.LoadResourceAsyncWithPath(path, callback, priority)
 end
 def.final("string","function","boolean","number").LoadBank = function ( path,callback ,immediately,priority)
-    ResourceManager.LoadBank(path,true,callback,immediately,priority);
+    --ResourceManager.LoadBank(path,true,callback,immediately,priority);
 end
 
 def.final("string").UnLoadBank = function ( path )
-    ResourceManager.UnLoadBank(path);
+    --ResourceManager.UnLoadBank(path);
 end
 --加载Sprite
 --atlasName: 图集名称，通常跟资源名一样也等同于Tag

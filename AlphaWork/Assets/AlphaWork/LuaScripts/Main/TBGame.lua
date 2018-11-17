@@ -28,7 +28,7 @@ def.method().Start = function (self)
 end 
 --进入启动预加载流程
 def.method().EnterStartStage = function(self)
-	require "Game.Start.StartLoading".Start();
+	--require "Game.Start.StartLoading".Start();
 end
 --离开启动预加载流程
 def.method().LeaveStartStage = function(self)

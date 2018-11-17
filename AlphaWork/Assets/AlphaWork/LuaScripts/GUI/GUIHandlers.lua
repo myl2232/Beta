@@ -5,7 +5,7 @@
     **************************
 ]]
 local GUIHandlers = {
-    [EFuncType.Loading] = require("Game.Common.ui.UILoading").Instance(),
+    --[[ [EFuncType.Loading] = require("Game.Common.ui.UILoading").Instance(),
     [EFuncType.Start] = require("Game.Start.ui.UIStart").Instance(),
     [EFuncType.Login] = require("Game.Login.ui.UILogin").Instance(),
     [EFuncType.GameHall] = require("Game.GameHall.ui.UIGameHall").Instance(),
@@ -70,6 +70,6 @@ local GUIHandlers = {
     [EFuncType.Task_Grow] = require("Game.Grow.ui.UITask_Grow").Instance(),
     [EFuncType.UISingleHang] = require("Game.BattleMatch.ui.UISingleHang").Instance(),
     [EFuncType.UIPet_Illustration] = require("Game.Pet.ui.UIPet_Illustration").Instance(),
-    [EFuncType.UIPetDetailNew] = require("Game.Pet.ui.UIPet_detail_New").Instance(),
+    [EFuncType.UIPetDetailNew] = require("Game.Pet.ui.UIPet_detail_New").Instance(), ]]
 }
 return GUIHandlers
