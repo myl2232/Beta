@@ -988,6 +988,9 @@
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>/Volumes/MacDevelop/Develop/Beta/AlphaWork/Assets/UnityGameFramework/Libraries/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
+    <Reference Include="LitJSON">
+      <HintPath>/Volumes/MacDevelop/Develop/Beta/AlphaWork/Assets/UnityGameFramework/Libraries/LitJSON.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>/Users/yuleima/Library/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
@@ -996,9 +999,6 @@
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>/Users/yuleima/Library/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="LitJSON">
-      <HintPath>/Volumes/MacDevelop/Develop/Beta/AlphaWork/Assets/UnityGameFramework/Libraries/LitJSON.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>/Applications/Unity2018.2.5/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

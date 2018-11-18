@@ -453,6 +453,9 @@
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>/Volumes/MacDevelop/Develop/Beta/AlphaWork/Assets/UnityGameFramework/Libraries/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
+    <Reference Include="LitJSON">
+      <HintPath>/Volumes/MacDevelop/Develop/Beta/AlphaWork/Assets/UnityGameFramework/Libraries/LitJSON.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>/Users/yuleima/Library/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -485,9 +488,6 @@
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
-    </Reference>
-    <Reference Include="LitJSON">
-      <HintPath>/Volumes/MacDevelop/Develop/Beta/AlphaWork/Assets/UnityGameFramework/Libraries/LitJSON.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>/Applications/Unity2018.2.5/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

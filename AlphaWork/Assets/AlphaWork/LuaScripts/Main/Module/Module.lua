@@ -7,8 +7,8 @@ Module.notifyId = require("Main.Module.NotifyId");
 Module.moduleMgr = require "Main.module.ModuleMgr".Instance()
 Module.modules =
 {
-    --require("Game.Login.LoginModule"),
-
+    require("Game.Login.LoginModule"),
+    require("Game.InGame.InGameModule"),
 }
 
 function Module.gameStart()
