@@ -29,9 +29,9 @@ namespace AlphaWork
         public bool UseNavGrid = true;
         [SerializeField]
         public GameBase gameContrller = null;
-        [HideInInspector]
+        [SerializeField]
         public string CurrentUser;
-        [HideInInspector]
+        [SerializeField]
         public int CurrentSceneId;
 
         private string id_str = "";
