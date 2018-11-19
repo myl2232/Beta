@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using LuaInterface;
 using UnityEditor;
+using AlphaWork;
 //using UnityEngine.UI;
 
 using BindType = ToLuaMenu.BindType;
@@ -151,6 +152,34 @@ public static class CustomSettings
         _GT(typeof(RenderTexture)),
         _GT(typeof(Resources)),     
         _GT(typeof(LuaProfiler)),
+        //GameFrameWork
+        _GT(typeof(UnityGameFramework.Runtime.UIFormLogic)),
+        _GT(typeof(UnityGameFramework.Runtime.UIComponent)),
+        _GT(typeof(UGuiForm)),
+        //_GT(typeof(UnityGameFramework.Runtime.DownloadComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.EventComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.BaseComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.DataTableComponent)),        
+        //_GT(typeof(UnityGameFramework.Runtime.DebuggerComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.EntityComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.FsmComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.NetworkComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.UIComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.LocalizationComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.ObjectPoolComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.ProcedureComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.ResourceComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.SceneComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.SettingComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.SoundComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.WebRequestComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.DataNodeComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.ConfigComponent)),
+        //_GT(typeof(AlphaWork.SenseDispatcherComponent)),
+        //_GT(typeof(AlphaWork.BehaviacComponent)),
+        //_GT(typeof(AlphaWork.NavGridComponent)),
+        //_GT(typeof(AlphaWork.LuaScriptComponent)),
+        //_GT(typeof(AlphaWork.DataBaseComponent)),
         //UI
         _GT(typeof(UnityEngine.UI.Image)),
         _GT(typeof(UnityEngine.UI.RawImage)),
@@ -164,6 +193,8 @@ public static class CustomSettings
         _GT(typeof(UnityEngine.UI.Dropdown)),
         _GT(typeof(UnityEngine.UI.ScrollRect)),
         _GT(typeof(Canvas)),
+        //
+        _GT(typeof(UGUIMsgHandler)),
     };
 
     public static List<Type> dynamicList = new List<Type>()

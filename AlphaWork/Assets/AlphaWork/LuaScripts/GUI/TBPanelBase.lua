@@ -198,7 +198,7 @@ def.method("table","table").CreatePanelInternal = function(self, resInfo, relate
 	local panelName = self:RegisterUGUIPanel(respath)
 	
 	TBGUIMan.Instance():ShowWaiting(true)
-	local TBGUIMan = require("Game.GUI.TBGUIMan")
+	local TBGUIMan = require("GUI.TBGUIMan")
 	TBGUIMan.Instance():AddUI(self, self.m_level)
 	self:LoadPanel(resInfo, panelName, self.m_parantObj, relatedRes, function (bFinished, bSucceeded)
 		if not bFinished or not bSucceeded then
