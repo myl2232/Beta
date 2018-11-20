@@ -2,7 +2,8 @@
 
 public static class LuaConst
 {
-    public static string luaDir = Application.dataPath + "/AlphaWork/LuaScripts";                //lua逻辑代码目录
+    public static string luaDir = Application.dataPath + "/../../LuaScripts";                //lua逻辑代码目录
+    public static string luaSocketDir = Application.dataPath + "/../../LuaScripts/luascoket/lua";//luasocket目录
     public static string toluaDir = Application.dataPath + "/AlphaWork/3rd/ToLua/ToLua/Lua";        //tolua lua文件目录
 
 #if UNITY_STANDALONE

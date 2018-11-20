@@ -30,7 +30,9 @@ public static class CustomSettings
         typeof(UnityEngine.RenderSettings),
         typeof(UnityEngine.QualitySettings),
         typeof(UnityEngine.GL),
-        typeof(UnityEngine.Graphics),      
+        typeof(UnityEngine.Graphics),    
+        //GameFrameWork
+        typeof(GameEntry),
     };
 
     //附加导出委托类型(在导出委托时, customTypeList 中牵扯的委托类型都会导出， 无需写在这里)
@@ -42,6 +44,7 @@ public static class CustomSettings
         _DT(typeof(System.Action<int>)),
         _DT(typeof(System.Comparison<int>)),
         _DT(typeof(System.Func<int, int>)),
+        //补充的代理方法
     };
 
     //在这里添加你要导出注册到lua的类型列表

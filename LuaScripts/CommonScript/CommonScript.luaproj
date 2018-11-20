@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{43d74c43-f022-49cf-926a-8842d0a268ce}</ProjectGuid>
+    <!--$guid1$-->
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>
+    </StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>CommonScript</Name>
+    <RootNamespace>CommonScript</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AllianceHeader.lua" />
+    <Compile Include="APIWrapper.lua" />
+    <Compile Include="BaseClassHeader.lua" />
+    <Compile Include="CallbackFunctions.lua" />
+    <Compile Include="Command.lua" />
+    <Compile Include="CommonFunctions.lua" />
+    <Compile Include="DirtyFunctions.lua" />
+    <Compile Include="EnumDefine.lua" />
+    <Compile Include="EventWork.lua" />
+    <Compile Include="FightHeader.lua" />
+    <Compile Include="FightWinRetHeader.lua" />
+    <Compile Include="GainRateHeader.lua" />
+    <Compile Include="GameCoroutine.lua" />
+    <Compile Include="GameDefine.lua" />
+    <Compile Include="GameDialog.lua" />
+    <Compile Include="GameHeroHeader.lua" />
+    <Compile Include="GameLog.lua" />
+    <Compile Include="GamePetHeader.lua" />
+    <Compile Include="GameProp.lua" />
+    <Compile Include="GameProtocol.lua" />
+    <Compile Include="GameSceneHeader.lua" />
+    <Compile Include="GameUserHeader.lua" />
+    <Compile Include="ItemHeader.lua" />
+    <Compile Include="LuaEventManager.lua" />
+    <Compile Include="MessagePack.lua" />
+    <Compile Include="MetaBase.lua" />
+    <Compile Include="MetaDefine.lua" />
+    <Compile Include="PosyHeader.lua" />
+    <Compile Include="QuestHeader.lua" />
+    <Compile Include="SeasonHeader.lua" />
+    <Compile Include="SummonHeader.lua" />
+    <Compile Include="TeamTroopHeader.lua" />
+    <Compile Include="TroopHeader.lua" />
+    <Compile Include="TrumpHeader.lua" />
+    <Compile Include="Utils.lua" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+</Project>
