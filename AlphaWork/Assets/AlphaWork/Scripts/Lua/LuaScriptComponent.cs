@@ -11,7 +11,7 @@ using UnityGameFramework.Runtime;
 namespace AlphaWork
 {  
     //代替了LuaClient的作用
-    public class LuaScriptComponent : GameFrameworkComponent
+    public partial class LuaScriptComponent : GameFrameworkComponent
     {
 
         /// <summary>
@@ -166,6 +166,7 @@ namespace AlphaWork
             new CustomLuaLoader(GetScriptContent);
             m_LuaState = new LuaState();           
             m_LuaState.AddSearchPath(LuaConst.luaDir);//增加默认lua逻辑目录
+            m_LuaState.AddSearchPath(LuaConst.luaSocketDir);//增加默认luaScocket逻辑目录
             AddSearchPaths();
             OpenLibs();
             m_LuaState.LuaSetTop(0);
@@ -194,6 +195,11 @@ namespace AlphaWork
             m_LuaState.OpenLibs(LuaDLL.luaopen_struct);
             m_LuaState.OpenLibs(LuaDLL.luaopen_lpeg);
             m_LuaState.OpenLibs(LuaDLL.luaopen_bit);
+
+            if (LuaConst.openLuaSocket)
+            {
+                OpenLuaSocket();
+            }
 
             if (Application.isEditor && m_UseZeroBraneStudioDebugger)
             {

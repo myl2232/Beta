@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using LuaInterface;
 using UnityEditor;
+using AlphaWork;
 //using UnityEngine.UI;
 
 using BindType = ToLuaMenu.BindType;
@@ -29,7 +30,7 @@ public static class CustomSettings
         typeof(UnityEngine.RenderSettings),
         typeof(UnityEngine.QualitySettings),
         typeof(UnityEngine.GL),
-        typeof(UnityEngine.Graphics),      
+        typeof(UnityEngine.Graphics),    
     };
 
     //附加导出委托类型(在导出委托时, customTypeList 中牵扯的委托类型都会导出， 无需写在这里)
@@ -41,6 +42,7 @@ public static class CustomSettings
         _DT(typeof(System.Action<int>)),
         _DT(typeof(System.Comparison<int>)),
         _DT(typeof(System.Func<int, int>)),
+        //补充的代理方法
     };
 
     //在这里添加你要导出注册到lua的类型列表
@@ -151,6 +153,37 @@ public static class CustomSettings
         _GT(typeof(RenderTexture)),
         _GT(typeof(Resources)),     
         _GT(typeof(LuaProfiler)),
+        //GameFrameWork
+        _GT(typeof(UnityGameFramework.Runtime.UIFormLogic)),
+        _GT(typeof(UnityGameFramework.Runtime.UIComponent)),
+        _GT(typeof(UGuiForm)),
+        _GT(typeof(AlphaWork.GameEntry)),
+        _GT(typeof(AlphaWork.UGUIMsgHandler)),
+        _GT(typeof(AlphaWork.UGUIFormExtend)),
+        //_GT(typeof(UnityGameFramework.Runtime.DownloadComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.EventComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.BaseComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.DataTableComponent)),        
+        //_GT(typeof(UnityGameFramework.Runtime.DebuggerComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.EntityComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.FsmComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.NetworkComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.UIComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.LocalizationComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.ObjectPoolComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.ProcedureComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.ResourceComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.SceneComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.SettingComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.SoundComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.WebRequestComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.DataNodeComponent)),
+        //_GT(typeof(UnityGameFramework.Runtime.ConfigComponent)),
+        //_GT(typeof(AlphaWork.SenseDispatcherComponent)),
+        //_GT(typeof(AlphaWork.BehaviacComponent)),
+        //_GT(typeof(AlphaWork.NavGridComponent)),
+        //_GT(typeof(AlphaWork.LuaScriptComponent)),
+        //_GT(typeof(AlphaWork.DataBaseComponent)),
         //UI
         _GT(typeof(UnityEngine.UI.Image)),
         _GT(typeof(UnityEngine.UI.RawImage)),
@@ -164,6 +197,8 @@ public static class CustomSettings
         _GT(typeof(UnityEngine.UI.Dropdown)),
         _GT(typeof(UnityEngine.UI.ScrollRect)),
         _GT(typeof(Canvas)),
+        //
+        
     };
 
     public static List<Type> dynamicList = new List<Type>()

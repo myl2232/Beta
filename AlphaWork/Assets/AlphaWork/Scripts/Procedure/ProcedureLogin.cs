@@ -17,13 +17,19 @@ namespace AlphaWork
         }
         private bool m_Go = false;
         private bool m_Back = false;
-        private LoginUIForm m_Form = null;
+        private UGUIFormExtend m_Form = null;
         private int m_nextSceneId = -1;
 
-        public void Go()
+        public override void Go()
         {
+            base.Go();
             m_Go = true;
         }
+
+        //public void GoImpl()
+        //{
+        //    m_Go = true;
+        //}
 
         public void OnBackToLogin(object sender, GameEventArgs e)
         {
@@ -123,7 +129,8 @@ namespace AlphaWork
                 return;
             }
 
-            m_Form = (LoginUIForm)ne.UIForm.Logic;
+            m_Form = (UGUIFormExtend)ne.UIForm.Logic;
+            GameEntry.LuaScriptEngine.RegistGameObject2Lua(m_Form.CachedTransform.gameObject, "Game.Login.ui.UILogin");
             m_Form.FillUserView();
         }
 
