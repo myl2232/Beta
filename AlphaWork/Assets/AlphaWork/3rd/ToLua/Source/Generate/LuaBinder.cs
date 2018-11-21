@@ -15,6 +15,11 @@ public static class LuaBinder
 		LuaInterface_LuaInjectionStationWrap.Register(L);
 		LuaInterface_InjectTypeWrap.Register(L);
 		L.EndModule();
+        L.BeginModule("AlphaWork");
+        AlphaWork_GameEntryWrap.Register(L);
+        AlphaWork_UGuiFormWrap.Register(L);
+        AlphaWork_UGUIMsgHandlerWrap.Register(L);
+        L.EndModule();
 		L.BeginModule("UnityEngine");
 		UnityEngine_ComponentWrap.Register(L);
 		UnityEngine_TransformWrap.Register(L);

@@ -264,9 +264,9 @@ do
 	def.virtual("userdata").TouchUGUIGameObject = function(self, panelObj)
 		if panelObj == nil then return nil end
 
-		local uguiMsgHandler = panelObj:GetComponent(typeof(UGUIMsgHandler))
+		local uguiMsgHandler = panelObj:GetComponent(typeof(AlphaWork.UGUIMsgHandler))
 		if uguiMsgHandler == nil then
-			uguiMsgHandler = panelObj:AddComponent(typeof(UGUIMsgHandler))
+			uguiMsgHandler = panelObj:AddComponent(typeof(AlphaWork.UGUIMsgHandler))
 		end
 		self.m_uguiMsgHandler = uguiMsgHandler
 		self.m_msgTable = {

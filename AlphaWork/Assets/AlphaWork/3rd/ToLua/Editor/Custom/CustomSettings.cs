@@ -31,8 +31,6 @@ public static class CustomSettings
         typeof(UnityEngine.QualitySettings),
         typeof(UnityEngine.GL),
         typeof(UnityEngine.Graphics),    
-        //GameFrameWork
-        typeof(GameEntry),
     };
 
     //附加导出委托类型(在导出委托时, customTypeList 中牵扯的委托类型都会导出， 无需写在这里)
@@ -159,6 +157,9 @@ public static class CustomSettings
         _GT(typeof(UnityGameFramework.Runtime.UIFormLogic)),
         _GT(typeof(UnityGameFramework.Runtime.UIComponent)),
         _GT(typeof(UGuiForm)),
+        _GT(typeof(AlphaWork.GameEntry)),
+        _GT(typeof(AlphaWork.UGUIMsgHandler)),
+        _GT(typeof(AlphaWork.UGUIFormExtend)),
         //_GT(typeof(UnityGameFramework.Runtime.DownloadComponent)),
         //_GT(typeof(UnityGameFramework.Runtime.EventComponent)),
         //_GT(typeof(UnityGameFramework.Runtime.BaseComponent)),
@@ -197,7 +198,7 @@ public static class CustomSettings
         _GT(typeof(UnityEngine.UI.ScrollRect)),
         _GT(typeof(Canvas)),
         //
-        _GT(typeof(UGUIMsgHandler)),
+        
     };
 
     public static List<Type> dynamicList = new List<Type>()

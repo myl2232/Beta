@@ -16,7 +16,7 @@ namespace AlphaWork
         }
 
         private bool bExit = false;
-        private InGameForm m_Form = null;
+        private UGUIFormExtend m_Form = null;
 
         protected override void OnInit(ProcedureOwner procedureOwner)
         {
@@ -80,7 +80,8 @@ namespace AlphaWork
                 return;
             }
 
-            m_Form = (InGameForm)ne.UIForm.Logic;
+            m_Form = (UGUIFormExtend)ne.UIForm.Logic;
+            GameEntry.LuaScriptEngine.RegistGameObject2Lua(m_Form.CachedTransform.gameObject, "Game.InGame.ui.UIInGame");
         }
 
         public void OnBackToLogin(object sender, GameEventArgs e)

@@ -369,7 +369,7 @@ end
 
 def.method().EnterLoginStage = function(self)
 	--self:InitWaiting()
-	local event = EFuncType.Login
+	local event = EFuncType.MainMenu
 	TBGUIMan.OpenUIWithReturn({event},nil)
 end
 

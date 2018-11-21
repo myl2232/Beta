@@ -3,6 +3,7 @@ local ModuleBase = require "Main.Module.ModuleBase"
 local LoginModule = Lplus.Extend(ModuleBase,"LoginModule")
 local def = LoginModule.define
 local m_Instance = nil
+local UI = AlphaWork.GameEntry.UI;
 
 def.static("=>",LoginModule).Instance = function()
     if(m_Instance == nil) then

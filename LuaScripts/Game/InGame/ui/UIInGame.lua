@@ -5,6 +5,7 @@ local GameUtil = require("Main.GameUtil");
 local UIInGame = Lplus.Extend(TBPanelBase, "UIInGame");
 local def = UIInGame.define;
 local m_Instance = nil;
+local m_obj = nil;
 
 -- 单例对象
 def.static("=>", UIInGame).Instance = function (self)
@@ -17,6 +18,12 @@ end
 -- 预创建UI回调
 def.override().DoCreate = function (self)
 	self:CreateUGUIPanel(GameUtil.GetResPath(100002), 3,{});
+end
+
+function UIInGame.RegistObj( self, obj )
+    -- body
+	m_obj = obj;
+	self:TouchUGUIGameObject(m_obj);
 end
 
 UIInGame.Commit()

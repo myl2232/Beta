@@ -32,6 +32,18 @@ _G.Quaternion = UnityEngine.Quaternion
     ugui导出接口结束
 ]]
 
+--myl:窗口id（同cs）
+_G.UIFormId =
+{
+    Undefined = 0,
+    DialogForm = 1,
+    MenuForm = 100,
+    SettingForm = 101,
+    AboutForm = 102,
+    LoginForm = 2,
+    MainForm = 3,
+}
+
 _G.ScreenResolution = Screen.width / Screen.height
 
 _G.UILevel = 

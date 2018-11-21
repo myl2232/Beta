@@ -11,7 +11,7 @@ using UnityGameFramework.Runtime;
 namespace AlphaWork
 {  
     //代替了LuaClient的作用
-    public class LuaScriptComponent : GameFrameworkComponent
+    public partial class LuaScriptComponent : GameFrameworkComponent
     {
 
         /// <summary>
