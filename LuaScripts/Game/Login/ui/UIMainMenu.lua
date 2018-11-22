@@ -34,6 +34,7 @@ end
 
 -- 单击事件回调
 def.method("userdata").onClickObj = function(self, obj)
+	print("~~~~~~~~~~~~~~OnClick~~~~~~~~~~~~~~~")
     if(obj.name == self.mBtnStart.name) then
         self:OnClickStart(obj);
     elseif(obj.name == self.mBtnSetting.name) then    
@@ -76,46 +77,7 @@ function UIMainMenu.RegistObj( obj )
 	-- body		
 	m_obj = obj;
 
-	UIMainMenu:TouchUGUIGameObject(m_obj);
-end
-
- function UIMainMenu.SetUGUIGameObject()
-	if m_obj == nil then return nil end
---[[ 	local tt = panelObj:GetComponent("UGUIFormExtend")
-	print(type(tt)) ]]
-	if uguiMsgHandler == nil then
-		uguiMsgHandler = m_obj:AddComponent("UGUIMsgHandler")
-	end
-	self.m_uguiMsgHandler = uguiMsgHandler
-	self.m_msgTable = {
-		onClick 		= self:_onEvent("onClick"),--一个参数 name
-		onClickObj 		= self:_onEvent("onClickObj"),
-		onStrValueChanged  = self:_onEvent("onStrValueChanged"),--两个参数 name和字符串值
-		onFloatValueChanged  = self:_onEvent("onFloatValueChanged"),--两个参数 name和数值
-		onIntValueChanged  = self:_onEvent("onIntValueChanged"),--两个参数 name和数值
-		onBoolValueChanged  = self:_onEvent("onBoolValueChanged"),--两个参数 name和boolean值
-		onRectValueChanged  = self:_onEvent("onRectValueChanged"), --返回 name,x ,y 3个参数
-		onEditEnd       = self:_onEvent("onEditEnd"),--两个参数 name和字符串值
-		onScroll        = self:_onEvent("onScroll"),--一个参数 name
-		onDrag          = self:_onEvent("onDrag"),--返回 name,x ,y,touch_x , touch_y 5个参数
-		onBeginDrag     = self:_onEvent("onBeginDrag"),--5个参数 name,x ,y,touch_x , touch_y 5个参数
-		onEndDrag       = self:_onEvent("onEndDrag"),--5个参数 name,x ,y,touch_x , touch_y 5个参数
-		onEnter         = self:_onEvent("onEnter"),--一个参数 name
-		onExit          = self:_onEvent("onExit"),--一个参数 name
-		onDown          = self:_onEvent("onDown"),--一个参数 name
-		onHold          = self:_onEvent("onHold"),--一个参数 name
-		onUp            = self:_onEvent("onUp"),--一个参数 name
-		onUpDetail		= self:_onEvent("onUpDetail"),--5个参数 name,x ,y,touch_x , touch_y 5个参数
-		onDownDetail	= self:_onEvent("onDownDetail"),--5个参数 name,x ,y,touch_x , touch_y 5个参数
-		onSelect        = self:_onEvent("onSelect"),--一个参数 name
-		onMove          = self:_onEvent("onMove"),--一个参数 name
-		onSubmit        = self:_onEvent("onSubmit"),--一个参数 name
-		onCancel        = self:_onEvent("onCancel"),--一个参数 name
-		onPlayTweenFinish = self:_onEvent("onPlayTweenFinish__"),--一个参数 name
-		--onGuideClickObj	= self:GuideClickOpr(),--新手引导用点击事件接受
-	}
-	self.m_uguiMsgHandler:SetMsgTable(self.m_msgTable,self)
-	self.m_uguiMsgHandler:Touch(panelObj)
+	m_Instance:TouchUGUIGameObject(m_obj);
 end
 
 UIMainMenu.Commit()

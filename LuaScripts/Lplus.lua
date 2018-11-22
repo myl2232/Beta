@@ -434,7 +434,7 @@ local function createForwardDeclareType (typeName, errorLevel)
 	end
 
 
-	local typeString = (typeName or "anonymousType") .. "(forward declare)"
+	local typeString = (tyypeName or "anonymousType") .. "(forward declare)"
 	local typeMeta =
 	{
 		magic = lplusTypeTableMagic;

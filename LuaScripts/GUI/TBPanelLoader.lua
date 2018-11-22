@@ -268,7 +268,7 @@ do
 		if uguiMsgHandler == nil then
 			uguiMsgHandler = panelObj:AddComponent(typeof(AlphaWork.UGUIMsgHandler))
 		end
-		self.m_uguiMsgHandler = uguiMsgHandler
+		self.m_uguiMsgHandler = uguiMsgHandler		
 		self.m_msgTable = {
 			onClick 		= self:_onEvent("onClick"),--一个参数 name
 			onClickObj 		= self:_onEvent("onClickObj"),
@@ -309,7 +309,6 @@ do
 	end
 
 	def.virtual("string","=>","function")._onEvent = function(self, eventName)
-
 		local ECGUIMan = require "GUI.TBGUIMan"
 		local func = self:tryget(eventName)
 		local beenHooked = false

@@ -22,7 +22,7 @@ namespace AlphaWork
     {
         if (tryget == null)
         {
-            LuaTable lPlus = LuaClient.GetMainState().Require<LuaTable>("Lplus");
+            LuaTable lPlus = GameEntry.LuaScriptEngine.LuaState.Require<LuaTable>("Lplus");
             tryget = lPlus.GetLuaFunction("tryget");
         }
         m_luaclass = luaclass;

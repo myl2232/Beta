@@ -160,6 +160,7 @@ public static class CustomSettings
         _GT(typeof(AlphaWork.GameEntry)),
         _GT(typeof(AlphaWork.UGUIMsgHandler)),
         _GT(typeof(AlphaWork.UGUIFormExtend)),
+        _GT(typeof(AlphaWork.GameToLoginEventArgs)),
         //_GT(typeof(UnityGameFramework.Runtime.DownloadComponent)),
         //_GT(typeof(UnityGameFramework.Runtime.EventComponent)),
         //_GT(typeof(UnityGameFramework.Runtime.BaseComponent)),
