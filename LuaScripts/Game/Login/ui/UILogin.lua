@@ -45,10 +45,13 @@ end
 
 def.method("userdata").OnClickLogin = function ( self, obj )
     -- body
+
 end
 
 def.method("userdata").OnClickLogout = function ( self, obj )
     -- body
+    local arg = AlphaWork.GameToLoginEventArgs.New();--Myl:调用方式有疑问
+    AlphaWork.GameEntry.Event.Fire(this, arg);
 end
 
 function UILogin.RegistObj( self, obj )

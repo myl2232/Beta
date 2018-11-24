@@ -12,7 +12,7 @@ namespace AlphaWork
         public void RegistGameObject2Lua(GameObject gb, string tableName)
         {
             LuaTable tb = m_LuaState.Require<LuaTable>(tableName);
-            Log.Info("--------RegistGameObject2Lua---------------:");
+            //Log.Info("--------RegistGameObject2Lua---------------:");
             tb.GetLuaFunction("RegistObj").Invoke</*LuaTable,*/GameObject,object>(/*tb,*/gb);
         }
     }

@@ -130,7 +130,7 @@ namespace AlphaWork
             }
 
             m_Form = (UGUIFormExtend)ne.UIForm.Logic;
-            GameEntry.LuaScriptEngine.RegistGameObject2Lua(m_Form.CachedTransform.gameObject, "Game.Login.ui.UILogin");
+            GameEntry.LuaScriptEngine.RegistGameObject2Lua(m_Form.CachedTransform.gameObject, GUIDefine.UILogin);
             m_Form.FillUserView();
         }
 
