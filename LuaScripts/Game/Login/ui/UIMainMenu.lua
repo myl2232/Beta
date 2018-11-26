@@ -26,6 +26,7 @@ def.override().DoCreate = function (self)
 end
 
 def.override().OnCreate = function (self)
+	print("----------------OnCreate Menu---------------")
     self.mBtnStart = self:FindChild("CenterScreen/Buttons/Start")
     self.mBtnSetting = self:FindChild("CenterScreen/Buttons/Setting")
     self.mBtnAbout = self:FindChild("CenterScreen/Buttons/About")
@@ -76,8 +77,9 @@ end
 function UIMainMenu.RegistObj( obj )
 	-- body		
 	m_obj = obj;
-
+	print("------------------Regist Panel----------------")
 	m_Instance:TouchUGUIGameObject(m_obj);
+	m_Instance:OnLoadPanel();
 end
 
 UIMainMenu.Commit()

@@ -208,7 +208,7 @@ def.method("table","table").CreatePanelInternal = function(self, resInfo, relate
 		end
 		TBGUIMan.Instance():ShowWaiting(false)
 		self:OnLoadPanel()
-	end) ]]
+	end) ]]	
 end
 
 def.field("number").m_tweenTimer = 0
@@ -247,6 +247,7 @@ def.method("boolean").PlayPanelTween = function ( self ,isOpen)
 end
 
 def.method().OnLoadPanel = function (self)
+	print("--------------------------TBPanelBase :OnLoadPanel ".. self.m_panelName)
 	local panelObj = self.m_panel
 	--local TBGUIMan = require("GUI.TBGUIMan")
 	--TBGUIMan.Instance():AddUI(self, self.m_level)
@@ -260,7 +261,7 @@ def.method().OnLoadPanel = function (self)
 	if not self.m_panel or self.m_panel == nil then
 		return
 	end
-	print("TBPanelBase :OnLoadPanel ".. self.m_panelName)
+	
 	if self.m_catcheShow ~= nil then
 		local catcheShow = self.m_catcheShow
 		self.m_catcheShow = nil

@@ -21,6 +21,7 @@ namespace AlphaWork
         private void Awake()
         {
             m_CanvasGroup = gameObject.GetOrAddComponent<CanvasGroup>();
+            gameObject.GetOrAddComponent<UnityEngine.UI.Button>();
         }
 
         private void OnDisable()

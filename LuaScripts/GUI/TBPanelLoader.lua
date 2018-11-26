@@ -324,7 +324,7 @@ do
 					TBGUIMan.Instance():NotifyDisappear(self.m_panel.name)
 					Event.DispatchEvent(ModuleId.Common,gmodule.notifyId.Common.CLICK_BTN,{self.m_panel.name,TouchName})
 				end
-				Event.DispatchEvent(ModuleId.Common, gmodule.notifyId.Common.CLOSE_TIP, {});
+				--Event.DispatchEvent(ModuleId.Common, gmodule.notifyId.Common.CLOSE_TIP, {});--myl
 			end
 			
 			local handlers = s_handlers[eventName]
@@ -497,7 +497,7 @@ do
 	]]
 	def.virtual().OnCreateInternal = function (self)
 		--self:InvokeSubGroupsFunction("OnCreateInternal")
-		self:DoUILang()
+		--self:DoUILang()--myl
 		self:OnCreate()
 	end
 
