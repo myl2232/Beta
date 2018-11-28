@@ -202,13 +202,13 @@ def.method("table","table").CreatePanelInternal = function(self, resInfo, relate
 	local TBGUIMan = require("GUI.TBGUIMan")
 	TBGUIMan.Instance():AddUI(self, self.m_level)
 	--实际资源加载由GF完成
-	--[[ self:LoadPanel(resInfo, panelName, self.m_parantObj, relatedRes, function (bFinished, bSucceeded)
+	self:LoadPanel(resInfo, panelName, self.m_parantObj, relatedRes, function (bFinished, bSucceeded)
 		if not bFinished or not bSucceeded then
 			return
 		end
 		TBGUIMan.Instance():ShowWaiting(false)
 		self:OnLoadPanel()
-	end) ]]	
+	end) 
 end
 
 def.field("number").m_tweenTimer = 0
@@ -256,7 +256,7 @@ def.method().OnLoadPanel = function (self)
 		self:PlayPanelTween(true)
 	end	
 	-- show 之前的处理
-	self:OnCreateInternal()
+	self:OnCreateInternal()--调用实际界面的OnCreate
 	-- show
 	if not self.m_panel or self.m_panel == nil then
 		return
@@ -271,13 +271,13 @@ def.method().OnLoadPanel = function (self)
 	else
 		self:OnShowInternal(panelObj.activeSelf)
 	end
-
+--myl
 	if self.m_notProcessedPermanentUI == false and self.m_level ~= UILevel.L1Popup then
 		if self.m_para and self.m_para[1] ~= nil then
 			Event.DispatchEvent(ModuleId.Common, gmodule.notifyId.Common.SHOW_PANEL, {self.m_para[1]});
 		end
 	end
-
+--myl
 	-- after create
 	self:AfterCreate()
 	local GameUtil = require("Main.GameUtil")

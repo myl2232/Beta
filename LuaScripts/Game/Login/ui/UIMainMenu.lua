@@ -22,7 +22,7 @@ end
 
 -- 预创建UI回调
 def.override().DoCreate = function (self)
-	self:CreateUGUIPanel(GameUtil.GetResPath(100000), 3,{});
+	--self:CreateUGUIPanel(GameUtil.GetResPath(100000), 3,{});
 end
 
 def.override().OnCreate = function (self)
@@ -49,7 +49,10 @@ end
 
 def.method("userdata").OnClickStart = function ( self, obj )
 	-- body
-	self:GetComponent("UGUIFormExtend").ProcedureImpl()
+	local extendCom = m_panel:GetComponent("UGUIFormExtend");
+	print("------m_panel.UIExtend-----: "..type(extendCom))
+	
+	m_panel:GetComponent("UGUIFormExtend").ProcedureImpl(extendCom)
 	--AlphaWork.UGUIFormExtend
 end
 
@@ -59,7 +62,7 @@ def.method("userdata").OnClickSetting = function ( self, obj )
 end
 
 def.method("userdata").OnClickAbout = function ( self, obj )
-	-- body
+	-- body	
 	AlphaWork.GameEntry.UI.OpenUIForm(UIFormId.AboutForm)
 end
 
@@ -76,10 +79,12 @@ end
 
 function UIMainMenu.RegistObj( obj )
 	-- body		
-	m_obj = obj;
+	m_panel = obj;
+	m_Instance.m_panel = obj;
 	print("------------------Regist Panel----------------")
-	m_Instance:TouchUGUIGameObject(m_obj);
-	m_Instance:OnLoadPanel();
+	--m_Instance:TouchUGUIGameObject(m_obj);
+	--m_Instance:OnLoadPanel();
+	m_Instance:CreateUGUIPanel(GameUtil.GetResPath(100000), 3,{});
 end
 
 UIMainMenu.Commit()

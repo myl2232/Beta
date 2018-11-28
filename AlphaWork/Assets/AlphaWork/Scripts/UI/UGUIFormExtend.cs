@@ -59,13 +59,13 @@ namespace AlphaWork
 
         }
 
-        public void RefreshUser(string name)
+        protected void RefreshUser(string name)
         {
             InputField info = UIForm.transform.Find(uiCurUser).transform.GetComponent<InputField>();
             info.text = name;
         }
 
-        public void OnClickItem(object sender, GameEventArgs e)
+        protected void OnClickItem(object sender, GameEventArgs e)
         {
             ClickListItemEventArgs args = e as ClickListItemEventArgs;
             if (args != null && this.gameObject == args.ParentForm.gameObject)

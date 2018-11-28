@@ -23,7 +23,7 @@ end
 --callback(UnityEngine.Object): 加载成功回调函数
 def.final("table", "function").AsyncLoadRes = function(resInfo, callback)
     local path = resInfo["path"] or ""
-    local priority = resInfo["priority"] or 0
+    local priority = resInfo["priority"] or 0    
     --ResourceManager.LoadResourceAsyncWithPath(path, callback, priority)
 end
 def.final("string","number", "function").AsyncLoadResByPath = function(path,priority, callback)
@@ -52,7 +52,8 @@ end
 --<param> func: 调用的函数(两种: 无参数; 带int参数, 当前计时器剩余调用次数, 0表示计时器即将结束被回收)
 --<return> timeId
 def.final("number", "number", "function", "=>", "number").AddGlobalTimer = function(timeInterval, loopTime, func)
-    return TBTimer.AddTimer(timeInterval, loopTime, func);
+    --return TBTimer.AddTimer(timeInterval, loopTime, func);--myl
+    return 0;
 end
 
 --删除计时器

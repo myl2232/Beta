@@ -20,6 +20,7 @@ public static class LuaBinder
         AlphaWork_UGuiFormWrap.Register(L);
         AlphaWork_UGUIMsgHandlerWrap.Register(L);
         AlphaWork_GameToLoginEventArgsWrap.Register(L);
+        AlphaWork_UGUIFormExtendWrap.Register(L);
         L.EndModule();
 		L.BeginModule("UnityEngine");
 		UnityEngine_ComponentWrap.Register(L);

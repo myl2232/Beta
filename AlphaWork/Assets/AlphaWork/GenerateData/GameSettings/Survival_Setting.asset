@@ -3,17 +3,16 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d123a41233300054d850ca3b338fb6fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 89cc621bf5c23304f82cfef8b5c3cf9c, type: 3}
   m_Name: Survival_Setting
   m_EditorClassIdentifier: 
   gameMode: 0
   ArMode: 0
   UseNavGrid: 1
-  Users:
-  - {fileID: 11400000, guid: fdf936dfe42cb344e8e2ed86640db359, type: 2}
-  - {fileID: 11400000, guid: 5a6b97f11d0bb4d4e8e31e04eac6d0fa, type: 2}
+  CurrentUser: 
+  CurrentSceneId: 0

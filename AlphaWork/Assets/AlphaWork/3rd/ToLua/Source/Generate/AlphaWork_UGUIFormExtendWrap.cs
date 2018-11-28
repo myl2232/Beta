@@ -8,6 +8,7 @@ public class AlphaWork_UGUIFormExtendWrap
 	{
 		L.BeginClass(typeof(AlphaWork.UGUIFormExtend), typeof(AlphaWork.UGuiForm));
 		L.RegFunction("ProcedureImpl", ProcedureImpl);
+		L.RegFunction("CreateUserImpl", CreateUserImpl);
 		L.RegFunction("FillUserView", FillUserView);
 		L.RegFunction("__eq", op_Equality);
 		L.RegFunction("__tostring", ToLua.op_ToString);
@@ -22,6 +23,23 @@ public class AlphaWork_UGUIFormExtendWrap
 			ToLua.CheckArgsCount(L, 1);
 			AlphaWork.UGUIFormExtend obj = (AlphaWork.UGUIFormExtend)ToLua.CheckObject<AlphaWork.UGUIFormExtend>(L, 1);
 			obj.ProcedureImpl();
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int CreateUserImpl(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			AlphaWork.UGUIFormExtend obj = (AlphaWork.UGUIFormExtend)ToLua.CheckObject<AlphaWork.UGUIFormExtend>(L, 1);
+			string arg0 = ToLua.CheckString(L, 2);
+			obj.CreateUserImpl(arg0);
 			return 0;
 		}
 		catch (Exception e)

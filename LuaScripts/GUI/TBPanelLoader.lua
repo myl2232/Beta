@@ -55,15 +55,38 @@ do
 				onCreateFinish(bFinished, bSucceeded)
 			end)
 		end
-
+		print("-----------------LoadPanel-------------- ")
 		if self.m_panelHide then
+			print("-----------------m_panelHide: "..self.m_panelHide)
 			self.m_isLoading = false
 			self.m_panelHide:SetActive(true)
 			onResourceLoaded(self.m_panelHide, true)
 			return
 		end
-		
-		GameUtil.AsyncLoadRes(resInfo, function(obj)
+		print("----------------AsyncLoad------1-----")
+		--暂时不去CS中加载资源，然后回调。因为之前已经加载完毕。
+			if not self.m_createRequested then
+				self.m_isLoading = false
+				onCreateFinish(false, false)
+				print("------------------not self.m_createRequested------------------------")
+				return
+			end
+
+			if not m_panel then
+				self.m_isLoading = false
+				onCreateFinish(true, false)
+				print("------------------not panel obj ------------------------")
+				return
+			end
+			
+			if self.mWaitLoadCount <= 0 then
+				onResourceLoaded(obj, false)
+				print("---------------onResourceLoaded----------")
+			else
+				self:CreateRelatedGameObject(RelatedRes,onResourceLoaded, self.m_panel)
+			end			
+		print("------------------Async load 2------------------------")
+		--[[ GameUtil.AsyncLoadRes(resInfo, function(obj)			
 			if not self.m_createRequested then
 				self.m_isLoading = false
 				onCreateFinish(false, false)
@@ -80,8 +103,8 @@ do
 				onResourceLoaded(obj, false)
 			else
 				self:CreateRelatedGameObject(RelatedRes,onResourceLoaded,obj)
-			end
-		end)
+			end			
+		end) ]]
 	end
 
 	def.method("table","function","userdata").CreateRelatedGameObject = function(self, RelatedRes, resourceLoad,objview)
@@ -124,7 +147,7 @@ do
 				bFinished 为 false 表示跳过了加载
 	]]
 	def.method("userdata", "string", "userdata", "boolean", "boolean", "function").LoadPanelFromGameObjectInternal = function(self, go, panelName, parentObj, inner_create, no_instantiate, cb)
-		local delay_create = self.m_DelayCreate and inner_create and not no_instantiate
+		local delay_create = self.m_DelayCreate and inner_create and not no_instantiate		
 		local panel
 		--已经实例化过
 		if no_instantiate then
@@ -134,16 +157,19 @@ do
 			if delay_create then
 				go:SetActive(false)	--否则 Instantiate 会立即触发音效
 			end
-			local rootObj = parentObj or self:GetUIRoot(go)
-			--panel = Object.InstantiateWithParent(go,rootObj:GetComponent("Transform"),"GameObject")
-			panel = GameUtil.InstantiateWithParent(go, rootObj)
+			--myl,实际加载由GF完成
+			--[[local rootObj = parentObj or self:GetUIRoot(go)
+			--panel = Object.InstantiateWithParent(go,rootObj:GetComponent("Transform"),"GameObject")			
+			 panel = GameUtil.InstantiateWithParent(go, rootObj)
 			panel:SetActive(false)
 			panel.transform.localRotation = go.transform.localRotation
 			if delay_create then
 				panel:SetActive(false)
-			end
+			end ]]
+			print("-----------instantiate panel----------"..type(m_panel).."--------------------")
+			panel = m_panel
 		end
-		panel.name = panelName
+		m_panel.name = panelName
 		--检测合法性，是否已经要被删除
 		local function CheckPanelValid(self, panel)
 			if panel == nil then
@@ -170,9 +196,10 @@ do
 
 				self.m_isLoading = false
 				self:SetPanelObject(panel)	--self.m_panel = panel
-
+				print("---------------SetPanelObject---------------")
 				if not self.m_panel or panel == nil then
 					cb(false, false)
+					print("-------------------error panel------------------: ")
 					return
 				end
 				--self:OnBeforeAddMsgInternal()
@@ -195,7 +222,7 @@ do
 				afterDelay_2()
 			end
 		end
-
+		print("-----------------LoadPanelFromGameObjectInternal--------------")
 		if delay_create then
 			GameUtil.AddGlobalTimer(0, 1, afterDelay_1)
 		else

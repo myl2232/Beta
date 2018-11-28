@@ -17,13 +17,13 @@ end
 
 -- 预创建UI回调
 def.override().DoCreate = function (self)
-	self:CreateUGUIPanel(GameUtil.GetResPath(100002), 3,{});
+	--self:CreateUGUIPanel(GameUtil.GetResPath(100002), 3,{});
 end
 
 function UIInGame.RegistObj( self, obj )
     -- body
 	m_obj = obj;
-	self:TouchUGUIGameObject(m_obj);
+	m_Instance:CreateUGUIPanel(GameUtil.GetResPath(100002), 1,{});
 end
 
 UIInGame.Commit()

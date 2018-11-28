@@ -30,7 +30,7 @@ end
 
 -- 预创建UI回调
 def.override().DoCreate = function (self)
-    self:CreateUGUIPanel(GameUtil.GetResPath(100001), 3,{});
+    --self:CreateUGUIPanel(GameUtil.GetResPath(100001), 3,{});
      
 end
 
@@ -57,7 +57,7 @@ end
 function UILogin.RegistObj( self, obj )
     -- body
     m_obj = obj;
-	self:TouchUGUIGameObject(m_obj);
+	m_Instance:CreateUGUIPanel(GameUtil.GetResPath(100001), 1,{});
 end
 
 UILogin.Commit()
