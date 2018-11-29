@@ -244,9 +244,12 @@
      <Compile Include="Assets\AlphaWork\3rd\Standard Assets\Utility\WaypointProgressTracker.cs" />
      <Compile Include="Assets\AlphaWork\3rd\ToLua\Source\Generate\AlphaWork_GameEntryWrap.cs" />
      <Compile Include="Assets\AlphaWork\3rd\ToLua\Source\Generate\AlphaWork_GameToLoginEventArgsWrap.cs" />
+     <Compile Include="Assets\AlphaWork\3rd\ToLua\Source\Generate\AlphaWork_LuaScriptComponentWrap.cs" />
      <Compile Include="Assets\AlphaWork\3rd\ToLua\Source\Generate\AlphaWork_UGUIFormExtendWrap.cs" />
      <Compile Include="Assets\AlphaWork\3rd\ToLua\Source\Generate\AlphaWork_UGuiFormWrap.cs" />
      <Compile Include="Assets\AlphaWork\3rd\ToLua\Source\Generate\AlphaWork_UGUIMsgHandlerWrap.cs" />
+     <Compile Include="Assets\AlphaWork\3rd\ToLua\Source\Generate\AlphaWork_UIExtensionWrap.cs" />
+     <Compile Include="Assets\AlphaWork\3rd\ToLua\Source\Generate\AlphaWork_UIFunctionToolsWrap.cs" />
      <Compile Include="Assets\AlphaWork\3rd\ToLua\Source\Generate\DelegateFactory.cs" />
      <Compile Include="Assets\AlphaWork\3rd\ToLua\Source\Generate\GameFramework_BaseEventArgsWrap.cs" />
      <Compile Include="Assets\AlphaWork\3rd\ToLua\Source\Generate\GameFramework_Event_GameEventArgsWrap.cs" />
@@ -603,6 +606,7 @@
      <Compile Include="Assets\AlphaWork\Scripts\UI\UGuiGroupHelper.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\UI\UIExtension.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\UI\UIFormId.cs" />
+     <Compile Include="Assets\AlphaWork\Scripts\UI\UIFunctionTools.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\UI\UListView\IUListItemView.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\UI\UListView\IUListView.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\UI\UListView\UGridListView.cs" />

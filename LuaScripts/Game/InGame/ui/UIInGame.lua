@@ -5,7 +5,6 @@ local GameUtil = require("Main.GameUtil");
 local UIInGame = Lplus.Extend(TBPanelBase, "UIInGame");
 local def = UIInGame.define;
 local m_Instance = nil;
-local m_obj = nil;
 
 -- 单例对象
 def.static("=>", UIInGame).Instance = function (self)
@@ -22,8 +21,10 @@ end
 
 function UIInGame.RegistObj( self, obj )
     -- body
-	m_obj = obj;
+	m_Panel = obj;
+	print("------------------Regist Panel----------------"..m_panel.name..".................")
 	m_Instance:CreateUGUIPanel(GameUtil.GetResPath(100002), 1,{});
+
 end
 
 UIInGame.Commit()

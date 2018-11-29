@@ -5,7 +5,7 @@ local LoginModule = require("Game.Login.LoginModule")
 local UIMainMenu = Lplus.Extend(TBPanelBase, "UIMainMenu");
 local def = UIMainMenu.define;
 local m_Instance = nil;
-local m_obj = nil;
+
 --类成员
 def.field("userdata").mBtnStart = nil;
 def.field("userdata").mBtnSetting = nil;
@@ -16,6 +16,7 @@ def.field("userdata").mBtnQuit = nil;
 def.static("=>", UIMainMenu).Instance = function (self)
 	if(m_Instance == nil) then
 		m_Instance = UIMainMenu();
+		print("=====================intstance UIMainMenu ")
 	end
 	return m_Instance;
 end
@@ -26,7 +27,6 @@ def.override().DoCreate = function (self)
 end
 
 def.override().OnCreate = function (self)
-	print("----------------OnCreate Menu---------------")
     self.mBtnStart = self:FindChild("CenterScreen/Buttons/Start")
     self.mBtnSetting = self:FindChild("CenterScreen/Buttons/Setting")
     self.mBtnAbout = self:FindChild("CenterScreen/Buttons/About")
@@ -35,7 +35,6 @@ end
 
 -- 单击事件回调
 def.method("userdata").onClickObj = function(self, obj)
-	print("~~~~~~~~~~~~~~OnClick~~~~~~~~~~~~~~~")
     if(obj.name == self.mBtnStart.name) then
         self:OnClickStart(obj);
     elseif(obj.name == self.mBtnSetting.name) then    
@@ -49,21 +48,21 @@ end
 
 def.method("userdata").OnClickStart = function ( self, obj )
 	-- body
-	local extendCom = m_panel:GetComponent("UGUIFormExtend");
-	print("------m_panel.UIExtend-----: "..type(extendCom))
+--[[ 	local extendCom = m_panel:GetComponent("UGUIFormExtend");
+	print("------m_panel.UIExtend-----: "..type(extendCom)) ]]
 	
-	m_panel:GetComponent("UGUIFormExtend").ProcedureImpl(extendCom)
-	--AlphaWork.UGUIFormExtend
+	m_panel:GetComponent("UGUIFormExtend"):ProcedureImpl()
 end
 
 def.method("userdata").OnClickSetting = function ( self, obj )
-	-- body
-	AlphaWork.GameEntry.UI.OpenUIForm(UIFormId.SettingForm)
+	-- body	
+	AlphaWork.UIFunctionTools.OpenUIFromId(UIFormId.SettingForm);
 end
 
 def.method("userdata").OnClickAbout = function ( self, obj )
-	-- body	
-	AlphaWork.GameEntry.UI.OpenUIForm(UIFormId.AboutForm)
+	-- body		
+	--AlphaWork.GameEntry.UI.OpenUIForm(AlphaWork.GameEntry.UI,UIFormId.AboutForm)
+	AlphaWork.UIFunctionTools.OpenUIFromId(UIFormId.AboutForm);
 end
 
 def.method("userdata").OnClickQuit = function ( self, obj )
@@ -80,10 +79,7 @@ end
 function UIMainMenu.RegistObj( obj )
 	-- body		
 	m_panel = obj;
-	m_Instance.m_panel = obj;
-	print("------------------Regist Panel----------------")
-	--m_Instance:TouchUGUIGameObject(m_obj);
-	--m_Instance:OnLoadPanel();
+	print("------------------Regist Panel----------------"..m_panel.name..".................")
 	m_Instance:CreateUGUIPanel(GameUtil.GetResPath(100000), 3,{});
 end
 

@@ -55,7 +55,7 @@ do
 				onCreateFinish(bFinished, bSucceeded)
 			end)
 		end
-		print("-----------------LoadPanel-------------- ")
+		print("-----------------LoadPanel-------------- "..panelName.."----------------")
 		if self.m_panelHide then
 			print("-----------------m_panelHide: "..self.m_panelHide)
 			self.m_isLoading = false
@@ -63,7 +63,7 @@ do
 			onResourceLoaded(self.m_panelHide, true)
 			return
 		end
-		print("----------------AsyncLoad------1-----")
+		print("----------------AsyncLoad-----------")
 		--暂时不去CS中加载资源，然后回调。因为之前已经加载完毕。
 			if not self.m_createRequested then
 				self.m_isLoading = false
@@ -85,7 +85,7 @@ do
 			else
 				self:CreateRelatedGameObject(RelatedRes,onResourceLoaded, self.m_panel)
 			end			
-		print("------------------Async load 2------------------------")
+		--print("------------------Async load 2------------------------")
 		--[[ GameUtil.AsyncLoadRes(resInfo, function(obj)			
 			if not self.m_createRequested then
 				self.m_isLoading = false
@@ -157,7 +157,7 @@ do
 			if delay_create then
 				go:SetActive(false)	--否则 Instantiate 会立即触发音效
 			end
-			--myl,实际加载由GF完成
+			--myl,实际加载已经由GF完成
 			--[[local rootObj = parentObj or self:GetUIRoot(go)
 			--panel = Object.InstantiateWithParent(go,rootObj:GetComponent("Transform"),"GameObject")			
 			 panel = GameUtil.InstantiateWithParent(go, rootObj)
@@ -166,10 +166,12 @@ do
 			if delay_create then
 				panel:SetActive(false)
 			end ]]
-			print("-----------instantiate panel----------"..type(m_panel).."--------------------")
+			print("-----------instantiate panel----------"..panelName.."--------------------")
 			panel = m_panel
 		end
+		print(".............m_panel.name: "..m_panel.name.."...............")
 		m_panel.name = panelName
+		print(".............panelName: "..panelName..".....................")
 		--检测合法性，是否已经要被删除
 		local function CheckPanelValid(self, panel)
 			if panel == nil then

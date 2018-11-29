@@ -7,7 +7,7 @@ namespace AlphaWork
     public class ProcedureMenu : ProcedureBase
     {
         private bool m_StartGame = false;
-        private UGUIFormExtend m_MenuForm = null;
+        private UGUIFormExtend m_Form = null;
 
         public override bool UseNativeDialog
         {
@@ -50,11 +50,10 @@ namespace AlphaWork
         {
             base.OnLeave(procedureOwner, isShutdown);
 
-
-            if (m_MenuForm != null)
+            if (m_Form != null)
             {
-                m_MenuForm.Close(isShutdown);
-                m_MenuForm = null;
+                m_Form.Close(isShutdown);
+                m_Form = null;
             }
             m_StartGame = false;
         }
@@ -88,8 +87,8 @@ namespace AlphaWork
                 return;
             }
 
-            m_MenuForm = (UGUIFormExtend)ne.UIForm.Logic;
-            GameEntry.LuaScriptEngine.RegistGameObject2Lua(m_MenuForm.CachedTransform.gameObject, GUIDefine.UIMainMenu);
+            m_Form = (UGUIFormExtend)ne.UIForm.Logic;
+            GameEntry.LuaScriptEngine.RegistGameObject2Lua(m_Form.CachedTransform.gameObject, GUIDefine.UIMainMenu);
         }
     }
 }

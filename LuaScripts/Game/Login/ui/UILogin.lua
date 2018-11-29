@@ -5,7 +5,6 @@ local LoginModule = require("Game.Login.LoginModule")
 local UILogin = Lplus.Extend(TBPanelBase, "UILogin");
 local def = UILogin.define;
 local m_Instance = nil;
-local m_obj = nil;
 --类成员
 def.field("userdata").mInputUser = nil;
 def.field("userdata").mLoginBtn = nil;
@@ -15,9 +14,9 @@ def.field("userdata").mUserList = nil;
 -- 单例对象
 def.static("=>", UILogin).Instance = function (self)
 	if(m_Instance == nil) then
-		m_Instance = UILogin();
+        m_Instance = UILogin();
+        print("=====================intstance UILogin ")
     end
-    print("Init AlphaWork-login!!!!");
 	return m_Instance;
 end
 
@@ -56,8 +55,10 @@ end
 
 function UILogin.RegistObj( self, obj )
     -- body
-    m_obj = obj;
-	m_Instance:CreateUGUIPanel(GameUtil.GetResPath(100001), 1,{});
+    m_Panel = obj;
+    print("------------------Regist Panel----------------"..type(obj)..".................")
+    m_Instance:CreateUGUIPanel(GameUtil.GetResPath(100001), 3,{});
+    
 end
 
 UILogin.Commit()

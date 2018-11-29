@@ -20,6 +20,7 @@ namespace AlphaWork
         public const string LuaAssetExtInBundle = ".bytes";
         private LuaState m_LuaState = null;
         private LuaLooper m_LuaLooper = null;
+        //private UIFunctionTools m_luaTools = null;
 
         private Dictionary<string, byte[]> m_CachedLuaScripts = new Dictionary<string, byte[]>();
 
@@ -46,11 +47,17 @@ namespace AlphaWork
             }
         }
 
+        //public UIFunctionTools UITools
+        //{
+        //    get { return m_luaTools; }
+        //}
+
         /// <summary>
         /// 启动 Lua 虚拟机。
         /// </summary>
         public void StartLuaVM()
         {
+            //m_luaTools = new UIFunctionTools();
             m_LuaState.Start();
             StartLooper();
             StartMain();
