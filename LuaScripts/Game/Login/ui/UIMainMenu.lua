@@ -50,8 +50,8 @@ def.method("userdata").OnClickStart = function ( self, obj )
 	-- body
 --[[ 	local extendCom = m_panel:GetComponent("UGUIFormExtend");
 	print("------m_panel.UIExtend-----: "..type(extendCom)) ]]
-	
-	m_panel:GetComponent("UGUIFormExtend"):ProcedureImpl()
+
+	self.m_panel:GetComponent("UGUIFormExtend"):ProcedureImpl()
 end
 
 def.method("userdata").OnClickSetting = function ( self, obj )
@@ -77,10 +77,9 @@ def.method("userdata").OnClickQuit = function ( self, obj )
 end
 
 function UIMainMenu.RegistObj( obj )
-	-- body		
-	m_panel = obj;
-	print("------------------Regist Panel----------------"..m_panel.name..".................")
-	m_Instance:CreateUGUIPanel(GameUtil.GetResPath(100000), 3,{});
+	-- body
+	print("------------------Regist Panel----------------"..obj.name..".................")
+	m_Instance:CreateUGUIPanel(GameUtil.GetResPath(100000), 1,{},obj);
 end
 
 UIMainMenu.Commit()

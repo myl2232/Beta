@@ -53,11 +53,10 @@ def.method("userdata").OnClickLogout = function ( self, obj )
     AlphaWork.GameEntry.Event.Fire(this, arg);
 end
 
-function UILogin.RegistObj( self, obj )
-    -- body
-    m_Panel = obj;
-    print("------------------Regist Panel----------------"..type(obj)..".................")
-    m_Instance:CreateUGUIPanel(GameUtil.GetResPath(100001), 3,{});
+function UILogin.RegistObj( obj )
+    -- body   
+    print("------------------Regist Panel----------------"..obj.name..".................")
+    m_Instance:CreateUGUIPanel(GameUtil.GetResPath(100001), 1,{},obj);
     
 end
 

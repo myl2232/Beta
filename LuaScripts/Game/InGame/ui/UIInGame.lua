@@ -20,10 +20,9 @@ def.override().DoCreate = function (self)
 end
 
 function UIInGame.RegistObj( self, obj )
-    -- body
-	m_Panel = obj;
-	print("------------------Regist Panel----------------"..m_panel.name..".................")
-	m_Instance:CreateUGUIPanel(GameUtil.GetResPath(100002), 1,{});
+    -- body	
+	print("------------------Regist Panel----------------"..obj.name..".................")
+	m_Instance:CreateUGUIPanel(GameUtil.GetResPath(100002), 1,{},obj);
 
 end
 

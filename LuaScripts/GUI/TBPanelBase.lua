@@ -179,13 +179,13 @@ end
 def.method("userdata").SetParentObj = function (self,parentObj)
 	self.m_parantObj = parentObj
 end
-def.method("table", "number", "table").CreateUGUIPanel = function(self, resInfo, level, relatedRes)
+def.method("table", "number", "table","userdata").CreateUGUIPanel = function(self, resInfo, level, relatedRes,obj)
 	self.m_level = level
 	self.loadResTable = {};
-	self:CreatePanelInternal(resInfo,relatedRes)
+	self:CreatePanelInternal(resInfo,relatedRes,obj)
 end
 
-def.method("table","table").CreatePanelInternal = function(self, resInfo, relatedRes)
+def.method("table","table","userdata").CreatePanelInternal = function(self, resInfo, relatedRes,obj)
 	if self:IsResourceReady() then
 		return
 	end
@@ -195,14 +195,13 @@ def.method("table","table").CreatePanelInternal = function(self, resInfo, relate
 	self.m_catcheShow = nil
 	--注册顶级 Panel
 	local respath = resInfo["path"] or ""
-
 	local panelName = self:RegisterUGUIPanel(respath)
 	
 	TBGUIMan.Instance():ShowWaiting(true)
 	local TBGUIMan = require("GUI.TBGUIMan")
 	TBGUIMan.Instance():AddUI(self, self.m_level)
 	--实际资源加载由GF完成
-	self:LoadPanel(resInfo, panelName, self.m_parantObj, relatedRes, function (bFinished, bSucceeded)
+	self:LoadPanel(resInfo, panelName, self.m_parantObj, relatedRes,obj, function (bFinished, bSucceeded)
 		if not bFinished or not bSucceeded then
 			return
 		end
@@ -247,7 +246,7 @@ def.method("boolean").PlayPanelTween = function ( self ,isOpen)
 end
 
 def.method().OnLoadPanel = function (self)
-	print("--------------------------TBPanelBase :OnLoadPanel ".. self.m_panelName)
+	print("--------------------------TBPanelBase :OnLoadPanel ".. self.m_panel.name)
 	local panelObj = self.m_panel
 	--local TBGUIMan = require("GUI.TBGUIMan")
 	--TBGUIMan.Instance():AddUI(self, self.m_level)
