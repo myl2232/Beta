@@ -327,6 +327,7 @@
      <Compile Include="Assets\AlphaWork\3rd\ToLua\Source\Generate\UnityEngine_UI_ToggleWrap.cs" />
      <Compile Include="Assets\AlphaWork\3rd\ToLua\Source\Generate\UnityEngine_WrapModeWrap.cs" />
      <Compile Include="Assets\AlphaWork\3rd\ToLua\Source\Generate\UnityEngine_WWWWrap.cs" />
+     <Compile Include="Assets\AlphaWork\3rd\ToLua\Source\Generate\UnityGameFramework_Runtime_EventComponentWrap.cs" />
      <Compile Include="Assets\AlphaWork\3rd\ToLua\Source\Generate\UnityGameFramework_Runtime_GameFrameworkComponentWrap.cs" />
      <Compile Include="Assets\AlphaWork\3rd\ToLua\Source\Generate\UnityGameFramework_Runtime_UIComponentWrap.cs" />
      <Compile Include="Assets\AlphaWork\3rd\ToLua\Source\Generate\UnityGameFramework_Runtime_UIFormLogicWrap.cs" />

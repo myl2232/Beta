@@ -21,10 +21,10 @@ def.static("=>", UILogin).Instance = function (self)
 end
 
 def.override().OnCreate = function (self)
-    self.mInputUser = self:FindChild("canvas/InputField")
-    self.mLoginBtn = self:FindChild("canvas/BtnLogin")
-    self.mLogoutBtn = self:FindChild("canvas/BtnExit")
-    self.mUserList = self:FindChild("canvas/UserViewList")
+    self.mInputUser = self:FindChild("Canvas/InputField")
+    self.mLoginBtn = self:FindChild("Canvas/BtnLogin")
+    self.mLogoutBtn = self:FindChild("Canvas/BtnExit")
+    self.mUserList = self:FindChild("Canvas/UserViewList")
 end
 
 -- 预创建UI回调
@@ -44,13 +44,13 @@ end
 
 def.method("userdata").OnClickLogin = function ( self, obj )
     -- body
-
+    self.m_panel:GetComponent("UGUIFormExtend"):ProcedureImpl()
 end
 
 def.method("userdata").OnClickLogout = function ( self, obj )
     -- body
     local arg = AlphaWork.GameToLoginEventArgs.New();--Myl:调用方式有疑问
-    AlphaWork.GameEntry.Event.Fire(this, arg);
+    AlphaWork.GameEntry.Event:Fire(this, arg);
 end
 
 function UILogin.RegistObj( obj )

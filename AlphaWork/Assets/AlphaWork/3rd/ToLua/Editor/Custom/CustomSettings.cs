@@ -156,6 +156,7 @@ public static class CustomSettings
         //GameFrameWork
         _GT(typeof(UnityGameFramework.Runtime.UIFormLogic)),
         _GT(typeof(UnityGameFramework.Runtime.UIComponent)),
+        _GT(typeof(UnityGameFramework.Runtime.EventComponent)),
         _GT(typeof(UGuiForm)),
         _GT(typeof(AlphaWork.GameEntry)),
         _GT(typeof(AlphaWork.UGUIMsgHandler)),
