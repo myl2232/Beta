@@ -25,6 +25,7 @@ public static class LuaBinder
         AlphaWork_UIExtensionWrap.Register(L);
         AlphaWork_UIFunctionToolsWrap.Register(L);
         UnityGameFramework_Runtime_EventComponentWrap.Register(L);
+        AlphaWork_UPlayerWrap.Register(L);
         //AlphaWork_LuaScriptComponentWrap.Register(L);
         L.EndModule();
 		L.BeginModule("UnityEngine");

@@ -165,6 +165,8 @@ public static class CustomSettings
         _GT(typeof(AlphaWork.UIExtension)),
         _GT(typeof(AlphaWork.UIFunctionTools)),
         _GT(typeof(AlphaWork.LuaScriptComponent)),
+        _GT(typeof(AlphaWork.UPlayer)),
+        _GT(typeof(AlphaWork.DataBaseComponent)),
         //_GT(typeof(UnityGameFramework.Runtime.DownloadComponent)),
         //_GT(typeof(UnityGameFramework.Runtime.EventComponent)),
         //_GT(typeof(UnityGameFramework.Runtime.BaseComponent)),

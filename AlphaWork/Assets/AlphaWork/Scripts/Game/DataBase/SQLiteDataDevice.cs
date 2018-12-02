@@ -115,7 +115,7 @@ namespace AlphaWork
             dataList = (from x in _connection.Table<T>() where x.KeyName == name select x).ToList();
         }
 
-        public void UpdateData<T>(T data) where T : ITable, new()
+        public void UpdateData<T>(T data) where T :  ITable, new()
         {
             _connection.Update(data);
         }
