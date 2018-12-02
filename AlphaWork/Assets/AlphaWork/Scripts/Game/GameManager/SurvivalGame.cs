@@ -101,7 +101,7 @@ namespace AlphaWork
                 arg.Gb.transform.position = arg.TransCache.position;
                 List<UPlayer> players;
                 GameEntry.DataBase.DataDevice.GetDataByKey<UPlayer>(GameEntry.Config.GameSetting.CurrentUser, out players);
-                if (players.Count >= 0)
+                if (players.Count > 0)
                 {
                     Vector3 lastPos = new Vector3(players[0].xPos, players[0].yPos, players[0].zPos);
                     if((MainEthan.transform.position - lastPos).magnitude > 0.1)

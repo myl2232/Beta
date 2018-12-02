@@ -18,6 +18,12 @@ namespace AlphaWork
         private bool bExit = false;
         private UGUIFormExtend m_Form = null;
 
+        public override void Go()
+        {
+            base.Go();
+            
+        }
+
         protected override void OnInit(ProcedureOwner procedureOwner)
         {
             base.OnInit(procedureOwner);
