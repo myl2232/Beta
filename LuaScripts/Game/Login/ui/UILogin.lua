@@ -26,7 +26,7 @@ def.override().OnCreate = function (self)
     self.mLoginBtn = self:FindChild("Canvas/BtnLogin")
     self.mLogoutBtn = self:FindChild("Canvas/BtnExit")
     self.mUserList = self:FindChild("Canvas/UserViewList")
-    self.mUserText = self:FindChild("Canvas/InputField/Text")    
+    --self.mUserText = self:FindChild("Canvas/InputField/Text")    
 end
 
 -- 预创建UI回调
@@ -48,10 +48,13 @@ end
 
 def.method("userdata").OnClickLogin = function ( self, obj )
     -- body
-    if self.mUserText:GetComponent("InputField").text ~= "" then
-        self:CreateUserImpl(self.mUserText.text);
+
+    local text = self.mInputUser:GetComponent("InputField").text
+
+    if text ~= "" then
+        self:CreateUserImpl(text);
         self.m_panel:GetComponent("UGUIFormExtend"):ProcedureImpl()
-    end    
+    end
 end
 
 def.method("userdata").OnClickLogout = function ( self, obj )
