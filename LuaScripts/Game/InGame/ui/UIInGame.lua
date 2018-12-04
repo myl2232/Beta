@@ -51,7 +51,7 @@ def.method("userdata").onClickObj = function(self, obj)
 		self:OnKick2(obj);
 	elseif(obj.name == self.mAddItem.name) then    
 		self:OnAdd(obj);
-	elseif(obj.name == self.mAddItem.name) then    
+	elseif(obj.name == self.mExit.name) then    
         self:OnBackLogin(obj);
     end
 end

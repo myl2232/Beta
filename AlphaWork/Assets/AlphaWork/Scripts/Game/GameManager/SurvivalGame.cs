@@ -84,8 +84,8 @@ namespace AlphaWork
                 //});
             }
             else if(!MainEthan.gameObject.activeSelf)
-            {
-                MainEthan.OnShow(null);
+            {                
+                //MainEthan.OnShow(null);
             }
         }
 
