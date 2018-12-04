@@ -19,7 +19,6 @@ public static class LuaBinder
         AlphaWork_GameEntryWrap.Register(L);
         AlphaWork_UGuiFormWrap.Register(L);
         AlphaWork_UGUIMsgHandlerWrap.Register(L);
-        AlphaWork_GameToLoginEventArgsWrap.Register(L);
         AlphaWork_UGUIFormExtendWrap.Register(L);
         UnityGameFramework_Runtime_UIComponentWrap.Register(L);
         AlphaWork_UIExtensionWrap.Register(L);
@@ -29,7 +28,12 @@ public static class LuaBinder
         AlphaWork_DataBaseComponentWrap.Register(L);
         AlphaWork_ConfigComponentWrap.Register(L);
         AlphaWork_GameSettingWrap.Register(L);
-        //AlphaWork_LuaScriptComponentWrap.Register(L);
+        AlphaWork_UIAttack1EventArgsWrap.Register(L);
+        AlphaWork_UIAttack2EventArgsWrap.Register(L);
+        AlphaWork_UIAlphaEventArgsWrap.Register(L);
+        AlphaWork_UIBetaEventArgsWrap.Register(L);
+        AlphaWork_UIThetaEventArgsWrap.Register(L);
+        AlphaWork_GameToLoginEventArgsWrap.Register(L);
         L.EndModule();
         L.BeginModule("UnityEngine.UI");
         UnityEngine_UI_ImageWrap.Register(L);

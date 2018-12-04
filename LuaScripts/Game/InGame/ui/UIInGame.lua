@@ -45,16 +45,39 @@ def.method("userdata").onClickObj = function(self, obj)
         self:OnAttack1(obj);
     elseif(obj.name == self.mAttack2.name) then    
         self:OnAttack2(obj);
-        
+	elseif(obj.name == self.mAI.name) then    
+		self:OnKick1(obj);
+	elseif(obj.name == self.mReplace.name) then    
+		self:OnKick2(obj);
+	elseif(obj.name == self.mAddItem.name) then    
+		self:OnAdd(obj);
+	elseif(obj.name == self.mAddItem.name) then    
+        self:OnBackLogin(obj);
     end
 end
 
 def.method("userdata").OnAttack1 = function ( self, obj )
-
+	AlphaWork.GameEntry.Event:Fire(self.m_panel, AlphaWork.UIAttack1EventArgs.New())
 end
 
 def.method("userdata").OnAttack2 = function ( self, obj )
+	AlphaWork.GameEntry.Event:Fire(self.m_panel, AlphaWork.UIAttack2EventArgs.New())
+end
 
+def.method("userdata").OnKick1 = function ( self, obj )
+	AlphaWork.GameEntry.Event:Fire(self.m_panel, AlphaWork.UIAlphaEventArgs.New())
+end
+
+def.method("userdata").OnKick2 = function ( self, obj )
+	AlphaWork.GameEntry.Event:Fire(self.m_panel, AlphaWork.UIBetaEventArgs.New())
+end
+
+def.method("userdata").OnAdd = function ( self, obj )
+	AlphaWork.GameEntry.Event:Fire(self.m_panel, AlphaWork.UIThetaEventArgs.New())
+end
+
+def.method("userdata").OnBackLogin = function ( self, obj )
+	AlphaWork.GameEntry.Event:Fire(self.m_panel, AlphaWork.GameToLoginEventArgs.New())
 end
 
 function UIInGame.RegistObj( obj )

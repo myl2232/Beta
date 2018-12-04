@@ -6,7 +6,7 @@ using GameFramework.Event;
 
 namespace AlphaWork
 {
-    class UIAttack1EventArgs : GameEventArgs
+    public class UIAttack1EventArgs : GameEventArgs
     {
         public static readonly int EventId = typeof(UIAttack1EventArgs).GetHashCode();
         public override int Id

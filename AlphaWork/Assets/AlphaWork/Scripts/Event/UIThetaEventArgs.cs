@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AlphaWork
 {
-    class UIThetaEventArgs : GameEventArgs
+    public class UIThetaEventArgs : GameEventArgs
     {
         public static readonly int EventId = typeof(UIThetaEventArgs).GetHashCode();
         public override int Id
