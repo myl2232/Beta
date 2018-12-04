@@ -30,7 +30,7 @@ public static class CustomSettings
         typeof(UnityEngine.RenderSettings),
         typeof(UnityEngine.QualitySettings),
         typeof(UnityEngine.GL),
-        typeof(UnityEngine.Graphics),    
+        typeof(UnityEngine.Graphics),       
     };
 
     //附加导出委托类型(在导出委托时, customTypeList 中牵扯的委托类型都会导出， 无需写在这里)
@@ -157,8 +157,10 @@ public static class CustomSettings
         _GT(typeof(UnityGameFramework.Runtime.UIFormLogic)),
         _GT(typeof(UnityGameFramework.Runtime.UIComponent)),
         _GT(typeof(UnityGameFramework.Runtime.EventComponent)),
+        //AlphaWork
         _GT(typeof(UGuiForm)),
         _GT(typeof(AlphaWork.GameEntry)),
+        _GT(typeof(AlphaWork.ConfigComponent)),
         _GT(typeof(AlphaWork.UGUIMsgHandler)),
         _GT(typeof(AlphaWork.UGUIFormExtend)),
         _GT(typeof(AlphaWork.GameToLoginEventArgs)),
@@ -167,6 +169,7 @@ public static class CustomSettings
         _GT(typeof(AlphaWork.LuaScriptComponent)),
         _GT(typeof(AlphaWork.UPlayer)),
         _GT(typeof(AlphaWork.DataBaseComponent)),
+        _GT(typeof(AlphaWork.GameSetting)),
         //_GT(typeof(UnityGameFramework.Runtime.DownloadComponent)),
         //_GT(typeof(UnityGameFramework.Runtime.EventComponent)),
         //_GT(typeof(UnityGameFramework.Runtime.BaseComponent)),
@@ -192,6 +195,7 @@ public static class CustomSettings
         //_GT(typeof(AlphaWork.LuaScriptComponent)),
         //_GT(typeof(AlphaWork.DataBaseComponent)),
         //UI
+
         _GT(typeof(UnityEngine.UI.Image)),
         _GT(typeof(UnityEngine.UI.RawImage)),
         _GT(typeof(UnityEngine.UI.InputField)),
@@ -203,6 +207,7 @@ public static class CustomSettings
         _GT(typeof(UnityEngine.UI.Selectable)),
         _GT(typeof(UnityEngine.UI.Dropdown)),
         _GT(typeof(UnityEngine.UI.ScrollRect)),
+        _GT(typeof(UnityEngine.UI.Text)),
         _GT(typeof(Canvas)),
         //
         

@@ -10,7 +10,7 @@ def.field("userdata").mInputUser = nil;
 def.field("userdata").mLoginBtn = nil;
 def.field("userdata").mLogoutBtn = nil;
 def.field("userdata").mUserList = nil;
-def.field("userdata").mUserText = nil;
+def.field("userdata").mUser = nil;
 
 -- 单例对象
 def.static("=>", UILogin).Instance = function (self)
@@ -26,7 +26,7 @@ def.override().OnCreate = function (self)
     self.mLoginBtn = self:FindChild("Canvas/BtnLogin")
     self.mLogoutBtn = self:FindChild("Canvas/BtnExit")
     self.mUserList = self:FindChild("Canvas/UserViewList")
-    --self.mUserText = self:FindChild("Canvas/InputField/Text")    
+    self.mUser = self.mInputUser:GetComponent("InputField")
 end
 
 -- 预创建UI回调
@@ -49,8 +49,7 @@ end
 def.method("userdata").OnClickLogin = function ( self, obj )
     -- body
 
-    local text = self.mInputUser:GetComponent("InputField").text
-
+    local text = self.mUser.text
     if text ~= "" then
         self:CreateUserImpl(text);
         self.m_panel:GetComponent("UGUIFormExtend"):ProcedureImpl()
@@ -70,12 +69,12 @@ def.method("userdata").OnClickUserList = function ( self, obj )
 end
 
 def.method("string").CreateUserImpl = function ( self, name )
-    local player = UPlayer().New();
+    local player = AlphaWork.UPlayer().New();
     player.user = name;
-    player.gamesetting = GameEntry.Config.GameSetting.UID;
+    player.gamesetting = AlphaWork.GameEntry.Config.GameSetting.UID;
 
     local players = {};
-    players = AlphaWork.GameEntry.DataBase.GetPlayerByName(name);
+    players = AlphaWork.GameEntry.DataBase:GetPlayerByName(name);
     --[[ AlphaWork.GameEntry.DataBase.DataDevice.GetDataByKey<AlphaWork.UPlayer>(name,out players);]]
     if players == nil or players[0] == nil then
         AlphaWork.GameEntry.DataBase.AddPlayer(player);

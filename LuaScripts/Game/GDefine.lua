@@ -8,8 +8,8 @@ _G.error = function ( str )
 end  
 --[[
     Unity导出模块方便使用
-]]--[[ 
-_G.Image =UnityEngine.UI.Image
+]]
+--[[ _G.Image =UnityEngine.UI.Image
 _G.RawImage =UnityEngine.UI.RawImage
 _G.Text =UnityEngine.UI.Text
 _G.InputField =UnityEngine.UI.InputField
@@ -21,6 +21,7 @@ _G.Scrollbar =UnityEngine.UI.Scrollbar
 _G.Selectable =UnityEngine.UI.Selectable
 _G.Dropdown =UnityEngine.UI.Dropdown
 _G.ScrollRect =UnityEngine.UI.ScrollRect  ]]
+
 _G.Canvas =UnityEngine.Canvas
 _G.Input =UnityEngine.Input
 _G.KeyCode =UnityEngine.KeyCode
