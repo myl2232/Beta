@@ -38,6 +38,7 @@ namespace AlphaWork
 
         public virtual void Shutdown()
         {
+            GameOver = true;
             GameEntry.Event.Unsubscribe(ShowEntitySuccessEventArgs.EventId, OnShowEntitySuccess);
             GameEntry.Event.Unsubscribe(ShowEntityFailureEventArgs.EventId, OnShowEntityFailure);
         }

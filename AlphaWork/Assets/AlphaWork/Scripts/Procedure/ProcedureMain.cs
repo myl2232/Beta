@@ -38,6 +38,7 @@ namespace AlphaWork
 
             GameEntry.Event.Unsubscribe(GameToLoginEventArgs.EventId, OnBackToLogin);
             GameEntry.Event.Unsubscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
+            GameEntry.Event.Fire(this, new RefreshPosArgs(GameEntry.Config.GameSetting.gameContrller.MainActor.gameObject, GameEntry.Config.GameSetting.gameContrller.MainActor.transform));
             GameEntry.Config.GameSetting.gameContrller.Shutdown();
         }
 
