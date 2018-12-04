@@ -20,8 +20,12 @@ namespace AlphaWork
             protected set;
         }
 
-        public static UnityGameFramework.Runtime.Entity MainEthan = null;
-
+        protected UnityGameFramework.Runtime.Entity MainEthan = null;
+        public UnityGameFramework.Runtime.Entity MainActor
+        {
+            get { return MainEthan; }
+            set { MainEthan = value; }
+        }
 
         public virtual void Initialize()
         {
@@ -74,12 +78,12 @@ namespace AlphaWork
 
         public static void GetMainPos(out Vector3 pos)
         {
-            pos = MainEthan.transform.position;
+            pos = GameEntry.Config.GameSetting.gameContrller.MainActor.transform.position;
         }
 
         public static bool HasMainActor()
         {
-            return null != MainEthan ? true : false;
+            return null != GameEntry.Config.GameSetting.gameContrller.MainActor ? true : false;
         }
     }
 }

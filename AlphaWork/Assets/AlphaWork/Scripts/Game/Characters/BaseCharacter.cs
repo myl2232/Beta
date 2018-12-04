@@ -83,10 +83,10 @@ namespace AlphaWork
 
         public virtual bool IsMainActor()
         {
-            if (!GameBase.MainEthan)
+            if (!GameEntry.Config.GameSetting.gameContrller.MainActor)
                 return false;
 
-            if (ParentId == GameBase.MainEthan.Id)
+            if (ParentId == GameEntry.Config.GameSetting.gameContrller.MainActor.Id)
                 return true;
 
             return false;

@@ -52,6 +52,8 @@ namespace AlphaWork
         public override void Shutdown()
         {
             base.Shutdown();
+            GameEntry.Entity.HideAllLoadedEntities();
+            GameEntry.Entity.HideEntity(MainActor);
             GameEntry.Event.Unsubscribe(RefreshPosArgs.EventId, OnRefreshMainPos);
             GameEntry.Event.Unsubscribe(GameStartEventArgs.EventId, OnGameStart);       
         }
@@ -96,7 +98,7 @@ namespace AlphaWork
         public void OnRefreshMainPos(object sender, GameEventArgs e)
         {
             RefreshPosArgs arg = e as RefreshPosArgs;
-            if (arg != null && GameBase.MainEthan.gameObject == arg.Gb)
+            if (arg != null && MainActor.gameObject == arg.Gb)
             {
                 arg.Gb.transform.position = arg.TransCache.position;
                 List<UPlayer> players;

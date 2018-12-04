@@ -29,10 +29,10 @@ namespace AlphaWork
         {
             base.OnShow(userdata);
 
-            if(GameBase.MainEthan == null)
+            if(GameEntry.Config.GameSetting.gameContrller.MainActor == null)
             {
-                GameBase.MainEthan = Entity;
-                GameObject gb = GameBase.MainEthan.Handle as GameObject;
+                GameEntry.Config.GameSetting.gameContrller.MainActor = Entity;
+                GameObject gb = GameEntry.Config.GameSetting.gameContrller.MainActor.Handle as GameObject;
                 gb.name = "MainEthan";
 
                 //主相机要处理遮挡半透的情况
