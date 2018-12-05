@@ -58,13 +58,14 @@ end
 
 def.method("userdata").OnClickLogout = function ( self, obj )
     -- body
-    local arg = AlphaWork.GameToLoginEventArgs.New();--Myl:调用方式有疑问
+    --print("-------------------back login: "..typeof(self.m_panel).."..................")
+    local arg = AlphaWork.GameToLoginEventArgs.New(self.m_panel);--Myl:调用方式有疑问
     AlphaWork.GameEntry.Event:Fire(this, arg);
 end
 
 def.method("userdata").OnClickUserList = function ( self, obj )
     -- body
-    print("--------------clicked userlist---------")
+    --print("--------------clicked userlist---------")
     --self.m_panel:GetComponent("UGUIFormExtend"):ProcedureImpl()
 end
 

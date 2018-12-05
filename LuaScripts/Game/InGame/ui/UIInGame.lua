@@ -77,7 +77,9 @@ def.method("userdata").OnAdd = function ( self, obj )
 end
 
 def.method("userdata").OnBackLogin = function ( self, obj )
-	AlphaWork.GameEntry.Event:Fire(self.m_panel, AlphaWork.GameToLoginEventArgs.New())
+	--print("-------------------back login: "..typeof(self.m_panel).."..................")
+	local arg = AlphaWork.GameToLoginEventArgs.New(self.m_panel);
+	AlphaWork.GameEntry.Event:Fire(self.m_panel, arg)	
 end
 
 function UIInGame.RegistObj( obj )
