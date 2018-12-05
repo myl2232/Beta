@@ -127,7 +127,7 @@ namespace AlphaWork
             if (m_moveTarget)
                 m_moveTarget.Move(m_startPos, m_nextPos);                        
         }
-
+                                                                                                                        
         protected void FaceToTarget()
         {
             GameObject gb = Entity.Handle as GameObject;
