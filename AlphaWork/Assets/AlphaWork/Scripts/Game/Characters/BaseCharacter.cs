@@ -86,7 +86,7 @@ namespace AlphaWork
             if (!GameEntry.Config.GameSetting.gameContrller.MainActor)
                 return false;
 
-            if (ParentId == GameEntry.Config.GameSetting.gameContrller.MainActor.Id)
+            if (ParentId == 0/*GameEntry.Config.GameSetting.gameContrller.MainActor.Id*/)
                 return true;
 
             return false;

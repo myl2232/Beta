@@ -1,4 +1,5 @@
-﻿using GameFramework.Event;
+﻿using GameFramework;
+using GameFramework.Event;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,7 @@ namespace AlphaWork
         void Start()
 		{
             gameObject.GetOrAddComponent<BehaviourShakeHit>();
-            gameObject.GetComponent<BaseCharacter>().ParentId = Id;
+            gameObject.GetComponent<BaseCharacter>().ParentId = 0/*Id*/;
         }
 
         // Update is called once per frame
@@ -24,7 +25,7 @@ namespace AlphaWork
         protected override void OnHide(object userData)
         {
             base.OnHide(userData);
-
+            Destroy(this);
         }
         
         protected override void OnShow(object userdata)

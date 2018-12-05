@@ -5,6 +5,7 @@ using GameFramework;
 using GameFramework.Event;
 using UnityGameFramework.Runtime;
 using UnityEngine;
+using GameFramework.ObjectPool;
 
 namespace AlphaWork
 {
@@ -38,6 +39,8 @@ namespace AlphaWork
             base.Initialize();
             GameEntry.Event.Subscribe(GameStartEventArgs.EventId, OnGameStart);
             GameEntry.Event.Subscribe(RefreshPosArgs.EventId, OnRefreshMainPos);
+            GameEntry.Event.Subscribe(UIThetaEventArgs.EventId, OnThetaUI);
+
             GameEntry.Event.Fire(this, new GameStartEventArgs());            
 
             //m_levelManager = new LevelManager();
@@ -62,7 +65,12 @@ namespace AlphaWork
             //GameEntry.Entity.HideAllLoadedEntities();
             GameEntry.Event.Unsubscribe(RefreshPosArgs.EventId, OnRefreshMainPos);
             GameEntry.Event.Unsubscribe(GameStartEventArgs.EventId, OnGameStart);
-            GameEntry.ObjectPool.Release();
+            //ObjectPoolBase pool = GameEntry.ObjectPool.GetObjectPool(typeof(Ethan));
+            //if(pool != null)
+            //{
+            //    pool.Release();
+            //}
+            MainActor = null;
         }
         //protected override void RegisterStructure(UnityGameFramework.Runtime.Entity ent)
         //{
@@ -91,16 +99,34 @@ namespace AlphaWork
                 //    Position = hit.point,
                 //});
             }
-            else if(!MainEthan.gameObject.activeSelf)
-            {
-                //MainEthan.OnShow(null);
-                (MainEthan.Handle as GameObject).SetActive(true);
-            }
+            //else if(!MainEthan.gameObject.activeSelf)
+            //{
+            //    //MainEthan.OnShow(null);
+            //    (MainEthan.Handle as GameObject).SetActive(true);
+            //}
         }
 
         public void OnGameStart(object sender, GameEventArgs e)
         {
             LoadGameObjects();
+        }
+
+        //test for add enemy
+        public void OnThetaUI(object sender, GameEventArgs arg)
+        {
+            UIThetaEventArgs thetaArg = arg as UIThetaEventArgs;
+            if (thetaArg != null)
+            {
+                TargetPoint Tg = ObjectUtility.GetAnyObjectofType<TargetPoint>();
+                if (Tg != null)
+                {
+                    GameEntry.Entity.ShowEnemy(new NPCData(GameEntry.Entity.GenerateSerialId(),
+                        50005 /*+ UnityEngine.Random.Range(0,11)*/, CampType.Enemy)
+                    {
+                        Position = Tg.transform.position + new Vector3(0,2,0),
+                    });
+                }
+            }
         }
 
         public void OnRefreshMainPos(object sender, GameEventArgs e)
