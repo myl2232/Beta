@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using GameFramework.Event;
+using UnityEngine;
 using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 
@@ -34,8 +35,13 @@ namespace AlphaWork
         public void OnBackToLogin(object sender, GameEventArgs e)
         {
             GameToLoginEventArgs arg = (GameToLoginEventArgs)e;
-            m_nextSceneId = (int)SceneId.Menu;
-            m_Back = true;
+            if (m_Form == null)
+                return;
+            if(arg.Sender.name == m_Form.gameObject.name)
+            {
+                m_nextSceneId = (int)SceneId.Menu;
+                m_Back = true;
+            }
         }
         /// <summary>
         /// 状态初始化时调用。

@@ -41,11 +41,14 @@ namespace AlphaWork
         {
             if (typeof(SQLiteDataDevice) == typeof(T))
             {
+                if(m_ds != null && m_ds.GetType() == typeof(SQLiteDataDevice))
+                {
+                    return;
+                }
                 m_ds = new SQLiteDataDevice("tempDatabase.db");
                 m_ds.CreateTable<UPlayer>(ClearPlayer);
                 //初始化数据
-                m_Players = new List<UPlayer>();
-                
+                m_Players = new List<UPlayer>();                
             }
         }
         public List<UPlayer> GetPlayerByName(string name)

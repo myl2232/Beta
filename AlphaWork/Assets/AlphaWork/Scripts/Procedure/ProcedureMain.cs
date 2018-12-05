@@ -1,5 +1,6 @@
 ﻿using GameFramework.Event;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 
@@ -94,7 +95,10 @@ namespace AlphaWork
         public void OnBackToLogin(object sender, GameEventArgs e)
         {
             GameToLoginEventArgs arg = (GameToLoginEventArgs)e;
-            bExit = true;
+            if (m_Form == null)
+                return;
+            if (arg.Sender.name == m_Form.gameObject.name)
+                bExit = true;
         }
     }
 }

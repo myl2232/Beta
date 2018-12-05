@@ -65,11 +65,7 @@ namespace AlphaWork
             //GameEntry.Entity.HideAllLoadedEntities();
             GameEntry.Event.Unsubscribe(RefreshPosArgs.EventId, OnRefreshMainPos);
             GameEntry.Event.Unsubscribe(GameStartEventArgs.EventId, OnGameStart);
-            //ObjectPoolBase pool = GameEntry.ObjectPool.GetObjectPool(typeof(Ethan));
-            //if(pool != null)
-            //{
-            //    pool.Release();
-            //}
+            GameEntry.Event.Unsubscribe(UIThetaEventArgs.EventId, OnThetaUI);
             MainActor = null;
         }
         //protected override void RegisterStructure(UnityGameFramework.Runtime.Entity ent)

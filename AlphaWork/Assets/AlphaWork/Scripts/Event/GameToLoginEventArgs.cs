@@ -18,6 +18,21 @@ namespace AlphaWork
             }
         }
 
+        /// <summary>
+        /// 获取用户自定义数据。
+        /// </summary>
+        //protected object sender;
+        public GameObject Sender;
+        //{
+        //    get { return sender; }
+        //    private set {}
+        //}
+
+        public GameToLoginEventArgs(GameObject senderObject = null)
+        {
+            Sender = senderObject;
+        }
+
         public override void Clear()
         {
 

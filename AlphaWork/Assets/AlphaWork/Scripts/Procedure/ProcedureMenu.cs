@@ -23,11 +23,6 @@ namespace AlphaWork
             m_StartGame = true;
         }
 
-        public void StartGame()
-        {
-            m_StartGame = true;
-        }
-
         /// <summary>
         /// 状态初始化时调用。
         /// </summary>
@@ -66,6 +61,7 @@ namespace AlphaWork
             base.OnDestroy(procedureOwner);
 
             GameEntry.Event.Unsubscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
+            m_StartGame = false;
         }
 
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
@@ -75,8 +71,7 @@ namespace AlphaWork
             if (m_StartGame)
             {
                 ChangeState<ProcedureLogin>(procedureOwner);
-            }
-            
+            }            
         }
 
         private void OnOpenUIFormSuccess(object sender, GameEventArgs e)

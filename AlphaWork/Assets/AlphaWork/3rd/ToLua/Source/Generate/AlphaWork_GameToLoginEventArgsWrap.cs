@@ -11,6 +11,7 @@ public class AlphaWork_GameToLoginEventArgsWrap
 		L.RegFunction("New", _CreateAlphaWork_GameToLoginEventArgs);
 		L.RegFunction("__tostring", ToLua.op_ToString);
 		L.RegVar("EventId", get_EventId, null);
+		L.RegVar("Sender", get_Sender, set_Sender);
 		L.RegVar("Id", get_Id, null);
 		L.EndClass();
 	}
@@ -25,6 +26,13 @@ public class AlphaWork_GameToLoginEventArgsWrap
 			if (count == 0)
 			{
 				AlphaWork.GameToLoginEventArgs obj = new AlphaWork.GameToLoginEventArgs();
+				ToLua.PushObject(L, obj);
+				return 1;
+			}
+			else if (count == 1)
+			{
+				UnityEngine.GameObject arg0 = (UnityEngine.GameObject)ToLua.CheckObject(L, 1, typeof(UnityEngine.GameObject));
+				AlphaWork.GameToLoginEventArgs obj = new AlphaWork.GameToLoginEventArgs(arg0);
 				ToLua.PushObject(L, obj);
 				return 1;
 			}
@@ -70,6 +78,25 @@ public class AlphaWork_GameToLoginEventArgsWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_Sender(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			AlphaWork.GameToLoginEventArgs obj = (AlphaWork.GameToLoginEventArgs)o;
+			UnityEngine.GameObject ret = obj.Sender;
+			ToLua.PushSealed(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index Sender on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int get_Id(IntPtr L)
 	{
 		object o = null;
@@ -85,6 +112,25 @@ public class AlphaWork_GameToLoginEventArgsWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index Id on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_Sender(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			AlphaWork.GameToLoginEventArgs obj = (AlphaWork.GameToLoginEventArgs)o;
+			UnityEngine.GameObject arg0 = (UnityEngine.GameObject)ToLua.CheckObject(L, 2, typeof(UnityEngine.GameObject));
+			obj.Sender = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index Sender on a nil value");
 		}
 	}
 }
