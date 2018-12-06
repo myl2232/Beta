@@ -19,24 +19,24 @@ namespace AlphaWork
             m_Procedure.Go();
         }
 
-        public void CreateUserImpl(string name)
-        {
-            UPlayer player = new UPlayer();
-            player.user = name;
-            player.gamesetting = GameEntry.Config.GameSetting.UID;
+        //public void CreateUserImpl(string name)
+        //{
+        //    UPlayer player = new UPlayer();
+        //    player.user = name;
+        //    player.gamesetting = GameEntry.Config.GameSetting.UID;
 
-            List<UPlayer> players;
-            GameEntry.DataBase.DataDevice.GetDataByKey<UPlayer>(name, out players);
-            if (players == null || players.Count <= 0)
-            {
-                GameEntry.DataBase.DataDevice.AddData<UPlayer>(player);
-            }
-            else
-            {
-                players[0].gamesetting = player.gamesetting;
-            }
-            GameEntry.Config.GameSetting.CurrentUser = name;
-        }
+        //    List<UPlayer> players;
+        //    GameEntry.DataBase.DataDevice.GetDataByKey<UPlayer>(name, out players);
+        //    if (players == null || players.Count <= 0)
+        //    {
+        //        GameEntry.DataBase.DataDevice.AddData<UPlayer>(player);
+        //    }
+        //    else
+        //    {
+        //        players[0].gamesetting = player.gamesetting;
+        //    }
+        //    GameEntry.Config.GameSetting.CurrentUser = name;
+        //}
 
         //for login user list
         public void FillUserView()
