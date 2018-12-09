@@ -42,8 +42,10 @@ namespace AlphaWork
             gameObject.GetOrAddComponent<BehaviourShakeHit>();
             m_moveTarget = gameObject.GetOrAddComponent<MoveTarget>();
             CapsuleCollider cp = gameObject.GetComponent<CapsuleCollider>();
-            if(cp)
-                cp.isTrigger = true;
+            //否则会没有碰撞
+            //if(cp)
+            //    cp.isTrigger = true;
+
             //GameEntry.Event.Subscribe(MoveToTargetEventArgs.EventId, OnMoveToTarget);
             //GameEntry.Event.Subscribe(MoveToTargetEndEventArgs.EventId, OnMoveToEnd);
         }
@@ -68,11 +70,13 @@ namespace AlphaWork
 
         public void SetSpeed(float speed)
         {
-            m_moveTarget.Speed = speed;
+            if(m_moveTarget)
+                m_moveTarget.Speed = speed;
         }
         public override void PauseMove()
         {
-            m_moveTarget.Pause();
+            if(m_moveTarget)
+                m_moveTarget.Pause();
         }
 
 #if UNITY_EDITOR

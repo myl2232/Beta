@@ -81,7 +81,7 @@ namespace AlphaWork
 
         private string GetFilePath()
         {
-            return Application.dataPath + "//AlphaWork//Navigations//";
+            return Application.dataPath + "//Resources//NavGrid//";
         }
 
         public void Close()

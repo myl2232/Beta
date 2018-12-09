@@ -65,6 +65,12 @@ namespace AlphaWork
                     MainEthan.transform.position = pos;
                 }
             }
+            else
+            {
+                Vector3 pos = (ne.Entity.Handle as GameObject).transform.position;
+                string str = string.Format("Spwan a new unPlayer: {0},{1},{2}", pos.x, pos.y, pos.z);
+                Debug.Log(str);
+            }
         }
         
         //protected virtual void RegisterStructure(UnityGameFramework.Runtime.Entity ent)
