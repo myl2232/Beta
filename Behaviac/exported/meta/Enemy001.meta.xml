@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<agents version="1" signature="96213612">
+  <agent type="BaseAgent" base="behaviac::Agent" signature="3096401382">
+    <properties>
+      <property name="bAwakeSense" type="bool" member="true" static="false" agent="BaseAgent" />
+      <property name="logicStatus" type="LogicStatus" member="true" static="false" agent="BaseAgent" />
+    </properties>
+  </agent>
+  <agent type="EnemyAgent" base="BaseAgent" signature="3951108106">
+    <properties>
+      <property name="attackParam" type="float" member="false" static="false" defaultvalue="0" />
+      <property name="bAwakeSense" type="bool" member="true" static="false" agent="BaseAgent" />
+      <property name="logicStatus" type="LogicStatus" member="true" static="false" agent="BaseAgent" />
+    </properties>
+  </agent>
+</agents>
