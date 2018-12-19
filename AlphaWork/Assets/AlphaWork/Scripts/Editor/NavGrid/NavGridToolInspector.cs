@@ -18,6 +18,7 @@ namespace AlphaWork.Editor
         bool m_bAccurateToggle = false;
         bool m_bOperateToggle = false;
         float m_RayHeightField = 50.0f;
+        float m_RayEndField = 50.0f;
         bool m_bOpenBlock = false;
         bool m_bCloseBlock = true;
         bool m_bFlushHeight = false;
@@ -65,9 +66,14 @@ namespace AlphaWork.Editor
             //GUILayout.BeginArea(new Rect(10, 100 + layoutExtent, 300, 1000));
             m_bAccurateToggle = EditorGUILayout.BeginToggleGroup("精准高度", m_bAccurateToggle);
             EditorGUILayout.BeginHorizontal();
-            GUILayout.Label("自地面以上射线高度：", EditorStyles.boldLabel);
+            GUILayout.Label("投射点高度（自地形或工具高度起始）：", EditorStyles.boldLabel);
             m_RayHeightField = GUILayout.HorizontalSlider(m_RayHeightField, 0, 1000);
             m_RayHeightField = EditorGUILayout.DelayedFloatField(m_RayHeightField, GUILayout.Width(50));
+            EditorGUILayout.EndHorizontal();
+            EditorGUILayout.BeginHorizontal();
+            GUILayout.Label("最大投射高度（自地形或工具高度起始）：", EditorStyles.boldLabel);
+            m_RayEndField = GUILayout.HorizontalSlider(m_RayEndField, 0, 1000);
+            m_RayEndField = EditorGUILayout.DelayedFloatField(m_RayEndField, GUILayout.Width(50));
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.EndToggleGroup();
             if (GUILayout.Button("生成网格", GUILayout.Width(300)))
@@ -137,10 +143,11 @@ namespace AlphaWork.Editor
             m_gridTool.ViewSize = m_viewSize;
             m_gridTool.MeshSize = m_meshSize;
             m_gridTool.RayHeightField = m_RayHeightField;
+            m_gridTool.RayEndField = m_RayEndField;
             m_gridTool.FlushHight = m_fFlushHight;
             m_gridTool.AccurateHight = m_bAccurateToggle;
-            m_gridTool.Rows = m_rows;
-            m_gridTool.Columns = m_columns;
+            m_gridTool.X = m_rows;
+            m_gridTool.Y = m_columns;
             m_gridTool.bOperate = m_bOperateToggle;
             if (m_bOpenBlock)
                 m_gridTool.PaintType = NavGridTool.EPaint.EPAINT_OPENBLOCK;
@@ -157,8 +164,8 @@ namespace AlphaWork.Editor
         {            
             m_brushSize = m_gridTool.BrushSize;
             m_meshSize = m_gridTool.MeshSize;
-            m_rows = m_gridTool.Rows;
-            m_columns = m_gridTool.Columns;
+            m_rows = m_gridTool.X;
+            m_columns = m_gridTool.Y;
         }
 
         private void GenerateMesh()

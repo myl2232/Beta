@@ -105,7 +105,7 @@ namespace AlphaWork
             while (iter.MoveNext())
             {
                 Navigation.Grid.Position pos = (Navigation.Grid.Position)iter.Current;
-                path[index++] = new Vector3(pos.Row, m_hightFields[pos.Row][pos.Column], pos.Column);
+                path[index++] = new Vector3(pos.X, m_hightFields[pos.X][pos.Y], pos.Y);
             }
             return path;
         }
@@ -128,7 +128,7 @@ namespace AlphaWork
             while (iter.MoveNext())
             {
                 Navigation.Grid.Position pos = (Navigation.Grid.Position)iter.Current;                
-                path[index++] = new Vector3(pos.Row, m_hightFields[pos.Row][pos.Column], pos.Column);
+                path[index++] = new Vector3(pos.X, m_hightFields[pos.X][pos.Y], pos.Y);
             }
             return m_path.Count;
         }
@@ -141,7 +141,7 @@ namespace AlphaWork
                 while (iter.MoveNext())
                 {
                     Navigation.Grid.Position pos = (Navigation.Grid.Position)iter.Current;
-                    Vector3 currentPos = new Vector3(pos.Row, m_hightFields[pos.Row][pos.Column], pos.Column);
+                    Vector3 currentPos = new Vector3(pos.X, m_hightFields[pos.X][pos.Y], pos.Y);
                     if(Vector3.Distance(current, currentPos) < Threshold)
                     {
                         iter.MoveNext();

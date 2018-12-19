@@ -31,11 +31,13 @@ public class NavGridTool : MonoBehaviour
     [HideInInspector]
     public float RayHeightField;
     [HideInInspector]
+    public float RayEndField;
+    [HideInInspector]
     public float FlushHight;
     [HideInInspector]
-    public int Rows;
+    public int X;
     [HideInInspector]
-    public int Columns;
+    public int Y;
     [HideInInspector]
     public bool AccurateHight;
     [HideInInspector]
@@ -65,10 +67,10 @@ public class NavGridTool : MonoBehaviour
     private  string gStrHeader;
     private  int gVersion;
 
-    public NavGridTool(int columns, int rows)
+    public NavGridTool(int x, int y)
     {
-        Columns = columns;
-        Rows = rows;
+        Y = y;
+        X = x;
 
 #if UNITY_EDITOR
         Init();
@@ -80,23 +82,16 @@ public class NavGridTool : MonoBehaviour
         if (m_grid != null)
             m_grid = null;
 
-        if (m_hightFields != null)
-        {
-            for (int i = 0; i < m_hightFields.Count; ++i)
-                m_hightFields[i].Clear();
-            m_hightFields.Clear();
-        }
-        else
+        if (m_hightFields == null)
             m_hightFields = new List<List<float>>();
-
         if (m_path == null)
             m_path = new LinkedList<Navigation.Grid.Position>();
 
-        int realRow = (int)(Rows / MeshSize);
-        int realColumns = (int)(Columns / MeshSize);
+        int realx = (int)(X / MeshSize);
+        int realy = (int)(Y / MeshSize);
         
-        if(m_grid == null && realRow > 0 && realColumns > 0)
-            m_grid = new Navigation.Grid(realRow, realColumns);
+        if(m_grid == null && realx > 0 && realy > 0)
+            m_grid = new Navigation.Grid(realx, realy);
 
         gStrHeader = "NavigationGrid Header:";
         gVersion = 1;
@@ -143,16 +138,15 @@ public class NavGridTool : MonoBehaviour
     public  void Refresh()
     {
         m_hightFields.Clear();
-        for(int i = 0; i < Rows/MeshSize; ++i)
+        for(int i = 0; i < X/MeshSize; ++i)
         {
             m_hightFields.Add(new List<float>());
-            for(int j = 0; j < Columns/MeshSize; ++j)
+            for(int j = 0; j < Y/MeshSize; ++j)
             {
                 m_hightFields[i].Add(GetZPos(i , j , true));
             }
         }
     }
-
     private  float GetZPos(int x, int y, bool bRefresh = false)
     {
         if (!bRefresh)
@@ -164,14 +158,28 @@ public class NavGridTool : MonoBehaviour
             }
             return m_hightFields[x][y];
         }
+        float testX = x * MeshSize + MeshSize * 0.5f;
+        float testY = y * MeshSize + MeshSize * 0.5f;
 
-        float fValue = Mathf.Max(mToolPos.y, GetTerrainZ(x,y));      //GetTerrainZ(x, y);   
+        float fValue = Mathf.Max(mToolPos.y, GetTerrainZ(testX, testY));      //GetTerrainZ(x, y);   
         
         if (AccurateHight)
         {
             RaycastHit hitInfo;
-            Physics.Raycast(new Vector3(x*MeshSize,fValue+RayHeightField,y*MeshSize), new Vector3(0, -1, 0),out hitInfo);
-            fValue = hitInfo.point.y;
+            Physics.Raycast(new Vector3(testX, fValue+RayHeightField, testY), new Vector3(0, -1, 0),out hitInfo);
+            if (hitInfo.point.y < fValue + RayEndField)
+            {
+                fValue = fValue + RayEndField;
+                if(m_grid != null)
+                {
+                    Navigation.Grid.Position pos = new Navigation.Grid.Position(x, y);
+                    m_grid[pos] = false;
+                }
+            }
+            else
+                fValue = hitInfo.point.y;
+            //fValue = hitInfo.point.y < fValue + (RayHeightField-RayEndField) ? (fValue + RayHeightField - RayEndField) : hitInfo.point.y;
+            //fValue = (fValue - hitInfo.point.y) > (RayHeightField - RayEndField) ? (fValue - RayHeightField + RayEndField) : hitInfo.point.y;
         }
 
         return fValue;
@@ -200,15 +208,15 @@ public class NavGridTool : MonoBehaviour
         gStrHeader = "NavigationGrid Header:";
         gVersion = 1;
 
-        FileStream fs = new FileStream(GetFilePath() + "//GalaxyNavFile", FileMode.Open);
+        FileStream fs = new FileStream(GetFilePath() + "//GalaxyNavFile.bytes", FileMode.Open);
         BinaryReader binReader = new BinaryReader(fs);
 
         byte[] bBuffer = new byte[100];
         bBuffer = binReader.ReadBytes(gStrHeader.Length);
         gStrHeader = System.Text.Encoding.Default.GetString(bBuffer);
         gVersion = binReader.ReadInt32();
-        Rows = binReader.ReadInt32();
-        Columns = binReader.ReadInt32();
+        X = binReader.ReadInt32();
+        Y = binReader.ReadInt32();
         MeshSize = binReader.ReadSingle();
 
         if (m_hightFields == null)
@@ -217,15 +225,15 @@ public class NavGridTool : MonoBehaviour
             m_path = new LinkedList<Navigation.Grid.Position>();
 
         //if (m_grid == null)
-        int realRow = (int)(Rows / MeshSize);
-        int realColumns = (int)(Columns / MeshSize);
+        int realx = (int)(X / MeshSize);
+        int realy = (int)(Y / MeshSize);
         m_grid = null;
-        m_grid = new Navigation.Grid(realRow, realColumns);
+        m_grid = new Navigation.Grid(realx, realy);
 
-        for (int i = 0; i < realRow; ++i)
+        for (int i = 0; i < realx; ++i)
         {
             m_hightFields.Add(new List<float>());
-            for (int j = 0; j < realColumns; ++j)
+            for (int j = 0; j < realy; ++j)
             {
                 int nWalkable = binReader.ReadInt32();
                 float hight = binReader.ReadSingle();
@@ -245,14 +253,15 @@ public class NavGridTool : MonoBehaviour
         if (!Directory.Exists(GetFilePath()))
             Directory.CreateDirectory(GetFilePath());
 
-        string currentFile = GetFilePath() + "//GalaxyNavFile";
+        string currentFile = GetFilePath() + "//GalaxyNavFile.bytes";
         FileStream fs = new FileStream(currentFile, FileMode.OpenOrCreate);
         BinaryWriter binWriter = new BinaryWriter(fs);
-
+        int realx = (int)(X / MeshSize);
+        int realy = (int)(Y / MeshSize);
         binWriter.Write(gStrHeader.ToCharArray(), 0, gStrHeader.Length);
         binWriter.Write(gVersion);
-        binWriter.Write(Rows);
-        binWriter.Write(Columns);
+        binWriter.Write(realx);
+        binWriter.Write(realy);
         binWriter.Write(MeshSize);
 
         for (int i = 0; i < m_hightFields.Count; ++i)
@@ -284,7 +293,7 @@ public class NavGridTool : MonoBehaviour
 
     private  string GetFilePath()
     {
-        return Application.dataPath + "//Resources//NavGrid//" + EditorSceneManager.GetActiveScene().name;
+        return Application.dataPath + "//AssetDatas//Config//NavGrid//" + EditorSceneManager.GetActiveScene().name;
     }
 
     private  string GetTargetPath()
@@ -343,32 +352,30 @@ public class NavGridTool : MonoBehaviour
         float viewCenterX = transform.position.x;
         float viewCenterY = transform.position.z;
         Gizmos.DrawCube(transform.position, new Vector3(3,3,3));
-        if (m_grid.NumColumns != Columns/MeshSize || m_grid.NumRows != Rows/MeshSize)
+        if (m_grid.NumY != Y/MeshSize || m_grid.NumX != X/MeshSize)
             return;
         //draw grid                
-        for (int j = (int)((viewCenterY - ViewSize )/MeshSize > 0 ? (viewCenterY - ViewSize )/ MeshSize : 0) + 1; (j < Columns / MeshSize) && j < (viewCenterY + ViewSize) / MeshSize; ++j)
+        for (int j = (int)((viewCenterY - ViewSize )/MeshSize > 0 ? (viewCenterY - ViewSize )/ MeshSize : 0) + 1; (j < Y / MeshSize) && j < (viewCenterY + ViewSize) / MeshSize; ++j)
         {
-            if (j + 1 >= Columns / MeshSize)
+            if (j + 1 >= Y / MeshSize)
                 break;
-            for (int i = (int)((viewCenterX  - ViewSize )/ MeshSize > 0 ? (viewCenterX  - ViewSize )/ MeshSize : 0) + 1; (i < Rows / MeshSize) && i < (viewCenterX + ViewSize) / MeshSize; ++i)
+            for (int i = (int)((viewCenterX  - ViewSize )/ MeshSize > 0 ? (viewCenterX  - ViewSize )/ MeshSize : 0) + 1; (i < X / MeshSize) && i < (viewCenterX + ViewSize) / MeshSize; ++i)
             {
-                if (i + 1 >= Rows / MeshSize)
+                if (i + 1 >= X / MeshSize)
                     break;
                 Navigation.Grid.Position pMin = new Navigation.Grid.Position(Convert.ToInt32(i), Convert.ToInt32(j));
                 Navigation.Grid.Position pMax = new Navigation.Grid.Position(Convert.ToInt32(i+1), Convert.ToInt32(j + 1));
 
-                float z1 = GetZPos(pMin.Row, pMin.Column);
-                Vector3 p1 = new Vector3(pMin.Row * MeshSize, z1, pMin.Column * MeshSize);
-
-                float z2 = GetZPos(pMin.Row, pMax.Column);
-                Vector3 p2 = new Vector3(pMin.Row * MeshSize, z2, pMax.Column * MeshSize);
-
-                float z3 = GetZPos(pMax.Row, pMax.Column);
-                Vector3 p3 = new Vector3(pMax.Row * MeshSize, z3, pMax.Column * MeshSize);
+                float z1 = GetZPos(pMin.X, pMin.Y);
+                Vector3 p1 = new Vector3(pMin.X * MeshSize, z1, pMin.Y * MeshSize);
+                
+                Vector3 p2 = new Vector3(pMin.X * MeshSize, z1, pMax.Y * MeshSize);
+                
+                Vector3 p3 = new Vector3(pMax.X * MeshSize, z1, pMax.Y * MeshSize);
 
                 if(m_grid[pMin])
                 {
-                    Gizmos.color = Color.green;
+                    Gizmos.color = Color.blue;
                     Navigation.Grid.Position pos = new Navigation.Grid.Position(i - 1, j);
                     if(!m_grid[pos])
                         Gizmos.color = Color.red;
@@ -381,7 +388,7 @@ public class NavGridTool : MonoBehaviour
 
                 if (m_grid[pMin])
                 {
-                    Gizmos.color = Color.green;
+                    Gizmos.color = Color.blue;
                     Navigation.Grid.Position pos = new Navigation.Grid.Position(i, j+1);
                     if (!m_grid[pos])
                         Gizmos.color = Color.red;
@@ -396,7 +403,7 @@ public class NavGridTool : MonoBehaviour
         }
 
         //draw start.end
-        Gizmos.color = Color.blue;
+        Gizmos.color = Color.yellow;
         Gizmos.DrawCube(StartPt, new Vector3(MeshSize*0.5f, MeshSize * 0.5f, MeshSize * 0.5f));
         Gizmos.DrawCube(EndPt, new Vector3(MeshSize * 0.5f, MeshSize * 0.5f, MeshSize * 0.5f));
 
@@ -407,15 +414,15 @@ public class NavGridTool : MonoBehaviour
             iter.MoveNext();
             
             Navigation.Grid.Position p1 = (Navigation.Grid.Position)iter.Current;
-            Gizmos.DrawLine(StartPt, new Vector3(p1.Row,GetZPos(p1.Row,p1.Column),p1.Column));
+            Gizmos.DrawLine(StartPt, new Vector3(p1.X,GetZPos(p1.X,p1.Y),p1.Y));
             Navigation.Grid.Position p2 = p1;
             while (iter.MoveNext())
             {
                 p2 = (Navigation.Grid.Position)iter.Current;
-                Gizmos.DrawLine(new Vector3(p1.Row, GetZPos(p1.Row, p1.Column), p1.Column), new Vector3(p2.Row, GetZPos(p2.Row, p2.Column), p2.Column));
+                Gizmos.DrawLine(new Vector3(p1.X, GetZPos(p1.X, p1.Y), p1.Y), new Vector3(p2.X, GetZPos(p2.X, p2.Y), p2.Y));
                 p1 = p2;
             }
-            Gizmos.DrawLine(new Vector3(p1.Row, GetZPos(p1.Row, p1.Column), p1.Column),EndPt);
+            Gizmos.DrawLine(new Vector3(p1.X, GetZPos(p1.X, p1.Y), p1.Y),EndPt);
         }
 
     }
@@ -541,13 +548,13 @@ public class NavGridTool : MonoBehaviour
         if (m_grid == null)
             return;
 
-        for (int j = (int)((center.z - BrushSize*0.5) / MeshSize > 0 ? (center.z - BrushSize*0.5) / MeshSize : 0) + 1; (j < Columns / MeshSize) && j < (center.z + BrushSize*0.5) / MeshSize; ++j)
+        for (int j = (int)((center.z - BrushSize*0.5) / MeshSize > 0 ? (center.z - BrushSize*0.5) / MeshSize : 0) + 1; (j < Y / MeshSize) && j < (center.z + BrushSize*0.5) / MeshSize; ++j)
         {
-            if (j + 1 >= Columns / MeshSize)
+            if (j + 1 >= Y / MeshSize)
                 break;
-            for (int i = (int)((center.x - BrushSize*0.5) / MeshSize > 0 ? (center.x - BrushSize*0.5) / MeshSize : 0) + 1; (i < Rows / MeshSize) && i < (center.x + BrushSize*0.5) / MeshSize; ++i)
+            for (int i = (int)((center.x - BrushSize*0.5) / MeshSize > 0 ? (center.x - BrushSize*0.5) / MeshSize : 0) + 1; (i < X / MeshSize) && i < (center.x + BrushSize*0.5) / MeshSize; ++i)
             {
-                if (i + 1 >= Rows / MeshSize)
+                if (i + 1 >= X / MeshSize)
                     break;
                 Navigation.Grid.Position pPos = new Navigation.Grid.Position(i, j);
                 m_grid[pPos] = bWalkable;
@@ -560,13 +567,13 @@ public class NavGridTool : MonoBehaviour
         if (m_grid == null)
             return;
 
-        for (int j = (int)((center.z - BrushSize * 0.5) / MeshSize > 0 ? (center.z - BrushSize * 0.5) / MeshSize : 0) + 1; (j < Columns / MeshSize) && j < (center.z + BrushSize * 0.5) / MeshSize; ++j)
+        for (int j = (int)((center.z - BrushSize * 0.5) / MeshSize > 0 ? (center.z - BrushSize * 0.5) / MeshSize : 0) + 1; (j < Y / MeshSize) && j < (center.z + BrushSize * 0.5) / MeshSize; ++j)
         {
-            if (j + 1 >= Columns / MeshSize)
+            if (j + 1 >= Y / MeshSize)
                 break;
-            for (int i = (int)((center.x - BrushSize * 0.5) / MeshSize > 0 ? (center.x - BrushSize * 0.5) / MeshSize : 0) + 1; (i < Rows / MeshSize) && i < (center.x + BrushSize * 0.5) / MeshSize; ++i)
+            for (int i = (int)((center.x - BrushSize * 0.5) / MeshSize > 0 ? (center.x - BrushSize * 0.5) / MeshSize : 0) + 1; (i < X / MeshSize) && i < (center.x + BrushSize * 0.5) / MeshSize; ++i)
             {
-                if (i + 1 >= Rows / MeshSize)
+                if (i + 1 >= X / MeshSize)
                     break;
                 //Navigation.Grid.Position pPos = new Navigation.Grid.Position(i, j);
                 m_hightFields[i][j] = zHight;
@@ -574,13 +581,13 @@ public class NavGridTool : MonoBehaviour
         }
     } 
 
-    private  float GetTerrainZ(int x, int y)
+    private  float GetTerrainZ(float x, float y)
     {
         Terrain[] terrains = FindObjectsOfType(typeof(Terrain)) as Terrain[];
         for (int i = 0; i < terrains.Length; ++i)
         {
             if(x <= terrains[i].terrainData.size.x && y <= terrains[i].terrainData.size.z)
-                return terrains[i].terrainData.GetInterpolatedHeight(x*MeshSize, y*MeshSize);
+                return terrains[i].terrainData.GetInterpolatedHeight(x, y);
         }
 
         //GameObject gbTerrain = GameObject.Find("Terrain") as GameObject;
