@@ -36,9 +36,22 @@ public class BaseAgent : behaviac.Agent
 		return logicStatus;
 	}
 
-///<<< BEGIN WRITING YOUR CODE CLASS_PART
-
-///<<< END WRITING YOUR CODE
+    ///<<< BEGIN WRITING YOUR CODE CLASS_PART
+    protected int m_ParentId;
+    public int ParentId
+    {
+        get { return m_ParentId; }
+        set { m_ParentId = value; }
+    }
+    protected float SqAdd(float x)
+    {
+        return (float)Math.Sqrt(2 * x * x);
+    }
+    protected bool InRange(float val, float min, float max)
+    {
+        return (val <= max && val > min);
+    }
+    ///<<< END WRITING YOUR CODE
 
 }
 
