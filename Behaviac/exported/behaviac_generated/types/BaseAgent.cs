@@ -36,7 +36,7 @@ public class BaseAgent : behaviac.Agent
 		return logicStatus;
 	}
 
-    ///<<< BEGIN WRITING YOUR CODE CLASS_PART
+///<<< BEGIN WRITING YOUR CODE CLASS_PART
     protected int m_ParentId;
     public int ParentId
     {

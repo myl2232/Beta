@@ -30,7 +30,7 @@ public class EnemyAgent : BaseAgent
 
 	public void CheckSensor()
 	{
-        ///<<< BEGIN WRITING YOUR CODE CheckSensor
+///<<< BEGIN WRITING YOUR CODE CheckSensor
         ////本该是状态机的工作，但是目前状态机的transition不支持右值参数，只能是数值
         UnityGameFramework.Runtime.Entity etEnemy = GameEntry.Entity.GetEntity(m_senseResult);
         int logicSt = -1;
@@ -63,17 +63,17 @@ public class EnemyAgent : BaseAgent
         _set_logicStatus((LogicStatus)logicSt);
         DispatchActions();
         ///<<< END WRITING YOUR CODE
-    }
+	}
 
 	public void FlushSensor()
 	{
-        ///<<< BEGIN WRITING YOUR CODE FlushSensor
+///<<< BEGIN WRITING YOUR CODE FlushSensor
         if (m_ai != null)
             m_ai.ExecSensor(m_parent.Id);
         ///<<< END WRITING YOUR CODE
-    }
+	}
 
-    ///<<< BEGIN WRITING YOUR CODE CLASS_PART
+///<<< BEGIN WRITING YOUR CODE CLASS_PART
     private SensorAICircle m_ai;
     private Enemy m_parent;
     public int m_senseResult;

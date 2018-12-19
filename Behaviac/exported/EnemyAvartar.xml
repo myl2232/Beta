@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
-<!--Source File: EnemyTree001.xml-->
-<behavior name="EnemyTree001" agenttype="EnemyAgent" version="5">
+<!--Source File: EnemyAvartar.xml-->
+<behavior name="EnemyAvartar" agenttype="EnemyAgent" version="5">
   <node class="Parallel" id="0">
     <property ChildFinishPolicy="CHILDFINISH_LOOP" />
     <property ExitPolicy="EXIT_ABORT_RUNNINGSIBLINGS" />
@@ -46,7 +46,7 @@
         </node>
         <node class="DecoratorWeight" id="10">
           <property DecorateWhenChildEnds="false" />
-          <property Weight="const int 30" />
+          <property Weight="const int 15" />
           <node class="Assignment" id="11">
             <property CastRight="false" />
             <property Opl="float Self.EnemyAgent::attackParam" />
