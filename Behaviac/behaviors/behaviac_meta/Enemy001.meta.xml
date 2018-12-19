@@ -36,7 +36,7 @@
         <Param Name="param0" Type="const char*" TypeFullName="System.String" DisplayName="param0" Desc="param0" />
       </Method>
     </agent>
-    <agent classfullname="BaseAgent" base="behaviac::Agent" DisplayName="behaviac::Agent" Desc="behaviac::Agent" IsRefType="true">
+    <agent classfullname="BaseAgent" base="behaviac::Agent" DisplayName="BaseAgent" Desc="BaseAgent" IsRefType="true">
       <Member Name="bAwakeSense" DisplayName="bAwakeSense" Desc="bAwakeSense" Class="BaseAgent" Type="bool" TypeFullName="System.Boolean" defaultvalue="false" Static="false" Public="false" Readonly="false" />
       <Member Name="logicStatus" DisplayName="logicStatus" Desc="logicStatus" Class="BaseAgent" Type="LogicStatus" TypeFullName="XMLPluginBehaviac.LogicStatus" defaultvalue="ELogic_IDLE" Static="false" Public="false" Readonly="false" />
     </agent>
@@ -47,7 +47,7 @@
     </agent>
   </agents>
   <instances>
-    <instance name="EnemyAgent" class="EnemyAgent" DisplayName="EnemyAgent" Desc="EnemyAgent" />
     <instance name="BaseAgent" class="BaseAgent" DisplayName="BaseAgent" Desc="BaseAgent" />
+    <instance name="EnemyAgent" class="EnemyAgent" DisplayName="EnemyAgent" Desc="EnemyAgent" />
   </instances>
 </meta>

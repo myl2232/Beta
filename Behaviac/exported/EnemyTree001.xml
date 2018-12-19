@@ -8,46 +8,46 @@
     <property FailurePolicy="FAIL_ON_ONE" />
     <property SuccessPolicy="SUCCEED_ON_ALL" />
     <node class="Sequence" id="1">
-      <node class="WaitforSignal" id="3">
+      <node class="WaitforSignal" id="12">
         <custom>
-          <node class="Condition" id="4">
+          <node class="Condition" id="2">
             <property Operator="Equal" />
             <property Opl="bool Self.BaseAgent::bAwakeSense" />
             <property Opr="const bool true" />
           </node>
         </custom>
       </node>
-      <node class="Action" id="5">
+      <node class="Action" id="3">
         <property Method="Self.EnemyAgent::FlushSensor()" />
         <property ResultOption="BT_SUCCESS" />
       </node>
-      <node class="Action" id="9">
+      <node class="Action" id="4">
         <property Method="Self.EnemyAgent::CheckSensor()" />
         <property ResultOption="BT_SUCCESS" />
       </node>
-      <node class="SelectorProbability" id="16">
-        <node class="DecoratorWeight" id="7">
+      <node class="SelectorProbability" id="5">
+        <node class="DecoratorWeight" id="6">
           <property DecorateWhenChildEnds="false" />
           <property Weight="const int 35" />
-          <node class="Assignment" id="17">
+          <node class="Assignment" id="9">
             <property CastRight="false" />
             <property Opl="float Self.EnemyAgent::attackParam" />
             <property Opr="const float 0" />
           </node>
         </node>
-        <node class="DecoratorWeight" id="18">
+        <node class="DecoratorWeight" id="7">
           <property DecorateWhenChildEnds="false" />
           <property Weight="const int 35" />
-          <node class="Assignment" id="19">
+          <node class="Assignment" id="8">
             <property CastRight="false" />
             <property Opl="float Self.EnemyAgent::attackParam" />
             <property Opr="const float 0.5" />
           </node>
         </node>
-        <node class="DecoratorWeight" id="20">
+        <node class="DecoratorWeight" id="10">
           <property DecorateWhenChildEnds="false" />
-          <property Weight="const int 15" />
-          <node class="Assignment" id="21">
+          <property Weight="const int 30" />
+          <node class="Assignment" id="11">
             <property CastRight="false" />
             <property Opl="float Self.EnemyAgent::attackParam" />
             <property Opr="const float 1" />
