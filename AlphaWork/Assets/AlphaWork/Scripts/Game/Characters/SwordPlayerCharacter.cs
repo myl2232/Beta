@@ -21,7 +21,9 @@ namespace AlphaWork
         private bool run;
         private JoystackCc m_Joystack;
         private bool bAttack = false;
-       
+
+        private string attstr = "";
+
         // Use this for initialization
         void Start()
         {
@@ -289,18 +291,20 @@ namespace AlphaWork
                 return;
 
             int index = Random.Range(1, 8);
-            string str = "Attack_0" + index.ToString();
-            anim.Play(str, -1, 0F);
+            attstr = "Attack_0" + index.ToString();
+            anim.Play(attstr, -1, 0F);
         }
         //from animation event
         public void AttackStart()
         {
             bAttack = true;
+            Debug.Log(string.Format("AttackStart:{0}",attstr));
         }
         //from animation event
         public void AttackEnd()
         {
             bAttack = false;
+            Debug.Log(string.Format("AttackEnd:{0}", attstr));
         }
         #endregion
 

@@ -8,6 +8,7 @@ public class AlphaWork_DataBaseComponentWrap
 	{
 		L.BeginClass(typeof(AlphaWork.DataBaseComponent), typeof(UnityGameFramework.Runtime.GameFrameworkComponent));
 		L.RegFunction("GetPlayerByName", GetPlayerByName);
+		L.RegFunction("FetchPlayersByName", FetchPlayersByName);
 		L.RegFunction("AddPlayer", AddPlayer);
 		L.RegFunction("__eq", op_Equality);
 		L.RegFunction("__tostring", ToLua.op_ToString);
@@ -28,6 +29,23 @@ public class AlphaWork_DataBaseComponentWrap
 			System.Collections.Generic.List<AlphaWork.UPlayer> o = obj.GetPlayerByName(arg0);
 			ToLua.PushSealed(L, o);
 			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int FetchPlayersByName(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			AlphaWork.DataBaseComponent obj = (AlphaWork.DataBaseComponent)ToLua.CheckObject<AlphaWork.DataBaseComponent>(L, 1);
+			string arg0 = ToLua.CheckString(L, 2);
+			obj.FetchPlayersByName(arg0);
+			return 0;
 		}
 		catch (Exception e)
 		{

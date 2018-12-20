@@ -42,8 +42,8 @@ public class EnemyAgent : BaseAgent
                 logicSt = (int)LogicStatus.ELogic_ATTACK;
                 m_character.SyncStatus(logicSt);
             }
-            else if (InRange(dist, m_LogicData.AttackRadius - SqAdd(GameEntry.NavGrid.MeshSize), 
-                m_LogicData.TrackRadius + SqAdd(GameEntry.NavGrid.MeshSize)))              
+            else if (InRange(dist, m_LogicData.AttackRadius - SqAdd(GameEntry.NavGrid.MeshSize),
+                m_LogicData.TrackRadius + SqAdd(GameEntry.NavGrid.MeshSize)))
             {
                 logicSt = (int)LogicStatus.ELogic_TRACK;
                 m_character.SyncStatus(logicSt);
@@ -68,22 +68,20 @@ public class EnemyAgent : BaseAgent
 	public void FlushSensor()
 	{
 ///<<< BEGIN WRITING YOUR CODE FlushSensor
-        if(m_ai != null)
+        if (m_ai != null)
             m_ai.ExecSensor(m_parent.Id);
         ///<<< END WRITING YOUR CODE
 	}
 
 ///<<< BEGIN WRITING YOUR CODE CLASS_PART
-
     private SensorAICircle m_ai;
     private Enemy m_parent;
     public int m_senseResult;
     public int SenseResult
     {
-		get { return m_senseResult; }
-        set{ m_senseResult = value; }
+        get { return m_senseResult; }
+        set { m_senseResult = value; }
     }
-    //public bool MoveOn = true;
     private BaseCharacter m_character;
     TargetableObjectData m_LogicData;
 
@@ -117,21 +115,20 @@ public class EnemyAgent : BaseAgent
         else if (status == LogicStatus.ELogic_TRACK)
         {
             m_character.ActionPatrol(m_LogicData.runSpeed);
-            m_parent.SetSpeed(m_LogicData.runSpeed * m_LogicData.baseSpeed);            
+            m_parent.SetSpeed(m_LogicData.runSpeed * m_LogicData.baseSpeed);
             m_parent.MoveToTarget(m_character.MovePause);
         }
-        else if(status == LogicStatus.ELogic_IDLE)
+        else if (status == LogicStatus.ELogic_IDLE)
         {
             m_parent.PauseMove();
             m_character.ActionIdle();
         }
-        else if(status == LogicStatus.ELogic_DEAD)
+        else if (status == LogicStatus.ELogic_DEAD)
         {
             m_parent.PauseMove();
             m_character.ActionDead();
         }
     }
-
     ///<<< END WRITING YOUR CODE
 
 }

@@ -262,6 +262,9 @@ namespace behaviac
 			AgentMeta.Register<EnemyAgent>("EnemyAgent");
 			AgentMeta.Register<LogicStatus>("LogicStatus");
 			ComparerRegister.RegisterType<LogicStatus, CompareValue_LogicStatus>();
+
+			Agent.RegisterInstanceName<BaseAgent>("BaseAgent");
+			Agent.RegisterInstanceName<EnemyAgent>("EnemyAgent");
 			return true;
 		}
 
@@ -271,6 +274,9 @@ namespace behaviac
 			AgentMeta.UnRegister<BaseAgent>("BaseAgent");
 			AgentMeta.UnRegister<EnemyAgent>("EnemyAgent");
 			AgentMeta.UnRegister<LogicStatus>("LogicStatus");
+
+			Agent.UnRegisterInstanceName<BaseAgent>("BaseAgent");
+			Agent.UnRegisterInstanceName<EnemyAgent>("EnemyAgent");
 			return true;
 		}
 	}

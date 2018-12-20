@@ -41,5 +41,10 @@
         /// 夜晚城镇。
         /// </summary>
         YeWai = 7,
+
+        /// <summary>
+        /// 测试场景。
+        /// </summary>
+        Temp = 8,
     }
 }

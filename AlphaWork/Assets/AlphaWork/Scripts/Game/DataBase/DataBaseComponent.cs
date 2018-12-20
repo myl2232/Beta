@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LuaInterface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityGameFramework.Runtime;
@@ -55,6 +56,21 @@ namespace AlphaWork
         {
             GameEntry.DataBase.DataDevice.GetDataByKey<UPlayer>(name, out m_Players);
             return m_Players;
+        }
+
+        public void FetchPlayersByName(string name)
+        {
+            GameEntry.DataBase.DataDevice.GetDataByKey<UPlayer>(name, out m_Players);
+
+            LuaTable tb = GameEntry.LuaScriptEngine.LuaState.Require<LuaTable>(GUIDefine.UILoginModule);
+            //tb.RawSet("mPlayers", m_Players);
+            LuaFunction func = tb.GetLuaFunction("FillData");
+            func.BeginPCall();
+            func.Push(m_Players);
+            func.PCall();
+            func.EndPCall();
+            func.Dispose();
+            func = null;
         }
 
         public void AddPlayer(UPlayer player)

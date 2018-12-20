@@ -113,7 +113,7 @@ namespace AlphaWork
             {
                 ChangeState<ProcedureMenu>(procedureOwner);
             }
-            else if((int)SceneId.YeWai == m_nextSceneId)
+            else if((int)SceneId.YeWai == m_nextSceneId || (int)SceneId.Temp == m_nextSceneId)
             {
                 ChangeState<ProcedureMain>(procedureOwner);
             }
