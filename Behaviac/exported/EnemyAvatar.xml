@@ -32,7 +32,7 @@
           <node class="Assignment" id="9">
             <property CastRight="false" />
             <property Opl="float Self.EnemyAgent::attackParam" />
-            <property Opr="const float 0" />
+            <property Opr="const float 3" />
           </node>
         </node>
         <node class="DecoratorWeight" id="7">

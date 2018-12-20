@@ -97,7 +97,7 @@ namespace behaviac
 		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
 		{
 			EBTStatus result = EBTStatus.BT_SUCCESS;
-			float opr = 0f;
+			float opr = 3f;
 			pAgent.SetVariable<float>("attackParam", 2100782252u, opr);
 			return result;
 		}
