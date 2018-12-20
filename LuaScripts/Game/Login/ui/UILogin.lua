@@ -5,6 +5,7 @@ local LoginModule = require("Game.Login.LoginModule")
 local UILogin = Lplus.Extend(TBPanelBase, "UILogin");
 local def = UILogin.define;
 local m_Instance = nil;
+local LoginModule = require("Game.Login.LoginModule").Instance();
 --类成员
 def.field("userdata").mInputUser = nil;
 def.field("userdata").mLoginBtn = nil;
@@ -33,6 +34,17 @@ end
 def.override().DoCreate = function (self)
     --self:CreateUGUIPanel(GameUtil.GetResPath(100001), 3,{});
      
+end
+
+-- 创建完成回调
+def.override().AfterCreate = function(self)
+    Event.RegisterMemberEvent(ModuleId.Login, gmodule.notifyId.Login.CREATEPLAYER,self, UILogin.CreateUserInternal)
+end
+
+def.override().OnDestroy = function (self)
+    print("destroy petEdit------------------")
+    Event.UnregisterEvent(ModuleId.Login, gmodule.notifyId.Login.CREATEPLAYER, UILogin.CreateUserInternal)
+    
 end
 
 -- 单击事件回调
@@ -74,20 +86,39 @@ def.method("string").CreateUserImpl = function ( self, name )
     player.user = name;
     player.gamesetting = AlphaWork.GameEntry.Config.GameSetting.UID;
 
-    local players = {};
-    players = AlphaWork.GameEntry.DataBase:GetPlayerByName(name);
-    --[[ AlphaWork.GameEntry.DataBase.DataDevice.GetDataByKey<AlphaWork.UPlayer>(name,out players);]]
-    if players == nil or players[0] == nil then
+    local players = {}
+    AlphaWork.GameEntry.DataBase:FetchPlayersByName(name);
+
+    --[[ if players == nil then
+        print("-------------------------------------has no player-------")
+    elseif players[0] == nil then
+        print("-----------------------------player 0 is nil-------------")
+    else
+        print("--------------------------player "..players[0].."is valide------")
+    end ]]
+    
+--[[     if players == nil or players[0] == nil then
         AlphaWork.GameEntry.DataBase.AddPlayer(player);
     else
         players[0].gamesetting = player.gamesetting;
+    end 
+    AlphaWork.GameEntry.Config.GameSetting.CurrentUser = name;     ]]
+end
+
+def.method("table").CreateUserInternal = function ( self, params )
+    -- body
+    print("........createuser....."..#params)
+    local players = params;
+    if players == nil or players[0] == nil then
+        AlphaWork.GameEntry.DataBase.AddPlayer(params[0]);
+    else
+        players[0].gamesetting = params[0].gamesetting;
     end 
     AlphaWork.GameEntry.Config.GameSetting.CurrentUser = name;    
 end
 
 function UILogin.RegistObj( obj )
-    -- body   
-    print("------------------Regist Panel----------------"..obj.name..".................")
+    -- body       
     m_Instance:CreateUGUIPanel(GameUtil.GetResPath(100001), 1,{},obj);
     
 end
