@@ -87,8 +87,8 @@ def.method("string").CreateUserImpl = function ( self, name )
     AlphaWork.GameEntry.DataBase:FetchPlayersByName(name);
     local players = AlphaWork.GameEntry.DataBase.Players
     
-    if players == nil or players.Count == nil then
-        AlphaWork.GameEntry.DataBase.AddPlayer(player);
+    if players == nil or players.Count == 0 then
+        AlphaWork.GameEntry.DataBase:AddPlayer(player);
     else
         players:get_Item(0).gamesetting = player.gamesetting;
     end 

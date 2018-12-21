@@ -2311,7 +2311,7 @@ GameObject:
   - component: {fileID: 375458324}
   - component: {fileID: 375458323}
   - component: {fileID: 375458322}
-  m_Layer: 16
+  m_Layer: 12
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2498,9 +2498,10 @@ MonoBehaviour:
   ViewSize: 40
   MeshSize: 1
   RayHeightField: 50
+  RayEndField: 0
   FlushHight: 0
-  Rows: 64
-  Columns: 64
+  X: 0
+  Y: 0
   AccurateHight: 0
   bGenerate: 1
   bOperate: 0
