@@ -24,24 +24,10 @@ def.override().Init = function(self)
 
 end
 
-function LoginModule.FillData(players)
+--[[ function LoginModule.FillData(players,params)
     -- body
-    print(".......players....."..players[0].user)
-    local params = {}
-    params[0] = players[0];
-
-    Event.DispatchEvent(ModuleId.Login, gmodule.notifyId.Login.CREATEPLAYER, params)
-end
-
---[[ def.method().FetchPlayers = function ( playerList )
-    -- body
-    mPlayers = playerList;
-end
-
-function LoginModule.FetchPlayers ( playerList )
-    -- body
-    --print("....type Players:........"..playerList[0].user)
-    self.mPlayers = playerList
+    players:AddRange(params)
+    Event.DispatchEvent(ModuleId.Login, gmodule.notifyId.Login.CREATEPLAYER, players)
 end ]]
 
 LoginModule.Commit()

@@ -18,6 +18,12 @@ namespace AlphaWork
         private IDataDevice m_ds;
         private List<UPlayer> m_Players;
 
+        public List<UPlayer> Players
+        {
+            get { return m_Players; }
+            private set {}
+        }
+
         public IDataDevice DataDevice
         {
             get { return m_ds; }
@@ -62,15 +68,15 @@ namespace AlphaWork
         {
             GameEntry.DataBase.DataDevice.GetDataByKey<UPlayer>(name, out m_Players);
 
-            LuaTable tb = GameEntry.LuaScriptEngine.LuaState.Require<LuaTable>(GUIDefine.UILoginModule);
-            //tb.RawSet("mPlayers", m_Players);
-            LuaFunction func = tb.GetLuaFunction("FillData");
-            func.BeginPCall();
-            func.Push(m_Players);
-            func.PCall();
-            func.EndPCall();
-            func.Dispose();
-            func = null;
+            //LuaTable tb = GameEntry.LuaScriptEngine.LuaState.Require<LuaTable>(GUIDefine.UILoginModule);
+            //LuaFunction func = tb.GetLuaFunction("FillData");
+            //func.BeginPCall();
+            //func.Push(new List<UPlayer>());
+            //func.Push(m_Players);
+            //func.PCall();
+            //func.EndPCall();
+            //func.Dispose();
+            //func = null;
         }
 
         public void AddPlayer(UPlayer player)

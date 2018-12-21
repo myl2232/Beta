@@ -14,6 +14,7 @@ public class AlphaWork_DataBaseComponentWrap
 		L.RegFunction("__tostring", ToLua.op_ToString);
 		L.RegVar("DataBaseType", get_DataBaseType, set_DataBaseType);
 		L.RegVar("ClearPlayer", get_ClearPlayer, set_ClearPlayer);
+		L.RegVar("Players", get_Players, null);
 		L.RegVar("DataDevice", get_DataDevice, null);
 		L.EndClass();
 	}
@@ -123,6 +124,25 @@ public class AlphaWork_DataBaseComponentWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index ClearPlayer on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_Players(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			AlphaWork.DataBaseComponent obj = (AlphaWork.DataBaseComponent)o;
+			System.Collections.Generic.List<AlphaWork.UPlayer> ret = obj.Players;
+			ToLua.PushSealed(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index Players on a nil value");
 		}
 	}
 

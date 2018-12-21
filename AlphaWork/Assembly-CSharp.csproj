@@ -471,6 +471,10 @@
      <Compile Include="Assets\AlphaWork\Scripts\Event\UIMainEventArgs.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Event\UIThetaEventArgs.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Game\AI\BehaviacComponent.cs" />
+     <Compile Include="Assets\AlphaWork\Scripts\Game\AI\BehaviacStates\AttackState.cs" />
+     <Compile Include="Assets\AlphaWork\Scripts\Game\AI\BehaviacStates\BehaviacManager.cs" />
+     <Compile Include="Assets\AlphaWork\Scripts\Game\AI\BehaviacStates\BehaviacStateBase.cs" />
+     <Compile Include="Assets\AlphaWork\Scripts\Game\AI\BehaviacStates\PatrolState.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Game\AI\BehaviacTrigger.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Game\AI\BehaviourShakeHit.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Game\AI\MoveTarget.cs" />
@@ -521,12 +525,6 @@
      <Compile Include="Assets\AlphaWork\Scripts\Game\GameManager\IGameController.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Game\GameManager\StrategyGame.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Game\GameManager\SurvivalGame.cs" />
-     <Compile Include="Assets\AlphaWork\Scripts\Game\LevelManager\LevelManager.AgentController.cs" />
-     <Compile Include="Assets\AlphaWork\Scripts\Game\LevelManager\LevelManager.cs" />
-     <Compile Include="Assets\AlphaWork\Scripts\Game\LevelManager\LevelManager.EventDispatcher.cs" />
-     <Compile Include="Assets\AlphaWork\Scripts\Game\LevelManager\LevelManager.LoadResource.cs" />
-     <Compile Include="Assets\AlphaWork\Scripts\Game\LevelManager\LevelManager.StructureController.cs" />
-     <Compile Include="Assets\AlphaWork\Scripts\Game\LevelManager\LevelManager.TerrainController.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Game\Navigation\NavigationHelper.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Game\Navigation\RecastNavigationAsset.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Game\Navigation\RecastNavigationDllImports.cs" />
@@ -542,6 +540,8 @@
      <Compile Include="Assets\AlphaWork\Scripts\Lua\CustomLuaLoader.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Lua\LuaScriptComponent.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Lua\LuaScriptComponent_FuncImpl.cs" />
+     <Compile Include="Assets\AlphaWork\Scripts\Math\GalaxyMath.cs" />
+     <Compile Include="Assets\AlphaWork\Scripts\Math\OBB.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\NavigationGrid\NavGridComponent.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\NavigationGrid\NavGridTool.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\NavigationGrid\NavigationGrid.cs" />
@@ -564,11 +564,7 @@
      <Compile Include="Assets\AlphaWork\Scripts\UI\DialogForm.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\UI\DialogParams.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\UI\GUIDefine.cs" />
-     <Compile Include="Assets\AlphaWork\Scripts\UI\InGameForm.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\UI\Items\UGridItem.cs" />
-     <Compile Include="Assets\AlphaWork\Scripts\UI\LoginUIForm.cs" />
-     <Compile Include="Assets\AlphaWork\Scripts\UI\MainUIForm.cs" />
-     <Compile Include="Assets\AlphaWork\Scripts\UI\MenuForm.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\UI\SettingForm.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\UI\UGuiForm.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\UI\UGUIFormExtend.cs" />
@@ -605,7 +601,6 @@
      <None Include="Assets\AlphaWork\Artworks\Shaders\Transparent\Diffuse_OccTransparent.shader" />
      <None Include="Assets\AlphaWork\Artworks\PBR\Shaders\CYCustom\Shaders\CustomStandard.shader" />
      <None Include="Assets\AlphaWork\DataTables\Entity.txt" />
-     <None Include="Assets\AlphaWork\Scripts\Game\Behaviour\meta\Beta1.meta.xml" />
      <None Include="Assets\AlphaWork\DataTables\Ethan.txt" />
      <None Include="Assets\AlphaWork\3rd\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceRaytrace.cginc" />
      <None Include="Assets\AlphaWork\Artworks\Shaders\DiamondSpecular.shader" />
@@ -617,7 +612,6 @@
      <None Include="Assets\AlphaWork\Artworks\Shaders\Character\CharSkinCutout.shader" />
      <None Include="Assets\AlphaWork\DataTables\Sound.txt" />
      <None Include="Assets\GameFramework\Configs\AssetBundleBuilder.xml" />
-     <None Include="Assets\AlphaWork\Scripts\Game\Behaviour\Dispatch.xml" />
      <None Include="Assets\AlphaWork\Scripts\Game\Effect\Screen-Space Snow Shader\ScreenSpaceSnow.shader" />
      <None Include="Assets\UnityGameFramework\Libraries\GameFramework.xml" />
      <None Include="Assets\AlphaWork\3rd\DynamicShadowProjector\Shaders\Projector\Dynamic\ShadowWithoutFalloff.shader" />
@@ -649,7 +643,6 @@
      <None Include="Assets\AlphaWork\Artworks\Shaders\Transparent\Compressed MaskedShader2sided 5-4 cut out.shader" />
      <None Include="Assets\AlphaWork\3rd\Standard Assets\Fonts\OpenSans\License!.txt" />
      <None Include="Assets\AlphaWork\3rd\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
-     <None Include="Assets\AlphaWork\Scripts\Game\Behaviour\AttackDispatch.xml" />
      <None Include="Assets\AlphaWork\3rd\DynamicShadowProjector\Shaders\Projector\LightxShadowWithLinearFalloff.shader" />
      <None Include="Assets\AlphaWork\Artworks\Shaders\ETC\NormalMonster.shader" />
      <None Include="Assets\AlphaWork\3rd\DynamicShadowProjector\Shaders\Projector\LightWithLinearFalloff.shader" />
@@ -676,7 +669,6 @@
      <None Include="Assets\AlphaWork\Artworks\Shaders\CYCustom\Shaders\CustomStandardSpecular.shader" />
      <None Include="Assets\AlphaWork\3rd\ToLua\ToLua\readme.txt" />
      <None Include="Assets\AlphaWork\3rd\DynamicShadowProjector\Shaders\Blit\Blur.shader" />
-     <None Include="Assets\AlphaWork\Scripts\Game\Behaviour\Base.xml" />
      <None Include="Assets\AlphaWork\Artworks\Shaders\Transparent\CutOutUnlitBlendingLightmap_OccTransparent.shader" />
      <None Include="Assets\AlphaWork\3rd\DynamicShadowProjector\Shaders\Blit\CopyMipmap.shader" />
      <None Include="Assets\AlphaWork\Artworks\Shaders\Transparent\CutOutDiffuse_OccTransparent.shader" />

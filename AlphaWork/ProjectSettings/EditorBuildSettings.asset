@@ -17,3 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/AlphaWork/Scenes/yewai.unity
     guid: 06524869c29cdca47a356ea3a1370e10
+  - enabled: 1
+    path: Assets/AlphaWork/Scenes/Temp.unity
+    guid: ff9457235c8767c40b11bdae21330def
+  m_configObjects: {}
