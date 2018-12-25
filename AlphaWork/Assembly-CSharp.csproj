@@ -471,10 +471,6 @@
      <Compile Include="Assets\AlphaWork\Scripts\Event\UIMainEventArgs.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Event\UIThetaEventArgs.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Game\AI\BehaviacComponent.cs" />
-     <Compile Include="Assets\AlphaWork\Scripts\Game\AI\BehaviacStates\AttackState.cs" />
-     <Compile Include="Assets\AlphaWork\Scripts\Game\AI\BehaviacStates\BehaviacManager.cs" />
-     <Compile Include="Assets\AlphaWork\Scripts\Game\AI\BehaviacStates\BehaviacStateBase.cs" />
-     <Compile Include="Assets\AlphaWork\Scripts\Game\AI\BehaviacStates\PatrolState.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Game\AI\BehaviacTrigger.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Game\AI\BehaviourShakeHit.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Game\AI\MoveTarget.cs" />
@@ -484,7 +480,6 @@
      <Compile Include="Assets\AlphaWork\Scripts\Game\AI\SensorAICircle.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Game\AI\SensorAIPan.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Game\AI\TargetPoint.cs" />
-     <Compile Include="Assets\AlphaWork\Scripts\Game\AI\temp\BehaviourMove.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Game\Avatar\AvatarManager.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Game\Behaviour\behaviac_generated\behaviors\generated_behaviors.cs" />
      <Compile Include="Assets\AlphaWork\Scripts\Game\Behaviour\behaviac_generated\types\AgentProperties.cs" />

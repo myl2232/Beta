@@ -42,7 +42,7 @@ namespace AlphaWork
                 }
 
                 Vector3 pNext = smoothPath[m_curIdx];
-                if (Vector3.Distance(pNext, pCur) < 1)
+                if (Vector3.Distance(pNext, pCur) < 1 && (pathNum > (m_curIdx+1)))
                 {
                     m_curIdx++;
                     pNext = smoothPath[m_curIdx];
