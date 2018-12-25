@@ -64,8 +64,7 @@ namespace AlphaWork
                 status = m_agent.btexec();
                 m_lastTime = Time.realtimeSinceStartup;
                 m_agent._set_bAwakeSense(true);
-            }
-                       
+            }            
         }
 
         public void SetSpeed(float speed)
@@ -114,6 +113,7 @@ namespace AlphaWork
         private MoveTarget m_moveTarget;
         private Vector3 m_startPos;
         public Vector3 m_nextPos;
+        private Vector3 m_newDir = new Vector3();
 
         public void MoveToTarget(bool movePause = false)
         {
@@ -135,7 +135,11 @@ namespace AlphaWork
         protected void FaceToTarget()
         {
             GameObject gb = Entity.Handle as GameObject;
-            gb.transform.forward = m_nextPos - gb.transform.position;
+            m_newDir = m_nextPos - gb.transform.position;
+            m_newDir.y = 0;
+
+            gb.transform.forward = m_newDir;
+            Debug.DrawRay(gb.transform.position, m_newDir, Color.green);
         }
         
         protected Vector3 GetTargetPos()

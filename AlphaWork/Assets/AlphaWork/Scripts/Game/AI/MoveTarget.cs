@@ -15,6 +15,7 @@ namespace AlphaWork
         private Vector3[] smoothPath;
         private int m_curIdx = 0;
         private Transform m_trans;
+        private Vector3 newForword = new Vector3();
         private bool m_movePause = true;
         public bool MovePause
         {
@@ -41,6 +42,11 @@ namespace AlphaWork
                 }
 
                 Vector3 pNext = smoothPath[m_curIdx];
+                if (Vector3.Distance(pNext, pCur) < 1)
+                {
+                    m_curIdx++;
+                    pNext = smoothPath[m_curIdx];
+                }
                 Vector3 dir = Vector3.Normalize(pNext - pCur);
                 Vector3 newPos = pCur + dir * Speed * Time.deltaTime;
                 Vector3 newDir = Vector3.Normalize(pNext - newPos);
@@ -54,7 +60,9 @@ namespace AlphaWork
                     realPos = pNext;
                     m_curIdx++;
                 }
-                m_trans.transform.forward = realPos - m_trans.transform.position;
+                newForword = realPos - m_trans.transform.position;
+                newForword.y = 0;
+                m_trans.transform.forward = newForword;
                 m_trans.transform.position = realPos;
             }
             //else
