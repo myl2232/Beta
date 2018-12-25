@@ -139,7 +139,7 @@ namespace AlphaWork
             m_newDir.y = 0;
 
             gb.transform.forward = m_newDir;
-            Debug.DrawRay(gb.transform.position, m_newDir, Color.green);
+            //Debug.DrawRay(gb.transform.position, m_newDir, Color.green);
         }
         
         protected Vector3 GetTargetPos()
