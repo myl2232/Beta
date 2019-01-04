@@ -1,0 +1,922 @@
+fileFormatVersion: 2
+guid: 7a6b3825069c290489f6c48e99c5d998
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Lizard1Bone001
+    100004: Lizard1Bone001 1
+    100006: Lizard1Bone001 2
+    100008: Lizard1Bone001 3
+    100010: Lizard1Bone001Bone001
+    100012: Lizard1Bone001Bone001 1
+    100014: Lizard1Bone001Bone001 2
+    100016: Lizard1Bone001Bone001 3
+    100018: Lizard1Bone001Bone001 4
+    100020: Lizard1Bone001Bone001 5
+    100022: Lizard1Bone001Bone001 6
+    100024: Lizard1Bone001Bone001 7
+    100026: Lizard1Bone001Bone001Bone001
+    100028: Lizard1Bone001Bone001Bone001 1
+    100030: Lizard1Bone001Bone001Bone001 2
+    100032: Lizard1Bone001Bone001Bone001 3
+    100034: Lizard1Bone001Bone001Bone001 4
+    100036: Lizard1Bone001Bone001Bone001 5
+    100038: Lizard1Bone001Bone001Bone001 6
+    100040: Lizard1Bone001Bone001Bone001 7
+    100042: Lizard1Bone002
+    100044: Lizard1Bone003
+    100046: Lizard1Bone004
+    100048: Lizard1Bone005
+    100050: Lizard1Bone006
+    100052: Lizard1Bone007
+    100054: Lizard1Bone007 1
+    100056: Lizard1Bone007Bone001
+    100058: Lizard1Bone007Bone001 1
+    100060: Lizard1Bone007Bone001 2
+    100062: Lizard1Bone007Bone001 3
+    100064: Lizard1Bone007Bone001 4
+    100066: Lizard1Bone007Bone001 5
+    100068: Lizard1Bone007Bone001Bone001
+    100070: Lizard1Bone007Bone001Bone001 1
+    100072: Lizard1Bone007Bone001Bone001 2
+    100074: Lizard1Bone007Bone001Bone001 3
+    100076: Lizard1Bone007Bone001Bone001 4
+    100078: Lizard1Bone007Bone001Bone001 5
+    100080: Lizard1Bone007Bone001Bone001Bone001
+    100082: Lizard1Bone007Bone001Bone001Bone001 1
+    100084: Lizard1Bone007Bone001Bone001Bone001 2
+    100086: Lizard1Bone007Bone001Bone001Bone001 3
+    100088: Lizard1Bone007Bone001Bone001Bone001 4
+    100090: Lizard1Bone007Bone001Bone001Bone001 5
+    100092: Lizard1Bone007Bone001Bone001Bone001Bone001
+    100094: Lizard1Bone007Bone001Bone001Bone001Bone001 1
+    100096: Lizard1Bone007Bone001Bone001Bone001Bone001 2
+    100098: Lizard1Bone007Bone001Bone001Bone001Bone001 3
+    100100: Lizard1Bone007Bone001Bone001Bone001Bone001 4
+    100102: Lizard1Bone007Bone001Bone001Bone001Bone001 5
+    100104: Lizard1Bone007Bone001Bone001Bone001Bone001Bone001
+    100106: Lizard1Bone007Bone001Bone001Bone001Bone001Bone001 1
+    100108: Lizard1Bone007Bone001Bone001Bone001Bone001Bone001 2
+    100110: Lizard1Bone007Bone001Bone001Bone001Bone001Bone001 3
+    100112: Lizard1Bone007Bone001Bone001Bone001Bone001Bone001 4
+    100114: Lizard1Bone007Bone001Bone001Bone001Bone001Bone001 5
+    100116: Lizard1Bone008
+    100118: Lizard1Bone008 1
+    100120: Lizard1Bone009
+    100122: Lizard1Bone009Bone001
+    100124: Lizard1Bone009Bone001 1
+    100126: Lizard1Bone009Bone001 2
+    100128: Lizard1Bone009Bone001 3
+    100130: Lizard1Bone009Bone001 4
+    100132: Lizard1Bone009Bone001 5
+    100134: Lizard1Bone009Bone001Bone001
+    100136: Lizard1Bone009Bone001Bone001 1
+    100138: Lizard1Bone009Bone001Bone001 2
+    100140: Lizard1Bone009Bone001Bone001 3
+    100142: Lizard1Bone009Bone001Bone001 4
+    100144: Lizard1Bone009Bone001Bone001 5
+    100146: Lizard1Bone009Bone001Bone001Bone001
+    100148: Lizard1Bone009Bone001Bone001Bone001 1
+    100150: Lizard1Bone009Bone001Bone001Bone001 2
+    100152: Lizard1Bone009Bone001Bone001Bone001 3
+    100154: Lizard1Bone009Bone001Bone001Bone001 4
+    100156: Lizard1Bone009Bone001Bone001Bone001 5
+    100158: Lizard1Bone009Bone001Bone001Bone001Bone001
+    100160: Lizard1Bone009Bone001Bone001Bone001Bone001 1
+    100162: Lizard1Bone009Bone001Bone001Bone001Bone001 2
+    100164: Lizard1Bone009Bone001Bone001Bone001Bone001 3
+    100166: Lizard1Bone009Bone001Bone001Bone001Bone001 4
+    100168: Lizard1Bone009Bone001Bone001Bone001Bone001 5
+    100170: Lizard1Bone009Bone001Bone001Bone001Bone001Bone001
+    100172: Lizard1Bone009Bone001Bone001Bone001Bone001Bone001 1
+    100174: Lizard1Bone009Bone001Bone001Bone001Bone001Bone001 2
+    100176: Lizard1Bone009Bone001Bone001Bone001Bone001Bone001 3
+    100178: Lizard1Bone009Bone001Bone001Bone001Bone001Bone001 4
+    100180: Lizard1Bone009Bone001Bone001Bone001Bone001Bone001 5
+    100182: Lizard1Bone010
+    100184: Lizard1Bone011
+    100186: Lizard1Bone012
+    100188: Lizard1Bone013
+    100190: Lizard1Bone014
+    100192: Lizard2Bone001
+    100194: Lizard2Bone001 1
+    100196: Lizard2Bone001 2
+    100198: Lizard2Bone001Bone001
+    100200: Lizard2Bone001Bone001 1
+    100202: Lizard2Bone001Bone001 2
+    100204: Lizard2Bone001Bone001 3
+    100206: Lizard2Bone001Bone001Bone001
+    100208: Lizard2Bone001Bone001Bone001 1
+    100210: Lizard2Bone001Bone001Bone001 2
+    100212: Lizard2Bone001Bone001Bone001 3
+    100214: Lizard2Bone002
+    100216: Lizard2Bone004
+    100218: Lizard5Bone001
+    100220: Lizard5Bone001Bone001
+    100222: Lizard5Bone001Bone001 1
+    100224: Lizard5Bone001Bone001 2
+    100226: Lizard5Bone001Bone001 3
+    100228: Lizard5Bone001Bone001 4
+    100230: Lizard5Bone001Bone001 5
+    100232: Lizard5Bone001Bone001Bone001
+    100234: Lizard5Bone001Bone001Bone001 1
+    100236: Lizard5Bone001Bone001Bone001 2
+    100238: Lizard5Bone001Bone001Bone001 3
+    100240: Lizard5Bone001Bone001Bone001 4
+    100242: Lizard5Bone001Bone001Bone001 5
+    100244: Lizard5Bone002
+    100246: Lizard5Bone003
+    100248: Lizard5Bone004
+    100250: Lizard5Bone005
+    100252: Lizard5Bone006
+    100254: LizardHead001
+    100256: LizardHeadBone004
+    100258: LizardHeadBone004Bone001
+    100260: LizardHeadBone004Bone002
+    100262: LizardHeadBone004Bone003
+    100264: LizardHeadBone004Bone003Bone001
+    100266: LizardHeadBone004Bone003Bone002
+    100268: LizardHeadBone004Bone003Bone004
+    100270: LizardHeadBone004Bone003Bone004Bone001
+    100272: LizardHeadBone004Bone003Bone004Bone001Bone001
+    100274: LizardHeadBone004Bone003Bone004Bone001Bone001Bone001
+    100276: LizardHeadBone004Bone004
+    100278: LizardHeadBone004Bone005
+    100280: LizardHeadBone004Bone006
+    100282: LizardHeadBone004Bone007
+    100284: LizardLFrontLegAnkle2
+    100286: LizardLFrontLegCalf
+    100288: LizardLFrontLegDigit01
+    100290: LizardLFrontLegDigit02
+    100292: LizardLFrontLegDigit03
+    100294: LizardLFrontLegDigit11
+    100296: LizardLFrontLegDigit12
+    100298: LizardLFrontLegDigit13
+    100300: LizardLFrontLegDigit21
+    100302: LizardLFrontLegDigit22
+    100304: LizardLFrontLegDigit23
+    100306: LizardLFrontLegDigit31
+    100308: LizardLFrontLegDigit32
+    100310: LizardLFrontLegDigit33
+    100312: LizardLFrontLegDigit41
+    100314: LizardLFrontLegDigit42
+    100316: LizardLFrontLegDigit43
+    100318: LizardLFrontLegThigh
+    100320: LizardLLeg1
+    100322: LizardLLeg2
+    100324: LizardLLegAnkle
+    100326: LizardLLegDigit01
+    100328: LizardLLegDigit02
+    100330: LizardLLegDigit03
+    100332: LizardLLegDigit11
+    100334: LizardLLegDigit11 1
+    100336: LizardLLegDigit12
+    100338: LizardLLegDigit12 1
+    100340: LizardLLegDigit13
+    100342: LizardLLegDigit21
+    100344: LizardLLegDigit21 1
+    100346: LizardLLegDigit22
+    100348: LizardLLegDigit22 1
+    100350: LizardLLegDigit23
+    100352: LizardLLegDigit23 1
+    100354: LizardLLegDigit31
+    100356: LizardLLegDigit31 1
+    100358: LizardLLegDigit32
+    100360: LizardLLegDigit32 1
+    100362: LizardLLegDigit33
+    100364: LizardLLegDigit33 1
+    100366: LizardLLegDigit41
+    100368: LizardLLegDigit41 1
+    100370: LizardLLegDigit42
+    100372: LizardLLegDigit42 1
+    100374: LizardLLegDigit43
+    100376: LizardLLegDigit43 1
+    100378: LizardLLegDigit51
+    100380: LizardLLegDigit52
+    100382: LizardLLegDigit53
+    100384: LizardLLegLower
+    100386: LizardLLegPalm2
+    100388: LizardLLegUpper
+    100390: LizardNeck1
+    100392: LizardNeck2
+    100394: LizardPelvis
+    100396: LizardPelvisBone001
+    100398: LizardRFrontLegAnkle2
+    100400: LizardRFrontLegCalf
+    100402: LizardRFrontLegDigit01
+    100404: LizardRFrontLegDigit02
+    100406: LizardRFrontLegDigit03
+    100408: LizardRFrontLegDigit11
+    100410: LizardRFrontLegDigit12
+    100412: LizardRFrontLegDigit13
+    100414: LizardRFrontLegDigit21
+    100416: LizardRFrontLegDigit22
+    100418: LizardRFrontLegDigit23
+    100420: LizardRFrontLegDigit31
+    100422: LizardRFrontLegDigit32
+    100424: LizardRFrontLegDigit33
+    100426: LizardRFrontLegDigit41
+    100428: LizardRFrontLegDigit42
+    100430: LizardRFrontLegDigit43
+    100432: LizardRFrontLegThigh
+    100434: LizardRibcage
+    100436: LizardRibcage001
+    100438: LizardRLeg1
+    100440: LizardRLeg2
+    100442: LizardRLegAnkle
+    100444: LizardRLegCollarbone
+    100446: LizardRLegDigit01
+    100448: LizardRLegDigit02
+    100450: LizardRLegDigit03
+    100452: LizardRLegDigit11
+    100454: LizardRLegDigit11 1
+    100456: LizardRLegDigit12
+    100458: LizardRLegDigit12 1
+    100460: LizardRLegDigit13
+    100462: LizardRLegDigit21
+    100464: LizardRLegDigit21 1
+    100466: LizardRLegDigit22
+    100468: LizardRLegDigit22 1
+    100470: LizardRLegDigit23
+    100472: LizardRLegDigit23 1
+    100474: LizardRLegDigit31
+    100476: LizardRLegDigit31 1
+    100478: LizardRLegDigit32
+    100480: LizardRLegDigit32 1
+    100482: LizardRLegDigit33
+    100484: LizardRLegDigit33 1
+    100486: LizardRLegDigit41
+    100488: LizardRLegDigit41 1
+    100490: LizardRLegDigit42
+    100492: LizardRLegDigit42 1
+    100494: LizardRLegDigit43
+    100496: LizardRLegDigit43 1
+    100498: LizardRLegDigit51
+    100500: LizardRLegDigit52
+    100502: LizardRLegDigit53
+    100504: LizardRLegLower
+    100506: LizardRLegPalm2
+    100508: LizardRLegUpper
+    100510: LizardSpine1
+    100512: LizardSpine1 1
+    100514: LizardSpine2
+    100516: LizardSpine2 1
+    100518: LizardTail1
+    100520: LizardTail2
+    100522: LizardTail3
+    100524: LizardTail4
+    100526: LizardTail5
+    100528: LizardTail6
+    100530: LizardTail7
+    100532: LizardTail8
+    100534: Object005
+    100536: bone_00
+    100538: bone_01
+    100540: bone_02
+    100542: bone_03
+    100544: bone_04
+    100546: bone_05
+    100548: bone_06
+    100550: bone_07
+    100552: bone_08
+    100554: bone_09
+    100556: bone_10
+    100558: bone_100
+    100560: bone_101
+    100562: bone_102
+    100564: bone_103
+    100566: bone_104
+    100568: bone_105
+    100570: bone_106
+    100572: bone_107
+    100574: bone_108
+    100576: bone_109
+    100578: bone_11
+    100580: bone_110
+    100582: bone_111
+    100584: bone_112
+    100586: bone_113
+    100588: bone_114
+    100590: bone_115
+    100592: bone_116
+    100594: bone_117
+    100596: bone_118
+    100598: bone_119
+    100600: bone_12
+    100602: bone_120
+    100604: bone_121
+    100606: bone_122
+    100608: bone_123
+    100610: bone_124
+    100612: bone_125
+    100614: bone_126
+    100616: bone_127
+    100618: bone_128
+    100620: bone_129
+    100622: bone_13
+    100624: bone_130
+    100626: bone_131
+    100628: bone_132
+    100630: bone_14
+    100632: bone_15
+    100634: bone_16
+    100636: bone_17
+    100638: bone_18
+    100640: bone_19
+    100642: bone_20
+    100644: bone_21
+    100646: bone_22
+    100648: bone_23
+    100650: bone_24
+    100652: bone_25
+    100654: bone_26
+    100656: bone_27
+    100658: bone_28
+    100660: bone_29
+    100662: bone_30
+    100664: bone_31
+    100666: bone_32
+    100668: bone_33
+    100670: bone_34
+    100672: bone_35
+    100674: bone_36
+    100676: bone_37
+    100678: bone_38
+    100680: bone_39
+    100682: bone_40
+    100684: bone_41
+    100686: bone_42
+    100688: bone_43
+    100690: bone_44
+    100692: bone_45
+    100694: bone_46
+    100696: bone_47
+    100698: bone_48
+    100700: bone_49
+    100702: bone_50
+    100704: bone_51
+    100706: bone_52
+    100708: bone_53
+    100710: bone_54
+    100712: bone_55
+    100714: bone_56
+    100716: bone_57
+    100718: bone_58
+    100720: bone_59
+    100722: bone_60
+    100724: bone_61
+    100726: bone_62
+    100728: bone_63
+    100730: bone_64
+    100732: bone_65
+    100734: bone_66
+    100736: bone_67
+    100738: bone_68
+    100740: bone_69
+    100742: bone_70
+    100744: bone_71
+    100746: bone_72
+    100748: bone_73
+    100750: bone_74
+    100752: bone_75
+    100754: bone_76
+    100756: bone_77
+    100758: bone_78
+    100760: bone_79
+    100762: bone_80
+    100764: bone_81
+    100766: bone_82
+    100768: bone_83
+    100770: bone_84
+    100772: bone_85
+    100774: bone_86
+    100776: bone_87
+    100778: bone_88
+    100780: bone_89
+    100782: bone_90
+    100784: bone_91
+    100786: bone_92
+    100788: bone_93
+    100790: bone_94
+    100792: bone_95
+    100794: bone_96
+    100796: bone_97
+    100798: bone_98
+    100800: bone_99
+    100802: Bip001
+    400000: //RootNode
+    400002: Lizard1Bone001
+    400004: Lizard1Bone001 1
+    400006: Lizard1Bone001 2
+    400008: Lizard1Bone001 3
+    400010: Lizard1Bone001Bone001
+    400012: Lizard1Bone001Bone001 1
+    400014: Lizard1Bone001Bone001 2
+    400016: Lizard1Bone001Bone001 3
+    400018: Lizard1Bone001Bone001 4
+    400020: Lizard1Bone001Bone001 5
+    400022: Lizard1Bone001Bone001 6
+    400024: Lizard1Bone001Bone001 7
+    400026: Lizard1Bone001Bone001Bone001
+    400028: Lizard1Bone001Bone001Bone001 1
+    400030: Lizard1Bone001Bone001Bone001 2
+    400032: Lizard1Bone001Bone001Bone001 3
+    400034: Lizard1Bone001Bone001Bone001 4
+    400036: Lizard1Bone001Bone001Bone001 5
+    400038: Lizard1Bone001Bone001Bone001 6
+    400040: Lizard1Bone001Bone001Bone001 7
+    400042: Lizard1Bone002
+    400044: Lizard1Bone003
+    400046: Lizard1Bone004
+    400048: Lizard1Bone005
+    400050: Lizard1Bone006
+    400052: Lizard1Bone007
+    400054: Lizard1Bone007 1
+    400056: Lizard1Bone007Bone001
+    400058: Lizard1Bone007Bone001 1
+    400060: Lizard1Bone007Bone001 2
+    400062: Lizard1Bone007Bone001 3
+    400064: Lizard1Bone007Bone001 4
+    400066: Lizard1Bone007Bone001 5
+    400068: Lizard1Bone007Bone001Bone001
+    400070: Lizard1Bone007Bone001Bone001 1
+    400072: Lizard1Bone007Bone001Bone001 2
+    400074: Lizard1Bone007Bone001Bone001 3
+    400076: Lizard1Bone007Bone001Bone001 4
+    400078: Lizard1Bone007Bone001Bone001 5
+    400080: Lizard1Bone007Bone001Bone001Bone001
+    400082: Lizard1Bone007Bone001Bone001Bone001 1
+    400084: Lizard1Bone007Bone001Bone001Bone001 2
+    400086: Lizard1Bone007Bone001Bone001Bone001 3
+    400088: Lizard1Bone007Bone001Bone001Bone001 4
+    400090: Lizard1Bone007Bone001Bone001Bone001 5
+    400092: Lizard1Bone007Bone001Bone001Bone001Bone001
+    400094: Lizard1Bone007Bone001Bone001Bone001Bone001 1
+    400096: Lizard1Bone007Bone001Bone001Bone001Bone001 2
+    400098: Lizard1Bone007Bone001Bone001Bone001Bone001 3
+    400100: Lizard1Bone007Bone001Bone001Bone001Bone001 4
+    400102: Lizard1Bone007Bone001Bone001Bone001Bone001 5
+    400104: Lizard1Bone007Bone001Bone001Bone001Bone001Bone001
+    400106: Lizard1Bone007Bone001Bone001Bone001Bone001Bone001 1
+    400108: Lizard1Bone007Bone001Bone001Bone001Bone001Bone001 2
+    400110: Lizard1Bone007Bone001Bone001Bone001Bone001Bone001 3
+    400112: Lizard1Bone007Bone001Bone001Bone001Bone001Bone001 4
+    400114: Lizard1Bone007Bone001Bone001Bone001Bone001Bone001 5
+    400116: Lizard1Bone008
+    400118: Lizard1Bone008 1
+    400120: Lizard1Bone009
+    400122: Lizard1Bone009Bone001
+    400124: Lizard1Bone009Bone001 1
+    400126: Lizard1Bone009Bone001 2
+    400128: Lizard1Bone009Bone001 3
+    400130: Lizard1Bone009Bone001 4
+    400132: Lizard1Bone009Bone001 5
+    400134: Lizard1Bone009Bone001Bone001
+    400136: Lizard1Bone009Bone001Bone001 1
+    400138: Lizard1Bone009Bone001Bone001 2
+    400140: Lizard1Bone009Bone001Bone001 3
+    400142: Lizard1Bone009Bone001Bone001 4
+    400144: Lizard1Bone009Bone001Bone001 5
+    400146: Lizard1Bone009Bone001Bone001Bone001
+    400148: Lizard1Bone009Bone001Bone001Bone001 1
+    400150: Lizard1Bone009Bone001Bone001Bone001 2
+    400152: Lizard1Bone009Bone001Bone001Bone001 3
+    400154: Lizard1Bone009Bone001Bone001Bone001 4
+    400156: Lizard1Bone009Bone001Bone001Bone001 5
+    400158: Lizard1Bone009Bone001Bone001Bone001Bone001
+    400160: Lizard1Bone009Bone001Bone001Bone001Bone001 1
+    400162: Lizard1Bone009Bone001Bone001Bone001Bone001 2
+    400164: Lizard1Bone009Bone001Bone001Bone001Bone001 3
+    400166: Lizard1Bone009Bone001Bone001Bone001Bone001 4
+    400168: Lizard1Bone009Bone001Bone001Bone001Bone001 5
+    400170: Lizard1Bone009Bone001Bone001Bone001Bone001Bone001
+    400172: Lizard1Bone009Bone001Bone001Bone001Bone001Bone001 1
+    400174: Lizard1Bone009Bone001Bone001Bone001Bone001Bone001 2
+    400176: Lizard1Bone009Bone001Bone001Bone001Bone001Bone001 3
+    400178: Lizard1Bone009Bone001Bone001Bone001Bone001Bone001 4
+    400180: Lizard1Bone009Bone001Bone001Bone001Bone001Bone001 5
+    400182: Lizard1Bone010
+    400184: Lizard1Bone011
+    400186: Lizard1Bone012
+    400188: Lizard1Bone013
+    400190: Lizard1Bone014
+    400192: Lizard2Bone001
+    400194: Lizard2Bone001 1
+    400196: Lizard2Bone001 2
+    400198: Lizard2Bone001Bone001
+    400200: Lizard2Bone001Bone001 1
+    400202: Lizard2Bone001Bone001 2
+    400204: Lizard2Bone001Bone001 3
+    400206: Lizard2Bone001Bone001Bone001
+    400208: Lizard2Bone001Bone001Bone001 1
+    400210: Lizard2Bone001Bone001Bone001 2
+    400212: Lizard2Bone001Bone001Bone001 3
+    400214: Lizard2Bone002
+    400216: Lizard2Bone004
+    400218: Lizard5Bone001
+    400220: Lizard5Bone001Bone001
+    400222: Lizard5Bone001Bone001 1
+    400224: Lizard5Bone001Bone001 2
+    400226: Lizard5Bone001Bone001 3
+    400228: Lizard5Bone001Bone001 4
+    400230: Lizard5Bone001Bone001 5
+    400232: Lizard5Bone001Bone001Bone001
+    400234: Lizard5Bone001Bone001Bone001 1
+    400236: Lizard5Bone001Bone001Bone001 2
+    400238: Lizard5Bone001Bone001Bone001 3
+    400240: Lizard5Bone001Bone001Bone001 4
+    400242: Lizard5Bone001Bone001Bone001 5
+    400244: Lizard5Bone002
+    400246: Lizard5Bone003
+    400248: Lizard5Bone004
+    400250: Lizard5Bone005
+    400252: Lizard5Bone006
+    400254: LizardHead001
+    400256: LizardHeadBone004
+    400258: LizardHeadBone004Bone001
+    400260: LizardHeadBone004Bone002
+    400262: LizardHeadBone004Bone003
+    400264: LizardHeadBone004Bone003Bone001
+    400266: LizardHeadBone004Bone003Bone002
+    400268: LizardHeadBone004Bone003Bone004
+    400270: LizardHeadBone004Bone003Bone004Bone001
+    400272: LizardHeadBone004Bone003Bone004Bone001Bone001
+    400274: LizardHeadBone004Bone003Bone004Bone001Bone001Bone001
+    400276: LizardHeadBone004Bone004
+    400278: LizardHeadBone004Bone005
+    400280: LizardHeadBone004Bone006
+    400282: LizardHeadBone004Bone007
+    400284: LizardLFrontLegAnkle2
+    400286: LizardLFrontLegCalf
+    400288: LizardLFrontLegDigit01
+    400290: LizardLFrontLegDigit02
+    400292: LizardLFrontLegDigit03
+    400294: LizardLFrontLegDigit11
+    400296: LizardLFrontLegDigit12
+    400298: LizardLFrontLegDigit13
+    400300: LizardLFrontLegDigit21
+    400302: LizardLFrontLegDigit22
+    400304: LizardLFrontLegDigit23
+    400306: LizardLFrontLegDigit31
+    400308: LizardLFrontLegDigit32
+    400310: LizardLFrontLegDigit33
+    400312: LizardLFrontLegDigit41
+    400314: LizardLFrontLegDigit42
+    400316: LizardLFrontLegDigit43
+    400318: LizardLFrontLegThigh
+    400320: LizardLLeg1
+    400322: LizardLLeg2
+    400324: LizardLLegAnkle
+    400326: LizardLLegDigit01
+    400328: LizardLLegDigit02
+    400330: LizardLLegDigit03
+    400332: LizardLLegDigit11
+    400334: LizardLLegDigit11 1
+    400336: LizardLLegDigit12
+    400338: LizardLLegDigit12 1
+    400340: LizardLLegDigit13
+    400342: LizardLLegDigit21
+    400344: LizardLLegDigit21 1
+    400346: LizardLLegDigit22
+    400348: LizardLLegDigit22 1
+    400350: LizardLLegDigit23
+    400352: LizardLLegDigit23 1
+    400354: LizardLLegDigit31
+    400356: LizardLLegDigit31 1
+    400358: LizardLLegDigit32
+    400360: LizardLLegDigit32 1
+    400362: LizardLLegDigit33
+    400364: LizardLLegDigit33 1
+    400366: LizardLLegDigit41
+    400368: LizardLLegDigit41 1
+    400370: LizardLLegDigit42
+    400372: LizardLLegDigit42 1
+    400374: LizardLLegDigit43
+    400376: LizardLLegDigit43 1
+    400378: LizardLLegDigit51
+    400380: LizardLLegDigit52
+    400382: LizardLLegDigit53
+    400384: LizardLLegLower
+    400386: LizardLLegPalm2
+    400388: LizardLLegUpper
+    400390: LizardNeck1
+    400392: LizardNeck2
+    400394: LizardPelvis
+    400396: LizardPelvisBone001
+    400398: LizardRFrontLegAnkle2
+    400400: LizardRFrontLegCalf
+    400402: LizardRFrontLegDigit01
+    400404: LizardRFrontLegDigit02
+    400406: LizardRFrontLegDigit03
+    400408: LizardRFrontLegDigit11
+    400410: LizardRFrontLegDigit12
+    400412: LizardRFrontLegDigit13
+    400414: LizardRFrontLegDigit21
+    400416: LizardRFrontLegDigit22
+    400418: LizardRFrontLegDigit23
+    400420: LizardRFrontLegDigit31
+    400422: LizardRFrontLegDigit32
+    400424: LizardRFrontLegDigit33
+    400426: LizardRFrontLegDigit41
+    400428: LizardRFrontLegDigit42
+    400430: LizardRFrontLegDigit43
+    400432: LizardRFrontLegThigh
+    400434: LizardRibcage
+    400436: LizardRibcage001
+    400438: LizardRLeg1
+    400440: LizardRLeg2
+    400442: LizardRLegAnkle
+    400444: LizardRLegCollarbone
+    400446: LizardRLegDigit01
+    400448: LizardRLegDigit02
+    400450: LizardRLegDigit03
+    400452: LizardRLegDigit11
+    400454: LizardRLegDigit11 1
+    400456: LizardRLegDigit12
+    400458: LizardRLegDigit12 1
+    400460: LizardRLegDigit13
+    400462: LizardRLegDigit21
+    400464: LizardRLegDigit21 1
+    400466: LizardRLegDigit22
+    400468: LizardRLegDigit22 1
+    400470: LizardRLegDigit23
+    400472: LizardRLegDigit23 1
+    400474: LizardRLegDigit31
+    400476: LizardRLegDigit31 1
+    400478: LizardRLegDigit32
+    400480: LizardRLegDigit32 1
+    400482: LizardRLegDigit33
+    400484: LizardRLegDigit33 1
+    400486: LizardRLegDigit41
+    400488: LizardRLegDigit41 1
+    400490: LizardRLegDigit42
+    400492: LizardRLegDigit42 1
+    400494: LizardRLegDigit43
+    400496: LizardRLegDigit43 1
+    400498: LizardRLegDigit51
+    400500: LizardRLegDigit52
+    400502: LizardRLegDigit53
+    400504: LizardRLegLower
+    400506: LizardRLegPalm2
+    400508: LizardRLegUpper
+    400510: LizardSpine1
+    400512: LizardSpine1 1
+    400514: LizardSpine2
+    400516: LizardSpine2 1
+    400518: LizardTail1
+    400520: LizardTail2
+    400522: LizardTail3
+    400524: LizardTail4
+    400526: LizardTail5
+    400528: LizardTail6
+    400530: LizardTail7
+    400532: LizardTail8
+    400534: Object005
+    400536: bone_00
+    400538: bone_01
+    400540: bone_02
+    400542: bone_03
+    400544: bone_04
+    400546: bone_05
+    400548: bone_06
+    400550: bone_07
+    400552: bone_08
+    400554: bone_09
+    400556: bone_10
+    400558: bone_100
+    400560: bone_101
+    400562: bone_102
+    400564: bone_103
+    400566: bone_104
+    400568: bone_105
+    400570: bone_106
+    400572: bone_107
+    400574: bone_108
+    400576: bone_109
+    400578: bone_11
+    400580: bone_110
+    400582: bone_111
+    400584: bone_112
+    400586: bone_113
+    400588: bone_114
+    400590: bone_115
+    400592: bone_116
+    400594: bone_117
+    400596: bone_118
+    400598: bone_119
+    400600: bone_12
+    400602: bone_120
+    400604: bone_121
+    400606: bone_122
+    400608: bone_123
+    400610: bone_124
+    400612: bone_125
+    400614: bone_126
+    400616: bone_127
+    400618: bone_128
+    400620: bone_129
+    400622: bone_13
+    400624: bone_130
+    400626: bone_131
+    400628: bone_132
+    400630: bone_14
+    400632: bone_15
+    400634: bone_16
+    400636: bone_17
+    400638: bone_18
+    400640: bone_19
+    400642: bone_20
+    400644: bone_21
+    400646: bone_22
+    400648: bone_23
+    400650: bone_24
+    400652: bone_25
+    400654: bone_26
+    400656: bone_27
+    400658: bone_28
+    400660: bone_29
+    400662: bone_30
+    400664: bone_31
+    400666: bone_32
+    400668: bone_33
+    400670: bone_34
+    400672: bone_35
+    400674: bone_36
+    400676: bone_37
+    400678: bone_38
+    400680: bone_39
+    400682: bone_40
+    400684: bone_41
+    400686: bone_42
+    400688: bone_43
+    400690: bone_44
+    400692: bone_45
+    400694: bone_46
+    400696: bone_47
+    400698: bone_48
+    400700: bone_49
+    400702: bone_50
+    400704: bone_51
+    400706: bone_52
+    400708: bone_53
+    400710: bone_54
+    400712: bone_55
+    400714: bone_56
+    400716: bone_57
+    400718: bone_58
+    400720: bone_59
+    400722: bone_60
+    400724: bone_61
+    400726: bone_62
+    400728: bone_63
+    400730: bone_64
+    400732: bone_65
+    400734: bone_66
+    400736: bone_67
+    400738: bone_68
+    400740: bone_69
+    400742: bone_70
+    400744: bone_71
+    400746: bone_72
+    400748: bone_73
+    400750: bone_74
+    400752: bone_75
+    400754: bone_76
+    400756: bone_77
+    400758: bone_78
+    400760: bone_79
+    400762: bone_80
+    400764: bone_81
+    400766: bone_82
+    400768: bone_83
+    400770: bone_84
+    400772: bone_85
+    400774: bone_86
+    400776: bone_87
+    400778: bone_88
+    400780: bone_89
+    400782: bone_90
+    400784: bone_91
+    400786: bone_92
+    400788: bone_93
+    400790: bone_94
+    400792: bone_95
+    400794: bone_96
+    400796: bone_97
+    400798: bone_98
+    400800: bone_99
+    400802: Bip001
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

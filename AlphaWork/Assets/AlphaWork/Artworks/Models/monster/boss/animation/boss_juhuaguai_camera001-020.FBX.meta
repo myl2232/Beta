@@ -1,0 +1,1265 @@
+fileFormatVersion: 2
+guid: 1ec0bd0e1c034cf4cad00c5ffdd74783
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: bone_00
+    100002: bone_01
+    100004: bone_02
+    100006: bone_03
+    100008: bone_04
+    100010: bone_05
+    100012: bone_06
+    100014: bone_07
+    100016: bone_08
+    100018: bone_09
+    100020: bone_10
+    100022: bone_100
+    100024: bone_101
+    100026: bone_102
+    100028: bone_103
+    100030: bone_104
+    100032: bone_105
+    100034: bone_106
+    100036: bone_107
+    100038: bone_108
+    100040: bone_109
+    100042: bone_11
+    100044: bone_110
+    100046: bone_111
+    100048: bone_112
+    100050: bone_113
+    100052: bone_114
+    100054: bone_115
+    100056: bone_116
+    100058: bone_117
+    100060: bone_118
+    100062: bone_119
+    100064: bone_12
+    100066: bone_120
+    100068: bone_121
+    100070: bone_122
+    100072: bone_123
+    100074: bone_124
+    100076: bone_125
+    100078: bone_126
+    100080: bone_127
+    100082: bone_128
+    100084: bone_129
+    100086: bone_13
+    100088: bone_130
+    100090: bone_131
+    100092: bone_132
+    100094: bone_14
+    100096: bone_15
+    100098: bone_16
+    100100: bone_17
+    100102: bone_18
+    100104: bone_19
+    100106: bone_20
+    100108: bone_21
+    100110: bone_22
+    100112: bone_23
+    100114: bone_24
+    100116: bone_25
+    100118: bone_26
+    100120: bone_27
+    100122: bone_28
+    100124: bone_29
+    100126: bone_30
+    100128: bone_31
+    100130: bone_32
+    100132: bone_33
+    100134: bone_34
+    100136: bone_35
+    100138: bone_36
+    100140: bone_37
+    100142: bone_38
+    100144: bone_39
+    100146: bone_40
+    100148: bone_41
+    100150: bone_42
+    100152: bone_43
+    100154: bone_44
+    100156: bone_45
+    100158: bone_46
+    100160: bone_47
+    100162: bone_48
+    100164: bone_49
+    100166: bone_50
+    100168: bone_51
+    100170: bone_52
+    100172: bone_53
+    100174: bone_54
+    100176: bone_55
+    100178: bone_56
+    100180: bone_57
+    100182: bone_58
+    100184: bone_59
+    100186: bone_60
+    100188: bone_61
+    100190: bone_62
+    100192: bone_63
+    100194: bone_64
+    100196: bone_65
+    100198: bone_66
+    100200: bone_67
+    100202: bone_68
+    100204: bone_69
+    100206: bone_70
+    100208: bone_71
+    100210: bone_72
+    100212: bone_73
+    100214: bone_74
+    100216: bone_75
+    100218: bone_76
+    100220: bone_77
+    100222: bone_78
+    100224: bone_79
+    100226: bone_80
+    100228: bone_81
+    100230: bone_82
+    100232: bone_83
+    100234: bone_84
+    100236: bone_85
+    100238: bone_86
+    100240: bone_87
+    100242: bone_88
+    100244: bone_89
+    100246: bone_90
+    100248: bone_91
+    100250: bone_92
+    100252: bone_93
+    100254: bone_94
+    100256: bone_95
+    100258: bone_96
+    100260: bone_97
+    100262: bone_98
+    100264: bone_99
+    100266: //RootNode
+    100268: LizardHead001
+    100270: LizardHeadBone004
+    100272: LizardHeadBone004Bone001
+    100274: LizardHeadBone004Bone002
+    100276: LizardHeadBone004Bone003
+    100278: LizardHeadBone004Bone003Bone001
+    100280: LizardHeadBone004Bone003Bone002
+    100282: LizardHeadBone004Bone003Bone004
+    100284: LizardHeadBone004Bone003Bone004Bone001
+    100286: LizardHeadBone004Bone003Bone004Bone001Bone001
+    100288: LizardHeadBone004Bone003Bone004Bone001Bone001Bone001
+    100290: LizardHeadBone004Bone004
+    100292: LizardHeadBone004Bone005
+    100294: LizardHeadBone004Bone006
+    100296: LizardHeadBone004Bone007
+    100298: LizardLFrontLegAnkle2
+    100300: LizardLFrontLegCalf
+    100302: LizardLFrontLegDigit01
+    100304: LizardLFrontLegDigit02
+    100306: LizardLFrontLegDigit03
+    100308: LizardLFrontLegDigit11
+    100310: LizardLFrontLegDigit12
+    100312: LizardLFrontLegDigit13
+    100314: LizardLFrontLegDigit21
+    100316: LizardLFrontLegDigit22
+    100318: LizardLFrontLegDigit23
+    100320: LizardLFrontLegDigit31
+    100322: LizardLFrontLegDigit32
+    100324: LizardLFrontLegDigit33
+    100326: LizardLFrontLegDigit41
+    100328: LizardLFrontLegDigit42
+    100330: LizardLFrontLegDigit43
+    100332: LizardLFrontLegThigh
+    100334: LizardLLeg1
+    100336: LizardLLeg2
+    100338: LizardLLegAnkle
+    100340: LizardLLegDigit01
+    100342: LizardLLegDigit02
+    100344: LizardLLegDigit03
+    100346: LizardLLegDigit11
+    100348: LizardLLegDigit11 1
+    100350: LizardLLegDigit12
+    100352: LizardLLegDigit12 1
+    100354: LizardLLegDigit13
+    100356: LizardLLegDigit21
+    100358: LizardLLegDigit21 1
+    100360: LizardLLegDigit22
+    100362: LizardLLegDigit22 1
+    100364: LizardLLegDigit23
+    100366: LizardLLegDigit23 1
+    100368: LizardLLegDigit31
+    100370: LizardLLegDigit31 1
+    100372: LizardLLegDigit32
+    100374: LizardLLegDigit32 1
+    100376: LizardLLegDigit33
+    100378: LizardLLegDigit33 1
+    100380: LizardLLegDigit41
+    100382: LizardLLegDigit41 1
+    100384: LizardLLegDigit42
+    100386: LizardLLegDigit42 1
+    100388: LizardLLegDigit43
+    100390: LizardLLegDigit43 1
+    100392: LizardLLegDigit51
+    100394: LizardLLegDigit52
+    100396: LizardLLegDigit53
+    100398: LizardLLegLower
+    100400: LizardLLegPalm2
+    100402: LizardLLegUpper
+    100404: LizardNeck1
+    100406: LizardNeck2
+    100408: LizardPelvis
+    100410: LizardPelvisBone001
+    100412: LizardRFrontLegAnkle2
+    100414: LizardRFrontLegCalf
+    100416: LizardRFrontLegDigit01
+    100418: LizardRFrontLegDigit02
+    100420: LizardRFrontLegDigit03
+    100422: LizardRFrontLegDigit11
+    100424: LizardRFrontLegDigit12
+    100426: LizardRFrontLegDigit13
+    100428: LizardRFrontLegDigit21
+    100430: LizardRFrontLegDigit22
+    100432: LizardRFrontLegDigit23
+    100434: LizardRFrontLegDigit31
+    100436: LizardRFrontLegDigit32
+    100438: LizardRFrontLegDigit33
+    100440: LizardRFrontLegDigit41
+    100442: LizardRFrontLegDigit42
+    100444: LizardRFrontLegDigit43
+    100446: LizardRFrontLegThigh
+    100448: LizardRibcage
+    100450: LizardRibcage001
+    100452: LizardRLeg1
+    100454: LizardRLeg2
+    100456: LizardRLegAnkle
+    100458: LizardRLegCollarbone
+    100460: LizardRLegDigit01
+    100462: LizardRLegDigit02
+    100464: LizardRLegDigit03
+    100466: LizardRLegDigit11
+    100468: LizardRLegDigit11 1
+    100470: LizardRLegDigit12
+    100472: LizardRLegDigit12 1
+    100474: LizardRLegDigit13
+    100476: LizardRLegDigit21
+    100478: LizardRLegDigit21 1
+    100480: LizardRLegDigit22
+    100482: LizardRLegDigit22 1
+    100484: LizardRLegDigit23
+    100486: LizardRLegDigit23 1
+    100488: LizardRLegDigit31
+    100490: LizardRLegDigit31 1
+    100492: LizardRLegDigit32
+    100494: LizardRLegDigit32 1
+    100496: LizardRLegDigit33
+    100498: LizardRLegDigit33 1
+    100500: LizardRLegDigit41
+    100502: LizardRLegDigit41 1
+    100504: LizardRLegDigit42
+    100506: LizardRLegDigit42 1
+    100508: LizardRLegDigit43
+    100510: LizardRLegDigit43 1
+    100512: LizardRLegDigit51
+    100514: LizardRLegDigit52
+    100516: LizardRLegDigit53
+    100518: LizardRLegLower
+    100520: LizardRLegPalm2
+    100522: LizardRLegUpper
+    100524: LizardSpine1
+    100526: LizardSpine1 1
+    100528: LizardSpine2
+    100530: LizardSpine2 1
+    100532: LizardTail1
+    100534: Object005
+    100536: Bip001
+    400000: bone_00
+    400002: bone_01
+    400004: bone_02
+    400006: bone_03
+    400008: bone_04
+    400010: bone_05
+    400012: bone_06
+    400014: bone_07
+    400016: bone_08
+    400018: bone_09
+    400020: bone_10
+    400022: bone_100
+    400024: bone_101
+    400026: bone_102
+    400028: bone_103
+    400030: bone_104
+    400032: bone_105
+    400034: bone_106
+    400036: bone_107
+    400038: bone_108
+    400040: bone_109
+    400042: bone_11
+    400044: bone_110
+    400046: bone_111
+    400048: bone_112
+    400050: bone_113
+    400052: bone_114
+    400054: bone_115
+    400056: bone_116
+    400058: bone_117
+    400060: bone_118
+    400062: bone_119
+    400064: bone_12
+    400066: bone_120
+    400068: bone_121
+    400070: bone_122
+    400072: bone_123
+    400074: bone_124
+    400076: bone_125
+    400078: bone_126
+    400080: bone_127
+    400082: bone_128
+    400084: bone_129
+    400086: bone_13
+    400088: bone_130
+    400090: bone_131
+    400092: bone_132
+    400094: bone_14
+    400096: bone_15
+    400098: bone_16
+    400100: bone_17
+    400102: bone_18
+    400104: bone_19
+    400106: bone_20
+    400108: bone_21
+    400110: bone_22
+    400112: bone_23
+    400114: bone_24
+    400116: bone_25
+    400118: bone_26
+    400120: bone_27
+    400122: bone_28
+    400124: bone_29
+    400126: bone_30
+    400128: bone_31
+    400130: bone_32
+    400132: bone_33
+    400134: bone_34
+    400136: bone_35
+    400138: bone_36
+    400140: bone_37
+    400142: bone_38
+    400144: bone_39
+    400146: bone_40
+    400148: bone_41
+    400150: bone_42
+    400152: bone_43
+    400154: bone_44
+    400156: bone_45
+    400158: bone_46
+    400160: bone_47
+    400162: bone_48
+    400164: bone_49
+    400166: bone_50
+    400168: bone_51
+    400170: bone_52
+    400172: bone_53
+    400174: bone_54
+    400176: bone_55
+    400178: bone_56
+    400180: bone_57
+    400182: bone_58
+    400184: bone_59
+    400186: bone_60
+    400188: bone_61
+    400190: bone_62
+    400192: bone_63
+    400194: bone_64
+    400196: bone_65
+    400198: bone_66
+    400200: bone_67
+    400202: bone_68
+    400204: bone_69
+    400206: bone_70
+    400208: bone_71
+    400210: bone_72
+    400212: bone_73
+    400214: bone_74
+    400216: bone_75
+    400218: bone_76
+    400220: bone_77
+    400222: bone_78
+    400224: bone_79
+    400226: bone_80
+    400228: bone_81
+    400230: bone_82
+    400232: bone_83
+    400234: bone_84
+    400236: bone_85
+    400238: bone_86
+    400240: bone_87
+    400242: bone_88
+    400244: bone_89
+    400246: bone_90
+    400248: bone_91
+    400250: bone_92
+    400252: bone_93
+    400254: bone_94
+    400256: bone_95
+    400258: bone_96
+    400260: bone_97
+    400262: bone_98
+    400264: bone_99
+    400266: //RootNode
+    400268: LizardHead001
+    400270: LizardHeadBone004
+    400272: LizardHeadBone004Bone001
+    400274: LizardHeadBone004Bone002
+    400276: LizardHeadBone004Bone003
+    400278: LizardHeadBone004Bone003Bone001
+    400280: LizardHeadBone004Bone003Bone002
+    400282: LizardHeadBone004Bone003Bone004
+    400284: LizardHeadBone004Bone003Bone004Bone001
+    400286: LizardHeadBone004Bone003Bone004Bone001Bone001
+    400288: LizardHeadBone004Bone003Bone004Bone001Bone001Bone001
+    400290: LizardHeadBone004Bone004
+    400292: LizardHeadBone004Bone005
+    400294: LizardHeadBone004Bone006
+    400296: LizardHeadBone004Bone007
+    400298: LizardLFrontLegAnkle2
+    400300: LizardLFrontLegCalf
+    400302: LizardLFrontLegDigit01
+    400304: LizardLFrontLegDigit02
+    400306: LizardLFrontLegDigit03
+    400308: LizardLFrontLegDigit11
+    400310: LizardLFrontLegDigit12
+    400312: LizardLFrontLegDigit13
+    400314: LizardLFrontLegDigit21
+    400316: LizardLFrontLegDigit22
+    400318: LizardLFrontLegDigit23
+    400320: LizardLFrontLegDigit31
+    400322: LizardLFrontLegDigit32
+    400324: LizardLFrontLegDigit33
+    400326: LizardLFrontLegDigit41
+    400328: LizardLFrontLegDigit42
+    400330: LizardLFrontLegDigit43
+    400332: LizardLFrontLegThigh
+    400334: LizardLLeg1
+    400336: LizardLLeg2
+    400338: LizardLLegAnkle
+    400340: LizardLLegDigit01
+    400342: LizardLLegDigit02
+    400344: LizardLLegDigit03
+    400346: LizardLLegDigit11
+    400348: LizardLLegDigit11 1
+    400350: LizardLLegDigit12
+    400352: LizardLLegDigit12 1
+    400354: LizardLLegDigit13
+    400356: LizardLLegDigit21
+    400358: LizardLLegDigit21 1
+    400360: LizardLLegDigit22
+    400362: LizardLLegDigit22 1
+    400364: LizardLLegDigit23
+    400366: LizardLLegDigit23 1
+    400368: LizardLLegDigit31
+    400370: LizardLLegDigit31 1
+    400372: LizardLLegDigit32
+    400374: LizardLLegDigit32 1
+    400376: LizardLLegDigit33
+    400378: LizardLLegDigit33 1
+    400380: LizardLLegDigit41
+    400382: LizardLLegDigit41 1
+    400384: LizardLLegDigit42
+    400386: LizardLLegDigit42 1
+    400388: LizardLLegDigit43
+    400390: LizardLLegDigit43 1
+    400392: LizardLLegDigit51
+    400394: LizardLLegDigit52
+    400396: LizardLLegDigit53
+    400398: LizardLLegLower
+    400400: LizardLLegPalm2
+    400402: LizardLLegUpper
+    400404: LizardNeck1
+    400406: LizardNeck2
+    400408: LizardPelvis
+    400410: LizardPelvisBone001
+    400412: LizardRFrontLegAnkle2
+    400414: LizardRFrontLegCalf
+    400416: LizardRFrontLegDigit01
+    400418: LizardRFrontLegDigit02
+    400420: LizardRFrontLegDigit03
+    400422: LizardRFrontLegDigit11
+    400424: LizardRFrontLegDigit12
+    400426: LizardRFrontLegDigit13
+    400428: LizardRFrontLegDigit21
+    400430: LizardRFrontLegDigit22
+    400432: LizardRFrontLegDigit23
+    400434: LizardRFrontLegDigit31
+    400436: LizardRFrontLegDigit32
+    400438: LizardRFrontLegDigit33
+    400440: LizardRFrontLegDigit41
+    400442: LizardRFrontLegDigit42
+    400444: LizardRFrontLegDigit43
+    400446: LizardRFrontLegThigh
+    400448: LizardRibcage
+    400450: LizardRibcage001
+    400452: LizardRLeg1
+    400454: LizardRLeg2
+    400456: LizardRLegAnkle
+    400458: LizardRLegCollarbone
+    400460: LizardRLegDigit01
+    400462: LizardRLegDigit02
+    400464: LizardRLegDigit03
+    400466: LizardRLegDigit11
+    400468: LizardRLegDigit11 1
+    400470: LizardRLegDigit12
+    400472: LizardRLegDigit12 1
+    400474: LizardRLegDigit13
+    400476: LizardRLegDigit21
+    400478: LizardRLegDigit21 1
+    400480: LizardRLegDigit22
+    400482: LizardRLegDigit22 1
+    400484: LizardRLegDigit23
+    400486: LizardRLegDigit23 1
+    400488: LizardRLegDigit31
+    400490: LizardRLegDigit31 1
+    400492: LizardRLegDigit32
+    400494: LizardRLegDigit32 1
+    400496: LizardRLegDigit33
+    400498: LizardRLegDigit33 1
+    400500: LizardRLegDigit41
+    400502: LizardRLegDigit41 1
+    400504: LizardRLegDigit42
+    400506: LizardRLegDigit42 1
+    400508: LizardRLegDigit43
+    400510: LizardRLegDigit43 1
+    400512: LizardRLegDigit51
+    400514: LizardRLegDigit52
+    400516: LizardRLegDigit53
+    400518: LizardRLegLower
+    400520: LizardRLegPalm2
+    400522: LizardRLegUpper
+    400524: LizardSpine1
+    400526: LizardSpine1 1
+    400528: LizardSpine2
+    400530: LizardSpine2 1
+    400532: LizardTail1
+    400534: Object005
+    400536: Bip001
+    7400000: camera_001-021
+    7400002: camera_001
+    7400004: camera_002
+    7400006: camera_003
+    7400008: camera_004
+    7400010: camera_005
+    7400012: camera_006
+    7400014: camera_007
+    7400016: camera_008
+    7400018: camera_009
+    7400020: camera_010
+    7400022: camera_011
+    7400024: camera_012
+    7400026: camera_013
+    7400028: camera_014
+    7400030: camera_015
+    7400032: camera_016
+    7400034: camera_017
+    7400036: camera_018
+    7400038: camera_019
+    7400040: camera_020
+    7400042: camera_021
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: camera_001-021
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 557
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_002
+      takeName: Take 001
+      firstFrame: 31
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_003
+      takeName: Take 001
+      firstFrame: 80
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_004
+      takeName: Take 001
+      firstFrame: 120
+      lastFrame: 137
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_005
+      takeName: Take 001
+      firstFrame: 130
+      lastFrame: 143
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_006
+      takeName: Take 001
+      firstFrame: 137
+      lastFrame: 153
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_007
+      takeName: Take 001
+      firstFrame: 153
+      lastFrame: 179
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_008
+      takeName: Take 001
+      firstFrame: 170
+      lastFrame: 181
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_009
+      takeName: Take 001
+      firstFrame: 181
+      lastFrame: 196
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_010
+      takeName: Take 001
+      firstFrame: 196
+      lastFrame: 217
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_011
+      takeName: Take 001
+      firstFrame: 217
+      lastFrame: 255
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_012
+      takeName: Take 001
+      firstFrame: 249
+      lastFrame: 274
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_013
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 0
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_014
+      takeName: Take 001
+      firstFrame: 279
+      lastFrame: 299
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_015
+      takeName: Take 001
+      firstFrame: 308
+      lastFrame: 318
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_016
+      takeName: Take 001
+      firstFrame: 318
+      lastFrame: 370
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_017
+      takeName: Take 001
+      firstFrame: 374
+      lastFrame: 391
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_018
+      takeName: Take 001
+      firstFrame: 391
+      lastFrame: 423
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_019
+      takeName: Take 001
+      firstFrame: 423
+      lastFrame: 455
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_020
+      takeName: Take 001
+      firstFrame: 455
+      lastFrame: 489
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: camera_021
+      takeName: Take 001
+      firstFrame: 489
+      lastFrame: 520
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
