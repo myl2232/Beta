@@ -1,0 +1,496 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: skill_mq_both_y_0001
+  serializedVersion: 6
+  m_Legacy: 1
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: -0, y: -0, z: -0, w: -1}
+        inSlope: {x: 0, y: 0, z: 18.500675, w: 2.9235146}
+        outSlope: {x: 0, y: 0, z: 18.500675, w: 2.9235146}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.016666668
+        value: {x: -0, y: -0, z: 0.3083446, w: -0.95127475}
+        inSlope: {x: 0, y: 0, z: 17.599226, w: 5.704584}
+        outSlope: {x: 0, y: 0, z: 17.599226, w: 5.704584}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.033333335
+        value: {x: -0, y: -0, z: 0.5866409, w: -0.8098472}
+        inSlope: {x: 0, y: 0, z: 14.982719, w: 10.853253}
+        outSlope: {x: 0, y: 0, z: 14.982719, w: 10.853253}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.050000004
+        value: {x: -0, y: -0, z: 0.80776864, w: -0.5894996}
+        inSlope: {x: 0, y: 0, z: 10.90614, w: 14.944265}
+        outSlope: {x: 0, y: 0, z: 10.90614, w: 14.944265}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.06666667
+        value: {x: -0, y: -0, z: 0.9501789, w: -0.31170496}
+        inSlope: {x: 0, y: 0, z: 5.7667537, w: 17.578953}
+        outSlope: {x: 0, y: 0, z: 5.7667537, w: 17.578953}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.083333336
+        value: {x: -0, y: -0, z: 0.99999374, w: -0.0035345044}
+        inSlope: {x: 0, y: 0, z: 0.065392256, w: 18.500557}
+        outSlope: {x: 0, y: 0, z: 0.065392256, w: 18.500557}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.1
+        value: {x: -0, y: -0, z: 0.95235866, w: 0.30498028}
+        inSlope: {x: 0, y: 0, z: -5.6423416, w: 17.619276}
+        outSlope: {x: 0, y: 0, z: -5.6423416, w: 17.619276}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.11666667
+        value: {x: -0, y: -0, z: 0.8119157, w: 0.5837747}
+        inSlope: {x: 0, y: 0, z: -10.800227, w: 15.02099}
+        outSlope: {x: 0, y: 0, z: -10.800227, w: 15.02099}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.13333334
+        value: {x: -0, y: -0, z: 0.592351, w: 0.80568004}
+        inSlope: {x: 0, y: 0, z: -14.905629, w: 10.958896}
+        outSlope: {x: 0, y: 0, z: -14.905629, w: 10.958896}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.15
+        value: {x: -0, y: -0, z: 0.31506133, w: 0.9490713}
+        inSlope: {x: 0, y: 0, z: -17.558464, w: 5.82885}
+        outSlope: {x: 0, y: 0, z: -17.558464, w: 5.82885}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.16666667
+        value: {x: -0, y: -0, z: 0.0070689647, w: 0.999975}
+        inSlope: {x: 0, y: 0, z: -18.479544, w: 3.0542245}
+        outSlope: {x: 0, y: 0, z: -18.479544, w: 3.0542245}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: mesh/GameObject
+  m_CompressedRotationCurves: []
+  m_EulerCurves: []
+  m_PositionCurves: []
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves: []
+  m_SampleRate: 60
+  m_WrapMode: 2
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings: []
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 0.16666667
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.016666668
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.033333335
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.050000004
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.06666667
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.083333336
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.1
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.11666667
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.13333334
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.15
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.16666667
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: mesh/GameObject
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.016666668
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.033333335
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.050000004
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.06666667
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.083333336
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.1
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.11666667
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.13333334
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.15
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.16666667
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: mesh/GameObject
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -0
+        inSlope: 18.500675
+        outSlope: 18.500675
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.016666668
+        value: 0.3083446
+        inSlope: 17.599226
+        outSlope: 17.599226
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.033333335
+        value: 0.5866409
+        inSlope: 14.982719
+        outSlope: 14.982719
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.050000004
+        value: 0.80776864
+        inSlope: 10.90614
+        outSlope: 10.90614
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.06666667
+        value: 0.9501789
+        inSlope: 5.7667537
+        outSlope: 5.7667537
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.083333336
+        value: 0.99999374
+        inSlope: 0.065392256
+        outSlope: 0.065392256
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.1
+        value: 0.95235866
+        inSlope: -5.6423416
+        outSlope: -5.6423416
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.11666667
+        value: 0.8119157
+        inSlope: -10.800227
+        outSlope: -10.800227
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.13333334
+        value: 0.592351
+        inSlope: -14.905629
+        outSlope: -14.905629
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.15
+        value: 0.31506133
+        inSlope: -17.558464
+        outSlope: -17.558464
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0.0070689647
+        inSlope: -18.479544
+        outSlope: -18.479544
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: mesh/GameObject
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -1
+        inSlope: 2.9235146
+        outSlope: 2.9235146
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.016666668
+        value: -0.95127475
+        inSlope: 5.704584
+        outSlope: 5.704584
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.033333335
+        value: -0.8098472
+        inSlope: 10.853253
+        outSlope: 10.853253
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.050000004
+        value: -0.5894996
+        inSlope: 14.944265
+        outSlope: 14.944265
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.06666667
+        value: -0.31170496
+        inSlope: 17.578953
+        outSlope: 17.578953
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.083333336
+        value: -0.0035345044
+        inSlope: 18.500557
+        outSlope: 18.500557
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.1
+        value: 0.30498028
+        inSlope: 17.619276
+        outSlope: 17.619276
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.11666667
+        value: 0.5837747
+        inSlope: 15.02099
+        outSlope: 15.02099
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.13333334
+        value: 0.80568004
+        inSlope: 10.958896
+        outSlope: 10.958896
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.15
+        value: 0.9490713
+        inSlope: 5.82885
+        outSlope: 5.82885
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0.999975
+        inSlope: 3.0542245
+        outSlope: 3.0542245
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: mesh/GameObject
+    classID: 4
+    script: {fileID: 0}
+  m_EulerEditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 69
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0
+        inSlope: -0
+        outSlope: 0
+        tangentMode: 69
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesBaked.x
+    path: mesh/GameObject
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 69
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0
+        inSlope: -0
+        outSlope: 0
+        tangentMode: 69
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesBaked.y
+    path: mesh/GameObject
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: -2155.1396
+        tangentMode: 69
+      - serializedVersion: 2
+        time: 0.16666667
+        value: -359.18994
+        inSlope: -2155.1396
+        outSlope: 0
+        tangentMode: 69
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesBaked.z
+    path: mesh/GameObject
+    classID: 4
+    script: {fileID: 0}
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_GenerateMotionCurves: 0
+  m_Events: []

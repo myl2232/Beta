@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: sign_056_1
+  m_Shader: {fileID: 4800000, guid: 98486bc091459f543b68a36430d6d2dc, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Alphatex:
+        m_Texture: {fileID: 2800000, guid: 9df5e5f2779b5c64dbdd606b4e958c96, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: b7f4f3981b6ffcb41916656ee5b758a9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex3:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _InvFade: 1
+    - _RotateAngle: 3.135
+    - _RotateMainAngle: 0
+    - _TexPow: 1
+    - _TexPow2: 1
+    - _TexPow3: 1
+    m_Colors:
+    - _TexCol: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 1}
+    - _TexCol2: {r: 0, g: 0, b: 0, a: 1}
+    - _TexCol3: {r: 0, g: 0, b: 0, a: 1}
+    - _TintColor: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 0.5}
